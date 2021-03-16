@@ -6,12 +6,9 @@
 import _ from "lodash";
 import {
   writeDataTypes,
-  getNonClasses,
-  getUniqueProps,
-  getUniqueTypes,
-  PROPERTY_TYPE,
   SchemaType,
   reExport,
+  writeClasses,
 } from "./helpers";
 
 const data = require("../jsonld.json");
@@ -24,7 +21,9 @@ const dataTypes = schemas.filter((item) =>
 );
 // console.log(dataTypes);
 writeDataTypes(dataTypes);
-reExport("core", false);
+// reExport("core", false);
+
+writeClasses(schemas);
 // console.log(schemas.find((item) => item["@id"] === "schema:URL"));
 // const typeSchemas = getUniqueTypes(schemas);
 // const nonClasses = getNonClasses(schemas);
