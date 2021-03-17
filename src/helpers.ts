@@ -6,6 +6,7 @@ import * as fs from "fs";
 
 export const CLASS_TYPE = "rdfs:Class";
 export const PROPERTY_TYPE = "rdf:Property";
+export const ENUM_TYPE = "schema:Enumeration";
 
 export type PointerType = {
   "@id": string;
@@ -56,16 +57,44 @@ export const getUniqueProps = (
   return uniqValues;
 };
 
-export const getClasses = (coll: Array<SchemaType>) => {
-  return toObject(
-    coll
-      .filter((item) => item["@type"] === CLASS_TYPE)
-      .filter((item) => item["@id"] !== "schema:DataType")
-  );
+export const isDataType = (item: SchemaType) =>
+  Array.isArray(item["@type"])
+    ? _.includes(item["@type"], "schema:DataType")
+    : item["@type"] === "schema:DataType";
+
+export const getDataTypes = (coll: Array<SchemaType>) =>
+  coll.filter(isDataType);
+
+export const getNonDataTypes = (coll: Array<SchemaType>) =>
+  coll.filter(_.negate(isDataType));
+
+export const getNonProperties = (coll: Array<SchemaType>) =>
+  coll.filter((item) => item["@type"] !== PROPERTY_TYPE);
+
+export const enumFilter = (item: SchemaType) =>
+  item["rdfs:subClassOf"]
+    ? Array.isArray(item["rdfs:subClassOf"])
+      ? _.includes(
+          item["rdfs:subClassOf"].map((v) => v["@id"]),
+          "schema:Enumeration"
+        )
+      : item["rdfs:subClassOf"]["@id"] == "schema:Enumeration"
+    : false;
+
+export const getEnumSubClasses = (coll: Array<SchemaType>) => {
+  return coll.filter(enumFilter);
 };
 
+export const getNonEnumSubs = (coll: Array<SchemaType>) =>
+  coll.filter(_.negate(enumFilter));
+
+export const getClasses = (coll: Array<SchemaType>) =>
+  coll
+    .filter((item) => item["@type"] === CLASS_TYPE)
+    .filter((item) => item["@id"] !== "schema:DataType");
+
 export const getNonClasses = (coll: Array<SchemaType>) =>
-  toObject(coll.filter((item) => item["@type"] !== CLASS_TYPE));
+  coll.filter((item) => item["@type"] !== CLASS_TYPE);
 
 // write data types
 export const writeDataTypes = async (dataTypes: Array<SchemaType>) => {
@@ -142,8 +171,10 @@ export const getRangeString = (
 };
 
 export const writeClasses = (schemas: Array<SchemaType>) => {
-  const classes: { [id: string]: SchemaType } = getClasses(schemas);
-  const nonClasses: { [id: string]: SchemaType } = getNonClasses(schemas);
+  const classes: { [id: string]: SchemaType } = toObject(getClasses(schemas));
+  const nonClasses: { [id: string]: SchemaType } = toObject(
+    getNonClasses(schemas)
+  );
   const allSchema: { [id: string]: SchemaType } = toObject(schemas);
   const dataTypes = schemas.filter((item) =>
     Array.isArray(item["@type"])
@@ -151,7 +182,7 @@ export const writeClasses = (schemas: Array<SchemaType>) => {
       : item["@type"] === "schema:DataType"
   );
 
-  let types: {
+  let classTypes: {
     [id: string]: SchemaWithProps;
   } = Object.entries(classes).reduce((acc, [id, item]) => {
     return {
@@ -173,7 +204,7 @@ export const writeClasses = (schemas: Array<SchemaType>) => {
 
         domains.forEach((value) => {
           //@ts-ignore
-          types[value["@id"]]!.props[getLabel(schema)] = getRangeString(
+          classTypes[value["@id"]]!.props[getLabel(schema)] = getRangeString(
             allSchema,
             //@ts-ignore
             schema["schema:rangeIncludes"]
@@ -181,6 +212,8 @@ export const writeClasses = (schemas: Array<SchemaType>) => {
         });
       }
     });
+  
+  
   const ws = fs.createWriteStream(`${__dirname}/../types/index.d.ts`, {
     autoClose: true,
     encoding: "utf-8",
@@ -194,7 +227,7 @@ export const writeClasses = (schemas: Array<SchemaType>) => {
     )}} from "./core";\r\n\r\n`
   );
 
-  Object.entries(types)
+  Object.entries(classTypes)
     .sort(([_, a], [__, b]) => getLabel(a).localeCompare(getLabel(b)))
     .forEach(([id, schema]) => {
       if (schema["rdfs:subClassOf"]) {
