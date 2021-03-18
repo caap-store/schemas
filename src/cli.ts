@@ -76,7 +76,7 @@ const dataTypes = schemas.filter((item) =>
     ? _.includes(item["@type"], "schema:DataType")
     : item["@type"] === "schema:DataType"
 );
-console.log(dataTypes);
+// console.log(dataTypes);
 writeDataTypes(dataTypes);
 // reExport("core", false);
 

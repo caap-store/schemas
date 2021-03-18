@@ -1,12 +1,13 @@
 // open json file
 // load json file
 // read types
-import _ from "lodash";
+import _, { iteratee } from "lodash";
 import * as fs from "fs";
 
 export const CLASS_TYPE = "rdfs:Class";
 export const PROPERTY_TYPE = "rdf:Property";
 export const ENUM_TYPE = "schema:Enumeration";
+export const DATATYPE_TYPE = "schema:DataType";
 
 export type PointerType = {
   "@id": string;
@@ -170,17 +171,49 @@ export const getRangeString = (
   return `${value} | Array<${value}>`;
 };
 
+export const typePicker = (typeKey: string | Array<string>) => (
+  __: SchemaType[],
+  k: string | Array<string>
+) => {
+  if (typeof typeKey == "string") {
+    return Array.isArray(k) ? _.includes(k, typeKey) : k == typeKey;
+  } else {
+    return Array.isArray(k)
+      ? _.intersection(k, typeKey).length > 0
+      : _.includes(typeKey, k);
+  }
+};
+export const bySchemaType = (
+  groupedSchema: _.Dictionary<SchemaType[]>,
+  typeKey: string | Array<string>,
+  negate: boolean = false
+) =>
+  _.pickBy(
+    groupedSchema,
+    negate ? _.negate(typePicker(typeKey)) : typePicker(typeKey)
+  );
+
 export const writeClasses = (schemas: Array<SchemaType>) => {
-  const classes: { [id: string]: SchemaType } = toObject(getClasses(schemas));
-  const nonClasses: { [id: string]: SchemaType } = toObject(
-    getNonClasses(schemas)
+  // const schemas = _.filter(allSchemas, (i) => i["@id"] !== DATATYPE_TYPE);
+  const groupedSchema = _.groupBy(schemas, (item) => item["@type"]);
+  const classes: { [id: string]: SchemaType } = toObject(
+    _.flatten(_.values(bySchemaType(groupedSchema, CLASS_TYPE)))
   );
+  const dataTypes = _.flatten(
+    _.values(bySchemaType(groupedSchema, DATATYPE_TYPE))
+  );
+  const listNonClasses = getNonClasses(schemas);
+  const nonClasses: { [id: string]: SchemaType } = toObject(listNonClasses);
   const allSchema: { [id: string]: SchemaType } = toObject(schemas);
-  const dataTypes = schemas.filter((item) =>
-    Array.isArray(item["@type"])
-      ? _.includes(item["@type"], "schema:DataType")
-      : item["@type"] === "schema:DataType"
+
+  // group enumeration members
+  const enumMembers = bySchemaType(
+    groupedSchema,
+    [CLASS_TYPE, PROPERTY_TYPE, DATATYPE_TYPE],
+    true
   );
+
+  // use enumeration members as values for enum classes.
 
   let classTypes: {
     [id: string]: SchemaWithProps;
@@ -203,17 +236,14 @@ export const writeClasses = (schemas: Array<SchemaType>) => {
           : [schema["schema:domainIncludes"]];
 
         domains.forEach((value) => {
-          //@ts-ignore
           classTypes[value["@id"]]!.props[getLabel(schema)] = getRangeString(
             allSchema,
-            //@ts-ignore
-            schema["schema:rangeIncludes"]
+            schema["schema:rangeIncludes"] as PointerType | Array<PointerType>
           );
         });
       }
     });
-  
-  
+
   const ws = fs.createWriteStream(`${__dirname}/../types/index.d.ts`, {
     autoClose: true,
     encoding: "utf-8",
@@ -230,6 +260,10 @@ export const writeClasses = (schemas: Array<SchemaType>) => {
   Object.entries(classTypes)
     .sort(([_, a], [__, b]) => getLabel(a).localeCompare(getLabel(b)))
     .forEach(([id, schema]) => {
+      if (id == DATATYPE_TYPE) {
+        // no need to render this because it's rdfs:Class
+        return;
+      }
       if (schema["rdfs:subClassOf"]) {
         try {
           const subClassInfo = schema["rdfs:subClassOf"];
@@ -245,7 +279,8 @@ export const writeClasses = (schemas: Array<SchemaType>) => {
             )} extends ${extendsPart} {\r\n`
           );
         } catch (e) {
-          console.log(schema);
+          console.error(e)
+          console.error(schema);
         }
       } else {
         ws.write(
