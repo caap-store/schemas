@@ -18,7 +18,6 @@ import {
   getNonDataTypes,
   toObject,
   getDataTypes,
-  enumFilter,
   getLabel,
 } from "./helpers";
 import { Car } from "../types";

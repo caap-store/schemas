@@ -1,13 +1,14 @@
 // open json file
 // load json file
 // read types
-import _, { iteratee } from "lodash";
+import _ from "lodash";
 import * as fs from "fs";
 
 export const CLASS_TYPE = "rdfs:Class";
 export const PROPERTY_TYPE = "rdf:Property";
 export const ENUM_TYPE = "schema:Enumeration";
 export const DATATYPE_TYPE = "schema:DataType";
+export const SUPERSEDED_BY = "schema:supersededBy";
 
 export type PointerType = {
   "@id": string;
@@ -27,6 +28,7 @@ export type SchemaType = {
   "schema:source": PointerType | Array<PointerType>;
   "rdfs:subClassOf"?: PointerType | Array<PointerType>;
   "schema:rangeIncludes"?: PointerType | Array<PointerType>;
+  "schema:supersededBy": PointerType;
 };
 
 export type SchemaWithProps = SchemaType & {
@@ -72,22 +74,37 @@ export const getNonDataTypes = (coll: Array<SchemaType>) =>
 export const getNonProperties = (coll: Array<SchemaType>) =>
   coll.filter((item) => item["@type"] !== PROPERTY_TYPE);
 
-export const enumFilter = (item: SchemaType) =>
-  item["rdfs:subClassOf"]
-    ? Array.isArray(item["rdfs:subClassOf"])
-      ? _.includes(
-          item["rdfs:subClassOf"].map((v) => v["@id"]),
-          "schema:Enumeration"
-        )
-      : item["rdfs:subClassOf"]["@id"] == "schema:Enumeration"
-    : false;
-
-export const getEnumSubClasses = (coll: Array<SchemaType>) => {
-  return coll.filter(enumFilter);
+export const isEnum = (schemaMap: { [id: string]: SchemaType }) => (
+  item: SchemaType
+): boolean => {
+  if (item["rdfs:subClassOf"]) {
+    const propValue = item["rdfs:subClassOf"];
+    const superClasses = Array.isArray(propValue) ? propValue : [propValue];
+    superClasses.forEach((classItem) => {
+      const id = classItem["@id"];
+      if (id == ENUM_TYPE) {
+        return true;
+      } else {
+        if (schemaMap[id]) {
+          return isEnum(schemaMap)(schemaMap[id]);
+        }
+      }
+    });
+  } else {
+    return false;
+  }
+  return false;
 };
 
-export const getNonEnumSubs = (coll: Array<SchemaType>) =>
-  coll.filter(_.negate(enumFilter));
+export const getEnumSubClasses = (coll: Array<SchemaType>) => {
+  const schemaMap = toObject(coll);
+  return coll.filter(isEnum(schemaMap));
+};
+
+export const getNonEnumSubs = (coll: Array<SchemaType>) => {
+  const schemaMap = toObject(coll);
+  return coll.filter(_.negate(isEnum(schemaMap)));
+};
 
 export const getClasses = (coll: Array<SchemaType>) =>
   coll
@@ -173,13 +190,14 @@ export const getRangeString = (
 
 export const typePicker = (typeKey: string | Array<string>) => (
   __: SchemaType[],
-  k: string | Array<string>
+  k: string
 ) => {
   if (typeof typeKey == "string") {
     return Array.isArray(k) ? _.includes(k, typeKey) : k == typeKey;
   } else {
-    return Array.isArray(k)
-      ? _.intersection(k, typeKey).length > 0
+    const groupKeys = k.split(",");
+    return groupKeys.length > 1
+      ? _.intersection(groupKeys, typeKey).length > 0
       : _.includes(typeKey, k);
   }
 };
@@ -194,7 +212,9 @@ export const bySchemaType = (
   );
 
 export const writeClasses = (schemas: Array<SchemaType>) => {
-  // const schemas = _.filter(allSchemas, (i) => i["@id"] !== DATATYPE_TYPE);
+  // console.log(schemas.find(item => item["@id"] == ENUM_TYPE));
+  const schemaMap = toObject(schemas);
+  // console.log(schemas.find((item) => item["rdfs:label"] == "supersededBy"));
   const groupedSchema = _.groupBy(schemas, (item) => item["@type"]);
   const classes: { [id: string]: SchemaType } = toObject(
     _.flatten(_.values(bySchemaType(groupedSchema, CLASS_TYPE)))
@@ -213,8 +233,6 @@ export const writeClasses = (schemas: Array<SchemaType>) => {
     true
   );
 
-  // use enumeration members as values for enum classes.
-
   let classTypes: {
     [id: string]: SchemaWithProps;
   } = Object.entries(classes).reduce((acc, [id, item]) => {
@@ -230,6 +248,10 @@ export const writeClasses = (schemas: Array<SchemaType>) => {
   Object.entries(nonClasses)
     .sort(([_, a], [__, b]) => getLabel(a).localeCompare(getLabel(b)))
     .forEach(([id, schema]) => {
+      if (id == SUPERSEDED_BY) {
+        // no need for this now.
+        return;
+      }
       if (schema["schema:domainIncludes"]) {
         const domains = Array.isArray(schema["schema:domainIncludes"])
           ? schema["schema:domainIncludes"]
@@ -257,6 +279,26 @@ export const writeClasses = (schemas: Array<SchemaType>) => {
     )}} from "./core";\r\n\r\n`
   );
 
+  // // render enum classes
+  // Object.entries(enumMembers).forEach(([id, members]) => {
+  //   const enumClass = classes.
+  //   ws.write()
+  // })
+  // enum ShapeKind {
+  //   Circle,
+  //   Square,
+  // }
+
+  console.log(_.keys(enumMembers).filter((key) => key.indexOf(",") > -1));
+  // Object.keys(enumMembers).forEach((id:string) => {
+  //   if (_.includes(id, CLASS_TYPE)) {
+  //     return;
+  //   }
+  //   if (id.split(",").length > 1) {
+
+  //   }
+  // })
+
   Object.entries(classTypes)
     .sort(([_, a], [__, b]) => getLabel(a).localeCompare(getLabel(b)))
     .forEach(([id, schema]) => {
@@ -264,35 +306,38 @@ export const writeClasses = (schemas: Array<SchemaType>) => {
         // no need to render this because it's rdfs:Class
         return;
       }
-      if (schema["rdfs:subClassOf"]) {
-        try {
-          const subClassInfo = schema["rdfs:subClassOf"];
-          const extendsPart = Array.isArray(subClassInfo)
-            ? _.join(
-                subClassInfo.map((item) => getLabel(allSchema[item["@id"]])),
-                " extends "
-              )
-            : getLabel(allSchema[subClassInfo["@id"]]);
-          ws.write(
-            `export interface ${getTypeScriptSafeLabel(
-              getLabel(schema)
-            )} extends ${extendsPart} {\r\n`
-          );
-        } catch (e) {
-          console.error(e)
-          console.error(schema);
-        }
+      if (enumMembers[id]) {
+        return;
       } else {
-        ws.write(
-          `export interface ${getTypeScriptSafeLabel(getLabel(schema))} {\r\n`
-        );
+        if (schema["rdfs:subClassOf"]) {
+          try {
+            const subClassInfo = schema["rdfs:subClassOf"];
+            const extendsPart = Array.isArray(subClassInfo)
+              ? _.join(
+                  subClassInfo.map((item) => getLabel(allSchema[item["@id"]])),
+                  " extends "
+                )
+              : getLabel(allSchema[subClassInfo["@id"]]);
+            ws.write(
+              `export interface ${getTypeScriptSafeLabel(
+                getLabel(schema)
+              )} extends ${extendsPart} {\r\n`
+            );
+          } catch (e) {
+            console.error(e);
+            console.error(schema);
+          }
+        } else {
+          ws.write(
+            `export interface ${getTypeScriptSafeLabel(getLabel(schema))} {\r\n`
+          );
+        }
+        ws.write(`  "type": "${getLabel(schema)}"\r\n`);
+        Object.entries(schema.props).forEach(([propLabel, propType]) => {
+          ws.write(`  ${propLabel} ?: ${propType}\r\n`);
+        });
       }
-      ws.write(`  "type": "${getLabel(schema)}"\r\n`);
-      Object.entries(schema.props).forEach(([propLabel, propType]) => {
-        ws.write(`  ${propLabel} ?: ${propType}\r\n`);
-      });
-
-      ws.write(`}\r\n`);
+      ws.write(`}\r\n\r\n`);
     });
 
   ws.end();
