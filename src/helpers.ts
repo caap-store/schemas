@@ -3,6 +3,7 @@
 // read types
 import _ from "lodash";
 import * as fs from "fs";
+import { ContactPoint, ContactPointOption } from "../types/index";
 
 export const CLASS_TYPE = "rdfs:Class";
 export const PROPERTY_TYPE = "rdf:Property";
@@ -176,16 +177,25 @@ export const reExport = (moduleName: string, append: boolean = true) => {
 
 export const getRangeString = (
   schemas: { [id: string]: SchemaType },
-  range: PointerType | Array<PointerType>
+  range: PointerType | Array<PointerType>,
+  enumMembers: _.Dictionary<SchemaType[]>
 ) => {
   let value = null;
+  let isEnum = false;
   if (Array.isArray(range)) {
+    if (enumMembers[range[0]["@id"]]) {
+      isEnum = true;
+    }
     const labels = range.map((item) => schemas[item["@id"]]["rdfs:label"]);
     value = _.join(labels, " | ");
   } else {
+    if (enumMembers[range["@id"]]) {
+      isEnum = true;
+    }
     value = getLabel(schemas[range["@id"]]);
   }
-  return `${value} | Array<${value}>`;
+
+  return isEnum ? `${value};` : `${value} | Array<${value}>;`;
 };
 
 export const typePicker = (typeKey: string | Array<string>) => (
@@ -193,7 +203,8 @@ export const typePicker = (typeKey: string | Array<string>) => (
   k: string
 ) => {
   if (typeof typeKey == "string") {
-    return Array.isArray(k) ? _.includes(k, typeKey) : k == typeKey;
+    const groupKeys = k.split(",");
+    return groupKeys.length > 1 ? _.includes(groupKeys, typeKey) : k == typeKey;
   } else {
     const groupKeys = k.split(",");
     return groupKeys.length > 1
@@ -212,9 +223,7 @@ export const bySchemaType = (
   );
 
 export const writeClasses = (schemas: Array<SchemaType>) => {
-  // console.log(schemas.find(item => item["@id"] == ENUM_TYPE));
-  const schemaMap = toObject(schemas);
-  // console.log(schemas.find((item) => item["rdfs:label"] == "supersededBy"));
+  const schemaMap: { [id: string]: SchemaType } = toObject(schemas);
   const groupedSchema = _.groupBy(schemas, (item) => item["@type"]);
   const classes: { [id: string]: SchemaType } = toObject(
     _.flatten(_.values(bySchemaType(groupedSchema, CLASS_TYPE)))
@@ -260,7 +269,8 @@ export const writeClasses = (schemas: Array<SchemaType>) => {
         domains.forEach((value) => {
           classTypes[value["@id"]]!.props[getLabel(schema)] = getRangeString(
             allSchema,
-            schema["schema:rangeIncludes"] as PointerType | Array<PointerType>
+            schema["schema:rangeIncludes"] as PointerType | Array<PointerType>,
+            enumMembers
           );
         });
       }
@@ -278,26 +288,28 @@ export const writeClasses = (schemas: Array<SchemaType>) => {
       ", "
     )}} from "./core";\r\n\r\n`
   );
+  
+  let singles = _.pickBy(enumMembers, (__, id) => id.split(",").length == 1);
+  const multies = _.pickBy(enumMembers, (__, id) => id.split(",").length > 1);
 
-  // // render enum classes
-  // Object.entries(enumMembers).forEach(([id, members]) => {
-  //   const enumClass = classes.
-  //   ws.write()
-  // })
-  // enum ShapeKind {
-  //   Circle,
-  //   Square,
-  // }
+  _.keys(multies).forEach((multiKey) => {
+    const ids = multiKey.split(",");
+    ids.forEach((id) => {
+      singles[id] = [...singles[id], ...multies[multiKey]];
+    });
+  });
 
-  console.log(_.keys(enumMembers).filter((key) => key.indexOf(",") > -1));
-  // Object.keys(enumMembers).forEach((id:string) => {
-  //   if (_.includes(id, CLASS_TYPE)) {
-  //     return;
-  //   }
-  //   if (id.split(",").length > 1) {
-
-  //   }
-  // })
+  Object.keys(singles)
+    .sort()
+    .forEach((id: string) => {
+      const singleEnumItems = singles[id].map((item) => getLabel(item)).sort();
+      const singleParent = getLabel(schemaMap[id]);
+      ws.write(`export enum ${singleParent} {\r\n`);
+      singleEnumItems.forEach((val) => {
+        ws.write(`  ${val} = "${val}",\r\n`);
+      });
+      ws.write(`};\r\n\r\n`);
+    });
 
   Object.entries(classTypes)
     .sort(([_, a], [__, b]) => getLabel(a).localeCompare(getLabel(b)))
@@ -307,6 +319,7 @@ export const writeClasses = (schemas: Array<SchemaType>) => {
         return;
       }
       if (enumMembers[id]) {
+        // do not render enums
         return;
       } else {
         if (schema["rdfs:subClassOf"]) {
