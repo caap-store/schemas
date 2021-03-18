@@ -3,7 +3,6 @@
 // read types
 import _ from "lodash";
 import * as fs from "fs";
-import { ContactPoint, ContactPointOption } from "../types/index";
 
 export const CLASS_TYPE = "rdfs:Class";
 export const PROPERTY_TYPE = "rdf:Property";
@@ -288,7 +287,7 @@ export const writeClasses = (schemas: Array<SchemaType>) => {
       ", "
     )}} from "./core";\r\n\r\n`
   );
-  
+
   let singles = _.pickBy(enumMembers, (__, id) => id.split(",").length == 1);
   const multies = _.pickBy(enumMembers, (__, id) => id.split(",").length > 1);
 
