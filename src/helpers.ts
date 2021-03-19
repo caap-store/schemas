@@ -180,23 +180,24 @@ export const getRangeString = (
   let value = null;
   let isSchemaEnum = false;
   let isBoolean = false;
+  const inclArrays = !(isSchemaEnum || isBoolean);
   if (Array.isArray(range)) {
     if (enumMembers[range[0]["@id"]]) {
       isSchemaEnum = true;
     }
     const labels = range.map((item) => schemas[item["@id"]]["rdfs:label"]);
-    value = _.join(labels, " | ");
+    const netTypes = inclArrays
+      ? labels.map((i) => `${i} | Array<${i}>`)
+      : labels;
+    return _.join(netTypes, " | ");
   } else {
     isBoolean = range["@id"] == BOOLEAN_TYPE;
     if (!isBoolean && enumMembers[range["@id"]]) {
       isSchemaEnum = true;
     }
     value = getLabel(schemas[range["@id"]]);
+    return inclArrays ? `${value} | Array<${value}>;` : `${value};`;
   }
-
-  return isSchemaEnum || isBoolean
-    ? `${value};`
-    : `${value} | Array<${value}>;`;
 };
 
 export const typePicker = (typeKey: string | Array<string>) => (
@@ -336,7 +337,7 @@ export const writeClasses = (schemas: Array<SchemaType>) => {
             const extendsPart = Array.isArray(subClassInfo)
               ? _.join(
                   subClassInfo.map((item) => getLabel(allSchema[item["@id"]])),
-                  " extends "
+                  ", "
                 )
               : getLabel(allSchema[subClassInfo["@id"]]);
             ws.write(
