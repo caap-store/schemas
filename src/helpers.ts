@@ -228,7 +228,14 @@ export const writeClasses = (schemas: Array<SchemaType>) => {
   const schemaMap: { [id: string]: SchemaType } = toObject(schemas);
   const groupedSchema = _.groupBy(schemas, (item) => item["@type"]);
   const classes: { [id: string]: SchemaType } = toObject(
-    _.flatten(_.values(bySchemaType(groupedSchema, CLASS_TYPE)))
+    _.flatten(
+      _.values(
+        bySchemaType(
+          bySchemaType(groupedSchema, [DATATYPE_TYPE, PROPERTY_TYPE], true),
+          CLASS_TYPE
+        )
+      )
+    )
   );
   const dataTypes = _.flatten(
     _.values(bySchemaType(groupedSchema, DATATYPE_TYPE))
@@ -320,6 +327,9 @@ export const writeClasses = (schemas: Array<SchemaType>) => {
       ws.write(`\r\n`);
     });
 
+  const dataTypesMap: {
+    [id: string]: SchemaType;
+  } = toObject(dataTypes);
   Object.entries(classTypes)
     .sort(([_, a], [__, b]) => getLabel(a).localeCompare(getLabel(b)))
     .forEach(([id, schema]) => {
@@ -332,8 +342,19 @@ export const writeClasses = (schemas: Array<SchemaType>) => {
         return;
       } else {
         if (schema["rdfs:subClassOf"]) {
+          const subClassInfo = schema["rdfs:subClassOf"];
+          if (
+            !Array.isArray(subClassInfo) &&
+            dataTypesMap[subClassInfo["@id"]]
+          ) {
+            ws.write(
+              `export type ${getLabel(schema)} = ${getLabel(
+                dataTypesMap[subClassInfo["@id"]]
+              )};\r\n\r\n`
+            );
+            return;
+          }
           try {
-            const subClassInfo = schema["rdfs:subClassOf"];
             const extendsPart = Array.isArray(subClassInfo)
               ? _.join(
                   subClassInfo.map((item) => getLabel(allSchema[item["@id"]])),
@@ -354,7 +375,6 @@ export const writeClasses = (schemas: Array<SchemaType>) => {
             `export interface ${getTypeScriptSafeLabel(getLabel(schema))} {\r\n`
           );
         }
-        ws.write(`  "type": "${getLabel(schema)}"\r\n`);
         Object.entries(schema.props).forEach(([propLabel, propType]) => {
           ws.write(`  ${propLabel} ?: ${propType}\r\n`);
         });
