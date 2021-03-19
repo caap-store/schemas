@@ -1,6 +1,3 @@
-// open json file
-// load json file
-// read types
 import _ from "lodash";
 import * as fs from "fs";
 
@@ -8,6 +5,7 @@ export const CLASS_TYPE = "rdfs:Class";
 export const PROPERTY_TYPE = "rdf:Property";
 export const ENUM_TYPE = "schema:Enumeration";
 export const DATATYPE_TYPE = "schema:DataType";
+export const BOOLEAN_TYPE = "schema:Boolean";
 export const SUPERSEDED_BY = "schema:supersededBy";
 
 export type PointerType = {
@@ -180,21 +178,25 @@ export const getRangeString = (
   enumMembers: _.Dictionary<SchemaType[]>
 ) => {
   let value = null;
-  let isEnum = false;
+  let isSchemaEnum = false;
+  let isBoolean = false;
   if (Array.isArray(range)) {
     if (enumMembers[range[0]["@id"]]) {
-      isEnum = true;
+      isSchemaEnum = true;
     }
     const labels = range.map((item) => schemas[item["@id"]]["rdfs:label"]);
     value = _.join(labels, " | ");
   } else {
-    if (enumMembers[range["@id"]]) {
-      isEnum = true;
+    isBoolean = range["@id"] == BOOLEAN_TYPE;
+    if (!isBoolean && enumMembers[range["@id"]]) {
+      isSchemaEnum = true;
     }
     value = getLabel(schemas[range["@id"]]);
   }
 
-  return isEnum ? `${value};` : `${value} | Array<${value}>;`;
+  return isSchemaEnum || isBoolean
+    ? `${value};`
+    : `${value} | Array<${value}>;`;
 };
 
 export const typePicker = (typeKey: string | Array<string>) => (
@@ -237,7 +239,7 @@ export const writeClasses = (schemas: Array<SchemaType>) => {
   // group enumeration members
   const enumMembers = bySchemaType(
     groupedSchema,
-    [CLASS_TYPE, PROPERTY_TYPE, DATATYPE_TYPE],
+    [CLASS_TYPE, PROPERTY_TYPE, DATATYPE_TYPE, BOOLEAN_TYPE],
     true
   );
 
@@ -282,10 +284,17 @@ export const writeClasses = (schemas: Array<SchemaType>) => {
   });
 
   ws.write(
-    `import {${_.join(
+    `import { ${_.join(
       dataTypes.map((item) => getLabel(item)),
       ", "
-    )}} from "./core";\r\n\r\n`
+    )} } from "./core";\r\n\r\n`
+  );
+
+  ws.write(
+    `export type DataType = ${_.join(
+      dataTypes.map((item) => getLabel(item)),
+      " | "
+    )};\r\n\r\n`
   );
 
   let singles = _.pickBy(enumMembers, (__, id) => id.split(",").length == 1);
@@ -303,11 +312,11 @@ export const writeClasses = (schemas: Array<SchemaType>) => {
     .forEach((id: string) => {
       const singleEnumItems = singles[id].map((item) => getLabel(item)).sort();
       const singleParent = getLabel(schemaMap[id]);
-      ws.write(`export enum ${singleParent} {\r\n`);
-      singleEnumItems.forEach((val) => {
-        ws.write(`  ${val} = "${val}",\r\n`);
+      ws.write(`export type ${singleParent} =\r\n`);
+      singleEnumItems.forEach((val, index, arr) => {
+        ws.write(`  | "${val}"\r\n${index == arr.length - 1 ? ";" : ""}`);
       });
-      ws.write(`};\r\n\r\n`);
+      ws.write(`\r\n`);
     });
 
   Object.entries(classTypes)
@@ -353,11 +362,4 @@ export const writeClasses = (schemas: Array<SchemaType>) => {
     });
 
   ws.end();
-  // get imports
-  // get
 };
-// write derivative classes
-// import * from index.d.ts
-// write out the interfaces
-// import everything to index.d.ts
-// lint
