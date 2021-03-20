@@ -58,6 +58,8 @@ export const getComment = getMeta("rdfs:comment");
 export const renderComment = (ws: WriteStream, schema: SchemaType) => {
   ws.write(`/**\r\n`);
   ws.write(`*\r\n`);
+  ws.write(`* @see @link https://schema.org/${getLabel(schema)}\r\n`);
+  ws.write(`*\r\n`);
   ws.write(`* @remarks\r\n`);
   if (schema["rdfs:comment"]) {
     const comment: string = getComment(schema);
