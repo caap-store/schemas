@@ -1,5 +1,6 @@
 import _ from "lodash";
 import * as fs from "fs";
+import { WriteStream } from "node:fs";
 
 export const CLASS_TYPE = "rdfs:Class";
 export const PROPERTY_TYPE = "rdf:Property";
@@ -7,6 +8,7 @@ export const ENUM_TYPE = "schema:Enumeration";
 export const DATATYPE_TYPE = "schema:DataType";
 export const BOOLEAN_TYPE = "schema:Boolean";
 export const SUPERSEDED_BY = "schema:supersededBy";
+export const SOURCE_TYPE = "schema:source";
 
 export type PointerType = {
   "@id": string;
@@ -15,7 +17,13 @@ export type PointerType = {
 export type SchemaType = {
   "@type": string | Array<string>;
   "@id": string;
-  "rdfs:comment"?: string;
+  "schema:isPartOf"?: PointerType;
+  "rdfs:comment"?:
+    | string
+    | {
+        "@language": string;
+        "@value": string;
+      };
   "rdfs:label":
     | string
     | {
@@ -35,10 +43,45 @@ export type SchemaWithProps = SchemaType & {
   };
 };
 
-export const getLabel = (item: SchemaType) =>
-  _.isObject(item["rdfs:label"])
-    ? item["rdfs:label"]["@value"]
-    : item["rdfs:label"];
+export const getMeta = _.curryRight(
+  (item: SchemaType, prop: "rdfs:label" | "rdfs:comment") => {
+    return typeof item[prop] == "object"
+      ? // @ts-ignore
+        item[prop]["@value"]
+      : item[prop];
+  }
+);
+
+export const getLabel = getMeta("rdfs:label");
+export const getComment = getMeta("rdfs:comment");
+
+export const renderComment = (ws: WriteStream, schema: SchemaType) => {
+  ws.write(`/**\r\n`);
+  ws.write(`*\r\n`);
+  ws.write(`* @remarks\r\n`);
+  if (schema["rdfs:comment"]) {
+    const comment: string = getComment(schema);
+    ws.write(`* ${comment}\r\n`);
+    ws.write(`*\r\n`);
+  }
+  if (schema["schema:isPartOf"]) {
+    ws.write(`* \r\n`);
+    const isPartOf = schema["schema:isPartOf"]["@id"];
+    ws.write(`* Partof: ${isPartOf}\r\n`);
+  }
+  if (schema[SOURCE_TYPE]) {
+    const sourceContents = schema[SOURCE_TYPE];
+    if (Array.isArray(sourceContents)) {
+      sourceContents.forEach((v) => {
+        ws.write(`* @see @link ${v["@id"]}\r\n`);
+      });
+    } else {
+      ws.write(`* @see @link ${sourceContents["@id"]}\r\n`);
+    }
+    ws.write(`*\r\n`);
+  }
+  ws.write(`**\/\r\n`);
+};
 
 export const toObject = (schemas: Array<SchemaType>) =>
   schemas.reduce(
@@ -131,10 +174,7 @@ export const writeDataTypes = async (dataTypes: Array<SchemaType>) => {
       default:
         rawType = "string";
     }
-    ws.write(`/**\r\n`);
-    ws.write("* ");
-    ws.write(item["rdfs:comment"]);
-    ws.write(`\r\n**\/\r\n`);
+    renderComment(ws, item);
     ws.write(`export type ${getLabel(item)} = ${rawType};\r\n `);
     ws.write(`\r\n`);
   });
@@ -320,6 +360,7 @@ export const writeClasses = (schemas: Array<SchemaType>) => {
     .forEach((id: string) => {
       const singleEnumItems = singles[id].map((item) => getLabel(item)).sort();
       const singleParent = getLabel(schemaMap[id]);
+      renderComment(ws, schemaMap[id]);
       ws.write(`export type ${singleParent} =\r\n`);
       singleEnumItems.forEach((val, index, arr) => {
         ws.write(`  | "${val}"\r\n${index == arr.length - 1 ? ";" : ""}`);
@@ -341,6 +382,7 @@ export const writeClasses = (schemas: Array<SchemaType>) => {
         // do not render enums
         return;
       } else {
+        renderComment(ws, schema);
         if (schema["rdfs:subClassOf"]) {
           const subClassInfo = schema["rdfs:subClassOf"];
           if (
