@@ -11,7 +11,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "lint": "prettier --write \"**/*.[t,j]s\"",
+    "lint": "prettier --write \"**/*.ts\"",
     "tsc": "tsc"
   },
   "bin": {
@@ -21,11 +21,11 @@
     "@tsconfig/node14": "^1.0.0",
     "@types/lodash": "^4.14.168",
     "@types/node": "^14.14.34",
-    "prettier": "^2.2.1",
-    "typescript": "^4.2.3"
+    "lodash": "^4.17.21",
+    "prettier": "^2.2.1"
   },
   "dependencies": {
-    "lodash": "^4.17.21"
+    "typescript": "^4.2.3"
   },
   "engines": {
     "node": ">=14"
