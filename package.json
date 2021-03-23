@@ -2,6 +2,10 @@
   "name": "@caap-store/schemas",
   "version": "0.1.0",
   "description": "Parsing schema.org into typescript",
+  "repository": {
+    "url": "https://github.com/caap-store/schemas"
+  },
+  "homepage": "https://github.com/caap-store/schemas",
   "main": "types/index.d.ts",
   "author": "Manu Ganji",
   "license": "MIT",
