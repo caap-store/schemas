@@ -1131,7 +1131,7 @@ case of a single file published after Zip compression, the convention of appendi
 *
 **/
 export interface Interface3DModel extends MediaObject {
-  isResizable?: Boolean | Array<Boolean>;
+  isResizable?: Boolean;
 }
 
 /**
@@ -1169,35 +1169,21 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
 *
 **/
 export interface Accommodation extends Place {
-  accommodationCategory?: Text | Array<Text>;
-  accommodationFloorPlan?: FloorPlan | Array<FloorPlan>;
-  amenityFeature?:
-    | LocationFeatureSpecification
-    | Array<LocationFeatureSpecification>;
-  floorLevel?: Text | Array<Text>;
-  floorSize?: QuantitativeValue | Array<QuantitativeValue>;
-  leaseLength?:
-    | Duration
-    | Array<Duration>
-    | QuantitativeValue
-    | Array<QuantitativeValue>;
-  numberOfBathroomsTotal?: Integer | Array<Integer>;
-  numberOfBedrooms?:
-    | QuantitativeValue
-    | Array<QuantitativeValue>
-    | Number
-    | Array<Number>;
-  numberOfFullBathrooms?: Number | Array<Number>;
-  numberOfPartialBathrooms?: Number | Array<Number>;
-  numberOfRooms?:
-    | Number
-    | Array<Number>
-    | QuantitativeValue
-    | Array<QuantitativeValue>;
-  permittedUsage?: Text | Array<Text>;
-  petsAllowed?: Text | Array<Text> | Boolean | Array<Boolean>;
-  tourBookingPage?: URL | Array<URL>;
-  yearBuilt?: Number | Array<Number>;
+  accommodationCategory?: Text;
+  accommodationFloorPlan?: FloorPlan;
+  amenityFeature?: LocationFeatureSpecification;
+  floorLevel?: Text;
+  floorSize?: QuantitativeValue;
+  leaseLength?: Duration | QuantitativeValue;
+  numberOfBathroomsTotal?: Integer;
+  numberOfBedrooms?: QuantitativeValue | Number;
+  numberOfFullBathrooms?: Number;
+  numberOfPartialBathrooms?: Number;
+  numberOfRooms?: Number | QuantitativeValue;
+  permittedUsage?: Text;
+  petsAllowed?: Text | Boolean;
+  tourBookingPage?: URL;
+  yearBuilt?: Number;
 }
 
 /**
@@ -1232,25 +1218,17 @@ export interface AchieveAction extends Action {}
  *
  **/
 export interface Action extends Thing {
-  actionStatus?: ActionStatusType | Array<ActionStatusType>;
-  agent?: Person | Array<Person> | Organization | Array<Organization>;
-  endTime?: DateTime | Array<DateTime> | Time | Array<Time>;
-  error?: Thing | Array<Thing>;
-  instrument?: Thing | Array<Thing>;
-  location?:
-    | Place
-    | Array<Place>
-    | Text
-    | Array<Text>
-    | VirtualLocation
-    | Array<VirtualLocation>
-    | PostalAddress
-    | Array<PostalAddress>;
-  object?: Thing | Array<Thing>;
-  participant?: Person | Array<Person> | Organization | Array<Organization>;
-  result?: Thing | Array<Thing>;
-  startTime?: DateTime | Array<DateTime> | Time | Array<Time>;
-  target?: EntryPoint | Array<EntryPoint>;
+  actionStatus?: ActionStatusType;
+  agent?: Person | Organization;
+  endTime?: DateTime | Time;
+  error?: Thing;
+  instrument?: Thing;
+  location?: Place | Text | VirtualLocation | PostalAddress;
+  object?: Thing;
+  participant?: Person | Organization;
+  result?: Thing;
+  startTime?: DateTime | Time;
+  target?: EntryPoint;
 }
 
 /**
@@ -1264,49 +1242,13 @@ export interface Action extends Thing {
  *
  **/
 export interface ActionAccessSpecification extends Intangible {
-  availabilityEnds?:
-    | DateTime
-    | Array<DateTime>
-    | Time
-    | Array<Time>
-    | Date
-    | Array<Date>;
-  availabilityStarts?:
-    | DateTime
-    | Array<DateTime>
-    | Date
-    | Array<Date>
-    | Time
-    | Array<Time>;
-  category?:
-    | PhysicalActivityCategory
-    | Array<PhysicalActivityCategory>
-    | Text
-    | Array<Text>
-    | URL
-    | Array<URL>
-    | Thing
-    | Array<Thing>;
-  eligibleRegion?:
-    | Text
-    | Array<Text>
-    | GeoShape
-    | Array<GeoShape>
-    | Place
-    | Array<Place>;
-  expectsAcceptanceOf?: Offer | Array<Offer>;
-  ineligibleRegion?:
-    | GeoShape
-    | Array<GeoShape>
-    | Text
-    | Array<Text>
-    | Place
-    | Array<Place>;
-  requiresSubscription?:
-    | Boolean
-    | Array<Boolean>
-    | MediaSubscription
-    | Array<MediaSubscription>;
+  availabilityEnds?: DateTime | Time | Date;
+  availabilityStarts?: DateTime | Date | Time;
+  category?: PhysicalActivityCategory | Text | URL | Thing;
+  eligibleRegion?: Text | GeoShape | Place;
+  expectsAcceptanceOf?: Offer;
+  ineligibleRegion?: GeoShape | Text | Place;
+  requiresSubscription?: Boolean | MediaSubscription;
 }
 
 /**
@@ -1373,10 +1315,10 @@ export interface AdvertiserContentArticle extends Article {}
  *
  **/
 export interface AggregateOffer extends Offer {
-  highPrice?: Number | Array<Number> | Text | Array<Text>;
-  lowPrice?: Text | Array<Text> | Number | Array<Number>;
-  offerCount?: Integer | Array<Integer>;
-  offers?: Offer | Array<Offer> | Demand | Array<Demand>;
+  highPrice?: Number | Text;
+  lowPrice?: Text | Number;
+  offerCount?: Integer;
+  offers?: Offer | Demand;
 }
 
 /**
@@ -1388,9 +1330,9 @@ export interface AggregateOffer extends Offer {
  *
  **/
 export interface AggregateRating extends Rating {
-  itemReviewed?: Thing | Array<Thing>;
-  ratingCount?: Integer | Array<Integer>;
-  reviewCount?: Integer | Array<Integer>;
+  itemReviewed?: Thing;
+  ratingCount?: Integer;
+  reviewCount?: Integer;
 }
 
 /**
@@ -1412,8 +1354,8 @@ export interface AgreeAction extends ReactAction {}
  *
  **/
 export interface Airline extends Organization {
-  boardingPolicy?: BoardingPolicyType | Array<BoardingPolicyType>;
-  iataCode?: Text | Array<Text>;
+  boardingPolicy?: BoardingPolicyType;
+  iataCode?: Text;
 }
 
 /**
@@ -1425,8 +1367,8 @@ export interface Airline extends Organization {
  *
  **/
 export interface Airport extends CivicStructure {
-  iataCode?: Text | Array<Text>;
-  icaoCode?: Text | Array<Text>;
+  iataCode?: Text;
+  icaoCode?: Text;
 }
 
 /**
@@ -1442,11 +1384,11 @@ Should not be used where the nature of the alignment can be described using a si
 *
 **/
 export interface AlignmentObject extends Intangible {
-  alignmentType?: Text | Array<Text>;
-  educationalFramework?: Text | Array<Text>;
-  targetDescription?: Text | Array<Text>;
-  targetName?: Text | Array<Text>;
-  targetUrl?: URL | Array<URL>;
+  alignmentType?: Text;
+  educationalFramework?: Text;
+  targetDescription?: Text;
+  targetName?: Text;
+  targetUrl?: URL;
 }
 
 /**
@@ -1521,14 +1463,14 @@ export interface AnalysisNewsArticle extends NewsArticle {}
  * Partof: https://health-lifesci.schema.org
  **/
 export interface AnatomicalStructure extends MedicalEntity {
-  associatedPathophysiology?: Text | Array<Text>;
-  bodyLocation?: Text | Array<Text>;
-  connectedTo?: AnatomicalStructure | Array<AnatomicalStructure>;
-  diagram?: ImageObject | Array<ImageObject>;
-  partOfSystem?: AnatomicalSystem | Array<AnatomicalSystem>;
-  relatedCondition?: MedicalCondition | Array<MedicalCondition>;
-  relatedTherapy?: MedicalTherapy | Array<MedicalTherapy>;
-  subStructure?: AnatomicalStructure | Array<AnatomicalStructure>;
+  associatedPathophysiology?: Text;
+  bodyLocation?: Text;
+  connectedTo?: AnatomicalStructure;
+  diagram?: ImageObject;
+  partOfSystem?: AnatomicalSystem;
+  relatedCondition?: MedicalCondition;
+  relatedTherapy?: MedicalTherapy;
+  subStructure?: AnatomicalStructure;
 }
 
 /**
@@ -1542,15 +1484,11 @@ export interface AnatomicalStructure extends MedicalEntity {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface AnatomicalSystem extends MedicalEntity {
-  associatedPathophysiology?: Text | Array<Text>;
-  comprisedOf?:
-    | AnatomicalSystem
-    | Array<AnatomicalSystem>
-    | AnatomicalStructure
-    | Array<AnatomicalStructure>;
-  relatedCondition?: MedicalCondition | Array<MedicalCondition>;
-  relatedStructure?: AnatomicalStructure | Array<AnatomicalStructure>;
-  relatedTherapy?: MedicalTherapy | Array<MedicalTherapy>;
+  associatedPathophysiology?: Text;
+  comprisedOf?: AnatomicalSystem | AnatomicalStructure;
+  relatedCondition?: MedicalCondition;
+  relatedStructure?: AnatomicalStructure;
+  relatedTherapy?: MedicalTherapy;
 }
 
 /**
@@ -1574,7 +1512,7 @@ export interface AnimalShelter extends LocalBusiness {}
  *
  **/
 export interface Answer extends Comment {
-  answerExplanation?: Comment | Array<Comment> | WebContent | Array<WebContent>;
+  answerExplanation?: Comment | WebContent;
 }
 
 /**
@@ -1588,12 +1526,8 @@ export interface Answer extends Comment {
  *
  **/
 export interface Apartment extends Accommodation {
-  numberOfRooms?:
-    | Number
-    | Array<Number>
-    | QuantitativeValue
-    | Array<QuantitativeValue>;
-  occupancy?: QuantitativeValue | Array<QuantitativeValue>;
+  numberOfRooms?: Number | QuantitativeValue;
+  occupancy?: QuantitativeValue;
 }
 
 /**
@@ -1605,17 +1539,11 @@ export interface Apartment extends Accommodation {
  *
  **/
 export interface ApartmentComplex extends Residence {
-  numberOfAccommodationUnits?: QuantitativeValue | Array<QuantitativeValue>;
-  numberOfAvailableAccommodationUnits?:
-    | QuantitativeValue
-    | Array<QuantitativeValue>;
-  numberOfBedrooms?:
-    | QuantitativeValue
-    | Array<QuantitativeValue>
-    | Number
-    | Array<Number>;
-  petsAllowed?: Text | Array<Text> | Boolean | Array<Boolean>;
-  tourBookingPage?: URL | Array<URL>;
+  numberOfAccommodationUnits?: QuantitativeValue;
+  numberOfAvailableAccommodationUnits?: QuantitativeValue;
+  numberOfBedrooms?: QuantitativeValue | Number;
+  petsAllowed?: Text | Boolean;
+  tourBookingPage?: URL;
 }
 
 /**
@@ -1627,11 +1555,11 @@ export interface ApartmentComplex extends Residence {
  *
  **/
 export interface APIReference extends TechArticle {
-  assembly?: Text | Array<Text>;
-  assemblyVersion?: Text | Array<Text>;
-  executableLibraryName?: Text | Array<Text>;
-  programmingModel?: Text | Array<Text>;
-  targetPlatform?: Text | Array<Text>;
+  assembly?: Text;
+  assemblyVersion?: Text;
+  executableLibraryName?: Text;
+  programmingModel?: Text;
+  targetPlatform?: Text;
 }
 
 /**
@@ -1689,14 +1617,8 @@ export interface Aquarium extends CivicStructure {}
  *
  **/
 export interface ArchiveComponent extends CreativeWork {
-  holdingArchive?: ArchiveOrganization | Array<ArchiveOrganization>;
-  itemLocation?:
-    | PostalAddress
-    | Array<PostalAddress>
-    | Place
-    | Array<Place>
-    | Text
-    | Array<Text>;
+  holdingArchive?: ArchiveOrganization;
+  itemLocation?: PostalAddress | Place | Text;
 }
 
 /**
@@ -1712,7 +1634,7 @@ export interface ArchiveComponent extends CreativeWork {
  *
  **/
 export interface ArchiveOrganization extends LocalBusiness {
-  archiveHeld?: ArchiveComponent | Array<ArchiveComponent>;
+  archiveHeld?: ArchiveComponent;
 }
 
 /**
@@ -1736,8 +1658,8 @@ export interface ArriveAction extends MoveAction {}
  * Partof: https://health-lifesci.schema.org
  **/
 export interface Artery extends Vessel {
-  arterialBranch?: AnatomicalStructure | Array<AnatomicalStructure>;
-  supplyTo?: AnatomicalStructure | Array<AnatomicalStructure>;
+  arterialBranch?: AnatomicalStructure;
+  supplyTo?: AnatomicalStructure;
 }
 
 /**
@@ -1761,18 +1683,14 @@ export interface ArtGallery extends EntertainmentBusiness {}
  *
  **/
 export interface Article extends CreativeWork {
-  articleBody?: Text | Array<Text>;
-  articleSection?: Text | Array<Text>;
-  backstory?: CreativeWork | Array<CreativeWork> | Text | Array<Text>;
-  pageEnd?: Text | Array<Text> | Integer | Array<Integer>;
-  pageStart?: Text | Array<Text> | Integer | Array<Integer>;
-  pagination?: Text | Array<Text>;
-  speakable?:
-    | SpeakableSpecification
-    | Array<SpeakableSpecification>
-    | URL
-    | Array<URL>;
-  wordCount?: Integer | Array<Integer>;
+  articleBody?: Text;
+  articleSection?: Text;
+  backstory?: CreativeWork | Text;
+  pageEnd?: Text | Integer;
+  pageStart?: Text | Integer;
+  pagination?: Text;
+  speakable?: SpeakableSpecification | URL;
+  wordCount?: Integer;
 }
 
 /**
@@ -1784,7 +1702,7 @@ export interface Article extends CreativeWork {
  *
  **/
 export interface AskAction extends CommunicateAction {
-  question?: Question | Array<Question>;
+  question?: Question;
 }
 
 /**
@@ -1855,8 +1773,8 @@ export interface Attorney extends LegalService {}
  *
  **/
 export interface Audience extends Intangible {
-  audienceType?: Text | Array<Text>;
-  geographicArea?: AdministrativeArea | Array<AdministrativeArea>;
+  audienceType?: Text;
+  geographicArea?: AdministrativeArea;
 }
 
 /**
@@ -1870,8 +1788,8 @@ export interface Audience extends Intangible {
  * Partof: https://bib.schema.org
  **/
 export interface Audiobook extends Book, AudioObject {
-  duration?: Duration | Array<Duration>;
-  readBy?: Person | Array<Person>;
+  duration?: Duration;
+  readBy?: Person;
 }
 
 /**
@@ -1885,8 +1803,8 @@ export interface Audiobook extends Book, AudioObject {
  *
  **/
 export interface AudioObject extends MediaObject {
-  caption?: Text | Array<Text> | MediaObject | Array<MediaObject>;
-  transcript?: Text | Array<Text>;
+  caption?: Text | MediaObject;
+  transcript?: Text;
 }
 
 /**
@@ -1898,15 +1816,7 @@ export interface AudioObject extends MediaObject {
  *
  **/
 export interface AuthorizeAction extends AllocateAction {
-  recipient?:
-    | Organization
-    | Array<Organization>
-    | ContactPoint
-    | Array<ContactPoint>
-    | Person
-    | Array<Person>
-    | Audience
-    | Array<Audience>;
+  recipient?: Organization | ContactPoint | Person | Audience;
 }
 
 /**
@@ -2025,9 +1935,9 @@ export interface Bakery extends FoodEstablishment {}
  *
  **/
 export interface BankAccount extends FinancialProduct {
-  accountMinimumInflow?: MonetaryAmount | Array<MonetaryAmount>;
-  accountOverdraftLimit?: MonetaryAmount | Array<MonetaryAmount>;
-  bankAccountType?: URL | Array<URL> | Text | Array<Text>;
+  accountMinimumInflow?: MonetaryAmount;
+  accountOverdraftLimit?: MonetaryAmount;
+  bankAccountType?: URL | Text;
 }
 
 /**
@@ -2104,8 +2014,8 @@ export interface BedAndBreakfast extends LodgingBusiness {}
  *
  **/
 export interface BedDetails extends Intangible {
-  numberOfBeds?: Number | Array<Number>;
-  typeOfBed?: Text | Array<Text> | BedType | Array<BedType>;
+  numberOfBeds?: Number;
+  typeOfBed?: Text | BedType;
 }
 
 /**
@@ -2150,9 +2060,9 @@ export interface BikeStore extends Store {}
  *
  **/
 export interface Blog extends CreativeWork {
-  blogPost?: BlogPosting | Array<BlogPosting>;
-  blogPosts?: BlogPosting | Array<BlogPosting>;
-  issn?: Text | Array<Text>;
+  blogPost?: BlogPosting;
+  blogPosts?: BlogPosting;
+  issn?: Text;
 }
 
 /**
@@ -2220,8 +2130,8 @@ export interface BoatTerminal extends CivicStructure {}
  *
  **/
 export interface BoatTrip extends Trip {
-  arrivalBoatTerminal?: BoatTerminal | Array<BoatTerminal>;
-  departureBoatTerminal?: BoatTerminal | Array<BoatTerminal>;
+  arrivalBoatTerminal?: BoatTerminal;
+  departureBoatTerminal?: BoatTerminal;
 }
 
 /**
@@ -2255,12 +2165,12 @@ export interface Bone extends AnatomicalStructure {}
  *
  **/
 export interface Book extends CreativeWork {
-  abridged?: Boolean | Array<Boolean>;
-  bookEdition?: Text | Array<Text>;
-  bookFormat?: BookFormatType | Array<BookFormatType>;
-  illustrator?: Person | Array<Person>;
-  isbn?: Text | Array<Text>;
-  numberOfPages?: Integer | Array<Integer>;
+  abridged?: Boolean;
+  bookEdition?: Text;
+  bookFormat?: BookFormatType;
+  illustrator?: Person;
+  isbn?: Text;
+  numberOfPages?: Integer;
 }
 
 /**
@@ -2302,7 +2212,7 @@ export interface BookStore extends Store {}
  *
  **/
 export interface BorrowAction extends TransferAction {
-  lender?: Organization | Array<Organization> | Person | Array<Person>;
+  lender?: Organization | Person;
 }
 
 /**
@@ -2338,10 +2248,10 @@ export interface BrainStructure extends AnatomicalStructure {}
  *
  **/
 export interface Brand extends Intangible {
-  aggregateRating?: AggregateRating | Array<AggregateRating>;
-  logo?: ImageObject | Array<ImageObject> | URL | Array<URL>;
-  review?: Review | Array<Review>;
-  slogan?: Text | Array<Text>;
+  aggregateRating?: AggregateRating;
+  logo?: ImageObject | URL;
+  review?: Review;
+  slogan?: Text;
 }
 
 /**
@@ -2384,16 +2294,12 @@ export interface Bridge extends CivicStructure {}
  *
  **/
 export interface BroadcastChannel extends Intangible {
-  broadcastChannelId?: Text | Array<Text>;
-  broadcastFrequency?:
-    | Text
-    | Array<Text>
-    | BroadcastFrequencySpecification
-    | Array<BroadcastFrequencySpecification>;
-  broadcastServiceTier?: Text | Array<Text>;
-  genre?: URL | Array<URL> | Text | Array<Text>;
-  inBroadcastLineup?: CableOrSatelliteService | Array<CableOrSatelliteService>;
-  providesBroadcastService?: BroadcastService | Array<BroadcastService>;
+  broadcastChannelId?: Text;
+  broadcastFrequency?: Text | BroadcastFrequencySpecification;
+  broadcastServiceTier?: Text;
+  genre?: URL | Text;
+  inBroadcastLineup?: CableOrSatelliteService;
+  providesBroadcastService?: BroadcastService;
 }
 
 /**
@@ -2405,10 +2311,10 @@ export interface BroadcastChannel extends Intangible {
  *
  **/
 export interface BroadcastEvent extends PublicationEvent {
-  broadcastOfEvent?: Event | Array<Event>;
-  isLiveBroadcast?: Boolean | Array<Boolean>;
-  subtitleLanguage?: Text | Array<Text> | Language | Array<Language>;
-  videoFormat?: Text | Array<Text>;
+  broadcastOfEvent?: Event;
+  isLiveBroadcast?: Boolean;
+  subtitleLanguage?: Text | Language;
+  videoFormat?: Text;
 }
 
 /**
@@ -2422,17 +2328,9 @@ export interface BroadcastEvent extends PublicationEvent {
  *
  **/
 export interface BroadcastFrequencySpecification extends Intangible {
-  broadcastFrequencyValue?:
-    | QuantitativeValue
-    | Array<QuantitativeValue>
-    | Number
-    | Array<Number>;
-  broadcastSignalModulation?:
-    | Text
-    | Array<Text>
-    | QualitativeValue
-    | Array<QualitativeValue>;
-  broadcastSubChannel?: Text | Array<Text>;
+  broadcastFrequencyValue?: QuantitativeValue | Number;
+  broadcastSignalModulation?: Text | QualitativeValue;
+  broadcastSubChannel?: Text;
 }
 
 /**
@@ -2444,21 +2342,17 @@ export interface BroadcastFrequencySpecification extends Intangible {
  *
  **/
 export interface BroadcastService extends Service {
-  area?: Place | Array<Place>;
-  broadcastAffiliateOf?: Organization | Array<Organization>;
-  broadcastDisplayName?: Text | Array<Text>;
-  broadcaster?: Organization | Array<Organization>;
-  broadcastFrequency?:
-    | Text
-    | Array<Text>
-    | BroadcastFrequencySpecification
-    | Array<BroadcastFrequencySpecification>;
-  broadcastTimezone?: Text | Array<Text>;
-  callSign?: Text | Array<Text>;
-  hasBroadcastChannel?: BroadcastChannel | Array<BroadcastChannel>;
-  inLanguage?: Text | Array<Text> | Language | Array<Language>;
-  parentService?: BroadcastService | Array<BroadcastService>;
-  videoFormat?: Text | Array<Text>;
+  area?: Place;
+  broadcastAffiliateOf?: Organization;
+  broadcastDisplayName?: Text;
+  broadcaster?: Organization;
+  broadcastFrequency?: Text | BroadcastFrequencySpecification;
+  broadcastTimezone?: Text;
+  callSign?: Text;
+  hasBroadcastChannel?: BroadcastChannel;
+  inLanguage?: Text | Language;
+  parentService?: BroadcastService;
+  videoFormat?: Text;
 }
 
 /**
@@ -2495,9 +2389,9 @@ export interface BuddhistTemple extends PlaceOfWorship {}
  *
  **/
 export interface BusinessAudience extends Audience {
-  numberOfEmployees?: QuantitativeValue | Array<QuantitativeValue>;
-  yearlyRevenue?: QuantitativeValue | Array<QuantitativeValue>;
-  yearsInOperation?: QuantitativeValue | Array<QuantitativeValue>;
+  numberOfEmployees?: QuantitativeValue;
+  yearlyRevenue?: QuantitativeValue;
+  yearsInOperation?: QuantitativeValue;
 }
 
 /**
@@ -2549,8 +2443,8 @@ export interface BusinessFunction extends Enumeration {}
  *
  **/
 export interface BusOrCoach extends Vehicle {
-  acrissCode?: Text | Array<Text>;
-  roofLoad?: QuantitativeValue | Array<QuantitativeValue>;
+  acrissCode?: Text;
+  roofLoad?: QuantitativeValue;
 }
 
 /**
@@ -2592,10 +2486,10 @@ export interface BusStop extends CivicStructure {}
  *
  **/
 export interface BusTrip extends Trip {
-  arrivalBusStop?: BusStop | Array<BusStop> | BusStation | Array<BusStation>;
-  busName?: Text | Array<Text>;
-  busNumber?: Text | Array<Text>;
-  departureBusStop?: BusStation | Array<BusStation> | BusStop | Array<BusStop>;
+  arrivalBusStop?: BusStop | BusStation;
+  busName?: Text;
+  busNumber?: Text;
+  departureBusStop?: BusStation | BusStop;
 }
 
 /**
@@ -2607,9 +2501,9 @@ export interface BusTrip extends Trip {
  *
  **/
 export interface BuyAction extends TradeAction {
-  seller?: Organization | Array<Organization> | Person | Array<Person>;
-  vendor?: Organization | Array<Organization> | Person | Array<Person>;
-  warrantyPromise?: WarrantyPromise | Array<WarrantyPromise>;
+  seller?: Organization | Person;
+  vendor?: Organization | Person;
+  warrantyPromise?: WarrantyPromise;
 }
 
 /**
@@ -2695,8 +2589,8 @@ export interface CancelAction extends PlanAction {}
  *
  **/
 export interface Car extends Vehicle {
-  acrissCode?: Text | Array<Text>;
-  roofLoad?: QuantitativeValue | Array<QuantitativeValue>;
+  acrissCode?: Text;
+  roofLoad?: QuantitativeValue;
 }
 
 /**
@@ -2722,8 +2616,8 @@ export interface Casino extends EntertainmentBusiness {}
  *
  **/
 export interface CategoryCode extends DefinedTerm {
-  codeValue?: Text | Array<Text>;
-  inCodeSet?: URL | Array<URL> | CategoryCodeSet | Array<CategoryCodeSet>;
+  codeValue?: Text;
+  inCodeSet?: URL | CategoryCodeSet;
 }
 
 /**
@@ -2739,7 +2633,7 @@ export interface CategoryCode extends DefinedTerm {
  *
  **/
 export interface CategoryCodeSet extends DefinedTermSet {
-  hasCategoryCode?: CategoryCode | Array<CategoryCode>;
+  hasCategoryCode?: CategoryCode;
 }
 
 /**
@@ -2768,23 +2662,23 @@ export interface CatholicChurch extends Church {}
 *
 **/
 export interface CDCPMDRecord extends StructuredValue {
-  cvdCollectionDate?: Text | Array<Text> | DateTime | Array<DateTime>;
-  cvdFacilityCounty?: Text | Array<Text>;
-  cvdFacilityId?: Text | Array<Text>;
-  cvdNumBeds?: Number | Array<Number>;
-  cvdNumBedsOcc?: Number | Array<Number>;
-  cvdNumC19Died?: Number | Array<Number>;
-  cvdNumC19HOPats?: Number | Array<Number>;
-  cvdNumC19HospPats?: Number | Array<Number>;
-  cvdNumC19MechVentPats?: Number | Array<Number>;
-  cvdNumC19OFMechVentPats?: Number | Array<Number>;
-  cvdNumC19OverflowPats?: Number | Array<Number>;
-  cvdNumICUBeds?: Number | Array<Number>;
-  cvdNumICUBedsOcc?: Number | Array<Number>;
-  cvdNumTotBeds?: Number | Array<Number>;
-  cvdNumVent?: Number | Array<Number>;
-  cvdNumVentUse?: Number | Array<Number>;
-  datePosted?: Date | Array<Date> | DateTime | Array<DateTime>;
+  cvdCollectionDate?: Text | DateTime;
+  cvdFacilityCounty?: Text;
+  cvdFacilityId?: Text;
+  cvdNumBeds?: Number;
+  cvdNumBedsOcc?: Number;
+  cvdNumC19Died?: Number;
+  cvdNumC19HOPats?: Number;
+  cvdNumC19HospPats?: Number;
+  cvdNumC19MechVentPats?: Number;
+  cvdNumC19OFMechVentPats?: Number;
+  cvdNumC19OverflowPats?: Number;
+  cvdNumICUBeds?: Number;
+  cvdNumICUBedsOcc?: Number;
+  cvdNumTotBeds?: Number;
+  cvdNumVent?: Number;
+  cvdNumVentUse?: Number;
+  datePosted?: Date | DateTime;
 }
 
 /**
@@ -2808,9 +2702,9 @@ export interface Cemetery extends CivicStructure {}
  * Partof: https://bib.schema.org
  **/
 export interface Chapter extends CreativeWork {
-  pageEnd?: Text | Array<Text> | Integer | Array<Integer>;
-  pageStart?: Text | Array<Text> | Integer | Array<Integer>;
-  pagination?: Text | Array<Text>;
+  pageEnd?: Text | Integer;
+  pageStart?: Text | Integer;
+  pagination?: Text;
 }
 
 /**
@@ -2882,8 +2776,8 @@ export interface ChildrensEvent extends Event {}
  *
  **/
 export interface ChooseAction extends AssessAction {
-  actionOption?: Text | Array<Text> | Thing | Array<Thing>;
-  option?: Thing | Array<Thing> | Text | Array<Text>;
+  actionOption?: Text | Thing;
+  option?: Thing | Text;
 }
 
 /**
@@ -2925,7 +2819,7 @@ export interface CityHall extends GovernmentBuilding {}
  *
  **/
 export interface CivicStructure extends Place {
-  openingHours?: Text | Array<Text>;
+  openingHours?: Text;
 }
 
 /**
@@ -2946,8 +2840,8 @@ export interface CivicStructure extends Place {
 *
 **/
 export interface Claim extends CreativeWork {
-  appearance?: CreativeWork | Array<CreativeWork>;
-  firstAppearance?: CreativeWork | Array<CreativeWork>;
+  appearance?: CreativeWork;
+  firstAppearance?: CreativeWork;
 }
 
 /**
@@ -2961,7 +2855,7 @@ export interface Claim extends CreativeWork {
  *
  **/
 export interface ClaimReview extends Review {
-  claimReviewed?: Text | Array<Text>;
+  claimReviewed?: Text;
 }
 
 /**
@@ -2985,17 +2879,17 @@ export interface Class extends Intangible {}
  *
  **/
 export interface Clip extends CreativeWork {
-  actor?: Person | Array<Person>;
-  actors?: Person | Array<Person>;
-  clipNumber?: Integer | Array<Integer> | Text | Array<Text>;
-  director?: Person | Array<Person>;
-  directors?: Person | Array<Person>;
-  endOffset?: HyperTocEntry | Array<HyperTocEntry> | Number | Array<Number>;
-  musicBy?: Person | Array<Person> | MusicGroup | Array<MusicGroup>;
-  partOfEpisode?: Episode | Array<Episode>;
-  partOfSeason?: CreativeWorkSeason | Array<CreativeWorkSeason>;
-  partOfSeries?: CreativeWorkSeries | Array<CreativeWorkSeries>;
-  startOffset?: HyperTocEntry | Array<HyperTocEntry> | Number | Array<Number>;
+  actor?: Person;
+  actors?: Person;
+  clipNumber?: Integer | Text;
+  director?: Person;
+  directors?: Person;
+  endOffset?: HyperTocEntry | Number;
+  musicBy?: Person | MusicGroup;
+  partOfEpisode?: Episode;
+  partOfSeason?: CreativeWorkSeason;
+  partOfSeries?: CreativeWorkSeries;
+  startOffset?: HyperTocEntry | Number;
 }
 
 /**
@@ -3029,7 +2923,7 @@ export interface Code extends CreativeWork {}
  * Partof: https://bib.schema.org
  **/
 export interface Collection extends CreativeWork {
-  collectionSize?: Integer | Array<Integer>;
+  collectionSize?: Integer;
 }
 
 /**
@@ -3100,12 +2994,12 @@ export interface ComicCoverArt extends ComicStory, CoverArt {}
 * Partof: https://bib.schema.org
 **/
 export interface ComicIssue extends PublicationIssue {
-  artist?: Person | Array<Person>;
-  colorist?: Person | Array<Person>;
-  inker?: Person | Array<Person>;
-  letterer?: Person | Array<Person>;
-  penciler?: Person | Array<Person>;
-  variantCover?: Text | Array<Text>;
+  artist?: Person;
+  colorist?: Person;
+  inker?: Person;
+  letterer?: Person;
+  penciler?: Person;
+  variantCover?: Text;
 }
 
 /**
@@ -3135,11 +3029,11 @@ export interface ComicSeries extends Periodical {}
 * Partof: https://bib.schema.org
 **/
 export interface ComicStory extends CreativeWork {
-  artist?: Person | Array<Person>;
-  colorist?: Person | Array<Person>;
-  inker?: Person | Array<Person>;
-  letterer?: Person | Array<Person>;
-  penciler?: Person | Array<Person>;
+  artist?: Person;
+  colorist?: Person;
+  inker?: Person;
+  letterer?: Person;
+  penciler?: Person;
 }
 
 /**
@@ -3151,9 +3045,9 @@ export interface ComicStory extends CreativeWork {
  *
  **/
 export interface Comment extends CreativeWork {
-  downvoteCount?: Integer | Array<Integer>;
-  parentItem?: Comment | Array<Comment>;
-  upvoteCount?: Integer | Array<Integer>;
+  downvoteCount?: Integer;
+  parentItem?: Comment;
+  upvoteCount?: Integer;
 }
 
 /**
@@ -3165,7 +3059,7 @@ export interface Comment extends CreativeWork {
  *
  **/
 export interface CommentAction extends CommunicateAction {
-  resultComment?: Comment | Array<Comment>;
+  resultComment?: Comment;
 }
 
 /**
@@ -3177,18 +3071,10 @@ export interface CommentAction extends CommunicateAction {
  *
  **/
 export interface CommunicateAction extends InteractAction {
-  about?: Thing | Array<Thing>;
-  inLanguage?: Text | Array<Text> | Language | Array<Language>;
-  language?: Language | Array<Language>;
-  recipient?:
-    | Organization
-    | Array<Organization>
-    | ContactPoint
-    | Array<ContactPoint>
-    | Person
-    | Array<Person>
-    | Audience
-    | Array<Audience>;
+  about?: Thing;
+  inLanguage?: Text | Language;
+  language?: Language;
+  recipient?: Organization | ContactPoint | Person | Audience;
 }
 
 /**
@@ -3218,12 +3104,8 @@ export interface CompleteDataFeed extends DataFeed {}
  *
  **/
 export interface CompoundPriceSpecification extends PriceSpecification {
-  priceComponent?: UnitPriceSpecification | Array<UnitPriceSpecification>;
-  priceType?:
-    | PriceTypeEnumeration
-    | Array<PriceTypeEnumeration>
-    | Text
-    | Array<Text>;
+  priceComponent?: UnitPriceSpecification;
+  priceType?: PriceTypeEnumeration | Text;
 }
 
 /**
@@ -3279,10 +3161,8 @@ export interface Consortium extends Organization {}
  *
  **/
 export interface ConsumeAction extends Action {
-  actionAccessibilityRequirement?:
-    | ActionAccessSpecification
-    | Array<ActionAccessSpecification>;
-  expectsAcceptanceOf?: Offer | Array<Offer>;
+  actionAccessibilityRequirement?: ActionAccessSpecification;
+  expectsAcceptanceOf?: Offer;
 }
 
 /**
@@ -3304,30 +3184,16 @@ export interface ContactPage extends WebPage {}
  *
  **/
 export interface ContactPoint extends StructuredValue {
-  areaServed?:
-    | Text
-    | Array<Text>
-    | Place
-    | Array<Place>
-    | AdministrativeArea
-    | Array<AdministrativeArea>
-    | GeoShape
-    | Array<GeoShape>;
-  availableLanguage?: Language | Array<Language> | Text | Array<Text>;
-  contactOption?: ContactPointOption | Array<ContactPointOption>;
-  contactType?: Text | Array<Text>;
-  email?: Text | Array<Text>;
-  faxNumber?: Text | Array<Text>;
-  hoursAvailable?: OpeningHoursSpecification | Array<OpeningHoursSpecification>;
-  productSupported?: Product | Array<Product> | Text | Array<Text>;
-  serviceArea?:
-    | Place
-    | Array<Place>
-    | AdministrativeArea
-    | Array<AdministrativeArea>
-    | GeoShape
-    | Array<GeoShape>;
-  telephone?: Text | Array<Text>;
+  areaServed?: Text | Place | AdministrativeArea | GeoShape;
+  availableLanguage?: Language | Text;
+  contactOption?: ContactPointOption;
+  contactType?: Text;
+  email?: Text;
+  faxNumber?: Text;
+  hoursAvailable?: OpeningHoursSpecification;
+  productSupported?: Product | Text;
+  serviceArea?: Place | AdministrativeArea | GeoShape;
+  telephone?: Text;
 }
 
 /**
@@ -3379,13 +3245,9 @@ export interface Conversation extends CreativeWork {}
  *
  **/
 export interface CookAction extends CreateAction {
-  foodEstablishment?:
-    | Place
-    | Array<Place>
-    | FoodEstablishment
-    | Array<FoodEstablishment>;
-  foodEvent?: FoodEvent | Array<FoodEvent>;
-  recipe?: Recipe | Array<Recipe>;
+  foodEstablishment?: Place | FoodEstablishment;
+  foodEvent?: FoodEvent;
+  recipe?: Recipe;
 }
 
 /**
@@ -3399,7 +3261,7 @@ export interface CookAction extends CreateAction {
  *
  **/
 export interface Corporation extends Organization {
-  tickerSymbol?: Text | Array<Text>;
+  tickerSymbol?: Text;
 }
 
 /**
@@ -3435,34 +3297,15 @@ export interface Country extends AdministrativeArea {}
  *
  **/
 export interface Course extends CreativeWork, LearningResource {
-  courseCode?: Text | Array<Text>;
-  coursePrerequisites?:
-    | Text
-    | Array<Text>
-    | AlignmentObject
-    | Array<AlignmentObject>
-    | Course
-    | Array<Course>;
-  educationalCredentialAwarded?:
-    | URL
-    | Array<URL>
-    | Text
-    | Array<Text>
-    | EducationalOccupationalCredential
-    | Array<EducationalOccupationalCredential>;
-  hasCourseInstance?: CourseInstance | Array<CourseInstance>;
-  numberOfCredits?:
-    | StructuredValue
-    | Array<StructuredValue>
-    | Integer
-    | Array<Integer>;
+  courseCode?: Text;
+  coursePrerequisites?: Text | AlignmentObject | Course;
+  educationalCredentialAwarded?: URL | Text | EducationalOccupationalCredential;
+  hasCourseInstance?: CourseInstance;
+  numberOfCredits?: StructuredValue | Integer;
   occupationalCredentialAwarded?:
     | URL
-    | Array<URL>
     | Text
-    | Array<Text>
-    | EducationalOccupationalCredential
-    | Array<EducationalOccupationalCredential>;
+    | EducationalOccupationalCredential;
 }
 
 /**
@@ -3474,9 +3317,9 @@ export interface Course extends CreativeWork, LearningResource {
  *
  **/
 export interface CourseInstance extends Event {
-  courseMode?: Text | Array<Text> | URL | Array<URL>;
-  courseWorkload?: Text | Array<Text>;
-  instructor?: Person | Array<Person>;
+  courseMode?: Text | URL;
+  courseWorkload?: Text;
+  instructor?: Person;
 }
 
 /**
@@ -3540,168 +3383,114 @@ export interface CreateAction extends Action {}
  *
  **/
 export interface CreativeWork extends Thing {
-  about?: Thing | Array<Thing>;
-  abstract?: Text | Array<Text>;
-  accessibilityAPI?: Text | Array<Text>;
-  accessibilityControl?: Text | Array<Text>;
-  accessibilityFeature?: Text | Array<Text>;
-  accessibilityHazard?: Text | Array<Text>;
-  accessibilitySummary?: Text | Array<Text>;
-  accessMode?: Text | Array<Text>;
-  accessModeSufficient?: ItemList | Array<ItemList>;
-  accountablePerson?: Person | Array<Person>;
-  acquireLicensePage?: URL | Array<URL> | CreativeWork | Array<CreativeWork>;
-  aggregateRating?: AggregateRating | Array<AggregateRating>;
-  alternativeHeadline?: Text | Array<Text>;
-  assesses?: DefinedTerm | Array<DefinedTerm> | Text | Array<Text>;
-  associatedMedia?: MediaObject | Array<MediaObject>;
-  audience?: Audience | Array<Audience>;
-  audio?:
-    | Clip
-    | Array<Clip>
-    | AudioObject
-    | Array<AudioObject>
-    | MusicRecording
-    | Array<MusicRecording>;
-  author?: Person | Array<Person> | Organization | Array<Organization>;
-  award?: Text | Array<Text>;
-  awards?: Text | Array<Text>;
-  character?: Person | Array<Person>;
-  citation?: Text | Array<Text> | CreativeWork | Array<CreativeWork>;
-  comment?: Comment | Array<Comment>;
-  commentCount?: Integer | Array<Integer>;
-  conditionsOfAccess?: Text | Array<Text>;
-  contentLocation?: Place | Array<Place>;
-  contentRating?: Text | Array<Text> | Rating | Array<Rating>;
-  contentReferenceTime?: DateTime | Array<DateTime>;
-  contributor?: Organization | Array<Organization> | Person | Array<Person>;
-  copyrightHolder?: Organization | Array<Organization> | Person | Array<Person>;
-  copyrightNotice?: Text | Array<Text>;
-  copyrightYear?: Number | Array<Number>;
-  correction?:
-    | CorrectionComment
-    | Array<CorrectionComment>
-    | Text
-    | Array<Text>
-    | URL
-    | Array<URL>;
-  creativeWorkStatus?: Text | Array<Text> | DefinedTerm | Array<DefinedTerm>;
-  creator?: Organization | Array<Organization> | Person | Array<Person>;
-  creditText?: Text | Array<Text>;
-  dateCreated?: DateTime | Array<DateTime> | Date | Array<Date>;
-  dateModified?: DateTime | Array<DateTime> | Date | Array<Date>;
-  datePublished?: Date | Array<Date> | DateTime | Array<DateTime>;
-  discussionUrl?: URL | Array<URL>;
-  editEIDR?: Text | Array<Text> | URL | Array<URL>;
-  editor?: Person | Array<Person>;
-  educationalAlignment?: AlignmentObject | Array<AlignmentObject>;
-  educationalLevel?:
-    | URL
-    | Array<URL>
-    | DefinedTerm
-    | Array<DefinedTerm>
-    | Text
-    | Array<Text>;
-  educationalUse?: Text | Array<Text> | DefinedTerm | Array<DefinedTerm>;
-  encoding?: MediaObject | Array<MediaObject>;
-  encodingFormat?: Text | Array<Text> | URL | Array<URL>;
-  encodings?: MediaObject | Array<MediaObject>;
-  exampleOfWork?: CreativeWork | Array<CreativeWork>;
-  expires?: Date | Array<Date>;
-  fileFormat?: Text | Array<Text> | URL | Array<URL>;
-  funder?: Organization | Array<Organization> | Person | Array<Person>;
-  genre?: URL | Array<URL> | Text | Array<Text>;
-  hasPart?: CreativeWork | Array<CreativeWork>;
-  headline?: Text | Array<Text>;
-  inLanguage?: Text | Array<Text> | Language | Array<Language>;
-  interactionStatistic?: InteractionCounter | Array<InteractionCounter>;
-  interactivityType?: Text | Array<Text>;
-  isAccessibleForFree?: Boolean | Array<Boolean>;
-  isBasedOn?:
-    | CreativeWork
-    | Array<CreativeWork>
-    | URL
-    | Array<URL>
-    | Product
-    | Array<Product>;
-  isBasedOnUrl?:
-    | Product
-    | Array<Product>
-    | URL
-    | Array<URL>
-    | CreativeWork
-    | Array<CreativeWork>;
-  isFamilyFriendly?: Boolean | Array<Boolean>;
-  isPartOf?: CreativeWork | Array<CreativeWork> | URL | Array<URL>;
-  keywords?:
-    | URL
-    | Array<URL>
-    | DefinedTerm
-    | Array<DefinedTerm>
-    | Text
-    | Array<Text>;
-  learningResourceType?: Text | Array<Text> | DefinedTerm | Array<DefinedTerm>;
-  license?: CreativeWork | Array<CreativeWork> | URL | Array<URL>;
-  locationCreated?: Place | Array<Place>;
-  mainEntity?: Thing | Array<Thing>;
-  maintainer?: Person | Array<Person> | Organization | Array<Organization>;
-  material?: Product | Array<Product> | Text | Array<Text> | URL | Array<URL>;
-  materialExtent?:
-    | Text
-    | Array<Text>
-    | QuantitativeValue
-    | Array<QuantitativeValue>;
-  mentions?: Thing | Array<Thing>;
-  offers?: Offer | Array<Offer> | Demand | Array<Demand>;
-  pattern?: Text | Array<Text> | DefinedTerm | Array<DefinedTerm>;
-  position?: Text | Array<Text> | Integer | Array<Integer>;
-  producer?: Organization | Array<Organization> | Person | Array<Person>;
-  provider?: Organization | Array<Organization> | Person | Array<Person>;
-  publication?: PublicationEvent | Array<PublicationEvent>;
-  publisher?: Organization | Array<Organization> | Person | Array<Person>;
-  publisherImprint?: Organization | Array<Organization>;
-  publishingPrinciples?: URL | Array<URL> | CreativeWork | Array<CreativeWork>;
-  recordedAt?: Event | Array<Event>;
-  releasedEvent?: PublicationEvent | Array<PublicationEvent>;
-  review?: Review | Array<Review>;
-  reviews?: Review | Array<Review>;
-  schemaVersion?: Text | Array<Text> | URL | Array<URL>;
-  sdDatePublished?: Date | Array<Date>;
-  sdLicense?: URL | Array<URL> | CreativeWork | Array<CreativeWork>;
-  sdPublisher?: Organization | Array<Organization> | Person | Array<Person>;
-  size?:
-    | DefinedTerm
-    | Array<DefinedTerm>
-    | SizeSpecification
-    | Array<SizeSpecification>
-    | QuantitativeValue
-    | Array<QuantitativeValue>
-    | Text
-    | Array<Text>;
-  sourceOrganization?: Organization | Array<Organization>;
-  spatial?: Place | Array<Place>;
-  spatialCoverage?: Place | Array<Place>;
-  sponsor?: Person | Array<Person> | Organization | Array<Organization>;
-  teaches?: Text | Array<Text> | DefinedTerm | Array<DefinedTerm>;
-  temporal?: DateTime | Array<DateTime> | Text | Array<Text>;
-  temporalCoverage?:
-    | Text
-    | Array<Text>
-    | DateTime
-    | Array<DateTime>
-    | URL
-    | Array<URL>;
-  text?: Text | Array<Text>;
-  thumbnailUrl?: URL | Array<URL>;
-  timeRequired?: Duration | Array<Duration>;
-  translationOfWork?: CreativeWork | Array<CreativeWork>;
-  translator?: Person | Array<Person> | Organization | Array<Organization>;
-  typicalAgeRange?: Text | Array<Text>;
-  usageInfo?: CreativeWork | Array<CreativeWork> | URL | Array<URL>;
-  version?: Number | Array<Number> | Text | Array<Text>;
-  video?: Clip | Array<Clip> | VideoObject | Array<VideoObject>;
-  workExample?: CreativeWork | Array<CreativeWork>;
-  workTranslation?: CreativeWork | Array<CreativeWork>;
+  about?: Thing;
+  abstract?: Text;
+  accessibilityAPI?: Text;
+  accessibilityControl?: Text;
+  accessibilityFeature?: Text;
+  accessibilityHazard?: Text;
+  accessibilitySummary?: Text;
+  accessMode?: Text;
+  accessModeSufficient?: ItemList;
+  accountablePerson?: Person;
+  acquireLicensePage?: URL | CreativeWork;
+  aggregateRating?: AggregateRating;
+  alternativeHeadline?: Text;
+  assesses?: DefinedTerm | Text;
+  associatedMedia?: MediaObject;
+  audience?: Audience;
+  audio?: Clip | AudioObject | MusicRecording;
+  author?: Person | Organization;
+  award?: Text;
+  awards?: Text;
+  character?: Person;
+  citation?: Text | CreativeWork;
+  comment?: Comment;
+  commentCount?: Integer;
+  conditionsOfAccess?: Text;
+  contentLocation?: Place;
+  contentRating?: Text | Rating;
+  contentReferenceTime?: DateTime;
+  contributor?: Organization | Person;
+  copyrightHolder?: Organization | Person;
+  copyrightNotice?: Text;
+  copyrightYear?: Number;
+  correction?: CorrectionComment | Text | URL;
+  creativeWorkStatus?: Text | DefinedTerm;
+  creator?: Organization | Person;
+  creditText?: Text;
+  dateCreated?: DateTime | Date;
+  dateModified?: DateTime | Date;
+  datePublished?: Date | DateTime;
+  discussionUrl?: URL;
+  editEIDR?: Text | URL;
+  editor?: Person;
+  educationalAlignment?: AlignmentObject;
+  educationalLevel?: URL | DefinedTerm | Text;
+  educationalUse?: Text | DefinedTerm;
+  encoding?: MediaObject;
+  encodingFormat?: Text | URL;
+  encodings?: MediaObject;
+  exampleOfWork?: CreativeWork;
+  expires?: Date;
+  fileFormat?: Text | URL;
+  funder?: Organization | Person;
+  genre?: URL | Text;
+  hasPart?: CreativeWork;
+  headline?: Text;
+  inLanguage?: Text | Language;
+  interactionStatistic?: InteractionCounter;
+  interactivityType?: Text;
+  isAccessibleForFree?: Boolean;
+  isBasedOn?: CreativeWork | URL | Product;
+  isBasedOnUrl?: Product | URL | CreativeWork;
+  isFamilyFriendly?: Boolean;
+  isPartOf?: CreativeWork | URL;
+  keywords?: URL | DefinedTerm | Text;
+  learningResourceType?: Text | DefinedTerm;
+  license?: CreativeWork | URL;
+  locationCreated?: Place;
+  mainEntity?: Thing;
+  maintainer?: Person | Organization;
+  material?: Product | Text | URL;
+  materialExtent?: Text | QuantitativeValue;
+  mentions?: Thing;
+  offers?: Offer | Demand;
+  pattern?: Text | DefinedTerm;
+  position?: Text | Integer;
+  producer?: Organization | Person;
+  provider?: Organization | Person;
+  publication?: PublicationEvent;
+  publisher?: Organization | Person;
+  publisherImprint?: Organization;
+  publishingPrinciples?: URL | CreativeWork;
+  recordedAt?: Event;
+  releasedEvent?: PublicationEvent;
+  review?: Review;
+  reviews?: Review;
+  schemaVersion?: Text | URL;
+  sdDatePublished?: Date;
+  sdLicense?: URL | CreativeWork;
+  sdPublisher?: Organization | Person;
+  size?: DefinedTerm | SizeSpecification | QuantitativeValue | Text;
+  sourceOrganization?: Organization;
+  spatial?: Place;
+  spatialCoverage?: Place;
+  sponsor?: Person | Organization;
+  teaches?: Text | DefinedTerm;
+  temporal?: DateTime | Text;
+  temporalCoverage?: Text | DateTime | URL;
+  text?: Text;
+  thumbnailUrl?: URL;
+  timeRequired?: Duration;
+  translationOfWork?: CreativeWork;
+  translator?: Person | Organization;
+  typicalAgeRange?: Text;
+  usageInfo?: CreativeWork | URL;
+  version?: Number | Text;
+  video?: Clip | VideoObject;
+  workExample?: CreativeWork;
+  workTranslation?: CreativeWork;
 }
 
 /**
@@ -3713,17 +3502,17 @@ export interface CreativeWork extends Thing {
  *
  **/
 export interface CreativeWorkSeason extends CreativeWork {
-  actor?: Person | Array<Person>;
-  director?: Person | Array<Person>;
-  endDate?: Date | Array<Date> | DateTime | Array<DateTime>;
-  episode?: Episode | Array<Episode>;
-  episodes?: Episode | Array<Episode>;
-  numberOfEpisodes?: Integer | Array<Integer>;
-  partOfSeries?: CreativeWorkSeries | Array<CreativeWorkSeries>;
-  productionCompany?: Organization | Array<Organization>;
-  seasonNumber?: Integer | Array<Integer> | Text | Array<Text>;
-  startDate?: DateTime | Array<DateTime> | Date | Array<Date>;
-  trailer?: VideoObject | Array<VideoObject>;
+  actor?: Person;
+  director?: Person;
+  endDate?: Date | DateTime;
+  episode?: Episode;
+  episodes?: Episode;
+  numberOfEpisodes?: Integer;
+  partOfSeries?: CreativeWorkSeries;
+  productionCompany?: Organization;
+  seasonNumber?: Integer | Text;
+  startDate?: DateTime | Date;
+  trailer?: VideoObject;
 }
 
 /**
@@ -3736,9 +3525,9 @@ export interface CreativeWorkSeason extends CreativeWork {
 *
 **/
 export interface CreativeWorkSeries extends Series, CreativeWork {
-  endDate?: Date | Array<Date> | DateTime | Array<DateTime>;
-  issn?: Text | Array<Text>;
-  startDate?: DateTime | Array<DateTime> | Date | Array<Date>;
+  endDate?: Date | DateTime;
+  issn?: Text;
+  startDate?: DateTime | Date;
 }
 
 /**
@@ -3836,8 +3625,8 @@ export interface DanceGroup extends PerformingGroup {}
  *
  **/
 export interface DataCatalog extends CreativeWork {
-  dataset?: Dataset | Array<Dataset>;
-  measurementTechnique?: Text | Array<Text> | URL | Array<URL>;
+  dataset?: Dataset;
+  measurementTechnique?: Text | URL;
 }
 
 /**
@@ -3851,7 +3640,7 @@ export interface DataCatalog extends CreativeWork {
  *
  **/
 export interface DataDownload extends MediaObject {
-  measurementTechnique?: Text | Array<Text> | URL | Array<URL>;
+  measurementTechnique?: Text | URL;
 }
 
 /**
@@ -3863,13 +3652,7 @@ export interface DataDownload extends MediaObject {
  *
  **/
 export interface DataFeed extends Dataset {
-  dataFeedElement?:
-    | Thing
-    | Array<Thing>
-    | Text
-    | Array<Text>
-    | DataFeedItem
-    | Array<DataFeedItem>;
+  dataFeedElement?: Thing | Text | DataFeedItem;
 }
 
 /**
@@ -3881,10 +3664,10 @@ export interface DataFeed extends Dataset {
  *
  **/
 export interface DataFeedItem extends Intangible {
-  dateCreated?: DateTime | Array<DateTime> | Date | Array<Date>;
-  dateDeleted?: DateTime | Array<DateTime> | Date | Array<Date>;
-  dateModified?: DateTime | Array<DateTime> | Date | Array<Date>;
-  item?: Thing | Array<Thing>;
+  dateCreated?: DateTime | Date;
+  dateDeleted?: DateTime | Date;
+  dateModified?: DateTime | Date;
+  item?: Thing;
 }
 
 /**
@@ -3898,14 +3681,14 @@ export interface DataFeedItem extends Intangible {
  *
  **/
 export interface Dataset extends CreativeWork {
-  catalog?: DataCatalog | Array<DataCatalog>;
-  datasetTimeInterval?: DateTime | Array<DateTime>;
-  distribution?: DataDownload | Array<DataDownload>;
-  includedDataCatalog?: DataCatalog | Array<DataCatalog>;
-  includedInDataCatalog?: DataCatalog | Array<DataCatalog>;
-  issn?: Text | Array<Text>;
-  measurementTechnique?: Text | Array<Text> | URL | Array<URL>;
-  variableMeasured?: Text | Array<Text> | PropertyValue | Array<PropertyValue>;
+  catalog?: DataCatalog;
+  datasetTimeInterval?: DateTime;
+  distribution?: DataDownload;
+  includedDataCatalog?: DataCatalog;
+  includedInDataCatalog?: DataCatalog;
+  issn?: Text;
+  measurementTechnique?: Text | URL;
+  variableMeasured?: Text | PropertyValue;
 }
 
 /**
@@ -3917,10 +3700,10 @@ export interface Dataset extends CreativeWork {
  *
  **/
 export interface DatedMoneySpecification extends StructuredValue {
-  amount?: Number | Array<Number> | MonetaryAmount | Array<MonetaryAmount>;
-  currency?: Text | Array<Text>;
-  endDate?: Date | Array<Date> | DateTime | Array<DateTime>;
-  startDate?: DateTime | Array<DateTime> | Date | Array<Date>;
+  amount?: Number | MonetaryAmount;
+  currency?: Text;
+  endDate?: Date | DateTime;
+  startDate?: DateTime | Date;
 }
 
 /**
@@ -3944,8 +3727,8 @@ export interface DaySpa extends HealthAndBeautyBusiness {}
  * Partof: https://health-lifesci.schema.org
  **/
 export interface DDxElement extends MedicalIntangible {
-  diagnosis?: MedicalCondition | Array<MedicalCondition>;
-  distinguishingSign?: MedicalSignOrSymptom | Array<MedicalSignOrSymptom>;
+  diagnosis?: MedicalCondition;
+  distinguishingSign?: MedicalSignOrSymptom;
 }
 
 /**
@@ -3994,13 +3777,11 @@ Region = state, canton, prefecture, autonomous community...
 *
 **/
 export interface DefinedRegion extends StructuredValue {
-  addressCountry?: Text | Array<Text> | Country | Array<Country>;
-  addressRegion?: Text | Array<Text>;
-  postalCode?: Text | Array<Text>;
-  postalCodePrefix?: Text | Array<Text>;
-  postalCodeRange?:
-    | PostalCodeRangeSpecification
-    | Array<PostalCodeRangeSpecification>;
+  addressCountry?: Text | Country;
+  addressRegion?: Text;
+  postalCode?: Text;
+  postalCodePrefix?: Text;
+  postalCodeRange?: PostalCodeRangeSpecification;
 }
 
 /**
@@ -4016,8 +3797,8 @@ export interface DefinedRegion extends StructuredValue {
  *
  **/
 export interface DefinedTerm extends Intangible {
-  inDefinedTermSet?: DefinedTermSet | Array<DefinedTermSet> | URL | Array<URL>;
-  termCode?: Text | Array<Text>;
+  inDefinedTermSet?: DefinedTermSet | URL;
+  termCode?: Text;
 }
 
 /**
@@ -4033,7 +3814,7 @@ export interface DefinedTerm extends Intangible {
  *
  **/
 export interface DefinedTermSet extends CreativeWork {
-  hasDefinedTerm?: DefinedTerm | Array<DefinedTerm>;
+  hasDefinedTerm?: DefinedTerm;
 }
 
 /**
@@ -4057,30 +3838,10 @@ export interface DeleteAction extends UpdateAction {}
  *
  **/
 export interface DeliveryChargeSpecification extends PriceSpecification {
-  appliesToDeliveryMethod?: DeliveryMethod | Array<DeliveryMethod>;
-  areaServed?:
-    | Text
-    | Array<Text>
-    | Place
-    | Array<Place>
-    | AdministrativeArea
-    | Array<AdministrativeArea>
-    | GeoShape
-    | Array<GeoShape>;
-  eligibleRegion?:
-    | Text
-    | Array<Text>
-    | GeoShape
-    | Array<GeoShape>
-    | Place
-    | Array<Place>;
-  ineligibleRegion?:
-    | GeoShape
-    | Array<GeoShape>
-    | Text
-    | Array<Text>
-    | Place
-    | Array<Place>;
+  appliesToDeliveryMethod?: DeliveryMethod;
+  areaServed?: Text | Place | AdministrativeArea | GeoShape;
+  eligibleRegion?: Text | GeoShape | Place;
+  ineligibleRegion?: GeoShape | Text | Place;
 }
 
 /**
@@ -4092,10 +3853,10 @@ export interface DeliveryChargeSpecification extends PriceSpecification {
  *
  **/
 export interface DeliveryEvent extends Event {
-  accessCode?: Text | Array<Text>;
-  availableFrom?: DateTime | Array<DateTime>;
-  availableThrough?: DateTime | Array<DateTime>;
-  hasDeliveryMethod?: DeliveryMethod | Array<DeliveryMethod>;
+  accessCode?: Text;
+  availableFrom?: DateTime;
+  availableThrough?: DateTime;
+  hasDeliveryMethod?: DeliveryMethod;
 }
 
 /**
@@ -4111,10 +3872,10 @@ export interface DeliveryEvent extends Event {
  *
  **/
 export interface DeliveryTimeSettings extends StructuredValue {
-  deliveryTime?: ShippingDeliveryTime | Array<ShippingDeliveryTime>;
-  isUnlabelledFallback?: Boolean | Array<Boolean>;
-  shippingDestination?: DefinedRegion | Array<DefinedRegion>;
-  transitTimeLabel?: Text | Array<Text>;
+  deliveryTime?: ShippingDeliveryTime;
+  isUnlabelledFallback?: Boolean;
+  shippingDestination?: DefinedRegion;
+  transitTimeLabel?: Text;
 }
 
 /**
@@ -4128,89 +3889,46 @@ export interface DeliveryTimeSettings extends StructuredValue {
  *
  **/
 export interface Demand extends Intangible {
-  acceptedPaymentMethod?:
-    | LoanOrCredit
-    | Array<LoanOrCredit>
-    | PaymentMethod
-    | Array<PaymentMethod>;
-  advanceBookingRequirement?: QuantitativeValue | Array<QuantitativeValue>;
-  areaServed?:
-    | Text
-    | Array<Text>
-    | Place
-    | Array<Place>
-    | AdministrativeArea
-    | Array<AdministrativeArea>
-    | GeoShape
-    | Array<GeoShape>;
-  availability?: ItemAvailability | Array<ItemAvailability>;
-  availabilityEnds?:
-    | DateTime
-    | Array<DateTime>
-    | Time
-    | Array<Time>
-    | Date
-    | Array<Date>;
-  availabilityStarts?:
-    | DateTime
-    | Array<DateTime>
-    | Date
-    | Array<Date>
-    | Time
-    | Array<Time>;
-  availableAtOrFrom?: Place | Array<Place>;
-  availableDeliveryMethod?: DeliveryMethod | Array<DeliveryMethod>;
-  businessFunction?: BusinessFunction | Array<BusinessFunction>;
-  deliveryLeadTime?: QuantitativeValue | Array<QuantitativeValue>;
-  eligibleCustomerType?: BusinessEntityType | Array<BusinessEntityType>;
-  eligibleDuration?: QuantitativeValue | Array<QuantitativeValue>;
-  eligibleQuantity?: QuantitativeValue | Array<QuantitativeValue>;
-  eligibleRegion?:
-    | Text
-    | Array<Text>
-    | GeoShape
-    | Array<GeoShape>
-    | Place
-    | Array<Place>;
-  eligibleTransactionVolume?: PriceSpecification | Array<PriceSpecification>;
-  gtin?: Text | Array<Text>;
-  gtin12?: Text | Array<Text>;
-  gtin13?: Text | Array<Text>;
-  gtin14?: Text | Array<Text>;
-  gtin8?: Text | Array<Text>;
-  includesObject?: TypeAndQuantityNode | Array<TypeAndQuantityNode>;
-  ineligibleRegion?:
-    | GeoShape
-    | Array<GeoShape>
-    | Text
-    | Array<Text>
-    | Place
-    | Array<Place>;
-  inventoryLevel?: QuantitativeValue | Array<QuantitativeValue>;
-  itemCondition?: OfferItemCondition | Array<OfferItemCondition>;
+  acceptedPaymentMethod?: LoanOrCredit | PaymentMethod;
+  advanceBookingRequirement?: QuantitativeValue;
+  areaServed?: Text | Place | AdministrativeArea | GeoShape;
+  availability?: ItemAvailability;
+  availabilityEnds?: DateTime | Time | Date;
+  availabilityStarts?: DateTime | Date | Time;
+  availableAtOrFrom?: Place;
+  availableDeliveryMethod?: DeliveryMethod;
+  businessFunction?: BusinessFunction;
+  deliveryLeadTime?: QuantitativeValue;
+  eligibleCustomerType?: BusinessEntityType;
+  eligibleDuration?: QuantitativeValue;
+  eligibleQuantity?: QuantitativeValue;
+  eligibleRegion?: Text | GeoShape | Place;
+  eligibleTransactionVolume?: PriceSpecification;
+  gtin?: Text;
+  gtin12?: Text;
+  gtin13?: Text;
+  gtin14?: Text;
+  gtin8?: Text;
+  includesObject?: TypeAndQuantityNode;
+  ineligibleRegion?: GeoShape | Text | Place;
+  inventoryLevel?: QuantitativeValue;
+  itemCondition?: OfferItemCondition;
   itemOffered?:
     | Trip
-    | Array<Trip>
     | Product
-    | Array<Product>
     | MenuItem
-    | Array<MenuItem>
     | Service
-    | Array<Service>
     | Event
-    | Array<Event>
     | CreativeWork
-    | Array<CreativeWork>
-    | AggregateOffer
-    | Array<AggregateOffer>;
-  mpn?: Text | Array<Text>;
-  priceSpecification?: PriceSpecification | Array<PriceSpecification>;
-  seller?: Organization | Array<Organization> | Person | Array<Person>;
-  serialNumber?: Text | Array<Text>;
-  sku?: Text | Array<Text>;
-  validFrom?: DateTime | Array<DateTime> | Date | Array<Date>;
-  validThrough?: DateTime | Array<DateTime> | Date | Array<Date>;
-  warranty?: WarrantyPromise | Array<WarrantyPromise>;
+    | AggregateOffer;
+  mpn?: Text;
+  priceSpecification?: PriceSpecification;
+  seller?: Organization | Person;
+  serialNumber?: Text;
+  sku?: Text;
+  validFrom?: DateTime | Date;
+  validThrough?: DateTime | Date;
+  warranty?: WarrantyPromise;
 }
 
 /**
@@ -4269,7 +3987,7 @@ export interface DepositAccount extends BankAccount, InvestmentOrDeposit {}
  * Partof: https://health-lifesci.schema.org
  **/
 export interface DiagnosticLab extends MedicalOrganization {
-  availableTest?: MedicalTest | Array<MedicalTest>;
+  availableTest?: MedicalTest;
 }
 
 /**
@@ -4295,11 +4013,11 @@ export interface DiagnosticProcedure extends MedicalProcedure {}
  * Partof: https://health-lifesci.schema.org
  **/
 export interface Diet extends LifestyleModification, CreativeWork {
-  dietFeatures?: Text | Array<Text>;
-  endorsers?: Organization | Array<Organization> | Person | Array<Person>;
-  expertConsiderations?: Text | Array<Text>;
-  physiologicalBenefits?: Text | Array<Text>;
-  risks?: Text | Array<Text>;
+  dietFeatures?: Text;
+  endorsers?: Organization | Person;
+  expertConsiderations?: Text;
+  physiologicalBenefits?: Text;
+  risks?: Text;
 }
 
 /**
@@ -4313,23 +4031,17 @@ export interface Diet extends LifestyleModification, CreativeWork {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface DietarySupplement extends Substance {
-  activeIngredient?: Text | Array<Text>;
-  isProprietary?: Boolean | Array<Boolean>;
-  legalStatus?:
-    | MedicalEnumeration
-    | Array<MedicalEnumeration>
-    | Text
-    | Array<Text>
-    | DrugLegalStatus
-    | Array<DrugLegalStatus>;
-  manufacturer?: Organization | Array<Organization>;
-  maximumIntake?: MaximumDoseSchedule | Array<MaximumDoseSchedule>;
-  mechanismOfAction?: Text | Array<Text>;
-  nonProprietaryName?: Text | Array<Text>;
-  proprietaryName?: Text | Array<Text>;
-  recommendedIntake?: RecommendedDoseSchedule | Array<RecommendedDoseSchedule>;
-  safetyConsideration?: Text | Array<Text>;
-  targetPopulation?: Text | Array<Text>;
+  activeIngredient?: Text;
+  isProprietary?: Boolean;
+  legalStatus?: MedicalEnumeration | Text | DrugLegalStatus;
+  manufacturer?: Organization;
+  maximumIntake?: MaximumDoseSchedule;
+  mechanismOfAction?: Text;
+  nonProprietaryName?: Text;
+  proprietaryName?: Text;
+  recommendedIntake?: RecommendedDoseSchedule;
+  safetyConsideration?: Text;
+  targetPopulation?: Text;
 }
 
 /**
@@ -4341,9 +4053,7 @@ export interface DietarySupplement extends Substance {
  *
  **/
 export interface DigitalDocument extends CreativeWork {
-  hasDigitalDocumentPermission?:
-    | DigitalDocumentPermission
-    | Array<DigitalDocumentPermission>;
+  hasDigitalDocumentPermission?: DigitalDocumentPermission;
 }
 
 /**
@@ -4355,18 +4065,8 @@ export interface DigitalDocument extends CreativeWork {
  *
  **/
 export interface DigitalDocumentPermission extends Intangible {
-  grantee?:
-    | Organization
-    | Array<Organization>
-    | Person
-    | Array<Person>
-    | Audience
-    | Array<Audience>
-    | ContactPoint
-    | Array<ContactPoint>;
-  permissionType?:
-    | DigitalDocumentPermissionType
-    | Array<DigitalDocumentPermissionType>;
+  grantee?: Organization | Person | Audience | ContactPoint;
+  permissionType?: DigitalDocumentPermissionType;
 }
 
 /**
@@ -4440,15 +4140,7 @@ export interface Distillery extends FoodEstablishment {}
  *
  **/
 export interface DonateAction extends TradeAction {
-  recipient?:
-    | Organization
-    | Array<Organization>
-    | ContactPoint
-    | Array<ContactPoint>
-    | Person
-    | Array<Person>
-    | Audience
-    | Array<Audience>;
+  recipient?: Organization | ContactPoint | Person | Audience;
 }
 
 /**
@@ -4462,14 +4154,10 @@ export interface DonateAction extends TradeAction {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface DoseSchedule extends MedicalIntangible {
-  doseUnit?: Text | Array<Text>;
-  doseValue?:
-    | Number
-    | Array<Number>
-    | QualitativeValue
-    | Array<QualitativeValue>;
-  frequency?: Text | Array<Text>;
-  targetPopulation?: Text | Array<Text>;
+  doseUnit?: Text;
+  doseValue?: Number | QualitativeValue;
+  frequency?: Text;
+  targetPopulation?: Text;
 }
 
 /**
@@ -4527,49 +4215,37 @@ export interface DrinkAction extends ConsumeAction {}
  * Partof: https://health-lifesci.schema.org
  **/
 export interface Drug extends Substance {
-  activeIngredient?: Text | Array<Text>;
-  administrationRoute?: Text | Array<Text>;
-  alcoholWarning?: Text | Array<Text>;
-  availableStrength?: DrugStrength | Array<DrugStrength>;
-  breastfeedingWarning?: Text | Array<Text>;
-  clincalPharmacology?: Text | Array<Text>;
-  clinicalPharmacology?: Text | Array<Text>;
-  dosageForm?: Text | Array<Text>;
-  doseSchedule?: DoseSchedule | Array<DoseSchedule>;
-  drugClass?: DrugClass | Array<DrugClass>;
-  drugUnit?: Text | Array<Text>;
-  foodWarning?: Text | Array<Text>;
-  includedInHealthInsurancePlan?:
-    | HealthInsurancePlan
-    | Array<HealthInsurancePlan>;
-  interactingDrug?: Drug | Array<Drug>;
-  isAvailableGenerically?: Boolean | Array<Boolean>;
-  isProprietary?: Boolean | Array<Boolean>;
-  labelDetails?: URL | Array<URL>;
-  legalStatus?:
-    | MedicalEnumeration
-    | Array<MedicalEnumeration>
-    | Text
-    | Array<Text>
-    | DrugLegalStatus
-    | Array<DrugLegalStatus>;
-  manufacturer?: Organization | Array<Organization>;
-  maximumIntake?: MaximumDoseSchedule | Array<MaximumDoseSchedule>;
-  mechanismOfAction?: Text | Array<Text>;
-  nonProprietaryName?: Text | Array<Text>;
-  overdosage?: Text | Array<Text>;
-  pregnancyCategory?: DrugPregnancyCategory | Array<DrugPregnancyCategory>;
-  pregnancyWarning?: Text | Array<Text>;
-  prescribingInfo?: URL | Array<URL>;
-  prescriptionStatus?:
-    | DrugPrescriptionStatus
-    | Array<DrugPrescriptionStatus>
-    | Text
-    | Array<Text>;
-  proprietaryName?: Text | Array<Text>;
-  relatedDrug?: Drug | Array<Drug>;
-  rxcui?: Text | Array<Text>;
-  warning?: URL | Array<URL> | Text | Array<Text>;
+  activeIngredient?: Text;
+  administrationRoute?: Text;
+  alcoholWarning?: Text;
+  availableStrength?: DrugStrength;
+  breastfeedingWarning?: Text;
+  clincalPharmacology?: Text;
+  clinicalPharmacology?: Text;
+  dosageForm?: Text;
+  doseSchedule?: DoseSchedule;
+  drugClass?: DrugClass;
+  drugUnit?: Text;
+  foodWarning?: Text;
+  includedInHealthInsurancePlan?: HealthInsurancePlan;
+  interactingDrug?: Drug;
+  isAvailableGenerically?: Boolean;
+  isProprietary?: Boolean;
+  labelDetails?: URL;
+  legalStatus?: MedicalEnumeration | Text | DrugLegalStatus;
+  manufacturer?: Organization;
+  maximumIntake?: MaximumDoseSchedule;
+  mechanismOfAction?: Text;
+  nonProprietaryName?: Text;
+  overdosage?: Text;
+  pregnancyCategory?: DrugPregnancyCategory;
+  pregnancyWarning?: Text;
+  prescribingInfo?: URL;
+  prescriptionStatus?: DrugPrescriptionStatus | Text;
+  proprietaryName?: Text;
+  relatedDrug?: Drug;
+  rxcui?: Text;
+  warning?: URL | Text;
 }
 
 /**
@@ -4583,7 +4259,7 @@ export interface Drug extends Substance {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface DrugClass extends MedicalEntity {
-  drug?: Drug | Array<Drug>;
+  drug?: Drug;
 }
 
 /**
@@ -4597,18 +4273,12 @@ export interface DrugClass extends MedicalEntity {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface DrugCost extends MedicalEntity {
-  applicableLocation?: AdministrativeArea | Array<AdministrativeArea>;
-  costCategory?: DrugCostCategory | Array<DrugCostCategory>;
-  costCurrency?: Text | Array<Text>;
-  costOrigin?: Text | Array<Text>;
-  costPerUnit?:
-    | Text
-    | Array<Text>
-    | QualitativeValue
-    | Array<QualitativeValue>
-    | Number
-    | Array<Number>;
-  drugUnit?: Text | Array<Text>;
+  applicableLocation?: AdministrativeArea;
+  costCategory?: DrugCostCategory;
+  costCurrency?: Text;
+  costOrigin?: Text;
+  costPerUnit?: Text | QualitativeValue | Number;
+  drugUnit?: Text;
 }
 
 /**
@@ -4622,7 +4292,7 @@ export interface DrugCost extends MedicalEntity {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface DrugLegalStatus extends MedicalIntangible {
-  applicableLocation?: AdministrativeArea | Array<AdministrativeArea>;
+  applicableLocation?: AdministrativeArea;
 }
 
 /**
@@ -4636,11 +4306,11 @@ export interface DrugLegalStatus extends MedicalIntangible {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface DrugStrength extends MedicalIntangible {
-  activeIngredient?: Text | Array<Text>;
-  availableIn?: AdministrativeArea | Array<AdministrativeArea>;
-  maximumIntake?: MaximumDoseSchedule | Array<MaximumDoseSchedule>;
-  strengthUnit?: Text | Array<Text>;
-  strengthValue?: Number | Array<Number>;
+  activeIngredient?: Text;
+  availableIn?: AdministrativeArea;
+  maximumIntake?: MaximumDoseSchedule;
+  strengthUnit?: Text;
+  strengthValue?: Number;
 }
 
 /**
@@ -4684,7 +4354,7 @@ export interface EatAction extends ConsumeAction {}
  *
  **/
 export interface EducationalAudience extends Audience {
-  educationalRole?: Text | Array<Text>;
+  educationalRole?: Text;
 }
 
 /**
@@ -4700,30 +4370,12 @@ export interface EducationalAudience extends Audience {
  *
  **/
 export interface EducationalOccupationalCredential extends CreativeWork {
-  competencyRequired?:
-    | Text
-    | Array<Text>
-    | URL
-    | Array<URL>
-    | DefinedTerm
-    | Array<DefinedTerm>;
-  credentialCategory?:
-    | DefinedTerm
-    | Array<DefinedTerm>
-    | URL
-    | Array<URL>
-    | Text
-    | Array<Text>;
-  educationalLevel?:
-    | URL
-    | Array<URL>
-    | DefinedTerm
-    | Array<DefinedTerm>
-    | Text
-    | Array<Text>;
-  recognizedBy?: Organization | Array<Organization>;
-  validFor?: Duration | Array<Duration>;
-  validIn?: AdministrativeArea | Array<AdministrativeArea>;
+  competencyRequired?: Text | URL | DefinedTerm;
+  credentialCategory?: DefinedTerm | URL | Text;
+  educationalLevel?: URL | DefinedTerm | Text;
+  recognizedBy?: Organization;
+  validFor?: Duration;
+  validIn?: AdministrativeArea;
 }
 
 /**
@@ -4739,66 +4391,37 @@ export interface EducationalOccupationalCredential extends CreativeWork {
  *
  **/
 export interface EducationalOccupationalProgram extends Intangible {
-  applicationDeadline?: Date | Array<Date>;
-  applicationStartDate?: Date | Array<Date>;
-  dayOfWeek?: DayOfWeek | Array<DayOfWeek>;
-  educationalCredentialAwarded?:
-    | URL
-    | Array<URL>
-    | Text
-    | Array<Text>
-    | EducationalOccupationalCredential
-    | Array<EducationalOccupationalCredential>;
-  educationalProgramMode?: Text | Array<Text> | URL | Array<URL>;
-  endDate?: Date | Array<Date> | DateTime | Array<DateTime>;
-  financialAidEligible?: DefinedTerm | Array<DefinedTerm> | Text | Array<Text>;
-  hasCourse?: Course | Array<Course>;
-  maximumEnrollment?: Integer | Array<Integer>;
-  numberOfCredits?:
-    | StructuredValue
-    | Array<StructuredValue>
-    | Integer
-    | Array<Integer>;
-  occupationalCategory?:
-    | CategoryCode
-    | Array<CategoryCode>
-    | Text
-    | Array<Text>;
+  applicationDeadline?: Date;
+  applicationStartDate?: Date;
+  dayOfWeek?: DayOfWeek;
+  educationalCredentialAwarded?: URL | Text | EducationalOccupationalCredential;
+  educationalProgramMode?: Text | URL;
+  endDate?: Date | DateTime;
+  financialAidEligible?: DefinedTerm | Text;
+  hasCourse?: Course;
+  maximumEnrollment?: Integer;
+  numberOfCredits?: StructuredValue | Integer;
+  occupationalCategory?: CategoryCode | Text;
   occupationalCredentialAwarded?:
     | URL
-    | Array<URL>
     | Text
-    | Array<Text>
-    | EducationalOccupationalCredential
-    | Array<EducationalOccupationalCredential>;
-  offers?: Offer | Array<Offer> | Demand | Array<Demand>;
+    | EducationalOccupationalCredential;
+  offers?: Offer | Demand;
   programPrerequisites?:
     | Course
-    | Array<Course>
     | AlignmentObject
-    | Array<AlignmentObject>
     | EducationalOccupationalCredential
-    | Array<EducationalOccupationalCredential>
-    | Text
-    | Array<Text>;
-  programType?: DefinedTerm | Array<DefinedTerm> | Text | Array<Text>;
-  provider?: Organization | Array<Organization> | Person | Array<Person>;
-  salaryUponCompletion?:
-    | MonetaryAmountDistribution
-    | Array<MonetaryAmountDistribution>;
-  startDate?: DateTime | Array<DateTime> | Date | Array<Date>;
-  termDuration?: Duration | Array<Duration>;
-  termsPerYear?: Number | Array<Number>;
-  timeOfDay?: Text | Array<Text>;
-  timeToComplete?: Duration | Array<Duration>;
-  trainingSalary?:
-    | MonetaryAmountDistribution
-    | Array<MonetaryAmountDistribution>;
-  typicalCreditsPerTerm?:
-    | Integer
-    | Array<Integer>
-    | StructuredValue
-    | Array<StructuredValue>;
+    | Text;
+  programType?: DefinedTerm | Text;
+  provider?: Organization | Person;
+  salaryUponCompletion?: MonetaryAmountDistribution;
+  startDate?: DateTime | Date;
+  termDuration?: Duration;
+  termsPerYear?: Number;
+  timeOfDay?: Text;
+  timeToComplete?: Duration;
+  trainingSalary?: MonetaryAmountDistribution;
+  typicalCreditsPerTerm?: Integer | StructuredValue;
 }
 
 /**
@@ -4810,7 +4433,7 @@ export interface EducationalOccupationalProgram extends Intangible {
  *
  **/
 export interface EducationalOrganization extends Organization, CivicStructure {
-  alumni?: Person | Array<Person>;
+  alumni?: Person;
 }
 
 /**
@@ -4822,15 +4445,9 @@ export interface EducationalOrganization extends Organization, CivicStructure {
  *
  **/
 export interface EducationEvent extends Event {
-  assesses?: DefinedTerm | Array<DefinedTerm> | Text | Array<Text>;
-  educationalLevel?:
-    | URL
-    | Array<URL>
-    | DefinedTerm
-    | Array<DefinedTerm>
-    | Text
-    | Array<Text>;
-  teaches?: Text | Array<Text> | DefinedTerm | Array<DefinedTerm>;
+  assesses?: DefinedTerm | Text;
+  educationalLevel?: URL | DefinedTerm | Text;
+  teaches?: Text | DefinedTerm;
 }
 
 /**
@@ -4902,14 +4519,8 @@ export interface EmergencyService extends LocalBusiness {}
  *
  **/
 export interface EmployeeRole extends OrganizationRole {
-  baseSalary?:
-    | MonetaryAmount
-    | Array<MonetaryAmount>
-    | PriceSpecification
-    | Array<PriceSpecification>
-    | Number
-    | Array<Number>;
-  salaryCurrency?: Text | Array<Text>;
+  baseSalary?: MonetaryAmount | PriceSpecification | Number;
+  salaryCurrency?: Text;
 }
 
 /**
@@ -4957,7 +4568,7 @@ export interface EmploymentAgency extends LocalBusiness {}
  *
  **/
 export interface EndorseAction extends ReactAction {
-  endorsee?: Organization | Array<Organization> | Person | Array<Person>;
+  endorsee?: Organization | Person;
 }
 
 /**
@@ -5001,15 +4612,9 @@ export interface Energy extends Quantity {}
  *
  **/
 export interface EnergyConsumptionDetails extends Intangible {
-  energyEfficiencyScaleMax?:
-    | EUEnergyEfficiencyEnumeration
-    | Array<EUEnergyEfficiencyEnumeration>;
-  energyEfficiencyScaleMin?:
-    | EUEnergyEfficiencyEnumeration
-    | Array<EUEnergyEfficiencyEnumeration>;
-  hasEnergyEfficiencyCategory?:
-    | EnergyEfficiencyEnumeration
-    | Array<EnergyEfficiencyEnumeration>;
+  energyEfficiencyScaleMax?: EUEnergyEfficiencyEnumeration;
+  energyEfficiencyScaleMin?: EUEnergyEfficiencyEnumeration;
+  hasEnergyEfficiencyCategory?: EnergyEfficiencyEnumeration;
 }
 
 /**
@@ -5037,23 +4642,11 @@ export interface EnergyEfficiencyEnumeration extends Enumeration {}
  *
  **/
 export interface EngineSpecification extends StructuredValue {
-  engineDisplacement?: QuantitativeValue | Array<QuantitativeValue>;
-  enginePower?: QuantitativeValue | Array<QuantitativeValue>;
-  engineType?:
-    | URL
-    | Array<URL>
-    | QualitativeValue
-    | Array<QualitativeValue>
-    | Text
-    | Array<Text>;
-  fuelType?:
-    | QualitativeValue
-    | Array<QualitativeValue>
-    | URL
-    | Array<URL>
-    | Text
-    | Array<Text>;
-  torque?: QuantitativeValue | Array<QuantitativeValue>;
+  engineDisplacement?: QuantitativeValue;
+  enginePower?: QuantitativeValue;
+  engineType?: URL | QualitativeValue | Text;
+  fuelType?: QualitativeValue | URL | Text;
+  torque?: QuantitativeValue;
 }
 
 /**
@@ -5077,13 +4670,13 @@ export interface EntertainmentBusiness extends LocalBusiness {}
  *
  **/
 export interface EntryPoint extends Intangible {
-  actionApplication?: SoftwareApplication | Array<SoftwareApplication>;
-  actionPlatform?: Text | Array<Text> | URL | Array<URL>;
-  application?: SoftwareApplication | Array<SoftwareApplication>;
-  contentType?: Text | Array<Text>;
-  encodingType?: Text | Array<Text>;
-  httpMethod?: Text | Array<Text>;
-  urlTemplate?: Text | Array<Text>;
+  actionApplication?: SoftwareApplication;
+  actionPlatform?: Text | URL;
+  application?: SoftwareApplication;
+  contentType?: Text;
+  encodingType?: Text;
+  httpMethod?: Text;
+  urlTemplate?: Text;
 }
 
 /**
@@ -5105,17 +4698,17 @@ export interface Enumeration extends Intangible {}
  *
  **/
 export interface Episode extends CreativeWork {
-  actor?: Person | Array<Person>;
-  actors?: Person | Array<Person>;
-  director?: Person | Array<Person>;
-  directors?: Person | Array<Person>;
-  duration?: Duration | Array<Duration>;
-  episodeNumber?: Text | Array<Text> | Integer | Array<Integer>;
-  musicBy?: Person | Array<Person> | MusicGroup | Array<MusicGroup>;
-  partOfSeason?: CreativeWorkSeason | Array<CreativeWorkSeason>;
-  partOfSeries?: CreativeWorkSeries | Array<CreativeWorkSeries>;
-  productionCompany?: Organization | Array<Organization>;
-  trailer?: VideoObject | Array<VideoObject>;
+  actor?: Person;
+  actors?: Person;
+  director?: Person;
+  directors?: Person;
+  duration?: Duration;
+  episodeNumber?: Text | Integer;
+  musicBy?: Person | MusicGroup;
+  partOfSeason?: CreativeWorkSeason;
+  partOfSeries?: CreativeWorkSeries;
+  productionCompany?: Organization;
+  trailer?: VideoObject;
 }
 
 /**
@@ -5127,55 +4720,45 @@ export interface Episode extends CreativeWork {
  *
  **/
 export interface Event extends Thing {
-  about?: Thing | Array<Thing>;
-  actor?: Person | Array<Person>;
-  aggregateRating?: AggregateRating | Array<AggregateRating>;
-  attendee?: Person | Array<Person> | Organization | Array<Organization>;
-  attendees?: Person | Array<Person> | Organization | Array<Organization>;
-  audience?: Audience | Array<Audience>;
-  composer?: Organization | Array<Organization> | Person | Array<Person>;
-  contributor?: Organization | Array<Organization> | Person | Array<Person>;
-  director?: Person | Array<Person>;
-  doorTime?: DateTime | Array<DateTime> | Time | Array<Time>;
-  duration?: Duration | Array<Duration>;
-  endDate?: Date | Array<Date> | DateTime | Array<DateTime>;
-  eventAttendanceMode?:
-    | EventAttendanceModeEnumeration
-    | Array<EventAttendanceModeEnumeration>;
-  eventSchedule?: Schedule | Array<Schedule>;
-  eventStatus?: EventStatusType | Array<EventStatusType>;
-  funder?: Organization | Array<Organization> | Person | Array<Person>;
-  inLanguage?: Text | Array<Text> | Language | Array<Language>;
-  isAccessibleForFree?: Boolean | Array<Boolean>;
-  location?:
-    | Place
-    | Array<Place>
-    | Text
-    | Array<Text>
-    | VirtualLocation
-    | Array<VirtualLocation>
-    | PostalAddress
-    | Array<PostalAddress>;
-  maximumAttendeeCapacity?: Integer | Array<Integer>;
-  maximumPhysicalAttendeeCapacity?: Integer | Array<Integer>;
-  maximumVirtualAttendeeCapacity?: Integer | Array<Integer>;
-  offers?: Offer | Array<Offer> | Demand | Array<Demand>;
-  organizer?: Organization | Array<Organization> | Person | Array<Person>;
-  performer?: Organization | Array<Organization> | Person | Array<Person>;
-  performers?: Organization | Array<Organization> | Person | Array<Person>;
-  previousStartDate?: Date | Array<Date>;
-  recordedIn?: CreativeWork | Array<CreativeWork>;
-  remainingAttendeeCapacity?: Integer | Array<Integer>;
-  review?: Review | Array<Review>;
-  sponsor?: Person | Array<Person> | Organization | Array<Organization>;
-  startDate?: DateTime | Array<DateTime> | Date | Array<Date>;
-  subEvent?: Event | Array<Event>;
-  subEvents?: Event | Array<Event>;
-  superEvent?: Event | Array<Event>;
-  translator?: Person | Array<Person> | Organization | Array<Organization>;
-  typicalAgeRange?: Text | Array<Text>;
-  workFeatured?: CreativeWork | Array<CreativeWork>;
-  workPerformed?: CreativeWork | Array<CreativeWork>;
+  about?: Thing;
+  actor?: Person;
+  aggregateRating?: AggregateRating;
+  attendee?: Person | Organization;
+  attendees?: Person | Organization;
+  audience?: Audience;
+  composer?: Organization | Person;
+  contributor?: Organization | Person;
+  director?: Person;
+  doorTime?: DateTime | Time;
+  duration?: Duration;
+  endDate?: Date | DateTime;
+  eventAttendanceMode?: EventAttendanceModeEnumeration;
+  eventSchedule?: Schedule;
+  eventStatus?: EventStatusType;
+  funder?: Organization | Person;
+  inLanguage?: Text | Language;
+  isAccessibleForFree?: Boolean;
+  location?: Place | Text | VirtualLocation | PostalAddress;
+  maximumAttendeeCapacity?: Integer;
+  maximumPhysicalAttendeeCapacity?: Integer;
+  maximumVirtualAttendeeCapacity?: Integer;
+  offers?: Offer | Demand;
+  organizer?: Organization | Person;
+  performer?: Organization | Person;
+  performers?: Organization | Person;
+  previousStartDate?: Date;
+  recordedIn?: CreativeWork;
+  remainingAttendeeCapacity?: Integer;
+  review?: Review;
+  sponsor?: Person | Organization;
+  startDate?: DateTime | Date;
+  subEvent?: Event;
+  subEvents?: Event;
+  superEvent?: Event;
+  translator?: Person | Organization;
+  typicalAgeRange?: Text;
+  workFeatured?: CreativeWork;
+  workPerformed?: CreativeWork;
 }
 
 /**
@@ -5239,13 +4822,9 @@ export interface EventVenue extends CivicStructure {}
  *
  **/
 export interface ExchangeRateSpecification extends StructuredValue {
-  currency?: Text | Array<Text>;
-  currentExchangeRate?: UnitPriceSpecification | Array<UnitPriceSpecification>;
-  exchangeRateSpread?:
-    | MonetaryAmount
-    | Array<MonetaryAmount>
-    | Number
-    | Array<Number>;
+  currency?: Text;
+  currentExchangeRate?: UnitPriceSpecification;
+  exchangeRateSpread?: MonetaryAmount | Number;
 }
 
 /**
@@ -5257,21 +4836,19 @@ export interface ExchangeRateSpecification extends StructuredValue {
  *
  **/
 export interface ExerciseAction extends PlayAction {
-  course?: Place | Array<Place>;
-  diet?: Diet | Array<Diet>;
-  distance?: Distance | Array<Distance>;
-  exerciseCourse?: Place | Array<Place>;
-  exercisePlan?: ExercisePlan | Array<ExercisePlan>;
-  exerciseRelatedDiet?: Diet | Array<Diet>;
-  exerciseType?: Text | Array<Text>;
-  fromLocation?: Place | Array<Place>;
-  opponent?: Person | Array<Person>;
-  sportsActivityLocation?:
-    | SportsActivityLocation
-    | Array<SportsActivityLocation>;
-  sportsEvent?: SportsEvent | Array<SportsEvent>;
-  sportsTeam?: SportsTeam | Array<SportsTeam>;
-  toLocation?: Place | Array<Place>;
+  course?: Place;
+  diet?: Diet;
+  distance?: Distance;
+  exerciseCourse?: Place;
+  exercisePlan?: ExercisePlan;
+  exerciseRelatedDiet?: Diet;
+  exerciseType?: Text;
+  fromLocation?: Place;
+  opponent?: Person;
+  sportsActivityLocation?: SportsActivityLocation;
+  sportsEvent?: SportsEvent;
+  sportsTeam?: SportsTeam;
+  toLocation?: Place;
 }
 
 /**
@@ -5295,34 +4872,14 @@ export interface ExerciseGym extends SportsActivityLocation {}
  * Partof: https://health-lifesci.schema.org
  **/
 export interface ExercisePlan extends PhysicalActivity, CreativeWork {
-  activityDuration?:
-    | QuantitativeValue
-    | Array<QuantitativeValue>
-    | Duration
-    | Array<Duration>;
-  activityFrequency?:
-    | Text
-    | Array<Text>
-    | QuantitativeValue
-    | Array<QuantitativeValue>;
-  additionalVariable?: Text | Array<Text>;
-  exerciseType?: Text | Array<Text>;
-  intensity?: QuantitativeValue | Array<QuantitativeValue> | Text | Array<Text>;
-  repetitions?:
-    | Number
-    | Array<Number>
-    | QuantitativeValue
-    | Array<QuantitativeValue>;
-  restPeriods?:
-    | Text
-    | Array<Text>
-    | QuantitativeValue
-    | Array<QuantitativeValue>;
-  workload?:
-    | Energy
-    | Array<Energy>
-    | QuantitativeValue
-    | Array<QuantitativeValue>;
+  activityDuration?: QuantitativeValue | Duration;
+  activityFrequency?: Text | QuantitativeValue;
+  additionalVariable?: Text;
+  exerciseType?: Text;
+  intensity?: QuantitativeValue | Text;
+  repetitions?: Number | QuantitativeValue;
+  restPeriods?: Text | QuantitativeValue;
+  workload?: Energy | QuantitativeValue;
 }
 
 /**
@@ -5388,17 +4945,9 @@ export interface FilmAction extends CreateAction {}
  *
  **/
 export interface FinancialProduct extends Service {
-  annualPercentageRate?:
-    | QuantitativeValue
-    | Array<QuantitativeValue>
-    | Number
-    | Array<Number>;
-  feesAndCommissionsSpecification?: URL | Array<URL> | Text | Array<Text>;
-  interestRate?:
-    | Number
-    | Array<Number>
-    | QuantitativeValue
-    | Array<QuantitativeValue>;
+  annualPercentageRate?: QuantitativeValue | Number;
+  feesAndCommissionsSpecification?: URL | Text;
+  interestRate?: Number | QuantitativeValue;
 }
 
 /**
@@ -5410,7 +4959,7 @@ export interface FinancialProduct extends Service {
  *
  **/
 export interface FinancialService extends LocalBusiness {
-  feesAndCommissionsSpecification?: URL | Array<URL> | Text | Array<Text>;
+  feesAndCommissionsSpecification?: URL | Text;
 }
 
 /**
@@ -5442,21 +4991,21 @@ export interface FireStation extends CivicStructure, EmergencyService {}
  *
  **/
 export interface Flight extends Trip {
-  aircraft?: Vehicle | Array<Vehicle> | Text | Array<Text>;
-  arrivalAirport?: Airport | Array<Airport>;
-  arrivalGate?: Text | Array<Text>;
-  arrivalTerminal?: Text | Array<Text>;
-  boardingPolicy?: BoardingPolicyType | Array<BoardingPolicyType>;
-  carrier?: Organization | Array<Organization>;
-  departureAirport?: Airport | Array<Airport>;
-  departureGate?: Text | Array<Text>;
-  departureTerminal?: Text | Array<Text>;
-  estimatedFlightDuration?: Duration | Array<Duration> | Text | Array<Text>;
-  flightDistance?: Distance | Array<Distance> | Text | Array<Text>;
-  flightNumber?: Text | Array<Text>;
-  mealService?: Text | Array<Text>;
-  seller?: Organization | Array<Organization> | Person | Array<Person>;
-  webCheckinTime?: DateTime | Array<DateTime>;
+  aircraft?: Vehicle | Text;
+  arrivalAirport?: Airport;
+  arrivalGate?: Text;
+  arrivalTerminal?: Text;
+  boardingPolicy?: BoardingPolicyType;
+  carrier?: Organization;
+  departureAirport?: Airport;
+  departureGate?: Text;
+  departureTerminal?: Text;
+  estimatedFlightDuration?: Duration | Text;
+  flightDistance?: Distance | Text;
+  flightNumber?: Text;
+  mealService?: Text;
+  seller?: Organization | Person;
+  webCheckinTime?: DateTime;
 }
 
 /**
@@ -5468,14 +5017,10 @@ export interface Flight extends Trip {
  *
  **/
 export interface FlightReservation extends Reservation {
-  boardingGroup?: Text | Array<Text>;
-  passengerPriorityStatus?:
-    | QualitativeValue
-    | Array<QualitativeValue>
-    | Text
-    | Array<Text>;
-  passengerSequenceNumber?: Text | Array<Text>;
-  securityScreening?: Text | Array<Text>;
+  boardingGroup?: Text;
+  passengerPriorityStatus?: QualitativeValue | Text;
+  passengerSequenceNumber?: Text;
+  securityScreening?: Text;
 }
 
 /**
@@ -5501,30 +5046,18 @@ export type Float = Number;
  *
  **/
 export interface FloorPlan extends Intangible {
-  amenityFeature?:
-    | LocationFeatureSpecification
-    | Array<LocationFeatureSpecification>;
-  floorSize?: QuantitativeValue | Array<QuantitativeValue>;
-  isPlanForApartment?: Accommodation | Array<Accommodation>;
-  layoutImage?: ImageObject | Array<ImageObject> | URL | Array<URL>;
-  numberOfAccommodationUnits?: QuantitativeValue | Array<QuantitativeValue>;
-  numberOfAvailableAccommodationUnits?:
-    | QuantitativeValue
-    | Array<QuantitativeValue>;
-  numberOfBathroomsTotal?: Integer | Array<Integer>;
-  numberOfBedrooms?:
-    | QuantitativeValue
-    | Array<QuantitativeValue>
-    | Number
-    | Array<Number>;
-  numberOfFullBathrooms?: Number | Array<Number>;
-  numberOfPartialBathrooms?: Number | Array<Number>;
-  numberOfRooms?:
-    | Number
-    | Array<Number>
-    | QuantitativeValue
-    | Array<QuantitativeValue>;
-  petsAllowed?: Text | Array<Text> | Boolean | Array<Boolean>;
+  amenityFeature?: LocationFeatureSpecification;
+  floorSize?: QuantitativeValue;
+  isPlanForApartment?: Accommodation;
+  layoutImage?: ImageObject | URL;
+  numberOfAccommodationUnits?: QuantitativeValue;
+  numberOfAvailableAccommodationUnits?: QuantitativeValue;
+  numberOfBathroomsTotal?: Integer;
+  numberOfBedrooms?: QuantitativeValue | Number;
+  numberOfFullBathrooms?: Number;
+  numberOfPartialBathrooms?: Number;
+  numberOfRooms?: Number | QuantitativeValue;
+  petsAllowed?: Text | Boolean;
 }
 
 /**
@@ -5558,7 +5091,7 @@ export interface FMRadioChannel extends RadioChannel {}
  *
  **/
 export interface FollowAction extends InteractAction {
-  followee?: Organization | Array<Organization> | Person | Array<Person>;
+  followee?: Organization | Person;
 }
 
 /**
@@ -5570,17 +5103,11 @@ export interface FollowAction extends InteractAction {
  *
  **/
 export interface FoodEstablishment extends LocalBusiness {
-  acceptsReservations?:
-    | URL
-    | Array<URL>
-    | Boolean
-    | Array<Boolean>
-    | Text
-    | Array<Text>;
-  hasMenu?: URL | Array<URL> | Menu | Array<Menu> | Text | Array<Text>;
-  menu?: Text | Array<Text> | URL | Array<URL> | Menu | Array<Menu>;
-  servesCuisine?: Text | Array<Text>;
-  starRating?: Rating | Array<Rating>;
+  acceptsReservations?: URL | Boolean | Text;
+  hasMenu?: URL | Menu | Text;
+  menu?: Text | URL | Menu;
+  servesCuisine?: Text;
+  starRating?: Rating;
 }
 
 /**
@@ -5592,13 +5119,9 @@ export interface FoodEstablishment extends LocalBusiness {
  *
  **/
 export interface FoodEstablishmentReservation extends Reservation {
-  endTime?: DateTime | Array<DateTime> | Time | Array<Time>;
-  partySize?:
-    | QuantitativeValue
-    | Array<QuantitativeValue>
-    | Integer
-    | Array<Integer>;
-  startTime?: DateTime | Array<DateTime> | Time | Array<Time>;
+  endTime?: DateTime | Time;
+  partySize?: QuantitativeValue | Integer;
+  startTime?: DateTime | Time;
 }
 
 /**
@@ -5679,17 +5202,11 @@ export interface FurnitureStore extends Store {}
  *
  **/
 export interface Game extends CreativeWork {
-  characterAttribute?: Thing | Array<Thing>;
-  gameItem?: Thing | Array<Thing>;
-  gameLocation?:
-    | PostalAddress
-    | Array<PostalAddress>
-    | Place
-    | Array<Place>
-    | URL
-    | Array<URL>;
-  numberOfPlayers?: QuantitativeValue | Array<QuantitativeValue>;
-  quest?: Thing | Array<Thing>;
+  characterAttribute?: Thing;
+  gameItem?: Thing;
+  gameLocation?: PostalAddress | Place | URL;
+  numberOfPlayers?: QuantitativeValue;
+  quest?: Thing;
 }
 
 /**
@@ -5701,9 +5218,9 @@ export interface Game extends CreativeWork {
  *
  **/
 export interface GameServer extends Intangible {
-  game?: VideoGame | Array<VideoGame>;
-  playersOnline?: Integer | Array<Integer>;
-  serverStatus?: GameServerStatus | Array<GameServerStatus>;
+  game?: VideoGame;
+  playersOnline?: Integer;
+  serverStatus?: GameServerStatus;
 }
 
 /**
@@ -5758,14 +5275,8 @@ export interface GeneralContractor extends HomeAndConstructionBusiness {}
 *
 **/
 export interface GeoCircle extends GeoShape {
-  geoMidpoint?: GeoCoordinates | Array<GeoCoordinates>;
-  geoRadius?:
-    | Text
-    | Array<Text>
-    | Distance
-    | Array<Distance>
-    | Number
-    | Array<Number>;
+  geoMidpoint?: GeoCoordinates;
+  geoRadius?: Text | Distance | Number;
 }
 
 /**
@@ -5777,12 +5288,12 @@ export interface GeoCircle extends GeoShape {
  *
  **/
 export interface GeoCoordinates extends StructuredValue {
-  address?: Text | Array<Text> | PostalAddress | Array<PostalAddress>;
-  addressCountry?: Text | Array<Text> | Country | Array<Country>;
-  elevation?: Number | Array<Number> | Text | Array<Text>;
-  latitude?: Text | Array<Text> | Number | Array<Number>;
-  longitude?: Text | Array<Text> | Number | Array<Number>;
-  postalCode?: Text | Array<Text>;
+  address?: Text | PostalAddress;
+  addressCountry?: Text | Country;
+  elevation?: Number | Text;
+  latitude?: Text | Number;
+  longitude?: Text | Number;
+  postalCode?: Text;
 }
 
 /**
@@ -5796,14 +5307,14 @@ export interface GeoCoordinates extends StructuredValue {
  *
  **/
 export interface GeoShape extends StructuredValue {
-  address?: Text | Array<Text> | PostalAddress | Array<PostalAddress>;
-  addressCountry?: Text | Array<Text> | Country | Array<Country>;
-  box?: Text | Array<Text>;
-  circle?: Text | Array<Text>;
-  elevation?: Number | Array<Number> | Text | Array<Text>;
-  line?: Text | Array<Text>;
-  polygon?: Text | Array<Text>;
-  postalCode?: Text | Array<Text>;
+  address?: Text | PostalAddress;
+  addressCountry?: Text | Country;
+  box?: Text;
+  circle?: Text;
+  elevation?: Number | Text;
+  line?: Text;
+  polygon?: Text;
+  postalCode?: Text;
 }
 
 /**
@@ -5819,56 +5330,16 @@ export interface GeoShape extends StructuredValue {
  *
  **/
 export interface GeospatialGeometry extends Intangible {
-  geoContains?:
-    | GeospatialGeometry
-    | Array<GeospatialGeometry>
-    | Place
-    | Array<Place>;
-  geoCoveredBy?:
-    | GeospatialGeometry
-    | Array<GeospatialGeometry>
-    | Place
-    | Array<Place>;
-  geoCovers?:
-    | GeospatialGeometry
-    | Array<GeospatialGeometry>
-    | Place
-    | Array<Place>;
-  geoCrosses?:
-    | GeospatialGeometry
-    | Array<GeospatialGeometry>
-    | Place
-    | Array<Place>;
-  geoDisjoint?:
-    | Place
-    | Array<Place>
-    | GeospatialGeometry
-    | Array<GeospatialGeometry>;
-  geoEquals?:
-    | Place
-    | Array<Place>
-    | GeospatialGeometry
-    | Array<GeospatialGeometry>;
-  geoIntersects?:
-    | GeospatialGeometry
-    | Array<GeospatialGeometry>
-    | Place
-    | Array<Place>;
-  geoOverlaps?:
-    | Place
-    | Array<Place>
-    | GeospatialGeometry
-    | Array<GeospatialGeometry>;
-  geoTouches?:
-    | Place
-    | Array<Place>
-    | GeospatialGeometry
-    | Array<GeospatialGeometry>;
-  geoWithin?:
-    | Place
-    | Array<Place>
-    | GeospatialGeometry
-    | Array<GeospatialGeometry>;
+  geoContains?: GeospatialGeometry | Place;
+  geoCoveredBy?: GeospatialGeometry | Place;
+  geoCovers?: GeospatialGeometry | Place;
+  geoCrosses?: GeospatialGeometry | Place;
+  geoDisjoint?: Place | GeospatialGeometry;
+  geoEquals?: Place | GeospatialGeometry;
+  geoIntersects?: GeospatialGeometry | Place;
+  geoOverlaps?: Place | GeospatialGeometry;
+  geoTouches?: Place | GeospatialGeometry;
+  geoWithin?: Place | GeospatialGeometry;
 }
 
 /**
@@ -5880,15 +5351,7 @@ export interface GeospatialGeometry extends Intangible {
  *
  **/
 export interface GiveAction extends TransferAction {
-  recipient?:
-    | Organization
-    | Array<Organization>
-    | ContactPoint
-    | Array<ContactPoint>
-    | Person
-    | Array<Person>
-    | Audience
-    | Array<Audience>;
+  recipient?: Organization | ContactPoint | Person | Audience;
 }
 
 /**
@@ -5950,12 +5413,8 @@ export interface GovernmentPermit extends Permit {}
  *
  **/
 export interface GovernmentService extends Service {
-  jurisdiction?:
-    | AdministrativeArea
-    | Array<AdministrativeArea>
-    | Text
-    | Array<Text>;
-  serviceOperator?: Organization | Array<Organization>;
+  jurisdiction?: AdministrativeArea | Text;
+  serviceOperator?: Organization;
 }
 
 /**
@@ -5978,8 +5437,8 @@ The amount of a [[Grant]] is represented using [[amount]] as a [[MonetaryAmount]
 *
 **/
 export interface Grant extends Intangible {
-  fundedItem?: Thing | Array<Thing>;
-  sponsor?: Person | Array<Person> | Organization | Array<Organization>;
+  fundedItem?: Thing;
+  sponsor?: Person | Organization;
 }
 
 /**
@@ -6005,7 +5464,7 @@ export interface GroceryStore extends Store {}
  *
  **/
 export interface Guide extends CreativeWork {
-  reviewAspect?: Text | Array<Text>;
+  reviewAspect?: Text;
 }
 
 /**
@@ -6077,17 +5536,15 @@ export interface HealthClub
  *
  **/
 export interface HealthInsurancePlan extends Intangible {
-  benefitsSummaryUrl?: URL | Array<URL>;
-  contactPoint?: ContactPoint | Array<ContactPoint>;
-  healthPlanDrugOption?: Text | Array<Text>;
-  healthPlanDrugTier?: Text | Array<Text>;
-  healthPlanId?: Text | Array<Text>;
-  healthPlanMarketingUrl?: URL | Array<URL>;
-  includesHealthPlanFormulary?:
-    | HealthPlanFormulary
-    | Array<HealthPlanFormulary>;
-  includesHealthPlanNetwork?: HealthPlanNetwork | Array<HealthPlanNetwork>;
-  usesHealthPlanIdStandard?: Text | Array<Text> | URL | Array<URL>;
+  benefitsSummaryUrl?: URL;
+  contactPoint?: ContactPoint;
+  healthPlanDrugOption?: Text;
+  healthPlanDrugTier?: Text;
+  healthPlanId?: Text;
+  healthPlanMarketingUrl?: URL;
+  includesHealthPlanFormulary?: HealthPlanFormulary;
+  includesHealthPlanNetwork?: HealthPlanNetwork;
+  usesHealthPlanIdStandard?: Text | URL;
 }
 
 /**
@@ -6103,11 +5560,11 @@ export interface HealthInsurancePlan extends Intangible {
  *
  **/
 export interface HealthPlanCostSharingSpecification extends Intangible {
-  healthPlanCoinsuranceOption?: Text | Array<Text>;
-  healthPlanCoinsuranceRate?: Number | Array<Number>;
-  healthPlanCopay?: PriceSpecification | Array<PriceSpecification>;
-  healthPlanCopayOption?: Text | Array<Text>;
-  healthPlanPharmacyCategory?: Text | Array<Text>;
+  healthPlanCoinsuranceOption?: Text;
+  healthPlanCoinsuranceRate?: Number;
+  healthPlanCopay?: PriceSpecification;
+  healthPlanCopayOption?: Text;
+  healthPlanPharmacyCategory?: Text;
 }
 
 /**
@@ -6123,9 +5580,9 @@ export interface HealthPlanCostSharingSpecification extends Intangible {
  *
  **/
 export interface HealthPlanFormulary extends Intangible {
-  healthPlanCostSharing?: Boolean | Array<Boolean>;
-  healthPlanDrugTier?: Text | Array<Text>;
-  offersPrescriptionByMail?: Boolean | Array<Boolean>;
+  healthPlanCostSharing?: Boolean;
+  healthPlanDrugTier?: Text;
+  offersPrescriptionByMail?: Boolean;
 }
 
 /**
@@ -6141,9 +5598,9 @@ export interface HealthPlanFormulary extends Intangible {
  *
  **/
 export interface HealthPlanNetwork extends Intangible {
-  healthPlanCostSharing?: Boolean | Array<Boolean>;
-  healthPlanNetworkId?: Text | Array<Text>;
-  healthPlanNetworkTier?: Text | Array<Text>;
+  healthPlanCostSharing?: Boolean;
+  healthPlanNetworkId?: Text;
+  healthPlanNetworkTier?: Text;
 }
 
 /**
@@ -6160,7 +5617,7 @@ export interface HealthPlanNetwork extends Intangible {
 *
 **/
 export interface HealthTopicContent extends WebContent {
-  hasHealthAspect?: HealthAspectEnumeration | Array<HealthAspectEnumeration>;
+  hasHealthAspect?: HealthAspectEnumeration;
 }
 
 /**
@@ -6225,19 +5682,9 @@ export interface Hospital
   extends CivicStructure,
     MedicalOrganization,
     EmergencyService {
-  availableService?:
-    | MedicalTest
-    | Array<MedicalTest>
-    | MedicalTherapy
-    | Array<MedicalTherapy>
-    | MedicalProcedure
-    | Array<MedicalProcedure>;
-  healthcareReportingData?:
-    | CDCPMDRecord
-    | Array<CDCPMDRecord>
-    | Dataset
-    | Array<Dataset>;
-  medicalSpecialty?: MedicalSpecialty | Array<MedicalSpecialty>;
+  availableService?: MedicalTest | MedicalTherapy | MedicalProcedure;
+  healthcareReportingData?: CDCPMDRecord | Dataset;
+  medicalSpecialty?: MedicalSpecialty;
 }
 
 /**
@@ -6282,14 +5729,8 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
 *
 **/
 export interface HotelRoom extends Room {
-  bed?:
-    | BedDetails
-    | Array<BedDetails>
-    | Text
-    | Array<Text>
-    | BedType
-    | Array<BedType>;
-  occupancy?: QuantitativeValue | Array<QuantitativeValue>;
+  bed?: BedDetails | Text | BedType;
+  occupancy?: QuantitativeValue;
 }
 
 /**
@@ -6303,11 +5744,7 @@ export interface HotelRoom extends Room {
  *
  **/
 export interface House extends Accommodation {
-  numberOfRooms?:
-    | Number
-    | Array<Number>
-    | QuantitativeValue
-    | Array<QuantitativeValue>;
+  numberOfRooms?: Number | QuantitativeValue;
 }
 
 /**
@@ -6329,29 +5766,15 @@ export interface HousePainter extends HomeAndConstructionBusiness {}
  *
  **/
 export interface HowTo extends CreativeWork {
-  estimatedCost?: Text | Array<Text> | MonetaryAmount | Array<MonetaryAmount>;
-  performTime?: Duration | Array<Duration>;
-  prepTime?: Duration | Array<Duration>;
-  step?:
-    | HowToStep
-    | Array<HowToStep>
-    | Text
-    | Array<Text>
-    | CreativeWork
-    | Array<CreativeWork>
-    | HowToSection
-    | Array<HowToSection>;
-  steps?:
-    | CreativeWork
-    | Array<CreativeWork>
-    | ItemList
-    | Array<ItemList>
-    | Text
-    | Array<Text>;
-  supply?: HowToSupply | Array<HowToSupply> | Text | Array<Text>;
-  tool?: Text | Array<Text> | HowToTool | Array<HowToTool>;
-  totalTime?: Duration | Array<Duration>;
-  yield?: Text | Array<Text> | QuantitativeValue | Array<QuantitativeValue>;
+  estimatedCost?: Text | MonetaryAmount;
+  performTime?: Duration;
+  prepTime?: Duration;
+  step?: HowToStep | Text | CreativeWork | HowToSection;
+  steps?: CreativeWork | ItemList | Text;
+  supply?: HowToSupply | Text;
+  tool?: Text | HowToTool;
+  totalTime?: Duration;
+  yield?: Text | QuantitativeValue;
 }
 
 /**
@@ -6363,14 +5786,14 @@ export interface HowTo extends CreativeWork {
  *
  **/
 export interface HowToDirection extends ListItem, CreativeWork {
-  afterMedia?: MediaObject | Array<MediaObject> | URL | Array<URL>;
-  beforeMedia?: MediaObject | Array<MediaObject> | URL | Array<URL>;
-  duringMedia?: URL | Array<URL> | MediaObject | Array<MediaObject>;
-  performTime?: Duration | Array<Duration>;
-  prepTime?: Duration | Array<Duration>;
-  supply?: HowToSupply | Array<HowToSupply> | Text | Array<Text>;
-  tool?: Text | Array<Text> | HowToTool | Array<HowToTool>;
-  totalTime?: Duration | Array<Duration>;
+  afterMedia?: MediaObject | URL;
+  beforeMedia?: MediaObject | URL;
+  duringMedia?: URL | MediaObject;
+  performTime?: Duration;
+  prepTime?: Duration;
+  supply?: HowToSupply | Text;
+  tool?: Text | HowToTool;
+  totalTime?: Duration;
 }
 
 /**
@@ -6382,13 +5805,7 @@ export interface HowToDirection extends ListItem, CreativeWork {
  *
  **/
 export interface HowToItem extends ListItem {
-  requiredQuantity?:
-    | Text
-    | Array<Text>
-    | QuantitativeValue
-    | Array<QuantitativeValue>
-    | Number
-    | Array<Number>;
+  requiredQuantity?: Text | QuantitativeValue | Number;
 }
 
 /**
@@ -6400,13 +5817,7 @@ export interface HowToItem extends ListItem {
  *
  **/
 export interface HowToSection extends ListItem, CreativeWork, ItemList {
-  steps?:
-    | CreativeWork
-    | Array<CreativeWork>
-    | ItemList
-    | Array<ItemList>
-    | Text
-    | Array<Text>;
+  steps?: CreativeWork | ItemList | Text;
 }
 
 /**
@@ -6428,7 +5839,7 @@ export interface HowToStep extends ListItem, CreativeWork, ItemList {}
  *
  **/
 export interface HowToSupply extends HowToItem {
-  estimatedCost?: Text | Array<Text> | MonetaryAmount | Array<MonetaryAmount>;
+  estimatedCost?: Text | MonetaryAmount;
 }
 
 /**
@@ -6474,8 +5885,8 @@ export interface HVACBusiness extends HomeAndConstructionBusiness {}
  *
  **/
 export interface HyperToc extends CreativeWork {
-  associatedMedia?: MediaObject | Array<MediaObject>;
-  tocEntry?: HyperTocEntry | Array<HyperTocEntry>;
+  associatedMedia?: MediaObject;
+  tocEntry?: HyperTocEntry;
 }
 
 /**
@@ -6491,9 +5902,9 @@ export interface HyperToc extends CreativeWork {
  *
  **/
 export interface HyperTocEntry extends CreativeWork {
-  associatedMedia?: MediaObject | Array<MediaObject>;
-  tocContinuation?: HyperTocEntry | Array<HyperTocEntry>;
-  utterances?: Text | Array<Text>;
+  associatedMedia?: MediaObject;
+  tocContinuation?: HyperTocEntry;
+  utterances?: Text;
 }
 
 /**
@@ -6535,10 +5946,10 @@ export interface ImageGallery extends MediaGallery {}
  *
  **/
 export interface ImageObject extends MediaObject {
-  caption?: Text | Array<Text> | MediaObject | Array<MediaObject>;
-  exifData?: Text | Array<Text> | PropertyValue | Array<PropertyValue>;
-  representativeOfPage?: Boolean | Array<Boolean>;
-  thumbnail?: ImageObject | Array<ImageObject>;
+  caption?: Text | MediaObject;
+  exifData?: Text | PropertyValue;
+  representativeOfPage?: Boolean;
+  thumbnail?: ImageObject;
 }
 
 /**
@@ -6552,7 +5963,7 @@ export interface ImageObject extends MediaObject {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface ImagingTest extends MedicalTest {
-  imagingTechnique?: MedicalImagingTechnique | Array<MedicalImagingTechnique>;
+  imagingTechnique?: MedicalImagingTechnique;
 }
 
 /**
@@ -6566,7 +5977,7 @@ export interface ImagingTest extends MedicalTest {
  *
  **/
 export interface IndividualProduct extends Product {
-  serialNumber?: Text | Array<Text>;
+  serialNumber?: Text;
 }
 
 /**
@@ -6580,9 +5991,9 @@ export interface IndividualProduct extends Product {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface InfectiousDisease extends MedicalCondition {
-  infectiousAgent?: Text | Array<Text>;
-  infectiousAgentClass?: InfectiousAgentClass | Array<InfectiousAgentClass>;
-  transmissionMethod?: Text | Array<Text>;
+  infectiousAgent?: Text;
+  infectiousAgentClass?: InfectiousAgentClass;
+  transmissionMethod?: Text;
 }
 
 /**
@@ -6594,7 +6005,7 @@ export interface InfectiousDisease extends MedicalCondition {
  *
  **/
 export interface InformAction extends CommunicateAction {
-  event?: Event | Array<Event>;
+  event?: Event;
 }
 
 /**
@@ -6606,7 +6017,7 @@ export interface InformAction extends CommunicateAction {
  *
  **/
 export interface InsertAction extends AddAction {
-  toLocation?: Place | Array<Place>;
+  toLocation?: Place;
 }
 
 /**
@@ -6668,13 +6079,9 @@ export interface InteractAction extends Action {}
  *
  **/
 export interface InteractionCounter extends StructuredValue {
-  interactionService?:
-    | SoftwareApplication
-    | Array<SoftwareApplication>
-    | WebSite
-    | Array<WebSite>;
-  interactionType?: Action | Array<Action>;
-  userInteractionCount?: Integer | Array<Integer>;
+  interactionService?: SoftwareApplication | WebSite;
+  interactionType?: Action;
+  userInteractionCount?: Integer;
 }
 
 /**
@@ -6713,7 +6120,7 @@ export interface InvestmentFund extends InvestmentOrDeposit {}
  *
  **/
 export interface InvestmentOrDeposit extends FinancialProduct {
-  amount?: Number | Array<Number> | MonetaryAmount | Array<MonetaryAmount>;
+  amount?: Number | MonetaryAmount;
 }
 
 /**
@@ -6725,7 +6132,7 @@ export interface InvestmentOrDeposit extends FinancialProduct {
  *
  **/
 export interface InviteAction extends CommunicateAction {
-  event?: Event | Array<Event>;
+  event?: Event;
 }
 
 /**
@@ -6737,42 +6144,22 @@ export interface InviteAction extends CommunicateAction {
  *
  **/
 export interface Invoice extends Intangible {
-  accountId?: Text | Array<Text>;
-  billingPeriod?: Duration | Array<Duration>;
-  broker?: Person | Array<Person> | Organization | Array<Organization>;
-  category?:
-    | PhysicalActivityCategory
-    | Array<PhysicalActivityCategory>
-    | Text
-    | Array<Text>
-    | URL
-    | Array<URL>
-    | Thing
-    | Array<Thing>;
-  confirmationNumber?: Text | Array<Text>;
-  customer?: Organization | Array<Organization> | Person | Array<Person>;
-  minimumPaymentDue?:
-    | PriceSpecification
-    | Array<PriceSpecification>
-    | MonetaryAmount
-    | Array<MonetaryAmount>;
-  paymentDue?: DateTime | Array<DateTime>;
-  paymentDueDate?: DateTime | Array<DateTime> | Date | Array<Date>;
-  paymentMethod?: PaymentMethod | Array<PaymentMethod>;
-  paymentMethodId?: Text | Array<Text>;
-  paymentStatus?:
-    | Text
-    | Array<Text>
-    | PaymentStatusType
-    | Array<PaymentStatusType>;
-  provider?: Organization | Array<Organization> | Person | Array<Person>;
-  referencesOrder?: Order | Array<Order>;
-  scheduledPaymentDate?: Date | Array<Date>;
-  totalPaymentDue?:
-    | PriceSpecification
-    | Array<PriceSpecification>
-    | MonetaryAmount
-    | Array<MonetaryAmount>;
+  accountId?: Text;
+  billingPeriod?: Duration;
+  broker?: Person | Organization;
+  category?: PhysicalActivityCategory | Text | URL | Thing;
+  confirmationNumber?: Text;
+  customer?: Organization | Person;
+  minimumPaymentDue?: PriceSpecification | MonetaryAmount;
+  paymentDue?: DateTime;
+  paymentDueDate?: DateTime | Date;
+  paymentMethod?: PaymentMethod;
+  paymentMethodId?: Text;
+  paymentStatus?: Text | PaymentStatusType;
+  provider?: Organization | Person;
+  referencesOrder?: Order;
+  scheduledPaymentDate?: Date;
+  totalPaymentDue?: PriceSpecification | MonetaryAmount;
 }
 
 /**
@@ -6784,19 +6171,9 @@ export interface Invoice extends Intangible {
  *
  **/
 export interface ItemList extends Intangible {
-  itemListElement?:
-    | Text
-    | Array<Text>
-    | ListItem
-    | Array<ListItem>
-    | Thing
-    | Array<Thing>;
-  itemListOrder?:
-    | ItemListOrderType
-    | Array<ItemListOrderType>
-    | Text
-    | Array<Text>;
-  numberOfItems?: Integer | Array<Integer>;
+  itemListElement?: Text | ListItem | Thing;
+  itemListOrder?: ItemListOrderType | Text;
+  numberOfItems?: Integer;
 }
 
 /**
@@ -6828,84 +6205,42 @@ export interface JewelryStore extends Store {}
  *
  **/
 export interface JobPosting extends Intangible {
-  applicantLocationRequirements?:
-    | AdministrativeArea
-    | Array<AdministrativeArea>;
-  applicationContact?: ContactPoint | Array<ContactPoint>;
-  baseSalary?:
-    | MonetaryAmount
-    | Array<MonetaryAmount>
-    | PriceSpecification
-    | Array<PriceSpecification>
-    | Number
-    | Array<Number>;
-  benefits?: Text | Array<Text>;
-  datePosted?: Date | Array<Date> | DateTime | Array<DateTime>;
-  educationRequirements?:
-    | Text
-    | Array<Text>
-    | EducationalOccupationalCredential
-    | Array<EducationalOccupationalCredential>;
-  eligibilityToWorkRequirement?: Text | Array<Text>;
-  employerOverview?: Text | Array<Text>;
-  employmentType?: Text | Array<Text>;
-  employmentUnit?: Organization | Array<Organization>;
-  estimatedSalary?:
-    | MonetaryAmount
-    | Array<MonetaryAmount>
-    | Number
-    | Array<Number>
-    | MonetaryAmountDistribution
-    | Array<MonetaryAmountDistribution>;
-  experienceInPlaceOfEducation?: Boolean | Array<Boolean>;
-  experienceRequirements?:
-    | Text
-    | Array<Text>
-    | OccupationalExperienceRequirements
-    | Array<OccupationalExperienceRequirements>;
-  hiringOrganization?: Organization | Array<Organization>;
-  incentiveCompensation?: Text | Array<Text>;
-  incentives?: Text | Array<Text>;
-  industry?: DefinedTerm | Array<DefinedTerm> | Text | Array<Text>;
-  jobBenefits?: Text | Array<Text>;
-  jobImmediateStart?: Boolean | Array<Boolean>;
-  jobLocation?: Place | Array<Place>;
-  jobLocationType?: Text | Array<Text>;
-  jobStartDate?: Date | Array<Date> | Text | Array<Text>;
-  occupationalCategory?:
-    | CategoryCode
-    | Array<CategoryCode>
-    | Text
-    | Array<Text>;
-  physicalRequirement?:
-    | DefinedTerm
-    | Array<DefinedTerm>
-    | URL
-    | Array<URL>
-    | Text
-    | Array<Text>;
-  qualifications?:
-    | Text
-    | Array<Text>
-    | EducationalOccupationalCredential
-    | Array<EducationalOccupationalCredential>;
-  relevantOccupation?: Occupation | Array<Occupation>;
-  responsibilities?: Text | Array<Text>;
-  salaryCurrency?: Text | Array<Text>;
-  securityClearanceRequirement?: URL | Array<URL> | Text | Array<Text>;
-  sensoryRequirement?:
-    | DefinedTerm
-    | Array<DefinedTerm>
-    | URL
-    | Array<URL>
-    | Text
-    | Array<Text>;
-  skills?: DefinedTerm | Array<DefinedTerm> | Text | Array<Text>;
-  specialCommitments?: Text | Array<Text>;
-  title?: Text | Array<Text>;
-  totalJobOpenings?: Integer | Array<Integer>;
-  validThrough?: DateTime | Array<DateTime> | Date | Array<Date>;
-  workHours?: Text | Array<Text>;
+  applicantLocationRequirements?: AdministrativeArea;
+  applicationContact?: ContactPoint;
+  baseSalary?: MonetaryAmount | PriceSpecification | Number;
+  benefits?: Text;
+  datePosted?: Date | DateTime;
+  educationRequirements?: Text | EducationalOccupationalCredential;
+  eligibilityToWorkRequirement?: Text;
+  employerOverview?: Text;
+  employmentType?: Text;
+  employmentUnit?: Organization;
+  estimatedSalary?: MonetaryAmount | Number | MonetaryAmountDistribution;
+  experienceInPlaceOfEducation?: Boolean;
+  experienceRequirements?: Text | OccupationalExperienceRequirements;
+  hiringOrganization?: Organization;
+  incentiveCompensation?: Text;
+  incentives?: Text;
+  industry?: DefinedTerm | Text;
+  jobBenefits?: Text;
+  jobImmediateStart?: Boolean;
+  jobLocation?: Place;
+  jobLocationType?: Text;
+  jobStartDate?: Date | Text;
+  occupationalCategory?: CategoryCode | Text;
+  physicalRequirement?: DefinedTerm | URL | Text;
+  qualifications?: Text | EducationalOccupationalCredential;
+  relevantOccupation?: Occupation;
+  responsibilities?: Text;
+  salaryCurrency?: Text;
+  securityClearanceRequirement?: URL | Text;
+  sensoryRequirement?: DefinedTerm | URL | Text;
+  skills?: DefinedTerm | Text;
+  specialCommitments?: Text;
+  title?: Text;
+  totalJobOpenings?: Integer;
+  validThrough?: DateTime | Date;
+  workHours?: Text;
 }
 
 /**
@@ -6917,7 +6252,7 @@ export interface JobPosting extends Intangible {
  *
  **/
 export interface JoinAction extends InteractAction {
-  event?: Event | Array<Event>;
+  event?: Event;
 }
 
 /**
@@ -6931,9 +6266,9 @@ export interface JoinAction extends InteractAction {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface Joint extends AnatomicalStructure {
-  biomechnicalClass?: Text | Array<Text>;
-  functionalClass?: MedicalEntity | Array<MedicalEntity> | Text | Array<Text>;
-  structuralClass?: Text | Array<Text>;
+  biomechnicalClass?: Text;
+  functionalClass?: MedicalEntity | Text;
+  structuralClass?: Text;
 }
 
 /**
@@ -6993,25 +6328,13 @@ export interface Language extends Intangible {}
 *
 **/
 export interface LearningResource extends CreativeWork {
-  assesses?: DefinedTerm | Array<DefinedTerm> | Text | Array<Text>;
-  competencyRequired?:
-    | Text
-    | Array<Text>
-    | URL
-    | Array<URL>
-    | DefinedTerm
-    | Array<DefinedTerm>;
-  educationalAlignment?: AlignmentObject | Array<AlignmentObject>;
-  educationalLevel?:
-    | URL
-    | Array<URL>
-    | DefinedTerm
-    | Array<DefinedTerm>
-    | Text
-    | Array<Text>;
-  educationalUse?: Text | Array<Text> | DefinedTerm | Array<DefinedTerm>;
-  learningResourceType?: Text | Array<Text> | DefinedTerm | Array<DefinedTerm>;
-  teaches?: Text | Array<Text> | DefinedTerm | Array<DefinedTerm>;
+  assesses?: DefinedTerm | Text;
+  competencyRequired?: Text | URL | DefinedTerm;
+  educationalAlignment?: AlignmentObject;
+  educationalLevel?: URL | DefinedTerm | Text;
+  educationalUse?: Text | DefinedTerm;
+  learningResourceType?: Text | DefinedTerm;
+  teaches?: Text | DefinedTerm;
 }
 
 /**
@@ -7023,7 +6346,7 @@ export interface LearningResource extends CreativeWork {
  *
  **/
 export interface LeaveAction extends InteractAction {
-  event?: Event | Array<Event>;
+  event?: Event;
 }
 
 /**
@@ -7050,35 +6373,19 @@ export interface LegalService extends LocalBusiness {}
  *
  **/
 export interface Legislation extends CreativeWork {
-  jurisdiction?:
-    | AdministrativeArea
-    | Array<AdministrativeArea>
-    | Text
-    | Array<Text>;
-  legislationApplies?: Legislation | Array<Legislation>;
-  legislationChanges?: Legislation | Array<Legislation>;
-  legislationConsolidates?: Legislation | Array<Legislation>;
-  legislationDate?: Date | Array<Date>;
-  legislationDateVersion?: Date | Array<Date>;
-  legislationIdentifier?: Text | Array<Text> | URL | Array<URL>;
-  legislationJurisdiction?:
-    | Text
-    | Array<Text>
-    | AdministrativeArea
-    | Array<AdministrativeArea>;
-  legislationLegalForce?: LegalForceStatus | Array<LegalForceStatus>;
-  legislationPassedBy?:
-    | Organization
-    | Array<Organization>
-    | Person
-    | Array<Person>;
-  legislationResponsible?:
-    | Person
-    | Array<Person>
-    | Organization
-    | Array<Organization>;
-  legislationTransposes?: Legislation | Array<Legislation>;
-  legislationType?: CategoryCode | Array<CategoryCode> | Text | Array<Text>;
+  jurisdiction?: AdministrativeArea | Text;
+  legislationApplies?: Legislation;
+  legislationChanges?: Legislation;
+  legislationConsolidates?: Legislation;
+  legislationDate?: Date;
+  legislationDateVersion?: Date;
+  legislationIdentifier?: Text | URL;
+  legislationJurisdiction?: Text | AdministrativeArea;
+  legislationLegalForce?: LegalForceStatus;
+  legislationPassedBy?: Organization | Person;
+  legislationResponsible?: Person | Organization;
+  legislationTransposes?: Legislation;
+  legislationType?: CategoryCode | Text;
 }
 
 /**
@@ -7095,7 +6402,7 @@ export interface Legislation extends CreativeWork {
  *
  **/
 export interface LegislationObject extends Legislation, MediaObject {
-  legislationLegalValue?: LegalValueLevel | Array<LegalValueLevel>;
+  legislationLegalValue?: LegalValueLevel;
 }
 
 /**
@@ -7117,7 +6424,7 @@ export interface LegislativeBuilding extends GovernmentBuilding {}
  *
  **/
 export interface LendAction extends TransferAction {
-  borrower?: Person | Array<Person>;
+  borrower?: Person;
 }
 
 /**
@@ -7191,8 +6498,8 @@ export interface LikeAction extends ReactAction {}
  *
  **/
 export interface LinkRole extends Role {
-  inLanguage?: Text | Array<Text> | Language | Array<Language>;
-  linkRelationship?: Text | Array<Text>;
+  inLanguage?: Text | Language;
+  linkRelationship?: Text;
 }
 
 /**
@@ -7224,10 +6531,10 @@ export interface ListenAction extends ConsumeAction {}
  *
  **/
 export interface ListItem extends Intangible {
-  item?: Thing | Array<Thing>;
-  nextItem?: ListItem | Array<ListItem>;
-  position?: Text | Array<Text> | Integer | Array<Integer>;
-  previousItem?: ListItem | Array<ListItem>;
+  item?: Thing;
+  nextItem?: ListItem;
+  position?: Text | Integer;
+  previousItem?: ListItem;
 }
 
 /**
@@ -7249,9 +6556,9 @@ export interface LiteraryEvent extends Event {}
  *
  **/
 export interface LiveBlogPosting extends BlogPosting {
-  coverageEndTime?: DateTime | Array<DateTime>;
-  coverageStartTime?: DateTime | Array<DateTime>;
-  liveBlogUpdate?: BlogPosting | Array<BlogPosting>;
+  coverageEndTime?: DateTime;
+  coverageStartTime?: DateTime;
+  liveBlogUpdate?: BlogPosting;
 }
 
 /**
@@ -7265,15 +6572,15 @@ export interface LiveBlogPosting extends BlogPosting {
  *
  **/
 export interface LoanOrCredit extends FinancialProduct {
-  amount?: Number | Array<Number> | MonetaryAmount | Array<MonetaryAmount>;
-  currency?: Text | Array<Text>;
-  gracePeriod?: Duration | Array<Duration>;
-  loanRepaymentForm?: RepaymentSpecification | Array<RepaymentSpecification>;
-  loanTerm?: QuantitativeValue | Array<QuantitativeValue>;
-  loanType?: URL | Array<URL> | Text | Array<Text>;
-  recourseLoan?: Boolean | Array<Boolean>;
-  renegotiableLoan?: Boolean | Array<Boolean>;
-  requiredCollateral?: Text | Array<Text> | Thing | Array<Thing>;
+  amount?: Number | MonetaryAmount;
+  currency?: Text;
+  gracePeriod?: Duration;
+  loanRepaymentForm?: RepaymentSpecification;
+  loanTerm?: QuantitativeValue;
+  loanType?: URL | Text;
+  recourseLoan?: Boolean;
+  renegotiableLoan?: Boolean;
+  requiredCollateral?: Text | Thing;
 }
 
 /**
@@ -7285,11 +6592,11 @@ export interface LoanOrCredit extends FinancialProduct {
  *
  **/
 export interface LocalBusiness extends Organization, Place {
-  branchOf?: Organization | Array<Organization>;
-  currenciesAccepted?: Text | Array<Text>;
-  openingHours?: Text | Array<Text>;
-  paymentAccepted?: Text | Array<Text>;
-  priceRange?: Text | Array<Text>;
+  branchOf?: Organization;
+  currenciesAccepted?: Text;
+  openingHours?: Text;
+  paymentAccepted?: Text;
+  priceRange?: Text;
 }
 
 /**
@@ -7303,9 +6610,9 @@ export interface LocalBusiness extends Organization, Place {
  *
  **/
 export interface LocationFeatureSpecification extends PropertyValue {
-  hoursAvailable?: OpeningHoursSpecification | Array<OpeningHoursSpecification>;
-  validFrom?: DateTime | Array<DateTime> | Date | Array<Date>;
-  validThrough?: DateTime | Array<DateTime> | Date | Array<Date>;
+  hoursAvailable?: OpeningHoursSpecification;
+  validFrom?: DateTime | Date;
+  validThrough?: DateTime | Date;
 }
 
 /**
@@ -7327,20 +6634,14 @@ export interface Locksmith extends HomeAndConstructionBusiness {}
  *
  **/
 export interface LodgingBusiness extends LocalBusiness {
-  amenityFeature?:
-    | LocationFeatureSpecification
-    | Array<LocationFeatureSpecification>;
-  audience?: Audience | Array<Audience>;
-  availableLanguage?: Language | Array<Language> | Text | Array<Text>;
-  checkinTime?: DateTime | Array<DateTime> | Time | Array<Time>;
-  checkoutTime?: DateTime | Array<DateTime> | Time | Array<Time>;
-  numberOfRooms?:
-    | Number
-    | Array<Number>
-    | QuantitativeValue
-    | Array<QuantitativeValue>;
-  petsAllowed?: Text | Array<Text> | Boolean | Array<Boolean>;
-  starRating?: Rating | Array<Rating>;
+  amenityFeature?: LocationFeatureSpecification;
+  audience?: Audience;
+  availableLanguage?: Language | Text;
+  checkinTime?: DateTime | Time;
+  checkoutTime?: DateTime | Time;
+  numberOfRooms?: Number | QuantitativeValue;
+  petsAllowed?: Text | Boolean;
+  starRating?: Rating;
 }
 
 /**
@@ -7352,24 +6653,12 @@ export interface LodgingBusiness extends LocalBusiness {
  *
  **/
 export interface LodgingReservation extends Reservation {
-  checkinTime?: DateTime | Array<DateTime> | Time | Array<Time>;
-  checkoutTime?: DateTime | Array<DateTime> | Time | Array<Time>;
-  lodgingUnitDescription?: Text | Array<Text>;
-  lodgingUnitType?:
-    | QualitativeValue
-    | Array<QualitativeValue>
-    | Text
-    | Array<Text>;
-  numAdults?:
-    | Integer
-    | Array<Integer>
-    | QuantitativeValue
-    | Array<QuantitativeValue>;
-  numChildren?:
-    | Integer
-    | Array<Integer>
-    | QuantitativeValue
-    | Array<QuantitativeValue>;
+  checkinTime?: DateTime | Time;
+  checkoutTime?: DateTime | Time;
+  lodgingUnitDescription?: Text;
+  lodgingUnitType?: QualitativeValue | Text;
+  numAdults?: Integer | QuantitativeValue;
+  numChildren?: Integer | QuantitativeValue;
 }
 
 /**
@@ -7381,7 +6670,7 @@ export interface LodgingReservation extends Reservation {
  *
  **/
 export interface LoseAction extends AchieveAction {
-  winner?: Person | Array<Person>;
+  winner?: Person;
 }
 
 /**
@@ -7395,13 +6684,9 @@ export interface LoseAction extends AchieveAction {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface LymphaticVessel extends Vessel {
-  originatesFrom?: Vessel | Array<Vessel>;
-  regionDrained?:
-    | AnatomicalStructure
-    | Array<AnatomicalStructure>
-    | AnatomicalSystem
-    | Array<AnatomicalSystem>;
-  runsTo?: Vessel | Array<Vessel>;
+  originatesFrom?: Vessel;
+  regionDrained?: AnatomicalStructure | AnatomicalSystem;
+  runsTo?: Vessel;
 }
 
 /**
@@ -7427,7 +6712,7 @@ export interface Manuscript extends CreativeWork {}
  *
  **/
 export interface Map extends CreativeWork {
-  mapType?: MapCategoryType | Array<MapCategoryType>;
+  mapType?: MapCategoryType;
 }
 
 /**
@@ -7463,11 +6748,7 @@ export interface Mass extends Quantity {}
  *
  **/
 export interface MathSolver extends CreativeWork {
-  mathExpression?:
-    | Text
-    | Array<Text>
-    | SolveMathAction
-    | Array<SolveMathAction>;
+  mathExpression?: Text | SolveMathAction;
 }
 
 /**
@@ -7515,42 +6796,24 @@ export interface MediaGallery extends CollectionPage {}
  *
  **/
 export interface MediaObject extends CreativeWork {
-  associatedArticle?: NewsArticle | Array<NewsArticle>;
-  bitrate?: Text | Array<Text>;
-  contentSize?: Text | Array<Text>;
-  contentUrl?: URL | Array<URL>;
-  duration?: Duration | Array<Duration>;
-  embedUrl?: URL | Array<URL>;
-  encodesCreativeWork?: CreativeWork | Array<CreativeWork>;
-  encodingFormat?: Text | Array<Text> | URL | Array<URL>;
-  endTime?: DateTime | Array<DateTime> | Time | Array<Time>;
-  height?:
-    | QuantitativeValue
-    | Array<QuantitativeValue>
-    | Distance
-    | Array<Distance>;
-  ineligibleRegion?:
-    | GeoShape
-    | Array<GeoShape>
-    | Text
-    | Array<Text>
-    | Place
-    | Array<Place>;
-  playerType?: Text | Array<Text>;
-  productionCompany?: Organization | Array<Organization>;
-  regionsAllowed?: Place | Array<Place>;
-  requiresSubscription?:
-    | Boolean
-    | Array<Boolean>
-    | MediaSubscription
-    | Array<MediaSubscription>;
-  startTime?: DateTime | Array<DateTime> | Time | Array<Time>;
-  uploadDate?: Date | Array<Date>;
-  width?:
-    | QuantitativeValue
-    | Array<QuantitativeValue>
-    | Distance
-    | Array<Distance>;
+  associatedArticle?: NewsArticle;
+  bitrate?: Text;
+  contentSize?: Text;
+  contentUrl?: URL;
+  duration?: Duration;
+  embedUrl?: URL;
+  encodesCreativeWork?: CreativeWork;
+  encodingFormat?: Text | URL;
+  endTime?: DateTime | Time;
+  height?: QuantitativeValue | Distance;
+  ineligibleRegion?: GeoShape | Text | Place;
+  playerType?: Text;
+  productionCompany?: Organization;
+  regionsAllowed?: Place;
+  requiresSubscription?: Boolean | MediaSubscription;
+  startTime?: DateTime | Time;
+  uploadDate?: Date;
+  width?: QuantitativeValue | Distance;
 }
 
 /**
@@ -7569,9 +6832,7 @@ export interface MediaObject extends CreativeWork {
 *
 **/
 export interface MediaReview extends Review {
-  mediaAuthenticityCategory?:
-    | MediaManipulationRatingEnumeration
-    | Array<MediaManipulationRatingEnumeration>;
+  mediaAuthenticityCategory?: MediaManipulationRatingEnumeration;
 }
 
 /**
@@ -7585,8 +6846,8 @@ export interface MediaReview extends Review {
  *
  **/
 export interface MediaSubscription extends Intangible {
-  authenticator?: Organization | Array<Organization>;
-  expectsAcceptanceOf?: Offer | Array<Offer>;
+  authenticator?: Organization;
+  expectsAcceptanceOf?: Offer;
 }
 
 /**
@@ -7624,7 +6885,7 @@ export interface MedicalBusiness extends LocalBusiness {}
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalCause extends MedicalEntity {
-  causeOf?: MedicalEntity | Array<MedicalEntity>;
+  causeOf?: MedicalEntity;
 }
 
 /**
@@ -7638,14 +6899,8 @@ export interface MedicalCause extends MedicalEntity {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalClinic extends MedicalOrganization, MedicalBusiness {
-  availableService?:
-    | MedicalTest
-    | Array<MedicalTest>
-    | MedicalTherapy
-    | Array<MedicalTherapy>
-    | MedicalProcedure
-    | Array<MedicalProcedure>;
-  medicalSpecialty?: MedicalSpecialty | Array<MedicalSpecialty>;
+  availableService?: MedicalTest | MedicalTherapy | MedicalProcedure;
+  medicalSpecialty?: MedicalSpecialty;
 }
 
 /**
@@ -7659,8 +6914,8 @@ export interface MedicalClinic extends MedicalOrganization, MedicalBusiness {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalCode extends CategoryCode, MedicalIntangible {
-  codeValue?: Text | Array<Text>;
-  codingSystem?: Text | Array<Text>;
+  codeValue?: Text;
+  codingSystem?: Text;
 }
 
 /**
@@ -7676,32 +6931,23 @@ export interface MedicalCode extends CategoryCode, MedicalIntangible {
 export interface MedicalCondition extends MedicalEntity {
   associatedAnatomy?:
     | AnatomicalStructure
-    | Array<AnatomicalStructure>
     | AnatomicalSystem
-    | Array<AnatomicalSystem>
-    | SuperficialAnatomy
-    | Array<SuperficialAnatomy>;
-  differentialDiagnosis?: DDxElement | Array<DDxElement>;
-  drug?: Drug | Array<Drug>;
-  epidemiology?: Text | Array<Text>;
-  expectedPrognosis?: Text | Array<Text>;
-  naturalProgression?: Text | Array<Text>;
-  pathophysiology?: Text | Array<Text>;
-  possibleComplication?: Text | Array<Text>;
-  possibleTreatment?: MedicalTherapy | Array<MedicalTherapy>;
-  primaryPrevention?: MedicalTherapy | Array<MedicalTherapy>;
-  riskFactor?: MedicalRiskFactor | Array<MedicalRiskFactor>;
-  secondaryPrevention?: MedicalTherapy | Array<MedicalTherapy>;
-  signOrSymptom?: MedicalSignOrSymptom | Array<MedicalSignOrSymptom>;
-  stage?: MedicalConditionStage | Array<MedicalConditionStage>;
-  status?:
-    | EventStatusType
-    | Array<EventStatusType>
-    | Text
-    | Array<Text>
-    | MedicalStudyStatus
-    | Array<MedicalStudyStatus>;
-  typicalTest?: MedicalTest | Array<MedicalTest>;
+    | SuperficialAnatomy;
+  differentialDiagnosis?: DDxElement;
+  drug?: Drug;
+  epidemiology?: Text;
+  expectedPrognosis?: Text;
+  naturalProgression?: Text;
+  pathophysiology?: Text;
+  possibleComplication?: Text;
+  possibleTreatment?: MedicalTherapy;
+  primaryPrevention?: MedicalTherapy;
+  riskFactor?: MedicalRiskFactor;
+  secondaryPrevention?: MedicalTherapy;
+  signOrSymptom?: MedicalSignOrSymptom;
+  stage?: MedicalConditionStage;
+  status?: EventStatusType | Text | MedicalStudyStatus;
+  typicalTest?: MedicalTest;
 }
 
 /**
@@ -7715,8 +6961,8 @@ export interface MedicalCondition extends MedicalEntity {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalConditionStage extends MedicalIntangible {
-  stageAsNumber?: Number | Array<Number>;
-  subStageSuffix?: Text | Array<Text>;
+  stageAsNumber?: Number;
+  subStageSuffix?: Text;
 }
 
 /**
@@ -7742,16 +6988,12 @@ export interface MedicalContraindication extends MedicalEntity {}
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalDevice extends MedicalEntity {
-  adverseOutcome?: MedicalEntity | Array<MedicalEntity>;
-  contraindication?:
-    | Text
-    | Array<Text>
-    | MedicalContraindication
-    | Array<MedicalContraindication>;
-  postOp?: Text | Array<Text>;
-  preOp?: Text | Array<Text>;
-  procedure?: Text | Array<Text>;
-  seriousAdverseOutcome?: MedicalEntity | Array<MedicalEntity>;
+  adverseOutcome?: MedicalEntity;
+  contraindication?: Text | MedicalContraindication;
+  postOp?: Text;
+  preOp?: Text;
+  procedure?: Text;
+  seriousAdverseOutcome?: MedicalEntity;
 }
 
 /**
@@ -7765,19 +7007,13 @@ export interface MedicalDevice extends MedicalEntity {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalEntity extends Thing {
-  code?: MedicalCode | Array<MedicalCode>;
-  guideline?: MedicalGuideline | Array<MedicalGuideline>;
-  legalStatus?:
-    | MedicalEnumeration
-    | Array<MedicalEnumeration>
-    | Text
-    | Array<Text>
-    | DrugLegalStatus
-    | Array<DrugLegalStatus>;
-  medicineSystem?: MedicineSystem | Array<MedicineSystem>;
-  recognizingAuthority?: Organization | Array<Organization>;
-  relevantSpecialty?: MedicalSpecialty | Array<MedicalSpecialty>;
-  study?: MedicalStudy | Array<MedicalStudy>;
+  code?: MedicalCode;
+  guideline?: MedicalGuideline;
+  legalStatus?: MedicalEnumeration | Text | DrugLegalStatus;
+  medicineSystem?: MedicineSystem;
+  recognizingAuthority?: Organization;
+  relevantSpecialty?: MedicalSpecialty;
+  study?: MedicalStudy;
 }
 
 /**
@@ -7803,10 +7039,10 @@ export interface MedicalEnumeration extends Enumeration {}
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalGuideline extends MedicalEntity {
-  evidenceLevel?: MedicalEvidenceLevel | Array<MedicalEvidenceLevel>;
-  evidenceOrigin?: Text | Array<Text>;
-  guidelineDate?: Date | Array<Date>;
-  guidelineSubject?: MedicalEntity | Array<MedicalEntity>;
+  evidenceLevel?: MedicalEvidenceLevel;
+  evidenceOrigin?: Text;
+  guidelineDate?: Date;
+  guidelineSubject?: MedicalEntity;
 }
 
 /**
@@ -7832,7 +7068,7 @@ export interface MedicalGuidelineContraindication extends MedicalGuideline {}
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalGuidelineRecommendation extends MedicalGuideline {
-  recommendationStrength?: Text | Array<Text>;
+  recommendationStrength?: Text;
 }
 
 /**
@@ -7870,9 +7106,7 @@ export interface MedicalIntangible extends MedicalEntity {}
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalObservationalStudy extends MedicalStudy {
-  studyDesign?:
-    | MedicalObservationalStudyDesign
-    | Array<MedicalObservationalStudyDesign>;
+  studyDesign?: MedicalObservationalStudyDesign;
 }
 
 /**
@@ -7884,9 +7118,9 @@ export interface MedicalObservationalStudy extends MedicalStudy {
  *
  **/
 export interface MedicalOrganization extends Organization {
-  healthPlanNetworkId?: Text | Array<Text>;
-  isAcceptingNewPatients?: Boolean | Array<Boolean>;
-  medicalSpecialty?: MedicalSpecialty | Array<MedicalSpecialty>;
+  healthPlanNetworkId?: Text;
+  isAcceptingNewPatients?: Boolean;
+  medicalSpecialty?: MedicalSpecialty;
 }
 
 /**
@@ -7900,18 +7134,12 @@ export interface MedicalOrganization extends Organization {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalProcedure extends MedicalEntity {
-  bodyLocation?: Text | Array<Text>;
-  followup?: Text | Array<Text>;
-  howPerformed?: Text | Array<Text>;
-  preparation?: MedicalEntity | Array<MedicalEntity> | Text | Array<Text>;
-  procedureType?: MedicalProcedureType | Array<MedicalProcedureType>;
-  status?:
-    | EventStatusType
-    | Array<EventStatusType>
-    | Text
-    | Array<Text>
-    | MedicalStudyStatus
-    | Array<MedicalStudyStatus>;
+  bodyLocation?: Text;
+  followup?: Text;
+  howPerformed?: Text;
+  preparation?: MedicalEntity | Text;
+  procedureType?: MedicalProcedureType;
+  status?: EventStatusType | Text | MedicalStudyStatus;
 }
 
 /**
@@ -7937,8 +7165,8 @@ export interface MedicalRiskCalculator extends MedicalRiskEstimator {}
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalRiskEstimator extends MedicalEntity {
-  estimatesRiskOf?: MedicalEntity | Array<MedicalEntity>;
-  includedRiskFactor?: MedicalRiskFactor | Array<MedicalRiskFactor>;
+  estimatesRiskOf?: MedicalEntity;
+  includedRiskFactor?: MedicalRiskFactor;
 }
 
 /**
@@ -7952,7 +7180,7 @@ export interface MedicalRiskEstimator extends MedicalEntity {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalRiskFactor extends MedicalEntity {
-  increasesRiskOf?: MedicalEntity | Array<MedicalEntity>;
+  increasesRiskOf?: MedicalEntity;
 }
 
 /**
@@ -7966,7 +7194,7 @@ export interface MedicalRiskFactor extends MedicalEntity {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalRiskScore extends MedicalRiskEstimator {
-  algorithm?: Text | Array<Text>;
+  algorithm?: Text;
 }
 
 /**
@@ -7980,7 +7208,7 @@ export interface MedicalRiskScore extends MedicalRiskEstimator {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalScholarlyArticle extends ScholarlyArticle {
-  publicationType?: Text | Array<Text>;
+  publicationType?: Text;
 }
 
 /**
@@ -7994,8 +7222,8 @@ export interface MedicalScholarlyArticle extends ScholarlyArticle {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalSign extends MedicalSignOrSymptom {
-  identifyingExam?: PhysicalExam | Array<PhysicalExam>;
-  identifyingTest?: MedicalTest | Array<MedicalTest>;
+  identifyingExam?: PhysicalExam;
+  identifyingTest?: MedicalTest;
 }
 
 /**
@@ -8009,7 +7237,7 @@ export interface MedicalSign extends MedicalSignOrSymptom {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalSignOrSymptom extends MedicalCondition {
-  possibleTreatment?: MedicalTherapy | Array<MedicalTherapy>;
+  possibleTreatment?: MedicalTherapy;
 }
 
 /**
@@ -8023,17 +7251,11 @@ export interface MedicalSignOrSymptom extends MedicalCondition {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalStudy extends MedicalEntity {
-  healthCondition?: MedicalCondition | Array<MedicalCondition>;
-  sponsor?: Person | Array<Person> | Organization | Array<Organization>;
-  status?:
-    | EventStatusType
-    | Array<EventStatusType>
-    | Text
-    | Array<Text>
-    | MedicalStudyStatus
-    | Array<MedicalStudyStatus>;
-  studyLocation?: AdministrativeArea | Array<AdministrativeArea>;
-  studySubject?: MedicalEntity | Array<MedicalEntity>;
+  healthCondition?: MedicalCondition;
+  sponsor?: Person | Organization;
+  status?: EventStatusType | Text | MedicalStudyStatus;
+  studyLocation?: AdministrativeArea;
+  studySubject?: MedicalEntity;
 }
 
 /**
@@ -8059,15 +7281,11 @@ export interface MedicalSymptom extends MedicalSignOrSymptom {}
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalTest extends MedicalEntity {
-  affectedBy?: Drug | Array<Drug>;
-  normalRange?:
-    | MedicalEnumeration
-    | Array<MedicalEnumeration>
-    | Text
-    | Array<Text>;
-  signDetected?: MedicalSign | Array<MedicalSign>;
-  usedToDiagnose?: MedicalCondition | Array<MedicalCondition>;
-  usesDevice?: MedicalDevice | Array<MedicalDevice>;
+  affectedBy?: Drug;
+  normalRange?: MedicalEnumeration | Text;
+  signDetected?: MedicalSign;
+  usedToDiagnose?: MedicalCondition;
+  usesDevice?: MedicalDevice;
 }
 
 /**
@@ -8081,7 +7299,7 @@ export interface MedicalTest extends MedicalEntity {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalTestPanel extends MedicalTest {
-  subTest?: MedicalTest | Array<MedicalTest>;
+  subTest?: MedicalTest;
 }
 
 /**
@@ -8095,13 +7313,9 @@ export interface MedicalTestPanel extends MedicalTest {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalTherapy extends TherapeuticProcedure {
-  contraindication?:
-    | Text
-    | Array<Text>
-    | MedicalContraindication
-    | Array<MedicalContraindication>;
-  duplicateTherapy?: MedicalTherapy | Array<MedicalTherapy>;
-  seriousAdverseOutcome?: MedicalEntity | Array<MedicalEntity>;
+  contraindication?: Text | MedicalContraindication;
+  duplicateTherapy?: MedicalTherapy;
+  seriousAdverseOutcome?: MedicalEntity;
 }
 
 /**
@@ -8115,7 +7329,7 @@ export interface MedicalTherapy extends TherapeuticProcedure {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalTrial extends MedicalStudy {
-  trialDesign?: MedicalTrialDesign | Array<MedicalTrialDesign>;
+  trialDesign?: MedicalTrialDesign;
 }
 
 /**
@@ -8129,12 +7343,8 @@ export interface MedicalTrial extends MedicalStudy {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalWebPage extends WebPage {
-  aspect?: Text | Array<Text>;
-  medicalAudience?:
-    | MedicalAudienceType
-    | Array<MedicalAudienceType>
-    | MedicalAudience
-    | Array<MedicalAudience>;
+  aspect?: Text;
+  medicalAudience?: MedicalAudienceType | MedicalAudience;
 }
 
 /**
@@ -8171,8 +7381,8 @@ export interface MensClothingStore extends Store {}
  *
  **/
 export interface Menu extends CreativeWork {
-  hasMenuItem?: MenuItem | Array<MenuItem>;
-  hasMenuSection?: MenuSection | Array<MenuSection>;
+  hasMenuItem?: MenuItem;
+  hasMenuSection?: MenuSection;
 }
 
 /**
@@ -8184,10 +7394,10 @@ export interface Menu extends CreativeWork {
  *
  **/
 export interface MenuItem extends Intangible {
-  menuAddOn?: MenuItem | Array<MenuItem> | MenuSection | Array<MenuSection>;
-  nutrition?: NutritionInformation | Array<NutritionInformation>;
-  offers?: Offer | Array<Offer> | Demand | Array<Demand>;
-  suitableForDiet?: RestrictedDiet | Array<RestrictedDiet>;
+  menuAddOn?: MenuItem | MenuSection;
+  nutrition?: NutritionInformation;
+  offers?: Offer | Demand;
+  suitableForDiet?: RestrictedDiet;
 }
 
 /**
@@ -8199,8 +7409,8 @@ export interface MenuItem extends Intangible {
  *
  **/
 export interface MenuSection extends CreativeWork {
-  hasMenuItem?: MenuItem | Array<MenuItem>;
-  hasMenuSection?: MenuSection | Array<MenuSection>;
+  hasMenuItem?: MenuItem;
+  hasMenuSection?: MenuSection;
 }
 
 /**
@@ -8216,14 +7426,12 @@ export interface MenuSection extends CreativeWork {
  *
  **/
 export interface MerchantReturnPolicy extends Intangible {
-  inStoreReturnsOffered?: Boolean | Array<Boolean>;
-  merchantReturnDays?: Integer | Array<Integer>;
-  merchantReturnLink?: URL | Array<URL>;
-  refundType?: RefundTypeEnumeration | Array<RefundTypeEnumeration>;
-  returnFees?: ReturnFeesEnumeration | Array<ReturnFeesEnumeration>;
-  returnPolicyCategory?:
-    | MerchantReturnEnumeration
-    | Array<MerchantReturnEnumeration>;
+  inStoreReturnsOffered?: Boolean;
+  merchantReturnDays?: Integer;
+  merchantReturnLink?: URL;
+  refundType?: RefundTypeEnumeration;
+  returnFees?: ReturnFeesEnumeration;
+  returnPolicyCategory?: MerchantReturnEnumeration;
 }
 
 /**
@@ -8235,49 +7443,15 @@ export interface MerchantReturnPolicy extends Intangible {
  *
  **/
 export interface Message extends CreativeWork {
-  bccRecipient?:
-    | Person
-    | Array<Person>
-    | Organization
-    | Array<Organization>
-    | ContactPoint
-    | Array<ContactPoint>;
-  ccRecipient?:
-    | ContactPoint
-    | Array<ContactPoint>
-    | Person
-    | Array<Person>
-    | Organization
-    | Array<Organization>;
-  dateRead?: DateTime | Array<DateTime> | Date | Array<Date>;
-  dateReceived?: DateTime | Array<DateTime>;
-  dateSent?: DateTime | Array<DateTime>;
-  messageAttachment?: CreativeWork | Array<CreativeWork>;
-  recipient?:
-    | Organization
-    | Array<Organization>
-    | ContactPoint
-    | Array<ContactPoint>
-    | Person
-    | Array<Person>
-    | Audience
-    | Array<Audience>;
-  sender?:
-    | Person
-    | Array<Person>
-    | Audience
-    | Array<Audience>
-    | Organization
-    | Array<Organization>;
-  toRecipient?:
-    | ContactPoint
-    | Array<ContactPoint>
-    | Audience
-    | Array<Audience>
-    | Person
-    | Array<Person>
-    | Organization
-    | Array<Organization>;
+  bccRecipient?: Person | Organization | ContactPoint;
+  ccRecipient?: ContactPoint | Person | Organization;
+  dateRead?: DateTime | Date;
+  dateReceived?: DateTime;
+  dateSent?: DateTime;
+  messageAttachment?: CreativeWork;
+  recipient?: Organization | ContactPoint | Person | Audience;
+  sender?: Person | Audience | Organization;
+  toRecipient?: ContactPoint | Audience | Person | Organization;
 }
 
 /**
@@ -8299,7 +7473,7 @@ export interface MiddleSchool extends EducationalOrganization {}
  *
  **/
 export interface MobileApplication extends SoftwareApplication {
-  carrierRequirements?: Text | Array<Text>;
+  carrierRequirements?: Text;
 }
 
 /**
@@ -8323,20 +7497,12 @@ export interface MobilePhoneStore extends Store {}
  *
  **/
 export interface MonetaryAmount extends StructuredValue {
-  currency?: Text | Array<Text>;
-  maxValue?: Number | Array<Number>;
-  minValue?: Number | Array<Number>;
-  validFrom?: DateTime | Array<DateTime> | Date | Array<Date>;
-  validThrough?: DateTime | Array<DateTime> | Date | Array<Date>;
-  value?:
-    | Number
-    | Array<Number>
-    | StructuredValue
-    | Array<StructuredValue>
-    | Boolean
-    | Array<Boolean>
-    | Text
-    | Array<Text>;
+  currency?: Text;
+  maxValue?: Number;
+  minValue?: Number;
+  validFrom?: DateTime | Date;
+  validThrough?: DateTime | Date;
+  value?: Number | StructuredValue | Boolean | Text;
 }
 
 /**
@@ -8351,7 +7517,7 @@ export interface MonetaryAmount extends StructuredValue {
  **/
 export interface MonetaryAmountDistribution
   extends QuantitativeValueDistribution {
-  currency?: Text | Array<Text>;
+  currency?: Text;
 }
 
 /**
@@ -8368,8 +7534,8 @@ export interface MonetaryAmountDistribution
  *
  **/
 export interface MonetaryGrant extends Grant {
-  amount?: Number | Array<Number> | MonetaryAmount | Array<MonetaryAmount>;
-  funder?: Organization | Array<Organization> | Person | Array<Person>;
+  amount?: Number | MonetaryAmount;
+  funder?: Organization | Person;
 }
 
 /**
@@ -8386,12 +7552,8 @@ export interface MonetaryGrant extends Grant {
  *
  **/
 export interface MoneyTransfer extends TransferAction {
-  amount?: Number | Array<Number> | MonetaryAmount | Array<MonetaryAmount>;
-  beneficiaryBank?:
-    | Text
-    | Array<Text>
-    | BankOrCreditUnion
-    | Array<BankOrCreditUnion>;
+  amount?: Number | MonetaryAmount;
+  beneficiaryBank?: Text | BankOrCreditUnion;
 }
 
 /**
@@ -8408,8 +7570,8 @@ export interface MoneyTransfer extends TransferAction {
  *
  **/
 export interface MortgageLoan extends LoanOrCredit {
-  domiciledMortgage?: Boolean | Array<Boolean>;
-  loanMortgageMandateAmount?: MonetaryAmount | Array<MonetaryAmount>;
+  domiciledMortgage?: Boolean;
+  loanMortgageMandateAmount?: MonetaryAmount;
 }
 
 /**
@@ -8502,8 +7664,8 @@ export interface Mountain extends Landform {}
  *
  **/
 export interface MoveAction extends Action {
-  fromLocation?: Place | Array<Place>;
-  toLocation?: Place | Array<Place>;
+  fromLocation?: Place;
+  toLocation?: Place;
 }
 
 /**
@@ -8515,17 +7677,17 @@ export interface MoveAction extends Action {
  *
  **/
 export interface Movie extends CreativeWork {
-  actor?: Person | Array<Person>;
-  actors?: Person | Array<Person>;
-  countryOfOrigin?: Country | Array<Country>;
-  director?: Person | Array<Person>;
-  directors?: Person | Array<Person>;
-  duration?: Duration | Array<Duration>;
-  musicBy?: Person | Array<Person> | MusicGroup | Array<MusicGroup>;
-  productionCompany?: Organization | Array<Organization>;
-  subtitleLanguage?: Text | Array<Text> | Language | Array<Language>;
-  titleEIDR?: URL | Array<URL> | Text | Array<Text>;
-  trailer?: VideoObject | Array<VideoObject>;
+  actor?: Person;
+  actors?: Person;
+  countryOfOrigin?: Country;
+  director?: Person;
+  directors?: Person;
+  duration?: Duration;
+  musicBy?: Person | MusicGroup;
+  productionCompany?: Organization;
+  subtitleLanguage?: Text | Language;
+  titleEIDR?: URL | Text;
+  trailer?: VideoObject;
 }
 
 /**
@@ -8557,13 +7719,13 @@ export interface MovieRentalStore extends Store {}
  *
  **/
 export interface MovieSeries extends CreativeWorkSeries {
-  actor?: Person | Array<Person>;
-  actors?: Person | Array<Person>;
-  director?: Person | Array<Person>;
-  directors?: Person | Array<Person>;
-  musicBy?: Person | Array<Person> | MusicGroup | Array<MusicGroup>;
-  productionCompany?: Organization | Array<Organization>;
-  trailer?: VideoObject | Array<VideoObject>;
+  actor?: Person;
+  actors?: Person;
+  director?: Person;
+  directors?: Person;
+  musicBy?: Person | MusicGroup;
+  productionCompany?: Organization;
+  trailer?: VideoObject;
 }
 
 /**
@@ -8575,7 +7737,7 @@ export interface MovieSeries extends CreativeWorkSeries {
  *
  **/
 export interface MovieTheater extends CivicStructure, EntertainmentBusiness {
-  screenCount?: Number | Array<Number>;
+  screenCount?: Number;
 }
 
 /**
@@ -8599,11 +7761,11 @@ export interface MovingCompany extends HomeAndConstructionBusiness {}
  * Partof: https://health-lifesci.schema.org
  **/
 export interface Muscle extends AnatomicalStructure {
-  antagonist?: Muscle | Array<Muscle>;
-  bloodSupply?: Vessel | Array<Vessel>;
-  insertion?: AnatomicalStructure | Array<AnatomicalStructure>;
-  muscleAction?: Text | Array<Text>;
-  nerve?: Nerve | Array<Nerve>;
+  antagonist?: Muscle;
+  bloodSupply?: Vessel;
+  insertion?: AnatomicalStructure;
+  muscleAction?: Text;
+  nerve?: Nerve;
 }
 
 /**
@@ -8625,12 +7787,10 @@ export interface Museum extends CivicStructure {}
  *
  **/
 export interface MusicAlbum extends MusicPlaylist {
-  albumProductionType?:
-    | MusicAlbumProductionType
-    | Array<MusicAlbumProductionType>;
-  albumRelease?: MusicRelease | Array<MusicRelease>;
-  albumReleaseType?: MusicAlbumReleaseType | Array<MusicAlbumReleaseType>;
-  byArtist?: MusicGroup | Array<MusicGroup> | Person | Array<Person>;
+  albumProductionType?: MusicAlbumProductionType;
+  albumRelease?: MusicRelease;
+  albumReleaseType?: MusicAlbumReleaseType;
+  byArtist?: MusicGroup | Person;
 }
 
 /**
@@ -8644,16 +7804,16 @@ export interface MusicAlbum extends MusicPlaylist {
  *
  **/
 export interface MusicComposition extends CreativeWork {
-  composer?: Organization | Array<Organization> | Person | Array<Person>;
-  firstPerformance?: Event | Array<Event>;
-  includedComposition?: MusicComposition | Array<MusicComposition>;
-  iswcCode?: Text | Array<Text>;
-  lyricist?: Person | Array<Person>;
-  lyrics?: CreativeWork | Array<CreativeWork>;
-  musicalKey?: Text | Array<Text>;
-  musicArrangement?: MusicComposition | Array<MusicComposition>;
-  musicCompositionForm?: Text | Array<Text>;
-  recordedAs?: MusicRecording | Array<MusicRecording>;
+  composer?: Organization | Person;
+  firstPerformance?: Event;
+  includedComposition?: MusicComposition;
+  iswcCode?: Text;
+  lyricist?: Person;
+  lyrics?: CreativeWork;
+  musicalKey?: Text;
+  musicArrangement?: MusicComposition;
+  musicCompositionForm?: Text;
+  recordedAs?: MusicRecording;
 }
 
 /**
@@ -8675,12 +7835,12 @@ export interface MusicEvent extends Event {}
  *
  **/
 export interface MusicGroup extends PerformingGroup {
-  album?: MusicAlbum | Array<MusicAlbum>;
-  albums?: MusicAlbum | Array<MusicAlbum>;
-  genre?: URL | Array<URL> | Text | Array<Text>;
-  musicGroupMember?: Person | Array<Person>;
-  track?: ItemList | Array<ItemList> | MusicRecording | Array<MusicRecording>;
-  tracks?: MusicRecording | Array<MusicRecording>;
+  album?: MusicAlbum;
+  albums?: MusicAlbum;
+  genre?: URL | Text;
+  musicGroupMember?: Person;
+  track?: ItemList | MusicRecording;
+  tracks?: MusicRecording;
 }
 
 /**
@@ -8692,9 +7852,9 @@ export interface MusicGroup extends PerformingGroup {
  *
  **/
 export interface MusicPlaylist extends CreativeWork {
-  numTracks?: Integer | Array<Integer>;
-  track?: ItemList | Array<ItemList> | MusicRecording | Array<MusicRecording>;
-  tracks?: MusicRecording | Array<MusicRecording>;
+  numTracks?: Integer;
+  track?: ItemList | MusicRecording;
+  tracks?: MusicRecording;
 }
 
 /**
@@ -8706,12 +7866,12 @@ export interface MusicPlaylist extends CreativeWork {
  *
  **/
 export interface MusicRecording extends CreativeWork {
-  byArtist?: MusicGroup | Array<MusicGroup> | Person | Array<Person>;
-  duration?: Duration | Array<Duration>;
-  inAlbum?: MusicAlbum | Array<MusicAlbum>;
-  inPlaylist?: MusicPlaylist | Array<MusicPlaylist>;
-  isrcCode?: Text | Array<Text>;
-  recordingOf?: MusicComposition | Array<MusicComposition>;
+  byArtist?: MusicGroup | Person;
+  duration?: Duration;
+  inAlbum?: MusicAlbum;
+  inPlaylist?: MusicPlaylist;
+  isrcCode?: Text;
+  recordingOf?: MusicComposition;
 }
 
 /**
@@ -8725,12 +7885,12 @@ export interface MusicRecording extends CreativeWork {
  *
  **/
 export interface MusicRelease extends MusicPlaylist {
-  catalogNumber?: Text | Array<Text>;
-  creditedTo?: Person | Array<Person> | Organization | Array<Organization>;
-  duration?: Duration | Array<Duration>;
-  musicReleaseFormat?: MusicReleaseFormatType | Array<MusicReleaseFormatType>;
-  recordLabel?: Organization | Array<Organization>;
-  releaseOf?: MusicAlbum | Array<MusicAlbum>;
+  catalogNumber?: Text;
+  creditedTo?: Person | Organization;
+  duration?: Duration;
+  musicReleaseFormat?: MusicReleaseFormatType;
+  recordLabel?: Organization;
+  releaseOf?: MusicAlbum;
 }
 
 /**
@@ -8784,14 +7944,10 @@ export interface NailSalon extends HealthAndBeautyBusiness {}
  * Partof: https://health-lifesci.schema.org
  **/
 export interface Nerve extends AnatomicalStructure {
-  branch?: AnatomicalStructure | Array<AnatomicalStructure>;
-  nerveMotor?: Muscle | Array<Muscle>;
-  sensoryUnit?:
-    | SuperficialAnatomy
-    | Array<SuperficialAnatomy>
-    | AnatomicalStructure
-    | Array<AnatomicalStructure>;
-  sourcedFrom?: BrainStructure | Array<BrainStructure>;
+  branch?: AnatomicalStructure;
+  nerveMotor?: Muscle;
+  sensoryUnit?: SuperficialAnatomy | AnatomicalStructure;
+  sourcedFrom?: BrainStructure;
 }
 
 /**
@@ -8809,11 +7965,11 @@ A more detailed overview of [schema.org News markup](/docs/news.html) is also av
 *
 **/
 export interface NewsArticle extends Article {
-  dateline?: Text | Array<Text>;
-  printColumn?: Text | Array<Text>;
-  printEdition?: Text | Array<Text>;
-  printPage?: Text | Array<Text>;
-  printSection?: Text | Array<Text>;
+  dateline?: Text;
+  printColumn?: Text;
+  printEdition?: Text;
+  printPage?: Text;
+  printSection?: Text;
 }
 
 /**
@@ -8830,37 +7986,17 @@ export interface NewsArticle extends Article {
  *
  **/
 export interface NewsMediaOrganization extends Organization {
-  actionableFeedbackPolicy?:
-    | CreativeWork
-    | Array<CreativeWork>
-    | URL
-    | Array<URL>;
-  correctionsPolicy?: URL | Array<URL> | CreativeWork | Array<CreativeWork>;
-  diversityPolicy?: CreativeWork | Array<CreativeWork> | URL | Array<URL>;
-  diversityStaffingReport?: Article | Array<Article> | URL | Array<URL>;
-  ethicsPolicy?: URL | Array<URL> | CreativeWork | Array<CreativeWork>;
-  masthead?: CreativeWork | Array<CreativeWork> | URL | Array<URL>;
-  missionCoveragePrioritiesPolicy?:
-    | URL
-    | Array<URL>
-    | CreativeWork
-    | Array<CreativeWork>;
-  noBylinesPolicy?: CreativeWork | Array<CreativeWork> | URL | Array<URL>;
-  ownershipFundingInfo?:
-    | Text
-    | Array<Text>
-    | URL
-    | Array<URL>
-    | CreativeWork
-    | Array<CreativeWork>
-    | AboutPage
-    | Array<AboutPage>;
-  unnamedSourcesPolicy?: CreativeWork | Array<CreativeWork> | URL | Array<URL>;
-  verificationFactCheckingPolicy?:
-    | CreativeWork
-    | Array<CreativeWork>
-    | URL
-    | Array<URL>;
+  actionableFeedbackPolicy?: CreativeWork | URL;
+  correctionsPolicy?: URL | CreativeWork;
+  diversityPolicy?: CreativeWork | URL;
+  diversityStaffingReport?: Article | URL;
+  ethicsPolicy?: URL | CreativeWork;
+  masthead?: CreativeWork | URL;
+  missionCoveragePrioritiesPolicy?: URL | CreativeWork;
+  noBylinesPolicy?: CreativeWork | URL;
+  ownershipFundingInfo?: Text | URL | CreativeWork | AboutPage;
+  unnamedSourcesPolicy?: CreativeWork | URL;
+  verificationFactCheckingPolicy?: CreativeWork | URL;
 }
 
 /**
@@ -8940,18 +8076,18 @@ export interface NoteDigitalDocument extends DigitalDocument {}
  *
  **/
 export interface NutritionInformation extends StructuredValue {
-  calories?: Energy | Array<Energy>;
-  carbohydrateContent?: Mass | Array<Mass>;
-  cholesterolContent?: Mass | Array<Mass>;
-  fatContent?: Mass | Array<Mass>;
-  fiberContent?: Mass | Array<Mass>;
-  proteinContent?: Mass | Array<Mass>;
-  saturatedFatContent?: Mass | Array<Mass>;
-  servingSize?: Text | Array<Text>;
-  sodiumContent?: Mass | Array<Mass>;
-  sugarContent?: Mass | Array<Mass>;
-  transFatContent?: Mass | Array<Mass>;
-  unsaturatedFatContent?: Mass | Array<Mass>;
+  calories?: Energy;
+  carbohydrateContent?: Mass;
+  cholesterolContent?: Mass;
+  fatContent?: Mass;
+  fiberContent?: Mass;
+  proteinContent?: Mass;
+  saturatedFatContent?: Mass;
+  servingSize?: Text;
+  sodiumContent?: Mass;
+  sugarContent?: Mass;
+  transFatContent?: Mass;
+  unsaturatedFatContent?: Mass;
 }
 
 /**
@@ -8969,11 +8105,11 @@ See also [[StatisticalPopulation]], and the [data and datasets](/docs/data-and-d
 *
 **/
 export interface Observation extends Intangible {
-  marginOfError?: QuantitativeValue | Array<QuantitativeValue>;
-  measuredProperty?: Property | Array<Property>;
-  measuredValue?: DataType | Array<DataType>;
-  observationDate?: DateTime | Array<DateTime>;
-  observedNode?: StatisticalPopulation | Array<StatisticalPopulation>;
+  marginOfError?: QuantitativeValue;
+  measuredProperty?: Property;
+  measuredValue?: DataType;
+  observationDate?: DateTime;
+  observedNode?: StatisticalPopulation;
 }
 
 /**
@@ -8987,36 +8123,14 @@ export interface Observation extends Intangible {
  *
  **/
 export interface Occupation extends Intangible {
-  educationRequirements?:
-    | Text
-    | Array<Text>
-    | EducationalOccupationalCredential
-    | Array<EducationalOccupationalCredential>;
-  estimatedSalary?:
-    | MonetaryAmount
-    | Array<MonetaryAmount>
-    | Number
-    | Array<Number>
-    | MonetaryAmountDistribution
-    | Array<MonetaryAmountDistribution>;
-  experienceRequirements?:
-    | Text
-    | Array<Text>
-    | OccupationalExperienceRequirements
-    | Array<OccupationalExperienceRequirements>;
-  occupationalCategory?:
-    | CategoryCode
-    | Array<CategoryCode>
-    | Text
-    | Array<Text>;
-  occupationLocation?: AdministrativeArea | Array<AdministrativeArea>;
-  qualifications?:
-    | Text
-    | Array<Text>
-    | EducationalOccupationalCredential
-    | Array<EducationalOccupationalCredential>;
-  responsibilities?: Text | Array<Text>;
-  skills?: DefinedTerm | Array<DefinedTerm> | Text | Array<Text>;
+  educationRequirements?: Text | EducationalOccupationalCredential;
+  estimatedSalary?: MonetaryAmount | Number | MonetaryAmountDistribution;
+  experienceRequirements?: Text | OccupationalExperienceRequirements;
+  occupationalCategory?: CategoryCode | Text;
+  occupationLocation?: AdministrativeArea;
+  qualifications?: Text | EducationalOccupationalCredential;
+  responsibilities?: Text;
+  skills?: DefinedTerm | Text;
 }
 
 /**
@@ -9032,7 +8146,7 @@ export interface Occupation extends Intangible {
  *
  **/
 export interface OccupationalExperienceRequirements extends Intangible {
-  monthsOfExperience?: Number | Array<Number>;
+  monthsOfExperience?: Number;
 }
 
 /**
@@ -9068,113 +8182,58 @@ export interface OceanBodyOfWater extends BodyOfWater {}
  *
  **/
 export interface Offer extends Intangible {
-  acceptedPaymentMethod?:
-    | LoanOrCredit
-    | Array<LoanOrCredit>
-    | PaymentMethod
-    | Array<PaymentMethod>;
-  addOn?: Offer | Array<Offer>;
-  advanceBookingRequirement?: QuantitativeValue | Array<QuantitativeValue>;
-  aggregateRating?: AggregateRating | Array<AggregateRating>;
-  areaServed?:
-    | Text
-    | Array<Text>
-    | Place
-    | Array<Place>
-    | AdministrativeArea
-    | Array<AdministrativeArea>
-    | GeoShape
-    | Array<GeoShape>;
-  availability?: ItemAvailability | Array<ItemAvailability>;
-  availabilityEnds?:
-    | DateTime
-    | Array<DateTime>
-    | Time
-    | Array<Time>
-    | Date
-    | Array<Date>;
-  availabilityStarts?:
-    | DateTime
-    | Array<DateTime>
-    | Date
-    | Array<Date>
-    | Time
-    | Array<Time>;
-  availableAtOrFrom?: Place | Array<Place>;
-  availableDeliveryMethod?: DeliveryMethod | Array<DeliveryMethod>;
-  businessFunction?: BusinessFunction | Array<BusinessFunction>;
-  category?:
-    | PhysicalActivityCategory
-    | Array<PhysicalActivityCategory>
-    | Text
-    | Array<Text>
-    | URL
-    | Array<URL>
-    | Thing
-    | Array<Thing>;
-  deliveryLeadTime?: QuantitativeValue | Array<QuantitativeValue>;
-  eligibleCustomerType?: BusinessEntityType | Array<BusinessEntityType>;
-  eligibleDuration?: QuantitativeValue | Array<QuantitativeValue>;
-  eligibleQuantity?: QuantitativeValue | Array<QuantitativeValue>;
-  eligibleRegion?:
-    | Text
-    | Array<Text>
-    | GeoShape
-    | Array<GeoShape>
-    | Place
-    | Array<Place>;
-  eligibleTransactionVolume?: PriceSpecification | Array<PriceSpecification>;
-  gtin?: Text | Array<Text>;
-  gtin12?: Text | Array<Text>;
-  gtin13?: Text | Array<Text>;
-  gtin14?: Text | Array<Text>;
-  gtin8?: Text | Array<Text>;
-  hasMeasurement?: QuantitativeValue | Array<QuantitativeValue>;
-  includesObject?: TypeAndQuantityNode | Array<TypeAndQuantityNode>;
-  ineligibleRegion?:
-    | GeoShape
-    | Array<GeoShape>
-    | Text
-    | Array<Text>
-    | Place
-    | Array<Place>;
-  inventoryLevel?: QuantitativeValue | Array<QuantitativeValue>;
-  itemCondition?: OfferItemCondition | Array<OfferItemCondition>;
+  acceptedPaymentMethod?: LoanOrCredit | PaymentMethod;
+  addOn?: Offer;
+  advanceBookingRequirement?: QuantitativeValue;
+  aggregateRating?: AggregateRating;
+  areaServed?: Text | Place | AdministrativeArea | GeoShape;
+  availability?: ItemAvailability;
+  availabilityEnds?: DateTime | Time | Date;
+  availabilityStarts?: DateTime | Date | Time;
+  availableAtOrFrom?: Place;
+  availableDeliveryMethod?: DeliveryMethod;
+  businessFunction?: BusinessFunction;
+  category?: PhysicalActivityCategory | Text | URL | Thing;
+  deliveryLeadTime?: QuantitativeValue;
+  eligibleCustomerType?: BusinessEntityType;
+  eligibleDuration?: QuantitativeValue;
+  eligibleQuantity?: QuantitativeValue;
+  eligibleRegion?: Text | GeoShape | Place;
+  eligibleTransactionVolume?: PriceSpecification;
+  gtin?: Text;
+  gtin12?: Text;
+  gtin13?: Text;
+  gtin14?: Text;
+  gtin8?: Text;
+  hasMeasurement?: QuantitativeValue;
+  includesObject?: TypeAndQuantityNode;
+  ineligibleRegion?: GeoShape | Text | Place;
+  inventoryLevel?: QuantitativeValue;
+  itemCondition?: OfferItemCondition;
   itemOffered?:
     | Trip
-    | Array<Trip>
     | Product
-    | Array<Product>
     | MenuItem
-    | Array<MenuItem>
     | Service
-    | Array<Service>
     | Event
-    | Array<Event>
     | CreativeWork
-    | Array<CreativeWork>
-    | AggregateOffer
-    | Array<AggregateOffer>;
-  leaseLength?:
-    | Duration
-    | Array<Duration>
-    | QuantitativeValue
-    | Array<QuantitativeValue>;
-  mpn?: Text | Array<Text>;
-  offeredBy?: Person | Array<Person> | Organization | Array<Organization>;
-  price?: Number | Array<Number> | Text | Array<Text>;
-  priceCurrency?: Text | Array<Text>;
-  priceSpecification?: PriceSpecification | Array<PriceSpecification>;
-  priceValidUntil?: Date | Array<Date>;
-  review?: Review | Array<Review>;
-  reviews?: Review | Array<Review>;
-  seller?: Organization | Array<Organization> | Person | Array<Person>;
-  serialNumber?: Text | Array<Text>;
-  shippingDetails?: OfferShippingDetails | Array<OfferShippingDetails>;
-  sku?: Text | Array<Text>;
-  validFrom?: DateTime | Array<DateTime> | Date | Array<Date>;
-  validThrough?: DateTime | Array<DateTime> | Date | Array<Date>;
-  warranty?: WarrantyPromise | Array<WarrantyPromise>;
+    | AggregateOffer;
+  leaseLength?: Duration | QuantitativeValue;
+  mpn?: Text;
+  offeredBy?: Person | Organization;
+  price?: Number | Text;
+  priceCurrency?: Text;
+  priceSpecification?: PriceSpecification;
+  priceValidUntil?: Date;
+  review?: Review;
+  reviews?: Review;
+  seller?: Organization | Person;
+  serialNumber?: Text;
+  shippingDetails?: OfferShippingDetails;
+  sku?: Text;
+  validFrom?: DateTime | Date;
+  validThrough?: DateTime | Date;
+  warranty?: WarrantyPromise;
 }
 
 /**
@@ -9245,13 +8304,13 @@ or Fast and expensive: $15 in 1-2 days.
 *
 **/
 export interface OfferShippingDetails extends StructuredValue {
-  deliveryTime?: ShippingDeliveryTime | Array<ShippingDeliveryTime>;
-  doesNotShip?: Boolean | Array<Boolean>;
-  shippingDestination?: DefinedRegion | Array<DefinedRegion>;
-  shippingLabel?: Text | Array<Text>;
-  shippingRate?: MonetaryAmount | Array<MonetaryAmount>;
-  shippingSettingsLink?: URL | Array<URL>;
-  transitTimeLabel?: Text | Array<Text>;
+  deliveryTime?: ShippingDeliveryTime;
+  doesNotShip?: Boolean;
+  shippingDestination?: DefinedRegion;
+  shippingLabel?: Text;
+  shippingRate?: MonetaryAmount;
+  shippingSettingsLink?: URL;
+  transitTimeLabel?: Text;
 }
 
 /**
@@ -9287,11 +8346,11 @@ The place is __open__ if the [[opens]] property is specified, and __closed__ oth
 *
 **/
 export interface OpeningHoursSpecification extends StructuredValue {
-  closes?: Time | Array<Time>;
-  dayOfWeek?: DayOfWeek | Array<DayOfWeek>;
-  opens?: Time | Array<Time>;
-  validFrom?: DateTime | Array<DateTime> | Date | Array<Date>;
-  validThrough?: DateTime | Array<DateTime> | Date | Array<Date>;
+  closes?: Time;
+  dayOfWeek?: DayOfWeek;
+  opens?: Time;
+  validFrom?: DateTime | Date;
+  validThrough?: DateTime | Date;
 }
 
 /**
@@ -9330,34 +8389,28 @@ export interface Optician extends MedicalBusiness {}
  *
  **/
 export interface Order extends Intangible {
-  acceptedOffer?: Offer | Array<Offer>;
-  billingAddress?: PostalAddress | Array<PostalAddress>;
-  broker?: Person | Array<Person> | Organization | Array<Organization>;
-  confirmationNumber?: Text | Array<Text>;
-  customer?: Organization | Array<Organization> | Person | Array<Person>;
-  discount?: Number | Array<Number> | Text | Array<Text>;
-  discountCode?: Text | Array<Text>;
-  discountCurrency?: Text | Array<Text>;
-  isGift?: Boolean | Array<Boolean>;
-  merchant?: Person | Array<Person> | Organization | Array<Organization>;
-  orderDate?: DateTime | Array<DateTime> | Date | Array<Date>;
-  orderDelivery?: ParcelDelivery | Array<ParcelDelivery>;
-  orderedItem?:
-    | Product
-    | Array<Product>
-    | OrderItem
-    | Array<OrderItem>
-    | Service
-    | Array<Service>;
-  orderNumber?: Text | Array<Text>;
-  orderStatus?: OrderStatus | Array<OrderStatus>;
-  partOfInvoice?: Invoice | Array<Invoice>;
-  paymentDue?: DateTime | Array<DateTime>;
-  paymentDueDate?: DateTime | Array<DateTime> | Date | Array<Date>;
-  paymentMethod?: PaymentMethod | Array<PaymentMethod>;
-  paymentMethodId?: Text | Array<Text>;
-  paymentUrl?: URL | Array<URL>;
-  seller?: Organization | Array<Organization> | Person | Array<Person>;
+  acceptedOffer?: Offer;
+  billingAddress?: PostalAddress;
+  broker?: Person | Organization;
+  confirmationNumber?: Text;
+  customer?: Organization | Person;
+  discount?: Number | Text;
+  discountCode?: Text;
+  discountCurrency?: Text;
+  isGift?: Boolean;
+  merchant?: Person | Organization;
+  orderDate?: DateTime | Date;
+  orderDelivery?: ParcelDelivery;
+  orderedItem?: Product | OrderItem | Service;
+  orderNumber?: Text;
+  orderStatus?: OrderStatus;
+  partOfInvoice?: Invoice;
+  paymentDue?: DateTime;
+  paymentDueDate?: DateTime | Date;
+  paymentMethod?: PaymentMethod;
+  paymentMethodId?: Text;
+  paymentUrl?: URL;
+  seller?: Organization | Person;
 }
 
 /**
@@ -9369,7 +8422,7 @@ export interface Order extends Intangible {
  *
  **/
 export interface OrderAction extends TradeAction {
-  deliveryMethod?: DeliveryMethod | Array<DeliveryMethod>;
+  deliveryMethod?: DeliveryMethod;
 }
 
 /**
@@ -9381,17 +8434,11 @@ export interface OrderAction extends TradeAction {
  *
  **/
 export interface OrderItem extends Intangible {
-  orderDelivery?: ParcelDelivery | Array<ParcelDelivery>;
-  orderedItem?:
-    | Product
-    | Array<Product>
-    | OrderItem
-    | Array<OrderItem>
-    | Service
-    | Array<Service>;
-  orderItemNumber?: Text | Array<Text>;
-  orderItemStatus?: OrderStatus | Array<OrderStatus>;
-  orderQuantity?: Number | Array<Number>;
+  orderDelivery?: ParcelDelivery;
+  orderedItem?: Product | OrderItem | Service;
+  orderItemNumber?: Text;
+  orderItemStatus?: OrderStatus;
+  orderQuantity?: Number;
 }
 
 /**
@@ -9403,109 +8450,69 @@ export interface OrderItem extends Intangible {
  *
  **/
 export interface Organization extends Thing {
-  actionableFeedbackPolicy?:
-    | CreativeWork
-    | Array<CreativeWork>
-    | URL
-    | Array<URL>;
-  address?: Text | Array<Text> | PostalAddress | Array<PostalAddress>;
-  aggregateRating?: AggregateRating | Array<AggregateRating>;
-  alumni?: Person | Array<Person>;
-  areaServed?:
-    | Text
-    | Array<Text>
-    | Place
-    | Array<Place>
-    | AdministrativeArea
-    | Array<AdministrativeArea>
-    | GeoShape
-    | Array<GeoShape>;
-  award?: Text | Array<Text>;
-  awards?: Text | Array<Text>;
-  brand?: Brand | Array<Brand> | Organization | Array<Organization>;
-  contactPoint?: ContactPoint | Array<ContactPoint>;
-  contactPoints?: ContactPoint | Array<ContactPoint>;
-  correctionsPolicy?: URL | Array<URL> | CreativeWork | Array<CreativeWork>;
-  department?: Organization | Array<Organization>;
-  dissolutionDate?: Date | Array<Date>;
-  diversityPolicy?: CreativeWork | Array<CreativeWork> | URL | Array<URL>;
-  diversityStaffingReport?: Article | Array<Article> | URL | Array<URL>;
-  duns?: Text | Array<Text>;
-  email?: Text | Array<Text>;
-  employee?: Person | Array<Person>;
-  employees?: Person | Array<Person>;
-  ethicsPolicy?: URL | Array<URL> | CreativeWork | Array<CreativeWork>;
-  event?: Event | Array<Event>;
-  events?: Event | Array<Event>;
-  faxNumber?: Text | Array<Text>;
-  founder?: Person | Array<Person>;
-  founders?: Person | Array<Person>;
-  foundingDate?: Date | Array<Date>;
-  foundingLocation?: Place | Array<Place>;
-  funder?: Organization | Array<Organization> | Person | Array<Person>;
-  globalLocationNumber?: Text | Array<Text>;
-  hasCredential?:
-    | EducationalOccupationalCredential
-    | Array<EducationalOccupationalCredential>;
-  hasMerchantReturnPolicy?: MerchantReturnPolicy | Array<MerchantReturnPolicy>;
-  hasOfferCatalog?: OfferCatalog | Array<OfferCatalog>;
-  hasPOS?: Place | Array<Place>;
-  interactionStatistic?: InteractionCounter | Array<InteractionCounter>;
-  isicV4?: Text | Array<Text>;
-  knowsAbout?: Text | Array<Text> | URL | Array<URL> | Thing | Array<Thing>;
-  knowsLanguage?: Text | Array<Text> | Language | Array<Language>;
-  legalName?: Text | Array<Text>;
-  leiCode?: Text | Array<Text>;
-  location?:
-    | Place
-    | Array<Place>
-    | Text
-    | Array<Text>
-    | VirtualLocation
-    | Array<VirtualLocation>
-    | PostalAddress
-    | Array<PostalAddress>;
-  logo?: ImageObject | Array<ImageObject> | URL | Array<URL>;
-  makesOffer?: Offer | Array<Offer>;
-  member?: Organization | Array<Organization> | Person | Array<Person>;
-  memberOf?:
-    | ProgramMembership
-    | Array<ProgramMembership>
-    | Organization
-    | Array<Organization>;
-  members?: Person | Array<Person> | Organization | Array<Organization>;
-  naics?: Text | Array<Text>;
-  nonprofitStatus?: NonprofitType | Array<NonprofitType>;
-  numberOfEmployees?: QuantitativeValue | Array<QuantitativeValue>;
-  ownershipFundingInfo?:
-    | Text
-    | Array<Text>
-    | URL
-    | Array<URL>
-    | CreativeWork
-    | Array<CreativeWork>
-    | AboutPage
-    | Array<AboutPage>;
-  owns?: OwnershipInfo | Array<OwnershipInfo> | Product | Array<Product>;
-  parentOrganization?: Organization | Array<Organization>;
-  publishingPrinciples?: URL | Array<URL> | CreativeWork | Array<CreativeWork>;
-  review?: Review | Array<Review>;
-  reviews?: Review | Array<Review>;
-  seeks?: Demand | Array<Demand>;
-  serviceArea?:
-    | Place
-    | Array<Place>
-    | AdministrativeArea
-    | Array<AdministrativeArea>
-    | GeoShape
-    | Array<GeoShape>;
-  slogan?: Text | Array<Text>;
-  sponsor?: Person | Array<Person> | Organization | Array<Organization>;
-  subOrganization?: Organization | Array<Organization>;
-  taxID?: Text | Array<Text>;
-  telephone?: Text | Array<Text>;
-  unnamedSourcesPolicy?: CreativeWork | Array<CreativeWork> | URL | Array<URL>;
-  vatID?: Text | Array<Text>;
+  actionableFeedbackPolicy?: CreativeWork | URL;
+  address?: Text | PostalAddress;
+  aggregateRating?: AggregateRating;
+  alumni?: Person;
+  areaServed?: Text | Place | AdministrativeArea | GeoShape;
+  award?: Text;
+  awards?: Text;
+  brand?: Brand | Organization;
+  contactPoint?: ContactPoint;
+  contactPoints?: ContactPoint;
+  correctionsPolicy?: URL | CreativeWork;
+  department?: Organization;
+  dissolutionDate?: Date;
+  diversityPolicy?: CreativeWork | URL;
+  diversityStaffingReport?: Article | URL;
+  duns?: Text;
+  email?: Text;
+  employee?: Person;
+  employees?: Person;
+  ethicsPolicy?: URL | CreativeWork;
+  event?: Event;
+  events?: Event;
+  faxNumber?: Text;
+  founder?: Person;
+  founders?: Person;
+  foundingDate?: Date;
+  foundingLocation?: Place;
+  funder?: Organization | Person;
+  globalLocationNumber?: Text;
+  hasCredential?: EducationalOccupationalCredential;
+  hasMerchantReturnPolicy?: MerchantReturnPolicy;
+  hasOfferCatalog?: OfferCatalog;
+  hasPOS?: Place;
+  interactionStatistic?: InteractionCounter;
+  isicV4?: Text;
+  knowsAbout?: Text | URL | Thing;
+  knowsLanguage?: Text | Language;
+  legalName?: Text;
+  leiCode?: Text;
+  location?: Place | Text | VirtualLocation | PostalAddress;
+  logo?: ImageObject | URL;
+  makesOffer?: Offer;
+  member?: Organization | Person;
+  memberOf?: ProgramMembership | Organization;
+  members?: Person | Organization;
+  naics?: Text;
+  nonprofitStatus?: NonprofitType;
+  numberOfEmployees?: QuantitativeValue;
+  ownershipFundingInfo?: Text | URL | CreativeWork | AboutPage;
+  owns?: OwnershipInfo | Product;
+  parentOrganization?: Organization;
+  publishingPrinciples?: URL | CreativeWork;
+  review?: Review;
+  reviews?: Review;
+  seeks?: Demand;
+  serviceArea?: Place | AdministrativeArea | GeoShape;
+  slogan?: Text;
+  sponsor?: Person | Organization;
+  subOrganization?: Organization;
+  taxID?: Text;
+  telephone?: Text;
+  unnamedSourcesPolicy?: CreativeWork | URL;
+  vatID?: Text;
 }
 
 /**
@@ -9517,7 +8524,7 @@ export interface Organization extends Thing {
  *
  **/
 export interface OrganizationRole extends Role {
-  numberedPosition?: Number | Array<Number>;
+  numberedPosition?: Number;
 }
 
 /**
@@ -9551,10 +8558,10 @@ export interface OutletStore extends Store {}
  *
  **/
 export interface OwnershipInfo extends StructuredValue {
-  acquiredFrom?: Organization | Array<Organization> | Person | Array<Person>;
-  ownedFrom?: DateTime | Array<DateTime>;
-  ownedThrough?: DateTime | Array<DateTime>;
-  typeOfGood?: Service | Array<Service> | Product | Array<Product>;
+  acquiredFrom?: Organization | Person;
+  ownedFrom?: DateTime;
+  ownedThrough?: DateTime;
+  typeOfGood?: Service | Product;
 }
 
 /**
@@ -9598,18 +8605,18 @@ export interface PalliativeProcedure extends MedicalTherapy, MedicalProcedure {}
  *
  **/
 export interface ParcelDelivery extends Intangible {
-  carrier?: Organization | Array<Organization>;
-  deliveryAddress?: PostalAddress | Array<PostalAddress>;
-  deliveryStatus?: DeliveryEvent | Array<DeliveryEvent>;
-  expectedArrivalFrom?: Date | Array<Date> | DateTime | Array<DateTime>;
-  expectedArrivalUntil?: Date | Array<Date> | DateTime | Array<DateTime>;
-  hasDeliveryMethod?: DeliveryMethod | Array<DeliveryMethod>;
-  itemShipped?: Product | Array<Product>;
-  originAddress?: PostalAddress | Array<PostalAddress>;
-  partOfOrder?: Order | Array<Order>;
-  provider?: Organization | Array<Organization> | Person | Array<Person>;
-  trackingNumber?: Text | Array<Text>;
-  trackingUrl?: URL | Array<URL>;
+  carrier?: Organization;
+  deliveryAddress?: PostalAddress;
+  deliveryStatus?: DeliveryEvent;
+  expectedArrivalFrom?: Date | DateTime;
+  expectedArrivalUntil?: Date | DateTime;
+  hasDeliveryMethod?: DeliveryMethod;
+  itemShipped?: Product;
+  originAddress?: PostalAddress;
+  partOfOrder?: Order;
+  provider?: Organization | Person;
+  trackingNumber?: Text;
+  trackingUrl?: URL;
 }
 
 /**
@@ -9621,8 +8628,8 @@ export interface ParcelDelivery extends Intangible {
  *
  **/
 export interface ParentAudience extends PeopleAudience {
-  childMaxAge?: Number | Array<Number>;
-  childMinAge?: Number | Array<Number>;
+  childMaxAge?: Number;
+  childMinAge?: Number;
 }
 
 /**
@@ -9656,7 +8663,7 @@ export interface ParkingFacility extends CivicStructure {}
  * Partof: https://health-lifesci.schema.org
  **/
 export interface PathologyTest extends MedicalTest {
-  tissueSample?: Text | Array<Text>;
+  tissueSample?: Text;
 }
 
 /**
@@ -9670,9 +8677,9 @@ export interface PathologyTest extends MedicalTest {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface Patient extends MedicalAudience, Person {
-  diagnosis?: MedicalCondition | Array<MedicalCondition>;
-  drug?: Drug | Array<Drug>;
-  healthCondition?: MedicalCondition | Array<MedicalCondition>;
+  diagnosis?: MedicalCondition;
+  drug?: Drug;
+  healthCondition?: MedicalCondition;
 }
 
 /**
@@ -9694,15 +8701,7 @@ export interface PawnShop extends Store {}
  *
  **/
 export interface PayAction extends TradeAction {
-  recipient?:
-    | Organization
-    | Array<Organization>
-    | ContactPoint
-    | Array<ContactPoint>
-    | Person
-    | Array<Person>
-    | Audience
-    | Array<Audience>;
+  recipient?: Organization | ContactPoint | Person | Audience;
 }
 
 /**
@@ -9716,14 +8715,10 @@ export interface PayAction extends TradeAction {
  *
  **/
 export interface PaymentCard extends PaymentMethod, FinancialProduct {
-  cashBack?: Number | Array<Number> | Boolean | Array<Boolean>;
-  contactlessPayment?: Boolean | Array<Boolean>;
-  floorLimit?: MonetaryAmount | Array<MonetaryAmount>;
-  monthlyMinimumRepaymentAmount?:
-    | MonetaryAmount
-    | Array<MonetaryAmount>
-    | Number
-    | Array<Number>;
+  cashBack?: Number | Boolean;
+  contactlessPayment?: Boolean;
+  floorLimit?: MonetaryAmount;
+  monthlyMinimumRepaymentAmount?: MonetaryAmount | Number;
 }
 
 /**
@@ -9737,8 +8732,8 @@ export interface PaymentCard extends PaymentMethod, FinancialProduct {
  *
  **/
 export interface PaymentChargeSpecification extends PriceSpecification {
-  appliesToDeliveryMethod?: DeliveryMethod | Array<DeliveryMethod>;
-  appliesToPaymentMethod?: PaymentMethod | Array<PaymentMethod>;
+  appliesToDeliveryMethod?: DeliveryMethod;
+  appliesToPaymentMethod?: PaymentMethod;
 }
 
 /**
@@ -9775,15 +8770,15 @@ export interface PaymentService extends FinancialProduct {}
  *
  **/
 export interface PeopleAudience extends Audience {
-  healthCondition?: MedicalCondition | Array<MedicalCondition>;
-  requiredGender?: Text | Array<Text>;
-  requiredMaxAge?: Integer | Array<Integer>;
-  requiredMinAge?: Integer | Array<Integer>;
-  suggestedAge?: QuantitativeValue | Array<QuantitativeValue>;
-  suggestedGender?: Text | Array<Text> | GenderType | Array<GenderType>;
-  suggestedMaxAge?: Number | Array<Number>;
-  suggestedMeasurement?: QuantitativeValue | Array<QuantitativeValue>;
-  suggestedMinAge?: Number | Array<Number>;
+  healthCondition?: MedicalCondition;
+  requiredGender?: Text;
+  requiredMaxAge?: Integer;
+  requiredMinAge?: Integer;
+  suggestedAge?: QuantitativeValue;
+  suggestedGender?: Text | GenderType;
+  suggestedMaxAge?: Number;
+  suggestedMeasurement?: QuantitativeValue;
+  suggestedMinAge?: Number;
 }
 
 /**
@@ -9795,7 +8790,7 @@ export interface PeopleAudience extends Audience {
  *
  **/
 export interface PerformAction extends PlayAction {
-  entertainmentBusiness?: EntertainmentBusiness | Array<EntertainmentBusiness>;
+  entertainmentBusiness?: EntertainmentBusiness;
 }
 
 /**
@@ -9807,7 +8802,7 @@ export interface PerformAction extends PlayAction {
  *
  **/
 export interface PerformanceRole extends Role {
-  characterName?: Text | Array<Text>;
+  characterName?: Text;
 }
 
 /**
@@ -9851,13 +8846,13 @@ export interface Periodical extends CreativeWorkSeries {}
  *
  **/
 export interface Permit extends Intangible {
-  issuedBy?: Organization | Array<Organization>;
-  issuedThrough?: Service | Array<Service>;
-  permitAudience?: Audience | Array<Audience>;
-  validFor?: Duration | Array<Duration>;
-  validFrom?: DateTime | Array<DateTime> | Date | Array<Date>;
-  validIn?: AdministrativeArea | Array<AdministrativeArea>;
-  validUntil?: Date | Array<Date>;
+  issuedBy?: Organization;
+  issuedThrough?: Service;
+  permitAudience?: Audience;
+  validFor?: Duration;
+  validFrom?: DateTime | Date;
+  validIn?: AdministrativeArea;
+  validUntil?: Date;
 }
 
 /**
@@ -9871,86 +8866,68 @@ export interface Permit extends Intangible {
  *
  **/
 export interface Person extends Thing {
-  additionalName?: Text | Array<Text>;
-  address?: Text | Array<Text> | PostalAddress | Array<PostalAddress>;
-  affiliation?: Organization | Array<Organization>;
-  alumniOf?:
-    | EducationalOrganization
-    | Array<EducationalOrganization>
-    | Organization
-    | Array<Organization>;
-  award?: Text | Array<Text>;
-  awards?: Text | Array<Text>;
-  birthDate?: Date | Array<Date>;
-  birthPlace?: Place | Array<Place>;
-  brand?: Brand | Array<Brand> | Organization | Array<Organization>;
-  callSign?: Text | Array<Text>;
-  children?: Person | Array<Person>;
-  colleague?: Person | Array<Person> | URL | Array<URL>;
-  colleagues?: Person | Array<Person>;
-  contactPoint?: ContactPoint | Array<ContactPoint>;
-  contactPoints?: ContactPoint | Array<ContactPoint>;
-  deathDate?: Date | Array<Date>;
-  deathPlace?: Place | Array<Place>;
-  duns?: Text | Array<Text>;
-  email?: Text | Array<Text>;
-  familyName?: Text | Array<Text>;
-  faxNumber?: Text | Array<Text>;
-  follows?: Person | Array<Person>;
-  funder?: Organization | Array<Organization> | Person | Array<Person>;
-  gender?: GenderType | Array<GenderType> | Text | Array<Text>;
-  givenName?: Text | Array<Text>;
-  globalLocationNumber?: Text | Array<Text>;
-  hasCredential?:
-    | EducationalOccupationalCredential
-    | Array<EducationalOccupationalCredential>;
-  hasOccupation?: Occupation | Array<Occupation>;
-  hasOfferCatalog?: OfferCatalog | Array<OfferCatalog>;
-  hasPOS?: Place | Array<Place>;
-  height?:
-    | QuantitativeValue
-    | Array<QuantitativeValue>
-    | Distance
-    | Array<Distance>;
-  homeLocation?: Place | Array<Place> | ContactPoint | Array<ContactPoint>;
-  honorificPrefix?: Text | Array<Text>;
-  honorificSuffix?: Text | Array<Text>;
-  interactionStatistic?: InteractionCounter | Array<InteractionCounter>;
-  isicV4?: Text | Array<Text>;
-  jobTitle?: DefinedTerm | Array<DefinedTerm> | Text | Array<Text>;
-  knows?: Person | Array<Person>;
-  knowsAbout?: Text | Array<Text> | URL | Array<URL> | Thing | Array<Thing>;
-  knowsLanguage?: Text | Array<Text> | Language | Array<Language>;
-  makesOffer?: Offer | Array<Offer>;
-  memberOf?:
-    | ProgramMembership
-    | Array<ProgramMembership>
-    | Organization
-    | Array<Organization>;
-  naics?: Text | Array<Text>;
-  nationality?: Country | Array<Country>;
-  netWorth?:
-    | PriceSpecification
-    | Array<PriceSpecification>
-    | MonetaryAmount
-    | Array<MonetaryAmount>;
-  owns?: OwnershipInfo | Array<OwnershipInfo> | Product | Array<Product>;
-  parent?: Person | Array<Person>;
-  parents?: Person | Array<Person>;
-  performerIn?: Event | Array<Event>;
-  publishingPrinciples?: URL | Array<URL> | CreativeWork | Array<CreativeWork>;
-  relatedTo?: Person | Array<Person>;
-  seeks?: Demand | Array<Demand>;
-  sibling?: Person | Array<Person>;
-  siblings?: Person | Array<Person>;
-  sponsor?: Person | Array<Person> | Organization | Array<Organization>;
-  spouse?: Person | Array<Person>;
-  taxID?: Text | Array<Text>;
-  telephone?: Text | Array<Text>;
-  vatID?: Text | Array<Text>;
-  weight?: QuantitativeValue | Array<QuantitativeValue>;
-  workLocation?: ContactPoint | Array<ContactPoint> | Place | Array<Place>;
-  worksFor?: Organization | Array<Organization>;
+  additionalName?: Text;
+  address?: Text | PostalAddress;
+  affiliation?: Organization;
+  alumniOf?: EducationalOrganization | Organization;
+  award?: Text;
+  awards?: Text;
+  birthDate?: Date;
+  birthPlace?: Place;
+  brand?: Brand | Organization;
+  callSign?: Text;
+  children?: Person;
+  colleague?: Person | URL;
+  colleagues?: Person;
+  contactPoint?: ContactPoint;
+  contactPoints?: ContactPoint;
+  deathDate?: Date;
+  deathPlace?: Place;
+  duns?: Text;
+  email?: Text;
+  familyName?: Text;
+  faxNumber?: Text;
+  follows?: Person;
+  funder?: Organization | Person;
+  gender?: GenderType | Text;
+  givenName?: Text;
+  globalLocationNumber?: Text;
+  hasCredential?: EducationalOccupationalCredential;
+  hasOccupation?: Occupation;
+  hasOfferCatalog?: OfferCatalog;
+  hasPOS?: Place;
+  height?: QuantitativeValue | Distance;
+  homeLocation?: Place | ContactPoint;
+  honorificPrefix?: Text;
+  honorificSuffix?: Text;
+  interactionStatistic?: InteractionCounter;
+  isicV4?: Text;
+  jobTitle?: DefinedTerm | Text;
+  knows?: Person;
+  knowsAbout?: Text | URL | Thing;
+  knowsLanguage?: Text | Language;
+  makesOffer?: Offer;
+  memberOf?: ProgramMembership | Organization;
+  naics?: Text;
+  nationality?: Country;
+  netWorth?: PriceSpecification | MonetaryAmount;
+  owns?: OwnershipInfo | Product;
+  parent?: Person;
+  parents?: Person;
+  performerIn?: Event;
+  publishingPrinciples?: URL | CreativeWork;
+  relatedTo?: Person;
+  seeks?: Demand;
+  sibling?: Person;
+  siblings?: Person;
+  sponsor?: Person | Organization;
+  spouse?: Person;
+  taxID?: Text;
+  telephone?: Text;
+  vatID?: Text;
+  weight?: QuantitativeValue;
+  workLocation?: ContactPoint | Place;
+  worksFor?: Organization;
 }
 
 /**
@@ -10006,22 +8983,11 @@ export interface PhotographAction extends CreateAction {}
 export interface PhysicalActivity extends LifestyleModification {
   associatedAnatomy?:
     | AnatomicalStructure
-    | Array<AnatomicalStructure>
     | AnatomicalSystem
-    | Array<AnatomicalSystem>
-    | SuperficialAnatomy
-    | Array<SuperficialAnatomy>;
-  category?:
-    | PhysicalActivityCategory
-    | Array<PhysicalActivityCategory>
-    | Text
-    | Array<Text>
-    | URL
-    | Array<URL>
-    | Thing
-    | Array<Thing>;
-  epidemiology?: Text | Array<Text>;
-  pathophysiology?: Text | Array<Text>;
+    | SuperficialAnatomy;
+  category?: PhysicalActivityCategory | Text | URL | Thing;
+  epidemiology?: Text;
+  pathophysiology?: Text;
 }
 
 /**
@@ -10045,15 +9011,9 @@ export interface PhysicalTherapy extends MedicalTherapy {}
  *
  **/
 export interface Physician extends MedicalBusiness, MedicalOrganization {
-  availableService?:
-    | MedicalTest
-    | Array<MedicalTest>
-    | MedicalTherapy
-    | Array<MedicalTherapy>
-    | MedicalProcedure
-    | Array<MedicalProcedure>;
-  hospitalAffiliation?: Hospital | Array<Hospital>;
-  medicalSpecialty?: MedicalSpecialty | Array<MedicalSpecialty>;
+  availableService?: MedicalTest | MedicalTherapy | MedicalProcedure;
+  hospitalAffiliation?: Hospital;
+  medicalSpecialty?: MedicalSpecialty;
 }
 
 /**
@@ -10065,96 +9025,50 @@ export interface Physician extends MedicalBusiness, MedicalOrganization {
  *
  **/
 export interface Place extends Thing {
-  additionalProperty?: PropertyValue | Array<PropertyValue>;
-  address?: Text | Array<Text> | PostalAddress | Array<PostalAddress>;
-  aggregateRating?: AggregateRating | Array<AggregateRating>;
-  amenityFeature?:
-    | LocationFeatureSpecification
-    | Array<LocationFeatureSpecification>;
-  branchCode?: Text | Array<Text>;
-  containedIn?: Place | Array<Place>;
-  containedInPlace?: Place | Array<Place>;
-  containsPlace?: Place | Array<Place>;
-  event?: Event | Array<Event>;
-  events?: Event | Array<Event>;
-  faxNumber?: Text | Array<Text>;
-  geo?: GeoCoordinates | Array<GeoCoordinates> | GeoShape | Array<GeoShape>;
-  geoContains?:
-    | GeospatialGeometry
-    | Array<GeospatialGeometry>
-    | Place
-    | Array<Place>;
-  geoCoveredBy?:
-    | GeospatialGeometry
-    | Array<GeospatialGeometry>
-    | Place
-    | Array<Place>;
-  geoCovers?:
-    | GeospatialGeometry
-    | Array<GeospatialGeometry>
-    | Place
-    | Array<Place>;
-  geoCrosses?:
-    | GeospatialGeometry
-    | Array<GeospatialGeometry>
-    | Place
-    | Array<Place>;
-  geoDisjoint?:
-    | Place
-    | Array<Place>
-    | GeospatialGeometry
-    | Array<GeospatialGeometry>;
-  geoEquals?:
-    | Place
-    | Array<Place>
-    | GeospatialGeometry
-    | Array<GeospatialGeometry>;
-  geoIntersects?:
-    | GeospatialGeometry
-    | Array<GeospatialGeometry>
-    | Place
-    | Array<Place>;
-  geoOverlaps?:
-    | Place
-    | Array<Place>
-    | GeospatialGeometry
-    | Array<GeospatialGeometry>;
-  geoTouches?:
-    | Place
-    | Array<Place>
-    | GeospatialGeometry
-    | Array<GeospatialGeometry>;
-  geoWithin?:
-    | Place
-    | Array<Place>
-    | GeospatialGeometry
-    | Array<GeospatialGeometry>;
-  globalLocationNumber?: Text | Array<Text>;
-  hasDriveThroughService?: Boolean | Array<Boolean>;
-  hasMap?: URL | Array<URL> | Map | Array<Map>;
-  isAccessibleForFree?: Boolean | Array<Boolean>;
-  isicV4?: Text | Array<Text>;
-  latitude?: Text | Array<Text> | Number | Array<Number>;
-  logo?: ImageObject | Array<ImageObject> | URL | Array<URL>;
-  longitude?: Text | Array<Text> | Number | Array<Number>;
-  map?: URL | Array<URL>;
-  maps?: URL | Array<URL>;
-  maximumAttendeeCapacity?: Integer | Array<Integer>;
-  openingHoursSpecification?:
-    | OpeningHoursSpecification
-    | Array<OpeningHoursSpecification>;
-  photo?: Photograph | Array<Photograph> | ImageObject | Array<ImageObject>;
-  photos?: Photograph | Array<Photograph> | ImageObject | Array<ImageObject>;
-  publicAccess?: Boolean | Array<Boolean>;
-  review?: Review | Array<Review>;
-  reviews?: Review | Array<Review>;
-  slogan?: Text | Array<Text>;
-  smokingAllowed?: Boolean | Array<Boolean>;
-  specialOpeningHoursSpecification?:
-    | OpeningHoursSpecification
-    | Array<OpeningHoursSpecification>;
-  telephone?: Text | Array<Text>;
-  tourBookingPage?: URL | Array<URL>;
+  additionalProperty?: PropertyValue;
+  address?: Text | PostalAddress;
+  aggregateRating?: AggregateRating;
+  amenityFeature?: LocationFeatureSpecification;
+  branchCode?: Text;
+  containedIn?: Place;
+  containedInPlace?: Place;
+  containsPlace?: Place;
+  event?: Event;
+  events?: Event;
+  faxNumber?: Text;
+  geo?: GeoCoordinates | GeoShape;
+  geoContains?: GeospatialGeometry | Place;
+  geoCoveredBy?: GeospatialGeometry | Place;
+  geoCovers?: GeospatialGeometry | Place;
+  geoCrosses?: GeospatialGeometry | Place;
+  geoDisjoint?: Place | GeospatialGeometry;
+  geoEquals?: Place | GeospatialGeometry;
+  geoIntersects?: GeospatialGeometry | Place;
+  geoOverlaps?: Place | GeospatialGeometry;
+  geoTouches?: Place | GeospatialGeometry;
+  geoWithin?: Place | GeospatialGeometry;
+  globalLocationNumber?: Text;
+  hasDriveThroughService?: Boolean;
+  hasMap?: URL | Map;
+  isAccessibleForFree?: Boolean;
+  isicV4?: Text;
+  latitude?: Text | Number;
+  logo?: ImageObject | URL;
+  longitude?: Text | Number;
+  map?: URL;
+  maps?: URL;
+  maximumAttendeeCapacity?: Integer;
+  openingHoursSpecification?: OpeningHoursSpecification;
+  photo?: Photograph | ImageObject;
+  photos?: Photograph | ImageObject;
+  publicAccess?: Boolean;
+  review?: Review;
+  reviews?: Review;
+  slogan?: Text;
+  smokingAllowed?: Boolean;
+  specialOpeningHoursSpecification?: OpeningHoursSpecification;
+  telephone?: Text;
+  tourBookingPage?: URL;
 }
 
 /**
@@ -10176,7 +9090,7 @@ export interface PlaceOfWorship extends CivicStructure {}
  *
  **/
 export interface PlanAction extends OrganizeAction {
-  scheduledTime?: DateTime | Array<DateTime>;
+  scheduledTime?: DateTime;
 }
 
 /**
@@ -10202,8 +9116,8 @@ export interface Play extends CreativeWork {}
  *
  **/
 export interface PlayAction extends Action {
-  audience?: Audience | Array<Audience>;
-  event?: Event | Array<Event>;
+  audience?: Audience;
+  event?: Event;
 }
 
 /**
@@ -10267,7 +9181,7 @@ export interface PodcastSeason extends CreativeWorkSeason {}
  *
  **/
 export interface PodcastSeries extends CreativeWorkSeries {
-  webFeed?: URL | Array<URL> | DataFeed | Array<DataFeed>;
+  webFeed?: URL | DataFeed;
 }
 
 /**
@@ -10299,12 +9213,12 @@ export interface Pond extends BodyOfWater {}
  *
  **/
 export interface PostalAddress extends ContactPoint {
-  addressCountry?: Text | Array<Text> | Country | Array<Country>;
-  addressLocality?: Text | Array<Text>;
-  addressRegion?: Text | Array<Text>;
-  postalCode?: Text | Array<Text>;
-  postOfficeBoxNumber?: Text | Array<Text>;
-  streetAddress?: Text | Array<Text>;
+  addressCountry?: Text | Country;
+  addressLocality?: Text;
+  addressRegion?: Text;
+  postalCode?: Text;
+  postOfficeBoxNumber?: Text;
+  streetAddress?: Text;
 }
 
 /**
@@ -10320,8 +9234,8 @@ export interface PostalAddress extends ContactPoint {
  *
  **/
 export interface PostalCodeRangeSpecification extends StructuredValue {
-  postalCodeBegin?: Text | Array<Text>;
-  postalCodeEnd?: Text | Array<Text>;
+  postalCodeBegin?: Text;
+  postalCodeEnd?: Text;
 }
 
 /**
@@ -10413,15 +9327,15 @@ export interface PreventionIndication extends MedicalIndication {}
  *
  **/
 export interface PriceSpecification extends StructuredValue {
-  eligibleQuantity?: QuantitativeValue | Array<QuantitativeValue>;
-  eligibleTransactionVolume?: PriceSpecification | Array<PriceSpecification>;
-  maxPrice?: Number | Array<Number>;
-  minPrice?: Number | Array<Number>;
-  price?: Number | Array<Number> | Text | Array<Text>;
-  priceCurrency?: Text | Array<Text>;
-  validFrom?: DateTime | Array<DateTime> | Date | Array<Date>;
-  validThrough?: DateTime | Array<DateTime> | Date | Array<Date>;
-  valueAddedTaxIncluded?: Boolean | Array<Boolean>;
+  eligibleQuantity?: QuantitativeValue;
+  eligibleTransactionVolume?: PriceSpecification;
+  maxPrice?: Number;
+  minPrice?: Number;
+  price?: Number | Text;
+  priceCurrency?: Text;
+  validFrom?: DateTime | Date;
+  validThrough?: DateTime | Date;
+  valueAddedTaxIncluded?: Boolean;
 }
 
 /**
@@ -10435,84 +9349,50 @@ export interface PriceSpecification extends StructuredValue {
  *
  **/
 export interface Product extends Thing {
-  additionalProperty?: PropertyValue | Array<PropertyValue>;
-  aggregateRating?: AggregateRating | Array<AggregateRating>;
-  audience?: Audience | Array<Audience>;
-  award?: Text | Array<Text>;
-  awards?: Text | Array<Text>;
-  brand?: Brand | Array<Brand> | Organization | Array<Organization>;
-  category?:
-    | PhysicalActivityCategory
-    | Array<PhysicalActivityCategory>
-    | Text
-    | Array<Text>
-    | URL
-    | Array<URL>
-    | Thing
-    | Array<Thing>;
-  color?: Text | Array<Text>;
-  depth?:
-    | Distance
-    | Array<Distance>
-    | QuantitativeValue
-    | Array<QuantitativeValue>;
-  gtin?: Text | Array<Text>;
-  gtin12?: Text | Array<Text>;
-  gtin13?: Text | Array<Text>;
-  gtin14?: Text | Array<Text>;
-  gtin8?: Text | Array<Text>;
-  hasEnergyConsumptionDetails?:
-    | EnergyConsumptionDetails
-    | Array<EnergyConsumptionDetails>;
-  hasMeasurement?: QuantitativeValue | Array<QuantitativeValue>;
-  hasMerchantReturnPolicy?: MerchantReturnPolicy | Array<MerchantReturnPolicy>;
-  height?:
-    | QuantitativeValue
-    | Array<QuantitativeValue>
-    | Distance
-    | Array<Distance>;
-  inProductGroupWithID?: Text | Array<Text>;
-  isAccessoryOrSparePartFor?: Product | Array<Product>;
-  isConsumableFor?: Product | Array<Product>;
-  isRelatedTo?: Product | Array<Product> | Service | Array<Service>;
-  isSimilarTo?: Product | Array<Product> | Service | Array<Service>;
-  isVariantOf?:
-    | ProductGroup
-    | Array<ProductGroup>
-    | ProductModel
-    | Array<ProductModel>;
-  itemCondition?: OfferItemCondition | Array<OfferItemCondition>;
-  logo?: ImageObject | Array<ImageObject> | URL | Array<URL>;
-  manufacturer?: Organization | Array<Organization>;
-  material?: Product | Array<Product> | Text | Array<Text> | URL | Array<URL>;
-  model?: ProductModel | Array<ProductModel> | Text | Array<Text>;
-  mpn?: Text | Array<Text>;
-  nsn?: Text | Array<Text>;
-  offers?: Offer | Array<Offer> | Demand | Array<Demand>;
-  pattern?: Text | Array<Text> | DefinedTerm | Array<DefinedTerm>;
-  productID?: Text | Array<Text>;
-  productionDate?: Date | Array<Date>;
-  purchaseDate?: Date | Array<Date>;
-  releaseDate?: Date | Array<Date>;
-  review?: Review | Array<Review>;
-  reviews?: Review | Array<Review>;
-  size?:
-    | DefinedTerm
-    | Array<DefinedTerm>
-    | SizeSpecification
-    | Array<SizeSpecification>
-    | QuantitativeValue
-    | Array<QuantitativeValue>
-    | Text
-    | Array<Text>;
-  sku?: Text | Array<Text>;
-  slogan?: Text | Array<Text>;
-  weight?: QuantitativeValue | Array<QuantitativeValue>;
-  width?:
-    | QuantitativeValue
-    | Array<QuantitativeValue>
-    | Distance
-    | Array<Distance>;
+  additionalProperty?: PropertyValue;
+  aggregateRating?: AggregateRating;
+  audience?: Audience;
+  award?: Text;
+  awards?: Text;
+  brand?: Brand | Organization;
+  category?: PhysicalActivityCategory | Text | URL | Thing;
+  color?: Text;
+  depth?: Distance | QuantitativeValue;
+  gtin?: Text;
+  gtin12?: Text;
+  gtin13?: Text;
+  gtin14?: Text;
+  gtin8?: Text;
+  hasEnergyConsumptionDetails?: EnergyConsumptionDetails;
+  hasMeasurement?: QuantitativeValue;
+  hasMerchantReturnPolicy?: MerchantReturnPolicy;
+  height?: QuantitativeValue | Distance;
+  inProductGroupWithID?: Text;
+  isAccessoryOrSparePartFor?: Product;
+  isConsumableFor?: Product;
+  isRelatedTo?: Product | Service;
+  isSimilarTo?: Product | Service;
+  isVariantOf?: ProductGroup | ProductModel;
+  itemCondition?: OfferItemCondition;
+  logo?: ImageObject | URL;
+  manufacturer?: Organization;
+  material?: Product | Text | URL;
+  model?: ProductModel | Text;
+  mpn?: Text;
+  nsn?: Text;
+  offers?: Offer | Demand;
+  pattern?: Text | DefinedTerm;
+  productID?: Text;
+  productionDate?: Date;
+  purchaseDate?: Date;
+  releaseDate?: Date;
+  review?: Review;
+  reviews?: Review;
+  size?: DefinedTerm | SizeSpecification | QuantitativeValue | Text;
+  sku?: Text;
+  slogan?: Text;
+  weight?: QuantitativeValue;
+  width?: QuantitativeValue | Distance;
 }
 
 /**
@@ -10528,7 +9408,7 @@ export interface Product extends Thing {
  *
  **/
 export interface ProductCollection extends Collection, Product {
-  includesObject?: TypeAndQuantityNode | Array<TypeAndQuantityNode>;
+  includesObject?: TypeAndQuantityNode;
 }
 
 /**
@@ -10546,9 +9426,9 @@ While a ProductGroup itself is not directly offered for sale, the various varyin
 *
 **/
 export interface ProductGroup extends Product {
-  hasVariant?: Product | Array<Product>;
-  productGroupID?: Text | Array<Text>;
-  variesBy?: Text | Array<Text> | DefinedTerm | Array<DefinedTerm>;
+  hasVariant?: Product;
+  productGroupID?: Text;
+  variesBy?: Text | DefinedTerm;
 }
 
 /**
@@ -10562,13 +9442,9 @@ export interface ProductGroup extends Product {
  *
  **/
 export interface ProductModel extends Product {
-  isVariantOf?:
-    | ProductGroup
-    | Array<ProductGroup>
-    | ProductModel
-    | Array<ProductModel>;
-  predecessorOf?: ProductModel | Array<ProductModel>;
-  successorOf?: ProductModel | Array<ProductModel>;
+  isVariantOf?: ProductGroup | ProductModel;
+  predecessorOf?: ProductModel;
+  successorOf?: ProductModel;
 }
 
 /**
@@ -10602,16 +9478,12 @@ export interface ProfilePage extends WebPage {}
  *
  **/
 export interface ProgramMembership extends Intangible {
-  hostingOrganization?: Organization | Array<Organization>;
-  member?: Organization | Array<Organization> | Person | Array<Person>;
-  members?: Person | Array<Person> | Organization | Array<Organization>;
-  membershipNumber?: Text | Array<Text>;
-  membershipPointsEarned?:
-    | QuantitativeValue
-    | Array<QuantitativeValue>
-    | Number
-    | Array<Number>;
-  programName?: Text | Array<Text>;
+  hostingOrganization?: Organization;
+  member?: Organization | Person;
+  members?: Person | Organization;
+  membershipNumber?: Text;
+  membershipPointsEarned?: QuantitativeValue | Number;
+  programName?: Text;
 }
 
 /**
@@ -10656,9 +9528,9 @@ export type PronounceableText = Text;
  * Partof: https://meta.schema.org
  **/
 export interface Property extends Intangible {
-  domainIncludes?: Class | Array<Class>;
-  inverseOf?: Property | Array<Property>;
-  rangeIncludes?: Class | Array<Class>;
+  domainIncludes?: Class;
+  inverseOf?: Property;
+  rangeIncludes?: Class;
 }
 
 /**
@@ -10673,38 +9545,22 @@ export interface Property extends Intangible {
 *
 **/
 export interface PropertyValue extends StructuredValue {
-  maxValue?: Number | Array<Number>;
-  measurementTechnique?: Text | Array<Text> | URL | Array<URL>;
-  minValue?: Number | Array<Number>;
-  propertyID?: Text | Array<Text> | URL | Array<URL>;
-  unitCode?: Text | Array<Text> | URL | Array<URL>;
-  unitText?: Text | Array<Text>;
-  value?:
-    | Number
-    | Array<Number>
-    | StructuredValue
-    | Array<StructuredValue>
-    | Boolean
-    | Array<Boolean>
-    | Text
-    | Array<Text>;
+  maxValue?: Number;
+  measurementTechnique?: Text | URL;
+  minValue?: Number;
+  propertyID?: Text | URL;
+  unitCode?: Text | URL;
+  unitText?: Text;
+  value?: Number | StructuredValue | Boolean | Text;
   valueReference?:
     | QuantitativeValue
-    | Array<QuantitativeValue>
     | MeasurementTypeEnumeration
-    | Array<MeasurementTypeEnumeration>
     | DefinedTerm
-    | Array<DefinedTerm>
     | Enumeration
-    | Array<Enumeration>
     | PropertyValue
-    | Array<PropertyValue>
     | QualitativeValue
-    | Array<QualitativeValue>
     | Text
-    | Array<Text>
-    | StructuredValue
-    | Array<StructuredValue>;
+    | StructuredValue;
 }
 
 /**
@@ -10718,17 +9574,17 @@ export interface PropertyValue extends StructuredValue {
  *
  **/
 export interface PropertyValueSpecification extends Intangible {
-  defaultValue?: Thing | Array<Thing> | Text | Array<Text>;
-  maxValue?: Number | Array<Number>;
-  minValue?: Number | Array<Number>;
-  multipleValues?: Boolean | Array<Boolean>;
-  readonlyValue?: Boolean | Array<Boolean>;
-  stepValue?: Number | Array<Number>;
-  valueMaxLength?: Number | Array<Number>;
-  valueMinLength?: Number | Array<Number>;
-  valueName?: Text | Array<Text>;
-  valuePattern?: Text | Array<Text>;
-  valueRequired?: Boolean | Array<Boolean>;
+  defaultValue?: Thing | Text;
+  maxValue?: Number;
+  minValue?: Number;
+  multipleValues?: Boolean;
+  readonlyValue?: Boolean;
+  stepValue?: Number;
+  valueMaxLength?: Number;
+  valueMinLength?: Number;
+  valueName?: Text;
+  valuePattern?: Text;
+  valueRequired?: Boolean;
 }
 
 /**
@@ -10752,9 +9608,9 @@ export interface PsychologicalTreatment extends TherapeuticProcedure {}
  *
  **/
 export interface PublicationEvent extends Event {
-  free?: Boolean | Array<Boolean>;
-  publishedBy?: Person | Array<Person> | Organization | Array<Organization>;
-  publishedOn?: BroadcastService | Array<BroadcastService>;
+  free?: Boolean;
+  publishedBy?: Person | Organization;
+  publishedOn?: BroadcastService;
 }
 
 /**
@@ -10768,10 +9624,10 @@ export interface PublicationEvent extends Event {
  *
  **/
 export interface PublicationIssue extends CreativeWork {
-  issueNumber?: Integer | Array<Integer> | Text | Array<Text>;
-  pageEnd?: Text | Array<Text> | Integer | Array<Integer>;
-  pageStart?: Text | Array<Text> | Integer | Array<Integer>;
-  pagination?: Text | Array<Text>;
+  issueNumber?: Integer | Text;
+  pageEnd?: Text | Integer;
+  pageStart?: Text | Integer;
+  pagination?: Text;
 }
 
 /**
@@ -10785,10 +9641,10 @@ export interface PublicationIssue extends CreativeWork {
  *
  **/
 export interface PublicationVolume extends CreativeWork {
-  pageEnd?: Text | Array<Text> | Integer | Array<Integer>;
-  pageStart?: Text | Array<Text> | Integer | Array<Integer>;
-  pagination?: Text | Array<Text>;
-  volumeNumber?: Text | Array<Text> | Integer | Array<Integer>;
+  pageEnd?: Text | Integer;
+  pageStart?: Text | Integer;
+  pagination?: Text;
+  volumeNumber?: Text | Integer;
 }
 
 /**
@@ -10836,30 +9692,22 @@ export interface QAPage extends WebPage {}
  *
  **/
 export interface QualitativeValue extends Enumeration {
-  additionalProperty?: PropertyValue | Array<PropertyValue>;
-  equal?: QualitativeValue | Array<QualitativeValue>;
-  greater?: QualitativeValue | Array<QualitativeValue>;
-  greaterOrEqual?: QualitativeValue | Array<QualitativeValue>;
-  lesser?: QualitativeValue | Array<QualitativeValue>;
-  lesserOrEqual?: QualitativeValue | Array<QualitativeValue>;
-  nonEqual?: QualitativeValue | Array<QualitativeValue>;
+  additionalProperty?: PropertyValue;
+  equal?: QualitativeValue;
+  greater?: QualitativeValue;
+  greaterOrEqual?: QualitativeValue;
+  lesser?: QualitativeValue;
+  lesserOrEqual?: QualitativeValue;
+  nonEqual?: QualitativeValue;
   valueReference?:
     | QuantitativeValue
-    | Array<QuantitativeValue>
     | MeasurementTypeEnumeration
-    | Array<MeasurementTypeEnumeration>
     | DefinedTerm
-    | Array<DefinedTerm>
     | Enumeration
-    | Array<Enumeration>
     | PropertyValue
-    | Array<PropertyValue>
     | QualitativeValue
-    | Array<QualitativeValue>
     | Text
-    | Array<Text>
-    | StructuredValue
-    | Array<StructuredValue>;
+    | StructuredValue;
 }
 
 /**
@@ -10873,37 +9721,21 @@ export interface QualitativeValue extends Enumeration {
  *
  **/
 export interface QuantitativeValue extends StructuredValue {
-  additionalProperty?: PropertyValue | Array<PropertyValue>;
-  maxValue?: Number | Array<Number>;
-  minValue?: Number | Array<Number>;
-  unitCode?: Text | Array<Text> | URL | Array<URL>;
-  unitText?: Text | Array<Text>;
-  value?:
-    | Number
-    | Array<Number>
-    | StructuredValue
-    | Array<StructuredValue>
-    | Boolean
-    | Array<Boolean>
-    | Text
-    | Array<Text>;
+  additionalProperty?: PropertyValue;
+  maxValue?: Number;
+  minValue?: Number;
+  unitCode?: Text | URL;
+  unitText?: Text;
+  value?: Number | StructuredValue | Boolean | Text;
   valueReference?:
     | QuantitativeValue
-    | Array<QuantitativeValue>
     | MeasurementTypeEnumeration
-    | Array<MeasurementTypeEnumeration>
     | DefinedTerm
-    | Array<DefinedTerm>
     | Enumeration
-    | Array<Enumeration>
     | PropertyValue
-    | Array<PropertyValue>
     | QualitativeValue
-    | Array<QualitativeValue>
     | Text
-    | Array<Text>
-    | StructuredValue
-    | Array<StructuredValue>;
+    | StructuredValue;
 }
 
 /**
@@ -10917,12 +9749,12 @@ export interface QuantitativeValue extends StructuredValue {
  *
  **/
 export interface QuantitativeValueDistribution extends StructuredValue {
-  duration?: Duration | Array<Duration>;
-  median?: Number | Array<Number>;
-  percentile10?: Number | Array<Number>;
-  percentile25?: Number | Array<Number>;
-  percentile75?: Number | Array<Number>;
-  percentile90?: Number | Array<Number>;
+  duration?: Duration;
+  median?: Number;
+  percentile10?: Number;
+  percentile25?: Number;
+  percentile75?: Number;
+  percentile90?: Number;
 }
 
 /**
@@ -10946,10 +9778,10 @@ export interface Quantity extends Intangible {}
  *
  **/
 export interface Question extends Comment {
-  acceptedAnswer?: Answer | Array<Answer> | ItemList | Array<ItemList>;
-  answerCount?: Integer | Array<Integer>;
-  eduQuestionType?: Text | Array<Text>;
-  suggestedAnswer?: Answer | Array<Answer> | ItemList | Array<ItemList>;
+  acceptedAnswer?: Answer | ItemList;
+  answerCount?: Integer;
+  eduQuestionType?: Text;
+  suggestedAnswer?: Answer | ItemList;
 }
 
 /**
@@ -10979,11 +9811,7 @@ export interface Quiz extends LearningResource {}
  *
  **/
 export interface Quotation extends CreativeWork {
-  spokenByCharacter?:
-    | Organization
-    | Array<Organization>
-    | Person
-    | Array<Person>;
+  spokenByCharacter?: Organization | Person;
 }
 
 /**
@@ -11071,20 +9899,20 @@ export interface RadioSeason extends CreativeWorkSeason {}
  *
  **/
 export interface RadioSeries extends CreativeWorkSeries {
-  actor?: Person | Array<Person>;
-  actors?: Person | Array<Person>;
-  containsSeason?: CreativeWorkSeason | Array<CreativeWorkSeason>;
-  director?: Person | Array<Person>;
-  directors?: Person | Array<Person>;
-  episode?: Episode | Array<Episode>;
-  episodes?: Episode | Array<Episode>;
-  musicBy?: Person | Array<Person> | MusicGroup | Array<MusicGroup>;
-  numberOfEpisodes?: Integer | Array<Integer>;
-  numberOfSeasons?: Integer | Array<Integer>;
-  productionCompany?: Organization | Array<Organization>;
-  season?: CreativeWorkSeason | Array<CreativeWorkSeason> | URL | Array<URL>;
-  seasons?: CreativeWorkSeason | Array<CreativeWorkSeason>;
-  trailer?: VideoObject | Array<VideoObject>;
+  actor?: Person;
+  actors?: Person;
+  containsSeason?: CreativeWorkSeason;
+  director?: Person;
+  directors?: Person;
+  episode?: Episode;
+  episodes?: Episode;
+  musicBy?: Person | MusicGroup;
+  numberOfEpisodes?: Integer;
+  numberOfSeasons?: Integer;
+  productionCompany?: Organization;
+  season?: CreativeWorkSeason | URL;
+  seasons?: CreativeWorkSeason;
+  trailer?: VideoObject;
 }
 
 /**
@@ -11106,12 +9934,12 @@ export interface RadioStation extends LocalBusiness {}
  *
  **/
 export interface Rating extends Intangible {
-  author?: Person | Array<Person> | Organization | Array<Organization>;
-  bestRating?: Text | Array<Text> | Number | Array<Number>;
-  ratingExplanation?: Text | Array<Text>;
-  ratingValue?: Number | Array<Number> | Text | Array<Text>;
-  reviewAspect?: Text | Array<Text>;
-  worstRating?: Text | Array<Text> | Number | Array<Number>;
+  author?: Person | Organization;
+  bestRating?: Text | Number;
+  ratingExplanation?: Text;
+  ratingValue?: Number | Text;
+  reviewAspect?: Text;
+  worstRating?: Text | Number;
 }
 
 /**
@@ -11159,12 +9987,8 @@ export interface RealEstateAgent extends LocalBusiness {}
 *
 **/
 export interface RealEstateListing extends WebPage {
-  datePosted?: Date | Array<Date> | DateTime | Array<DateTime>;
-  leaseLength?:
-    | Duration
-    | Array<Duration>
-    | QuantitativeValue
-    | Array<QuantitativeValue>;
+  datePosted?: Date | DateTime;
+  leaseLength?: Duration | QuantitativeValue;
 }
 
 /**
@@ -11176,14 +10000,8 @@ export interface RealEstateListing extends WebPage {
  *
  **/
 export interface ReceiveAction extends TransferAction {
-  deliveryMethod?: DeliveryMethod | Array<DeliveryMethod>;
-  sender?:
-    | Person
-    | Array<Person>
-    | Audience
-    | Array<Audience>
-    | Organization
-    | Array<Organization>;
+  deliveryMethod?: DeliveryMethod;
+  sender?: Person | Audience | Organization;
 }
 
 /**
@@ -11195,26 +10013,16 @@ export interface ReceiveAction extends TransferAction {
  *
  **/
 export interface Recipe extends HowTo {
-  cookingMethod?: Text | Array<Text>;
-  cookTime?: Duration | Array<Duration>;
-  ingredients?: Text | Array<Text>;
-  nutrition?: NutritionInformation | Array<NutritionInformation>;
-  recipeCategory?: Text | Array<Text>;
-  recipeCuisine?: Text | Array<Text>;
-  recipeIngredient?: Text | Array<Text>;
-  recipeInstructions?:
-    | ItemList
-    | Array<ItemList>
-    | CreativeWork
-    | Array<CreativeWork>
-    | Text
-    | Array<Text>;
-  recipeYield?:
-    | QuantitativeValue
-    | Array<QuantitativeValue>
-    | Text
-    | Array<Text>;
-  suitableForDiet?: RestrictedDiet | Array<RestrictedDiet>;
+  cookingMethod?: Text;
+  cookTime?: Duration;
+  ingredients?: Text;
+  nutrition?: NutritionInformation;
+  recipeCategory?: Text;
+  recipeCuisine?: Text;
+  recipeIngredient?: Text;
+  recipeInstructions?: ItemList | CreativeWork | Text;
+  recipeYield?: QuantitativeValue | Text;
+  suitableForDiet?: RestrictedDiet;
 }
 
 /**
@@ -11230,15 +10038,7 @@ export interface Recipe extends HowTo {
  *
  **/
 export interface Recommendation extends Review {
-  category?:
-    | PhysicalActivityCategory
-    | Array<PhysicalActivityCategory>
-    | Text
-    | Array<Text>
-    | URL
-    | Array<URL>
-    | Thing
-    | Array<Thing>;
+  category?: PhysicalActivityCategory | Text | URL | Thing;
 }
 
 /**
@@ -11292,8 +10092,8 @@ export interface RejectAction extends AllocateAction {}
  *
  **/
 export interface RentAction extends TradeAction {
-  landlord?: Person | Array<Person> | Organization | Array<Organization>;
-  realEstateAgent?: RealEstateAgent | Array<RealEstateAgent>;
+  landlord?: Person | Organization;
+  realEstateAgent?: RealEstateAgent;
 }
 
 /**
@@ -11305,10 +10105,10 @@ export interface RentAction extends TradeAction {
  *
  **/
 export interface RentalCarReservation extends Reservation {
-  dropoffLocation?: Place | Array<Place>;
-  dropoffTime?: DateTime | Array<DateTime>;
-  pickupLocation?: Place | Array<Place>;
-  pickupTime?: DateTime | Array<DateTime>;
+  dropoffLocation?: Place;
+  dropoffTime?: DateTime;
+  pickupLocation?: Place;
+  pickupTime?: DateTime;
 }
 
 /**
@@ -11325,11 +10125,11 @@ export interface RentalCarReservation extends Reservation {
  *
  **/
 export interface RepaymentSpecification extends StructuredValue {
-  downPayment?: Number | Array<Number> | MonetaryAmount | Array<MonetaryAmount>;
-  earlyPrepaymentPenalty?: MonetaryAmount | Array<MonetaryAmount>;
-  loanPaymentAmount?: MonetaryAmount | Array<MonetaryAmount>;
-  loanPaymentFrequency?: Number | Array<Number>;
-  numberOfLoanPayments?: Number | Array<Number>;
+  downPayment?: Number | MonetaryAmount;
+  earlyPrepaymentPenalty?: MonetaryAmount;
+  loanPaymentAmount?: MonetaryAmount;
+  loanPaymentFrequency?: Number;
+  numberOfLoanPayments?: Number;
 }
 
 /**
@@ -11341,8 +10141,8 @@ export interface RepaymentSpecification extends StructuredValue {
  *
  **/
 export interface ReplaceAction extends UpdateAction {
-  replacee?: Thing | Array<Thing>;
-  replacer?: Thing | Array<Thing>;
+  replacee?: Thing;
+  replacer?: Thing;
 }
 
 /**
@@ -11354,7 +10154,7 @@ export interface ReplaceAction extends UpdateAction {
  *
  **/
 export interface ReplyAction extends CommunicateAction {
-  resultComment?: Comment | Array<Comment>;
+  resultComment?: Comment;
 }
 
 /**
@@ -11366,7 +10166,7 @@ export interface ReplyAction extends CommunicateAction {
  *
  **/
 export interface Report extends Article {
-  reportNumber?: Text | Array<Text>;
+  reportNumber?: Text;
 }
 
 /**
@@ -11438,25 +10238,19 @@ export interface ResearchProject extends Project {}
  *
  **/
 export interface Reservation extends Intangible {
-  bookingAgent?: Person | Array<Person> | Organization | Array<Organization>;
-  bookingTime?: DateTime | Array<DateTime>;
-  broker?: Person | Array<Person> | Organization | Array<Organization>;
-  modifiedTime?: DateTime | Array<DateTime>;
-  priceCurrency?: Text | Array<Text>;
-  programMembershipUsed?: ProgramMembership | Array<ProgramMembership>;
-  provider?: Organization | Array<Organization> | Person | Array<Person>;
-  reservationFor?: Thing | Array<Thing>;
-  reservationId?: Text | Array<Text>;
-  reservationStatus?: ReservationStatusType | Array<ReservationStatusType>;
-  reservedTicket?: Ticket | Array<Ticket>;
-  totalPrice?:
-    | Number
-    | Array<Number>
-    | Text
-    | Array<Text>
-    | PriceSpecification
-    | Array<PriceSpecification>;
-  underName?: Person | Array<Person> | Organization | Array<Organization>;
+  bookingAgent?: Person | Organization;
+  bookingTime?: DateTime;
+  broker?: Person | Organization;
+  modifiedTime?: DateTime;
+  priceCurrency?: Text;
+  programMembershipUsed?: ProgramMembership;
+  provider?: Organization | Person;
+  reservationFor?: Thing;
+  reservationId?: Text;
+  reservationStatus?: ReservationStatusType;
+  reservedTicket?: Ticket;
+  totalPrice?: Number | Text | PriceSpecification;
+  underName?: Person | Organization;
 }
 
 /**
@@ -11468,7 +10262,7 @@ export interface Reservation extends Intangible {
  *
  **/
 export interface ReservationPackage extends Reservation {
-  subReservation?: Reservation | Array<Reservation>;
+  subReservation?: Reservation;
 }
 
 /**
@@ -11500,7 +10294,7 @@ export interface Reservoir extends BodyOfWater {}
  *
  **/
 export interface Residence extends Place {
-  accommodationFloorPlan?: FloorPlan | Array<FloorPlan>;
+  accommodationFloorPlan?: FloorPlan;
 }
 
 /**
@@ -11547,15 +10341,7 @@ export interface ResumeAction extends ControlAction {}
  *
  **/
 export interface ReturnAction extends TransferAction {
-  recipient?:
-    | Organization
-    | Array<Organization>
-    | ContactPoint
-    | Array<ContactPoint>
-    | Person
-    | Array<Person>
-    | Audience
-    | Array<Audience>;
+  recipient?: Organization | ContactPoint | Person | Audience;
 }
 
 /**
@@ -11567,10 +10353,10 @@ export interface ReturnAction extends TransferAction {
  *
  **/
 export interface Review extends CreativeWork {
-  itemReviewed?: Thing | Array<Thing>;
-  reviewAspect?: Text | Array<Text>;
-  reviewBody?: Text | Array<Text>;
-  reviewRating?: Rating | Array<Rating>;
+  itemReviewed?: Thing;
+  reviewAspect?: Text;
+  reviewBody?: Text;
+  reviewRating?: Rating;
 }
 
 /**
@@ -11582,7 +10368,7 @@ export interface Review extends CreativeWork {
  *
  **/
 export interface ReviewAction extends AssessAction {
-  resultReview?: Review | Array<Review>;
+  resultReview?: Review;
 }
 
 /**
@@ -11619,10 +10405,10 @@ export interface RiverBodyOfWater extends BodyOfWater {}
  *
  **/
 export interface Role extends Intangible {
-  endDate?: Date | Array<Date> | DateTime | Array<DateTime>;
-  namedPosition?: URL | Array<URL> | Text | Array<Text>;
-  roleName?: URL | Array<URL> | Text | Array<Text>;
-  startDate?: DateTime | Array<DateTime> | Date | Array<Date>;
+  endDate?: Date | DateTime;
+  namedPosition?: URL | Text;
+  roleName?: URL | Text;
+  startDate?: DateTime | Date;
 }
 
 /**
@@ -11659,9 +10445,9 @@ export interface Room extends Accommodation {}
  *
  **/
 export interface RsvpAction extends InformAction {
-  additionalNumberOfGuests?: Number | Array<Number>;
-  comment?: Comment | Array<Comment>;
-  rsvpResponse?: RsvpResponseType | Array<RsvpResponseType>;
+  additionalNumberOfGuests?: Number;
+  comment?: Comment;
+  rsvpResponse?: RsvpResponseType;
 }
 
 /**
@@ -11714,19 +10500,19 @@ export interface SatiricalArticle extends Article {}
 *
 **/
 export interface Schedule extends Intangible {
-  byDay?: DayOfWeek | Array<DayOfWeek> | Text | Array<Text>;
-  byMonth?: Integer | Array<Integer>;
-  byMonthDay?: Integer | Array<Integer>;
-  byMonthWeek?: Integer | Array<Integer>;
-  duration?: Duration | Array<Duration>;
-  endDate?: Date | Array<Date> | DateTime | Array<DateTime>;
-  endTime?: DateTime | Array<DateTime> | Time | Array<Time>;
-  exceptDate?: DateTime | Array<DateTime> | Date | Array<Date>;
-  repeatCount?: Integer | Array<Integer>;
-  repeatFrequency?: Duration | Array<Duration> | Text | Array<Text>;
-  scheduleTimezone?: Text | Array<Text>;
-  startDate?: DateTime | Array<DateTime> | Date | Array<Date>;
-  startTime?: DateTime | Array<DateTime> | Time | Array<Time>;
+  byDay?: DayOfWeek | Text;
+  byMonth?: Integer;
+  byMonthDay?: Integer;
+  byMonthWeek?: Integer;
+  duration?: Duration;
+  endDate?: Date | DateTime;
+  endTime?: DateTime | Time;
+  exceptDate?: DateTime | Date;
+  repeatCount?: Integer;
+  repeatFrequency?: Duration | Text;
+  scheduleTimezone?: Text;
+  startDate?: DateTime | Date;
+  startTime?: DateTime | Time;
 }
 
 /**
@@ -11782,9 +10568,9 @@ export interface SchoolDistrict extends AdministrativeArea {}
  *
  **/
 export interface ScreeningEvent extends Event {
-  subtitleLanguage?: Text | Array<Text> | Language | Array<Language>;
-  videoFormat?: Text | Array<Text>;
-  workPresented?: Movie | Array<Movie>;
+  subtitleLanguage?: Text | Language;
+  videoFormat?: Text;
+  workPresented?: Movie;
 }
 
 /**
@@ -11816,7 +10602,7 @@ export interface SeaBodyOfWater extends BodyOfWater {}
  *
  **/
 export interface SearchAction extends Action {
-  query?: Text | Array<Text>;
+  query?: Text;
 }
 
 /**
@@ -11848,10 +10634,10 @@ export interface Season extends CreativeWork {}
  *
  **/
 export interface Seat extends Intangible {
-  seatingType?: QualitativeValue | Array<QualitativeValue> | Text | Array<Text>;
-  seatNumber?: Text | Array<Text>;
-  seatRow?: Text | Array<Text>;
-  seatSection?: Text | Array<Text>;
+  seatingType?: QualitativeValue | Text;
+  seatNumber?: Text;
+  seatRow?: Text;
+  seatSection?: Text;
 }
 
 /**
@@ -11887,8 +10673,8 @@ export interface SelfStorage extends LocalBusiness {}
  *
  **/
 export interface SellAction extends TradeAction {
-  buyer?: Person | Array<Person>;
-  warrantyPromise?: WarrantyPromise | Array<WarrantyPromise>;
+  buyer?: Person;
+  warrantyPromise?: WarrantyPromise;
 }
 
 /**
@@ -11900,16 +10686,8 @@ export interface SellAction extends TradeAction {
  *
  **/
 export interface SendAction extends TransferAction {
-  deliveryMethod?: DeliveryMethod | Array<DeliveryMethod>;
-  recipient?:
-    | Organization
-    | Array<Organization>
-    | ContactPoint
-    | Array<ContactPoint>
-    | Person
-    | Array<Person>
-    | Audience
-    | Array<Audience>;
+  deliveryMethod?: DeliveryMethod;
+  recipient?: Organization | ContactPoint | Person | Audience;
 }
 
 /**
@@ -11931,56 +10709,30 @@ export interface Series extends Intangible {}
  *
  **/
 export interface Service extends Intangible {
-  aggregateRating?: AggregateRating | Array<AggregateRating>;
-  areaServed?:
-    | Text
-    | Array<Text>
-    | Place
-    | Array<Place>
-    | AdministrativeArea
-    | Array<AdministrativeArea>
-    | GeoShape
-    | Array<GeoShape>;
-  audience?: Audience | Array<Audience>;
-  availableChannel?: ServiceChannel | Array<ServiceChannel>;
-  award?: Text | Array<Text>;
-  brand?: Brand | Array<Brand> | Organization | Array<Organization>;
-  broker?: Person | Array<Person> | Organization | Array<Organization>;
-  category?:
-    | PhysicalActivityCategory
-    | Array<PhysicalActivityCategory>
-    | Text
-    | Array<Text>
-    | URL
-    | Array<URL>
-    | Thing
-    | Array<Thing>;
-  hasOfferCatalog?: OfferCatalog | Array<OfferCatalog>;
-  hoursAvailable?: OpeningHoursSpecification | Array<OpeningHoursSpecification>;
-  isRelatedTo?: Product | Array<Product> | Service | Array<Service>;
-  isSimilarTo?: Product | Array<Product> | Service | Array<Service>;
-  logo?: ImageObject | Array<ImageObject> | URL | Array<URL>;
-  offers?: Offer | Array<Offer> | Demand | Array<Demand>;
-  produces?: Thing | Array<Thing>;
-  provider?: Organization | Array<Organization> | Person | Array<Person>;
-  providerMobility?: Text | Array<Text>;
-  review?: Review | Array<Review>;
-  serviceArea?:
-    | Place
-    | Array<Place>
-    | AdministrativeArea
-    | Array<AdministrativeArea>
-    | GeoShape
-    | Array<GeoShape>;
-  serviceAudience?: Audience | Array<Audience>;
-  serviceOutput?: Thing | Array<Thing>;
-  serviceType?:
-    | Text
-    | Array<Text>
-    | GovernmentBenefitsType
-    | Array<GovernmentBenefitsType>;
-  slogan?: Text | Array<Text>;
-  termsOfService?: Text | Array<Text> | URL | Array<URL>;
+  aggregateRating?: AggregateRating;
+  areaServed?: Text | Place | AdministrativeArea | GeoShape;
+  audience?: Audience;
+  availableChannel?: ServiceChannel;
+  award?: Text;
+  brand?: Brand | Organization;
+  broker?: Person | Organization;
+  category?: PhysicalActivityCategory | Text | URL | Thing;
+  hasOfferCatalog?: OfferCatalog;
+  hoursAvailable?: OpeningHoursSpecification;
+  isRelatedTo?: Product | Service;
+  isSimilarTo?: Product | Service;
+  logo?: ImageObject | URL;
+  offers?: Offer | Demand;
+  produces?: Thing;
+  provider?: Organization | Person;
+  providerMobility?: Text;
+  review?: Review;
+  serviceArea?: Place | AdministrativeArea | GeoShape;
+  serviceAudience?: Audience;
+  serviceOutput?: Thing;
+  serviceType?: Text | GovernmentBenefitsType;
+  slogan?: Text;
+  termsOfService?: Text | URL;
 }
 
 /**
@@ -11992,14 +10744,14 @@ export interface Service extends Intangible {
  *
  **/
 export interface ServiceChannel extends Intangible {
-  availableLanguage?: Language | Array<Language> | Text | Array<Text>;
-  processingTime?: Duration | Array<Duration>;
-  providesService?: Service | Array<Service>;
-  serviceLocation?: Place | Array<Place>;
-  servicePhone?: ContactPoint | Array<ContactPoint>;
-  servicePostalAddress?: PostalAddress | Array<PostalAddress>;
-  serviceSmsNumber?: ContactPoint | Array<ContactPoint>;
-  serviceUrl?: URL | Array<URL>;
+  availableLanguage?: Language | Text;
+  processingTime?: Duration;
+  providesService?: Service;
+  serviceLocation?: Place;
+  servicePhone?: ContactPoint;
+  servicePostalAddress?: PostalAddress;
+  serviceSmsNumber?: ContactPoint;
+  serviceUrl?: URL;
 }
 
 /**
@@ -12039,10 +10791,10 @@ export interface SheetMusic extends CreativeWork {}
  *
  **/
 export interface ShippingDeliveryTime extends StructuredValue {
-  businessDays?: OpeningHoursSpecification | Array<OpeningHoursSpecification>;
-  cutoffTime?: Time | Array<Time>;
-  handlingTime?: QuantitativeValue | Array<QuantitativeValue>;
-  transitTime?: QuantitativeValue | Array<QuantitativeValue>;
+  businessDays?: OpeningHoursSpecification;
+  cutoffTime?: Time;
+  handlingTime?: QuantitativeValue;
+  transitTime?: QuantitativeValue;
 }
 
 /**
@@ -12058,16 +10810,12 @@ export interface ShippingDeliveryTime extends StructuredValue {
  *
  **/
 export interface ShippingRateSettings extends StructuredValue {
-  doesNotShip?: Boolean | Array<Boolean>;
-  freeShippingThreshold?:
-    | DeliveryChargeSpecification
-    | Array<DeliveryChargeSpecification>
-    | MonetaryAmount
-    | Array<MonetaryAmount>;
-  isUnlabelledFallback?: Boolean | Array<Boolean>;
-  shippingDestination?: DefinedRegion | Array<DefinedRegion>;
-  shippingLabel?: Text | Array<Text>;
-  shippingRate?: MonetaryAmount | Array<MonetaryAmount>;
+  doesNotShip?: Boolean;
+  freeShippingThreshold?: DeliveryChargeSpecification | MonetaryAmount;
+  isUnlabelledFallback?: Boolean;
+  shippingDestination?: DefinedRegion;
+  shippingLabel?: Text;
+  shippingRate?: MonetaryAmount;
 }
 
 /**
@@ -12113,12 +10861,8 @@ export interface ShortStory extends CreativeWork {}
  *
  **/
 export interface SingleFamilyResidence extends House {
-  numberOfRooms?:
-    | Number
-    | Array<Number>
-    | QuantitativeValue
-    | Array<QuantitativeValue>;
-  occupancy?: QuantitativeValue | Array<QuantitativeValue>;
+  numberOfRooms?: Number | QuantitativeValue;
+  occupancy?: QuantitativeValue;
 }
 
 /**
@@ -12158,20 +10902,12 @@ export interface SizeGroupEnumeration extends Enumeration {}
  *
  **/
 export interface SizeSpecification extends QualitativeValue {
-  hasMeasurement?: QuantitativeValue | Array<QuantitativeValue>;
-  sizeGroup?:
-    | SizeGroupEnumeration
-    | Array<SizeGroupEnumeration>
-    | Text
-    | Array<Text>;
-  sizeSystem?:
-    | SizeSystemEnumeration
-    | Array<SizeSystemEnumeration>
-    | Text
-    | Array<Text>;
-  suggestedAge?: QuantitativeValue | Array<QuantitativeValue>;
-  suggestedGender?: Text | Array<Text> | GenderType | Array<GenderType>;
-  suggestedMeasurement?: QuantitativeValue | Array<QuantitativeValue>;
+  hasMeasurement?: QuantitativeValue;
+  sizeGroup?: SizeGroupEnumeration | Text;
+  sizeSystem?: SizeSystemEnumeration | Text;
+  suggestedAge?: QuantitativeValue;
+  suggestedGender?: Text | GenderType;
+  suggestedMeasurement?: QuantitativeValue;
 }
 
 /**
@@ -12203,7 +10939,7 @@ export interface SocialEvent extends Event {}
  *
  **/
 export interface SocialMediaPosting extends Article {
-  sharedContent?: CreativeWork | Array<CreativeWork>;
+  sharedContent?: CreativeWork;
 }
 
 /**
@@ -12215,30 +10951,30 @@ export interface SocialMediaPosting extends Article {
  *
  **/
 export interface SoftwareApplication extends CreativeWork {
-  applicationCategory?: Text | Array<Text> | URL | Array<URL>;
-  applicationSubCategory?: Text | Array<Text> | URL | Array<URL>;
-  applicationSuite?: Text | Array<Text>;
-  availableOnDevice?: Text | Array<Text>;
-  countriesNotSupported?: Text | Array<Text>;
-  countriesSupported?: Text | Array<Text>;
-  device?: Text | Array<Text>;
-  downloadUrl?: URL | Array<URL>;
-  featureList?: Text | Array<Text> | URL | Array<URL>;
-  fileSize?: Text | Array<Text>;
-  installUrl?: URL | Array<URL>;
-  memoryRequirements?: Text | Array<Text> | URL | Array<URL>;
-  operatingSystem?: Text | Array<Text>;
-  permissions?: Text | Array<Text>;
-  processorRequirements?: Text | Array<Text>;
-  releaseNotes?: URL | Array<URL> | Text | Array<Text>;
-  requirements?: URL | Array<URL> | Text | Array<Text>;
-  screenshot?: URL | Array<URL> | ImageObject | Array<ImageObject>;
-  softwareAddOn?: SoftwareApplication | Array<SoftwareApplication>;
-  softwareHelp?: CreativeWork | Array<CreativeWork>;
-  softwareRequirements?: URL | Array<URL> | Text | Array<Text>;
-  softwareVersion?: Text | Array<Text>;
-  storageRequirements?: Text | Array<Text> | URL | Array<URL>;
-  supportingData?: DataFeed | Array<DataFeed>;
+  applicationCategory?: Text | URL;
+  applicationSubCategory?: Text | URL;
+  applicationSuite?: Text;
+  availableOnDevice?: Text;
+  countriesNotSupported?: Text;
+  countriesSupported?: Text;
+  device?: Text;
+  downloadUrl?: URL;
+  featureList?: Text | URL;
+  fileSize?: Text;
+  installUrl?: URL;
+  memoryRequirements?: Text | URL;
+  operatingSystem?: Text;
+  permissions?: Text;
+  processorRequirements?: Text;
+  releaseNotes?: URL | Text;
+  requirements?: URL | Text;
+  screenshot?: URL | ImageObject;
+  softwareAddOn?: SoftwareApplication;
+  softwareHelp?: CreativeWork;
+  softwareRequirements?: URL | Text;
+  softwareVersion?: Text;
+  storageRequirements?: Text | URL;
+  supportingData?: DataFeed;
 }
 
 /**
@@ -12250,17 +10986,13 @@ export interface SoftwareApplication extends CreativeWork {
  *
  **/
 export interface SoftwareSourceCode extends CreativeWork {
-  codeRepository?: URL | Array<URL>;
-  codeSampleType?: Text | Array<Text>;
-  programmingLanguage?:
-    | Text
-    | Array<Text>
-    | ComputerLanguage
-    | Array<ComputerLanguage>;
-  runtime?: Text | Array<Text>;
-  runtimePlatform?: Text | Array<Text>;
-  sampleType?: Text | Array<Text>;
-  targetProduct?: SoftwareApplication | Array<SoftwareApplication>;
+  codeRepository?: URL;
+  codeSampleType?: Text;
+  programmingLanguage?: Text | ComputerLanguage;
+  runtime?: Text;
+  runtimePlatform?: Text;
+  sampleType?: Text;
+  targetProduct?: SoftwareApplication;
 }
 
 /**
@@ -12276,7 +11008,7 @@ export interface SoftwareSourceCode extends CreativeWork {
  *
  **/
 export interface SolveMathAction extends Action {
-  eduQuestionType?: Text | Array<Text>;
+  eduQuestionType?: Text;
 }
 
 /**
@@ -12290,7 +11022,7 @@ export interface SolveMathAction extends Action {
  *
  **/
 export interface SomeProducts extends Product {
-  inventoryLevel?: QuantitativeValue | Array<QuantitativeValue>;
+  inventoryLevel?: QuantitativeValue;
 }
 
 /**
@@ -12304,8 +11036,8 @@ export interface SomeProducts extends Product {
  *
  **/
 export interface SpeakableSpecification extends Intangible {
-  cssSelector?: CssSelectorType | Array<CssSelectorType>;
-  xpath?: XPathType | Array<XPathType>;
+  cssSelector?: CssSelectorType;
+  xpath?: XPathType;
 }
 
 /**
@@ -12356,43 +11088,19 @@ media type information e.g. "application/rss+xml" or "application/atom+xml".
 *
 **/
 export interface SpecialAnnouncement extends CreativeWork {
-  announcementLocation?:
-    | CivicStructure
-    | Array<CivicStructure>
-    | LocalBusiness
-    | Array<LocalBusiness>;
-  category?:
-    | PhysicalActivityCategory
-    | Array<PhysicalActivityCategory>
-    | Text
-    | Array<Text>
-    | URL
-    | Array<URL>
-    | Thing
-    | Array<Thing>;
-  datePosted?: Date | Array<Date> | DateTime | Array<DateTime>;
-  diseasePreventionInfo?: URL | Array<URL> | WebContent | Array<WebContent>;
-  diseaseSpreadStatistics?:
-    | Dataset
-    | Array<Dataset>
-    | WebContent
-    | Array<WebContent>
-    | Observation
-    | Array<Observation>
-    | URL
-    | Array<URL>;
-  gettingTestedInfo?: WebContent | Array<WebContent> | URL | Array<URL>;
-  governmentBenefitsInfo?: GovernmentService | Array<GovernmentService>;
-  newsUpdatesAndGuidelines?: WebContent | Array<WebContent> | URL | Array<URL>;
-  publicTransportClosuresInfo?:
-    | URL
-    | Array<URL>
-    | WebContent
-    | Array<WebContent>;
-  quarantineGuidelines?: WebContent | Array<WebContent> | URL | Array<URL>;
-  schoolClosuresInfo?: URL | Array<URL> | WebContent | Array<WebContent>;
-  travelBans?: WebContent | Array<WebContent> | URL | Array<URL>;
-  webFeed?: URL | Array<URL> | DataFeed | Array<DataFeed>;
+  announcementLocation?: CivicStructure | LocalBusiness;
+  category?: PhysicalActivityCategory | Text | URL | Thing;
+  datePosted?: Date | DateTime;
+  diseasePreventionInfo?: URL | WebContent;
+  diseaseSpreadStatistics?: Dataset | WebContent | Observation | URL;
+  gettingTestedInfo?: WebContent | URL;
+  governmentBenefitsInfo?: GovernmentService;
+  newsUpdatesAndGuidelines?: WebContent | URL;
+  publicTransportClosuresInfo?: URL | WebContent;
+  quarantineGuidelines?: WebContent | URL;
+  schoolClosuresInfo?: URL | WebContent;
+  travelBans?: WebContent | URL;
+  webFeed?: URL | DataFeed;
 }
 
 /**
@@ -12444,10 +11152,10 @@ export interface SportsClub extends SportsActivityLocation {}
  *
  **/
 export interface SportsEvent extends Event {
-  awayTeam?: Person | Array<Person> | SportsTeam | Array<SportsTeam>;
-  competitor?: Person | Array<Person> | SportsTeam | Array<SportsTeam>;
-  homeTeam?: SportsTeam | Array<SportsTeam> | Person | Array<Person>;
-  sport?: Text | Array<Text> | URL | Array<URL>;
+  awayTeam?: Person | SportsTeam;
+  competitor?: Person | SportsTeam;
+  homeTeam?: SportsTeam | Person;
+  sport?: Text | URL;
 }
 
 /**
@@ -12459,7 +11167,7 @@ export interface SportsEvent extends Event {
  *
  **/
 export interface SportsOrganization extends Organization {
-  sport?: Text | Array<Text> | URL | Array<URL>;
+  sport?: Text | URL;
 }
 
 /**
@@ -12471,9 +11179,9 @@ export interface SportsOrganization extends Organization {
  *
  **/
 export interface SportsTeam extends SportsOrganization {
-  athlete?: Person | Array<Person>;
-  coach?: Person | Array<Person>;
-  gender?: GenderType | Array<GenderType> | Text | Array<Text>;
+  athlete?: Person;
+  coach?: Person;
+  gender?: GenderType | Text;
 }
 
 /**
@@ -12524,9 +11232,9 @@ population, and does not imply that the population consists of people. For examp
 *
 **/
 export interface StatisticalPopulation extends Intangible {
-  constrainingProperty?: Integer | Array<Integer>;
-  numConstraints?: Integer | Array<Integer>;
-  populationType?: Class | Array<Class>;
+  constrainingProperty?: Integer;
+  numConstraints?: Integer;
+  populationType?: Class;
 }
 
 /**
@@ -12582,8 +11290,8 @@ export interface SubscribeAction extends InteractAction {}
  * Partof: https://health-lifesci.schema.org
  **/
 export interface Substance extends MedicalEntity {
-  activeIngredient?: Text | Array<Text>;
-  maximumIntake?: MaximumDoseSchedule | Array<MaximumDoseSchedule>;
+  activeIngredient?: Text;
+  maximumIntake?: MaximumDoseSchedule;
 }
 
 /**
@@ -12610,19 +11318,9 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
 *
 **/
 export interface Suite extends Accommodation {
-  bed?:
-    | BedDetails
-    | Array<BedDetails>
-    | Text
-    | Array<Text>
-    | BedType
-    | Array<BedType>;
-  numberOfRooms?:
-    | Number
-    | Array<Number>
-    | QuantitativeValue
-    | Array<QuantitativeValue>;
-  occupancy?: QuantitativeValue | Array<QuantitativeValue>;
+  bed?: BedDetails | Text | BedType;
+  numberOfRooms?: Number | QuantitativeValue;
+  occupancy?: QuantitativeValue;
 }
 
 /**
@@ -12636,15 +11334,11 @@ export interface Suite extends Accommodation {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface SuperficialAnatomy extends MedicalEntity {
-  associatedPathophysiology?: Text | Array<Text>;
-  relatedAnatomy?:
-    | AnatomicalSystem
-    | Array<AnatomicalSystem>
-    | AnatomicalStructure
-    | Array<AnatomicalStructure>;
-  relatedCondition?: MedicalCondition | Array<MedicalCondition>;
-  relatedTherapy?: MedicalTherapy | Array<MedicalTherapy>;
-  significance?: Text | Array<Text>;
+  associatedPathophysiology?: Text;
+  relatedAnatomy?: AnatomicalSystem | AnatomicalStructure;
+  relatedCondition?: MedicalCondition;
+  relatedTherapy?: MedicalTherapy;
+  significance?: Text;
 }
 
 /**
@@ -12728,13 +11422,9 @@ export interface Taxi extends Service {}
  *
  **/
 export interface TaxiReservation extends Reservation {
-  partySize?:
-    | QuantitativeValue
-    | Array<QuantitativeValue>
-    | Integer
-    | Array<Integer>;
-  pickupLocation?: Place | Array<Place>;
-  pickupTime?: DateTime | Array<DateTime>;
+  partySize?: QuantitativeValue | Integer;
+  pickupLocation?: Place;
+  pickupTime?: DateTime;
 }
 
 /**
@@ -12766,8 +11456,8 @@ export interface TaxiStand extends CivicStructure {}
  *
  **/
 export interface TechArticle extends Article {
-  dependencies?: Text | Array<Text>;
-  proficiencyLevel?: Text | Array<Text>;
+  dependencies?: Text;
+  proficiencyLevel?: Text;
 }
 
 /**
@@ -12841,9 +11531,9 @@ export interface TheaterGroup extends PerformingGroup {}
  * Partof: https://health-lifesci.schema.org
  **/
 export interface TherapeuticProcedure extends MedicalProcedure {
-  adverseOutcome?: MedicalEntity | Array<MedicalEntity>;
-  doseSchedule?: DoseSchedule | Array<DoseSchedule>;
-  drug?: Drug | Array<Drug>;
+  adverseOutcome?: MedicalEntity;
+  doseSchedule?: DoseSchedule;
+  drug?: Drug;
 }
 
 /**
@@ -12859,7 +11549,7 @@ export interface TherapeuticProcedure extends MedicalProcedure {
  *
  **/
 export interface Thesis extends CreativeWork {
-  inSupportOf?: Text | Array<Text>;
+  inSupportOf?: Text;
 }
 
 /**
@@ -12871,24 +11561,18 @@ export interface Thesis extends CreativeWork {
  *
  **/
 export interface Thing {
-  additionalType?: URL | Array<URL>;
-  alternateName?: Text | Array<Text>;
-  description?: Text | Array<Text>;
-  disambiguatingDescription?: Text | Array<Text>;
-  identifier?:
-    | PropertyValue
-    | Array<PropertyValue>
-    | URL
-    | Array<URL>
-    | Text
-    | Array<Text>;
-  image?: ImageObject | Array<ImageObject> | URL | Array<URL>;
-  mainEntityOfPage?: CreativeWork | Array<CreativeWork> | URL | Array<URL>;
-  name?: Text | Array<Text>;
-  potentialAction?: Action | Array<Action>;
-  sameAs?: URL | Array<URL>;
-  subjectOf?: Event | Array<Event> | CreativeWork | Array<CreativeWork>;
-  url?: URL | Array<URL>;
+  additionalType?: URL;
+  alternateName?: Text;
+  description?: Text;
+  disambiguatingDescription?: Text;
+  identifier?: PropertyValue | URL | Text;
+  image?: ImageObject | URL;
+  mainEntityOfPage?: CreativeWork | URL;
+  name?: Text;
+  potentialAction?: Action;
+  sameAs?: URL;
+  subjectOf?: Event | CreativeWork;
+  url?: URL;
 }
 
 /**
@@ -12900,20 +11584,14 @@ export interface Thing {
  *
  **/
 export interface Ticket extends Intangible {
-  dateIssued?: Date | Array<Date> | DateTime | Array<DateTime>;
-  issuedBy?: Organization | Array<Organization>;
-  priceCurrency?: Text | Array<Text>;
-  ticketedSeat?: Seat | Array<Seat>;
-  ticketNumber?: Text | Array<Text>;
-  ticketToken?: Text | Array<Text> | URL | Array<URL>;
-  totalPrice?:
-    | Number
-    | Array<Number>
-    | Text
-    | Array<Text>
-    | PriceSpecification
-    | Array<PriceSpecification>;
-  underName?: Person | Array<Person> | Organization | Array<Organization>;
+  dateIssued?: Date | DateTime;
+  issuedBy?: Organization;
+  priceCurrency?: Text;
+  ticketedSeat?: Seat;
+  ticketNumber?: Text;
+  ticketToken?: Text | URL;
+  totalPrice?: Number | Text | PriceSpecification;
+  underName?: Person | Organization;
 }
 
 /**
@@ -12935,15 +11613,7 @@ export interface TieAction extends AchieveAction {}
  *
  **/
 export interface TipAction extends TradeAction {
-  recipient?:
-    | Organization
-    | Array<Organization>
-    | ContactPoint
-    | Array<ContactPoint>
-    | Person
-    | Array<Person>
-    | Audience
-    | Array<Audience>;
+  recipient?: Organization | ContactPoint | Person | Audience;
 }
 
 /**
@@ -12968,8 +11638,8 @@ export interface TireShop extends Store {}
  *
  **/
 export interface TouristAttraction extends Place {
-  availableLanguage?: Language | Array<Language> | Text | Array<Text>;
-  touristType?: Audience | Array<Audience> | Text | Array<Text>;
+  availableLanguage?: Language | Text;
+  touristType?: Audience | Text;
 }
 
 /**
@@ -12988,8 +11658,8 @@ export interface TouristAttraction extends Place {
 *
 **/
 export interface TouristDestination extends Place {
-  includesAttraction?: TouristAttraction | Array<TouristAttraction>;
-  touristType?: Audience | Array<Audience> | Text | Array<Text>;
+  includesAttraction?: TouristAttraction;
+  touristType?: Audience | Text;
 }
 
 /**
@@ -13018,7 +11688,7 @@ export interface TouristInformationCenter extends LocalBusiness {}
 *
 **/
 export interface TouristTrip extends Trip {
-  touristType?: Audience | Array<Audience> | Text | Array<Text>;
+  touristType?: Audience | Text;
 }
 
 /**
@@ -13040,7 +11710,7 @@ export interface ToyStore extends Store {}
  *
  **/
 export interface TrackAction extends FindAction {
-  deliveryMethod?: DeliveryMethod | Array<DeliveryMethod>;
+  deliveryMethod?: DeliveryMethod;
 }
 
 /**
@@ -13052,9 +11722,9 @@ export interface TrackAction extends FindAction {
  *
  **/
 export interface TradeAction extends Action {
-  price?: Number | Array<Number> | Text | Array<Text>;
-  priceCurrency?: Text | Array<Text>;
-  priceSpecification?: PriceSpecification | Array<PriceSpecification>;
+  price?: Number | Text;
+  priceCurrency?: Text;
+  priceSpecification?: PriceSpecification;
 }
 
 /**
@@ -13086,12 +11756,12 @@ export interface TrainStation extends CivicStructure {}
  *
  **/
 export interface TrainTrip extends Trip {
-  arrivalPlatform?: Text | Array<Text>;
-  arrivalStation?: TrainStation | Array<TrainStation>;
-  departurePlatform?: Text | Array<Text>;
-  departureStation?: TrainStation | Array<TrainStation>;
-  trainName?: Text | Array<Text>;
-  trainNumber?: Text | Array<Text>;
+  arrivalPlatform?: Text;
+  arrivalStation?: TrainStation;
+  departurePlatform?: Text;
+  departureStation?: TrainStation;
+  trainName?: Text;
+  trainNumber?: Text;
 }
 
 /**
@@ -13103,8 +11773,8 @@ export interface TrainTrip extends Trip {
  *
  **/
 export interface TransferAction extends Action {
-  fromLocation?: Place | Array<Place>;
-  toLocation?: Place | Array<Place>;
+  fromLocation?: Place;
+  toLocation?: Place;
 }
 
 /**
@@ -13116,7 +11786,7 @@ export interface TransferAction extends Action {
  *
  **/
 export interface TravelAction extends MoveAction {
-  distance?: Distance | Array<Distance>;
+  distance?: Distance;
 }
 
 /**
@@ -13152,13 +11822,13 @@ export interface TreatmentIndication extends MedicalIndication {}
  *
  **/
 export interface Trip extends Intangible {
-  arrivalTime?: Time | Array<Time> | DateTime | Array<DateTime>;
-  departureTime?: Time | Array<Time> | DateTime | Array<DateTime>;
-  itinerary?: Place | Array<Place> | ItemList | Array<ItemList>;
-  offers?: Offer | Array<Offer> | Demand | Array<Demand>;
-  partOfTrip?: Trip | Array<Trip>;
-  provider?: Organization | Array<Organization> | Person | Array<Person>;
-  subTrip?: Trip | Array<Trip>;
+  arrivalTime?: Time | DateTime;
+  departureTime?: Time | DateTime;
+  itinerary?: Place | ItemList;
+  offers?: Offer | Demand;
+  partOfTrip?: Trip;
+  provider?: Organization | Person;
+  subTrip?: Trip;
 }
 
 /**
@@ -13170,7 +11840,7 @@ export interface Trip extends Intangible {
  *
  **/
 export interface TVClip extends Clip {
-  partOfTVSeries?: TVSeries | Array<TVSeries>;
+  partOfTVSeries?: TVSeries;
 }
 
 /**
@@ -13182,10 +11852,10 @@ export interface TVClip extends Clip {
  *
  **/
 export interface TVEpisode extends Episode {
-  countryOfOrigin?: Country | Array<Country>;
-  partOfTVSeries?: TVSeries | Array<TVSeries>;
-  subtitleLanguage?: Text | Array<Text> | Language | Array<Language>;
-  titleEIDR?: URL | Array<URL> | Text | Array<Text>;
+  countryOfOrigin?: Country;
+  partOfTVSeries?: TVSeries;
+  subtitleLanguage?: Text | Language;
+  titleEIDR?: URL | Text;
 }
 
 /**
@@ -13197,8 +11867,8 @@ export interface TVEpisode extends Episode {
  *
  **/
 export interface TVSeason extends CreativeWork, CreativeWorkSeason {
-  countryOfOrigin?: Country | Array<Country>;
-  partOfTVSeries?: TVSeries | Array<TVSeries>;
+  countryOfOrigin?: Country;
+  partOfTVSeries?: TVSeries;
 }
 
 /**
@@ -13210,21 +11880,21 @@ export interface TVSeason extends CreativeWork, CreativeWorkSeason {
  *
  **/
 export interface TVSeries extends CreativeWork, CreativeWorkSeries {
-  actor?: Person | Array<Person>;
-  actors?: Person | Array<Person>;
-  containsSeason?: CreativeWorkSeason | Array<CreativeWorkSeason>;
-  countryOfOrigin?: Country | Array<Country>;
-  director?: Person | Array<Person>;
-  directors?: Person | Array<Person>;
-  episode?: Episode | Array<Episode>;
-  episodes?: Episode | Array<Episode>;
-  musicBy?: Person | Array<Person> | MusicGroup | Array<MusicGroup>;
-  numberOfEpisodes?: Integer | Array<Integer>;
-  numberOfSeasons?: Integer | Array<Integer>;
-  productionCompany?: Organization | Array<Organization>;
-  season?: CreativeWorkSeason | Array<CreativeWorkSeason> | URL | Array<URL>;
-  seasons?: CreativeWorkSeason | Array<CreativeWorkSeason>;
-  trailer?: VideoObject | Array<VideoObject>;
+  actor?: Person;
+  actors?: Person;
+  containsSeason?: CreativeWorkSeason;
+  countryOfOrigin?: Country;
+  director?: Person;
+  directors?: Person;
+  episode?: Episode;
+  episodes?: Episode;
+  musicBy?: Person | MusicGroup;
+  numberOfEpisodes?: Integer;
+  numberOfSeasons?: Integer;
+  productionCompany?: Organization;
+  season?: CreativeWorkSeason | URL;
+  seasons?: CreativeWorkSeason;
+  trailer?: VideoObject;
 }
 
 /**
@@ -13238,11 +11908,11 @@ export interface TVSeries extends CreativeWork, CreativeWorkSeries {
  *
  **/
 export interface TypeAndQuantityNode extends StructuredValue {
-  amountOfThisGood?: Number | Array<Number>;
-  businessFunction?: BusinessFunction | Array<BusinessFunction>;
-  typeOfGood?: Service | Array<Service> | Product | Array<Product>;
-  unitCode?: Text | Array<Text> | URL | Array<URL>;
-  unitText?: Text | Array<Text>;
+  amountOfThisGood?: Number;
+  businessFunction?: BusinessFunction;
+  typeOfGood?: Service | Product;
+  unitCode?: Text | URL;
+  unitText?: Text;
 }
 
 /**
@@ -13256,26 +11926,14 @@ export interface TypeAndQuantityNode extends StructuredValue {
  *
  **/
 export interface UnitPriceSpecification extends PriceSpecification {
-  billingDuration?:
-    | Number
-    | Array<Number>
-    | Duration
-    | Array<Duration>
-    | QuantitativeValue
-    | Array<QuantitativeValue>;
-  billingIncrement?: Number | Array<Number>;
-  billingStart?: Number | Array<Number>;
-  priceComponentType?:
-    | PriceComponentTypeEnumeration
-    | Array<PriceComponentTypeEnumeration>;
-  priceType?:
-    | PriceTypeEnumeration
-    | Array<PriceTypeEnumeration>
-    | Text
-    | Array<Text>;
-  referenceQuantity?: QuantitativeValue | Array<QuantitativeValue>;
-  unitCode?: Text | Array<Text> | URL | Array<URL>;
-  unitText?: Text | Array<Text>;
+  billingDuration?: Number | Duration | QuantitativeValue;
+  billingIncrement?: Number;
+  billingStart?: Number;
+  priceComponentType?: PriceComponentTypeEnumeration;
+  priceType?: PriceTypeEnumeration | Text;
+  referenceQuantity?: QuantitativeValue;
+  unitCode?: Text | URL;
+  unitText?: Text;
 }
 
 /**
@@ -13297,8 +11955,8 @@ export interface UnRegisterAction extends InteractAction {}
  *
  **/
 export interface UpdateAction extends Action {
-  collection?: Thing | Array<Thing>;
-  targetCollection?: Thing | Array<Thing>;
+  collection?: Thing;
+  targetCollection?: Thing;
 }
 
 /**
@@ -13352,11 +12010,11 @@ export interface UserCheckins extends UserInteraction {}
  *
  **/
 export interface UserComments extends UserInteraction {
-  commentText?: Text | Array<Text>;
-  commentTime?: DateTime | Array<DateTime> | Date | Array<Date>;
-  creator?: Organization | Array<Organization> | Person | Array<Person>;
-  discusses?: CreativeWork | Array<CreativeWork>;
-  replyToUrl?: URL | Array<URL>;
+  commentText?: Text;
+  commentTime?: DateTime | Date;
+  creator?: Organization | Person;
+  discusses?: CreativeWork;
+  replyToUrl?: URL;
 }
 
 /**
@@ -13452,97 +12110,45 @@ export interface UserTweets extends UserInteraction {}
  *
  **/
 export interface Vehicle extends Product {
-  accelerationTime?: QuantitativeValue | Array<QuantitativeValue>;
-  bodyType?:
-    | URL
-    | Array<URL>
-    | Text
-    | Array<Text>
-    | QualitativeValue
-    | Array<QualitativeValue>;
-  callSign?: Text | Array<Text>;
-  cargoVolume?: QuantitativeValue | Array<QuantitativeValue>;
-  dateVehicleFirstRegistered?: Date | Array<Date>;
-  driveWheelConfiguration?:
-    | DriveWheelConfigurationValue
-    | Array<DriveWheelConfigurationValue>
-    | Text
-    | Array<Text>;
-  emissionsCO2?: Number | Array<Number>;
-  fuelCapacity?: QuantitativeValue | Array<QuantitativeValue>;
-  fuelConsumption?: QuantitativeValue | Array<QuantitativeValue>;
-  fuelEfficiency?: QuantitativeValue | Array<QuantitativeValue>;
-  fuelType?:
-    | QualitativeValue
-    | Array<QualitativeValue>
-    | URL
-    | Array<URL>
-    | Text
-    | Array<Text>;
-  knownVehicleDamages?: Text | Array<Text>;
-  meetsEmissionStandard?:
-    | URL
-    | Array<URL>
-    | Text
-    | Array<Text>
-    | QualitativeValue
-    | Array<QualitativeValue>;
-  mileageFromOdometer?: QuantitativeValue | Array<QuantitativeValue>;
-  modelDate?: Date | Array<Date>;
-  numberOfAirbags?: Number | Array<Number> | Text | Array<Text>;
-  numberOfAxles?:
-    | Number
-    | Array<Number>
-    | QuantitativeValue
-    | Array<QuantitativeValue>;
-  numberOfDoors?:
-    | Number
-    | Array<Number>
-    | QuantitativeValue
-    | Array<QuantitativeValue>;
-  numberOfForwardGears?:
-    | QuantitativeValue
-    | Array<QuantitativeValue>
-    | Number
-    | Array<Number>;
-  numberOfPreviousOwners?:
-    | QuantitativeValue
-    | Array<QuantitativeValue>
-    | Number
-    | Array<Number>;
-  payload?: QuantitativeValue | Array<QuantitativeValue>;
-  productionDate?: Date | Array<Date>;
-  purchaseDate?: Date | Array<Date>;
-  seatingCapacity?:
-    | Number
-    | Array<Number>
-    | QuantitativeValue
-    | Array<QuantitativeValue>;
-  speed?: QuantitativeValue | Array<QuantitativeValue>;
-  steeringPosition?: SteeringPositionValue | Array<SteeringPositionValue>;
-  tongueWeight?: QuantitativeValue | Array<QuantitativeValue>;
-  trailerWeight?: QuantitativeValue | Array<QuantitativeValue>;
-  vehicleConfiguration?: Text | Array<Text>;
-  vehicleEngine?: EngineSpecification | Array<EngineSpecification>;
-  vehicleIdentificationNumber?: Text | Array<Text>;
-  vehicleInteriorColor?: Text | Array<Text>;
-  vehicleInteriorType?: Text | Array<Text>;
-  vehicleModelDate?: Date | Array<Date>;
-  vehicleSeatingCapacity?:
-    | Number
-    | Array<Number>
-    | QuantitativeValue
-    | Array<QuantitativeValue>;
-  vehicleSpecialUsage?: Text | Array<Text> | CarUsageType | Array<CarUsageType>;
-  vehicleTransmission?:
-    | URL
-    | Array<URL>
-    | Text
-    | Array<Text>
-    | QualitativeValue
-    | Array<QualitativeValue>;
-  weightTotal?: QuantitativeValue | Array<QuantitativeValue>;
-  wheelbase?: QuantitativeValue | Array<QuantitativeValue>;
+  accelerationTime?: QuantitativeValue;
+  bodyType?: URL | Text | QualitativeValue;
+  callSign?: Text;
+  cargoVolume?: QuantitativeValue;
+  dateVehicleFirstRegistered?: Date;
+  driveWheelConfiguration?: DriveWheelConfigurationValue | Text;
+  emissionsCO2?: Number;
+  fuelCapacity?: QuantitativeValue;
+  fuelConsumption?: QuantitativeValue;
+  fuelEfficiency?: QuantitativeValue;
+  fuelType?: QualitativeValue | URL | Text;
+  knownVehicleDamages?: Text;
+  meetsEmissionStandard?: URL | Text | QualitativeValue;
+  mileageFromOdometer?: QuantitativeValue;
+  modelDate?: Date;
+  numberOfAirbags?: Number | Text;
+  numberOfAxles?: Number | QuantitativeValue;
+  numberOfDoors?: Number | QuantitativeValue;
+  numberOfForwardGears?: QuantitativeValue | Number;
+  numberOfPreviousOwners?: QuantitativeValue | Number;
+  payload?: QuantitativeValue;
+  productionDate?: Date;
+  purchaseDate?: Date;
+  seatingCapacity?: Number | QuantitativeValue;
+  speed?: QuantitativeValue;
+  steeringPosition?: SteeringPositionValue;
+  tongueWeight?: QuantitativeValue;
+  trailerWeight?: QuantitativeValue;
+  vehicleConfiguration?: Text;
+  vehicleEngine?: EngineSpecification;
+  vehicleIdentificationNumber?: Text;
+  vehicleInteriorColor?: Text;
+  vehicleInteriorType?: Text;
+  vehicleModelDate?: Date;
+  vehicleSeatingCapacity?: Number | QuantitativeValue;
+  vehicleSpecialUsage?: Text | CarUsageType;
+  vehicleTransmission?: URL | Text | QualitativeValue;
+  weightTotal?: QuantitativeValue;
+  wheelbase?: QuantitativeValue;
 }
 
 /**
@@ -13556,13 +12162,9 @@ export interface Vehicle extends Product {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface Vein extends Vessel {
-  drainsTo?: Vessel | Array<Vessel>;
-  regionDrained?:
-    | AnatomicalStructure
-    | Array<AnatomicalStructure>
-    | AnatomicalSystem
-    | Array<AnatomicalSystem>;
-  tributary?: AnatomicalStructure | Array<AnatomicalStructure>;
+  drainsTo?: Vessel;
+  regionDrained?: AnatomicalStructure | AnatomicalSystem;
+  tributary?: AnatomicalStructure;
 }
 
 /**
@@ -13608,17 +12210,17 @@ export interface VideoGallery extends MediaGallery {}
  *
  **/
 export interface VideoGame extends Game, SoftwareApplication {
-  actor?: Person | Array<Person>;
-  actors?: Person | Array<Person>;
-  cheatCode?: CreativeWork | Array<CreativeWork>;
-  director?: Person | Array<Person>;
-  directors?: Person | Array<Person>;
-  gamePlatform?: Thing | Array<Thing> | URL | Array<URL> | Text | Array<Text>;
-  gameServer?: GameServer | Array<GameServer>;
-  gameTip?: CreativeWork | Array<CreativeWork>;
-  musicBy?: Person | Array<Person> | MusicGroup | Array<MusicGroup>;
-  playMode?: GamePlayMode | Array<GamePlayMode>;
-  trailer?: VideoObject | Array<VideoObject>;
+  actor?: Person;
+  actors?: Person;
+  cheatCode?: CreativeWork;
+  director?: Person;
+  directors?: Person;
+  gamePlatform?: Thing | URL | Text;
+  gameServer?: GameServer;
+  gameTip?: CreativeWork;
+  musicBy?: Person | MusicGroup;
+  playMode?: GamePlayMode;
+  trailer?: VideoObject;
 }
 
 /**
@@ -13640,34 +12242,28 @@ export interface VideoGameClip extends Clip {}
  *
  **/
 export interface VideoGameSeries extends CreativeWorkSeries {
-  actor?: Person | Array<Person>;
-  actors?: Person | Array<Person>;
-  characterAttribute?: Thing | Array<Thing>;
-  cheatCode?: CreativeWork | Array<CreativeWork>;
-  containsSeason?: CreativeWorkSeason | Array<CreativeWorkSeason>;
-  director?: Person | Array<Person>;
-  directors?: Person | Array<Person>;
-  episode?: Episode | Array<Episode>;
-  episodes?: Episode | Array<Episode>;
-  gameItem?: Thing | Array<Thing>;
-  gameLocation?:
-    | PostalAddress
-    | Array<PostalAddress>
-    | Place
-    | Array<Place>
-    | URL
-    | Array<URL>;
-  gamePlatform?: Thing | Array<Thing> | URL | Array<URL> | Text | Array<Text>;
-  musicBy?: Person | Array<Person> | MusicGroup | Array<MusicGroup>;
-  numberOfEpisodes?: Integer | Array<Integer>;
-  numberOfPlayers?: QuantitativeValue | Array<QuantitativeValue>;
-  numberOfSeasons?: Integer | Array<Integer>;
-  playMode?: GamePlayMode | Array<GamePlayMode>;
-  productionCompany?: Organization | Array<Organization>;
-  quest?: Thing | Array<Thing>;
-  season?: CreativeWorkSeason | Array<CreativeWorkSeason> | URL | Array<URL>;
-  seasons?: CreativeWorkSeason | Array<CreativeWorkSeason>;
-  trailer?: VideoObject | Array<VideoObject>;
+  actor?: Person;
+  actors?: Person;
+  characterAttribute?: Thing;
+  cheatCode?: CreativeWork;
+  containsSeason?: CreativeWorkSeason;
+  director?: Person;
+  directors?: Person;
+  episode?: Episode;
+  episodes?: Episode;
+  gameItem?: Thing;
+  gameLocation?: PostalAddress | Place | URL;
+  gamePlatform?: Thing | URL | Text;
+  musicBy?: Person | MusicGroup;
+  numberOfEpisodes?: Integer;
+  numberOfPlayers?: QuantitativeValue;
+  numberOfSeasons?: Integer;
+  playMode?: GamePlayMode;
+  productionCompany?: Organization;
+  quest?: Thing;
+  season?: CreativeWorkSeason | URL;
+  seasons?: CreativeWorkSeason;
+  trailer?: VideoObject;
 }
 
 /**
@@ -13681,16 +12277,16 @@ export interface VideoGameSeries extends CreativeWorkSeries {
  *
  **/
 export interface VideoObject extends MediaObject {
-  actor?: Person | Array<Person>;
-  actors?: Person | Array<Person>;
-  caption?: Text | Array<Text> | MediaObject | Array<MediaObject>;
-  director?: Person | Array<Person>;
-  directors?: Person | Array<Person>;
-  musicBy?: Person | Array<Person> | MusicGroup | Array<MusicGroup>;
-  thumbnail?: ImageObject | Array<ImageObject>;
-  transcript?: Text | Array<Text>;
-  videoFrameSize?: Text | Array<Text>;
-  videoQuality?: Text | Array<Text>;
+  actor?: Person;
+  actors?: Person;
+  caption?: Text | MediaObject;
+  director?: Person;
+  directors?: Person;
+  musicBy?: Person | MusicGroup;
+  thumbnail?: ImageObject;
+  transcript?: Text;
+  videoFrameSize?: Text;
+  videoQuality?: Text;
 }
 
 /**
@@ -13738,31 +12334,19 @@ export interface VisualArtsEvent extends Event {}
  *
  **/
 export interface VisualArtwork extends CreativeWork {
-  artEdition?: Text | Array<Text> | Integer | Array<Integer>;
-  artform?: Text | Array<Text> | URL | Array<URL>;
-  artist?: Person | Array<Person>;
-  artMedium?: Text | Array<Text> | URL | Array<URL>;
-  artworkSurface?: Text | Array<Text> | URL | Array<URL>;
-  colorist?: Person | Array<Person>;
-  depth?:
-    | Distance
-    | Array<Distance>
-    | QuantitativeValue
-    | Array<QuantitativeValue>;
-  height?:
-    | QuantitativeValue
-    | Array<QuantitativeValue>
-    | Distance
-    | Array<Distance>;
-  inker?: Person | Array<Person>;
-  letterer?: Person | Array<Person>;
-  penciler?: Person | Array<Person>;
-  surface?: URL | Array<URL> | Text | Array<Text>;
-  width?:
-    | QuantitativeValue
-    | Array<QuantitativeValue>
-    | Distance
-    | Array<Distance>;
+  artEdition?: Text | Integer;
+  artform?: Text | URL;
+  artist?: Person;
+  artMedium?: Text | URL;
+  artworkSurface?: Text | URL;
+  colorist?: Person;
+  depth?: Distance | QuantitativeValue;
+  height?: QuantitativeValue | Distance;
+  inker?: Person;
+  letterer?: Person;
+  penciler?: Person;
+  surface?: URL | Text;
+  width?: QuantitativeValue | Distance;
 }
 
 /**
@@ -13796,7 +12380,7 @@ export interface Volcano extends Landform {}
  *
  **/
 export interface VoteAction extends ChooseAction {
-  candidate?: Person | Array<Person>;
+  candidate?: Person;
 }
 
 /**
@@ -13820,8 +12404,8 @@ export interface WantAction extends ReactAction {}
  *
  **/
 export interface WarrantyPromise extends StructuredValue {
-  durationOfWarranty?: QuantitativeValue | Array<QuantitativeValue>;
-  warrantyScope?: WarrantyScope | Array<WarrantyScope>;
+  durationOfWarranty?: QuantitativeValue;
+  warrantyScope?: WarrantyScope;
 }
 
 /**
@@ -13880,7 +12464,7 @@ export interface WearAction extends UseAction {}
  *
  **/
 export interface WebAPI extends Service {
-  documentation?: CreativeWork | Array<CreativeWork> | URL | Array<URL>;
+  documentation?: CreativeWork | URL;
 }
 
 /**
@@ -13892,7 +12476,7 @@ export interface WebAPI extends Service {
  *
  **/
 export interface WebApplication extends SoftwareApplication {
-  browserRequirements?: Text | Array<Text>;
+  browserRequirements?: Text;
 }
 
 /**
@@ -13918,20 +12502,16 @@ export interface WebContent extends CreativeWork {}
  *
  **/
 export interface WebPage extends CreativeWork {
-  breadcrumb?: Text | Array<Text> | BreadcrumbList | Array<BreadcrumbList>;
-  lastReviewed?: Date | Array<Date>;
-  mainContentOfPage?: WebPageElement | Array<WebPageElement>;
-  primaryImageOfPage?: ImageObject | Array<ImageObject>;
-  relatedLink?: URL | Array<URL>;
-  reviewedBy?: Organization | Array<Organization> | Person | Array<Person>;
-  significantLink?: URL | Array<URL>;
-  significantLinks?: URL | Array<URL>;
-  speakable?:
-    | SpeakableSpecification
-    | Array<SpeakableSpecification>
-    | URL
-    | Array<URL>;
-  specialty?: Specialty | Array<Specialty>;
+  breadcrumb?: Text | BreadcrumbList;
+  lastReviewed?: Date;
+  mainContentOfPage?: WebPageElement;
+  primaryImageOfPage?: ImageObject;
+  relatedLink?: URL;
+  reviewedBy?: Organization | Person;
+  significantLink?: URL;
+  significantLinks?: URL;
+  speakable?: SpeakableSpecification | URL;
+  specialty?: Specialty;
 }
 
 /**
@@ -13943,8 +12523,8 @@ export interface WebPage extends CreativeWork {
  *
  **/
 export interface WebPageElement extends CreativeWork {
-  cssSelector?: CssSelectorType | Array<CssSelectorType>;
-  xpath?: XPathType | Array<XPathType>;
+  cssSelector?: CssSelectorType;
+  xpath?: XPathType;
 }
 
 /**
@@ -13956,7 +12536,7 @@ export interface WebPageElement extends CreativeWork {
  *
  **/
 export interface WebSite extends CreativeWork {
-  issn?: Text | Array<Text>;
+  issn?: Text;
 }
 
 /**
@@ -13978,7 +12558,7 @@ export interface WholesaleStore extends Store {}
  *
  **/
 export interface WinAction extends AchieveAction {
-  loser?: Person | Array<Person>;
+  loser?: Person;
 }
 
 /**
@@ -14004,14 +12584,8 @@ export interface Winery extends FoodEstablishment {}
  *
  **/
 export interface WorkBasedProgram extends EducationalOccupationalProgram {
-  occupationalCategory?:
-    | CategoryCode
-    | Array<CategoryCode>
-    | Text
-    | Array<Text>;
-  trainingSalary?:
-    | MonetaryAmountDistribution
-    | Array<MonetaryAmountDistribution>;
+  occupationalCategory?: CategoryCode | Text;
+  trainingSalary?: MonetaryAmountDistribution;
 }
 
 /**
@@ -14075,8 +12649,8 @@ export interface WPSideBar extends WebPageElement {}
  *
  **/
 export interface WriteAction extends CreateAction {
-  inLanguage?: Text | Array<Text> | Language | Array<Language>;
-  language?: Language | Array<Language>;
+  inLanguage?: Text | Language;
+  language?: Language;
 }
 
 /**

@@ -216,29 +216,17 @@ export const reExport = (moduleName: string, append: boolean = true) => {
 
 export const getRangeString = (
   schemas: { [id: string]: SchemaType },
-  range: PointerType | Array<PointerType>,
-  enumMembers: _.Dictionary<SchemaType[]>
+  range: PointerType | Array<PointerType>
 ) => {
   let value = null;
-  let isSchemaEnum = false;
-  let isBoolean = false;
-  const inclArrays = !(isSchemaEnum || isBoolean);
   if (Array.isArray(range)) {
-    if (enumMembers[range[0]["@id"]]) {
-      isSchemaEnum = true;
-    }
-    const labels = range.map((item) => schemas[item["@id"]]["rdfs:label"]);
-    const netTypes = inclArrays
-      ? labels.map((i) => `${i} | Array<${i}>`)
-      : labels;
-    return _.join(netTypes, " | ");
+    return _.join(
+      range.map((item) => schemas[item["@id"]]["rdfs:label"]),
+      " | "
+    );
   } else {
-    isBoolean = range["@id"] == BOOLEAN_TYPE;
-    if (!isBoolean && enumMembers[range["@id"]]) {
-      isSchemaEnum = true;
-    }
     value = getLabel(schemas[range["@id"]]);
-    return inclArrays ? `${value} | Array<${value}>;` : `${value};`;
+    return `${value};`;
   }
 };
 
@@ -320,8 +308,7 @@ export const writeClasses = (schemas: Array<SchemaType>) => {
         domains.forEach((value) => {
           classTypes[value["@id"]]!.props[getLabel(schema)] = getRangeString(
             allSchema,
-            schema["schema:rangeIncludes"] as PointerType | Array<PointerType>,
-            enumMembers
+            schema["schema:rangeIncludes"] as PointerType | Array<PointerType>
           );
         });
       }
