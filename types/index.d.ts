@@ -1,4 +1,9 @@
 import { Number, Text, Boolean, Date, DateTime, Time } from "./core";
+import { ItemList, ListItem, DataFeed, DataFeedItem } from "./generics";
+
+export * from "./core";
+
+export * from "./generics";
 
 export type DataType = Number | Text | Boolean | Date | DateTime | Time;
 
@@ -2061,7 +2066,7 @@ export interface BikeStore extends Store {}
  **/
 export interface Blog extends CreativeWork {
   blogPost?: BlogPosting;
-  blogPosts?: BlogPosting;
+  blogPosts?: Array<BlogPosting>;
   issn?: Text;
 }
 
@@ -2263,7 +2268,7 @@ export interface Brand extends Intangible {
       
 *
 **/
-export interface BreadcrumbList extends ItemList {}
+export interface BreadcrumbList<T> extends ItemList<T> {}
 
 /**
  *
@@ -2880,10 +2885,10 @@ export interface Class extends Intangible {}
  **/
 export interface Clip extends CreativeWork {
   actor?: Person;
-  actors?: Person;
+  actors?: Array<Person>;
   clipNumber?: Integer | Text;
   director?: Person;
-  directors?: Person;
+  directors?: Array<Person>;
   endOffset?: HyperTocEntry | Number;
   musicBy?: Person | MusicGroup;
   partOfEpisode?: Episode;
@@ -3091,7 +3096,7 @@ This is the equivalent of Atom's element as defined in Feed Paging and Archiving
 * @see @link https://github.com/schemaorg/schemaorg/issues/1397
 *
 **/
-export interface CompleteDataFeed extends DataFeed {}
+export interface CompleteDataFeed<T> extends DataFeed<T> {}
 
 /**
  *
@@ -3402,7 +3407,7 @@ export interface CreativeWork extends Thing {
   audio?: Clip | AudioObject | MusicRecording;
   author?: Person | Organization;
   award?: Text;
-  awards?: Text;
+  awards?: Array<Text>;
   character?: Person;
   citation?: Text | CreativeWork;
   comment?: Comment;
@@ -3430,7 +3435,7 @@ export interface CreativeWork extends Thing {
   educationalUse?: Text | DefinedTerm;
   encoding?: MediaObject;
   encodingFormat?: Text | URL;
-  encodings?: MediaObject;
+  encodings?: Array<MediaObject>;
   exampleOfWork?: CreativeWork;
   expires?: Date;
   fileFormat?: Text | URL;
@@ -3467,7 +3472,7 @@ export interface CreativeWork extends Thing {
   recordedAt?: Event;
   releasedEvent?: PublicationEvent;
   review?: Review;
-  reviews?: Review;
+  reviews?: Array<Review>;
   schemaVersion?: Text | URL;
   sdDatePublished?: Date;
   sdLicense?: URL | CreativeWork;
@@ -3506,7 +3511,7 @@ export interface CreativeWorkSeason extends CreativeWork {
   director?: Person;
   endDate?: Date | DateTime;
   episode?: Episode;
-  episodes?: Episode;
+  episodes?: Array<Episode>;
   numberOfEpisodes?: Integer;
   partOfSeries?: CreativeWorkSeries;
   productionCompany?: Organization;
@@ -3641,33 +3646,6 @@ export interface DataCatalog extends CreativeWork {
  **/
 export interface DataDownload extends MediaObject {
   measurementTechnique?: Text | URL;
-}
-
-/**
- *
- * @see @link https://schema.org/DataFeed
- *
- * @remarks
- * A single feed providing structured information about one or more entities or topics.
- *
- **/
-export interface DataFeed extends Dataset {
-  dataFeedElement?: Thing | Text | DataFeedItem;
-}
-
-/**
- *
- * @see @link https://schema.org/DataFeedItem
- *
- * @remarks
- * A single item within a larger data feed.
- *
- **/
-export interface DataFeedItem extends Intangible {
-  dateCreated?: DateTime | Date;
-  dateDeleted?: DateTime | Date;
-  dateModified?: DateTime | Date;
-  item?: Thing;
 }
 
 /**
@@ -4699,9 +4677,9 @@ export interface Enumeration extends Intangible {}
  **/
 export interface Episode extends CreativeWork {
   actor?: Person;
-  actors?: Person;
+  actors?: Array<Person>;
   director?: Person;
-  directors?: Person;
+  directors?: Array<Person>;
   duration?: Duration;
   episodeNumber?: Text | Integer;
   musicBy?: Person | MusicGroup;
@@ -4724,7 +4702,7 @@ export interface Event extends Thing {
   actor?: Person;
   aggregateRating?: AggregateRating;
   attendee?: Person | Organization;
-  attendees?: Person | Organization;
+  attendees?: Array<Person> | Array<Organization>;
   audience?: Audience;
   composer?: Organization | Person;
   contributor?: Organization | Person;
@@ -4745,7 +4723,7 @@ export interface Event extends Thing {
   offers?: Offer | Demand;
   organizer?: Organization | Person;
   performer?: Organization | Person;
-  performers?: Organization | Person;
+  performers?: Array<Organization> | Array<Person>;
   previousStartDate?: Date;
   recordedIn?: CreativeWork;
   remainingAttendeeCapacity?: Integer;
@@ -4753,7 +4731,7 @@ export interface Event extends Thing {
   sponsor?: Person | Organization;
   startDate?: DateTime | Date;
   subEvent?: Event;
-  subEvents?: Event;
+  subEvents?: Array<Event>;
   superEvent?: Event;
   translator?: Person | Organization;
   typicalAgeRange?: Text;
@@ -5770,7 +5748,7 @@ export interface HowTo extends CreativeWork {
   performTime?: Duration;
   prepTime?: Duration;
   step?: HowToStep | Text | CreativeWork | HowToSection;
-  steps?: CreativeWork | ItemList | Text;
+  steps?: CreativeWork | Text | ItemList<CreativeWork> | ItemList<Text>;
   supply?: HowToSupply | Text;
   tool?: Text | HowToTool;
   totalTime?: Duration;
@@ -5785,7 +5763,7 @@ export interface HowTo extends CreativeWork {
  * A direction indicating a single action to do in the instructions for how to achieve a result.
  *
  **/
-export interface HowToDirection extends ListItem, CreativeWork {
+export interface HowToDirection extends ListItem<CreativeWork> {
   afterMedia?: MediaObject | URL;
   beforeMedia?: MediaObject | URL;
   duringMedia?: URL | MediaObject;
@@ -5804,7 +5782,7 @@ export interface HowToDirection extends ListItem, CreativeWork {
  * An item used as either a tool or supply when performing the instructions for how to to achieve a result.
  *
  **/
-export interface HowToItem extends ListItem {
+export interface HowToItem<T> extends ListItem<T> {
   requiredQuantity?: Text | QuantitativeValue | Number;
 }
 
@@ -5816,9 +5794,9 @@ export interface HowToItem extends ListItem {
  * A sub-grouping of steps in the instructions for how to achieve a result (e.g. steps for making a pie crust within a pie recipe).
  *
  **/
-export interface HowToSection extends ListItem, CreativeWork, ItemList {
-  steps?: CreativeWork | ItemList | Text;
-}
+export type HowToSection = (ListItem<CreativeWork> | ItemList<CreativeWork>) & {
+  steps?: CreativeWork | Text | ItemList<CreativeWork> | ItemList<Text>;
+};
 
 /**
  *
@@ -5828,7 +5806,7 @@ export interface HowToSection extends ListItem, CreativeWork, ItemList {
  * A step in the instructions for how to achieve a result. It is an ordered list with HowToDirection and/or HowToTip items.
  *
  **/
-export interface HowToStep extends ListItem, CreativeWork, ItemList {}
+export type HowToStep = (ListItem<CreativeWork> | ItemList<CreativeWork>) & {};
 
 /**
  *
@@ -5850,7 +5828,7 @@ export interface HowToSupply extends HowToItem {
  * An explanation in the instructions for how to achieve a result. It provides supplementary information about a technique, supply, author's preference, etc. It can explain what could be done, or what should not be done, but doesn't specify what should be done (see HowToDirection).
  *
  **/
-export interface HowToTip extends CreativeWork, ListItem {}
+export interface HowToTip extends ListItem<CreativeWork> {}
 
 /**
  *
@@ -6160,20 +6138,6 @@ export interface Invoice extends Intangible {
   referencesOrder?: Order;
   scheduledPaymentDate?: Date;
   totalPaymentDue?: PriceSpecification | MonetaryAmount;
-}
-
-/**
- *
- * @see @link https://schema.org/ItemList
- *
- * @remarks
- * A list of items of any sort&#x2014;for example, Top 10 Movies About Weathermen, or Top 100 Party Songs. Not to be confused with HTML lists, which are often used only for formatting.
- *
- **/
-export interface ItemList extends Intangible {
-  itemListElement?: Text | ListItem | Thing;
-  itemListOrder?: ItemListOrderType | Text;
-  numberOfItems?: Integer;
 }
 
 /**
@@ -6521,21 +6485,6 @@ export interface LiquorStore extends Store {}
  *
  **/
 export interface ListenAction extends ConsumeAction {}
-
-/**
- *
- * @see @link https://schema.org/ListItem
- *
- * @remarks
- * An list item, e.g. a step in a checklist or how-to description.
- *
- **/
-export interface ListItem extends Intangible {
-  item?: Thing;
-  nextItem?: ListItem;
-  position?: Text | Integer;
-  previousItem?: ListItem;
-}
 
 /**
  *
@@ -7678,10 +7627,10 @@ export interface MoveAction extends Action {
  **/
 export interface Movie extends CreativeWork {
   actor?: Person;
-  actors?: Person;
+  actors?: Array<Person>;
   countryOfOrigin?: Country;
   director?: Person;
-  directors?: Person;
+  directors?: Array<Person>;
   duration?: Duration;
   musicBy?: Person | MusicGroup;
   productionCompany?: Organization;
@@ -7720,9 +7669,9 @@ export interface MovieRentalStore extends Store {}
  **/
 export interface MovieSeries extends CreativeWorkSeries {
   actor?: Person;
-  actors?: Person;
+  actors?: Array<Person>;
   director?: Person;
-  directors?: Person;
+  directors?: Array<Person>;
   musicBy?: Person | MusicGroup;
   productionCompany?: Organization;
   trailer?: VideoObject;
@@ -7836,11 +7785,11 @@ export interface MusicEvent extends Event {}
  **/
 export interface MusicGroup extends PerformingGroup {
   album?: MusicAlbum;
-  albums?: MusicAlbum;
+  albums?: Array<MusicAlbum>;
   genre?: URL | Text;
   musicGroupMember?: Person;
-  track?: ItemList | MusicRecording;
-  tracks?: MusicRecording;
+  track?: MusicRecording | ItemList<MusicRecording>;
+  tracks?: Array<MusicRecording>;
 }
 
 /**
@@ -7853,8 +7802,8 @@ export interface MusicGroup extends PerformingGroup {
  **/
 export interface MusicPlaylist extends CreativeWork {
   numTracks?: Integer;
-  track?: ItemList | MusicRecording;
-  tracks?: MusicRecording;
+  track?: MusicRecording | ItemList<MusicRecording>;
+  tracks?: Array<MusicRecording>;
 }
 
 /**
@@ -8226,7 +8175,7 @@ export interface Offer extends Intangible {
   priceSpecification?: PriceSpecification;
   priceValidUntil?: Date;
   review?: Review;
-  reviews?: Review;
+  reviews?: Array<Review>;
   seller?: Organization | Person;
   serialNumber?: Text;
   shippingDetails?: OfferShippingDetails;
@@ -8244,7 +8193,7 @@ export interface Offer extends Intangible {
  * An OfferCatalog is an ItemList that contains related Offers and/or further OfferCatalogs that are offeredBy the same provider.
  *
  **/
-export interface OfferCatalog extends ItemList {}
+export interface OfferCatalog<T> extends ItemList<T> {}
 
 /**
 *
@@ -8456,10 +8405,10 @@ export interface Organization extends Thing {
   alumni?: Person;
   areaServed?: Text | Place | AdministrativeArea | GeoShape;
   award?: Text;
-  awards?: Text;
+  awards?: Array<Text>;
   brand?: Brand | Organization;
   contactPoint?: ContactPoint;
-  contactPoints?: ContactPoint;
+  contactPoints?: Array<ContactPoint>;
   correctionsPolicy?: URL | CreativeWork;
   department?: Organization;
   dissolutionDate?: Date;
@@ -8468,13 +8417,13 @@ export interface Organization extends Thing {
   duns?: Text;
   email?: Text;
   employee?: Person;
-  employees?: Person;
+  employees?: Array<Person>;
   ethicsPolicy?: URL | CreativeWork;
   event?: Event;
-  events?: Event;
+  events?: Array<Event>;
   faxNumber?: Text;
   founder?: Person;
-  founders?: Person;
+  founders?: Array<Person>;
   foundingDate?: Date;
   foundingLocation?: Place;
   funder?: Organization | Person;
@@ -8494,7 +8443,7 @@ export interface Organization extends Thing {
   makesOffer?: Offer;
   member?: Organization | Person;
   memberOf?: ProgramMembership | Organization;
-  members?: Person | Organization;
+  members?: Array<Person> | Array<Organization>;
   naics?: Text;
   nonprofitStatus?: NonprofitType;
   numberOfEmployees?: QuantitativeValue;
@@ -8503,7 +8452,7 @@ export interface Organization extends Thing {
   parentOrganization?: Organization;
   publishingPrinciples?: URL | CreativeWork;
   review?: Review;
-  reviews?: Review;
+  reviews?: Array<Review>;
   seeks?: Demand;
   serviceArea?: Place | AdministrativeArea | GeoShape;
   slogan?: Text;
@@ -8871,16 +8820,16 @@ export interface Person extends Thing {
   affiliation?: Organization;
   alumniOf?: EducationalOrganization | Organization;
   award?: Text;
-  awards?: Text;
+  awards?: Array<Text>;
   birthDate?: Date;
   birthPlace?: Place;
   brand?: Brand | Organization;
   callSign?: Text;
   children?: Person;
   colleague?: Person | URL;
-  colleagues?: Person;
+  colleagues?: Array<Person>;
   contactPoint?: ContactPoint;
-  contactPoints?: ContactPoint;
+  contactPoints?: Array<ContactPoint>;
   deathDate?: Date;
   deathPlace?: Place;
   duns?: Text;
@@ -8913,13 +8862,13 @@ export interface Person extends Thing {
   netWorth?: PriceSpecification | MonetaryAmount;
   owns?: OwnershipInfo | Product;
   parent?: Person;
-  parents?: Person;
+  parents?: Array<Person>;
   performerIn?: Event;
   publishingPrinciples?: URL | CreativeWork;
   relatedTo?: Person;
   seeks?: Demand;
   sibling?: Person;
-  siblings?: Person;
+  siblings?: Array<Person>;
   sponsor?: Person | Organization;
   spouse?: Person;
   taxID?: Text;
@@ -9034,7 +8983,7 @@ export interface Place extends Thing {
   containedInPlace?: Place;
   containsPlace?: Place;
   event?: Event;
-  events?: Event;
+  events?: Array<Event>;
   faxNumber?: Text;
   geo?: GeoCoordinates | GeoShape;
   geoContains?: GeospatialGeometry | Place;
@@ -9056,14 +9005,14 @@ export interface Place extends Thing {
   logo?: ImageObject | URL;
   longitude?: Text | Number;
   map?: URL;
-  maps?: URL;
+  maps?: Array<URL>;
   maximumAttendeeCapacity?: Integer;
   openingHoursSpecification?: OpeningHoursSpecification;
   photo?: Photograph | ImageObject;
-  photos?: Photograph | ImageObject;
+  photos?: Array<Photograph> | Array<ImageObject>;
   publicAccess?: Boolean;
   review?: Review;
-  reviews?: Review;
+  reviews?: Array<Review>;
   slogan?: Text;
   smokingAllowed?: Boolean;
   specialOpeningHoursSpecification?: OpeningHoursSpecification;
@@ -9181,7 +9130,7 @@ export interface PodcastSeason extends CreativeWorkSeason {}
  *
  **/
 export interface PodcastSeries extends CreativeWorkSeries {
-  webFeed?: URL | DataFeed;
+  webFeed?: URL | DataFeed<URL>;
 }
 
 /**
@@ -9353,7 +9302,7 @@ export interface Product extends Thing {
   aggregateRating?: AggregateRating;
   audience?: Audience;
   award?: Text;
-  awards?: Text;
+  awards?: Array<Text>;
   brand?: Brand | Organization;
   category?: PhysicalActivityCategory | Text | URL | Thing;
   color?: Text;
@@ -9387,7 +9336,7 @@ export interface Product extends Thing {
   purchaseDate?: Date;
   releaseDate?: Date;
   review?: Review;
-  reviews?: Review;
+  reviews?: Array<Review>;
   size?: DefinedTerm | SizeSpecification | QuantitativeValue | Text;
   sku?: Text;
   slogan?: Text;
@@ -9480,7 +9429,7 @@ export interface ProfilePage extends WebPage {}
 export interface ProgramMembership extends Intangible {
   hostingOrganization?: Organization;
   member?: Organization | Person;
-  members?: Person | Organization;
+  members?: Array<Person> | Array<Organization>;
   membershipNumber?: Text;
   membershipPointsEarned?: QuantitativeValue | Number;
   programName?: Text;
@@ -9778,10 +9727,10 @@ export interface Quantity extends Intangible {}
  *
  **/
 export interface Question extends Comment {
-  acceptedAnswer?: Answer | ItemList;
+  acceptedAnswer?: Answer | ItemList<Answer>;
   answerCount?: Integer;
   eduQuestionType?: Text;
-  suggestedAnswer?: Answer | ItemList;
+  suggestedAnswer?: Answer | ItemList<Answer>;
 }
 
 /**
@@ -9900,18 +9849,18 @@ export interface RadioSeason extends CreativeWorkSeason {}
  **/
 export interface RadioSeries extends CreativeWorkSeries {
   actor?: Person;
-  actors?: Person;
+  actors?: Array<Person>;
   containsSeason?: CreativeWorkSeason;
   director?: Person;
-  directors?: Person;
+  directors?: Array<Person>;
   episode?: Episode;
-  episodes?: Episode;
+  episodes?: Array<Episode>;
   musicBy?: Person | MusicGroup;
   numberOfEpisodes?: Integer;
   numberOfSeasons?: Integer;
   productionCompany?: Organization;
   season?: CreativeWorkSeason | URL;
-  seasons?: CreativeWorkSeason;
+  seasons?: Array<CreativeWorkSeason>;
   trailer?: VideoObject;
 }
 
@@ -10020,7 +9969,11 @@ export interface Recipe extends HowTo {
   recipeCategory?: Text;
   recipeCuisine?: Text;
   recipeIngredient?: Text;
-  recipeInstructions?: ItemList | CreativeWork | Text;
+  recipeInstructions?:
+    | CreativeWork
+    | Text
+    | ItemList<CreativeWork>
+    | ItemList<Text>;
   recipeYield?: QuantitativeValue | Text;
   suitableForDiet?: RestrictedDiet;
 }
@@ -11100,7 +11053,7 @@ export interface SpecialAnnouncement extends CreativeWork {
   quarantineGuidelines?: WebContent | URL;
   schoolClosuresInfo?: URL | WebContent;
   travelBans?: WebContent | URL;
-  webFeed?: URL | DataFeed;
+  webFeed?: URL | DataFeed<URL>;
 }
 
 /**
@@ -11824,7 +11777,7 @@ export interface TreatmentIndication extends MedicalIndication {}
 export interface Trip extends Intangible {
   arrivalTime?: Time | DateTime;
   departureTime?: Time | DateTime;
-  itinerary?: Place | ItemList;
+  itinerary?: Place | ItemList<Place>;
   offers?: Offer | Demand;
   partOfTrip?: Trip;
   provider?: Organization | Person;
@@ -11881,19 +11834,19 @@ export interface TVSeason extends CreativeWork, CreativeWorkSeason {
  **/
 export interface TVSeries extends CreativeWork, CreativeWorkSeries {
   actor?: Person;
-  actors?: Person;
+  actors?: Array<Person>;
   containsSeason?: CreativeWorkSeason;
   countryOfOrigin?: Country;
   director?: Person;
-  directors?: Person;
+  directors?: Array<Person>;
   episode?: Episode;
-  episodes?: Episode;
+  episodes?: Array<Episode>;
   musicBy?: Person | MusicGroup;
   numberOfEpisodes?: Integer;
   numberOfSeasons?: Integer;
   productionCompany?: Organization;
   season?: CreativeWorkSeason | URL;
-  seasons?: CreativeWorkSeason;
+  seasons?: Array<CreativeWorkSeason>;
   trailer?: VideoObject;
 }
 
@@ -12211,10 +12164,10 @@ export interface VideoGallery extends MediaGallery {}
  **/
 export interface VideoGame extends Game, SoftwareApplication {
   actor?: Person;
-  actors?: Person;
+  actors?: Array<Person>;
   cheatCode?: CreativeWork;
   director?: Person;
-  directors?: Person;
+  directors?: Array<Person>;
   gamePlatform?: Thing | URL | Text;
   gameServer?: GameServer;
   gameTip?: CreativeWork;
@@ -12243,14 +12196,14 @@ export interface VideoGameClip extends Clip {}
  **/
 export interface VideoGameSeries extends CreativeWorkSeries {
   actor?: Person;
-  actors?: Person;
+  actors?: Array<Person>;
   characterAttribute?: Thing;
   cheatCode?: CreativeWork;
   containsSeason?: CreativeWorkSeason;
   director?: Person;
-  directors?: Person;
+  directors?: Array<Person>;
   episode?: Episode;
-  episodes?: Episode;
+  episodes?: Array<Episode>;
   gameItem?: Thing;
   gameLocation?: PostalAddress | Place | URL;
   gamePlatform?: Thing | URL | Text;
@@ -12262,7 +12215,7 @@ export interface VideoGameSeries extends CreativeWorkSeries {
   productionCompany?: Organization;
   quest?: Thing;
   season?: CreativeWorkSeason | URL;
-  seasons?: CreativeWorkSeason;
+  seasons?: Array<CreativeWorkSeason>;
   trailer?: VideoObject;
 }
 
@@ -12278,10 +12231,10 @@ export interface VideoGameSeries extends CreativeWorkSeries {
  **/
 export interface VideoObject extends MediaObject {
   actor?: Person;
-  actors?: Person;
+  actors?: Array<Person>;
   caption?: Text | MediaObject;
   director?: Person;
-  directors?: Person;
+  directors?: Array<Person>;
   musicBy?: Person | MusicGroup;
   thumbnail?: ImageObject;
   transcript?: Text;
@@ -12509,7 +12462,7 @@ export interface WebPage extends CreativeWork {
   relatedLink?: URL;
   reviewedBy?: Organization | Person;
   significantLink?: URL;
-  significantLinks?: URL;
+  significantLinks?: Array<URL>;
   speakable?: SpeakableSpecification | URL;
   specialty?: Specialty;
 }

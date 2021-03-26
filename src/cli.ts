@@ -7,7 +7,7 @@ import _ from "lodash";
 import {
   writeDataTypes,
   SchemaType,
-  writeClasses,
+  renderTypeDefs,
   DATATYPE_TYPE,
 } from "./helpers";
 const data = require("../jsonld.json");
@@ -20,4 +20,4 @@ const dataTypes = schemas.filter((item) =>
 );
 writeDataTypes(dataTypes);
 
-writeClasses(schemas);
+renderTypeDefs(schemas);

@@ -16,7 +16,7 @@ or
 
 ## Requirements
 
-`typescript`
+`typescript>=3.5.3`
 
 I tested with `"typescript": "^4.2.3"`
 
