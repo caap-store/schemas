@@ -1136,7 +1136,7 @@ case of a single file published after Zip compression, the convention of appendi
 *
 **/
 export interface Interface3DModel extends Omit<MediaObject, "@type"> {
-  "@type": "Interface3DModel";
+  "@type"?: "Interface3DModel";
   isResizable?: Boolean;
 }
 
@@ -1149,7 +1149,7 @@ export interface Interface3DModel extends Omit<MediaObject, "@type"> {
  *
  **/
 export interface AboutPage extends Omit<WebPage, "@type"> {
-  "@type": "AboutPage";
+  "@type"?: "AboutPage";
 }
 
 /**
@@ -1161,7 +1161,7 @@ export interface AboutPage extends Omit<WebPage, "@type"> {
  *
  **/
 export interface AcceptAction extends Omit<AllocateAction, "@type"> {
-  "@type": "AcceptAction";
+  "@type"?: "AcceptAction";
 }
 
 /**
@@ -1179,7 +1179,7 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
 *
 **/
 export interface Accommodation extends Omit<Place, "@type"> {
-  "@type": "Accommodation";
+  "@type"?: "Accommodation";
   accommodationCategory?: Text;
   accommodationFloorPlan?: FloorPlan;
   amenityFeature?: LocationFeatureSpecification;
@@ -1207,7 +1207,7 @@ export interface Accommodation extends Omit<Place, "@type"> {
 *
 **/
 export interface AccountingService extends Omit<FinancialService, "@type"> {
-  "@type": "AccountingService";
+  "@type"?: "AccountingService";
 }
 
 /**
@@ -1219,7 +1219,7 @@ export interface AccountingService extends Omit<FinancialService, "@type"> {
  *
  **/
 export interface AchieveAction extends Omit<Action, "@type"> {
-  "@type": "AchieveAction";
+  "@type"?: "AchieveAction";
 }
 
 /**
@@ -1233,7 +1233,7 @@ export interface AchieveAction extends Omit<Action, "@type"> {
  *
  **/
 export interface Action extends Omit<Thing, "@type"> {
-  "@type": "Action";
+  "@type"?: "Action";
   actionStatus?: ActionStatusType;
   agent?: Person | Organization;
   endTime?: DateTime | Time;
@@ -1258,7 +1258,7 @@ export interface Action extends Omit<Thing, "@type"> {
  *
  **/
 export interface ActionAccessSpecification extends Omit<Intangible, "@type"> {
-  "@type": "ActionAccessSpecification";
+  "@type"?: "ActionAccessSpecification";
   availabilityEnds?: DateTime | Time | Date;
   availabilityStarts?: DateTime | Date | Time;
   category?: PhysicalActivityCategory | Text | URL | Thing;
@@ -1277,7 +1277,7 @@ export interface ActionAccessSpecification extends Omit<Intangible, "@type"> {
  *
  **/
 export interface ActivateAction extends Omit<ControlAction, "@type"> {
-  "@type": "ActivateAction";
+  "@type"?: "ActivateAction";
 }
 
 /**
@@ -1289,7 +1289,7 @@ export interface ActivateAction extends Omit<ControlAction, "@type"> {
  *
  **/
 export interface AddAction extends Omit<UpdateAction, "@type"> {
-  "@type": "AddAction";
+  "@type"?: "AddAction";
 }
 
 /**
@@ -1301,7 +1301,7 @@ export interface AddAction extends Omit<UpdateAction, "@type"> {
  *
  **/
 export interface AdministrativeArea extends Omit<Place, "@type"> {
-  "@type": "AdministrativeArea";
+  "@type"?: "AdministrativeArea";
 }
 
 /**
@@ -1314,7 +1314,7 @@ export interface AdministrativeArea extends Omit<Place, "@type"> {
  **/
 export interface AdultEntertainment
   extends Omit<EntertainmentBusiness, "@type"> {
-  "@type": "AdultEntertainment";
+  "@type"?: "AdultEntertainment";
 }
 
 /**
@@ -1331,7 +1331,7 @@ export interface AdultEntertainment
  *
  **/
 export interface AdvertiserContentArticle extends Omit<Article, "@type"> {
-  "@type": "AdvertiserContentArticle";
+  "@type"?: "AdvertiserContentArticle";
 }
 
 /**
@@ -1343,7 +1343,7 @@ export interface AdvertiserContentArticle extends Omit<Article, "@type"> {
  *
  **/
 export interface AggregateOffer extends Omit<Offer, "@type"> {
-  "@type": "AggregateOffer";
+  "@type"?: "AggregateOffer";
   highPrice?: Number | Text;
   lowPrice?: Text | Number;
   offerCount?: Integer;
@@ -1359,7 +1359,7 @@ export interface AggregateOffer extends Omit<Offer, "@type"> {
  *
  **/
 export interface AggregateRating extends Omit<Rating, "@type"> {
-  "@type": "AggregateRating";
+  "@type"?: "AggregateRating";
   itemReviewed?: Thing;
   ratingCount?: Integer;
   reviewCount?: Integer;
@@ -1374,7 +1374,7 @@ export interface AggregateRating extends Omit<Rating, "@type"> {
  *
  **/
 export interface AgreeAction extends Omit<ReactAction, "@type"> {
-  "@type": "AgreeAction";
+  "@type"?: "AgreeAction";
 }
 
 /**
@@ -1386,7 +1386,7 @@ export interface AgreeAction extends Omit<ReactAction, "@type"> {
  *
  **/
 export interface Airline extends Omit<Organization, "@type"> {
-  "@type": "Airline";
+  "@type"?: "Airline";
   boardingPolicy?: BoardingPolicyType;
   iataCode?: Text;
 }
@@ -1400,7 +1400,7 @@ export interface Airline extends Omit<Organization, "@type"> {
  *
  **/
 export interface Airport extends Omit<CivicStructure, "@type"> {
-  "@type": "Airport";
+  "@type"?: "Airport";
   iataCode?: Text;
   icaoCode?: Text;
 }
@@ -1418,7 +1418,7 @@ Should not be used where the nature of the alignment can be described using a si
 *
 **/
 export interface AlignmentObject extends Omit<Intangible, "@type"> {
-  "@type": "AlignmentObject";
+  "@type"?: "AlignmentObject";
   alignmentType?: Text;
   educationalFramework?: Text;
   targetDescription?: Text;
@@ -1435,7 +1435,7 @@ export interface AlignmentObject extends Omit<Intangible, "@type"> {
  *
  **/
 export interface AllocateAction extends Omit<OrganizeAction, "@type"> {
-  "@type": "AllocateAction";
+  "@type"?: "AllocateAction";
 }
 
 /**
@@ -1451,7 +1451,7 @@ export interface AllocateAction extends Omit<OrganizeAction, "@type"> {
  *
  **/
 export interface AmpStory extends Omit<CreativeWork, "@type"> {
-  "@type": "AmpStory";
+  "@type"?: "AmpStory";
 }
 
 /**
@@ -1465,7 +1465,7 @@ export interface AmpStory extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface AMRadioChannel extends Omit<RadioChannel, "@type"> {
-  "@type": "AMRadioChannel";
+  "@type"?: "AMRadioChannel";
 }
 
 /**
@@ -1477,7 +1477,7 @@ export interface AMRadioChannel extends Omit<RadioChannel, "@type"> {
  *
  **/
 export interface AmusementPark extends Omit<EntertainmentBusiness, "@type"> {
-  "@type": "AmusementPark";
+  "@type"?: "AmusementPark";
 }
 
 /**
@@ -1494,7 +1494,7 @@ export interface AmusementPark extends Omit<EntertainmentBusiness, "@type"> {
  *
  **/
 export interface AnalysisNewsArticle extends Omit<NewsArticle, "@type"> {
-  "@type": "AnalysisNewsArticle";
+  "@type"?: "AnalysisNewsArticle";
 }
 
 /**
@@ -1508,7 +1508,7 @@ export interface AnalysisNewsArticle extends Omit<NewsArticle, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface AnatomicalStructure extends Omit<MedicalEntity, "@type"> {
-  "@type": "AnatomicalStructure";
+  "@type"?: "AnatomicalStructure";
   associatedPathophysiology?: Text;
   bodyLocation?: Text;
   connectedTo?: AnatomicalStructure;
@@ -1530,7 +1530,7 @@ export interface AnatomicalStructure extends Omit<MedicalEntity, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface AnatomicalSystem extends Omit<MedicalEntity, "@type"> {
-  "@type": "AnatomicalSystem";
+  "@type"?: "AnatomicalSystem";
   associatedPathophysiology?: Text;
   comprisedOf?: AnatomicalSystem | AnatomicalStructure;
   relatedCondition?: MedicalCondition;
@@ -1547,7 +1547,7 @@ export interface AnatomicalSystem extends Omit<MedicalEntity, "@type"> {
  *
  **/
 export interface AnimalShelter extends Omit<LocalBusiness, "@type"> {
-  "@type": "AnimalShelter";
+  "@type"?: "AnimalShelter";
 }
 
 /**
@@ -1561,7 +1561,7 @@ export interface AnimalShelter extends Omit<LocalBusiness, "@type"> {
  *
  **/
 export interface Answer extends Omit<Comment, "@type"> {
-  "@type": "Answer";
+  "@type"?: "Answer";
   answerExplanation?: Comment | WebContent;
 }
 
@@ -1576,7 +1576,7 @@ export interface Answer extends Omit<Comment, "@type"> {
  *
  **/
 export interface Apartment extends Omit<Accommodation, "@type"> {
-  "@type": "Apartment";
+  "@type"?: "Apartment";
   numberOfRooms?: Number | QuantitativeValue;
   occupancy?: QuantitativeValue;
 }
@@ -1590,7 +1590,7 @@ export interface Apartment extends Omit<Accommodation, "@type"> {
  *
  **/
 export interface ApartmentComplex extends Omit<Residence, "@type"> {
-  "@type": "ApartmentComplex";
+  "@type"?: "ApartmentComplex";
   numberOfAccommodationUnits?: QuantitativeValue;
   numberOfAvailableAccommodationUnits?: QuantitativeValue;
   numberOfBedrooms?: QuantitativeValue | Number;
@@ -1607,7 +1607,7 @@ export interface ApartmentComplex extends Omit<Residence, "@type"> {
  *
  **/
 export interface APIReference extends Omit<TechArticle, "@type"> {
-  "@type": "APIReference";
+  "@type"?: "APIReference";
   assembly?: Text;
   assemblyVersion?: Text;
   executableLibraryName?: Text;
@@ -1624,7 +1624,7 @@ export interface APIReference extends Omit<TechArticle, "@type"> {
  *
  **/
 export interface AppendAction extends Omit<InsertAction, "@type"> {
-  "@type": "AppendAction";
+  "@type"?: "AppendAction";
 }
 
 /**
@@ -1636,7 +1636,7 @@ export interface AppendAction extends Omit<InsertAction, "@type"> {
  *
  **/
 export interface ApplyAction extends Omit<OrganizeAction, "@type"> {
-  "@type": "ApplyAction";
+  "@type"?: "ApplyAction";
 }
 
 /**
@@ -1650,7 +1650,7 @@ export interface ApplyAction extends Omit<OrganizeAction, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface ApprovedIndication extends Omit<MedicalIndication, "@type"> {
-  "@type": "ApprovedIndication";
+  "@type"?: "ApprovedIndication";
 }
 
 /**
@@ -1662,7 +1662,7 @@ export interface ApprovedIndication extends Omit<MedicalIndication, "@type"> {
  *
  **/
 export interface Aquarium extends Omit<CivicStructure, "@type"> {
-  "@type": "Aquarium";
+  "@type"?: "Aquarium";
 }
 
 /**
@@ -1678,7 +1678,7 @@ export interface Aquarium extends Omit<CivicStructure, "@type"> {
  *
  **/
 export interface ArchiveComponent extends Omit<CreativeWork, "@type"> {
-  "@type": "ArchiveComponent";
+  "@type"?: "ArchiveComponent";
   holdingArchive?: ArchiveOrganization;
   itemLocation?: PostalAddress | Place | Text;
 }
@@ -1696,7 +1696,7 @@ export interface ArchiveComponent extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface ArchiveOrganization extends Omit<LocalBusiness, "@type"> {
-  "@type": "ArchiveOrganization";
+  "@type"?: "ArchiveOrganization";
   archiveHeld?: ArchiveComponent;
 }
 
@@ -1709,7 +1709,7 @@ export interface ArchiveOrganization extends Omit<LocalBusiness, "@type"> {
  *
  **/
 export interface ArriveAction extends Omit<MoveAction, "@type"> {
-  "@type": "ArriveAction";
+  "@type"?: "ArriveAction";
 }
 
 /**
@@ -1723,7 +1723,7 @@ export interface ArriveAction extends Omit<MoveAction, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface Artery extends Omit<Vessel, "@type"> {
-  "@type": "Artery";
+  "@type"?: "Artery";
   arterialBranch?: AnatomicalStructure;
   supplyTo?: AnatomicalStructure;
 }
@@ -1737,7 +1737,7 @@ export interface Artery extends Omit<Vessel, "@type"> {
  *
  **/
 export interface ArtGallery extends Omit<EntertainmentBusiness, "@type"> {
-  "@type": "ArtGallery";
+  "@type"?: "ArtGallery";
 }
 
 /**
@@ -1751,7 +1751,7 @@ export interface ArtGallery extends Omit<EntertainmentBusiness, "@type"> {
  *
  **/
 export interface Article extends Omit<CreativeWork, "@type"> {
-  "@type": "Article";
+  "@type"?: "Article";
   articleBody?: Text;
   articleSection?: Text;
   backstory?: CreativeWork | Text;
@@ -1771,7 +1771,7 @@ export interface Article extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface AskAction extends Omit<CommunicateAction, "@type"> {
-  "@type": "AskAction";
+  "@type"?: "AskAction";
   question?: Question;
 }
 
@@ -1789,7 +1789,7 @@ export interface AskAction extends Omit<CommunicateAction, "@type"> {
  *
  **/
 export interface AskPublicNewsArticle extends Omit<NewsArticle, "@type"> {
-  "@type": "AskPublicNewsArticle";
+  "@type"?: "AskPublicNewsArticle";
 }
 
 /**
@@ -1801,7 +1801,7 @@ export interface AskPublicNewsArticle extends Omit<NewsArticle, "@type"> {
  *
  **/
 export interface AssessAction extends Omit<Action, "@type"> {
-  "@type": "AssessAction";
+  "@type"?: "AssessAction";
 }
 
 /**
@@ -1813,7 +1813,7 @@ export interface AssessAction extends Omit<Action, "@type"> {
  *
  **/
 export interface AssignAction extends Omit<AllocateAction, "@type"> {
-  "@type": "AssignAction";
+  "@type"?: "AssignAction";
 }
 
 /**
@@ -1829,7 +1829,7 @@ export interface AssignAction extends Omit<AllocateAction, "@type"> {
  *
  **/
 export interface Atlas extends Omit<CreativeWork, "@type"> {
-  "@type": "Atlas";
+  "@type"?: "Atlas";
 }
 
 /**
@@ -1841,7 +1841,7 @@ export interface Atlas extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface Attorney extends Omit<LegalService, "@type"> {
-  "@type": "Attorney";
+  "@type"?: "Attorney";
 }
 
 /**
@@ -1853,7 +1853,7 @@ export interface Attorney extends Omit<LegalService, "@type"> {
  *
  **/
 export interface Audience extends Omit<Intangible, "@type"> {
-  "@type": "Audience";
+  "@type"?: "Audience";
   audienceType?: Text;
   geographicArea?: AdministrativeArea;
 }
@@ -1871,7 +1871,7 @@ export interface Audience extends Omit<Intangible, "@type"> {
 export interface Audiobook
   extends Omit<Book, "@type">,
     Omit<AudioObject, "@type"> {
-  "@type": "Audiobook";
+  "@type"?: "Audiobook";
   duration?: Duration;
   readBy?: Person;
 }
@@ -1887,7 +1887,7 @@ export interface Audiobook
  *
  **/
 export interface AudioObject extends Omit<MediaObject, "@type"> {
-  "@type": "AudioObject";
+  "@type"?: "AudioObject";
   caption?: Text | MediaObject;
   transcript?: Text;
 }
@@ -1901,7 +1901,7 @@ export interface AudioObject extends Omit<MediaObject, "@type"> {
  *
  **/
 export interface AuthorizeAction extends Omit<AllocateAction, "@type"> {
-  "@type": "AuthorizeAction";
+  "@type"?: "AuthorizeAction";
   recipient?: Organization | ContactPoint | Person | Audience;
 }
 
@@ -1914,7 +1914,7 @@ export interface AuthorizeAction extends Omit<AllocateAction, "@type"> {
  *
  **/
 export interface AutoBodyShop extends Omit<AutomotiveBusiness, "@type"> {
-  "@type": "AutoBodyShop";
+  "@type"?: "AutoBodyShop";
 }
 
 /**
@@ -1926,7 +1926,7 @@ export interface AutoBodyShop extends Omit<AutomotiveBusiness, "@type"> {
  *
  **/
 export interface AutoDealer extends Omit<AutomotiveBusiness, "@type"> {
-  "@type": "AutoDealer";
+  "@type"?: "AutoDealer";
 }
 
 /**
@@ -1938,7 +1938,7 @@ export interface AutoDealer extends Omit<AutomotiveBusiness, "@type"> {
  *
  **/
 export interface AutomatedTeller extends Omit<FinancialService, "@type"> {
-  "@type": "AutomatedTeller";
+  "@type"?: "AutomatedTeller";
 }
 
 /**
@@ -1950,7 +1950,7 @@ export interface AutomatedTeller extends Omit<FinancialService, "@type"> {
  *
  **/
 export interface AutomotiveBusiness extends Omit<LocalBusiness, "@type"> {
-  "@type": "AutomotiveBusiness";
+  "@type"?: "AutomotiveBusiness";
 }
 
 /**
@@ -1964,7 +1964,7 @@ export interface AutomotiveBusiness extends Omit<LocalBusiness, "@type"> {
 export interface AutoPartsStore
   extends Omit<AutomotiveBusiness, "@type">,
     Omit<Store, "@type"> {
-  "@type": "AutoPartsStore";
+  "@type"?: "AutoPartsStore";
 }
 
 /**
@@ -1976,7 +1976,7 @@ export interface AutoPartsStore
  *
  **/
 export interface AutoRental extends Omit<AutomotiveBusiness, "@type"> {
-  "@type": "AutoRental";
+  "@type"?: "AutoRental";
 }
 
 /**
@@ -1988,7 +1988,7 @@ export interface AutoRental extends Omit<AutomotiveBusiness, "@type"> {
  *
  **/
 export interface AutoRepair extends Omit<AutomotiveBusiness, "@type"> {
-  "@type": "AutoRepair";
+  "@type"?: "AutoRepair";
 }
 
 /**
@@ -2000,7 +2000,7 @@ export interface AutoRepair extends Omit<AutomotiveBusiness, "@type"> {
  *
  **/
 export interface AutoWash extends Omit<AutomotiveBusiness, "@type"> {
-  "@type": "AutoWash";
+  "@type"?: "AutoWash";
 }
 
 /**
@@ -2017,7 +2017,7 @@ export interface AutoWash extends Omit<AutomotiveBusiness, "@type"> {
  *
  **/
 export interface BackgroundNewsArticle extends Omit<NewsArticle, "@type"> {
-  "@type": "BackgroundNewsArticle";
+  "@type"?: "BackgroundNewsArticle";
 }
 
 /**
@@ -2029,7 +2029,7 @@ export interface BackgroundNewsArticle extends Omit<NewsArticle, "@type"> {
  *
  **/
 export interface Bakery extends Omit<FoodEstablishment, "@type"> {
-  "@type": "Bakery";
+  "@type"?: "Bakery";
 }
 
 /**
@@ -2043,7 +2043,7 @@ export interface Bakery extends Omit<FoodEstablishment, "@type"> {
  *
  **/
 export interface BankAccount extends Omit<FinancialProduct, "@type"> {
-  "@type": "BankAccount";
+  "@type"?: "BankAccount";
   accountMinimumInflow?: MonetaryAmount;
   accountOverdraftLimit?: MonetaryAmount;
   bankAccountType?: URL | Text;
@@ -2058,7 +2058,7 @@ export interface BankAccount extends Omit<FinancialProduct, "@type"> {
  *
  **/
 export interface BankOrCreditUnion extends Omit<FinancialService, "@type"> {
-  "@type": "BankOrCreditUnion";
+  "@type"?: "BankOrCreditUnion";
 }
 
 /**
@@ -2070,7 +2070,7 @@ export interface BankOrCreditUnion extends Omit<FinancialService, "@type"> {
  *
  **/
 export interface Barcode extends Omit<ImageObject, "@type"> {
-  "@type": "Barcode";
+  "@type"?: "Barcode";
 }
 
 /**
@@ -2082,7 +2082,7 @@ export interface Barcode extends Omit<ImageObject, "@type"> {
  *
  **/
 export interface BarOrPub extends Omit<FoodEstablishment, "@type"> {
-  "@type": "BarOrPub";
+  "@type"?: "BarOrPub";
 }
 
 /**
@@ -2094,7 +2094,7 @@ export interface BarOrPub extends Omit<FoodEstablishment, "@type"> {
  *
  **/
 export interface Beach extends Omit<CivicStructure, "@type"> {
-  "@type": "Beach";
+  "@type"?: "Beach";
 }
 
 /**
@@ -2106,7 +2106,7 @@ export interface Beach extends Omit<CivicStructure, "@type"> {
  *
  **/
 export interface BeautySalon extends Omit<HealthAndBeautyBusiness, "@type"> {
-  "@type": "BeautySalon";
+  "@type"?: "BeautySalon";
 }
 
 /**
@@ -2121,7 +2121,7 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
 *
 **/
 export interface BedAndBreakfast extends Omit<LodgingBusiness, "@type"> {
-  "@type": "BedAndBreakfast";
+  "@type"?: "BedAndBreakfast";
 }
 
 /**
@@ -2135,7 +2135,7 @@ export interface BedAndBreakfast extends Omit<LodgingBusiness, "@type"> {
  *
  **/
 export interface BedDetails extends Omit<Intangible, "@type"> {
-  "@type": "BedDetails";
+  "@type"?: "BedDetails";
   numberOfBeds?: Number;
   typeOfBed?: Text | BedType;
 }
@@ -2152,7 +2152,7 @@ export interface BedDetails extends Omit<Intangible, "@type"> {
  *
  **/
 export interface BedType extends Omit<QualitativeValue, "@type"> {
-  "@type": "BedType";
+  "@type"?: "BedType";
 }
 
 /**
@@ -2164,7 +2164,7 @@ export interface BedType extends Omit<QualitativeValue, "@type"> {
  *
  **/
 export interface BefriendAction extends Omit<InteractAction, "@type"> {
-  "@type": "BefriendAction";
+  "@type"?: "BefriendAction";
 }
 
 /**
@@ -2176,7 +2176,7 @@ export interface BefriendAction extends Omit<InteractAction, "@type"> {
  *
  **/
 export interface BikeStore extends Omit<Store, "@type"> {
-  "@type": "BikeStore";
+  "@type"?: "BikeStore";
 }
 
 /**
@@ -2188,7 +2188,7 @@ export interface BikeStore extends Omit<Store, "@type"> {
  *
  **/
 export interface Blog extends Omit<CreativeWork, "@type"> {
-  "@type": "Blog";
+  "@type"?: "Blog";
   blogPost?: BlogPosting;
   blogPosts?: Array<BlogPosting>;
   issn?: Text;
@@ -2203,7 +2203,7 @@ export interface Blog extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface BlogPosting extends Omit<SocialMediaPosting, "@type"> {
-  "@type": "BlogPosting";
+  "@type"?: "BlogPosting";
 }
 
 /**
@@ -2217,7 +2217,7 @@ export interface BlogPosting extends Omit<SocialMediaPosting, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface BloodTest extends Omit<MedicalTest, "@type"> {
-  "@type": "BloodTest";
+  "@type"?: "BloodTest";
 }
 
 /**
@@ -2235,7 +2235,7 @@ Note: This type is for information about actual reservations, e.g. in confirmati
 *
 **/
 export interface BoatReservation extends Omit<Reservation, "@type"> {
-  "@type": "BoatReservation";
+  "@type"?: "BoatReservation";
 }
 
 /**
@@ -2251,7 +2251,7 @@ export interface BoatReservation extends Omit<Reservation, "@type"> {
  *
  **/
 export interface BoatTerminal extends Omit<CivicStructure, "@type"> {
-  "@type": "BoatTerminal";
+  "@type"?: "BoatTerminal";
 }
 
 /**
@@ -2267,7 +2267,7 @@ export interface BoatTerminal extends Omit<CivicStructure, "@type"> {
  *
  **/
 export interface BoatTrip extends Omit<Trip, "@type"> {
-  "@type": "BoatTrip";
+  "@type"?: "BoatTrip";
   arrivalBoatTerminal?: BoatTerminal;
   departureBoatTerminal?: BoatTerminal;
 }
@@ -2281,7 +2281,7 @@ export interface BoatTrip extends Omit<Trip, "@type"> {
  *
  **/
 export interface BodyOfWater extends Omit<Landform, "@type"> {
-  "@type": "BodyOfWater";
+  "@type"?: "BodyOfWater";
 }
 
 /**
@@ -2295,7 +2295,7 @@ export interface BodyOfWater extends Omit<Landform, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface Bone extends Omit<AnatomicalStructure, "@type"> {
-  "@type": "Bone";
+  "@type"?: "Bone";
 }
 
 /**
@@ -2307,7 +2307,7 @@ export interface Bone extends Omit<AnatomicalStructure, "@type"> {
  *
  **/
 export interface Book extends Omit<CreativeWork, "@type"> {
-  "@type": "Book";
+  "@type"?: "Book";
   abridged?: Boolean;
   bookEdition?: Text;
   bookFormat?: BookFormatType;
@@ -2325,7 +2325,7 @@ export interface Book extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface BookmarkAction extends Omit<OrganizeAction, "@type"> {
-  "@type": "BookmarkAction";
+  "@type"?: "BookmarkAction";
 }
 
 /**
@@ -2337,7 +2337,7 @@ export interface BookmarkAction extends Omit<OrganizeAction, "@type"> {
  *
  **/
 export interface BookSeries extends Omit<CreativeWorkSeries, "@type"> {
-  "@type": "BookSeries";
+  "@type"?: "BookSeries";
 }
 
 /**
@@ -2349,7 +2349,7 @@ export interface BookSeries extends Omit<CreativeWorkSeries, "@type"> {
  *
  **/
 export interface BookStore extends Omit<Store, "@type"> {
-  "@type": "BookStore";
+  "@type"?: "BookStore";
 }
 
 /**
@@ -2361,7 +2361,7 @@ export interface BookStore extends Omit<Store, "@type"> {
  *
  **/
 export interface BorrowAction extends Omit<TransferAction, "@type"> {
-  "@type": "BorrowAction";
+  "@type"?: "BorrowAction";
   lender?: Organization | Person;
 }
 
@@ -2374,7 +2374,7 @@ export interface BorrowAction extends Omit<TransferAction, "@type"> {
  *
  **/
 export interface BowlingAlley extends Omit<SportsActivityLocation, "@type"> {
-  "@type": "BowlingAlley";
+  "@type"?: "BowlingAlley";
 }
 
 /**
@@ -2388,7 +2388,7 @@ export interface BowlingAlley extends Omit<SportsActivityLocation, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface BrainStructure extends Omit<AnatomicalStructure, "@type"> {
-  "@type": "BrainStructure";
+  "@type"?: "BrainStructure";
 }
 
 /**
@@ -2402,7 +2402,7 @@ export interface BrainStructure extends Omit<AnatomicalStructure, "@type"> {
  *
  **/
 export interface Brand extends Omit<Intangible, "@type"> {
-  "@type": "Brand";
+  "@type"?: "Brand";
   aggregateRating?: AggregateRating;
   logo?: ImageObject | URL;
   review?: Review;
@@ -2419,7 +2419,7 @@ export interface Brand extends Omit<Intangible, "@type"> {
 *
 **/
 export interface BreadcrumbList<T = Text> extends Omit<ItemList<T>, "@type"> {
-  "@type": "BreadcrumbList";
+  "@type"?: "BreadcrumbList";
 }
 
 /**
@@ -2431,7 +2431,7 @@ export interface BreadcrumbList<T = Text> extends Omit<ItemList<T>, "@type"> {
  *
  **/
 export interface Brewery extends Omit<FoodEstablishment, "@type"> {
-  "@type": "Brewery";
+  "@type"?: "Brewery";
 }
 
 /**
@@ -2443,7 +2443,7 @@ export interface Brewery extends Omit<FoodEstablishment, "@type"> {
  *
  **/
 export interface Bridge extends Omit<CivicStructure, "@type"> {
-  "@type": "Bridge";
+  "@type"?: "Bridge";
 }
 
 /**
@@ -2455,7 +2455,7 @@ export interface Bridge extends Omit<CivicStructure, "@type"> {
  *
  **/
 export interface BroadcastChannel extends Omit<Intangible, "@type"> {
-  "@type": "BroadcastChannel";
+  "@type"?: "BroadcastChannel";
   broadcastChannelId?: Text;
   broadcastFrequency?: Text | BroadcastFrequencySpecification;
   broadcastServiceTier?: Text;
@@ -2473,7 +2473,7 @@ export interface BroadcastChannel extends Omit<Intangible, "@type"> {
  *
  **/
 export interface BroadcastEvent extends Omit<PublicationEvent, "@type"> {
-  "@type": "BroadcastEvent";
+  "@type"?: "BroadcastEvent";
   broadcastOfEvent?: Event;
   isLiveBroadcast?: Boolean;
   subtitleLanguage?: Text | Language;
@@ -2492,7 +2492,7 @@ export interface BroadcastEvent extends Omit<PublicationEvent, "@type"> {
  **/
 export interface BroadcastFrequencySpecification
   extends Omit<Intangible, "@type"> {
-  "@type": "BroadcastFrequencySpecification";
+  "@type"?: "BroadcastFrequencySpecification";
   broadcastFrequencyValue?: QuantitativeValue | Number;
   broadcastSignalModulation?: Text | QualitativeValue;
   broadcastSubChannel?: Text;
@@ -2507,7 +2507,7 @@ export interface BroadcastFrequencySpecification
  *
  **/
 export interface BroadcastService extends Omit<Service, "@type"> {
-  "@type": "BroadcastService";
+  "@type"?: "BroadcastService";
   area?: Place;
   broadcastAffiliateOf?: Organization;
   broadcastDisplayName?: Text;
@@ -2535,7 +2535,7 @@ export interface BroadcastService extends Omit<Service, "@type"> {
  *
  **/
 export interface BrokerageAccount extends Omit<InvestmentOrDeposit, "@type"> {
-  "@type": "BrokerageAccount";
+  "@type"?: "BrokerageAccount";
 }
 
 /**
@@ -2547,7 +2547,7 @@ export interface BrokerageAccount extends Omit<InvestmentOrDeposit, "@type"> {
  *
  **/
 export interface BuddhistTemple extends Omit<PlaceOfWorship, "@type"> {
-  "@type": "BuddhistTemple";
+  "@type"?: "BuddhistTemple";
 }
 
 /**
@@ -2559,7 +2559,7 @@ export interface BuddhistTemple extends Omit<PlaceOfWorship, "@type"> {
  *
  **/
 export interface BusinessAudience extends Omit<Audience, "@type"> {
-  "@type": "BusinessAudience";
+  "@type"?: "BusinessAudience";
   numberOfEmployees?: QuantitativeValue;
   yearlyRevenue?: QuantitativeValue;
   yearsInOperation?: QuantitativeValue;
@@ -2577,7 +2577,7 @@ export interface BusinessAudience extends Omit<Audience, "@type"> {
 *
 **/
 export interface BusinessEntityType extends Omit<Enumeration, "@type"> {
-  "@type": "BusinessEntityType";
+  "@type"?: "BusinessEntityType";
 }
 
 /**
@@ -2589,7 +2589,7 @@ export interface BusinessEntityType extends Omit<Enumeration, "@type"> {
  *
  **/
 export interface BusinessEvent extends Omit<Event, "@type"> {
-  "@type": "BusinessEvent";
+  "@type"?: "BusinessEvent";
 }
 
 /**
@@ -2604,7 +2604,7 @@ export interface BusinessEvent extends Omit<Event, "@type"> {
 *
 **/
 export interface BusinessFunction extends Omit<Enumeration, "@type"> {
-  "@type": "BusinessFunction";
+  "@type"?: "BusinessFunction";
 }
 
 /**
@@ -2620,7 +2620,7 @@ export interface BusinessFunction extends Omit<Enumeration, "@type"> {
  *
  **/
 export interface BusOrCoach extends Omit<Vehicle, "@type"> {
-  "@type": "BusOrCoach";
+  "@type"?: "BusOrCoach";
   acrissCode?: Text;
   roofLoad?: QuantitativeValue;
 }
@@ -2634,7 +2634,7 @@ export interface BusOrCoach extends Omit<Vehicle, "@type"> {
  *
  **/
 export interface BusReservation extends Omit<Reservation, "@type"> {
-  "@type": "BusReservation";
+  "@type"?: "BusReservation";
 }
 
 /**
@@ -2646,7 +2646,7 @@ export interface BusReservation extends Omit<Reservation, "@type"> {
  *
  **/
 export interface BusStation extends Omit<CivicStructure, "@type"> {
-  "@type": "BusStation";
+  "@type"?: "BusStation";
 }
 
 /**
@@ -2658,7 +2658,7 @@ export interface BusStation extends Omit<CivicStructure, "@type"> {
  *
  **/
 export interface BusStop extends Omit<CivicStructure, "@type"> {
-  "@type": "BusStop";
+  "@type"?: "BusStop";
 }
 
 /**
@@ -2670,7 +2670,7 @@ export interface BusStop extends Omit<CivicStructure, "@type"> {
  *
  **/
 export interface BusTrip extends Omit<Trip, "@type"> {
-  "@type": "BusTrip";
+  "@type"?: "BusTrip";
   arrivalBusStop?: BusStop | BusStation;
   busName?: Text;
   busNumber?: Text;
@@ -2686,7 +2686,7 @@ export interface BusTrip extends Omit<Trip, "@type"> {
  *
  **/
 export interface BuyAction extends Omit<TradeAction, "@type"> {
-  "@type": "BuyAction";
+  "@type"?: "BuyAction";
   seller?: Organization | Person;
   vendor?: Organization | Person;
   warrantyPromise?: WarrantyPromise;
@@ -2701,7 +2701,7 @@ export interface BuyAction extends Omit<TradeAction, "@type"> {
  *
  **/
 export interface CableOrSatelliteService extends Omit<Service, "@type"> {
-  "@type": "CableOrSatelliteService";
+  "@type"?: "CableOrSatelliteService";
 }
 
 /**
@@ -2713,7 +2713,7 @@ export interface CableOrSatelliteService extends Omit<Service, "@type"> {
  *
  **/
 export interface CafeOrCoffeeShop extends Omit<FoodEstablishment, "@type"> {
-  "@type": "CafeOrCoffeeShop";
+  "@type"?: "CafeOrCoffeeShop";
 }
 
 /**
@@ -2733,7 +2733,7 @@ See also the dedicated [document on the use of schema.org for marking up hotels 
 export interface Campground
   extends Omit<LodgingBusiness, "@type">,
     Omit<CivicStructure, "@type"> {
-  "@type": "Campground";
+  "@type"?: "Campground";
 }
 
 /**
@@ -2751,7 +2751,7 @@ See also the dedicated [document on the use of schema.org for marking up hotels 
 *
 **/
 export interface CampingPitch extends Omit<Accommodation, "@type"> {
-  "@type": "CampingPitch";
+  "@type"?: "CampingPitch";
 }
 
 /**
@@ -2763,7 +2763,7 @@ export interface CampingPitch extends Omit<Accommodation, "@type"> {
  *
  **/
 export interface Canal extends Omit<BodyOfWater, "@type"> {
-  "@type": "Canal";
+  "@type"?: "Canal";
 }
 
 /**
@@ -2775,7 +2775,7 @@ export interface Canal extends Omit<BodyOfWater, "@type"> {
  *
  **/
 export interface CancelAction extends Omit<PlanAction, "@type"> {
-  "@type": "CancelAction";
+  "@type"?: "CancelAction";
 }
 
 /**
@@ -2789,7 +2789,7 @@ export interface CancelAction extends Omit<PlanAction, "@type"> {
  *
  **/
 export interface Car extends Omit<Vehicle, "@type"> {
-  "@type": "Car";
+  "@type"?: "Car";
   acrissCode?: Text;
   roofLoad?: QuantitativeValue;
 }
@@ -2803,7 +2803,7 @@ export interface Car extends Omit<Vehicle, "@type"> {
  *
  **/
 export interface Casino extends Omit<EntertainmentBusiness, "@type"> {
-  "@type": "Casino";
+  "@type"?: "Casino";
 }
 
 /**
@@ -2819,7 +2819,7 @@ export interface Casino extends Omit<EntertainmentBusiness, "@type"> {
  *
  **/
 export interface CategoryCode extends Omit<DefinedTerm, "@type"> {
-  "@type": "CategoryCode";
+  "@type"?: "CategoryCode";
   codeValue?: Text;
   inCodeSet?: URL | CategoryCodeSet;
 }
@@ -2837,7 +2837,7 @@ export interface CategoryCode extends Omit<DefinedTerm, "@type"> {
  *
  **/
 export interface CategoryCodeSet extends Omit<DefinedTermSet, "@type"> {
-  "@type": "CategoryCodeSet";
+  "@type"?: "CategoryCodeSet";
   hasCategoryCode?: CategoryCode;
 }
 
@@ -2850,7 +2850,7 @@ export interface CategoryCodeSet extends Omit<DefinedTermSet, "@type"> {
  *
  **/
 export interface CatholicChurch extends Omit<Church, "@type"> {
-  "@type": "CatholicChurch";
+  "@type"?: "CatholicChurch";
 }
 
 /**
@@ -2869,7 +2869,7 @@ export interface CatholicChurch extends Omit<Church, "@type"> {
 *
 **/
 export interface CDCPMDRecord extends Omit<StructuredValue, "@type"> {
-  "@type": "CDCPMDRecord";
+  "@type"?: "CDCPMDRecord";
   cvdCollectionDate?: Text | DateTime;
   cvdFacilityCounty?: Text;
   cvdFacilityId?: Text;
@@ -2898,7 +2898,7 @@ export interface CDCPMDRecord extends Omit<StructuredValue, "@type"> {
  *
  **/
 export interface Cemetery extends Omit<CivicStructure, "@type"> {
-  "@type": "Cemetery";
+  "@type"?: "Cemetery";
 }
 
 /**
@@ -2912,7 +2912,7 @@ export interface Cemetery extends Omit<CivicStructure, "@type"> {
  * Partof: https://bib.schema.org
  **/
 export interface Chapter extends Omit<CreativeWork, "@type"> {
-  "@type": "Chapter";
+  "@type"?: "Chapter";
   pageEnd?: Text | Integer;
   pageStart?: Text | Integer;
   pagination?: Text;
@@ -2927,7 +2927,7 @@ export interface Chapter extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface CheckAction extends Omit<FindAction, "@type"> {
-  "@type": "CheckAction";
+  "@type"?: "CheckAction";
 }
 
 /**
@@ -2939,7 +2939,7 @@ export interface CheckAction extends Omit<FindAction, "@type"> {
  *
  **/
 export interface CheckInAction extends Omit<CommunicateAction, "@type"> {
-  "@type": "CheckInAction";
+  "@type"?: "CheckInAction";
 }
 
 /**
@@ -2951,7 +2951,7 @@ export interface CheckInAction extends Omit<CommunicateAction, "@type"> {
  *
  **/
 export interface CheckOutAction extends Omit<CommunicateAction, "@type"> {
-  "@type": "CheckOutAction";
+  "@type"?: "CheckOutAction";
 }
 
 /**
@@ -2963,7 +2963,7 @@ export interface CheckOutAction extends Omit<CommunicateAction, "@type"> {
  *
  **/
 export interface CheckoutPage extends Omit<WebPage, "@type"> {
-  "@type": "CheckoutPage";
+  "@type"?: "CheckoutPage";
 }
 
 /**
@@ -2975,7 +2975,7 @@ export interface CheckoutPage extends Omit<WebPage, "@type"> {
  *
  **/
 export interface ChildCare extends Omit<LocalBusiness, "@type"> {
-  "@type": "ChildCare";
+  "@type"?: "ChildCare";
 }
 
 /**
@@ -2987,7 +2987,7 @@ export interface ChildCare extends Omit<LocalBusiness, "@type"> {
  *
  **/
 export interface ChildrensEvent extends Omit<Event, "@type"> {
-  "@type": "ChildrensEvent";
+  "@type"?: "ChildrensEvent";
 }
 
 /**
@@ -2999,7 +2999,7 @@ export interface ChildrensEvent extends Omit<Event, "@type"> {
  *
  **/
 export interface ChooseAction extends Omit<AssessAction, "@type"> {
-  "@type": "ChooseAction";
+  "@type"?: "ChooseAction";
   actionOption?: Text | Thing;
   option?: Thing | Text;
 }
@@ -3013,7 +3013,7 @@ export interface ChooseAction extends Omit<AssessAction, "@type"> {
  *
  **/
 export interface Church extends Omit<PlaceOfWorship, "@type"> {
-  "@type": "Church";
+  "@type"?: "Church";
 }
 
 /**
@@ -3025,7 +3025,7 @@ export interface Church extends Omit<PlaceOfWorship, "@type"> {
  *
  **/
 export interface City extends Omit<AdministrativeArea, "@type"> {
-  "@type": "City";
+  "@type"?: "City";
 }
 
 /**
@@ -3037,7 +3037,7 @@ export interface City extends Omit<AdministrativeArea, "@type"> {
  *
  **/
 export interface CityHall extends Omit<GovernmentBuilding, "@type"> {
-  "@type": "CityHall";
+  "@type"?: "CityHall";
 }
 
 /**
@@ -3049,7 +3049,7 @@ export interface CityHall extends Omit<GovernmentBuilding, "@type"> {
  *
  **/
 export interface CivicStructure extends Omit<Place, "@type"> {
-  "@type": "CivicStructure";
+  "@type"?: "CivicStructure";
   openingHours?: Text;
 }
 
@@ -3071,7 +3071,7 @@ export interface CivicStructure extends Omit<Place, "@type"> {
 *
 **/
 export interface Claim extends Omit<CreativeWork, "@type"> {
-  "@type": "Claim";
+  "@type"?: "Claim";
   appearance?: CreativeWork;
   firstAppearance?: CreativeWork;
 }
@@ -3087,7 +3087,7 @@ export interface Claim extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface ClaimReview extends Omit<Review, "@type"> {
-  "@type": "ClaimReview";
+  "@type"?: "ClaimReview";
   claimReviewed?: Text;
 }
 
@@ -3102,7 +3102,7 @@ export interface ClaimReview extends Omit<Review, "@type"> {
  * Partof: https://meta.schema.org
  **/
 export interface Class extends Omit<Intangible, "@type"> {
-  "@type": "Class";
+  "@type"?: "Class";
 }
 
 /**
@@ -3114,7 +3114,7 @@ export interface Class extends Omit<Intangible, "@type"> {
  *
  **/
 export interface Clip extends Omit<CreativeWork, "@type"> {
-  "@type": "Clip";
+  "@type"?: "Clip";
   actor?: Person;
   actors?: Array<Person>;
   clipNumber?: Integer | Text;
@@ -3137,7 +3137,7 @@ export interface Clip extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface ClothingStore extends Omit<Store, "@type"> {
-  "@type": "ClothingStore";
+  "@type"?: "ClothingStore";
 }
 
 /**
@@ -3149,7 +3149,7 @@ export interface ClothingStore extends Omit<Store, "@type"> {
  *
  **/
 export interface Code extends Omit<CreativeWork, "@type"> {
-  "@type": "Code";
+  "@type"?: "Code";
 }
 
 /**
@@ -3163,7 +3163,7 @@ export interface Code extends Omit<CreativeWork, "@type"> {
  * Partof: https://bib.schema.org
  **/
 export interface Collection extends Omit<CreativeWork, "@type"> {
-  "@type": "Collection";
+  "@type"?: "Collection";
   collectionSize?: Integer;
 }
 
@@ -3176,7 +3176,7 @@ export interface Collection extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface CollectionPage extends Omit<WebPage, "@type"> {
-  "@type": "CollectionPage";
+  "@type"?: "CollectionPage";
 }
 
 /**
@@ -3189,7 +3189,7 @@ export interface CollectionPage extends Omit<WebPage, "@type"> {
  **/
 export interface CollegeOrUniversity
   extends Omit<EducationalOrganization, "@type"> {
-  "@type": "CollegeOrUniversity";
+  "@type"?: "CollegeOrUniversity";
 }
 
 /**
@@ -3201,7 +3201,7 @@ export interface CollegeOrUniversity
  *
  **/
 export interface ComedyClub extends Omit<EntertainmentBusiness, "@type"> {
-  "@type": "ComedyClub";
+  "@type"?: "ComedyClub";
 }
 
 /**
@@ -3213,7 +3213,7 @@ export interface ComedyClub extends Omit<EntertainmentBusiness, "@type"> {
  *
  **/
 export interface ComedyEvent extends Omit<Event, "@type"> {
-  "@type": "ComedyEvent";
+  "@type"?: "ComedyEvent";
 }
 
 /**
@@ -3229,7 +3229,7 @@ export interface ComedyEvent extends Omit<Event, "@type"> {
 export interface ComicCoverArt
   extends Omit<ComicStory, "@type">,
     Omit<CoverArt, "@type"> {
-  "@type": "ComicCoverArt";
+  "@type"?: "ComicCoverArt";
 }
 
 /**
@@ -3248,7 +3248,7 @@ export interface ComicCoverArt
 * Partof: https://bib.schema.org
 **/
 export interface ComicIssue extends Omit<PublicationIssue, "@type"> {
-  "@type": "ComicIssue";
+  "@type"?: "ComicIssue";
   artist?: Person;
   colorist?: Person;
   inker?: Person;
@@ -3270,7 +3270,7 @@ export interface ComicIssue extends Omit<PublicationIssue, "@type"> {
 * Partof: https://bib.schema.org
 **/
 export interface ComicSeries extends Omit<Periodical, "@type"> {
-  "@type": "ComicSeries";
+  "@type"?: "ComicSeries";
 }
 
 /**
@@ -3286,7 +3286,7 @@ export interface ComicSeries extends Omit<Periodical, "@type"> {
 * Partof: https://bib.schema.org
 **/
 export interface ComicStory extends Omit<CreativeWork, "@type"> {
-  "@type": "ComicStory";
+  "@type"?: "ComicStory";
   artist?: Person;
   colorist?: Person;
   inker?: Person;
@@ -3303,7 +3303,7 @@ export interface ComicStory extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface Comment extends Omit<CreativeWork, "@type"> {
-  "@type": "Comment";
+  "@type"?: "Comment";
   downvoteCount?: Integer;
   parentItem?: Comment;
   upvoteCount?: Integer;
@@ -3318,7 +3318,7 @@ export interface Comment extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface CommentAction extends Omit<CommunicateAction, "@type"> {
-  "@type": "CommentAction";
+  "@type"?: "CommentAction";
   resultComment?: Comment;
 }
 
@@ -3331,7 +3331,7 @@ export interface CommentAction extends Omit<CommunicateAction, "@type"> {
  *
  **/
 export interface CommunicateAction extends Omit<InteractAction, "@type"> {
-  "@type": "CommunicateAction";
+  "@type"?: "CommunicateAction";
   about?: Thing;
   inLanguage?: Text | Language;
   language?: Language;
@@ -3353,7 +3353,7 @@ This is the equivalent of Atom's element as defined in Feed Paging and Archiving
 *
 **/
 export interface CompleteDataFeed<T = Text> extends Omit<DataFeed<T>, "@type"> {
-  "@type": "CompleteDataFeed";
+  "@type"?: "CompleteDataFeed";
 }
 
 /**
@@ -3368,7 +3368,7 @@ export interface CompleteDataFeed<T = Text> extends Omit<DataFeed<T>, "@type"> {
  **/
 export interface CompoundPriceSpecification
   extends Omit<PriceSpecification, "@type"> {
-  "@type": "CompoundPriceSpecification";
+  "@type"?: "CompoundPriceSpecification";
   priceComponent?: UnitPriceSpecification;
   priceType?: PriceTypeEnumeration | Text;
 }
@@ -3382,7 +3382,7 @@ export interface CompoundPriceSpecification
  *
  **/
 export interface ComputerLanguage extends Omit<Intangible, "@type"> {
-  "@type": "ComputerLanguage";
+  "@type"?: "ComputerLanguage";
 }
 
 /**
@@ -3394,7 +3394,7 @@ export interface ComputerLanguage extends Omit<Intangible, "@type"> {
  *
  **/
 export interface ComputerStore extends Omit<Store, "@type"> {
-  "@type": "ComputerStore";
+  "@type"?: "ComputerStore";
 }
 
 /**
@@ -3406,7 +3406,7 @@ export interface ComputerStore extends Omit<Store, "@type"> {
  *
  **/
 export interface ConfirmAction extends Omit<InformAction, "@type"> {
-  "@type": "ConfirmAction";
+  "@type"?: "ConfirmAction";
 }
 
 /**
@@ -3422,7 +3422,7 @@ export interface ConfirmAction extends Omit<InformAction, "@type"> {
  *
  **/
 export interface Consortium extends Omit<Organization, "@type"> {
-  "@type": "Consortium";
+  "@type"?: "Consortium";
 }
 
 /**
@@ -3434,7 +3434,7 @@ export interface Consortium extends Omit<Organization, "@type"> {
  *
  **/
 export interface ConsumeAction extends Omit<Action, "@type"> {
-  "@type": "ConsumeAction";
+  "@type"?: "ConsumeAction";
   actionAccessibilityRequirement?: ActionAccessSpecification;
   expectsAcceptanceOf?: Offer;
 }
@@ -3448,7 +3448,7 @@ export interface ConsumeAction extends Omit<Action, "@type"> {
  *
  **/
 export interface ContactPage extends Omit<WebPage, "@type"> {
-  "@type": "ContactPage";
+  "@type"?: "ContactPage";
 }
 
 /**
@@ -3460,7 +3460,7 @@ export interface ContactPage extends Omit<WebPage, "@type"> {
  *
  **/
 export interface ContactPoint extends Omit<StructuredValue, "@type"> {
-  "@type": "ContactPoint";
+  "@type"?: "ContactPoint";
   areaServed?: Text | Place | AdministrativeArea | GeoShape;
   availableLanguage?: Language | Text;
   contactOption?: ContactPointOption;
@@ -3482,7 +3482,7 @@ export interface ContactPoint extends Omit<StructuredValue, "@type"> {
  *
  **/
 export interface Continent extends Omit<Landform, "@type"> {
-  "@type": "Continent";
+  "@type"?: "Continent";
 }
 
 /**
@@ -3494,7 +3494,7 @@ export interface Continent extends Omit<Landform, "@type"> {
  *
  **/
 export interface ControlAction extends Omit<Action, "@type"> {
-  "@type": "ControlAction";
+  "@type"?: "ControlAction";
 }
 
 /**
@@ -3506,7 +3506,7 @@ export interface ControlAction extends Omit<Action, "@type"> {
  *
  **/
 export interface ConvenienceStore extends Omit<Store, "@type"> {
-  "@type": "ConvenienceStore";
+  "@type"?: "ConvenienceStore";
 }
 
 /**
@@ -3518,7 +3518,7 @@ export interface ConvenienceStore extends Omit<Store, "@type"> {
  *
  **/
 export interface Conversation extends Omit<CreativeWork, "@type"> {
-  "@type": "Conversation";
+  "@type"?: "Conversation";
 }
 
 /**
@@ -3530,7 +3530,7 @@ export interface Conversation extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface CookAction extends Omit<CreateAction, "@type"> {
-  "@type": "CookAction";
+  "@type"?: "CookAction";
   foodEstablishment?: Place | FoodEstablishment;
   foodEvent?: FoodEvent;
   recipe?: Recipe;
@@ -3547,7 +3547,7 @@ export interface CookAction extends Omit<CreateAction, "@type"> {
  *
  **/
 export interface Corporation extends Omit<Organization, "@type"> {
-  "@type": "Corporation";
+  "@type"?: "Corporation";
   tickerSymbol?: Text;
 }
 
@@ -3564,7 +3564,7 @@ export interface Corporation extends Omit<Organization, "@type"> {
  *
  **/
 export interface CorrectionComment extends Omit<Comment, "@type"> {
-  "@type": "CorrectionComment";
+  "@type"?: "CorrectionComment";
 }
 
 /**
@@ -3576,7 +3576,7 @@ export interface CorrectionComment extends Omit<Comment, "@type"> {
  *
  **/
 export interface Country extends Omit<AdministrativeArea, "@type"> {
-  "@type": "Country";
+  "@type"?: "Country";
 }
 
 /**
@@ -3590,7 +3590,7 @@ export interface Country extends Omit<AdministrativeArea, "@type"> {
 export interface Course
   extends Omit<CreativeWork, "@type">,
     Omit<LearningResource, "@type"> {
-  "@type": "Course";
+  "@type"?: "Course";
   courseCode?: Text;
   coursePrerequisites?: Text | AlignmentObject | Course;
   educationalCredentialAwarded?: URL | Text | EducationalOccupationalCredential;
@@ -3611,7 +3611,7 @@ export interface Course
  *
  **/
 export interface CourseInstance extends Omit<Event, "@type"> {
-  "@type": "CourseInstance";
+  "@type"?: "CourseInstance";
   courseMode?: Text | URL;
   courseWorkload?: Text;
   instructor?: Person;
@@ -3626,7 +3626,7 @@ export interface CourseInstance extends Omit<Event, "@type"> {
  *
  **/
 export interface Courthouse extends Omit<GovernmentBuilding, "@type"> {
-  "@type": "Courthouse";
+  "@type"?: "Courthouse";
 }
 
 /**
@@ -3640,7 +3640,7 @@ export interface Courthouse extends Omit<GovernmentBuilding, "@type"> {
  * Partof: https://bib.schema.org
  **/
 export interface CoverArt extends Omit<VisualArtwork, "@type"> {
-  "@type": "CoverArt";
+  "@type"?: "CoverArt";
 }
 
 /**
@@ -3660,7 +3660,7 @@ export interface CoverArt extends Omit<VisualArtwork, "@type"> {
 *
 **/
 export interface CovidTestingFacility extends Omit<MedicalClinic, "@type"> {
-  "@type": "CovidTestingFacility";
+  "@type"?: "CovidTestingFacility";
 }
 
 /**
@@ -3672,7 +3672,7 @@ export interface CovidTestingFacility extends Omit<MedicalClinic, "@type"> {
  *
  **/
 export interface CreateAction extends Omit<Action, "@type"> {
-  "@type": "CreateAction";
+  "@type"?: "CreateAction";
 }
 
 /**
@@ -3686,7 +3686,7 @@ export interface CreateAction extends Omit<Action, "@type"> {
  *
  **/
 export interface CreativeWork extends Omit<Thing, "@type"> {
-  "@type": "CreativeWork";
+  "@type"?: "CreativeWork";
   about?: Thing;
   abstract?: Text;
   accessibilityAPI?: Text;
@@ -3806,7 +3806,7 @@ export interface CreativeWork extends Omit<Thing, "@type"> {
  *
  **/
 export interface CreativeWorkSeason extends Omit<CreativeWork, "@type"> {
-  "@type": "CreativeWorkSeason";
+  "@type"?: "CreativeWorkSeason";
   actor?: Person;
   director?: Person;
   endDate?: Date | DateTime;
@@ -3832,7 +3832,7 @@ export interface CreativeWorkSeason extends Omit<CreativeWork, "@type"> {
 export interface CreativeWorkSeries
   extends Omit<Series, "@type">,
     Omit<CreativeWork, "@type"> {
-  "@type": "CreativeWorkSeries";
+  "@type"?: "CreativeWorkSeries";
   endDate?: Date | DateTime;
   issn?: Text;
   startDate?: DateTime | Date;
@@ -3853,7 +3853,7 @@ export interface CreativeWorkSeries
 export interface CreditCard
   extends Omit<PaymentCard, "@type">,
     Omit<LoanOrCredit, "@type"> {
-  "@type": "CreditCard";
+  "@type"?: "CreditCard";
 }
 
 /**
@@ -3865,7 +3865,7 @@ export interface CreditCard
  *
  **/
 export interface Crematorium extends Omit<CivicStructure, "@type"> {
-  "@type": "Crematorium";
+  "@type"?: "Crematorium";
 }
 
 /**
@@ -3881,7 +3881,7 @@ export interface Crematorium extends Omit<CivicStructure, "@type"> {
  *
  **/
 export interface CriticReview extends Omit<Review, "@type"> {
-  "@type": "CriticReview";
+  "@type"?: "CriticReview";
 }
 
 /**
@@ -3910,7 +3910,7 @@ export type CssSelectorType = Text;
  **/
 export interface CurrencyConversionService
   extends Omit<FinancialProduct, "@type"> {
-  "@type": "CurrencyConversionService";
+  "@type"?: "CurrencyConversionService";
 }
 
 /**
@@ -3922,7 +3922,7 @@ export interface CurrencyConversionService
  *
  **/
 export interface DanceEvent extends Omit<Event, "@type"> {
-  "@type": "DanceEvent";
+  "@type"?: "DanceEvent";
 }
 
 /**
@@ -3934,7 +3934,7 @@ export interface DanceEvent extends Omit<Event, "@type"> {
  *
  **/
 export interface DanceGroup extends Omit<PerformingGroup, "@type"> {
-  "@type": "DanceGroup";
+  "@type"?: "DanceGroup";
 }
 
 /**
@@ -3948,7 +3948,7 @@ export interface DanceGroup extends Omit<PerformingGroup, "@type"> {
  *
  **/
 export interface DataCatalog extends Omit<CreativeWork, "@type"> {
-  "@type": "DataCatalog";
+  "@type"?: "DataCatalog";
   dataset?: Dataset;
   measurementTechnique?: Text | URL;
 }
@@ -3964,7 +3964,7 @@ export interface DataCatalog extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface DataDownload extends Omit<MediaObject, "@type"> {
-  "@type": "DataDownload";
+  "@type"?: "DataDownload";
   measurementTechnique?: Text | URL;
 }
 
@@ -3979,7 +3979,7 @@ export interface DataDownload extends Omit<MediaObject, "@type"> {
  *
  **/
 export interface Dataset extends Omit<CreativeWork, "@type"> {
-  "@type": "Dataset";
+  "@type"?: "Dataset";
   catalog?: DataCatalog;
   datasetTimeInterval?: DateTime;
   distribution?: DataDownload;
@@ -4000,7 +4000,7 @@ export interface Dataset extends Omit<CreativeWork, "@type"> {
  **/
 export interface DatedMoneySpecification
   extends Omit<StructuredValue, "@type"> {
-  "@type": "DatedMoneySpecification";
+  "@type"?: "DatedMoneySpecification";
   amount?: Number | MonetaryAmount;
   currency?: Text;
   endDate?: Date | DateTime;
@@ -4016,7 +4016,7 @@ export interface DatedMoneySpecification
  *
  **/
 export interface DaySpa extends Omit<HealthAndBeautyBusiness, "@type"> {
-  "@type": "DaySpa";
+  "@type"?: "DaySpa";
 }
 
 /**
@@ -4030,7 +4030,7 @@ export interface DaySpa extends Omit<HealthAndBeautyBusiness, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface DDxElement extends Omit<MedicalIntangible, "@type"> {
-  "@type": "DDxElement";
+  "@type"?: "DDxElement";
   diagnosis?: MedicalCondition;
   distinguishingSign?: MedicalSignOrSymptom;
 }
@@ -4044,7 +4044,7 @@ export interface DDxElement extends Omit<MedicalIntangible, "@type"> {
  *
  **/
 export interface DeactivateAction extends Omit<ControlAction, "@type"> {
-  "@type": "DeactivateAction";
+  "@type"?: "DeactivateAction";
 }
 
 /**
@@ -4057,7 +4057,7 @@ export interface DeactivateAction extends Omit<ControlAction, "@type"> {
  **/
 export interface DefenceEstablishment
   extends Omit<GovernmentBuilding, "@type"> {
-  "@type": "DefenceEstablishment";
+  "@type"?: "DefenceEstablishment";
 }
 
 /**
@@ -4086,7 +4086,7 @@ Region = state, canton, prefecture, autonomous community...
 *
 **/
 export interface DefinedRegion extends Omit<StructuredValue, "@type"> {
-  "@type": "DefinedRegion";
+  "@type"?: "DefinedRegion";
   addressCountry?: Text | Country;
   addressRegion?: Text;
   postalCode?: Text;
@@ -4107,7 +4107,7 @@ export interface DefinedRegion extends Omit<StructuredValue, "@type"> {
  *
  **/
 export interface DefinedTerm extends Omit<Intangible, "@type"> {
-  "@type": "DefinedTerm";
+  "@type"?: "DefinedTerm";
   inDefinedTermSet?: DefinedTermSet | URL;
   termCode?: Text;
 }
@@ -4125,7 +4125,7 @@ export interface DefinedTerm extends Omit<Intangible, "@type"> {
  *
  **/
 export interface DefinedTermSet extends Omit<CreativeWork, "@type"> {
-  "@type": "DefinedTermSet";
+  "@type"?: "DefinedTermSet";
   hasDefinedTerm?: DefinedTerm;
 }
 
@@ -4138,7 +4138,7 @@ export interface DefinedTermSet extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface DeleteAction extends Omit<UpdateAction, "@type"> {
-  "@type": "DeleteAction";
+  "@type"?: "DeleteAction";
 }
 
 /**
@@ -4153,7 +4153,7 @@ export interface DeleteAction extends Omit<UpdateAction, "@type"> {
  **/
 export interface DeliveryChargeSpecification
   extends Omit<PriceSpecification, "@type"> {
-  "@type": "DeliveryChargeSpecification";
+  "@type"?: "DeliveryChargeSpecification";
   appliesToDeliveryMethod?: DeliveryMethod;
   areaServed?: Text | Place | AdministrativeArea | GeoShape;
   eligibleRegion?: Text | GeoShape | Place;
@@ -4169,7 +4169,7 @@ export interface DeliveryChargeSpecification
  *
  **/
 export interface DeliveryEvent extends Omit<Event, "@type"> {
-  "@type": "DeliveryEvent";
+  "@type"?: "DeliveryEvent";
   accessCode?: Text;
   availableFrom?: DateTime;
   availableThrough?: DateTime;
@@ -4189,7 +4189,7 @@ export interface DeliveryEvent extends Omit<Event, "@type"> {
  *
  **/
 export interface DeliveryTimeSettings extends Omit<StructuredValue, "@type"> {
-  "@type": "DeliveryTimeSettings";
+  "@type"?: "DeliveryTimeSettings";
   deliveryTime?: ShippingDeliveryTime;
   isUnlabelledFallback?: Boolean;
   shippingDestination?: DefinedRegion;
@@ -4207,7 +4207,7 @@ export interface DeliveryTimeSettings extends Omit<StructuredValue, "@type"> {
  *
  **/
 export interface Demand extends Omit<Intangible, "@type"> {
-  "@type": "Demand";
+  "@type"?: "Demand";
   acceptedPaymentMethod?: LoanOrCredit | PaymentMethod;
   advanceBookingRequirement?: QuantitativeValue;
   areaServed?: Text | Place | AdministrativeArea | GeoShape;
@@ -4262,7 +4262,7 @@ export interface Dentist
   extends Omit<MedicalBusiness, "@type">,
     Omit<LocalBusiness, "@type">,
     Omit<MedicalOrganization, "@type"> {
-  "@type": "Dentist";
+  "@type"?: "Dentist";
 }
 
 /**
@@ -4274,7 +4274,7 @@ export interface Dentist
  *
  **/
 export interface DepartAction extends Omit<MoveAction, "@type"> {
-  "@type": "DepartAction";
+  "@type"?: "DepartAction";
 }
 
 /**
@@ -4286,7 +4286,7 @@ export interface DepartAction extends Omit<MoveAction, "@type"> {
  *
  **/
 export interface DepartmentStore extends Omit<Store, "@type"> {
-  "@type": "DepartmentStore";
+  "@type"?: "DepartmentStore";
 }
 
 /**
@@ -4302,7 +4302,7 @@ export interface DepartmentStore extends Omit<Store, "@type"> {
 export interface DepositAccount
   extends Omit<BankAccount, "@type">,
     Omit<InvestmentOrDeposit, "@type"> {
-  "@type": "DepositAccount";
+  "@type"?: "DepositAccount";
 }
 
 /**
@@ -4316,7 +4316,7 @@ export interface DepositAccount
  * Partof: https://health-lifesci.schema.org
  **/
 export interface DiagnosticLab extends Omit<MedicalOrganization, "@type"> {
-  "@type": "DiagnosticLab";
+  "@type"?: "DiagnosticLab";
   availableTest?: MedicalTest;
 }
 
@@ -4331,7 +4331,7 @@ export interface DiagnosticLab extends Omit<MedicalOrganization, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface DiagnosticProcedure extends Omit<MedicalProcedure, "@type"> {
-  "@type": "DiagnosticProcedure";
+  "@type"?: "DiagnosticProcedure";
 }
 
 /**
@@ -4347,7 +4347,7 @@ export interface DiagnosticProcedure extends Omit<MedicalProcedure, "@type"> {
 export interface Diet
   extends Omit<LifestyleModification, "@type">,
     Omit<CreativeWork, "@type"> {
-  "@type": "Diet";
+  "@type"?: "Diet";
   dietFeatures?: Text;
   endorsers?: Organization | Person;
   expertConsiderations?: Text;
@@ -4366,7 +4366,7 @@ export interface Diet
  * Partof: https://health-lifesci.schema.org
  **/
 export interface DietarySupplement extends Omit<Substance, "@type"> {
-  "@type": "DietarySupplement";
+  "@type"?: "DietarySupplement";
   activeIngredient?: Text;
   isProprietary?: Boolean;
   legalStatus?: MedicalEnumeration | Text | DrugLegalStatus;
@@ -4389,7 +4389,7 @@ export interface DietarySupplement extends Omit<Substance, "@type"> {
  *
  **/
 export interface DigitalDocument extends Omit<CreativeWork, "@type"> {
-  "@type": "DigitalDocument";
+  "@type"?: "DigitalDocument";
   hasDigitalDocumentPermission?: DigitalDocumentPermission;
 }
 
@@ -4402,7 +4402,7 @@ export interface DigitalDocument extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface DigitalDocumentPermission extends Omit<Intangible, "@type"> {
-  "@type": "DigitalDocumentPermission";
+  "@type"?: "DigitalDocumentPermission";
   grantee?: Organization | Person | Audience | ContactPoint;
   permissionType?: DigitalDocumentPermissionType;
 }
@@ -4416,7 +4416,7 @@ export interface DigitalDocumentPermission extends Omit<Intangible, "@type"> {
  *
  **/
 export interface DisagreeAction extends Omit<ReactAction, "@type"> {
-  "@type": "DisagreeAction";
+  "@type"?: "DisagreeAction";
 }
 
 /**
@@ -4428,7 +4428,7 @@ export interface DisagreeAction extends Omit<ReactAction, "@type"> {
  *
  **/
 export interface DiscoverAction extends Omit<FindAction, "@type"> {
-  "@type": "DiscoverAction";
+  "@type"?: "DiscoverAction";
 }
 
 /**
@@ -4441,7 +4441,7 @@ export interface DiscoverAction extends Omit<FindAction, "@type"> {
  **/
 export interface DiscussionForumPosting
   extends Omit<SocialMediaPosting, "@type"> {
-  "@type": "DiscussionForumPosting";
+  "@type"?: "DiscussionForumPosting";
 }
 
 /**
@@ -4453,7 +4453,7 @@ export interface DiscussionForumPosting
  *
  **/
 export interface DislikeAction extends Omit<ReactAction, "@type"> {
-  "@type": "DislikeAction";
+  "@type"?: "DislikeAction";
 }
 
 /**
@@ -4465,7 +4465,7 @@ export interface DislikeAction extends Omit<ReactAction, "@type"> {
  *
  **/
 export interface Distance extends Omit<Quantity, "@type"> {
-  "@type": "Distance";
+  "@type"?: "Distance";
 }
 
 /**
@@ -4479,7 +4479,7 @@ export interface Distance extends Omit<Quantity, "@type"> {
  *
  **/
 export interface Distillery extends Omit<FoodEstablishment, "@type"> {
-  "@type": "Distillery";
+  "@type"?: "Distillery";
 }
 
 /**
@@ -4491,7 +4491,7 @@ export interface Distillery extends Omit<FoodEstablishment, "@type"> {
  *
  **/
 export interface DonateAction extends Omit<TradeAction, "@type"> {
-  "@type": "DonateAction";
+  "@type"?: "DonateAction";
   recipient?: Organization | ContactPoint | Person | Audience;
 }
 
@@ -4506,7 +4506,7 @@ export interface DonateAction extends Omit<TradeAction, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface DoseSchedule extends Omit<MedicalIntangible, "@type"> {
-  "@type": "DoseSchedule";
+  "@type"?: "DoseSchedule";
   doseUnit?: Text;
   doseValue?: Number | QualitativeValue;
   frequency?: Text;
@@ -4522,7 +4522,7 @@ export interface DoseSchedule extends Omit<MedicalIntangible, "@type"> {
  *
  **/
 export interface DownloadAction extends Omit<TransferAction, "@type"> {
-  "@type": "DownloadAction";
+  "@type"?: "DownloadAction";
 }
 
 /**
@@ -4534,7 +4534,7 @@ export interface DownloadAction extends Omit<TransferAction, "@type"> {
  *
  **/
 export interface DrawAction extends Omit<CreateAction, "@type"> {
-  "@type": "DrawAction";
+  "@type"?: "DrawAction";
 }
 
 /**
@@ -4550,7 +4550,7 @@ export interface DrawAction extends Omit<CreateAction, "@type"> {
  *
  **/
 export interface Drawing extends Omit<CreativeWork, "@type"> {
-  "@type": "Drawing";
+  "@type"?: "Drawing";
 }
 
 /**
@@ -4562,7 +4562,7 @@ export interface Drawing extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface DrinkAction extends Omit<ConsumeAction, "@type"> {
-  "@type": "DrinkAction";
+  "@type"?: "DrinkAction";
 }
 
 /**
@@ -4576,7 +4576,7 @@ export interface DrinkAction extends Omit<ConsumeAction, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface Drug extends Omit<Substance, "@type"> {
-  "@type": "Drug";
+  "@type"?: "Drug";
   activeIngredient?: Text;
   administrationRoute?: Text;
   alcoholWarning?: Text;
@@ -4621,7 +4621,7 @@ export interface Drug extends Omit<Substance, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface DrugClass extends Omit<MedicalEntity, "@type"> {
-  "@type": "DrugClass";
+  "@type"?: "DrugClass";
   drug?: Drug;
 }
 
@@ -4636,7 +4636,7 @@ export interface DrugClass extends Omit<MedicalEntity, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface DrugCost extends Omit<MedicalEntity, "@type"> {
-  "@type": "DrugCost";
+  "@type"?: "DrugCost";
   applicableLocation?: AdministrativeArea;
   costCategory?: DrugCostCategory;
   costCurrency?: Text;
@@ -4656,7 +4656,7 @@ export interface DrugCost extends Omit<MedicalEntity, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface DrugLegalStatus extends Omit<MedicalIntangible, "@type"> {
-  "@type": "DrugLegalStatus";
+  "@type"?: "DrugLegalStatus";
   applicableLocation?: AdministrativeArea;
 }
 
@@ -4671,7 +4671,7 @@ export interface DrugLegalStatus extends Omit<MedicalIntangible, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface DrugStrength extends Omit<MedicalIntangible, "@type"> {
-  "@type": "DrugStrength";
+  "@type"?: "DrugStrength";
   activeIngredient?: Text;
   availableIn?: AdministrativeArea;
   maximumIntake?: MaximumDoseSchedule;
@@ -4688,7 +4688,7 @@ export interface DrugStrength extends Omit<MedicalIntangible, "@type"> {
  *
  **/
 export interface DryCleaningOrLaundry extends Omit<LocalBusiness, "@type"> {
-  "@type": "DryCleaningOrLaundry";
+  "@type"?: "DryCleaningOrLaundry";
 }
 
 /**
@@ -4700,7 +4700,7 @@ export interface DryCleaningOrLaundry extends Omit<LocalBusiness, "@type"> {
  *
  **/
 export interface Duration extends Omit<Quantity, "@type"> {
-  "@type": "Duration";
+  "@type"?: "Duration";
 }
 
 /**
@@ -4712,7 +4712,7 @@ export interface Duration extends Omit<Quantity, "@type"> {
  *
  **/
 export interface EatAction extends Omit<ConsumeAction, "@type"> {
-  "@type": "EatAction";
+  "@type"?: "EatAction";
 }
 
 /**
@@ -4726,7 +4726,7 @@ export interface EatAction extends Omit<ConsumeAction, "@type"> {
  *
  **/
 export interface EducationalAudience extends Omit<Audience, "@type"> {
-  "@type": "EducationalAudience";
+  "@type"?: "EducationalAudience";
   educationalRole?: Text;
 }
 
@@ -4744,7 +4744,7 @@ export interface EducationalAudience extends Omit<Audience, "@type"> {
  **/
 export interface EducationalOccupationalCredential
   extends Omit<CreativeWork, "@type"> {
-  "@type": "EducationalOccupationalCredential";
+  "@type"?: "EducationalOccupationalCredential";
   competencyRequired?: Text | URL | DefinedTerm;
   credentialCategory?: DefinedTerm | URL | Text;
   educationalLevel?: URL | DefinedTerm | Text;
@@ -4767,7 +4767,7 @@ export interface EducationalOccupationalCredential
  **/
 export interface EducationalOccupationalProgram
   extends Omit<Intangible, "@type"> {
-  "@type": "EducationalOccupationalProgram";
+  "@type"?: "EducationalOccupationalProgram";
   applicationDeadline?: Date;
   applicationStartDate?: Date;
   dayOfWeek?: DayOfWeek;
@@ -4812,7 +4812,7 @@ export interface EducationalOccupationalProgram
 export interface EducationalOrganization
   extends Omit<Organization, "@type">,
     Omit<CivicStructure, "@type"> {
-  "@type": "EducationalOrganization";
+  "@type"?: "EducationalOrganization";
   alumni?: Person;
 }
 
@@ -4825,7 +4825,7 @@ export interface EducationalOrganization
  *
  **/
 export interface EducationEvent extends Omit<Event, "@type"> {
-  "@type": "EducationEvent";
+  "@type"?: "EducationEvent";
   assesses?: DefinedTerm | Text;
   educationalLevel?: URL | DefinedTerm | Text;
   teaches?: Text | DefinedTerm;
@@ -4841,7 +4841,7 @@ export interface EducationEvent extends Omit<Event, "@type"> {
  **/
 export interface Electrician
   extends Omit<HomeAndConstructionBusiness, "@type"> {
-  "@type": "Electrician";
+  "@type"?: "Electrician";
 }
 
 /**
@@ -4853,7 +4853,7 @@ export interface Electrician
  *
  **/
 export interface ElectronicsStore extends Omit<Store, "@type"> {
-  "@type": "ElectronicsStore";
+  "@type"?: "ElectronicsStore";
 }
 
 /**
@@ -4866,7 +4866,7 @@ export interface ElectronicsStore extends Omit<Store, "@type"> {
  **/
 export interface ElementarySchool
   extends Omit<EducationalOrganization, "@type"> {
-  "@type": "ElementarySchool";
+  "@type"?: "ElementarySchool";
 }
 
 /**
@@ -4878,7 +4878,7 @@ export interface ElementarySchool
  *
  **/
 export interface EmailMessage extends Omit<Message, "@type"> {
-  "@type": "EmailMessage";
+  "@type"?: "EmailMessage";
 }
 
 /**
@@ -4890,7 +4890,7 @@ export interface EmailMessage extends Omit<Message, "@type"> {
  *
  **/
 export interface Embassy extends Omit<GovernmentBuilding, "@type"> {
-  "@type": "Embassy";
+  "@type"?: "Embassy";
 }
 
 /**
@@ -4902,7 +4902,7 @@ export interface Embassy extends Omit<GovernmentBuilding, "@type"> {
  *
  **/
 export interface EmergencyService extends Omit<LocalBusiness, "@type"> {
-  "@type": "EmergencyService";
+  "@type"?: "EmergencyService";
 }
 
 /**
@@ -4914,7 +4914,7 @@ export interface EmergencyService extends Omit<LocalBusiness, "@type"> {
  *
  **/
 export interface EmployeeRole extends Omit<OrganizationRole, "@type"> {
-  "@type": "EmployeeRole";
+  "@type"?: "EmployeeRole";
   baseSalary?: MonetaryAmount | PriceSpecification | Number;
   salaryCurrency?: Text;
 }
@@ -4931,7 +4931,7 @@ export interface EmployeeRole extends Omit<OrganizationRole, "@type"> {
  **/
 export interface EmployerAggregateRating
   extends Omit<AggregateRating, "@type"> {
-  "@type": "EmployerAggregateRating";
+  "@type"?: "EmployerAggregateRating";
 }
 
 /**
@@ -4947,7 +4947,7 @@ export interface EmployerAggregateRating
  *
  **/
 export interface EmployerReview extends Omit<Review, "@type"> {
-  "@type": "EmployerReview";
+  "@type"?: "EmployerReview";
 }
 
 /**
@@ -4959,7 +4959,7 @@ export interface EmployerReview extends Omit<Review, "@type"> {
  *
  **/
 export interface EmploymentAgency extends Omit<LocalBusiness, "@type"> {
-  "@type": "EmploymentAgency";
+  "@type"?: "EmploymentAgency";
 }
 
 /**
@@ -4971,7 +4971,7 @@ export interface EmploymentAgency extends Omit<LocalBusiness, "@type"> {
  *
  **/
 export interface EndorseAction extends Omit<ReactAction, "@type"> {
-  "@type": "EndorseAction";
+  "@type"?: "EndorseAction";
   endorsee?: Organization | Person;
 }
 
@@ -4992,7 +4992,7 @@ endorsement rating is particularly useful in the absence of numeric scales as it
 *
 **/
 export interface EndorsementRating extends Omit<Rating, "@type"> {
-  "@type": "EndorsementRating";
+  "@type"?: "EndorsementRating";
 }
 
 /**
@@ -5004,7 +5004,7 @@ export interface EndorsementRating extends Omit<Rating, "@type"> {
  *
  **/
 export interface Energy extends Omit<Quantity, "@type"> {
-  "@type": "Energy";
+  "@type"?: "Energy";
 }
 
 /**
@@ -5020,7 +5020,7 @@ export interface Energy extends Omit<Quantity, "@type"> {
  *
  **/
 export interface EnergyConsumptionDetails extends Omit<Intangible, "@type"> {
-  "@type": "EnergyConsumptionDetails";
+  "@type"?: "EnergyConsumptionDetails";
   energyEfficiencyScaleMax?: EUEnergyEfficiencyEnumeration;
   energyEfficiencyScaleMin?: EUEnergyEfficiencyEnumeration;
   hasEnergyEfficiencyCategory?: EnergyEfficiencyEnumeration;
@@ -5040,7 +5040,7 @@ export interface EnergyConsumptionDetails extends Omit<Intangible, "@type"> {
  **/
 export interface EnergyEfficiencyEnumeration
   extends Omit<Enumeration, "@type"> {
-  "@type": "EnergyEfficiencyEnumeration";
+  "@type"?: "EnergyEfficiencyEnumeration";
 }
 
 /**
@@ -5054,7 +5054,7 @@ export interface EnergyEfficiencyEnumeration
  *
  **/
 export interface EngineSpecification extends Omit<StructuredValue, "@type"> {
-  "@type": "EngineSpecification";
+  "@type"?: "EngineSpecification";
   engineDisplacement?: QuantitativeValue;
   enginePower?: QuantitativeValue;
   engineType?: URL | QualitativeValue | Text;
@@ -5071,7 +5071,7 @@ export interface EngineSpecification extends Omit<StructuredValue, "@type"> {
  *
  **/
 export interface EntertainmentBusiness extends Omit<LocalBusiness, "@type"> {
-  "@type": "EntertainmentBusiness";
+  "@type"?: "EntertainmentBusiness";
 }
 
 /**
@@ -5085,7 +5085,7 @@ export interface EntertainmentBusiness extends Omit<LocalBusiness, "@type"> {
  *
  **/
 export interface EntryPoint extends Omit<Intangible, "@type"> {
-  "@type": "EntryPoint";
+  "@type"?: "EntryPoint";
   actionApplication?: SoftwareApplication;
   actionPlatform?: Text | URL;
   application?: SoftwareApplication;
@@ -5104,7 +5104,7 @@ export interface EntryPoint extends Omit<Intangible, "@type"> {
  *
  **/
 export interface Enumeration extends Omit<Intangible, "@type"> {
-  "@type": "Enumeration";
+  "@type"?: "Enumeration";
 }
 
 /**
@@ -5116,7 +5116,7 @@ export interface Enumeration extends Omit<Intangible, "@type"> {
  *
  **/
 export interface Episode extends Omit<CreativeWork, "@type"> {
-  "@type": "Episode";
+  "@type"?: "Episode";
   actor?: Person;
   actors?: Array<Person>;
   director?: Person;
@@ -5139,7 +5139,7 @@ export interface Episode extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface Event extends Omit<Thing, "@type"> {
-  "@type": "Event";
+  "@type"?: "Event";
   about?: Thing;
   actor?: Person;
   aggregateRating?: AggregateRating;
@@ -5190,7 +5190,7 @@ export interface Event extends Omit<Thing, "@type"> {
  *
  **/
 export interface EventReservation extends Omit<Reservation, "@type"> {
-  "@type": "EventReservation";
+  "@type"?: "EventReservation";
 }
 
 /**
@@ -5221,7 +5221,7 @@ it may also sometimes prove useful to describe a longer-term series as an Event.
 export interface EventSeries
   extends Omit<Series, "@type">,
     Omit<Event, "@type"> {
-  "@type": "EventSeries";
+  "@type"?: "EventSeries";
 }
 
 /**
@@ -5233,7 +5233,7 @@ export interface EventSeries
  *
  **/
 export interface EventVenue extends Omit<CivicStructure, "@type"> {
-  "@type": "EventVenue";
+  "@type"?: "EventVenue";
 }
 
 /**
@@ -5251,7 +5251,7 @@ export interface EventVenue extends Omit<CivicStructure, "@type"> {
  **/
 export interface ExchangeRateSpecification
   extends Omit<StructuredValue, "@type"> {
-  "@type": "ExchangeRateSpecification";
+  "@type"?: "ExchangeRateSpecification";
   currency?: Text;
   currentExchangeRate?: UnitPriceSpecification;
   exchangeRateSpread?: MonetaryAmount | Number;
@@ -5266,7 +5266,7 @@ export interface ExchangeRateSpecification
  *
  **/
 export interface ExerciseAction extends Omit<PlayAction, "@type"> {
-  "@type": "ExerciseAction";
+  "@type"?: "ExerciseAction";
   course?: Place;
   diet?: Diet;
   distance?: Distance;
@@ -5291,7 +5291,7 @@ export interface ExerciseAction extends Omit<PlayAction, "@type"> {
  *
  **/
 export interface ExerciseGym extends Omit<SportsActivityLocation, "@type"> {
-  "@type": "ExerciseGym";
+  "@type"?: "ExerciseGym";
 }
 
 /**
@@ -5307,7 +5307,7 @@ export interface ExerciseGym extends Omit<SportsActivityLocation, "@type"> {
 export interface ExercisePlan
   extends Omit<PhysicalActivity, "@type">,
     Omit<CreativeWork, "@type"> {
-  "@type": "ExercisePlan";
+  "@type"?: "ExercisePlan";
   activityDuration?: QuantitativeValue | Duration;
   activityFrequency?: Text | QuantitativeValue;
   additionalVariable?: Text;
@@ -5327,7 +5327,7 @@ export interface ExercisePlan
  *
  **/
 export interface ExhibitionEvent extends Omit<Event, "@type"> {
-  "@type": "ExhibitionEvent";
+  "@type"?: "ExhibitionEvent";
 }
 
 /**
@@ -5341,7 +5341,7 @@ export interface ExhibitionEvent extends Omit<Event, "@type"> {
  *
  **/
 export interface FAQPage extends Omit<WebPage, "@type"> {
-  "@type": "FAQPage";
+  "@type"?: "FAQPage";
 }
 
 /**
@@ -5353,7 +5353,7 @@ export interface FAQPage extends Omit<WebPage, "@type"> {
  *
  **/
 export interface FastFoodRestaurant extends Omit<FoodEstablishment, "@type"> {
-  "@type": "FastFoodRestaurant";
+  "@type"?: "FastFoodRestaurant";
 }
 
 /**
@@ -5365,7 +5365,7 @@ export interface FastFoodRestaurant extends Omit<FoodEstablishment, "@type"> {
  *
  **/
 export interface Festival extends Omit<Event, "@type"> {
-  "@type": "Festival";
+  "@type"?: "Festival";
 }
 
 /**
@@ -5377,7 +5377,7 @@ export interface Festival extends Omit<Event, "@type"> {
  *
  **/
 export interface FilmAction extends Omit<CreateAction, "@type"> {
-  "@type": "FilmAction";
+  "@type"?: "FilmAction";
 }
 
 /**
@@ -5391,7 +5391,7 @@ export interface FilmAction extends Omit<CreateAction, "@type"> {
  *
  **/
 export interface FinancialProduct extends Omit<Service, "@type"> {
-  "@type": "FinancialProduct";
+  "@type"?: "FinancialProduct";
   annualPercentageRate?: QuantitativeValue | Number;
   feesAndCommissionsSpecification?: URL | Text;
   interestRate?: Number | QuantitativeValue;
@@ -5406,7 +5406,7 @@ export interface FinancialProduct extends Omit<Service, "@type"> {
  *
  **/
 export interface FinancialService extends Omit<LocalBusiness, "@type"> {
-  "@type": "FinancialService";
+  "@type"?: "FinancialService";
   feesAndCommissionsSpecification?: URL | Text;
 }
 
@@ -5419,7 +5419,7 @@ export interface FinancialService extends Omit<LocalBusiness, "@type"> {
  *
  **/
 export interface FindAction extends Omit<Action, "@type"> {
-  "@type": "FindAction";
+  "@type"?: "FindAction";
 }
 
 /**
@@ -5433,7 +5433,7 @@ export interface FindAction extends Omit<Action, "@type"> {
 export interface FireStation
   extends Omit<CivicStructure, "@type">,
     Omit<EmergencyService, "@type"> {
-  "@type": "FireStation";
+  "@type"?: "FireStation";
 }
 
 /**
@@ -5445,7 +5445,7 @@ export interface FireStation
  *
  **/
 export interface Flight extends Omit<Trip, "@type"> {
-  "@type": "Flight";
+  "@type"?: "Flight";
   aircraft?: Vehicle | Text;
   arrivalAirport?: Airport;
   arrivalGate?: Text;
@@ -5472,7 +5472,7 @@ export interface Flight extends Omit<Trip, "@type"> {
  *
  **/
 export interface FlightReservation extends Omit<Reservation, "@type"> {
-  "@type": "FlightReservation";
+  "@type"?: "FlightReservation";
   boardingGroup?: Text;
   passengerPriorityStatus?: QualitativeValue | Text;
   passengerSequenceNumber?: Text;
@@ -5502,7 +5502,7 @@ export type Float = Number;
  *
  **/
 export interface FloorPlan extends Omit<Intangible, "@type"> {
-  "@type": "FloorPlan";
+  "@type"?: "FloorPlan";
   amenityFeature?: LocationFeatureSpecification;
   floorSize?: QuantitativeValue;
   isPlanForApartment?: Accommodation;
@@ -5526,7 +5526,7 @@ export interface FloorPlan extends Omit<Intangible, "@type"> {
  *
  **/
 export interface Florist extends Omit<Store, "@type"> {
-  "@type": "Florist";
+  "@type"?: "Florist";
 }
 
 /**
@@ -5540,7 +5540,7 @@ export interface Florist extends Omit<Store, "@type"> {
  *
  **/
 export interface FMRadioChannel extends Omit<RadioChannel, "@type"> {
-  "@type": "FMRadioChannel";
+  "@type"?: "FMRadioChannel";
 }
 
 /**
@@ -5552,7 +5552,7 @@ export interface FMRadioChannel extends Omit<RadioChannel, "@type"> {
  *
  **/
 export interface FollowAction extends Omit<InteractAction, "@type"> {
-  "@type": "FollowAction";
+  "@type"?: "FollowAction";
   followee?: Organization | Person;
 }
 
@@ -5565,7 +5565,7 @@ export interface FollowAction extends Omit<InteractAction, "@type"> {
  *
  **/
 export interface FoodEstablishment extends Omit<LocalBusiness, "@type"> {
-  "@type": "FoodEstablishment";
+  "@type"?: "FoodEstablishment";
   acceptsReservations?: URL | Boolean | Text;
   hasMenu?: URL | Menu | Text;
   menu?: Text | URL | Menu;
@@ -5583,7 +5583,7 @@ export interface FoodEstablishment extends Omit<LocalBusiness, "@type"> {
  **/
 export interface FoodEstablishmentReservation
   extends Omit<Reservation, "@type"> {
-  "@type": "FoodEstablishmentReservation";
+  "@type"?: "FoodEstablishmentReservation";
   endTime?: DateTime | Time;
   partySize?: QuantitativeValue | Integer;
   startTime?: DateTime | Time;
@@ -5598,7 +5598,7 @@ export interface FoodEstablishmentReservation
  *
  **/
 export interface FoodEvent extends Omit<Event, "@type"> {
-  "@type": "FoodEvent";
+  "@type"?: "FoodEvent";
 }
 
 /**
@@ -5612,7 +5612,7 @@ export interface FoodEvent extends Omit<Event, "@type"> {
  *
  **/
 export interface FoodService extends Omit<Service, "@type"> {
-  "@type": "FoodService";
+  "@type"?: "FoodService";
 }
 
 /**
@@ -5634,7 +5634,7 @@ Examples of funding agencies include ERC, REA, NIH, Bill and Melinda Gates Found
 *
 **/
 export interface FundingAgency extends Omit<Project, "@type"> {
-  "@type": "FundingAgency";
+  "@type"?: "FundingAgency";
 }
 
 /**
@@ -5653,7 +5653,7 @@ export interface FundingAgency extends Omit<Project, "@type"> {
 *
 **/
 export interface FundingScheme extends Omit<Organization, "@type"> {
-  "@type": "FundingScheme";
+  "@type"?: "FundingScheme";
 }
 
 /**
@@ -5665,7 +5665,7 @@ export interface FundingScheme extends Omit<Organization, "@type"> {
  *
  **/
 export interface FurnitureStore extends Omit<Store, "@type"> {
-  "@type": "FurnitureStore";
+  "@type"?: "FurnitureStore";
 }
 
 /**
@@ -5677,7 +5677,7 @@ export interface FurnitureStore extends Omit<Store, "@type"> {
  *
  **/
 export interface Game extends Omit<CreativeWork, "@type"> {
-  "@type": "Game";
+  "@type"?: "Game";
   characterAttribute?: Thing;
   gameItem?: Thing;
   gameLocation?: PostalAddress | Place | URL;
@@ -5694,7 +5694,7 @@ export interface Game extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface GameServer extends Omit<Intangible, "@type"> {
-  "@type": "GameServer";
+  "@type"?: "GameServer";
   game?: VideoGame;
   playersOnline?: Integer;
   serverStatus?: GameServerStatus;
@@ -5709,7 +5709,7 @@ export interface GameServer extends Omit<Intangible, "@type"> {
  *
  **/
 export interface GardenStore extends Omit<Store, "@type"> {
-  "@type": "GardenStore";
+  "@type"?: "GardenStore";
 }
 
 /**
@@ -5721,7 +5721,7 @@ export interface GardenStore extends Omit<Store, "@type"> {
  *
  **/
 export interface GasStation extends Omit<AutomotiveBusiness, "@type"> {
-  "@type": "GasStation";
+  "@type"?: "GasStation";
 }
 
 /**
@@ -5733,7 +5733,7 @@ export interface GasStation extends Omit<AutomotiveBusiness, "@type"> {
  *
  **/
 export interface GatedResidenceCommunity extends Omit<Residence, "@type"> {
-  "@type": "GatedResidenceCommunity";
+  "@type"?: "GatedResidenceCommunity";
 }
 
 /**
@@ -5746,7 +5746,7 @@ export interface GatedResidenceCommunity extends Omit<Residence, "@type"> {
  **/
 export interface GeneralContractor
   extends Omit<HomeAndConstructionBusiness, "@type"> {
-  "@type": "GeneralContractor";
+  "@type"?: "GeneralContractor";
 }
 
 /**
@@ -5761,7 +5761,7 @@ export interface GeneralContractor
 *
 **/
 export interface GeoCircle extends Omit<GeoShape, "@type"> {
-  "@type": "GeoCircle";
+  "@type"?: "GeoCircle";
   geoMidpoint?: GeoCoordinates;
   geoRadius?: Text | Distance | Number;
 }
@@ -5775,7 +5775,7 @@ export interface GeoCircle extends Omit<GeoShape, "@type"> {
  *
  **/
 export interface GeoCoordinates extends Omit<StructuredValue, "@type"> {
-  "@type": "GeoCoordinates";
+  "@type"?: "GeoCoordinates";
   address?: Text | PostalAddress;
   addressCountry?: Text | Country;
   elevation?: Number | Text;
@@ -5795,7 +5795,7 @@ export interface GeoCoordinates extends Omit<StructuredValue, "@type"> {
  *
  **/
 export interface GeoShape extends Omit<StructuredValue, "@type"> {
-  "@type": "GeoShape";
+  "@type"?: "GeoShape";
   address?: Text | PostalAddress;
   addressCountry?: Text | Country;
   box?: Text;
@@ -5819,7 +5819,7 @@ export interface GeoShape extends Omit<StructuredValue, "@type"> {
  *
  **/
 export interface GeospatialGeometry extends Omit<Intangible, "@type"> {
-  "@type": "GeospatialGeometry";
+  "@type"?: "GeospatialGeometry";
   geoContains?: GeospatialGeometry | Place;
   geoCoveredBy?: GeospatialGeometry | Place;
   geoCovers?: GeospatialGeometry | Place;
@@ -5841,7 +5841,7 @@ export interface GeospatialGeometry extends Omit<Intangible, "@type"> {
  *
  **/
 export interface GiveAction extends Omit<TransferAction, "@type"> {
-  "@type": "GiveAction";
+  "@type"?: "GiveAction";
   recipient?: Organization | ContactPoint | Person | Audience;
 }
 
@@ -5854,7 +5854,7 @@ export interface GiveAction extends Omit<TransferAction, "@type"> {
  *
  **/
 export interface GolfCourse extends Omit<SportsActivityLocation, "@type"> {
-  "@type": "GolfCourse";
+  "@type"?: "GolfCourse";
 }
 
 /**
@@ -5866,7 +5866,7 @@ export interface GolfCourse extends Omit<SportsActivityLocation, "@type"> {
  *
  **/
 export interface GovernmentBuilding extends Omit<CivicStructure, "@type"> {
-  "@type": "GovernmentBuilding";
+  "@type"?: "GovernmentBuilding";
 }
 
 /**
@@ -5878,7 +5878,7 @@ export interface GovernmentBuilding extends Omit<CivicStructure, "@type"> {
  *
  **/
 export interface GovernmentOffice extends Omit<LocalBusiness, "@type"> {
-  "@type": "GovernmentOffice";
+  "@type"?: "GovernmentOffice";
 }
 
 /**
@@ -5890,7 +5890,7 @@ export interface GovernmentOffice extends Omit<LocalBusiness, "@type"> {
  *
  **/
 export interface GovernmentOrganization extends Omit<Organization, "@type"> {
-  "@type": "GovernmentOrganization";
+  "@type"?: "GovernmentOrganization";
 }
 
 /**
@@ -5902,7 +5902,7 @@ export interface GovernmentOrganization extends Omit<Organization, "@type"> {
  *
  **/
 export interface GovernmentPermit extends Omit<Permit, "@type"> {
-  "@type": "GovernmentPermit";
+  "@type"?: "GovernmentPermit";
 }
 
 /**
@@ -5914,7 +5914,7 @@ export interface GovernmentPermit extends Omit<Permit, "@type"> {
  *
  **/
 export interface GovernmentService extends Omit<Service, "@type"> {
-  "@type": "GovernmentService";
+  "@type"?: "GovernmentService";
   jurisdiction?: AdministrativeArea | Text;
   serviceOperator?: Organization;
 }
@@ -5939,7 +5939,7 @@ The amount of a [[Grant]] is represented using [[amount]] as a [[MonetaryAmount]
 *
 **/
 export interface Grant extends Omit<Intangible, "@type"> {
-  "@type": "Grant";
+  "@type"?: "Grant";
   fundedItem?: Thing;
   sponsor?: Person | Organization;
 }
@@ -5953,7 +5953,7 @@ export interface Grant extends Omit<Intangible, "@type"> {
  *
  **/
 export interface GroceryStore extends Omit<Store, "@type"> {
-  "@type": "GroceryStore";
+  "@type"?: "GroceryStore";
 }
 
 /**
@@ -5969,7 +5969,7 @@ export interface GroceryStore extends Omit<Store, "@type"> {
  *
  **/
 export interface Guide extends Omit<CreativeWork, "@type"> {
-  "@type": "Guide";
+  "@type"?: "Guide";
   reviewAspect?: Text;
 }
 
@@ -5986,7 +5986,7 @@ export interface Guide extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface Hackathon extends Omit<Event, "@type"> {
-  "@type": "Hackathon";
+  "@type"?: "Hackathon";
 }
 
 /**
@@ -5998,7 +5998,7 @@ export interface Hackathon extends Omit<Event, "@type"> {
  *
  **/
 export interface HairSalon extends Omit<HealthAndBeautyBusiness, "@type"> {
-  "@type": "HairSalon";
+  "@type"?: "HairSalon";
 }
 
 /**
@@ -6010,7 +6010,7 @@ export interface HairSalon extends Omit<HealthAndBeautyBusiness, "@type"> {
  *
  **/
 export interface HardwareStore extends Omit<Store, "@type"> {
-  "@type": "HardwareStore";
+  "@type"?: "HardwareStore";
 }
 
 /**
@@ -6022,7 +6022,7 @@ export interface HardwareStore extends Omit<Store, "@type"> {
  *
  **/
 export interface HealthAndBeautyBusiness extends Omit<LocalBusiness, "@type"> {
-  "@type": "HealthAndBeautyBusiness";
+  "@type"?: "HealthAndBeautyBusiness";
 }
 
 /**
@@ -6036,7 +6036,7 @@ export interface HealthAndBeautyBusiness extends Omit<LocalBusiness, "@type"> {
 export interface HealthClub
   extends Omit<HealthAndBeautyBusiness, "@type">,
     Omit<SportsActivityLocation, "@type"> {
-  "@type": "HealthClub";
+  "@type"?: "HealthClub";
 }
 
 /**
@@ -6052,7 +6052,7 @@ export interface HealthClub
  *
  **/
 export interface HealthInsurancePlan extends Omit<Intangible, "@type"> {
-  "@type": "HealthInsurancePlan";
+  "@type"?: "HealthInsurancePlan";
   benefitsSummaryUrl?: URL;
   contactPoint?: ContactPoint;
   healthPlanDrugOption?: Text;
@@ -6078,7 +6078,7 @@ export interface HealthInsurancePlan extends Omit<Intangible, "@type"> {
  **/
 export interface HealthPlanCostSharingSpecification
   extends Omit<Intangible, "@type"> {
-  "@type": "HealthPlanCostSharingSpecification";
+  "@type"?: "HealthPlanCostSharingSpecification";
   healthPlanCoinsuranceOption?: Text;
   healthPlanCoinsuranceRate?: Number;
   healthPlanCopay?: PriceSpecification;
@@ -6099,7 +6099,7 @@ export interface HealthPlanCostSharingSpecification
  *
  **/
 export interface HealthPlanFormulary extends Omit<Intangible, "@type"> {
-  "@type": "HealthPlanFormulary";
+  "@type"?: "HealthPlanFormulary";
   healthPlanCostSharing?: Boolean;
   healthPlanDrugTier?: Text;
   offersPrescriptionByMail?: Boolean;
@@ -6118,7 +6118,7 @@ export interface HealthPlanFormulary extends Omit<Intangible, "@type"> {
  *
  **/
 export interface HealthPlanNetwork extends Omit<Intangible, "@type"> {
-  "@type": "HealthPlanNetwork";
+  "@type"?: "HealthPlanNetwork";
   healthPlanCostSharing?: Boolean;
   healthPlanNetworkId?: Text;
   healthPlanNetworkTier?: Text;
@@ -6138,7 +6138,7 @@ export interface HealthPlanNetwork extends Omit<Intangible, "@type"> {
 *
 **/
 export interface HealthTopicContent extends Omit<WebContent, "@type"> {
-  "@type": "HealthTopicContent";
+  "@type"?: "HealthTopicContent";
   hasHealthAspect?: HealthAspectEnumeration;
 }
 
@@ -6151,7 +6151,7 @@ export interface HealthTopicContent extends Omit<WebContent, "@type"> {
  *
  **/
 export interface HighSchool extends Omit<EducationalOrganization, "@type"> {
-  "@type": "HighSchool";
+  "@type"?: "HighSchool";
 }
 
 /**
@@ -6163,7 +6163,7 @@ export interface HighSchool extends Omit<EducationalOrganization, "@type"> {
  *
  **/
 export interface HinduTemple extends Omit<PlaceOfWorship, "@type"> {
-  "@type": "HinduTemple";
+  "@type"?: "HinduTemple";
 }
 
 /**
@@ -6175,7 +6175,7 @@ export interface HinduTemple extends Omit<PlaceOfWorship, "@type"> {
  *
  **/
 export interface HobbyShop extends Omit<Store, "@type"> {
-  "@type": "HobbyShop";
+  "@type"?: "HobbyShop";
 }
 
 /**
@@ -6188,7 +6188,7 @@ export interface HobbyShop extends Omit<Store, "@type"> {
  **/
 export interface HomeAndConstructionBusiness
   extends Omit<LocalBusiness, "@type"> {
-  "@type": "HomeAndConstructionBusiness";
+  "@type"?: "HomeAndConstructionBusiness";
 }
 
 /**
@@ -6200,7 +6200,7 @@ export interface HomeAndConstructionBusiness
  *
  **/
 export interface HomeGoodsStore extends Omit<Store, "@type"> {
-  "@type": "HomeGoodsStore";
+  "@type"?: "HomeGoodsStore";
 }
 
 /**
@@ -6215,7 +6215,7 @@ export interface Hospital
   extends Omit<CivicStructure, "@type">,
     Omit<MedicalOrganization, "@type">,
     Omit<EmergencyService, "@type"> {
-  "@type": "Hospital";
+  "@type"?: "Hospital";
   availableService?: MedicalTest | MedicalTherapy | MedicalProcedure;
   healthcareReportingData?: CDCPMDRecord | Dataset;
   medicalSpecialty?: MedicalSpecialty;
@@ -6233,7 +6233,7 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
 *
 **/
 export interface Hostel extends Omit<LodgingBusiness, "@type"> {
-  "@type": "Hostel";
+  "@type"?: "Hostel";
 }
 
 /**
@@ -6250,7 +6250,7 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
 *
 **/
 export interface Hotel extends Omit<LodgingBusiness, "@type"> {
-  "@type": "Hotel";
+  "@type"?: "Hotel";
 }
 
 /**
@@ -6267,7 +6267,7 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
 *
 **/
 export interface HotelRoom extends Omit<Room, "@type"> {
-  "@type": "HotelRoom";
+  "@type"?: "HotelRoom";
   bed?: BedDetails | Text | BedType;
   occupancy?: QuantitativeValue;
 }
@@ -6283,7 +6283,7 @@ export interface HotelRoom extends Omit<Room, "@type"> {
  *
  **/
 export interface House extends Omit<Accommodation, "@type"> {
-  "@type": "House";
+  "@type"?: "House";
   numberOfRooms?: Number | QuantitativeValue;
 }
 
@@ -6297,7 +6297,7 @@ export interface House extends Omit<Accommodation, "@type"> {
  **/
 export interface HousePainter
   extends Omit<HomeAndConstructionBusiness, "@type"> {
-  "@type": "HousePainter";
+  "@type"?: "HousePainter";
 }
 
 /**
@@ -6309,7 +6309,7 @@ export interface HousePainter
  *
  **/
 export interface HowTo extends Omit<CreativeWork, "@type"> {
-  "@type": "HowTo";
+  "@type"?: "HowTo";
   estimatedCost?: Text | MonetaryAmount;
   performTime?: Duration;
   prepTime?: Duration;
@@ -6330,7 +6330,7 @@ export interface HowTo extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface HowToDirection extends Omit<ListItem<CreativeWork>, "@type"> {
-  "@type": "HowToDirection";
+  "@type"?: "HowToDirection";
   afterMedia?: MediaObject | URL;
   beforeMedia?: MediaObject | URL;
   duringMedia?: URL | MediaObject;
@@ -6350,7 +6350,7 @@ export interface HowToDirection extends Omit<ListItem<CreativeWork>, "@type"> {
  *
  **/
 export interface HowToItem<T = Text> extends Omit<ListItem<T>, "@type"> {
-  "@type": "HowToItem";
+  "@type"?: "HowToItem";
   requiredQuantity?: Text | QuantitativeValue | Number;
 }
 
@@ -6366,7 +6366,7 @@ export type HowToSection = (
   | Omit<ListItem<CreativeWork>, "@type">
   | Omit<ItemList<CreativeWork>, "@type">
 ) & {
-  "@type": "HowToSection";
+  "@type"?: "HowToSection";
   steps?: CreativeWork | Text | ItemList<CreativeWork> | ItemList<Text>;
 };
 
@@ -6382,7 +6382,7 @@ export type HowToStep = (
   | Omit<ListItem<CreativeWork>, "@type">
   | Omit<ItemList<CreativeWork>, "@type">
 ) & {
-  "@type": "HowToStep";
+  "@type"?: "HowToStep";
 };
 
 /**
@@ -6394,7 +6394,7 @@ export type HowToStep = (
  *
  **/
 export interface HowToSupply extends Omit<HowToItem, "@type"> {
-  "@type": "HowToSupply";
+  "@type"?: "HowToSupply";
   estimatedCost?: Text | MonetaryAmount;
 }
 
@@ -6407,7 +6407,7 @@ export interface HowToSupply extends Omit<HowToItem, "@type"> {
  *
  **/
 export interface HowToTip extends Omit<ListItem<CreativeWork>, "@type"> {
-  "@type": "HowToTip";
+  "@type"?: "HowToTip";
 }
 
 /**
@@ -6419,7 +6419,7 @@ export interface HowToTip extends Omit<ListItem<CreativeWork>, "@type"> {
  *
  **/
 export interface HowToTool extends Omit<HowToItem, "@type"> {
-  "@type": "HowToTool";
+  "@type"?: "HowToTool";
 }
 
 /**
@@ -6432,7 +6432,7 @@ export interface HowToTool extends Omit<HowToItem, "@type"> {
  **/
 export interface HVACBusiness
   extends Omit<HomeAndConstructionBusiness, "@type"> {
-  "@type": "HVACBusiness";
+  "@type"?: "HVACBusiness";
 }
 
 /**
@@ -6448,7 +6448,7 @@ export interface HVACBusiness
  *
  **/
 export interface HyperToc extends Omit<CreativeWork, "@type"> {
-  "@type": "HyperToc";
+  "@type"?: "HyperToc";
   associatedMedia?: MediaObject;
   tocEntry?: HyperTocEntry;
 }
@@ -6466,7 +6466,7 @@ export interface HyperToc extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface HyperTocEntry extends Omit<CreativeWork, "@type"> {
-  "@type": "HyperTocEntry";
+  "@type"?: "HyperTocEntry";
   associatedMedia?: MediaObject;
   tocContinuation?: HyperTocEntry;
   utterances?: Text;
@@ -6481,7 +6481,7 @@ export interface HyperTocEntry extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface IceCreamShop extends Omit<FoodEstablishment, "@type"> {
-  "@type": "IceCreamShop";
+  "@type"?: "IceCreamShop";
 }
 
 /**
@@ -6493,7 +6493,7 @@ export interface IceCreamShop extends Omit<FoodEstablishment, "@type"> {
  *
  **/
 export interface IgnoreAction extends Omit<AssessAction, "@type"> {
-  "@type": "IgnoreAction";
+  "@type"?: "IgnoreAction";
 }
 
 /**
@@ -6505,7 +6505,7 @@ export interface IgnoreAction extends Omit<AssessAction, "@type"> {
  *
  **/
 export interface ImageGallery extends Omit<MediaGallery, "@type"> {
-  "@type": "ImageGallery";
+  "@type"?: "ImageGallery";
 }
 
 /**
@@ -6517,7 +6517,7 @@ export interface ImageGallery extends Omit<MediaGallery, "@type"> {
  *
  **/
 export interface ImageObject extends Omit<MediaObject, "@type"> {
-  "@type": "ImageObject";
+  "@type"?: "ImageObject";
   caption?: Text | MediaObject;
   exifData?: Text | PropertyValue;
   representativeOfPage?: Boolean;
@@ -6535,7 +6535,7 @@ export interface ImageObject extends Omit<MediaObject, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface ImagingTest extends Omit<MedicalTest, "@type"> {
-  "@type": "ImagingTest";
+  "@type"?: "ImagingTest";
   imagingTechnique?: MedicalImagingTechnique;
 }
 
@@ -6550,7 +6550,7 @@ export interface ImagingTest extends Omit<MedicalTest, "@type"> {
  *
  **/
 export interface IndividualProduct extends Omit<Product, "@type"> {
-  "@type": "IndividualProduct";
+  "@type"?: "IndividualProduct";
   serialNumber?: Text;
 }
 
@@ -6565,7 +6565,7 @@ export interface IndividualProduct extends Omit<Product, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface InfectiousDisease extends Omit<MedicalCondition, "@type"> {
-  "@type": "InfectiousDisease";
+  "@type"?: "InfectiousDisease";
   infectiousAgent?: Text;
   infectiousAgentClass?: InfectiousAgentClass;
   transmissionMethod?: Text;
@@ -6580,7 +6580,7 @@ export interface InfectiousDisease extends Omit<MedicalCondition, "@type"> {
  *
  **/
 export interface InformAction extends Omit<CommunicateAction, "@type"> {
-  "@type": "InformAction";
+  "@type"?: "InformAction";
   event?: Event;
 }
 
@@ -6593,7 +6593,7 @@ export interface InformAction extends Omit<CommunicateAction, "@type"> {
  *
  **/
 export interface InsertAction extends Omit<AddAction, "@type"> {
-  "@type": "InsertAction";
+  "@type"?: "InsertAction";
   toLocation?: Place;
 }
 
@@ -6606,7 +6606,7 @@ export interface InsertAction extends Omit<AddAction, "@type"> {
  *
  **/
 export interface InstallAction extends Omit<ConsumeAction, "@type"> {
-  "@type": "InstallAction";
+  "@type"?: "InstallAction";
 }
 
 /**
@@ -6618,7 +6618,7 @@ export interface InstallAction extends Omit<ConsumeAction, "@type"> {
  *
  **/
 export interface InsuranceAgency extends Omit<FinancialService, "@type"> {
-  "@type": "InsuranceAgency";
+  "@type"?: "InsuranceAgency";
 }
 
 /**
@@ -6630,7 +6630,7 @@ export interface InsuranceAgency extends Omit<FinancialService, "@type"> {
  *
  **/
 export interface Intangible extends Omit<Thing, "@type"> {
-  "@type": "Intangible";
+  "@type"?: "Intangible";
 }
 
 /**
@@ -6652,7 +6652,7 @@ export type Integer = Number;
  *
  **/
 export interface InteractAction extends Omit<Action, "@type"> {
-  "@type": "InteractAction";
+  "@type"?: "InteractAction";
 }
 
 /**
@@ -6664,7 +6664,7 @@ export interface InteractAction extends Omit<Action, "@type"> {
  *
  **/
 export interface InteractionCounter extends Omit<StructuredValue, "@type"> {
-  "@type": "InteractionCounter";
+  "@type"?: "InteractionCounter";
   interactionService?: SoftwareApplication | WebSite;
   interactionType?: Action;
   userInteractionCount?: Integer;
@@ -6679,7 +6679,7 @@ export interface InteractionCounter extends Omit<StructuredValue, "@type"> {
  *
  **/
 export interface InternetCafe extends Omit<LocalBusiness, "@type"> {
-  "@type": "InternetCafe";
+  "@type"?: "InternetCafe";
 }
 
 /**
@@ -6696,7 +6696,7 @@ export interface InternetCafe extends Omit<LocalBusiness, "@type"> {
  *
  **/
 export interface InvestmentFund extends Omit<InvestmentOrDeposit, "@type"> {
-  "@type": "InvestmentFund";
+  "@type"?: "InvestmentFund";
 }
 
 /**
@@ -6710,7 +6710,7 @@ export interface InvestmentFund extends Omit<InvestmentOrDeposit, "@type"> {
  *
  **/
 export interface InvestmentOrDeposit extends Omit<FinancialProduct, "@type"> {
-  "@type": "InvestmentOrDeposit";
+  "@type"?: "InvestmentOrDeposit";
   amount?: Number | MonetaryAmount;
 }
 
@@ -6723,7 +6723,7 @@ export interface InvestmentOrDeposit extends Omit<FinancialProduct, "@type"> {
  *
  **/
 export interface InviteAction extends Omit<CommunicateAction, "@type"> {
-  "@type": "InviteAction";
+  "@type"?: "InviteAction";
   event?: Event;
 }
 
@@ -6736,7 +6736,7 @@ export interface InviteAction extends Omit<CommunicateAction, "@type"> {
  *
  **/
 export interface Invoice extends Omit<Intangible, "@type"> {
-  "@type": "Invoice";
+  "@type"?: "Invoice";
   accountId?: Text;
   billingPeriod?: Duration;
   broker?: Person | Organization;
@@ -6764,7 +6764,7 @@ export interface Invoice extends Omit<Intangible, "@type"> {
  *
  **/
 export interface ItemPage extends Omit<WebPage, "@type"> {
-  "@type": "ItemPage";
+  "@type"?: "ItemPage";
 }
 
 /**
@@ -6776,7 +6776,7 @@ export interface ItemPage extends Omit<WebPage, "@type"> {
  *
  **/
 export interface JewelryStore extends Omit<Store, "@type"> {
-  "@type": "JewelryStore";
+  "@type"?: "JewelryStore";
 }
 
 /**
@@ -6788,7 +6788,7 @@ export interface JewelryStore extends Omit<Store, "@type"> {
  *
  **/
 export interface JobPosting extends Omit<Intangible, "@type"> {
-  "@type": "JobPosting";
+  "@type"?: "JobPosting";
   applicantLocationRequirements?: AdministrativeArea;
   applicationContact?: ContactPoint;
   baseSalary?: MonetaryAmount | PriceSpecification | Number;
@@ -6836,7 +6836,7 @@ export interface JobPosting extends Omit<Intangible, "@type"> {
  *
  **/
 export interface JoinAction extends Omit<InteractAction, "@type"> {
-  "@type": "JoinAction";
+  "@type"?: "JoinAction";
   event?: Event;
 }
 
@@ -6851,7 +6851,7 @@ export interface JoinAction extends Omit<InteractAction, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface Joint extends Omit<AnatomicalStructure, "@type"> {
-  "@type": "Joint";
+  "@type"?: "Joint";
   biomechnicalClass?: Text;
   functionalClass?: MedicalEntity | Text;
   structuralClass?: Text;
@@ -6866,7 +6866,7 @@ export interface Joint extends Omit<AnatomicalStructure, "@type"> {
  *
  **/
 export interface LakeBodyOfWater extends Omit<BodyOfWater, "@type"> {
-  "@type": "LakeBodyOfWater";
+  "@type"?: "LakeBodyOfWater";
 }
 
 /**
@@ -6878,7 +6878,7 @@ export interface LakeBodyOfWater extends Omit<BodyOfWater, "@type"> {
  *
  **/
 export interface Landform extends Omit<Place, "@type"> {
-  "@type": "Landform";
+  "@type"?: "Landform";
 }
 
 /**
@@ -6890,7 +6890,7 @@ export interface Landform extends Omit<Place, "@type"> {
  *
  **/
 export interface LandmarksOrHistoricalBuildings extends Omit<Place, "@type"> {
-  "@type": "LandmarksOrHistoricalBuildings";
+  "@type"?: "LandmarksOrHistoricalBuildings";
 }
 
 /**
@@ -6902,7 +6902,7 @@ export interface LandmarksOrHistoricalBuildings extends Omit<Place, "@type"> {
  *
  **/
 export interface Language extends Omit<Intangible, "@type"> {
-  "@type": "Language";
+  "@type"?: "Language";
 }
 
 /**
@@ -6922,7 +6922,7 @@ export interface Language extends Omit<Intangible, "@type"> {
 *
 **/
 export interface LearningResource extends Omit<CreativeWork, "@type"> {
-  "@type": "LearningResource";
+  "@type"?: "LearningResource";
   assesses?: DefinedTerm | Text;
   competencyRequired?: Text | URL | DefinedTerm;
   educationalAlignment?: AlignmentObject;
@@ -6941,7 +6941,7 @@ export interface LearningResource extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface LeaveAction extends Omit<InteractAction, "@type"> {
-  "@type": "LeaveAction";
+  "@type"?: "LeaveAction";
   event?: Event;
 }
 
@@ -6954,7 +6954,7 @@ export interface LeaveAction extends Omit<InteractAction, "@type"> {
  *
  **/
 export interface LegalService extends Omit<LocalBusiness, "@type"> {
-  "@type": "LegalService";
+  "@type"?: "LegalService";
 }
 
 /**
@@ -6971,7 +6971,7 @@ export interface LegalService extends Omit<LocalBusiness, "@type"> {
  *
  **/
 export interface Legislation extends Omit<CreativeWork, "@type"> {
-  "@type": "Legislation";
+  "@type"?: "Legislation";
   jurisdiction?: AdministrativeArea | Text;
   legislationApplies?: Legislation;
   legislationChanges?: Legislation;
@@ -7003,7 +7003,7 @@ export interface Legislation extends Omit<CreativeWork, "@type"> {
 export interface LegislationObject
   extends Omit<Legislation, "@type">,
     Omit<MediaObject, "@type"> {
-  "@type": "LegislationObject";
+  "@type"?: "LegislationObject";
   legislationLegalValue?: LegalValueLevel;
 }
 
@@ -7016,7 +7016,7 @@ export interface LegislationObject
  *
  **/
 export interface LegislativeBuilding extends Omit<GovernmentBuilding, "@type"> {
-  "@type": "LegislativeBuilding";
+  "@type"?: "LegislativeBuilding";
 }
 
 /**
@@ -7028,7 +7028,7 @@ export interface LegislativeBuilding extends Omit<GovernmentBuilding, "@type"> {
  *
  **/
 export interface LendAction extends Omit<TransferAction, "@type"> {
-  "@type": "LendAction";
+  "@type"?: "LendAction";
   borrower?: Person;
 }
 
@@ -7041,7 +7041,7 @@ export interface LendAction extends Omit<TransferAction, "@type"> {
  *
  **/
 export interface Library extends Omit<LocalBusiness, "@type"> {
-  "@type": "Library";
+  "@type"?: "Library";
 }
 
 /**
@@ -7057,7 +7057,7 @@ export interface Library extends Omit<LocalBusiness, "@type"> {
  *
  **/
 export interface LibrarySystem extends Omit<Organization, "@type"> {
-  "@type": "LibrarySystem";
+  "@type"?: "LibrarySystem";
 }
 
 /**
@@ -7071,7 +7071,7 @@ export interface LibrarySystem extends Omit<Organization, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface LifestyleModification extends Omit<MedicalEntity, "@type"> {
-  "@type": "LifestyleModification";
+  "@type"?: "LifestyleModification";
 }
 
 /**
@@ -7085,7 +7085,7 @@ export interface LifestyleModification extends Omit<MedicalEntity, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface Ligament extends Omit<AnatomicalStructure, "@type"> {
-  "@type": "Ligament";
+  "@type"?: "Ligament";
 }
 
 /**
@@ -7097,7 +7097,7 @@ export interface Ligament extends Omit<AnatomicalStructure, "@type"> {
  *
  **/
 export interface LikeAction extends Omit<ReactAction, "@type"> {
-  "@type": "LikeAction";
+  "@type"?: "LikeAction";
 }
 
 /**
@@ -7113,7 +7113,7 @@ export interface LikeAction extends Omit<ReactAction, "@type"> {
  *
  **/
 export interface LinkRole extends Omit<Role, "@type"> {
-  "@type": "LinkRole";
+  "@type"?: "LinkRole";
   inLanguage?: Text | Language;
   linkRelationship?: Text;
 }
@@ -7127,7 +7127,7 @@ export interface LinkRole extends Omit<Role, "@type"> {
  *
  **/
 export interface LiquorStore extends Omit<Store, "@type"> {
-  "@type": "LiquorStore";
+  "@type"?: "LiquorStore";
 }
 
 /**
@@ -7139,7 +7139,7 @@ export interface LiquorStore extends Omit<Store, "@type"> {
  *
  **/
 export interface ListenAction extends Omit<ConsumeAction, "@type"> {
-  "@type": "ListenAction";
+  "@type"?: "ListenAction";
 }
 
 /**
@@ -7151,7 +7151,7 @@ export interface ListenAction extends Omit<ConsumeAction, "@type"> {
  *
  **/
 export interface LiteraryEvent extends Omit<Event, "@type"> {
-  "@type": "LiteraryEvent";
+  "@type"?: "LiteraryEvent";
 }
 
 /**
@@ -7163,7 +7163,7 @@ export interface LiteraryEvent extends Omit<Event, "@type"> {
  *
  **/
 export interface LiveBlogPosting extends Omit<BlogPosting, "@type"> {
-  "@type": "LiveBlogPosting";
+  "@type"?: "LiveBlogPosting";
   coverageEndTime?: DateTime;
   coverageStartTime?: DateTime;
   liveBlogUpdate?: BlogPosting;
@@ -7180,7 +7180,7 @@ export interface LiveBlogPosting extends Omit<BlogPosting, "@type"> {
  *
  **/
 export interface LoanOrCredit extends Omit<FinancialProduct, "@type"> {
-  "@type": "LoanOrCredit";
+  "@type"?: "LoanOrCredit";
   amount?: Number | MonetaryAmount;
   currency?: Text;
   gracePeriod?: Duration;
@@ -7203,7 +7203,7 @@ export interface LoanOrCredit extends Omit<FinancialProduct, "@type"> {
 export interface LocalBusiness
   extends Omit<Organization, "@type">,
     Omit<Place, "@type"> {
-  "@type": "LocalBusiness";
+  "@type"?: "LocalBusiness";
   branchOf?: Organization;
   currenciesAccepted?: Text;
   openingHours?: Text;
@@ -7223,7 +7223,7 @@ export interface LocalBusiness
  **/
 export interface LocationFeatureSpecification
   extends Omit<PropertyValue, "@type"> {
-  "@type": "LocationFeatureSpecification";
+  "@type"?: "LocationFeatureSpecification";
   hoursAvailable?: OpeningHoursSpecification;
   validFrom?: DateTime | Date;
   validThrough?: DateTime | Date;
@@ -7238,7 +7238,7 @@ export interface LocationFeatureSpecification
  *
  **/
 export interface Locksmith extends Omit<HomeAndConstructionBusiness, "@type"> {
-  "@type": "Locksmith";
+  "@type"?: "Locksmith";
 }
 
 /**
@@ -7250,7 +7250,7 @@ export interface Locksmith extends Omit<HomeAndConstructionBusiness, "@type"> {
  *
  **/
 export interface LodgingBusiness extends Omit<LocalBusiness, "@type"> {
-  "@type": "LodgingBusiness";
+  "@type"?: "LodgingBusiness";
   amenityFeature?: LocationFeatureSpecification;
   audience?: Audience;
   availableLanguage?: Language | Text;
@@ -7270,7 +7270,7 @@ export interface LodgingBusiness extends Omit<LocalBusiness, "@type"> {
  *
  **/
 export interface LodgingReservation extends Omit<Reservation, "@type"> {
-  "@type": "LodgingReservation";
+  "@type"?: "LodgingReservation";
   checkinTime?: DateTime | Time;
   checkoutTime?: DateTime | Time;
   lodgingUnitDescription?: Text;
@@ -7288,7 +7288,7 @@ export interface LodgingReservation extends Omit<Reservation, "@type"> {
  *
  **/
 export interface LoseAction extends Omit<AchieveAction, "@type"> {
-  "@type": "LoseAction";
+  "@type"?: "LoseAction";
   winner?: Person;
 }
 
@@ -7303,7 +7303,7 @@ export interface LoseAction extends Omit<AchieveAction, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface LymphaticVessel extends Omit<Vessel, "@type"> {
-  "@type": "LymphaticVessel";
+  "@type"?: "LymphaticVessel";
   originatesFrom?: Vessel;
   regionDrained?: AnatomicalStructure | AnatomicalSystem;
   runsTo?: Vessel;
@@ -7322,7 +7322,7 @@ export interface LymphaticVessel extends Omit<Vessel, "@type"> {
  *
  **/
 export interface Manuscript extends Omit<CreativeWork, "@type"> {
-  "@type": "Manuscript";
+  "@type"?: "Manuscript";
 }
 
 /**
@@ -7334,7 +7334,7 @@ export interface Manuscript extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface Map extends Omit<CreativeWork, "@type"> {
-  "@type": "Map";
+  "@type"?: "Map";
   mapType?: MapCategoryType;
 }
 
@@ -7347,7 +7347,7 @@ export interface Map extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface MarryAction extends Omit<InteractAction, "@type"> {
-  "@type": "MarryAction";
+  "@type"?: "MarryAction";
 }
 
 /**
@@ -7359,7 +7359,7 @@ export interface MarryAction extends Omit<InteractAction, "@type"> {
  *
  **/
 export interface Mass extends Omit<Quantity, "@type"> {
-  "@type": "Mass";
+  "@type"?: "Mass";
 }
 
 /**
@@ -7375,7 +7375,7 @@ export interface Mass extends Omit<Quantity, "@type"> {
  *
  **/
 export interface MathSolver extends Omit<CreativeWork, "@type"> {
-  "@type": "MathSolver";
+  "@type"?: "MathSolver";
   mathExpression?: Text | SolveMathAction;
 }
 
@@ -7390,7 +7390,7 @@ export interface MathSolver extends Omit<CreativeWork, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MaximumDoseSchedule extends Omit<DoseSchedule, "@type"> {
-  "@type": "MaximumDoseSchedule";
+  "@type"?: "MaximumDoseSchedule";
 }
 
 /**
@@ -7406,7 +7406,7 @@ export interface MaximumDoseSchedule extends Omit<DoseSchedule, "@type"> {
  *
  **/
 export interface MeasurementTypeEnumeration extends Omit<Enumeration, "@type"> {
-  "@type": "MeasurementTypeEnumeration";
+  "@type"?: "MeasurementTypeEnumeration";
 }
 
 /**
@@ -7418,7 +7418,7 @@ export interface MeasurementTypeEnumeration extends Omit<Enumeration, "@type"> {
  *
  **/
 export interface MediaGallery extends Omit<CollectionPage, "@type"> {
-  "@type": "MediaGallery";
+  "@type"?: "MediaGallery";
 }
 
 /**
@@ -7430,7 +7430,7 @@ export interface MediaGallery extends Omit<CollectionPage, "@type"> {
  *
  **/
 export interface MediaObject extends Omit<CreativeWork, "@type"> {
-  "@type": "MediaObject";
+  "@type"?: "MediaObject";
   associatedArticle?: NewsArticle;
   bitrate?: Text;
   contentSize?: Text;
@@ -7467,7 +7467,7 @@ export interface MediaObject extends Omit<CreativeWork, "@type"> {
 *
 **/
 export interface MediaReview extends Omit<Review, "@type"> {
-  "@type": "MediaReview";
+  "@type"?: "MediaReview";
   mediaAuthenticityCategory?: MediaManipulationRatingEnumeration;
 }
 
@@ -7482,7 +7482,7 @@ export interface MediaReview extends Omit<Review, "@type"> {
  *
  **/
 export interface MediaSubscription extends Omit<Intangible, "@type"> {
-  "@type": "MediaSubscription";
+  "@type"?: "MediaSubscription";
   authenticator?: Organization;
   expectsAcceptanceOf?: Offer;
 }
@@ -7500,7 +7500,7 @@ export interface MediaSubscription extends Omit<Intangible, "@type"> {
 export interface MedicalAudience
   extends Omit<Audience, "@type">,
     Omit<PeopleAudience, "@type"> {
-  "@type": "MedicalAudience";
+  "@type"?: "MedicalAudience";
 }
 
 /**
@@ -7514,7 +7514,7 @@ export interface MedicalAudience
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalBusiness extends Omit<LocalBusiness, "@type"> {
-  "@type": "MedicalBusiness";
+  "@type"?: "MedicalBusiness";
 }
 
 /**
@@ -7528,7 +7528,7 @@ export interface MedicalBusiness extends Omit<LocalBusiness, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalCause extends Omit<MedicalEntity, "@type"> {
-  "@type": "MedicalCause";
+  "@type"?: "MedicalCause";
   causeOf?: MedicalEntity;
 }
 
@@ -7545,7 +7545,7 @@ export interface MedicalCause extends Omit<MedicalEntity, "@type"> {
 export interface MedicalClinic
   extends Omit<MedicalOrganization, "@type">,
     Omit<MedicalBusiness, "@type"> {
-  "@type": "MedicalClinic";
+  "@type"?: "MedicalClinic";
   availableService?: MedicalTest | MedicalTherapy | MedicalProcedure;
   medicalSpecialty?: MedicalSpecialty;
 }
@@ -7563,7 +7563,7 @@ export interface MedicalClinic
 export interface MedicalCode
   extends Omit<CategoryCode, "@type">,
     Omit<MedicalIntangible, "@type"> {
-  "@type": "MedicalCode";
+  "@type"?: "MedicalCode";
   codeValue?: Text;
   codingSystem?: Text;
 }
@@ -7579,7 +7579,7 @@ export interface MedicalCode
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalCondition extends Omit<MedicalEntity, "@type"> {
-  "@type": "MedicalCondition";
+  "@type"?: "MedicalCondition";
   associatedAnatomy?:
     | AnatomicalStructure
     | AnatomicalSystem
@@ -7613,7 +7613,7 @@ export interface MedicalCondition extends Omit<MedicalEntity, "@type"> {
  **/
 export interface MedicalConditionStage
   extends Omit<MedicalIntangible, "@type"> {
-  "@type": "MedicalConditionStage";
+  "@type"?: "MedicalConditionStage";
   stageAsNumber?: Number;
   subStageSuffix?: Text;
 }
@@ -7629,7 +7629,7 @@ export interface MedicalConditionStage
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalContraindication extends Omit<MedicalEntity, "@type"> {
-  "@type": "MedicalContraindication";
+  "@type"?: "MedicalContraindication";
 }
 
 /**
@@ -7643,7 +7643,7 @@ export interface MedicalContraindication extends Omit<MedicalEntity, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalDevice extends Omit<MedicalEntity, "@type"> {
-  "@type": "MedicalDevice";
+  "@type"?: "MedicalDevice";
   adverseOutcome?: MedicalEntity;
   contraindication?: Text | MedicalContraindication;
   postOp?: Text;
@@ -7663,7 +7663,7 @@ export interface MedicalDevice extends Omit<MedicalEntity, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalEntity extends Omit<Thing, "@type"> {
-  "@type": "MedicalEntity";
+  "@type"?: "MedicalEntity";
   code?: MedicalCode;
   guideline?: MedicalGuideline;
   legalStatus?: MedicalEnumeration | Text | DrugLegalStatus;
@@ -7684,7 +7684,7 @@ export interface MedicalEntity extends Omit<Thing, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalEnumeration extends Omit<Enumeration, "@type"> {
-  "@type": "MedicalEnumeration";
+  "@type"?: "MedicalEnumeration";
 }
 
 /**
@@ -7698,7 +7698,7 @@ export interface MedicalEnumeration extends Omit<Enumeration, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalGuideline extends Omit<MedicalEntity, "@type"> {
-  "@type": "MedicalGuideline";
+  "@type"?: "MedicalGuideline";
   evidenceLevel?: MedicalEvidenceLevel;
   evidenceOrigin?: Text;
   guidelineDate?: Date;
@@ -7717,7 +7717,7 @@ export interface MedicalGuideline extends Omit<MedicalEntity, "@type"> {
  **/
 export interface MedicalGuidelineContraindication
   extends Omit<MedicalGuideline, "@type"> {
-  "@type": "MedicalGuidelineContraindication";
+  "@type"?: "MedicalGuidelineContraindication";
 }
 
 /**
@@ -7732,7 +7732,7 @@ export interface MedicalGuidelineContraindication
  **/
 export interface MedicalGuidelineRecommendation
   extends Omit<MedicalGuideline, "@type"> {
-  "@type": "MedicalGuidelineRecommendation";
+  "@type"?: "MedicalGuidelineRecommendation";
   recommendationStrength?: Text;
 }
 
@@ -7747,7 +7747,7 @@ export interface MedicalGuidelineRecommendation
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalIndication extends Omit<MedicalEntity, "@type"> {
-  "@type": "MedicalIndication";
+  "@type"?: "MedicalIndication";
 }
 
 /**
@@ -7761,7 +7761,7 @@ export interface MedicalIndication extends Omit<MedicalEntity, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalIntangible extends Omit<MedicalEntity, "@type"> {
-  "@type": "MedicalIntangible";
+  "@type"?: "MedicalIntangible";
 }
 
 /**
@@ -7775,7 +7775,7 @@ export interface MedicalIntangible extends Omit<MedicalEntity, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalObservationalStudy extends Omit<MedicalStudy, "@type"> {
-  "@type": "MedicalObservationalStudy";
+  "@type"?: "MedicalObservationalStudy";
   studyDesign?: MedicalObservationalStudyDesign;
 }
 
@@ -7788,7 +7788,7 @@ export interface MedicalObservationalStudy extends Omit<MedicalStudy, "@type"> {
  *
  **/
 export interface MedicalOrganization extends Omit<Organization, "@type"> {
-  "@type": "MedicalOrganization";
+  "@type"?: "MedicalOrganization";
   healthPlanNetworkId?: Text;
   isAcceptingNewPatients?: Boolean;
   medicalSpecialty?: MedicalSpecialty;
@@ -7805,7 +7805,7 @@ export interface MedicalOrganization extends Omit<Organization, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalProcedure extends Omit<MedicalEntity, "@type"> {
-  "@type": "MedicalProcedure";
+  "@type"?: "MedicalProcedure";
   bodyLocation?: Text;
   followup?: Text;
   howPerformed?: Text;
@@ -7826,7 +7826,7 @@ export interface MedicalProcedure extends Omit<MedicalEntity, "@type"> {
  **/
 export interface MedicalRiskCalculator
   extends Omit<MedicalRiskEstimator, "@type"> {
-  "@type": "MedicalRiskCalculator";
+  "@type"?: "MedicalRiskCalculator";
 }
 
 /**
@@ -7840,7 +7840,7 @@ export interface MedicalRiskCalculator
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalRiskEstimator extends Omit<MedicalEntity, "@type"> {
-  "@type": "MedicalRiskEstimator";
+  "@type"?: "MedicalRiskEstimator";
   estimatesRiskOf?: MedicalEntity;
   includedRiskFactor?: MedicalRiskFactor;
 }
@@ -7856,7 +7856,7 @@ export interface MedicalRiskEstimator extends Omit<MedicalEntity, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalRiskFactor extends Omit<MedicalEntity, "@type"> {
-  "@type": "MedicalRiskFactor";
+  "@type"?: "MedicalRiskFactor";
   increasesRiskOf?: MedicalEntity;
 }
 
@@ -7871,7 +7871,7 @@ export interface MedicalRiskFactor extends Omit<MedicalEntity, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalRiskScore extends Omit<MedicalRiskEstimator, "@type"> {
-  "@type": "MedicalRiskScore";
+  "@type"?: "MedicalRiskScore";
   algorithm?: Text;
 }
 
@@ -7887,7 +7887,7 @@ export interface MedicalRiskScore extends Omit<MedicalRiskEstimator, "@type"> {
  **/
 export interface MedicalScholarlyArticle
   extends Omit<ScholarlyArticle, "@type"> {
-  "@type": "MedicalScholarlyArticle";
+  "@type"?: "MedicalScholarlyArticle";
   publicationType?: Text;
 }
 
@@ -7902,7 +7902,7 @@ export interface MedicalScholarlyArticle
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalSign extends Omit<MedicalSignOrSymptom, "@type"> {
-  "@type": "MedicalSign";
+  "@type"?: "MedicalSign";
   identifyingExam?: PhysicalExam;
   identifyingTest?: MedicalTest;
 }
@@ -7918,7 +7918,7 @@ export interface MedicalSign extends Omit<MedicalSignOrSymptom, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalSignOrSymptom extends Omit<MedicalCondition, "@type"> {
-  "@type": "MedicalSignOrSymptom";
+  "@type"?: "MedicalSignOrSymptom";
   possibleTreatment?: MedicalTherapy;
 }
 
@@ -7933,7 +7933,7 @@ export interface MedicalSignOrSymptom extends Omit<MedicalCondition, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalStudy extends Omit<MedicalEntity, "@type"> {
-  "@type": "MedicalStudy";
+  "@type"?: "MedicalStudy";
   healthCondition?: MedicalCondition;
   sponsor?: Person | Organization;
   status?: EventStatusType | Text | MedicalStudyStatus;
@@ -7952,7 +7952,7 @@ export interface MedicalStudy extends Omit<MedicalEntity, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalSymptom extends Omit<MedicalSignOrSymptom, "@type"> {
-  "@type": "MedicalSymptom";
+  "@type"?: "MedicalSymptom";
 }
 
 /**
@@ -7966,7 +7966,7 @@ export interface MedicalSymptom extends Omit<MedicalSignOrSymptom, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalTest extends Omit<MedicalEntity, "@type"> {
-  "@type": "MedicalTest";
+  "@type"?: "MedicalTest";
   affectedBy?: Drug;
   normalRange?: MedicalEnumeration | Text;
   signDetected?: MedicalSign;
@@ -7985,7 +7985,7 @@ export interface MedicalTest extends Omit<MedicalEntity, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalTestPanel extends Omit<MedicalTest, "@type"> {
-  "@type": "MedicalTestPanel";
+  "@type"?: "MedicalTestPanel";
   subTest?: MedicalTest;
 }
 
@@ -8000,7 +8000,7 @@ export interface MedicalTestPanel extends Omit<MedicalTest, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalTherapy extends Omit<TherapeuticProcedure, "@type"> {
-  "@type": "MedicalTherapy";
+  "@type"?: "MedicalTherapy";
   contraindication?: Text | MedicalContraindication;
   duplicateTherapy?: MedicalTherapy;
   seriousAdverseOutcome?: MedicalEntity;
@@ -8017,7 +8017,7 @@ export interface MedicalTherapy extends Omit<TherapeuticProcedure, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalTrial extends Omit<MedicalStudy, "@type"> {
-  "@type": "MedicalTrial";
+  "@type"?: "MedicalTrial";
   trialDesign?: MedicalTrialDesign;
 }
 
@@ -8032,7 +8032,7 @@ export interface MedicalTrial extends Omit<MedicalStudy, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface MedicalWebPage extends Omit<WebPage, "@type"> {
-  "@type": "MedicalWebPage";
+  "@type"?: "MedicalWebPage";
   aspect?: Text;
   medicalAudience?: MedicalAudienceType | MedicalAudience;
 }
@@ -8051,7 +8051,7 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
 *
 **/
 export interface MeetingRoom extends Omit<Room, "@type"> {
-  "@type": "MeetingRoom";
+  "@type"?: "MeetingRoom";
 }
 
 /**
@@ -8063,7 +8063,7 @@ export interface MeetingRoom extends Omit<Room, "@type"> {
  *
  **/
 export interface MensClothingStore extends Omit<Store, "@type"> {
-  "@type": "MensClothingStore";
+  "@type"?: "MensClothingStore";
 }
 
 /**
@@ -8075,7 +8075,7 @@ export interface MensClothingStore extends Omit<Store, "@type"> {
  *
  **/
 export interface Menu extends Omit<CreativeWork, "@type"> {
-  "@type": "Menu";
+  "@type"?: "Menu";
   hasMenuItem?: MenuItem;
   hasMenuSection?: MenuSection;
 }
@@ -8089,7 +8089,7 @@ export interface Menu extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface MenuItem extends Omit<Intangible, "@type"> {
-  "@type": "MenuItem";
+  "@type"?: "MenuItem";
   menuAddOn?: MenuItem | MenuSection;
   nutrition?: NutritionInformation;
   offers?: Offer | Demand;
@@ -8105,7 +8105,7 @@ export interface MenuItem extends Omit<Intangible, "@type"> {
  *
  **/
 export interface MenuSection extends Omit<CreativeWork, "@type"> {
-  "@type": "MenuSection";
+  "@type"?: "MenuSection";
   hasMenuItem?: MenuItem;
   hasMenuSection?: MenuSection;
 }
@@ -8123,7 +8123,7 @@ export interface MenuSection extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface MerchantReturnPolicy extends Omit<Intangible, "@type"> {
-  "@type": "MerchantReturnPolicy";
+  "@type"?: "MerchantReturnPolicy";
   inStoreReturnsOffered?: Boolean;
   merchantReturnDays?: Integer;
   merchantReturnLink?: URL;
@@ -8141,7 +8141,7 @@ export interface MerchantReturnPolicy extends Omit<Intangible, "@type"> {
  *
  **/
 export interface Message extends Omit<CreativeWork, "@type"> {
-  "@type": "Message";
+  "@type"?: "Message";
   bccRecipient?: Person | Organization | ContactPoint;
   ccRecipient?: ContactPoint | Person | Organization;
   dateRead?: DateTime | Date;
@@ -8162,7 +8162,7 @@ export interface Message extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface MiddleSchool extends Omit<EducationalOrganization, "@type"> {
-  "@type": "MiddleSchool";
+  "@type"?: "MiddleSchool";
 }
 
 /**
@@ -8174,7 +8174,7 @@ export interface MiddleSchool extends Omit<EducationalOrganization, "@type"> {
  *
  **/
 export interface MobileApplication extends Omit<SoftwareApplication, "@type"> {
-  "@type": "MobileApplication";
+  "@type"?: "MobileApplication";
   carrierRequirements?: Text;
 }
 
@@ -8187,7 +8187,7 @@ export interface MobileApplication extends Omit<SoftwareApplication, "@type"> {
  *
  **/
 export interface MobilePhoneStore extends Omit<Store, "@type"> {
-  "@type": "MobilePhoneStore";
+  "@type"?: "MobilePhoneStore";
 }
 
 /**
@@ -8201,7 +8201,7 @@ export interface MobilePhoneStore extends Omit<Store, "@type"> {
  *
  **/
 export interface MonetaryAmount extends Omit<StructuredValue, "@type"> {
-  "@type": "MonetaryAmount";
+  "@type"?: "MonetaryAmount";
   currency?: Text;
   maxValue?: Number;
   minValue?: Number;
@@ -8222,7 +8222,7 @@ export interface MonetaryAmount extends Omit<StructuredValue, "@type"> {
  **/
 export interface MonetaryAmountDistribution
   extends Omit<QuantitativeValueDistribution, "@type"> {
-  "@type": "MonetaryAmountDistribution";
+  "@type"?: "MonetaryAmountDistribution";
   currency?: Text;
 }
 
@@ -8240,7 +8240,7 @@ export interface MonetaryAmountDistribution
  *
  **/
 export interface MonetaryGrant extends Omit<Grant, "@type"> {
-  "@type": "MonetaryGrant";
+  "@type"?: "MonetaryGrant";
   amount?: Number | MonetaryAmount;
   funder?: Organization | Person;
 }
@@ -8259,7 +8259,7 @@ export interface MonetaryGrant extends Omit<Grant, "@type"> {
  *
  **/
 export interface MoneyTransfer extends Omit<TransferAction, "@type"> {
-  "@type": "MoneyTransfer";
+  "@type"?: "MoneyTransfer";
   amount?: Number | MonetaryAmount;
   beneficiaryBank?: Text | BankOrCreditUnion;
 }
@@ -8278,7 +8278,7 @@ export interface MoneyTransfer extends Omit<TransferAction, "@type"> {
  *
  **/
 export interface MortgageLoan extends Omit<LoanOrCredit, "@type"> {
-  "@type": "MortgageLoan";
+  "@type"?: "MortgageLoan";
   domiciledMortgage?: Boolean;
   loanMortgageMandateAmount?: MonetaryAmount;
 }
@@ -8292,7 +8292,7 @@ export interface MortgageLoan extends Omit<LoanOrCredit, "@type"> {
  *
  **/
 export interface Mosque extends Omit<PlaceOfWorship, "@type"> {
-  "@type": "Mosque";
+  "@type"?: "Mosque";
 }
 
 /**
@@ -8307,7 +8307,7 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
 *
 **/
 export interface Motel extends Omit<LodgingBusiness, "@type"> {
-  "@type": "Motel";
+  "@type"?: "Motel";
 }
 
 /**
@@ -8323,7 +8323,7 @@ export interface Motel extends Omit<LodgingBusiness, "@type"> {
  *
  **/
 export interface Motorcycle extends Omit<Vehicle, "@type"> {
-  "@type": "Motorcycle";
+  "@type"?: "Motorcycle";
 }
 
 /**
@@ -8335,7 +8335,7 @@ export interface Motorcycle extends Omit<Vehicle, "@type"> {
  *
  **/
 export interface MotorcycleDealer extends Omit<AutomotiveBusiness, "@type"> {
-  "@type": "MotorcycleDealer";
+  "@type"?: "MotorcycleDealer";
 }
 
 /**
@@ -8347,7 +8347,7 @@ export interface MotorcycleDealer extends Omit<AutomotiveBusiness, "@type"> {
  *
  **/
 export interface MotorcycleRepair extends Omit<AutomotiveBusiness, "@type"> {
-  "@type": "MotorcycleRepair";
+  "@type"?: "MotorcycleRepair";
 }
 
 /**
@@ -8363,7 +8363,7 @@ export interface MotorcycleRepair extends Omit<AutomotiveBusiness, "@type"> {
  *
  **/
 export interface MotorizedBicycle extends Omit<Vehicle, "@type"> {
-  "@type": "MotorizedBicycle";
+  "@type"?: "MotorizedBicycle";
 }
 
 /**
@@ -8375,7 +8375,7 @@ export interface MotorizedBicycle extends Omit<Vehicle, "@type"> {
  *
  **/
 export interface Mountain extends Omit<Landform, "@type"> {
-  "@type": "Mountain";
+  "@type"?: "Mountain";
 }
 
 /**
@@ -8387,7 +8387,7 @@ export interface Mountain extends Omit<Landform, "@type"> {
  *
  **/
 export interface MoveAction extends Omit<Action, "@type"> {
-  "@type": "MoveAction";
+  "@type"?: "MoveAction";
   fromLocation?: Place;
   toLocation?: Place;
 }
@@ -8401,7 +8401,7 @@ export interface MoveAction extends Omit<Action, "@type"> {
  *
  **/
 export interface Movie extends Omit<CreativeWork, "@type"> {
-  "@type": "Movie";
+  "@type"?: "Movie";
   actor?: Person;
   actors?: Array<Person>;
   countryOfOrigin?: Country;
@@ -8424,7 +8424,7 @@ export interface Movie extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface MovieClip extends Omit<Clip, "@type"> {
-  "@type": "MovieClip";
+  "@type"?: "MovieClip";
 }
 
 /**
@@ -8436,7 +8436,7 @@ export interface MovieClip extends Omit<Clip, "@type"> {
  *
  **/
 export interface MovieRentalStore extends Omit<Store, "@type"> {
-  "@type": "MovieRentalStore";
+  "@type"?: "MovieRentalStore";
 }
 
 /**
@@ -8448,7 +8448,7 @@ export interface MovieRentalStore extends Omit<Store, "@type"> {
  *
  **/
 export interface MovieSeries extends Omit<CreativeWorkSeries, "@type"> {
-  "@type": "MovieSeries";
+  "@type"?: "MovieSeries";
   actor?: Person;
   actors?: Array<Person>;
   director?: Person;
@@ -8469,7 +8469,7 @@ export interface MovieSeries extends Omit<CreativeWorkSeries, "@type"> {
 export interface MovieTheater
   extends Omit<CivicStructure, "@type">,
     Omit<EntertainmentBusiness, "@type"> {
-  "@type": "MovieTheater";
+  "@type"?: "MovieTheater";
   screenCount?: Number;
 }
 
@@ -8483,7 +8483,7 @@ export interface MovieTheater
  **/
 export interface MovingCompany
   extends Omit<HomeAndConstructionBusiness, "@type"> {
-  "@type": "MovingCompany";
+  "@type"?: "MovingCompany";
 }
 
 /**
@@ -8497,7 +8497,7 @@ export interface MovingCompany
  * Partof: https://health-lifesci.schema.org
  **/
 export interface Muscle extends Omit<AnatomicalStructure, "@type"> {
-  "@type": "Muscle";
+  "@type"?: "Muscle";
   antagonist?: Muscle;
   bloodSupply?: Vessel;
   insertion?: AnatomicalStructure;
@@ -8514,7 +8514,7 @@ export interface Muscle extends Omit<AnatomicalStructure, "@type"> {
  *
  **/
 export interface Museum extends Omit<CivicStructure, "@type"> {
-  "@type": "Museum";
+  "@type"?: "Museum";
 }
 
 /**
@@ -8526,7 +8526,7 @@ export interface Museum extends Omit<CivicStructure, "@type"> {
  *
  **/
 export interface MusicAlbum extends Omit<MusicPlaylist, "@type"> {
-  "@type": "MusicAlbum";
+  "@type"?: "MusicAlbum";
   albumProductionType?: MusicAlbumProductionType;
   albumRelease?: MusicRelease;
   albumReleaseType?: MusicAlbumReleaseType;
@@ -8544,7 +8544,7 @@ export interface MusicAlbum extends Omit<MusicPlaylist, "@type"> {
  *
  **/
 export interface MusicComposition extends Omit<CreativeWork, "@type"> {
-  "@type": "MusicComposition";
+  "@type"?: "MusicComposition";
   composer?: Organization | Person;
   firstPerformance?: Event;
   includedComposition?: MusicComposition;
@@ -8566,7 +8566,7 @@ export interface MusicComposition extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface MusicEvent extends Omit<Event, "@type"> {
-  "@type": "MusicEvent";
+  "@type"?: "MusicEvent";
 }
 
 /**
@@ -8578,7 +8578,7 @@ export interface MusicEvent extends Omit<Event, "@type"> {
  *
  **/
 export interface MusicGroup extends Omit<PerformingGroup, "@type"> {
-  "@type": "MusicGroup";
+  "@type"?: "MusicGroup";
   album?: MusicAlbum;
   albums?: Array<MusicAlbum>;
   genre?: URL | Text;
@@ -8596,7 +8596,7 @@ export interface MusicGroup extends Omit<PerformingGroup, "@type"> {
  *
  **/
 export interface MusicPlaylist extends Omit<CreativeWork, "@type"> {
-  "@type": "MusicPlaylist";
+  "@type"?: "MusicPlaylist";
   numTracks?: Integer;
   track?: MusicRecording | ItemList<MusicRecording>;
   tracks?: Array<MusicRecording>;
@@ -8611,7 +8611,7 @@ export interface MusicPlaylist extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface MusicRecording extends Omit<CreativeWork, "@type"> {
-  "@type": "MusicRecording";
+  "@type"?: "MusicRecording";
   byArtist?: MusicGroup | Person;
   duration?: Duration;
   inAlbum?: MusicAlbum;
@@ -8631,7 +8631,7 @@ export interface MusicRecording extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface MusicRelease extends Omit<MusicPlaylist, "@type"> {
-  "@type": "MusicRelease";
+  "@type"?: "MusicRelease";
   catalogNumber?: Text;
   creditedTo?: Person | Organization;
   duration?: Duration;
@@ -8649,7 +8649,7 @@ export interface MusicRelease extends Omit<MusicPlaylist, "@type"> {
  *
  **/
 export interface MusicStore extends Omit<Store, "@type"> {
-  "@type": "MusicStore";
+  "@type"?: "MusicStore";
 }
 
 /**
@@ -8661,7 +8661,7 @@ export interface MusicStore extends Omit<Store, "@type"> {
  *
  **/
 export interface MusicVenue extends Omit<CivicStructure, "@type"> {
-  "@type": "MusicVenue";
+  "@type"?: "MusicVenue";
 }
 
 /**
@@ -8673,7 +8673,7 @@ export interface MusicVenue extends Omit<CivicStructure, "@type"> {
  *
  **/
 export interface MusicVideoObject extends Omit<MediaObject, "@type"> {
-  "@type": "MusicVideoObject";
+  "@type"?: "MusicVideoObject";
 }
 
 /**
@@ -8685,7 +8685,7 @@ export interface MusicVideoObject extends Omit<MediaObject, "@type"> {
  *
  **/
 export interface NailSalon extends Omit<HealthAndBeautyBusiness, "@type"> {
-  "@type": "NailSalon";
+  "@type"?: "NailSalon";
 }
 
 /**
@@ -8699,7 +8699,7 @@ export interface NailSalon extends Omit<HealthAndBeautyBusiness, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface Nerve extends Omit<AnatomicalStructure, "@type"> {
-  "@type": "Nerve";
+  "@type"?: "Nerve";
   branch?: AnatomicalStructure;
   nerveMotor?: Muscle;
   sensoryUnit?: SuperficialAnatomy | AnatomicalStructure;
@@ -8721,7 +8721,7 @@ A more detailed overview of [schema.org News markup](/docs/news.html) is also av
 *
 **/
 export interface NewsArticle extends Omit<Article, "@type"> {
-  "@type": "NewsArticle";
+  "@type"?: "NewsArticle";
   dateline?: Text;
   printColumn?: Text;
   printEdition?: Text;
@@ -8743,7 +8743,7 @@ export interface NewsArticle extends Omit<Article, "@type"> {
  *
  **/
 export interface NewsMediaOrganization extends Omit<Organization, "@type"> {
-  "@type": "NewsMediaOrganization";
+  "@type"?: "NewsMediaOrganization";
   actionableFeedbackPolicy?: CreativeWork | URL;
   correctionsPolicy?: URL | CreativeWork;
   diversityPolicy?: CreativeWork | URL;
@@ -8770,7 +8770,7 @@ export interface NewsMediaOrganization extends Omit<Organization, "@type"> {
  *
  **/
 export interface Newspaper extends Omit<Periodical, "@type"> {
-  "@type": "Newspaper";
+  "@type"?: "Newspaper";
 }
 
 /**
@@ -8782,7 +8782,7 @@ export interface Newspaper extends Omit<Periodical, "@type"> {
  *
  **/
 export interface NGO extends Omit<Organization, "@type"> {
-  "@type": "NGO";
+  "@type"?: "NGO";
 }
 
 /**
@@ -8794,7 +8794,7 @@ export interface NGO extends Omit<Organization, "@type"> {
  *
  **/
 export interface NightClub extends Omit<EntertainmentBusiness, "@type"> {
-  "@type": "NightClub";
+  "@type"?: "NightClub";
 }
 
 /**
@@ -8810,7 +8810,7 @@ export interface NightClub extends Omit<EntertainmentBusiness, "@type"> {
  *
  **/
 export interface NonprofitType extends Omit<Enumeration, "@type"> {
-  "@type": "NonprofitType";
+  "@type"?: "NonprofitType";
 }
 
 /**
@@ -8822,7 +8822,7 @@ export interface NonprofitType extends Omit<Enumeration, "@type"> {
  *
  **/
 export interface Notary extends Omit<LegalService, "@type"> {
-  "@type": "Notary";
+  "@type"?: "Notary";
 }
 
 /**
@@ -8834,7 +8834,7 @@ export interface Notary extends Omit<LegalService, "@type"> {
  *
  **/
 export interface NoteDigitalDocument extends Omit<DigitalDocument, "@type"> {
-  "@type": "NoteDigitalDocument";
+  "@type"?: "NoteDigitalDocument";
 }
 
 /**
@@ -8846,7 +8846,7 @@ export interface NoteDigitalDocument extends Omit<DigitalDocument, "@type"> {
  *
  **/
 export interface NutritionInformation extends Omit<StructuredValue, "@type"> {
-  "@type": "NutritionInformation";
+  "@type"?: "NutritionInformation";
   calories?: Energy;
   carbohydrateContent?: Mass;
   cholesterolContent?: Mass;
@@ -8876,7 +8876,7 @@ See also [[StatisticalPopulation]], and the [data and datasets](/docs/data-and-d
 *
 **/
 export interface Observation extends Omit<Intangible, "@type"> {
-  "@type": "Observation";
+  "@type"?: "Observation";
   marginOfError?: QuantitativeValue;
   measuredProperty?: Property;
   measuredValue?: DataType;
@@ -8895,7 +8895,7 @@ export interface Observation extends Omit<Intangible, "@type"> {
  *
  **/
 export interface Occupation extends Omit<Intangible, "@type"> {
-  "@type": "Occupation";
+  "@type"?: "Occupation";
   educationRequirements?: Text | EducationalOccupationalCredential;
   estimatedSalary?: MonetaryAmount | Number | MonetaryAmountDistribution;
   experienceRequirements?: Text | OccupationalExperienceRequirements;
@@ -8920,7 +8920,7 @@ export interface Occupation extends Omit<Intangible, "@type"> {
  **/
 export interface OccupationalExperienceRequirements
   extends Omit<Intangible, "@type"> {
-  "@type": "OccupationalExperienceRequirements";
+  "@type"?: "OccupationalExperienceRequirements";
   monthsOfExperience?: Number;
 }
 
@@ -8935,7 +8935,7 @@ export interface OccupationalExperienceRequirements
  * Partof: https://health-lifesci.schema.org
  **/
 export interface OccupationalTherapy extends Omit<MedicalTherapy, "@type"> {
-  "@type": "OccupationalTherapy";
+  "@type"?: "OccupationalTherapy";
 }
 
 /**
@@ -8947,7 +8947,7 @@ export interface OccupationalTherapy extends Omit<MedicalTherapy, "@type"> {
  *
  **/
 export interface OceanBodyOfWater extends Omit<BodyOfWater, "@type"> {
-  "@type": "OceanBodyOfWater";
+  "@type"?: "OceanBodyOfWater";
 }
 
 /**
@@ -8961,7 +8961,7 @@ export interface OceanBodyOfWater extends Omit<BodyOfWater, "@type"> {
  *
  **/
 export interface Offer extends Omit<Intangible, "@type"> {
-  "@type": "Offer";
+  "@type"?: "Offer";
   acceptedPaymentMethod?: LoanOrCredit | PaymentMethod;
   addOn?: Offer;
   advanceBookingRequirement?: QuantitativeValue;
@@ -9025,7 +9025,7 @@ export interface Offer extends Omit<Intangible, "@type"> {
  *
  **/
 export interface OfferCatalog<T = Text> extends Omit<ItemList<T>, "@type"> {
-  "@type": "OfferCatalog";
+  "@type"?: "OfferCatalog";
 }
 
 /**
@@ -9044,7 +9044,7 @@ export interface OfferCatalog<T = Text> extends Omit<ItemList<T>, "@type"> {
 *
 **/
 export interface OfferForLease extends Omit<Offer, "@type"> {
-  "@type": "OfferForLease";
+  "@type"?: "OfferForLease";
 }
 
 /**
@@ -9063,7 +9063,7 @@ export interface OfferForLease extends Omit<Offer, "@type"> {
 *
 **/
 export interface OfferForPurchase extends Omit<Offer, "@type"> {
-  "@type": "OfferForPurchase";
+  "@type"?: "OfferForPurchase";
 }
 
 /**
@@ -9090,7 +9090,7 @@ or Fast and expensive: $15 in 1-2 days.
 *
 **/
 export interface OfferShippingDetails extends Omit<StructuredValue, "@type"> {
-  "@type": "OfferShippingDetails";
+  "@type"?: "OfferShippingDetails";
   deliveryTime?: ShippingDeliveryTime;
   doesNotShip?: Boolean;
   shippingDestination?: DefinedRegion;
@@ -9109,7 +9109,7 @@ export interface OfferShippingDetails extends Omit<StructuredValue, "@type"> {
  *
  **/
 export interface OfficeEquipmentStore extends Omit<Store, "@type"> {
-  "@type": "OfficeEquipmentStore";
+  "@type"?: "OfficeEquipmentStore";
 }
 
 /**
@@ -9121,7 +9121,7 @@ export interface OfficeEquipmentStore extends Omit<Store, "@type"> {
  *
  **/
 export interface OnDemandEvent extends Omit<PublicationEvent, "@type"> {
-  "@type": "OnDemandEvent";
+  "@type"?: "OnDemandEvent";
 }
 
 /**
@@ -9138,7 +9138,7 @@ The place is __open__ if the [[opens]] property is specified, and __closed__ oth
 **/
 export interface OpeningHoursSpecification
   extends Omit<StructuredValue, "@type"> {
-  "@type": "OpeningHoursSpecification";
+  "@type"?: "OpeningHoursSpecification";
   closes?: Time;
   dayOfWeek?: DayOfWeek;
   opens?: Time;
@@ -9160,7 +9160,7 @@ export interface OpeningHoursSpecification
  *
  **/
 export interface OpinionNewsArticle extends Omit<NewsArticle, "@type"> {
-  "@type": "OpinionNewsArticle";
+  "@type"?: "OpinionNewsArticle";
 }
 
 /**
@@ -9174,7 +9174,7 @@ export interface OpinionNewsArticle extends Omit<NewsArticle, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface Optician extends Omit<MedicalBusiness, "@type"> {
-  "@type": "Optician";
+  "@type"?: "Optician";
 }
 
 /**
@@ -9186,7 +9186,7 @@ export interface Optician extends Omit<MedicalBusiness, "@type"> {
  *
  **/
 export interface Order extends Omit<Intangible, "@type"> {
-  "@type": "Order";
+  "@type"?: "Order";
   acceptedOffer?: Offer;
   billingAddress?: PostalAddress;
   broker?: Person | Organization;
@@ -9220,7 +9220,7 @@ export interface Order extends Omit<Intangible, "@type"> {
  *
  **/
 export interface OrderAction extends Omit<TradeAction, "@type"> {
-  "@type": "OrderAction";
+  "@type"?: "OrderAction";
   deliveryMethod?: DeliveryMethod;
 }
 
@@ -9233,7 +9233,7 @@ export interface OrderAction extends Omit<TradeAction, "@type"> {
  *
  **/
 export interface OrderItem extends Omit<Intangible, "@type"> {
-  "@type": "OrderItem";
+  "@type"?: "OrderItem";
   orderDelivery?: ParcelDelivery;
   orderedItem?: Product | OrderItem | Service;
   orderItemNumber?: Text;
@@ -9250,7 +9250,7 @@ export interface OrderItem extends Omit<Intangible, "@type"> {
  *
  **/
 export interface Organization extends Omit<Thing, "@type"> {
-  "@type": "Organization";
+  "@type"?: "Organization";
   actionableFeedbackPolicy?: CreativeWork | URL;
   address?: Text | PostalAddress;
   aggregateRating?: AggregateRating;
@@ -9325,7 +9325,7 @@ export interface Organization extends Omit<Thing, "@type"> {
  *
  **/
 export interface OrganizationRole extends Omit<Role, "@type"> {
-  "@type": "OrganizationRole";
+  "@type"?: "OrganizationRole";
   numberedPosition?: Number;
 }
 
@@ -9338,7 +9338,7 @@ export interface OrganizationRole extends Omit<Role, "@type"> {
  *
  **/
 export interface OrganizeAction extends Omit<Action, "@type"> {
-  "@type": "OrganizeAction";
+  "@type"?: "OrganizeAction";
 }
 
 /**
@@ -9350,7 +9350,7 @@ export interface OrganizeAction extends Omit<Action, "@type"> {
  *
  **/
 export interface OutletStore extends Omit<Store, "@type"> {
-  "@type": "OutletStore";
+  "@type"?: "OutletStore";
 }
 
 /**
@@ -9364,7 +9364,7 @@ export interface OutletStore extends Omit<Store, "@type"> {
  *
  **/
 export interface OwnershipInfo extends Omit<StructuredValue, "@type"> {
-  "@type": "OwnershipInfo";
+  "@type"?: "OwnershipInfo";
   acquiredFrom?: Organization | Person;
   ownedFrom?: DateTime;
   ownedThrough?: DateTime;
@@ -9380,7 +9380,7 @@ export interface OwnershipInfo extends Omit<StructuredValue, "@type"> {
  *
  **/
 export interface PaintAction extends Omit<CreateAction, "@type"> {
-  "@type": "PaintAction";
+  "@type"?: "PaintAction";
 }
 
 /**
@@ -9392,7 +9392,7 @@ export interface PaintAction extends Omit<CreateAction, "@type"> {
  *
  **/
 export interface Painting extends Omit<CreativeWork, "@type"> {
-  "@type": "Painting";
+  "@type"?: "Painting";
 }
 
 /**
@@ -9408,7 +9408,7 @@ export interface Painting extends Omit<CreativeWork, "@type"> {
 export interface PalliativeProcedure
   extends Omit<MedicalTherapy, "@type">,
     Omit<MedicalProcedure, "@type"> {
-  "@type": "PalliativeProcedure";
+  "@type"?: "PalliativeProcedure";
 }
 
 /**
@@ -9420,7 +9420,7 @@ export interface PalliativeProcedure
  *
  **/
 export interface ParcelDelivery extends Omit<Intangible, "@type"> {
-  "@type": "ParcelDelivery";
+  "@type"?: "ParcelDelivery";
   carrier?: Organization;
   deliveryAddress?: PostalAddress;
   deliveryStatus?: DeliveryEvent;
@@ -9444,7 +9444,7 @@ export interface ParcelDelivery extends Omit<Intangible, "@type"> {
  *
  **/
 export interface ParentAudience extends Omit<PeopleAudience, "@type"> {
-  "@type": "ParentAudience";
+  "@type"?: "ParentAudience";
   childMaxAge?: Number;
   childMinAge?: Number;
 }
@@ -9458,7 +9458,7 @@ export interface ParentAudience extends Omit<PeopleAudience, "@type"> {
  *
  **/
 export interface Park extends Omit<CivicStructure, "@type"> {
-  "@type": "Park";
+  "@type"?: "Park";
 }
 
 /**
@@ -9470,7 +9470,7 @@ export interface Park extends Omit<CivicStructure, "@type"> {
  *
  **/
 export interface ParkingFacility extends Omit<CivicStructure, "@type"> {
-  "@type": "ParkingFacility";
+  "@type"?: "ParkingFacility";
 }
 
 /**
@@ -9484,7 +9484,7 @@ export interface ParkingFacility extends Omit<CivicStructure, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface PathologyTest extends Omit<MedicalTest, "@type"> {
-  "@type": "PathologyTest";
+  "@type"?: "PathologyTest";
   tissueSample?: Text;
 }
 
@@ -9501,7 +9501,7 @@ export interface PathologyTest extends Omit<MedicalTest, "@type"> {
 export interface Patient
   extends Omit<MedicalAudience, "@type">,
     Omit<Person, "@type"> {
-  "@type": "Patient";
+  "@type"?: "Patient";
   diagnosis?: MedicalCondition;
   drug?: Drug;
   healthCondition?: MedicalCondition;
@@ -9516,7 +9516,7 @@ export interface Patient
  *
  **/
 export interface PawnShop extends Omit<Store, "@type"> {
-  "@type": "PawnShop";
+  "@type"?: "PawnShop";
 }
 
 /**
@@ -9528,7 +9528,7 @@ export interface PawnShop extends Omit<Store, "@type"> {
  *
  **/
 export interface PayAction extends Omit<TradeAction, "@type"> {
-  "@type": "PayAction";
+  "@type"?: "PayAction";
   recipient?: Organization | ContactPoint | Person | Audience;
 }
 
@@ -9545,7 +9545,7 @@ export interface PayAction extends Omit<TradeAction, "@type"> {
 export interface PaymentCard
   extends Omit<PaymentMethod, "@type">,
     Omit<FinancialProduct, "@type"> {
-  "@type": "PaymentCard";
+  "@type"?: "PaymentCard";
   cashBack?: Number | Boolean;
   contactlessPayment?: Boolean;
   floorLimit?: MonetaryAmount;
@@ -9564,7 +9564,7 @@ export interface PaymentCard
  **/
 export interface PaymentChargeSpecification
   extends Omit<PriceSpecification, "@type"> {
-  "@type": "PaymentChargeSpecification";
+  "@type"?: "PaymentChargeSpecification";
   appliesToDeliveryMethod?: DeliveryMethod;
   appliesToPaymentMethod?: PaymentMethod;
 }
@@ -9581,7 +9581,7 @@ export interface PaymentChargeSpecification
 *
 **/
 export interface PaymentMethod extends Omit<Enumeration, "@type"> {
-  "@type": "PaymentMethod";
+  "@type"?: "PaymentMethod";
 }
 
 /**
@@ -9595,7 +9595,7 @@ export interface PaymentMethod extends Omit<Enumeration, "@type"> {
  *
  **/
 export interface PaymentService extends Omit<FinancialProduct, "@type"> {
-  "@type": "PaymentService";
+  "@type"?: "PaymentService";
 }
 
 /**
@@ -9607,7 +9607,7 @@ export interface PaymentService extends Omit<FinancialProduct, "@type"> {
  *
  **/
 export interface PeopleAudience extends Omit<Audience, "@type"> {
-  "@type": "PeopleAudience";
+  "@type"?: "PeopleAudience";
   healthCondition?: MedicalCondition;
   requiredGender?: Text;
   requiredMaxAge?: Integer;
@@ -9628,7 +9628,7 @@ export interface PeopleAudience extends Omit<Audience, "@type"> {
  *
  **/
 export interface PerformAction extends Omit<PlayAction, "@type"> {
-  "@type": "PerformAction";
+  "@type"?: "PerformAction";
   entertainmentBusiness?: EntertainmentBusiness;
 }
 
@@ -9641,7 +9641,7 @@ export interface PerformAction extends Omit<PlayAction, "@type"> {
  *
  **/
 export interface PerformanceRole extends Omit<Role, "@type"> {
-  "@type": "PerformanceRole";
+  "@type"?: "PerformanceRole";
   characterName?: Text;
 }
 
@@ -9654,7 +9654,7 @@ export interface PerformanceRole extends Omit<Role, "@type"> {
  *
  **/
 export interface PerformingArtsTheater extends Omit<CivicStructure, "@type"> {
-  "@type": "PerformingArtsTheater";
+  "@type"?: "PerformingArtsTheater";
 }
 
 /**
@@ -9666,7 +9666,7 @@ export interface PerformingArtsTheater extends Omit<CivicStructure, "@type"> {
  *
  **/
 export interface PerformingGroup extends Omit<Organization, "@type"> {
-  "@type": "PerformingGroup";
+  "@type"?: "PerformingGroup";
 }
 
 /**
@@ -9680,7 +9680,7 @@ export interface PerformingGroup extends Omit<Organization, "@type"> {
  *
  **/
 export interface Periodical extends Omit<CreativeWorkSeries, "@type"> {
-  "@type": "Periodical";
+  "@type"?: "Periodical";
 }
 
 /**
@@ -9692,7 +9692,7 @@ export interface Periodical extends Omit<CreativeWorkSeries, "@type"> {
  *
  **/
 export interface Permit extends Omit<Intangible, "@type"> {
-  "@type": "Permit";
+  "@type"?: "Permit";
   issuedBy?: Organization;
   issuedThrough?: Service;
   permitAudience?: Audience;
@@ -9713,7 +9713,7 @@ export interface Permit extends Omit<Intangible, "@type"> {
  *
  **/
 export interface Person extends Omit<Thing, "@type"> {
-  "@type": "Person";
+  "@type"?: "Person";
   additionalName?: Text;
   address?: Text | PostalAddress;
   affiliation?: Organization;
@@ -9787,7 +9787,7 @@ export interface Person extends Omit<Thing, "@type"> {
  *
  **/
 export interface PetStore extends Omit<Store, "@type"> {
-  "@type": "PetStore";
+  "@type"?: "PetStore";
 }
 
 /**
@@ -9801,7 +9801,7 @@ export interface PetStore extends Omit<Store, "@type"> {
 export interface Pharmacy
   extends Omit<MedicalOrganization, "@type">,
     Omit<MedicalBusiness, "@type"> {
-  "@type": "Pharmacy";
+  "@type"?: "Pharmacy";
 }
 
 /**
@@ -9813,7 +9813,7 @@ export interface Pharmacy
  *
  **/
 export interface Photograph extends Omit<CreativeWork, "@type"> {
-  "@type": "Photograph";
+  "@type"?: "Photograph";
 }
 
 /**
@@ -9825,7 +9825,7 @@ export interface Photograph extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface PhotographAction extends Omit<CreateAction, "@type"> {
-  "@type": "PhotographAction";
+  "@type"?: "PhotographAction";
 }
 
 /**
@@ -9839,7 +9839,7 @@ export interface PhotographAction extends Omit<CreateAction, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface PhysicalActivity extends Omit<LifestyleModification, "@type"> {
-  "@type": "PhysicalActivity";
+  "@type"?: "PhysicalActivity";
   associatedAnatomy?:
     | AnatomicalStructure
     | AnatomicalSystem
@@ -9860,7 +9860,7 @@ export interface PhysicalActivity extends Omit<LifestyleModification, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface PhysicalTherapy extends Omit<MedicalTherapy, "@type"> {
-  "@type": "PhysicalTherapy";
+  "@type"?: "PhysicalTherapy";
 }
 
 /**
@@ -9874,7 +9874,7 @@ export interface PhysicalTherapy extends Omit<MedicalTherapy, "@type"> {
 export interface Physician
   extends Omit<MedicalBusiness, "@type">,
     Omit<MedicalOrganization, "@type"> {
-  "@type": "Physician";
+  "@type"?: "Physician";
   availableService?: MedicalTest | MedicalTherapy | MedicalProcedure;
   hospitalAffiliation?: Hospital;
   medicalSpecialty?: MedicalSpecialty;
@@ -9889,7 +9889,7 @@ export interface Physician
  *
  **/
 export interface Place extends Omit<Thing, "@type"> {
-  "@type": "Place";
+  "@type"?: "Place";
   additionalProperty?: PropertyValue;
   address?: Text | PostalAddress;
   aggregateRating?: AggregateRating;
@@ -9945,7 +9945,7 @@ export interface Place extends Omit<Thing, "@type"> {
  *
  **/
 export interface PlaceOfWorship extends Omit<CivicStructure, "@type"> {
-  "@type": "PlaceOfWorship";
+  "@type"?: "PlaceOfWorship";
 }
 
 /**
@@ -9957,7 +9957,7 @@ export interface PlaceOfWorship extends Omit<CivicStructure, "@type"> {
  *
  **/
 export interface PlanAction extends Omit<OrganizeAction, "@type"> {
-  "@type": "PlanAction";
+  "@type"?: "PlanAction";
   scheduledTime?: DateTime;
 }
 
@@ -9974,7 +9974,7 @@ export interface PlanAction extends Omit<OrganizeAction, "@type"> {
  *
  **/
 export interface Play extends Omit<CreativeWork, "@type"> {
-  "@type": "Play";
+  "@type"?: "Play";
 }
 
 /**
@@ -9986,7 +9986,7 @@ export interface Play extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface PlayAction extends Omit<Action, "@type"> {
-  "@type": "PlayAction";
+  "@type"?: "PlayAction";
   audience?: Audience;
   event?: Event;
 }
@@ -10000,7 +10000,7 @@ export interface PlayAction extends Omit<Action, "@type"> {
  *
  **/
 export interface Playground extends Omit<CivicStructure, "@type"> {
-  "@type": "Playground";
+  "@type"?: "Playground";
 }
 
 /**
@@ -10012,7 +10012,7 @@ export interface Playground extends Omit<CivicStructure, "@type"> {
  *
  **/
 export interface Plumber extends Omit<HomeAndConstructionBusiness, "@type"> {
-  "@type": "Plumber";
+  "@type"?: "Plumber";
 }
 
 /**
@@ -10028,7 +10028,7 @@ export interface Plumber extends Omit<HomeAndConstructionBusiness, "@type"> {
  *
  **/
 export interface PodcastEpisode extends Omit<Episode, "@type"> {
-  "@type": "PodcastEpisode";
+  "@type"?: "PodcastEpisode";
 }
 
 /**
@@ -10044,7 +10044,7 @@ export interface PodcastEpisode extends Omit<Episode, "@type"> {
  *
  **/
 export interface PodcastSeason extends Omit<CreativeWorkSeason, "@type"> {
-  "@type": "PodcastSeason";
+  "@type"?: "PodcastSeason";
 }
 
 /**
@@ -10060,7 +10060,7 @@ export interface PodcastSeason extends Omit<CreativeWorkSeason, "@type"> {
  *
  **/
 export interface PodcastSeries extends Omit<CreativeWorkSeries, "@type"> {
-  "@type": "PodcastSeries";
+  "@type"?: "PodcastSeries";
   webFeed?: URL | DataFeed<URL>;
 }
 
@@ -10075,7 +10075,7 @@ export interface PodcastSeries extends Omit<CreativeWorkSeries, "@type"> {
 export interface PoliceStation
   extends Omit<EmergencyService, "@type">,
     Omit<CivicStructure, "@type"> {
-  "@type": "PoliceStation";
+  "@type"?: "PoliceStation";
 }
 
 /**
@@ -10087,7 +10087,7 @@ export interface PoliceStation
  *
  **/
 export interface Pond extends Omit<BodyOfWater, "@type"> {
-  "@type": "Pond";
+  "@type"?: "Pond";
 }
 
 /**
@@ -10099,7 +10099,7 @@ export interface Pond extends Omit<BodyOfWater, "@type"> {
  *
  **/
 export interface PostalAddress extends Omit<ContactPoint, "@type"> {
-  "@type": "PostalAddress";
+  "@type"?: "PostalAddress";
   addressCountry?: Text | Country;
   addressLocality?: Text;
   addressRegion?: Text;
@@ -10122,7 +10122,7 @@ export interface PostalAddress extends Omit<ContactPoint, "@type"> {
  **/
 export interface PostalCodeRangeSpecification
   extends Omit<StructuredValue, "@type"> {
-  "@type": "PostalCodeRangeSpecification";
+  "@type"?: "PostalCodeRangeSpecification";
   postalCodeBegin?: Text;
   postalCodeEnd?: Text;
 }
@@ -10140,7 +10140,7 @@ export interface PostalCodeRangeSpecification
  *
  **/
 export interface Poster extends Omit<CreativeWork, "@type"> {
-  "@type": "Poster";
+  "@type"?: "Poster";
 }
 
 /**
@@ -10152,7 +10152,7 @@ export interface Poster extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface PostOffice extends Omit<GovernmentOffice, "@type"> {
-  "@type": "PostOffice";
+  "@type"?: "PostOffice";
 }
 
 /**
@@ -10166,7 +10166,7 @@ export interface PostOffice extends Omit<GovernmentOffice, "@type"> {
  *
  **/
 export interface PreOrderAction extends Omit<TradeAction, "@type"> {
-  "@type": "PreOrderAction";
+  "@type"?: "PreOrderAction";
 }
 
 /**
@@ -10178,7 +10178,7 @@ export interface PreOrderAction extends Omit<TradeAction, "@type"> {
  *
  **/
 export interface PrependAction extends Omit<InsertAction, "@type"> {
-  "@type": "PrependAction";
+  "@type"?: "PrependAction";
 }
 
 /**
@@ -10190,7 +10190,7 @@ export interface PrependAction extends Omit<InsertAction, "@type"> {
  *
  **/
 export interface Preschool extends Omit<EducationalOrganization, "@type"> {
-  "@type": "Preschool";
+  "@type"?: "Preschool";
 }
 
 /**
@@ -10203,7 +10203,7 @@ export interface Preschool extends Omit<EducationalOrganization, "@type"> {
  **/
 export interface PresentationDigitalDocument
   extends Omit<DigitalDocument, "@type"> {
-  "@type": "PresentationDigitalDocument";
+  "@type"?: "PresentationDigitalDocument";
 }
 
 /**
@@ -10217,7 +10217,7 @@ export interface PresentationDigitalDocument
  * Partof: https://health-lifesci.schema.org
  **/
 export interface PreventionIndication extends Omit<MedicalIndication, "@type"> {
-  "@type": "PreventionIndication";
+  "@type"?: "PreventionIndication";
 }
 
 /**
@@ -10231,7 +10231,7 @@ export interface PreventionIndication extends Omit<MedicalIndication, "@type"> {
  *
  **/
 export interface PriceSpecification extends Omit<StructuredValue, "@type"> {
-  "@type": "PriceSpecification";
+  "@type"?: "PriceSpecification";
   eligibleQuantity?: QuantitativeValue;
   eligibleTransactionVolume?: PriceSpecification;
   maxPrice?: Number;
@@ -10254,7 +10254,7 @@ export interface PriceSpecification extends Omit<StructuredValue, "@type"> {
  *
  **/
 export interface Product extends Omit<Thing, "@type"> {
-  "@type": "Product";
+  "@type"?: "Product";
   additionalProperty?: PropertyValue;
   aggregateRating?: AggregateRating;
   audience?: Audience;
@@ -10316,7 +10316,7 @@ export interface Product extends Omit<Thing, "@type"> {
 export interface ProductCollection
   extends Omit<Collection, "@type">,
     Omit<Product, "@type"> {
-  "@type": "ProductCollection";
+  "@type"?: "ProductCollection";
   includesObject?: TypeAndQuantityNode;
 }
 
@@ -10335,7 +10335,7 @@ While a ProductGroup itself is not directly offered for sale, the various varyin
 *
 **/
 export interface ProductGroup extends Omit<Product, "@type"> {
-  "@type": "ProductGroup";
+  "@type"?: "ProductGroup";
   hasVariant?: Product;
   productGroupID?: Text;
   variesBy?: Text | DefinedTerm;
@@ -10352,7 +10352,7 @@ export interface ProductGroup extends Omit<Product, "@type"> {
  *
  **/
 export interface ProductModel extends Omit<Product, "@type"> {
-  "@type": "ProductModel";
+  "@type"?: "ProductModel";
   isVariantOf?: ProductGroup | ProductModel;
   predecessorOf?: ProductModel;
   successorOf?: ProductModel;
@@ -10369,7 +10369,7 @@ export interface ProductModel extends Omit<Product, "@type"> {
 *
 **/
 export interface ProfessionalService extends Omit<LocalBusiness, "@type"> {
-  "@type": "ProfessionalService";
+  "@type"?: "ProfessionalService";
 }
 
 /**
@@ -10381,7 +10381,7 @@ export interface ProfessionalService extends Omit<LocalBusiness, "@type"> {
  *
  **/
 export interface ProfilePage extends Omit<WebPage, "@type"> {
-  "@type": "ProfilePage";
+  "@type"?: "ProfilePage";
 }
 
 /**
@@ -10393,7 +10393,7 @@ export interface ProfilePage extends Omit<WebPage, "@type"> {
  *
  **/
 export interface ProgramMembership extends Omit<Intangible, "@type"> {
-  "@type": "ProgramMembership";
+  "@type"?: "ProgramMembership";
   hostingOrganization?: Organization;
   member?: Organization | Person;
   members?: Array<Person> | Array<Organization>;
@@ -10418,7 +10418,7 @@ Use properties from [[Organization]], [[subOrganization]]/[[parentOrganization]]
 *
 **/
 export interface Project extends Omit<Organization, "@type"> {
-  "@type": "Project";
+  "@type"?: "Project";
 }
 
 /**
@@ -10446,7 +10446,7 @@ export type PronounceableText = Text;
  * Partof: https://meta.schema.org
  **/
 export interface Property extends Omit<Intangible, "@type"> {
-  "@type": "Property";
+  "@type"?: "Property";
   domainIncludes?: Class;
   inverseOf?: Property;
   rangeIncludes?: Class;
@@ -10464,7 +10464,7 @@ export interface Property extends Omit<Intangible, "@type"> {
 *
 **/
 export interface PropertyValue extends Omit<StructuredValue, "@type"> {
-  "@type": "PropertyValue";
+  "@type"?: "PropertyValue";
   maxValue?: Number;
   measurementTechnique?: Text | URL;
   minValue?: Number;
@@ -10494,7 +10494,7 @@ export interface PropertyValue extends Omit<StructuredValue, "@type"> {
  *
  **/
 export interface PropertyValueSpecification extends Omit<Intangible, "@type"> {
-  "@type": "PropertyValueSpecification";
+  "@type"?: "PropertyValueSpecification";
   defaultValue?: Thing | Text;
   maxValue?: Number;
   minValue?: Number;
@@ -10520,7 +10520,7 @@ export interface PropertyValueSpecification extends Omit<Intangible, "@type"> {
  **/
 export interface PsychologicalTreatment
   extends Omit<TherapeuticProcedure, "@type"> {
-  "@type": "PsychologicalTreatment";
+  "@type"?: "PsychologicalTreatment";
 }
 
 /**
@@ -10532,7 +10532,7 @@ export interface PsychologicalTreatment
  *
  **/
 export interface PublicationEvent extends Omit<Event, "@type"> {
-  "@type": "PublicationEvent";
+  "@type"?: "PublicationEvent";
   free?: Boolean;
   publishedBy?: Person | Organization;
   publishedOn?: BroadcastService;
@@ -10549,7 +10549,7 @@ export interface PublicationEvent extends Omit<Event, "@type"> {
  *
  **/
 export interface PublicationIssue extends Omit<CreativeWork, "@type"> {
-  "@type": "PublicationIssue";
+  "@type"?: "PublicationIssue";
   issueNumber?: Integer | Text;
   pageEnd?: Text | Integer;
   pageStart?: Text | Integer;
@@ -10567,7 +10567,7 @@ export interface PublicationIssue extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface PublicationVolume extends Omit<CreativeWork, "@type"> {
-  "@type": "PublicationVolume";
+  "@type"?: "PublicationVolume";
   pageEnd?: Text | Integer;
   pageStart?: Text | Integer;
   pagination?: Text;
@@ -10584,7 +10584,7 @@ export interface PublicationVolume extends Omit<CreativeWork, "@type"> {
  **/
 export interface PublicSwimmingPool
   extends Omit<SportsActivityLocation, "@type"> {
-  "@type": "PublicSwimmingPool";
+  "@type"?: "PublicSwimmingPool";
 }
 
 /**
@@ -10600,7 +10600,7 @@ export interface PublicSwimmingPool
  *
  **/
 export interface PublicToilet extends Omit<CivicStructure, "@type"> {
-  "@type": "PublicToilet";
+  "@type"?: "PublicToilet";
 }
 
 /**
@@ -10612,7 +10612,7 @@ export interface PublicToilet extends Omit<CivicStructure, "@type"> {
  *
  **/
 export interface QAPage extends Omit<WebPage, "@type"> {
-  "@type": "QAPage";
+  "@type"?: "QAPage";
 }
 
 /**
@@ -10626,7 +10626,7 @@ export interface QAPage extends Omit<WebPage, "@type"> {
  *
  **/
 export interface QualitativeValue extends Omit<Enumeration, "@type"> {
-  "@type": "QualitativeValue";
+  "@type"?: "QualitativeValue";
   additionalProperty?: PropertyValue;
   equal?: QualitativeValue;
   greater?: QualitativeValue;
@@ -10656,7 +10656,7 @@ export interface QualitativeValue extends Omit<Enumeration, "@type"> {
  *
  **/
 export interface QuantitativeValue extends Omit<StructuredValue, "@type"> {
-  "@type": "QuantitativeValue";
+  "@type"?: "QuantitativeValue";
   additionalProperty?: PropertyValue;
   maxValue?: Number;
   minValue?: Number;
@@ -10686,7 +10686,7 @@ export interface QuantitativeValue extends Omit<StructuredValue, "@type"> {
  **/
 export interface QuantitativeValueDistribution
   extends Omit<StructuredValue, "@type"> {
-  "@type": "QuantitativeValueDistribution";
+  "@type"?: "QuantitativeValueDistribution";
   duration?: Duration;
   median?: Number;
   percentile10?: Number;
@@ -10704,7 +10704,7 @@ export interface QuantitativeValueDistribution
  *
  **/
 export interface Quantity extends Omit<Intangible, "@type"> {
-  "@type": "Quantity";
+  "@type"?: "Quantity";
 }
 
 /**
@@ -10718,7 +10718,7 @@ export interface Quantity extends Omit<Intangible, "@type"> {
  *
  **/
 export interface Question extends Omit<Comment, "@type"> {
-  "@type": "Question";
+  "@type"?: "Question";
   acceptedAnswer?: Answer | ItemList<Answer>;
   answerCount?: Integer;
   eduQuestionType?: Text;
@@ -10738,7 +10738,7 @@ export interface Question extends Omit<Comment, "@type"> {
  *
  **/
 export interface Quiz extends Omit<LearningResource, "@type"> {
-  "@type": "Quiz";
+  "@type"?: "Quiz";
 }
 
 /**
@@ -10754,7 +10754,7 @@ export interface Quiz extends Omit<LearningResource, "@type"> {
  *
  **/
 export interface Quotation extends Omit<CreativeWork, "@type"> {
-  "@type": "Quotation";
+  "@type"?: "Quotation";
   spokenByCharacter?: Organization | Person;
 }
 
@@ -10767,7 +10767,7 @@ export interface Quotation extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface QuoteAction extends Omit<TradeAction, "@type"> {
-  "@type": "QuoteAction";
+  "@type"?: "QuoteAction";
 }
 
 /**
@@ -10781,7 +10781,7 @@ export interface QuoteAction extends Omit<TradeAction, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface RadiationTherapy extends Omit<MedicalTherapy, "@type"> {
-  "@type": "RadiationTherapy";
+  "@type"?: "RadiationTherapy";
 }
 
 /**
@@ -10797,7 +10797,7 @@ export interface RadiationTherapy extends Omit<MedicalTherapy, "@type"> {
  *
  **/
 export interface RadioBroadcastService extends Omit<BroadcastService, "@type"> {
-  "@type": "RadioBroadcastService";
+  "@type"?: "RadioBroadcastService";
 }
 
 /**
@@ -10809,7 +10809,7 @@ export interface RadioBroadcastService extends Omit<BroadcastService, "@type"> {
  *
  **/
 export interface RadioChannel extends Omit<BroadcastChannel, "@type"> {
-  "@type": "RadioChannel";
+  "@type"?: "RadioChannel";
 }
 
 /**
@@ -10821,7 +10821,7 @@ export interface RadioChannel extends Omit<BroadcastChannel, "@type"> {
  *
  **/
 export interface RadioClip extends Omit<Clip, "@type"> {
-  "@type": "RadioClip";
+  "@type"?: "RadioClip";
 }
 
 /**
@@ -10833,7 +10833,7 @@ export interface RadioClip extends Omit<Clip, "@type"> {
  *
  **/
 export interface RadioEpisode extends Omit<Episode, "@type"> {
-  "@type": "RadioEpisode";
+  "@type"?: "RadioEpisode";
 }
 
 /**
@@ -10845,7 +10845,7 @@ export interface RadioEpisode extends Omit<Episode, "@type"> {
  *
  **/
 export interface RadioSeason extends Omit<CreativeWorkSeason, "@type"> {
-  "@type": "RadioSeason";
+  "@type"?: "RadioSeason";
 }
 
 /**
@@ -10857,7 +10857,7 @@ export interface RadioSeason extends Omit<CreativeWorkSeason, "@type"> {
  *
  **/
 export interface RadioSeries extends Omit<CreativeWorkSeries, "@type"> {
-  "@type": "RadioSeries";
+  "@type"?: "RadioSeries";
   actor?: Person;
   actors?: Array<Person>;
   containsSeason?: CreativeWorkSeason;
@@ -10883,7 +10883,7 @@ export interface RadioSeries extends Omit<CreativeWorkSeries, "@type"> {
  *
  **/
 export interface RadioStation extends Omit<LocalBusiness, "@type"> {
-  "@type": "RadioStation";
+  "@type"?: "RadioStation";
 }
 
 /**
@@ -10895,7 +10895,7 @@ export interface RadioStation extends Omit<LocalBusiness, "@type"> {
  *
  **/
 export interface Rating extends Omit<Intangible, "@type"> {
-  "@type": "Rating";
+  "@type"?: "Rating";
   author?: Person | Organization;
   bestRating?: Text | Number;
   ratingExplanation?: Text;
@@ -10913,7 +10913,7 @@ export interface Rating extends Omit<Intangible, "@type"> {
  *
  **/
 export interface ReactAction extends Omit<AssessAction, "@type"> {
-  "@type": "ReactAction";
+  "@type"?: "ReactAction";
 }
 
 /**
@@ -10925,7 +10925,7 @@ export interface ReactAction extends Omit<AssessAction, "@type"> {
  *
  **/
 export interface ReadAction extends Omit<ConsumeAction, "@type"> {
-  "@type": "ReadAction";
+  "@type"?: "ReadAction";
 }
 
 /**
@@ -10937,7 +10937,7 @@ export interface ReadAction extends Omit<ConsumeAction, "@type"> {
  *
  **/
 export interface RealEstateAgent extends Omit<LocalBusiness, "@type"> {
-  "@type": "RealEstateAgent";
+  "@type"?: "RealEstateAgent";
 }
 
 /**
@@ -10955,7 +10955,7 @@ export interface RealEstateAgent extends Omit<LocalBusiness, "@type"> {
 *
 **/
 export interface RealEstateListing extends Omit<WebPage, "@type"> {
-  "@type": "RealEstateListing";
+  "@type"?: "RealEstateListing";
   datePosted?: Date | DateTime;
   leaseLength?: Duration | QuantitativeValue;
 }
@@ -10969,7 +10969,7 @@ export interface RealEstateListing extends Omit<WebPage, "@type"> {
  *
  **/
 export interface ReceiveAction extends Omit<TransferAction, "@type"> {
-  "@type": "ReceiveAction";
+  "@type"?: "ReceiveAction";
   deliveryMethod?: DeliveryMethod;
   sender?: Person | Audience | Organization;
 }
@@ -10983,7 +10983,7 @@ export interface ReceiveAction extends Omit<TransferAction, "@type"> {
  *
  **/
 export interface Recipe extends Omit<HowTo, "@type"> {
-  "@type": "Recipe";
+  "@type"?: "Recipe";
   cookingMethod?: Text;
   cookTime?: Duration;
   ingredients?: Text;
@@ -11013,7 +11013,7 @@ export interface Recipe extends Omit<HowTo, "@type"> {
  *
  **/
 export interface Recommendation extends Omit<Review, "@type"> {
-  "@type": "Recommendation";
+  "@type"?: "Recommendation";
   category?: PhysicalActivityCategory | Text | URL | Thing;
 }
 
@@ -11028,7 +11028,7 @@ export interface Recommendation extends Omit<Review, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface RecommendedDoseSchedule extends Omit<DoseSchedule, "@type"> {
-  "@type": "RecommendedDoseSchedule";
+  "@type"?: "RecommendedDoseSchedule";
 }
 
 /**
@@ -11040,7 +11040,7 @@ export interface RecommendedDoseSchedule extends Omit<DoseSchedule, "@type"> {
  *
  **/
 export interface RecyclingCenter extends Omit<LocalBusiness, "@type"> {
-  "@type": "RecyclingCenter";
+  "@type"?: "RecyclingCenter";
 }
 
 /**
@@ -11052,7 +11052,7 @@ export interface RecyclingCenter extends Omit<LocalBusiness, "@type"> {
  *
  **/
 export interface RegisterAction extends Omit<InteractAction, "@type"> {
-  "@type": "RegisterAction";
+  "@type"?: "RegisterAction";
 }
 
 /**
@@ -11064,7 +11064,7 @@ export interface RegisterAction extends Omit<InteractAction, "@type"> {
  *
  **/
 export interface RejectAction extends Omit<AllocateAction, "@type"> {
-  "@type": "RejectAction";
+  "@type"?: "RejectAction";
 }
 
 /**
@@ -11076,7 +11076,7 @@ export interface RejectAction extends Omit<AllocateAction, "@type"> {
  *
  **/
 export interface RentAction extends Omit<TradeAction, "@type"> {
-  "@type": "RentAction";
+  "@type"?: "RentAction";
   landlord?: Person | Organization;
   realEstateAgent?: RealEstateAgent;
 }
@@ -11090,7 +11090,7 @@ export interface RentAction extends Omit<TradeAction, "@type"> {
  *
  **/
 export interface RentalCarReservation extends Omit<Reservation, "@type"> {
-  "@type": "RentalCarReservation";
+  "@type"?: "RentalCarReservation";
   dropoffLocation?: Place;
   dropoffTime?: DateTime;
   pickupLocation?: Place;
@@ -11111,7 +11111,7 @@ export interface RentalCarReservation extends Omit<Reservation, "@type"> {
  *
  **/
 export interface RepaymentSpecification extends Omit<StructuredValue, "@type"> {
-  "@type": "RepaymentSpecification";
+  "@type"?: "RepaymentSpecification";
   downPayment?: Number | MonetaryAmount;
   earlyPrepaymentPenalty?: MonetaryAmount;
   loanPaymentAmount?: MonetaryAmount;
@@ -11128,7 +11128,7 @@ export interface RepaymentSpecification extends Omit<StructuredValue, "@type"> {
  *
  **/
 export interface ReplaceAction extends Omit<UpdateAction, "@type"> {
-  "@type": "ReplaceAction";
+  "@type"?: "ReplaceAction";
   replacee?: Thing;
   replacer?: Thing;
 }
@@ -11142,7 +11142,7 @@ export interface ReplaceAction extends Omit<UpdateAction, "@type"> {
  *
  **/
 export interface ReplyAction extends Omit<CommunicateAction, "@type"> {
-  "@type": "ReplyAction";
+  "@type"?: "ReplyAction";
   resultComment?: Comment;
 }
 
@@ -11155,7 +11155,7 @@ export interface ReplyAction extends Omit<CommunicateAction, "@type"> {
  *
  **/
 export interface Report extends Omit<Article, "@type"> {
-  "@type": "Report";
+  "@type"?: "Report";
   reportNumber?: Text;
 }
 
@@ -11181,7 +11181,7 @@ A [[ReportageNewsArticle]] which goes deeper into analysis can also be marked wi
 *
 **/
 export interface ReportageNewsArticle extends Omit<NewsArticle, "@type"> {
-  "@type": "ReportageNewsArticle";
+  "@type"?: "ReportageNewsArticle";
 }
 
 /**
@@ -11195,7 +11195,7 @@ export interface ReportageNewsArticle extends Omit<NewsArticle, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface ReportedDoseSchedule extends Omit<DoseSchedule, "@type"> {
-  "@type": "ReportedDoseSchedule";
+  "@type"?: "ReportedDoseSchedule";
 }
 
 /**
@@ -11207,7 +11207,7 @@ export interface ReportedDoseSchedule extends Omit<DoseSchedule, "@type"> {
  *
  **/
 export interface Researcher extends Omit<Audience, "@type"> {
-  "@type": "Researcher";
+  "@type"?: "Researcher";
 }
 
 /**
@@ -11224,7 +11224,7 @@ export interface Researcher extends Omit<Audience, "@type"> {
  *
  **/
 export interface ResearchProject extends Omit<Project, "@type"> {
-  "@type": "ResearchProject";
+  "@type"?: "ResearchProject";
 }
 
 /**
@@ -11236,7 +11236,7 @@ export interface ResearchProject extends Omit<Project, "@type"> {
  *
  **/
 export interface Reservation extends Omit<Intangible, "@type"> {
-  "@type": "Reservation";
+  "@type"?: "Reservation";
   bookingAgent?: Person | Organization;
   bookingTime?: DateTime;
   broker?: Person | Organization;
@@ -11261,7 +11261,7 @@ export interface Reservation extends Omit<Intangible, "@type"> {
  *
  **/
 export interface ReservationPackage extends Omit<Reservation, "@type"> {
-  "@type": "ReservationPackage";
+  "@type"?: "ReservationPackage";
   subReservation?: Reservation;
 }
 
@@ -11274,7 +11274,7 @@ export interface ReservationPackage extends Omit<Reservation, "@type"> {
  *
  **/
 export interface ReserveAction extends Omit<PlanAction, "@type"> {
-  "@type": "ReserveAction";
+  "@type"?: "ReserveAction";
 }
 
 /**
@@ -11286,7 +11286,7 @@ export interface ReserveAction extends Omit<PlanAction, "@type"> {
  *
  **/
 export interface Reservoir extends Omit<BodyOfWater, "@type"> {
-  "@type": "Reservoir";
+  "@type"?: "Reservoir";
 }
 
 /**
@@ -11298,7 +11298,7 @@ export interface Reservoir extends Omit<BodyOfWater, "@type"> {
  *
  **/
 export interface Residence extends Omit<Place, "@type"> {
-  "@type": "Residence";
+  "@type"?: "Residence";
   accommodationFloorPlan?: FloorPlan;
 }
 
@@ -11316,7 +11316,7 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
 *
 **/
 export interface Resort extends Omit<LodgingBusiness, "@type"> {
-  "@type": "Resort";
+  "@type"?: "Resort";
 }
 
 /**
@@ -11328,7 +11328,7 @@ export interface Resort extends Omit<LodgingBusiness, "@type"> {
  *
  **/
 export interface Restaurant extends Omit<FoodEstablishment, "@type"> {
-  "@type": "Restaurant";
+  "@type"?: "Restaurant";
 }
 
 /**
@@ -11340,7 +11340,7 @@ export interface Restaurant extends Omit<FoodEstablishment, "@type"> {
  *
  **/
 export interface ResumeAction extends Omit<ControlAction, "@type"> {
-  "@type": "ResumeAction";
+  "@type"?: "ResumeAction";
 }
 
 /**
@@ -11352,7 +11352,7 @@ export interface ResumeAction extends Omit<ControlAction, "@type"> {
  *
  **/
 export interface ReturnAction extends Omit<TransferAction, "@type"> {
-  "@type": "ReturnAction";
+  "@type"?: "ReturnAction";
   recipient?: Organization | ContactPoint | Person | Audience;
 }
 
@@ -11365,7 +11365,7 @@ export interface ReturnAction extends Omit<TransferAction, "@type"> {
  *
  **/
 export interface Review extends Omit<CreativeWork, "@type"> {
-  "@type": "Review";
+  "@type"?: "Review";
   itemReviewed?: Thing;
   reviewAspect?: Text;
   reviewBody?: Text;
@@ -11381,7 +11381,7 @@ export interface Review extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface ReviewAction extends Omit<AssessAction, "@type"> {
-  "@type": "ReviewAction";
+  "@type"?: "ReviewAction";
   resultReview?: Review;
 }
 
@@ -11401,7 +11401,7 @@ export interface ReviewAction extends Omit<AssessAction, "@type"> {
 export interface ReviewNewsArticle
   extends Omit<NewsArticle, "@type">,
     Omit<CriticReview, "@type"> {
-  "@type": "ReviewNewsArticle";
+  "@type"?: "ReviewNewsArticle";
 }
 
 /**
@@ -11413,7 +11413,7 @@ export interface ReviewNewsArticle
  *
  **/
 export interface RiverBodyOfWater extends Omit<BodyOfWater, "@type"> {
-  "@type": "RiverBodyOfWater";
+  "@type"?: "RiverBodyOfWater";
 }
 
 /**
@@ -11425,7 +11425,7 @@ export interface RiverBodyOfWater extends Omit<BodyOfWater, "@type"> {
  *
  **/
 export interface Role extends Omit<Intangible, "@type"> {
-  "@type": "Role";
+  "@type"?: "Role";
   endDate?: Date | DateTime;
   namedPosition?: URL | Text;
   roleName?: URL | Text;
@@ -11442,7 +11442,7 @@ export interface Role extends Omit<Intangible, "@type"> {
  **/
 export interface RoofingContractor
   extends Omit<HomeAndConstructionBusiness, "@type"> {
-  "@type": "RoofingContractor";
+  "@type"?: "RoofingContractor";
 }
 
 /**
@@ -11459,7 +11459,7 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
 *
 **/
 export interface Room extends Omit<Accommodation, "@type"> {
-  "@type": "Room";
+  "@type"?: "Room";
 }
 
 /**
@@ -11471,7 +11471,7 @@ export interface Room extends Omit<Accommodation, "@type"> {
  *
  **/
 export interface RsvpAction extends Omit<InformAction, "@type"> {
-  "@type": "RsvpAction";
+  "@type"?: "RsvpAction";
   additionalNumberOfGuests?: Number;
   comment?: Comment;
   rsvpResponse?: RsvpResponseType;
@@ -11486,7 +11486,7 @@ export interface RsvpAction extends Omit<InformAction, "@type"> {
  *
  **/
 export interface RVPark extends Omit<CivicStructure, "@type"> {
-  "@type": "RVPark";
+  "@type"?: "RVPark";
 }
 
 /**
@@ -11498,7 +11498,7 @@ export interface RVPark extends Omit<CivicStructure, "@type"> {
  *
  **/
 export interface SaleEvent extends Omit<Event, "@type"> {
-  "@type": "SaleEvent";
+  "@type"?: "SaleEvent";
 }
 
 /**
@@ -11515,7 +11515,7 @@ export interface SaleEvent extends Omit<Event, "@type"> {
  *
  **/
 export interface SatiricalArticle extends Omit<Article, "@type"> {
-  "@type": "SatiricalArticle";
+  "@type"?: "SatiricalArticle";
 }
 
 /**
@@ -11533,7 +11533,7 @@ export interface SatiricalArticle extends Omit<Article, "@type"> {
 *
 **/
 export interface Schedule extends Omit<Intangible, "@type"> {
-  "@type": "Schedule";
+  "@type"?: "Schedule";
   byDay?: DayOfWeek | Text;
   byMonth?: Integer;
   byMonthDay?: Integer;
@@ -11558,7 +11558,7 @@ export interface Schedule extends Omit<Intangible, "@type"> {
  *
  **/
 export interface ScheduleAction extends Omit<PlanAction, "@type"> {
-  "@type": "ScheduleAction";
+  "@type"?: "ScheduleAction";
 }
 
 /**
@@ -11570,7 +11570,7 @@ export interface ScheduleAction extends Omit<PlanAction, "@type"> {
  *
  **/
 export interface ScholarlyArticle extends Omit<Article, "@type"> {
-  "@type": "ScholarlyArticle";
+  "@type"?: "ScholarlyArticle";
 }
 
 /**
@@ -11582,7 +11582,7 @@ export interface ScholarlyArticle extends Omit<Article, "@type"> {
  *
  **/
 export interface School extends Omit<EducationalOrganization, "@type"> {
-  "@type": "School";
+  "@type"?: "School";
 }
 
 /**
@@ -11598,7 +11598,7 @@ export interface School extends Omit<EducationalOrganization, "@type"> {
  *
  **/
 export interface SchoolDistrict extends Omit<AdministrativeArea, "@type"> {
-  "@type": "SchoolDistrict";
+  "@type"?: "SchoolDistrict";
 }
 
 /**
@@ -11610,7 +11610,7 @@ export interface SchoolDistrict extends Omit<AdministrativeArea, "@type"> {
  *
  **/
 export interface ScreeningEvent extends Omit<Event, "@type"> {
-  "@type": "ScreeningEvent";
+  "@type"?: "ScreeningEvent";
   subtitleLanguage?: Text | Language;
   videoFormat?: Text;
   workPresented?: Movie;
@@ -11625,7 +11625,7 @@ export interface ScreeningEvent extends Omit<Event, "@type"> {
  *
  **/
 export interface Sculpture extends Omit<CreativeWork, "@type"> {
-  "@type": "Sculpture";
+  "@type"?: "Sculpture";
 }
 
 /**
@@ -11637,7 +11637,7 @@ export interface Sculpture extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface SeaBodyOfWater extends Omit<BodyOfWater, "@type"> {
-  "@type": "SeaBodyOfWater";
+  "@type"?: "SeaBodyOfWater";
 }
 
 /**
@@ -11649,7 +11649,7 @@ export interface SeaBodyOfWater extends Omit<BodyOfWater, "@type"> {
  *
  **/
 export interface SearchAction extends Omit<Action, "@type"> {
-  "@type": "SearchAction";
+  "@type"?: "SearchAction";
   query?: Text;
 }
 
@@ -11662,7 +11662,7 @@ export interface SearchAction extends Omit<Action, "@type"> {
  *
  **/
 export interface SearchResultsPage extends Omit<WebPage, "@type"> {
-  "@type": "SearchResultsPage";
+  "@type"?: "SearchResultsPage";
 }
 
 /**
@@ -11674,7 +11674,7 @@ export interface SearchResultsPage extends Omit<WebPage, "@type"> {
  *
  **/
 export interface Season extends Omit<CreativeWork, "@type"> {
-  "@type": "Season";
+  "@type"?: "Season";
 }
 
 /**
@@ -11686,7 +11686,7 @@ export interface Season extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface Seat extends Omit<Intangible, "@type"> {
-  "@type": "Seat";
+  "@type"?: "Seat";
   seatingType?: QualitativeValue | Text;
   seatNumber?: Text;
   seatRow?: Text;
@@ -11706,7 +11706,7 @@ export interface Seat extends Omit<Intangible, "@type"> {
  *
  **/
 export interface SeekToAction extends Omit<Action, "@type"> {
-  "@type": "SeekToAction";
+  "@type"?: "SeekToAction";
 }
 
 /**
@@ -11718,7 +11718,7 @@ export interface SeekToAction extends Omit<Action, "@type"> {
  *
  **/
 export interface SelfStorage extends Omit<LocalBusiness, "@type"> {
-  "@type": "SelfStorage";
+  "@type"?: "SelfStorage";
 }
 
 /**
@@ -11730,7 +11730,7 @@ export interface SelfStorage extends Omit<LocalBusiness, "@type"> {
  *
  **/
 export interface SellAction extends Omit<TradeAction, "@type"> {
-  "@type": "SellAction";
+  "@type"?: "SellAction";
   buyer?: Person;
   warrantyPromise?: WarrantyPromise;
 }
@@ -11744,7 +11744,7 @@ export interface SellAction extends Omit<TradeAction, "@type"> {
  *
  **/
 export interface SendAction extends Omit<TransferAction, "@type"> {
-  "@type": "SendAction";
+  "@type"?: "SendAction";
   deliveryMethod?: DeliveryMethod;
   recipient?: Organization | ContactPoint | Person | Audience;
 }
@@ -11758,7 +11758,7 @@ export interface SendAction extends Omit<TransferAction, "@type"> {
  *
  **/
 export interface Series extends Omit<Intangible, "@type"> {
-  "@type": "Series";
+  "@type"?: "Series";
 }
 
 /**
@@ -11770,7 +11770,7 @@ export interface Series extends Omit<Intangible, "@type"> {
  *
  **/
 export interface Service extends Omit<Intangible, "@type"> {
-  "@type": "Service";
+  "@type"?: "Service";
   aggregateRating?: AggregateRating;
   areaServed?: Text | Place | AdministrativeArea | GeoShape;
   audience?: Audience;
@@ -11806,7 +11806,7 @@ export interface Service extends Omit<Intangible, "@type"> {
  *
  **/
 export interface ServiceChannel extends Omit<Intangible, "@type"> {
-  "@type": "ServiceChannel";
+  "@type"?: "ServiceChannel";
   availableLanguage?: Language | Text;
   processingTime?: Duration;
   providesService?: Service;
@@ -11826,7 +11826,7 @@ export interface ServiceChannel extends Omit<Intangible, "@type"> {
  *
  **/
 export interface ShareAction extends Omit<CommunicateAction, "@type"> {
-  "@type": "ShareAction";
+  "@type"?: "ShareAction";
 }
 
 /**
@@ -11842,7 +11842,7 @@ export interface ShareAction extends Omit<CommunicateAction, "@type"> {
  *
  **/
 export interface SheetMusic extends Omit<CreativeWork, "@type"> {
-  "@type": "SheetMusic";
+  "@type"?: "SheetMusic";
 }
 
 /**
@@ -11858,7 +11858,7 @@ export interface SheetMusic extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface ShippingDeliveryTime extends Omit<StructuredValue, "@type"> {
-  "@type": "ShippingDeliveryTime";
+  "@type"?: "ShippingDeliveryTime";
   businessDays?: OpeningHoursSpecification;
   cutoffTime?: Time;
   handlingTime?: QuantitativeValue;
@@ -11878,7 +11878,7 @@ export interface ShippingDeliveryTime extends Omit<StructuredValue, "@type"> {
  *
  **/
 export interface ShippingRateSettings extends Omit<StructuredValue, "@type"> {
-  "@type": "ShippingRateSettings";
+  "@type"?: "ShippingRateSettings";
   doesNotShip?: Boolean;
   freeShippingThreshold?: DeliveryChargeSpecification | MonetaryAmount;
   isUnlabelledFallback?: Boolean;
@@ -11896,7 +11896,7 @@ export interface ShippingRateSettings extends Omit<StructuredValue, "@type"> {
  *
  **/
 export interface ShoeStore extends Omit<Store, "@type"> {
-  "@type": "ShoeStore";
+  "@type"?: "ShoeStore";
 }
 
 /**
@@ -11908,7 +11908,7 @@ export interface ShoeStore extends Omit<Store, "@type"> {
  *
  **/
 export interface ShoppingCenter extends Omit<LocalBusiness, "@type"> {
-  "@type": "ShoppingCenter";
+  "@type"?: "ShoppingCenter";
 }
 
 /**
@@ -11924,7 +11924,7 @@ export interface ShoppingCenter extends Omit<LocalBusiness, "@type"> {
  *
  **/
 export interface ShortStory extends Omit<CreativeWork, "@type"> {
-  "@type": "ShortStory";
+  "@type"?: "ShortStory";
 }
 
 /**
@@ -11936,7 +11936,7 @@ export interface ShortStory extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface SingleFamilyResidence extends Omit<House, "@type"> {
-  "@type": "SingleFamilyResidence";
+  "@type"?: "SingleFamilyResidence";
   numberOfRooms?: Number | QuantitativeValue;
   occupancy?: QuantitativeValue;
 }
@@ -11950,7 +11950,7 @@ export interface SingleFamilyResidence extends Omit<House, "@type"> {
  *
  **/
 export interface SiteNavigationElement extends Omit<WebPageElement, "@type"> {
-  "@type": "SiteNavigationElement";
+  "@type"?: "SiteNavigationElement";
 }
 
 /**
@@ -11966,7 +11966,7 @@ export interface SiteNavigationElement extends Omit<WebPageElement, "@type"> {
  *
  **/
 export interface SizeGroupEnumeration extends Omit<Enumeration, "@type"> {
-  "@type": "SizeGroupEnumeration";
+  "@type"?: "SizeGroupEnumeration";
 }
 
 /**
@@ -11982,7 +11982,7 @@ export interface SizeGroupEnumeration extends Omit<Enumeration, "@type"> {
  *
  **/
 export interface SizeSpecification extends Omit<QualitativeValue, "@type"> {
-  "@type": "SizeSpecification";
+  "@type"?: "SizeSpecification";
   hasMeasurement?: QuantitativeValue;
   sizeGroup?: SizeGroupEnumeration | Text;
   sizeSystem?: SizeSystemEnumeration | Text;
@@ -12002,7 +12002,7 @@ export interface SizeSpecification extends Omit<QualitativeValue, "@type"> {
 export interface SkiResort
   extends Omit<Resort, "@type">,
     Omit<SportsActivityLocation, "@type"> {
-  "@type": "SkiResort";
+  "@type"?: "SkiResort";
 }
 
 /**
@@ -12014,7 +12014,7 @@ export interface SkiResort
  *
  **/
 export interface SocialEvent extends Omit<Event, "@type"> {
-  "@type": "SocialEvent";
+  "@type"?: "SocialEvent";
 }
 
 /**
@@ -12026,7 +12026,7 @@ export interface SocialEvent extends Omit<Event, "@type"> {
  *
  **/
 export interface SocialMediaPosting extends Omit<Article, "@type"> {
-  "@type": "SocialMediaPosting";
+  "@type"?: "SocialMediaPosting";
   sharedContent?: CreativeWork;
 }
 
@@ -12039,7 +12039,7 @@ export interface SocialMediaPosting extends Omit<Article, "@type"> {
  *
  **/
 export interface SoftwareApplication extends Omit<CreativeWork, "@type"> {
-  "@type": "SoftwareApplication";
+  "@type"?: "SoftwareApplication";
   applicationCategory?: Text | URL;
   applicationSubCategory?: Text | URL;
   applicationSuite?: Text;
@@ -12075,7 +12075,7 @@ export interface SoftwareApplication extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface SoftwareSourceCode extends Omit<CreativeWork, "@type"> {
-  "@type": "SoftwareSourceCode";
+  "@type"?: "SoftwareSourceCode";
   codeRepository?: URL;
   codeSampleType?: Text;
   programmingLanguage?: Text | ComputerLanguage;
@@ -12098,7 +12098,7 @@ export interface SoftwareSourceCode extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface SolveMathAction extends Omit<Action, "@type"> {
-  "@type": "SolveMathAction";
+  "@type"?: "SolveMathAction";
   eduQuestionType?: Text;
 }
 
@@ -12113,7 +12113,7 @@ export interface SolveMathAction extends Omit<Action, "@type"> {
  *
  **/
 export interface SomeProducts extends Omit<Product, "@type"> {
-  "@type": "SomeProducts";
+  "@type"?: "SomeProducts";
   inventoryLevel?: QuantitativeValue;
 }
 
@@ -12128,7 +12128,7 @@ export interface SomeProducts extends Omit<Product, "@type"> {
  *
  **/
 export interface SpeakableSpecification extends Omit<Intangible, "@type"> {
-  "@type": "SpeakableSpecification";
+  "@type"?: "SpeakableSpecification";
   cssSelector?: CssSelectorType;
   xpath?: XPathType;
 }
@@ -12181,7 +12181,7 @@ media type information e.g. "application/rss+xml" or "application/atom+xml".
 *
 **/
 export interface SpecialAnnouncement extends Omit<CreativeWork, "@type"> {
-  "@type": "SpecialAnnouncement";
+  "@type"?: "SpecialAnnouncement";
   announcementLocation?: CivicStructure | LocalBusiness;
   category?: PhysicalActivityCategory | Text | URL | Thing;
   datePosted?: Date | DateTime;
@@ -12206,7 +12206,7 @@ export interface SpecialAnnouncement extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface Specialty extends Omit<Enumeration, "@type"> {
-  "@type": "Specialty";
+  "@type"?: "Specialty";
 }
 
 /**
@@ -12218,7 +12218,7 @@ export interface Specialty extends Omit<Enumeration, "@type"> {
  *
  **/
 export interface SportingGoodsStore extends Omit<Store, "@type"> {
-  "@type": "SportingGoodsStore";
+  "@type"?: "SportingGoodsStore";
 }
 
 /**
@@ -12230,7 +12230,7 @@ export interface SportingGoodsStore extends Omit<Store, "@type"> {
  *
  **/
 export interface SportsActivityLocation extends Omit<LocalBusiness, "@type"> {
-  "@type": "SportsActivityLocation";
+  "@type"?: "SportsActivityLocation";
 }
 
 /**
@@ -12242,7 +12242,7 @@ export interface SportsActivityLocation extends Omit<LocalBusiness, "@type"> {
  *
  **/
 export interface SportsClub extends Omit<SportsActivityLocation, "@type"> {
-  "@type": "SportsClub";
+  "@type"?: "SportsClub";
 }
 
 /**
@@ -12254,7 +12254,7 @@ export interface SportsClub extends Omit<SportsActivityLocation, "@type"> {
  *
  **/
 export interface SportsEvent extends Omit<Event, "@type"> {
-  "@type": "SportsEvent";
+  "@type"?: "SportsEvent";
   awayTeam?: Person | SportsTeam;
   competitor?: Person | SportsTeam;
   homeTeam?: SportsTeam | Person;
@@ -12270,7 +12270,7 @@ export interface SportsEvent extends Omit<Event, "@type"> {
  *
  **/
 export interface SportsOrganization extends Omit<Organization, "@type"> {
-  "@type": "SportsOrganization";
+  "@type"?: "SportsOrganization";
   sport?: Text | URL;
 }
 
@@ -12283,7 +12283,7 @@ export interface SportsOrganization extends Omit<Organization, "@type"> {
  *
  **/
 export interface SportsTeam extends Omit<SportsOrganization, "@type"> {
-  "@type": "SportsTeam";
+  "@type"?: "SportsTeam";
   athlete?: Person;
   coach?: Person;
   gender?: GenderType | Text;
@@ -12299,7 +12299,7 @@ export interface SportsTeam extends Omit<SportsOrganization, "@type"> {
  **/
 export interface SpreadsheetDigitalDocument
   extends Omit<DigitalDocument, "@type"> {
-  "@type": "SpreadsheetDigitalDocument";
+  "@type"?: "SpreadsheetDigitalDocument";
 }
 
 /**
@@ -12313,7 +12313,7 @@ export interface SpreadsheetDigitalDocument
 export interface StadiumOrArena
   extends Omit<CivicStructure, "@type">,
     Omit<SportsActivityLocation, "@type"> {
-  "@type": "StadiumOrArena";
+  "@type"?: "StadiumOrArena";
 }
 
 /**
@@ -12325,7 +12325,7 @@ export interface StadiumOrArena
  *
  **/
 export interface State extends Omit<AdministrativeArea, "@type"> {
-  "@type": "State";
+  "@type"?: "State";
 }
 
 /**
@@ -12344,7 +12344,7 @@ population, and does not imply that the population consists of people. For examp
 *
 **/
 export interface StatisticalPopulation extends Omit<Intangible, "@type"> {
-  "@type": "StatisticalPopulation";
+  "@type"?: "StatisticalPopulation";
   constrainingProperty?: Integer;
   numConstraints?: Integer;
   populationType?: Class;
@@ -12361,7 +12361,7 @@ export interface StatisticalPopulation extends Omit<Intangible, "@type"> {
  *
  **/
 export interface StatusEnumeration extends Omit<Enumeration, "@type"> {
-  "@type": "StatusEnumeration";
+  "@type"?: "StatusEnumeration";
 }
 
 /**
@@ -12373,7 +12373,7 @@ export interface StatusEnumeration extends Omit<Enumeration, "@type"> {
  *
  **/
 export interface Store extends Omit<LocalBusiness, "@type"> {
-  "@type": "Store";
+  "@type"?: "Store";
 }
 
 /**
@@ -12385,7 +12385,7 @@ export interface Store extends Omit<LocalBusiness, "@type"> {
  *
  **/
 export interface StructuredValue extends Omit<Intangible, "@type"> {
-  "@type": "StructuredValue";
+  "@type"?: "StructuredValue";
 }
 
 /**
@@ -12397,7 +12397,7 @@ export interface StructuredValue extends Omit<Intangible, "@type"> {
  *
  **/
 export interface SubscribeAction extends Omit<InteractAction, "@type"> {
-  "@type": "SubscribeAction";
+  "@type"?: "SubscribeAction";
 }
 
 /**
@@ -12411,7 +12411,7 @@ export interface SubscribeAction extends Omit<InteractAction, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface Substance extends Omit<MedicalEntity, "@type"> {
-  "@type": "Substance";
+  "@type"?: "Substance";
   activeIngredient?: Text;
   maximumIntake?: MaximumDoseSchedule;
 }
@@ -12425,7 +12425,7 @@ export interface Substance extends Omit<MedicalEntity, "@type"> {
  *
  **/
 export interface SubwayStation extends Omit<CivicStructure, "@type"> {
-  "@type": "SubwayStation";
+  "@type"?: "SubwayStation";
 }
 
 /**
@@ -12442,7 +12442,7 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
 *
 **/
 export interface Suite extends Omit<Accommodation, "@type"> {
-  "@type": "Suite";
+  "@type"?: "Suite";
   bed?: BedDetails | Text | BedType;
   numberOfRooms?: Number | QuantitativeValue;
   occupancy?: QuantitativeValue;
@@ -12459,7 +12459,7 @@ export interface Suite extends Omit<Accommodation, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface SuperficialAnatomy extends Omit<MedicalEntity, "@type"> {
-  "@type": "SuperficialAnatomy";
+  "@type"?: "SuperficialAnatomy";
   associatedPathophysiology?: Text;
   relatedAnatomy?: AnatomicalSystem | AnatomicalStructure;
   relatedCondition?: MedicalCondition;
@@ -12478,7 +12478,7 @@ export interface SuperficialAnatomy extends Omit<MedicalEntity, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface SurgicalProcedure extends Omit<MedicalProcedure, "@type"> {
-  "@type": "SurgicalProcedure";
+  "@type"?: "SurgicalProcedure";
 }
 
 /**
@@ -12490,7 +12490,7 @@ export interface SurgicalProcedure extends Omit<MedicalProcedure, "@type"> {
  *
  **/
 export interface SuspendAction extends Omit<ControlAction, "@type"> {
-  "@type": "SuspendAction";
+  "@type"?: "SuspendAction";
 }
 
 /**
@@ -12502,7 +12502,7 @@ export interface SuspendAction extends Omit<ControlAction, "@type"> {
  *
  **/
 export interface Synagogue extends Omit<PlaceOfWorship, "@type"> {
-  "@type": "Synagogue";
+  "@type"?: "Synagogue";
 }
 
 /**
@@ -12514,7 +12514,7 @@ export interface Synagogue extends Omit<PlaceOfWorship, "@type"> {
  *
  **/
 export interface Table extends Omit<WebPageElement, "@type"> {
-  "@type": "Table";
+  "@type"?: "Table";
 }
 
 /**
@@ -12526,7 +12526,7 @@ export interface Table extends Omit<WebPageElement, "@type"> {
  *
  **/
 export interface TakeAction extends Omit<TransferAction, "@type"> {
-  "@type": "TakeAction";
+  "@type"?: "TakeAction";
 }
 
 /**
@@ -12538,7 +12538,7 @@ export interface TakeAction extends Omit<TransferAction, "@type"> {
  *
  **/
 export interface TattooParlor extends Omit<HealthAndBeautyBusiness, "@type"> {
-  "@type": "TattooParlor";
+  "@type"?: "TattooParlor";
 }
 
 /**
@@ -12550,7 +12550,7 @@ export interface TattooParlor extends Omit<HealthAndBeautyBusiness, "@type"> {
  *
  **/
 export interface Taxi extends Omit<Service, "@type"> {
-  "@type": "Taxi";
+  "@type"?: "Taxi";
 }
 
 /**
@@ -12562,7 +12562,7 @@ export interface Taxi extends Omit<Service, "@type"> {
  *
  **/
 export interface TaxiReservation extends Omit<Reservation, "@type"> {
-  "@type": "TaxiReservation";
+  "@type"?: "TaxiReservation";
   partySize?: QuantitativeValue | Integer;
   pickupLocation?: Place;
   pickupTime?: DateTime;
@@ -12577,7 +12577,7 @@ export interface TaxiReservation extends Omit<Reservation, "@type"> {
  *
  **/
 export interface TaxiService extends Omit<Service, "@type"> {
-  "@type": "TaxiService";
+  "@type"?: "TaxiService";
 }
 
 /**
@@ -12589,7 +12589,7 @@ export interface TaxiService extends Omit<Service, "@type"> {
  *
  **/
 export interface TaxiStand extends Omit<CivicStructure, "@type"> {
-  "@type": "TaxiStand";
+  "@type"?: "TaxiStand";
 }
 
 /**
@@ -12601,7 +12601,7 @@ export interface TaxiStand extends Omit<CivicStructure, "@type"> {
  *
  **/
 export interface TechArticle extends Omit<Article, "@type"> {
-  "@type": "TechArticle";
+  "@type"?: "TechArticle";
   dependencies?: Text;
   proficiencyLevel?: Text;
 }
@@ -12615,7 +12615,7 @@ export interface TechArticle extends Omit<Article, "@type"> {
  *
  **/
 export interface TelevisionChannel extends Omit<BroadcastChannel, "@type"> {
-  "@type": "TelevisionChannel";
+  "@type"?: "TelevisionChannel";
 }
 
 /**
@@ -12627,7 +12627,7 @@ export interface TelevisionChannel extends Omit<BroadcastChannel, "@type"> {
  *
  **/
 export interface TelevisionStation extends Omit<LocalBusiness, "@type"> {
-  "@type": "TelevisionStation";
+  "@type"?: "TelevisionStation";
 }
 
 /**
@@ -12639,7 +12639,7 @@ export interface TelevisionStation extends Omit<LocalBusiness, "@type"> {
  *
  **/
 export interface TennisComplex extends Omit<SportsActivityLocation, "@type"> {
-  "@type": "TennisComplex";
+  "@type"?: "TennisComplex";
 }
 
 /**
@@ -12651,7 +12651,7 @@ export interface TennisComplex extends Omit<SportsActivityLocation, "@type"> {
  *
  **/
 export interface TextDigitalDocument extends Omit<DigitalDocument, "@type"> {
-  "@type": "TextDigitalDocument";
+  "@type"?: "TextDigitalDocument";
 }
 
 /**
@@ -12663,7 +12663,7 @@ export interface TextDigitalDocument extends Omit<DigitalDocument, "@type"> {
  *
  **/
 export interface TheaterEvent extends Omit<Event, "@type"> {
-  "@type": "TheaterEvent";
+  "@type"?: "TheaterEvent";
 }
 
 /**
@@ -12675,7 +12675,7 @@ export interface TheaterEvent extends Omit<Event, "@type"> {
  *
  **/
 export interface TheaterGroup extends Omit<PerformingGroup, "@type"> {
-  "@type": "TheaterGroup";
+  "@type"?: "TheaterGroup";
 }
 
 /**
@@ -12689,7 +12689,7 @@ export interface TheaterGroup extends Omit<PerformingGroup, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface TherapeuticProcedure extends Omit<MedicalProcedure, "@type"> {
-  "@type": "TherapeuticProcedure";
+  "@type"?: "TherapeuticProcedure";
   adverseOutcome?: MedicalEntity;
   doseSchedule?: DoseSchedule;
   drug?: Drug;
@@ -12708,7 +12708,7 @@ export interface TherapeuticProcedure extends Omit<MedicalProcedure, "@type"> {
  *
  **/
 export interface Thesis extends Omit<CreativeWork, "@type"> {
-  "@type": "Thesis";
+  "@type"?: "Thesis";
   inSupportOf?: Text;
 }
 
@@ -12721,7 +12721,7 @@ export interface Thesis extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface Thing {
-  "@type": "Thing";
+  "@type"?: "Thing";
   additionalType?: URL;
   alternateName?: Text;
   description?: Text;
@@ -12745,7 +12745,7 @@ export interface Thing {
  *
  **/
 export interface Ticket extends Omit<Intangible, "@type"> {
-  "@type": "Ticket";
+  "@type"?: "Ticket";
   dateIssued?: Date | DateTime;
   issuedBy?: Organization;
   priceCurrency?: Text;
@@ -12765,7 +12765,7 @@ export interface Ticket extends Omit<Intangible, "@type"> {
  *
  **/
 export interface TieAction extends Omit<AchieveAction, "@type"> {
-  "@type": "TieAction";
+  "@type"?: "TieAction";
 }
 
 /**
@@ -12777,7 +12777,7 @@ export interface TieAction extends Omit<AchieveAction, "@type"> {
  *
  **/
 export interface TipAction extends Omit<TradeAction, "@type"> {
-  "@type": "TipAction";
+  "@type"?: "TipAction";
   recipient?: Organization | ContactPoint | Person | Audience;
 }
 
@@ -12790,7 +12790,7 @@ export interface TipAction extends Omit<TradeAction, "@type"> {
  *
  **/
 export interface TireShop extends Omit<Store, "@type"> {
-  "@type": "TireShop";
+  "@type"?: "TireShop";
 }
 
 /**
@@ -12805,7 +12805,7 @@ export interface TireShop extends Omit<Store, "@type"> {
  *
  **/
 export interface TouristAttraction extends Omit<Place, "@type"> {
-  "@type": "TouristAttraction";
+  "@type"?: "TouristAttraction";
   availableLanguage?: Language | Text;
   touristType?: Audience | Text;
 }
@@ -12826,7 +12826,7 @@ export interface TouristAttraction extends Omit<Place, "@type"> {
 *
 **/
 export interface TouristDestination extends Omit<Place, "@type"> {
-  "@type": "TouristDestination";
+  "@type"?: "TouristDestination";
   includesAttraction?: TouristAttraction;
   touristType?: Audience | Text;
 }
@@ -12840,7 +12840,7 @@ export interface TouristDestination extends Omit<Place, "@type"> {
  *
  **/
 export interface TouristInformationCenter extends Omit<LocalBusiness, "@type"> {
-  "@type": "TouristInformationCenter";
+  "@type"?: "TouristInformationCenter";
 }
 
 /**
@@ -12859,7 +12859,7 @@ export interface TouristInformationCenter extends Omit<LocalBusiness, "@type"> {
 *
 **/
 export interface TouristTrip extends Omit<Trip, "@type"> {
-  "@type": "TouristTrip";
+  "@type"?: "TouristTrip";
   touristType?: Audience | Text;
 }
 
@@ -12872,7 +12872,7 @@ export interface TouristTrip extends Omit<Trip, "@type"> {
  *
  **/
 export interface ToyStore extends Omit<Store, "@type"> {
-  "@type": "ToyStore";
+  "@type"?: "ToyStore";
 }
 
 /**
@@ -12884,7 +12884,7 @@ export interface ToyStore extends Omit<Store, "@type"> {
  *
  **/
 export interface TrackAction extends Omit<FindAction, "@type"> {
-  "@type": "TrackAction";
+  "@type"?: "TrackAction";
   deliveryMethod?: DeliveryMethod;
 }
 
@@ -12897,7 +12897,7 @@ export interface TrackAction extends Omit<FindAction, "@type"> {
  *
  **/
 export interface TradeAction extends Omit<Action, "@type"> {
-  "@type": "TradeAction";
+  "@type"?: "TradeAction";
   price?: Number | Text;
   priceCurrency?: Text;
   priceSpecification?: PriceSpecification;
@@ -12912,7 +12912,7 @@ export interface TradeAction extends Omit<Action, "@type"> {
  *
  **/
 export interface TrainReservation extends Omit<Reservation, "@type"> {
-  "@type": "TrainReservation";
+  "@type"?: "TrainReservation";
 }
 
 /**
@@ -12924,7 +12924,7 @@ export interface TrainReservation extends Omit<Reservation, "@type"> {
  *
  **/
 export interface TrainStation extends Omit<CivicStructure, "@type"> {
-  "@type": "TrainStation";
+  "@type"?: "TrainStation";
 }
 
 /**
@@ -12936,7 +12936,7 @@ export interface TrainStation extends Omit<CivicStructure, "@type"> {
  *
  **/
 export interface TrainTrip extends Omit<Trip, "@type"> {
-  "@type": "TrainTrip";
+  "@type"?: "TrainTrip";
   arrivalPlatform?: Text;
   arrivalStation?: TrainStation;
   departurePlatform?: Text;
@@ -12954,7 +12954,7 @@ export interface TrainTrip extends Omit<Trip, "@type"> {
  *
  **/
 export interface TransferAction extends Omit<Action, "@type"> {
-  "@type": "TransferAction";
+  "@type"?: "TransferAction";
   fromLocation?: Place;
   toLocation?: Place;
 }
@@ -12968,7 +12968,7 @@ export interface TransferAction extends Omit<Action, "@type"> {
  *
  **/
 export interface TravelAction extends Omit<MoveAction, "@type"> {
-  "@type": "TravelAction";
+  "@type"?: "TravelAction";
   distance?: Distance;
 }
 
@@ -12981,7 +12981,7 @@ export interface TravelAction extends Omit<MoveAction, "@type"> {
  *
  **/
 export interface TravelAgency extends Omit<LocalBusiness, "@type"> {
-  "@type": "TravelAgency";
+  "@type"?: "TravelAgency";
 }
 
 /**
@@ -12995,7 +12995,7 @@ export interface TravelAgency extends Omit<LocalBusiness, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface TreatmentIndication extends Omit<MedicalIndication, "@type"> {
-  "@type": "TreatmentIndication";
+  "@type"?: "TreatmentIndication";
 }
 
 /**
@@ -13009,7 +13009,7 @@ export interface TreatmentIndication extends Omit<MedicalIndication, "@type"> {
  *
  **/
 export interface Trip extends Omit<Intangible, "@type"> {
-  "@type": "Trip";
+  "@type"?: "Trip";
   arrivalTime?: Time | DateTime;
   departureTime?: Time | DateTime;
   itinerary?: Place | ItemList<Place>;
@@ -13028,7 +13028,7 @@ export interface Trip extends Omit<Intangible, "@type"> {
  *
  **/
 export interface TVClip extends Omit<Clip, "@type"> {
-  "@type": "TVClip";
+  "@type"?: "TVClip";
   partOfTVSeries?: TVSeries;
 }
 
@@ -13041,7 +13041,7 @@ export interface TVClip extends Omit<Clip, "@type"> {
  *
  **/
 export interface TVEpisode extends Omit<Episode, "@type"> {
-  "@type": "TVEpisode";
+  "@type"?: "TVEpisode";
   countryOfOrigin?: Country;
   partOfTVSeries?: TVSeries;
   subtitleLanguage?: Text | Language;
@@ -13059,7 +13059,7 @@ export interface TVEpisode extends Omit<Episode, "@type"> {
 export interface TVSeason
   extends Omit<CreativeWork, "@type">,
     Omit<CreativeWorkSeason, "@type"> {
-  "@type": "TVSeason";
+  "@type"?: "TVSeason";
   countryOfOrigin?: Country;
   partOfTVSeries?: TVSeries;
 }
@@ -13075,7 +13075,7 @@ export interface TVSeason
 export interface TVSeries
   extends Omit<CreativeWork, "@type">,
     Omit<CreativeWorkSeries, "@type"> {
-  "@type": "TVSeries";
+  "@type"?: "TVSeries";
   actor?: Person;
   actors?: Array<Person>;
   containsSeason?: CreativeWorkSeason;
@@ -13104,7 +13104,7 @@ export interface TVSeries
  *
  **/
 export interface TypeAndQuantityNode extends Omit<StructuredValue, "@type"> {
-  "@type": "TypeAndQuantityNode";
+  "@type"?: "TypeAndQuantityNode";
   amountOfThisGood?: Number;
   businessFunction?: BusinessFunction;
   typeOfGood?: Service | Product;
@@ -13124,7 +13124,7 @@ export interface TypeAndQuantityNode extends Omit<StructuredValue, "@type"> {
  **/
 export interface UnitPriceSpecification
   extends Omit<PriceSpecification, "@type"> {
-  "@type": "UnitPriceSpecification";
+  "@type"?: "UnitPriceSpecification";
   billingDuration?: Number | Duration | QuantitativeValue;
   billingIncrement?: Number;
   billingStart?: Number;
@@ -13144,7 +13144,7 @@ export interface UnitPriceSpecification
  *
  **/
 export interface UnRegisterAction extends Omit<InteractAction, "@type"> {
-  "@type": "UnRegisterAction";
+  "@type"?: "UnRegisterAction";
 }
 
 /**
@@ -13156,7 +13156,7 @@ export interface UnRegisterAction extends Omit<InteractAction, "@type"> {
  *
  **/
 export interface UpdateAction extends Omit<Action, "@type"> {
-  "@type": "UpdateAction";
+  "@type"?: "UpdateAction";
   collection?: Thing;
   targetCollection?: Thing;
 }
@@ -13180,7 +13180,7 @@ export type URL = Text;
  *
  **/
 export interface UseAction extends Omit<ConsumeAction, "@type"> {
-  "@type": "UseAction";
+  "@type"?: "UseAction";
 }
 
 /**
@@ -13192,7 +13192,7 @@ export interface UseAction extends Omit<ConsumeAction, "@type"> {
  *
  **/
 export interface UserBlocks extends Omit<UserInteraction, "@type"> {
-  "@type": "UserBlocks";
+  "@type"?: "UserBlocks";
 }
 
 /**
@@ -13204,7 +13204,7 @@ export interface UserBlocks extends Omit<UserInteraction, "@type"> {
  *
  **/
 export interface UserCheckins extends Omit<UserInteraction, "@type"> {
-  "@type": "UserCheckins";
+  "@type"?: "UserCheckins";
 }
 
 /**
@@ -13218,7 +13218,7 @@ export interface UserCheckins extends Omit<UserInteraction, "@type"> {
  *
  **/
 export interface UserComments extends Omit<UserInteraction, "@type"> {
-  "@type": "UserComments";
+  "@type"?: "UserComments";
   commentText?: Text;
   commentTime?: DateTime | Date;
   creator?: Organization | Person;
@@ -13235,7 +13235,7 @@ export interface UserComments extends Omit<UserInteraction, "@type"> {
  *
  **/
 export interface UserDownloads extends Omit<UserInteraction, "@type"> {
-  "@type": "UserDownloads";
+  "@type"?: "UserDownloads";
 }
 
 /**
@@ -13247,7 +13247,7 @@ export interface UserDownloads extends Omit<UserInteraction, "@type"> {
  *
  **/
 export interface UserInteraction extends Omit<Event, "@type"> {
-  "@type": "UserInteraction";
+  "@type"?: "UserInteraction";
 }
 
 /**
@@ -13259,7 +13259,7 @@ export interface UserInteraction extends Omit<Event, "@type"> {
  *
  **/
 export interface UserLikes extends Omit<UserInteraction, "@type"> {
-  "@type": "UserLikes";
+  "@type"?: "UserLikes";
 }
 
 /**
@@ -13271,7 +13271,7 @@ export interface UserLikes extends Omit<UserInteraction, "@type"> {
  *
  **/
 export interface UserPageVisits extends Omit<UserInteraction, "@type"> {
-  "@type": "UserPageVisits";
+  "@type"?: "UserPageVisits";
 }
 
 /**
@@ -13283,7 +13283,7 @@ export interface UserPageVisits extends Omit<UserInteraction, "@type"> {
  *
  **/
 export interface UserPlays extends Omit<UserInteraction, "@type"> {
-  "@type": "UserPlays";
+  "@type"?: "UserPlays";
 }
 
 /**
@@ -13295,7 +13295,7 @@ export interface UserPlays extends Omit<UserInteraction, "@type"> {
  *
  **/
 export interface UserPlusOnes extends Omit<UserInteraction, "@type"> {
-  "@type": "UserPlusOnes";
+  "@type"?: "UserPlusOnes";
 }
 
 /**
@@ -13311,7 +13311,7 @@ export interface UserPlusOnes extends Omit<UserInteraction, "@type"> {
  *
  **/
 export interface UserReview extends Omit<Review, "@type"> {
-  "@type": "UserReview";
+  "@type"?: "UserReview";
 }
 
 /**
@@ -13323,7 +13323,7 @@ export interface UserReview extends Omit<Review, "@type"> {
  *
  **/
 export interface UserTweets extends Omit<UserInteraction, "@type"> {
-  "@type": "UserTweets";
+  "@type"?: "UserTweets";
 }
 
 /**
@@ -13335,7 +13335,7 @@ export interface UserTweets extends Omit<UserInteraction, "@type"> {
  *
  **/
 export interface Vehicle extends Omit<Product, "@type"> {
-  "@type": "Vehicle";
+  "@type"?: "Vehicle";
   accelerationTime?: QuantitativeValue;
   bodyType?: URL | Text | QualitativeValue;
   callSign?: Text;
@@ -13388,7 +13388,7 @@ export interface Vehicle extends Omit<Product, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface Vein extends Omit<Vessel, "@type"> {
-  "@type": "Vein";
+  "@type"?: "Vein";
   drainsTo?: Vessel;
   regionDrained?: AnatomicalStructure | AnatomicalSystem;
   tributary?: AnatomicalStructure;
@@ -13405,7 +13405,7 @@ export interface Vein extends Omit<Vessel, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface Vessel extends Omit<AnatomicalStructure, "@type"> {
-  "@type": "Vessel";
+  "@type"?: "Vessel";
 }
 
 /**
@@ -13419,7 +13419,7 @@ export interface Vessel extends Omit<AnatomicalStructure, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface VeterinaryCare extends Omit<MedicalOrganization, "@type"> {
-  "@type": "VeterinaryCare";
+  "@type"?: "VeterinaryCare";
 }
 
 /**
@@ -13431,7 +13431,7 @@ export interface VeterinaryCare extends Omit<MedicalOrganization, "@type"> {
  *
  **/
 export interface VideoGallery extends Omit<MediaGallery, "@type"> {
-  "@type": "VideoGallery";
+  "@type"?: "VideoGallery";
 }
 
 /**
@@ -13445,7 +13445,7 @@ export interface VideoGallery extends Omit<MediaGallery, "@type"> {
 export interface VideoGame
   extends Omit<Game, "@type">,
     Omit<SoftwareApplication, "@type"> {
-  "@type": "VideoGame";
+  "@type"?: "VideoGame";
   actor?: Person;
   actors?: Array<Person>;
   cheatCode?: CreativeWork;
@@ -13468,7 +13468,7 @@ export interface VideoGame
  *
  **/
 export interface VideoGameClip extends Omit<Clip, "@type"> {
-  "@type": "VideoGameClip";
+  "@type"?: "VideoGameClip";
 }
 
 /**
@@ -13480,7 +13480,7 @@ export interface VideoGameClip extends Omit<Clip, "@type"> {
  *
  **/
 export interface VideoGameSeries extends Omit<CreativeWorkSeries, "@type"> {
-  "@type": "VideoGameSeries";
+  "@type"?: "VideoGameSeries";
   actor?: Person;
   actors?: Array<Person>;
   characterAttribute?: Thing;
@@ -13516,7 +13516,7 @@ export interface VideoGameSeries extends Omit<CreativeWorkSeries, "@type"> {
  *
  **/
 export interface VideoObject extends Omit<MediaObject, "@type"> {
-  "@type": "VideoObject";
+  "@type"?: "VideoObject";
   actor?: Person;
   actors?: Array<Person>;
   caption?: Text | MediaObject;
@@ -13538,7 +13538,7 @@ export interface VideoObject extends Omit<MediaObject, "@type"> {
  *
  **/
 export interface ViewAction extends Omit<ConsumeAction, "@type"> {
-  "@type": "ViewAction";
+  "@type"?: "ViewAction";
 }
 
 /**
@@ -13554,7 +13554,7 @@ export interface ViewAction extends Omit<ConsumeAction, "@type"> {
  *
  **/
 export interface VirtualLocation extends Omit<Intangible, "@type"> {
-  "@type": "VirtualLocation";
+  "@type"?: "VirtualLocation";
 }
 
 /**
@@ -13566,7 +13566,7 @@ export interface VirtualLocation extends Omit<Intangible, "@type"> {
  *
  **/
 export interface VisualArtsEvent extends Omit<Event, "@type"> {
-  "@type": "VisualArtsEvent";
+  "@type"?: "VisualArtsEvent";
 }
 
 /**
@@ -13580,7 +13580,7 @@ export interface VisualArtsEvent extends Omit<Event, "@type"> {
  *
  **/
 export interface VisualArtwork extends Omit<CreativeWork, "@type"> {
-  "@type": "VisualArtwork";
+  "@type"?: "VisualArtwork";
   artEdition?: Text | Integer;
   artform?: Text | URL;
   artist?: Person;
@@ -13607,7 +13607,7 @@ export interface VisualArtwork extends Omit<CreativeWork, "@type"> {
  * Partof: https://health-lifesci.schema.org
  **/
 export interface VitalSign extends Omit<MedicalSign, "@type"> {
-  "@type": "VitalSign";
+  "@type"?: "VitalSign";
 }
 
 /**
@@ -13619,7 +13619,7 @@ export interface VitalSign extends Omit<MedicalSign, "@type"> {
  *
  **/
 export interface Volcano extends Omit<Landform, "@type"> {
-  "@type": "Volcano";
+  "@type"?: "Volcano";
 }
 
 /**
@@ -13631,7 +13631,7 @@ export interface Volcano extends Omit<Landform, "@type"> {
  *
  **/
 export interface VoteAction extends Omit<ChooseAction, "@type"> {
-  "@type": "VoteAction";
+  "@type"?: "VoteAction";
   candidate?: Person;
 }
 
@@ -13644,7 +13644,7 @@ export interface VoteAction extends Omit<ChooseAction, "@type"> {
  *
  **/
 export interface WantAction extends Omit<ReactAction, "@type"> {
-  "@type": "WantAction";
+  "@type"?: "WantAction";
 }
 
 /**
@@ -13658,7 +13658,7 @@ export interface WantAction extends Omit<ReactAction, "@type"> {
  *
  **/
 export interface WarrantyPromise extends Omit<StructuredValue, "@type"> {
-  "@type": "WarrantyPromise";
+  "@type"?: "WarrantyPromise";
   durationOfWarranty?: QuantitativeValue;
   warrantyScope?: WarrantyScope;
 }
@@ -13675,7 +13675,7 @@ export interface WarrantyPromise extends Omit<StructuredValue, "@type"> {
 *
 **/
 export interface WarrantyScope extends Omit<Enumeration, "@type"> {
-  "@type": "WarrantyScope";
+  "@type"?: "WarrantyScope";
 }
 
 /**
@@ -13687,7 +13687,7 @@ export interface WarrantyScope extends Omit<Enumeration, "@type"> {
  *
  **/
 export interface WatchAction extends Omit<ConsumeAction, "@type"> {
-  "@type": "WatchAction";
+  "@type"?: "WatchAction";
 }
 
 /**
@@ -13699,7 +13699,7 @@ export interface WatchAction extends Omit<ConsumeAction, "@type"> {
  *
  **/
 export interface Waterfall extends Omit<BodyOfWater, "@type"> {
-  "@type": "Waterfall";
+  "@type"?: "Waterfall";
 }
 
 /**
@@ -13711,7 +13711,7 @@ export interface Waterfall extends Omit<BodyOfWater, "@type"> {
  *
  **/
 export interface WearAction extends Omit<UseAction, "@type"> {
-  "@type": "WearAction";
+  "@type"?: "WearAction";
 }
 
 /**
@@ -13727,7 +13727,7 @@ export interface WearAction extends Omit<UseAction, "@type"> {
  *
  **/
 export interface WebAPI extends Omit<Service, "@type"> {
-  "@type": "WebAPI";
+  "@type"?: "WebAPI";
   documentation?: CreativeWork | URL;
 }
 
@@ -13740,7 +13740,7 @@ export interface WebAPI extends Omit<Service, "@type"> {
  *
  **/
 export interface WebApplication extends Omit<SoftwareApplication, "@type"> {
-  "@type": "WebApplication";
+  "@type"?: "WebApplication";
   browserRequirements?: Text;
 }
 
@@ -13757,7 +13757,7 @@ export interface WebApplication extends Omit<SoftwareApplication, "@type"> {
  *
  **/
 export interface WebContent extends Omit<CreativeWork, "@type"> {
-  "@type": "WebContent";
+  "@type"?: "WebContent";
 }
 
 /**
@@ -13769,7 +13769,7 @@ export interface WebContent extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface WebPage extends Omit<CreativeWork, "@type"> {
-  "@type": "WebPage";
+  "@type"?: "WebPage";
   breadcrumb?: Text | BreadcrumbList;
   lastReviewed?: Date;
   mainContentOfPage?: WebPageElement;
@@ -13791,7 +13791,7 @@ export interface WebPage extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface WebPageElement extends Omit<CreativeWork, "@type"> {
-  "@type": "WebPageElement";
+  "@type"?: "WebPageElement";
   cssSelector?: CssSelectorType;
   xpath?: XPathType;
 }
@@ -13805,7 +13805,7 @@ export interface WebPageElement extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface WebSite extends Omit<CreativeWork, "@type"> {
-  "@type": "WebSite";
+  "@type"?: "WebSite";
   issn?: Text;
 }
 
@@ -13818,7 +13818,7 @@ export interface WebSite extends Omit<CreativeWork, "@type"> {
  *
  **/
 export interface WholesaleStore extends Omit<Store, "@type"> {
-  "@type": "WholesaleStore";
+  "@type"?: "WholesaleStore";
 }
 
 /**
@@ -13830,7 +13830,7 @@ export interface WholesaleStore extends Omit<Store, "@type"> {
  *
  **/
 export interface WinAction extends Omit<AchieveAction, "@type"> {
-  "@type": "WinAction";
+  "@type"?: "WinAction";
   loser?: Person;
 }
 
@@ -13843,7 +13843,7 @@ export interface WinAction extends Omit<AchieveAction, "@type"> {
  *
  **/
 export interface Winery extends Omit<FoodEstablishment, "@type"> {
-  "@type": "Winery";
+  "@type"?: "Winery";
 }
 
 /**
@@ -13860,7 +13860,7 @@ export interface Winery extends Omit<FoodEstablishment, "@type"> {
  **/
 export interface WorkBasedProgram
   extends Omit<EducationalOccupationalProgram, "@type"> {
-  "@type": "WorkBasedProgram";
+  "@type"?: "WorkBasedProgram";
   occupationalCategory?: CategoryCode | Text;
   trainingSalary?: MonetaryAmountDistribution;
 }
@@ -13876,7 +13876,7 @@ export interface WorkBasedProgram
  *
  **/
 export interface WorkersUnion extends Omit<Organization, "@type"> {
-  "@type": "WorkersUnion";
+  "@type"?: "WorkersUnion";
 }
 
 /**
@@ -13888,7 +13888,7 @@ export interface WorkersUnion extends Omit<Organization, "@type"> {
  *
  **/
 export interface WPAdBlock extends Omit<WebPageElement, "@type"> {
-  "@type": "WPAdBlock";
+  "@type"?: "WPAdBlock";
 }
 
 /**
@@ -13900,7 +13900,7 @@ export interface WPAdBlock extends Omit<WebPageElement, "@type"> {
  *
  **/
 export interface WPFooter extends Omit<WebPageElement, "@type"> {
-  "@type": "WPFooter";
+  "@type"?: "WPFooter";
 }
 
 /**
@@ -13912,7 +13912,7 @@ export interface WPFooter extends Omit<WebPageElement, "@type"> {
  *
  **/
 export interface WPHeader extends Omit<WebPageElement, "@type"> {
-  "@type": "WPHeader";
+  "@type"?: "WPHeader";
 }
 
 /**
@@ -13924,7 +13924,7 @@ export interface WPHeader extends Omit<WebPageElement, "@type"> {
  *
  **/
 export interface WPSideBar extends Omit<WebPageElement, "@type"> {
-  "@type": "WPSideBar";
+  "@type"?: "WPSideBar";
 }
 
 /**
@@ -13936,7 +13936,7 @@ export interface WPSideBar extends Omit<WebPageElement, "@type"> {
  *
  **/
 export interface WriteAction extends Omit<CreateAction, "@type"> {
-  "@type": "WriteAction";
+  "@type"?: "WriteAction";
   inLanguage?: Text | Language;
   language?: Language;
 }
@@ -13964,5 +13964,5 @@ export type XPathType = Text;
  *
  **/
 export interface Zoo extends Omit<CivicStructure, "@type"> {
-  "@type": "Zoo";
+  "@type"?: "Zoo";
 }

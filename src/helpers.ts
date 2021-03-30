@@ -424,7 +424,7 @@ export const renderInterfaces = (
         }
 
         ws.write(
-          `  "@type" : "${getTypeScriptSafeLabel(getLabel(schema))}"\r\n`
+          `  "@type" ?: "${getTypeScriptSafeLabel(getLabel(schema))}"\r\n`
         );
         Object.entries(schema.props).forEach(([propLabel, propType]) => {
           ws.write(`  ${propLabel} ?: ${propType}\r\n`);
