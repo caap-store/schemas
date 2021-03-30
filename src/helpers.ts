@@ -2,7 +2,6 @@ import _ from "lodash";
 import * as fs from "fs";
 import { WriteStream } from "node:fs";
 import { isPlural, singular } from "pluralize";
-import { OfferCatalog, ItemList, HowToStep } from "../types";
 
 export const CLASS_TYPE = "rdfs:Class";
 export const PROPERTY_TYPE = "rdf:Property";
@@ -333,6 +332,8 @@ export const renderEnums = (
     });
 };
 
+const typeOmitted = (label: string) => `Omit<${label}, '@type'>`;
+
 export const renderInterfaces = (
   ws: WriteStream,
   withProperties: {
@@ -380,9 +381,10 @@ export const renderInterfaces = (
 
           let extendsPart: string;
           if (!hasGenericSuper) {
+            // no generics
             extendsPart = Array.isArray(superLabels)
-              ? _.join(superLabels, ", ")
-              : superLabels;
+              ? _.join(superLabels.map(typeOmitted), ", ")
+              : typeOmitted(superLabels);
           } else {
             if (Array.isArray(subClassInfo)) {
               // Array with a few generics.
@@ -395,10 +397,11 @@ export const renderInterfaces = (
               extendsPart = toSpecific(
                 lower.map((i) => getLabel(schemaMap[i["@id"]])),
                 higher.map((i) => getLabel(schemaMap[i["@id"]])),
-                isMultiGeneric ? " | " : ", "
+                isMultiGeneric ? " | " : ", ",
+                true
               );
             } else {
-              extendsPart = `${superLabels}<T>`;
+              extendsPart = typeOmitted(`${superLabels}<T>`);
             }
           }
           if (isMultiGeneric) {
@@ -410,7 +413,7 @@ export const renderInterfaces = (
           } else {
             ws.write(
               `export interface ${getTypeScriptSafeLabel(getLabel(schema))}${
-                willBeGeneric ? "<T>" : ""
+                willBeGeneric ? "<T = Text>" : ""
               } extends ${extendsPart} {\r\n`
             );
           }
@@ -419,6 +422,10 @@ export const renderInterfaces = (
             `export interface ${getTypeScriptSafeLabel(getLabel(schema))} {\r\n`
           );
         }
+
+        ws.write(
+          `  "@type" : "${getTypeScriptSafeLabel(getLabel(schema))}"\r\n`
+        );
         Object.entries(schema.props).forEach(([propLabel, propType]) => {
           ws.write(`  ${propLabel} ?: ${propType}\r\n`);
         });
@@ -430,11 +437,16 @@ export const renderInterfaces = (
 export const toSpecific = (
   lowerTypes: Array<string>,
   higherTypes: Array<string>,
-  separator: string
+  separator: string,
+  omit: boolean = false
 ) =>
   higherTypes
     .map((hLabel) => {
-      return lowerTypes.map((lLabel) => `${hLabel}<${lLabel}>`).join(separator);
+      return lowerTypes
+        .map((lLabel) =>
+          omit ? typeOmitted(`${hLabel}<${lLabel}>`) : `${hLabel}<${lLabel}>`
+        )
+        .join(separator);
     })
     .join(separator);
 

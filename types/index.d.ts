@@ -1135,7 +1135,8 @@ case of a single file published after Zip compression, the convention of appendi
 * @see @link https://github.com/schemaorg/schemaorg/issues/2140
 *
 **/
-export interface Interface3DModel extends MediaObject {
+export interface Interface3DModel extends Omit<MediaObject, "@type"> {
+  "@type": "Interface3DModel";
   isResizable?: Boolean;
 }
 
@@ -1147,7 +1148,9 @@ export interface Interface3DModel extends MediaObject {
  * Web page type: About page.
  *
  **/
-export interface AboutPage extends WebPage {}
+export interface AboutPage extends Omit<WebPage, "@type"> {
+  "@type": "AboutPage";
+}
 
 /**
  *
@@ -1157,7 +1160,9 @@ export interface AboutPage extends WebPage {}
  * The act of committing to/adopting an object.\n\nRelated actions:\n\n* [[RejectAction]]: The antonym of AcceptAction.
  *
  **/
-export interface AcceptAction extends AllocateAction {}
+export interface AcceptAction extends Omit<AllocateAction, "@type"> {
+  "@type": "AcceptAction";
+}
 
 /**
 *
@@ -1173,7 +1178,8 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
 * @see @link https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology
 *
 **/
-export interface Accommodation extends Place {
+export interface Accommodation extends Omit<Place, "@type"> {
+  "@type": "Accommodation";
   accommodationCategory?: Text;
   accommodationFloorPlan?: FloorPlan;
   amenityFeature?: LocationFeatureSpecification;
@@ -1200,7 +1206,9 @@ export interface Accommodation extends Place {
       
 *
 **/
-export interface AccountingService extends FinancialService {}
+export interface AccountingService extends Omit<FinancialService, "@type"> {
+  "@type": "AccountingService";
+}
 
 /**
  *
@@ -1210,7 +1218,9 @@ export interface AccountingService extends FinancialService {}
  * The act of accomplishing something via previous efforts. It is an instantaneous action rather than an ongoing process.
  *
  **/
-export interface AchieveAction extends Action {}
+export interface AchieveAction extends Omit<Action, "@type"> {
+  "@type": "AchieveAction";
+}
 
 /**
  *
@@ -1222,7 +1232,8 @@ export interface AchieveAction extends Action {}
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_ActionCollabClass
  *
  **/
-export interface Action extends Thing {
+export interface Action extends Omit<Thing, "@type"> {
+  "@type": "Action";
   actionStatus?: ActionStatusType;
   agent?: Person | Organization;
   endTime?: DateTime | Time;
@@ -1246,7 +1257,8 @@ export interface Action extends Thing {
  * @see @link https://github.com/schemaorg/schemaorg/issues/1741
  *
  **/
-export interface ActionAccessSpecification extends Intangible {
+export interface ActionAccessSpecification extends Omit<Intangible, "@type"> {
+  "@type": "ActionAccessSpecification";
   availabilityEnds?: DateTime | Time | Date;
   availabilityStarts?: DateTime | Date | Time;
   category?: PhysicalActivityCategory | Text | URL | Thing;
@@ -1264,7 +1276,9 @@ export interface ActionAccessSpecification extends Intangible {
  * The act of starting or activating a device or application (e.g. starting a timer or turning on a flashlight).
  *
  **/
-export interface ActivateAction extends ControlAction {}
+export interface ActivateAction extends Omit<ControlAction, "@type"> {
+  "@type": "ActivateAction";
+}
 
 /**
  *
@@ -1274,7 +1288,9 @@ export interface ActivateAction extends ControlAction {}
  * The act of editing by adding an object to a collection.
  *
  **/
-export interface AddAction extends UpdateAction {}
+export interface AddAction extends Omit<UpdateAction, "@type"> {
+  "@type": "AddAction";
+}
 
 /**
  *
@@ -1284,7 +1300,9 @@ export interface AddAction extends UpdateAction {}
  * A geographical region, typically under the jurisdiction of a particular government.
  *
  **/
-export interface AdministrativeArea extends Place {}
+export interface AdministrativeArea extends Omit<Place, "@type"> {
+  "@type": "AdministrativeArea";
+}
 
 /**
  *
@@ -1294,7 +1312,10 @@ export interface AdministrativeArea extends Place {}
  * An adult entertainment establishment.
  *
  **/
-export interface AdultEntertainment extends EntertainmentBusiness {}
+export interface AdultEntertainment
+  extends Omit<EntertainmentBusiness, "@type"> {
+  "@type": "AdultEntertainment";
+}
 
 /**
  *
@@ -1309,7 +1330,9 @@ export interface AdultEntertainment extends EntertainmentBusiness {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/1525
  *
  **/
-export interface AdvertiserContentArticle extends Article {}
+export interface AdvertiserContentArticle extends Omit<Article, "@type"> {
+  "@type": "AdvertiserContentArticle";
+}
 
 /**
  *
@@ -1319,7 +1342,8 @@ export interface AdvertiserContentArticle extends Article {}
  * When a single product is associated with multiple offers (for example, the same pair of shoes is offered by different merchants), then AggregateOffer can be used.\n\nNote: AggregateOffers are normally expected to associate multiple offers that all share the same defined [[businessFunction]] value, or default to http://purl.org/goodrelations/v1#Sell if businessFunction is not explicitly defined.
  *
  **/
-export interface AggregateOffer extends Offer {
+export interface AggregateOffer extends Omit<Offer, "@type"> {
+  "@type": "AggregateOffer";
   highPrice?: Number | Text;
   lowPrice?: Text | Number;
   offerCount?: Integer;
@@ -1334,7 +1358,8 @@ export interface AggregateOffer extends Offer {
  * The average rating based on multiple ratings or reviews.
  *
  **/
-export interface AggregateRating extends Rating {
+export interface AggregateRating extends Omit<Rating, "@type"> {
+  "@type": "AggregateRating";
   itemReviewed?: Thing;
   ratingCount?: Integer;
   reviewCount?: Integer;
@@ -1348,7 +1373,9 @@ export interface AggregateRating extends Rating {
  * The act of expressing a consistency of opinion with the object. An agent agrees to/about an object (a proposition, topic or theme) with participants.
  *
  **/
-export interface AgreeAction extends ReactAction {}
+export interface AgreeAction extends Omit<ReactAction, "@type"> {
+  "@type": "AgreeAction";
+}
 
 /**
  *
@@ -1358,7 +1385,8 @@ export interface AgreeAction extends ReactAction {}
  * An organization that provides flights for passengers.
  *
  **/
-export interface Airline extends Organization {
+export interface Airline extends Omit<Organization, "@type"> {
+  "@type": "Airline";
   boardingPolicy?: BoardingPolicyType;
   iataCode?: Text;
 }
@@ -1371,7 +1399,8 @@ export interface Airline extends Organization {
  * An airport.
  *
  **/
-export interface Airport extends CivicStructure {
+export interface Airport extends Omit<CivicStructure, "@type"> {
+  "@type": "Airport";
   iataCode?: Text;
   icaoCode?: Text;
 }
@@ -1388,7 +1417,8 @@ Should not be used where the nature of the alignment can be described using a si
 * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_LRMIClass
 *
 **/
-export interface AlignmentObject extends Intangible {
+export interface AlignmentObject extends Omit<Intangible, "@type"> {
+  "@type": "AlignmentObject";
   alignmentType?: Text;
   educationalFramework?: Text;
   targetDescription?: Text;
@@ -1404,7 +1434,9 @@ export interface AlignmentObject extends Intangible {
  * The act of organizing tasks/objects/events by associating resources to it.
  *
  **/
-export interface AllocateAction extends OrganizeAction {}
+export interface AllocateAction extends Omit<OrganizeAction, "@type"> {
+  "@type": "AllocateAction";
+}
 
 /**
  *
@@ -1418,7 +1450,9 @@ export interface AllocateAction extends OrganizeAction {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/2646
  *
  **/
-export interface AmpStory extends CreativeWork {}
+export interface AmpStory extends Omit<CreativeWork, "@type"> {
+  "@type": "AmpStory";
+}
 
 /**
  *
@@ -1430,7 +1464,9 @@ export interface AmpStory extends CreativeWork {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/1004
  *
  **/
-export interface AMRadioChannel extends RadioChannel {}
+export interface AMRadioChannel extends Omit<RadioChannel, "@type"> {
+  "@type": "AMRadioChannel";
+}
 
 /**
  *
@@ -1440,7 +1476,9 @@ export interface AMRadioChannel extends RadioChannel {}
  * An amusement park.
  *
  **/
-export interface AmusementPark extends EntertainmentBusiness {}
+export interface AmusementPark extends Omit<EntertainmentBusiness, "@type"> {
+  "@type": "AmusementPark";
+}
 
 /**
  *
@@ -1455,7 +1493,9 @@ export interface AmusementPark extends EntertainmentBusiness {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/1525
  *
  **/
-export interface AnalysisNewsArticle extends NewsArticle {}
+export interface AnalysisNewsArticle extends Omit<NewsArticle, "@type"> {
+  "@type": "AnalysisNewsArticle";
+}
 
 /**
  *
@@ -1467,7 +1507,8 @@ export interface AnalysisNewsArticle extends NewsArticle {}
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface AnatomicalStructure extends MedicalEntity {
+export interface AnatomicalStructure extends Omit<MedicalEntity, "@type"> {
+  "@type": "AnatomicalStructure";
   associatedPathophysiology?: Text;
   bodyLocation?: Text;
   connectedTo?: AnatomicalStructure;
@@ -1488,7 +1529,8 @@ export interface AnatomicalStructure extends MedicalEntity {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface AnatomicalSystem extends MedicalEntity {
+export interface AnatomicalSystem extends Omit<MedicalEntity, "@type"> {
+  "@type": "AnatomicalSystem";
   associatedPathophysiology?: Text;
   comprisedOf?: AnatomicalSystem | AnatomicalStructure;
   relatedCondition?: MedicalCondition;
@@ -1504,7 +1546,9 @@ export interface AnatomicalSystem extends MedicalEntity {
  * Animal shelter.
  *
  **/
-export interface AnimalShelter extends LocalBusiness {}
+export interface AnimalShelter extends Omit<LocalBusiness, "@type"> {
+  "@type": "AnimalShelter";
+}
 
 /**
  *
@@ -1516,7 +1560,8 @@ export interface AnimalShelter extends LocalBusiness {}
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_QAStackExchange
  *
  **/
-export interface Answer extends Comment {
+export interface Answer extends Omit<Comment, "@type"> {
+  "@type": "Answer";
   answerExplanation?: Comment | WebContent;
 }
 
@@ -1530,7 +1575,8 @@ export interface Answer extends Comment {
  * @see @link https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology
  *
  **/
-export interface Apartment extends Accommodation {
+export interface Apartment extends Omit<Accommodation, "@type"> {
+  "@type": "Apartment";
   numberOfRooms?: Number | QuantitativeValue;
   occupancy?: QuantitativeValue;
 }
@@ -1543,7 +1589,8 @@ export interface Apartment extends Accommodation {
  * Residence type: Apartment complex.
  *
  **/
-export interface ApartmentComplex extends Residence {
+export interface ApartmentComplex extends Omit<Residence, "@type"> {
+  "@type": "ApartmentComplex";
   numberOfAccommodationUnits?: QuantitativeValue;
   numberOfAvailableAccommodationUnits?: QuantitativeValue;
   numberOfBedrooms?: QuantitativeValue | Number;
@@ -1559,7 +1606,8 @@ export interface ApartmentComplex extends Residence {
  * Reference documentation for application programming interfaces (APIs).
  *
  **/
-export interface APIReference extends TechArticle {
+export interface APIReference extends Omit<TechArticle, "@type"> {
+  "@type": "APIReference";
   assembly?: Text;
   assemblyVersion?: Text;
   executableLibraryName?: Text;
@@ -1575,7 +1623,9 @@ export interface APIReference extends TechArticle {
  * The act of inserting at the end if an ordered collection.
  *
  **/
-export interface AppendAction extends InsertAction {}
+export interface AppendAction extends Omit<InsertAction, "@type"> {
+  "@type": "AppendAction";
+}
 
 /**
  *
@@ -1585,7 +1635,9 @@ export interface AppendAction extends InsertAction {}
  * The act of registering to an organization/service without the guarantee to receive it.\n\nRelated actions:\n\n* [[RegisterAction]]: Unlike RegisterAction, ApplyAction has no guarantees that the application will be accepted.
  *
  **/
-export interface ApplyAction extends OrganizeAction {}
+export interface ApplyAction extends Omit<OrganizeAction, "@type"> {
+  "@type": "ApplyAction";
+}
 
 /**
  *
@@ -1597,7 +1649,9 @@ export interface ApplyAction extends OrganizeAction {}
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface ApprovedIndication extends MedicalIndication {}
+export interface ApprovedIndication extends Omit<MedicalIndication, "@type"> {
+  "@type": "ApprovedIndication";
+}
 
 /**
  *
@@ -1607,7 +1661,9 @@ export interface ApprovedIndication extends MedicalIndication {}
  * Aquarium.
  *
  **/
-export interface Aquarium extends CivicStructure {}
+export interface Aquarium extends Omit<CivicStructure, "@type"> {
+  "@type": "Aquarium";
+}
 
 /**
  *
@@ -1621,7 +1677,8 @@ export interface Aquarium extends CivicStructure {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/1758
  *
  **/
-export interface ArchiveComponent extends CreativeWork {
+export interface ArchiveComponent extends Omit<CreativeWork, "@type"> {
+  "@type": "ArchiveComponent";
   holdingArchive?: ArchiveOrganization;
   itemLocation?: PostalAddress | Place | Text;
 }
@@ -1638,7 +1695,8 @@ export interface ArchiveComponent extends CreativeWork {
  * @see @link https://github.com/schemaorg/schemaorg/issues/1758
  *
  **/
-export interface ArchiveOrganization extends LocalBusiness {
+export interface ArchiveOrganization extends Omit<LocalBusiness, "@type"> {
+  "@type": "ArchiveOrganization";
   archiveHeld?: ArchiveComponent;
 }
 
@@ -1650,7 +1708,9 @@ export interface ArchiveOrganization extends LocalBusiness {
  * The act of arriving at a place. An agent arrives at a destination from a fromLocation, optionally with participants.
  *
  **/
-export interface ArriveAction extends MoveAction {}
+export interface ArriveAction extends Omit<MoveAction, "@type"> {
+  "@type": "ArriveAction";
+}
 
 /**
  *
@@ -1662,7 +1722,8 @@ export interface ArriveAction extends MoveAction {}
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface Artery extends Vessel {
+export interface Artery extends Omit<Vessel, "@type"> {
+  "@type": "Artery";
   arterialBranch?: AnatomicalStructure;
   supplyTo?: AnatomicalStructure;
 }
@@ -1675,7 +1736,9 @@ export interface Artery extends Vessel {
  * An art gallery.
  *
  **/
-export interface ArtGallery extends EntertainmentBusiness {}
+export interface ArtGallery extends Omit<EntertainmentBusiness, "@type"> {
+  "@type": "ArtGallery";
+}
 
 /**
  *
@@ -1687,7 +1750,8 @@ export interface ArtGallery extends EntertainmentBusiness {}
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_rNews
  *
  **/
-export interface Article extends CreativeWork {
+export interface Article extends Omit<CreativeWork, "@type"> {
+  "@type": "Article";
   articleBody?: Text;
   articleSection?: Text;
   backstory?: CreativeWork | Text;
@@ -1706,7 +1770,8 @@ export interface Article extends CreativeWork {
  * The act of posing a question / favor to someone.\n\nRelated actions:\n\n* [[ReplyAction]]: Appears generally as a response to AskAction.
  *
  **/
-export interface AskAction extends CommunicateAction {
+export interface AskAction extends Omit<CommunicateAction, "@type"> {
+  "@type": "AskAction";
   question?: Question;
 }
 
@@ -1723,7 +1788,9 @@ export interface AskAction extends CommunicateAction {
  * @see @link https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP
  *
  **/
-export interface AskPublicNewsArticle extends NewsArticle {}
+export interface AskPublicNewsArticle extends Omit<NewsArticle, "@type"> {
+  "@type": "AskPublicNewsArticle";
+}
 
 /**
  *
@@ -1733,7 +1800,9 @@ export interface AskPublicNewsArticle extends NewsArticle {}
  * The act of forming one's opinion, reaction or sentiment.
  *
  **/
-export interface AssessAction extends Action {}
+export interface AssessAction extends Omit<Action, "@type"> {
+  "@type": "AssessAction";
+}
 
 /**
  *
@@ -1743,7 +1812,9 @@ export interface AssessAction extends Action {}
  * The act of allocating an action/event/task to some destination (someone or something).
  *
  **/
-export interface AssignAction extends AllocateAction {}
+export interface AssignAction extends Omit<AllocateAction, "@type"> {
+  "@type": "AssignAction";
+}
 
 /**
  *
@@ -1757,7 +1828,9 @@ export interface AssignAction extends AllocateAction {}
  * @see @link http://www.productontology.org/id/Atlas
  *
  **/
-export interface Atlas extends CreativeWork {}
+export interface Atlas extends Omit<CreativeWork, "@type"> {
+  "@type": "Atlas";
+}
 
 /**
  *
@@ -1767,7 +1840,9 @@ export interface Atlas extends CreativeWork {}
  * Professional service: Attorney. \n\nThis type is deprecated - [[LegalService]] is more inclusive and less ambiguous.
  *
  **/
-export interface Attorney extends LegalService {}
+export interface Attorney extends Omit<LegalService, "@type"> {
+  "@type": "Attorney";
+}
 
 /**
  *
@@ -1777,7 +1852,8 @@ export interface Attorney extends LegalService {}
  * Intended audience for an item, i.e. the group for whom the item was created.
  *
  **/
-export interface Audience extends Intangible {
+export interface Audience extends Omit<Intangible, "@type"> {
+  "@type": "Audience";
   audienceType?: Text;
   geographicArea?: AdministrativeArea;
 }
@@ -1792,7 +1868,10 @@ export interface Audience extends Intangible {
  *
  * Partof: https://bib.schema.org
  **/
-export interface Audiobook extends Book, AudioObject {
+export interface Audiobook
+  extends Omit<Book, "@type">,
+    Omit<AudioObject, "@type"> {
+  "@type": "Audiobook";
   duration?: Duration;
   readBy?: Person;
 }
@@ -1807,7 +1886,8 @@ export interface Audiobook extends Book, AudioObject {
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_rNews
  *
  **/
-export interface AudioObject extends MediaObject {
+export interface AudioObject extends Omit<MediaObject, "@type"> {
+  "@type": "AudioObject";
   caption?: Text | MediaObject;
   transcript?: Text;
 }
@@ -1820,7 +1900,8 @@ export interface AudioObject extends MediaObject {
  * The act of granting permission to an object.
  *
  **/
-export interface AuthorizeAction extends AllocateAction {
+export interface AuthorizeAction extends Omit<AllocateAction, "@type"> {
+  "@type": "AuthorizeAction";
   recipient?: Organization | ContactPoint | Person | Audience;
 }
 
@@ -1832,7 +1913,9 @@ export interface AuthorizeAction extends AllocateAction {
  * Auto body shop.
  *
  **/
-export interface AutoBodyShop extends AutomotiveBusiness {}
+export interface AutoBodyShop extends Omit<AutomotiveBusiness, "@type"> {
+  "@type": "AutoBodyShop";
+}
 
 /**
  *
@@ -1842,7 +1925,9 @@ export interface AutoBodyShop extends AutomotiveBusiness {}
  * An car dealership.
  *
  **/
-export interface AutoDealer extends AutomotiveBusiness {}
+export interface AutoDealer extends Omit<AutomotiveBusiness, "@type"> {
+  "@type": "AutoDealer";
+}
 
 /**
  *
@@ -1852,7 +1937,9 @@ export interface AutoDealer extends AutomotiveBusiness {}
  * ATM/cash machine.
  *
  **/
-export interface AutomatedTeller extends FinancialService {}
+export interface AutomatedTeller extends Omit<FinancialService, "@type"> {
+  "@type": "AutomatedTeller";
+}
 
 /**
  *
@@ -1862,7 +1949,9 @@ export interface AutomatedTeller extends FinancialService {}
  * Car repair, sales, or parts.
  *
  **/
-export interface AutomotiveBusiness extends LocalBusiness {}
+export interface AutomotiveBusiness extends Omit<LocalBusiness, "@type"> {
+  "@type": "AutomotiveBusiness";
+}
 
 /**
  *
@@ -1872,7 +1961,11 @@ export interface AutomotiveBusiness extends LocalBusiness {}
  * An auto parts store.
  *
  **/
-export interface AutoPartsStore extends AutomotiveBusiness, Store {}
+export interface AutoPartsStore
+  extends Omit<AutomotiveBusiness, "@type">,
+    Omit<Store, "@type"> {
+  "@type": "AutoPartsStore";
+}
 
 /**
  *
@@ -1882,7 +1975,9 @@ export interface AutoPartsStore extends AutomotiveBusiness, Store {}
  * A car rental business.
  *
  **/
-export interface AutoRental extends AutomotiveBusiness {}
+export interface AutoRental extends Omit<AutomotiveBusiness, "@type"> {
+  "@type": "AutoRental";
+}
 
 /**
  *
@@ -1892,7 +1987,9 @@ export interface AutoRental extends AutomotiveBusiness {}
  * Car repair business.
  *
  **/
-export interface AutoRepair extends AutomotiveBusiness {}
+export interface AutoRepair extends Omit<AutomotiveBusiness, "@type"> {
+  "@type": "AutoRepair";
+}
 
 /**
  *
@@ -1902,7 +1999,9 @@ export interface AutoRepair extends AutomotiveBusiness {}
  * A car wash business.
  *
  **/
-export interface AutoWash extends AutomotiveBusiness {}
+export interface AutoWash extends Omit<AutomotiveBusiness, "@type"> {
+  "@type": "AutoWash";
+}
 
 /**
  *
@@ -1917,7 +2016,9 @@ export interface AutoWash extends AutomotiveBusiness {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/1525
  *
  **/
-export interface BackgroundNewsArticle extends NewsArticle {}
+export interface BackgroundNewsArticle extends Omit<NewsArticle, "@type"> {
+  "@type": "BackgroundNewsArticle";
+}
 
 /**
  *
@@ -1927,7 +2028,9 @@ export interface BackgroundNewsArticle extends NewsArticle {}
  * A bakery.
  *
  **/
-export interface Bakery extends FoodEstablishment {}
+export interface Bakery extends Omit<FoodEstablishment, "@type"> {
+  "@type": "Bakery";
+}
 
 /**
  *
@@ -1939,7 +2042,8 @@ export interface Bakery extends FoodEstablishment {}
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO
  *
  **/
-export interface BankAccount extends FinancialProduct {
+export interface BankAccount extends Omit<FinancialProduct, "@type"> {
+  "@type": "BankAccount";
   accountMinimumInflow?: MonetaryAmount;
   accountOverdraftLimit?: MonetaryAmount;
   bankAccountType?: URL | Text;
@@ -1953,7 +2057,9 @@ export interface BankAccount extends FinancialProduct {
  * Bank or credit union.
  *
  **/
-export interface BankOrCreditUnion extends FinancialService {}
+export interface BankOrCreditUnion extends Omit<FinancialService, "@type"> {
+  "@type": "BankOrCreditUnion";
+}
 
 /**
  *
@@ -1963,7 +2069,9 @@ export interface BankOrCreditUnion extends FinancialService {}
  * An image of a visual machine-readable code such as a barcode or QR code.
  *
  **/
-export interface Barcode extends ImageObject {}
+export interface Barcode extends Omit<ImageObject, "@type"> {
+  "@type": "Barcode";
+}
 
 /**
  *
@@ -1973,7 +2081,9 @@ export interface Barcode extends ImageObject {}
  * A bar or pub.
  *
  **/
-export interface BarOrPub extends FoodEstablishment {}
+export interface BarOrPub extends Omit<FoodEstablishment, "@type"> {
+  "@type": "BarOrPub";
+}
 
 /**
  *
@@ -1983,7 +2093,9 @@ export interface BarOrPub extends FoodEstablishment {}
  * Beach.
  *
  **/
-export interface Beach extends CivicStructure {}
+export interface Beach extends Omit<CivicStructure, "@type"> {
+  "@type": "Beach";
+}
 
 /**
  *
@@ -1993,7 +2105,9 @@ export interface Beach extends CivicStructure {}
  * Beauty salon.
  *
  **/
-export interface BeautySalon extends HealthAndBeautyBusiness {}
+export interface BeautySalon extends Omit<HealthAndBeautyBusiness, "@type"> {
+  "@type": "BeautySalon";
+}
 
 /**
 *
@@ -2006,7 +2120,9 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
 
 *
 **/
-export interface BedAndBreakfast extends LodgingBusiness {}
+export interface BedAndBreakfast extends Omit<LodgingBusiness, "@type"> {
+  "@type": "BedAndBreakfast";
+}
 
 /**
  *
@@ -2018,7 +2134,8 @@ export interface BedAndBreakfast extends LodgingBusiness {}
  * @see @link https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology
  *
  **/
-export interface BedDetails extends Intangible {
+export interface BedDetails extends Omit<Intangible, "@type"> {
+  "@type": "BedDetails";
   numberOfBeds?: Number;
   typeOfBed?: Text | BedType;
 }
@@ -2034,7 +2151,9 @@ export interface BedDetails extends Intangible {
  * @see @link https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology
  *
  **/
-export interface BedType extends QualitativeValue {}
+export interface BedType extends Omit<QualitativeValue, "@type"> {
+  "@type": "BedType";
+}
 
 /**
  *
@@ -2044,7 +2163,9 @@ export interface BedType extends QualitativeValue {}
  * The act of forming a personal connection with someone (object) mutually/bidirectionally/symmetrically.\n\nRelated actions:\n\n* [[FollowAction]]: Unlike FollowAction, BefriendAction implies that the connection is reciprocal.
  *
  **/
-export interface BefriendAction extends InteractAction {}
+export interface BefriendAction extends Omit<InteractAction, "@type"> {
+  "@type": "BefriendAction";
+}
 
 /**
  *
@@ -2054,7 +2175,9 @@ export interface BefriendAction extends InteractAction {}
  * A bike store.
  *
  **/
-export interface BikeStore extends Store {}
+export interface BikeStore extends Omit<Store, "@type"> {
+  "@type": "BikeStore";
+}
 
 /**
  *
@@ -2064,7 +2187,8 @@ export interface BikeStore extends Store {}
  * A blog.
  *
  **/
-export interface Blog extends CreativeWork {
+export interface Blog extends Omit<CreativeWork, "@type"> {
+  "@type": "Blog";
   blogPost?: BlogPosting;
   blogPosts?: Array<BlogPosting>;
   issn?: Text;
@@ -2078,7 +2202,9 @@ export interface Blog extends CreativeWork {
  * A blog post.
  *
  **/
-export interface BlogPosting extends SocialMediaPosting {}
+export interface BlogPosting extends Omit<SocialMediaPosting, "@type"> {
+  "@type": "BlogPosting";
+}
 
 /**
  *
@@ -2090,7 +2216,9 @@ export interface BlogPosting extends SocialMediaPosting {}
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface BloodTest extends MedicalTest {}
+export interface BloodTest extends Omit<MedicalTest, "@type"> {
+  "@type": "BloodTest";
+}
 
 /**
 *
@@ -2106,7 +2234,9 @@ Note: This type is for information about actual reservations, e.g. in confirmati
 * @see @link https://github.com/schemaorg/schemaorg/issues/1755
 *
 **/
-export interface BoatReservation extends Reservation {}
+export interface BoatReservation extends Omit<Reservation, "@type"> {
+  "@type": "BoatReservation";
+}
 
 /**
  *
@@ -2120,7 +2250,9 @@ export interface BoatReservation extends Reservation {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/1755
  *
  **/
-export interface BoatTerminal extends CivicStructure {}
+export interface BoatTerminal extends Omit<CivicStructure, "@type"> {
+  "@type": "BoatTerminal";
+}
 
 /**
  *
@@ -2134,7 +2266,8 @@ export interface BoatTerminal extends CivicStructure {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/1755
  *
  **/
-export interface BoatTrip extends Trip {
+export interface BoatTrip extends Omit<Trip, "@type"> {
+  "@type": "BoatTrip";
   arrivalBoatTerminal?: BoatTerminal;
   departureBoatTerminal?: BoatTerminal;
 }
@@ -2147,7 +2280,9 @@ export interface BoatTrip extends Trip {
  * A body of water, such as a sea, ocean, or lake.
  *
  **/
-export interface BodyOfWater extends Landform {}
+export interface BodyOfWater extends Omit<Landform, "@type"> {
+  "@type": "BodyOfWater";
+}
 
 /**
  *
@@ -2159,7 +2294,9 @@ export interface BodyOfWater extends Landform {}
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface Bone extends AnatomicalStructure {}
+export interface Bone extends Omit<AnatomicalStructure, "@type"> {
+  "@type": "Bone";
+}
 
 /**
  *
@@ -2169,7 +2306,8 @@ export interface Bone extends AnatomicalStructure {}
  * A book.
  *
  **/
-export interface Book extends CreativeWork {
+export interface Book extends Omit<CreativeWork, "@type"> {
+  "@type": "Book";
   abridged?: Boolean;
   bookEdition?: Text;
   bookFormat?: BookFormatType;
@@ -2186,7 +2324,9 @@ export interface Book extends CreativeWork {
  * An agent bookmarks/flags/labels/tags/marks an object.
  *
  **/
-export interface BookmarkAction extends OrganizeAction {}
+export interface BookmarkAction extends Omit<OrganizeAction, "@type"> {
+  "@type": "BookmarkAction";
+}
 
 /**
  *
@@ -2196,7 +2336,9 @@ export interface BookmarkAction extends OrganizeAction {}
  * A series of books. Included books can be indicated with the hasPart property.
  *
  **/
-export interface BookSeries extends CreativeWorkSeries {}
+export interface BookSeries extends Omit<CreativeWorkSeries, "@type"> {
+  "@type": "BookSeries";
+}
 
 /**
  *
@@ -2206,7 +2348,9 @@ export interface BookSeries extends CreativeWorkSeries {}
  * A bookstore.
  *
  **/
-export interface BookStore extends Store {}
+export interface BookStore extends Omit<Store, "@type"> {
+  "@type": "BookStore";
+}
 
 /**
  *
@@ -2216,7 +2360,8 @@ export interface BookStore extends Store {}
  * The act of obtaining an object under an agreement to return it at a later date. Reciprocal of LendAction.\n\nRelated actions:\n\n* [[LendAction]]: Reciprocal of BorrowAction.
  *
  **/
-export interface BorrowAction extends TransferAction {
+export interface BorrowAction extends Omit<TransferAction, "@type"> {
+  "@type": "BorrowAction";
   lender?: Organization | Person;
 }
 
@@ -2228,7 +2373,9 @@ export interface BorrowAction extends TransferAction {
  * A bowling alley.
  *
  **/
-export interface BowlingAlley extends SportsActivityLocation {}
+export interface BowlingAlley extends Omit<SportsActivityLocation, "@type"> {
+  "@type": "BowlingAlley";
+}
 
 /**
  *
@@ -2240,7 +2387,9 @@ export interface BowlingAlley extends SportsActivityLocation {}
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface BrainStructure extends AnatomicalStructure {}
+export interface BrainStructure extends Omit<AnatomicalStructure, "@type"> {
+  "@type": "BrainStructure";
+}
 
 /**
  *
@@ -2252,7 +2401,8 @@ export interface BrainStructure extends AnatomicalStructure {}
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass
  *
  **/
-export interface Brand extends Intangible {
+export interface Brand extends Omit<Intangible, "@type"> {
+  "@type": "Brand";
   aggregateRating?: AggregateRating;
   logo?: ImageObject | URL;
   review?: Review;
@@ -2268,7 +2418,9 @@ export interface Brand extends Intangible {
       
 *
 **/
-export interface BreadcrumbList<T> extends ItemList<T> {}
+export interface BreadcrumbList<T = Text> extends Omit<ItemList<T>, "@type"> {
+  "@type": "BreadcrumbList";
+}
 
 /**
  *
@@ -2278,7 +2430,9 @@ export interface BreadcrumbList<T> extends ItemList<T> {}
  * Brewery.
  *
  **/
-export interface Brewery extends FoodEstablishment {}
+export interface Brewery extends Omit<FoodEstablishment, "@type"> {
+  "@type": "Brewery";
+}
 
 /**
  *
@@ -2288,7 +2442,9 @@ export interface Brewery extends FoodEstablishment {}
  * A bridge.
  *
  **/
-export interface Bridge extends CivicStructure {}
+export interface Bridge extends Omit<CivicStructure, "@type"> {
+  "@type": "Bridge";
+}
 
 /**
  *
@@ -2298,7 +2454,8 @@ export interface Bridge extends CivicStructure {}
  * A unique instance of a BroadcastService on a CableOrSatelliteService lineup.
  *
  **/
-export interface BroadcastChannel extends Intangible {
+export interface BroadcastChannel extends Omit<Intangible, "@type"> {
+  "@type": "BroadcastChannel";
   broadcastChannelId?: Text;
   broadcastFrequency?: Text | BroadcastFrequencySpecification;
   broadcastServiceTier?: Text;
@@ -2315,7 +2472,8 @@ export interface BroadcastChannel extends Intangible {
  * An over the air or online broadcast event.
  *
  **/
-export interface BroadcastEvent extends PublicationEvent {
+export interface BroadcastEvent extends Omit<PublicationEvent, "@type"> {
+  "@type": "BroadcastEvent";
   broadcastOfEvent?: Event;
   isLiveBroadcast?: Boolean;
   subtitleLanguage?: Text | Language;
@@ -2332,7 +2490,9 @@ export interface BroadcastEvent extends PublicationEvent {
  * @see @link https://github.com/schemaorg/schemaorg/issues/1004
  *
  **/
-export interface BroadcastFrequencySpecification extends Intangible {
+export interface BroadcastFrequencySpecification
+  extends Omit<Intangible, "@type"> {
+  "@type": "BroadcastFrequencySpecification";
   broadcastFrequencyValue?: QuantitativeValue | Number;
   broadcastSignalModulation?: Text | QualitativeValue;
   broadcastSubChannel?: Text;
@@ -2346,7 +2506,8 @@ export interface BroadcastFrequencySpecification extends Intangible {
  * A delivery service through which content is provided via broadcast over the air or online.
  *
  **/
-export interface BroadcastService extends Service {
+export interface BroadcastService extends Omit<Service, "@type"> {
+  "@type": "BroadcastService";
   area?: Place;
   broadcastAffiliateOf?: Organization;
   broadcastDisplayName?: Text;
@@ -2373,7 +2534,9 @@ export interface BroadcastService extends Service {
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO
  *
  **/
-export interface BrokerageAccount extends InvestmentOrDeposit {}
+export interface BrokerageAccount extends Omit<InvestmentOrDeposit, "@type"> {
+  "@type": "BrokerageAccount";
+}
 
 /**
  *
@@ -2383,7 +2546,9 @@ export interface BrokerageAccount extends InvestmentOrDeposit {}
  * A Buddhist temple.
  *
  **/
-export interface BuddhistTemple extends PlaceOfWorship {}
+export interface BuddhistTemple extends Omit<PlaceOfWorship, "@type"> {
+  "@type": "BuddhistTemple";
+}
 
 /**
  *
@@ -2393,7 +2558,8 @@ export interface BuddhistTemple extends PlaceOfWorship {}
  * A set of characteristics belonging to businesses, e.g. who compose an item's target audience.
  *
  **/
-export interface BusinessAudience extends Audience {
+export interface BusinessAudience extends Omit<Audience, "@type"> {
+  "@type": "BusinessAudience";
   numberOfEmployees?: QuantitativeValue;
   yearlyRevenue?: QuantitativeValue;
   yearsInOperation?: QuantitativeValue;
@@ -2410,7 +2576,9 @@ export interface BusinessAudience extends Audience {
 * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass
 *
 **/
-export interface BusinessEntityType extends Enumeration {}
+export interface BusinessEntityType extends Omit<Enumeration, "@type"> {
+  "@type": "BusinessEntityType";
+}
 
 /**
  *
@@ -2420,7 +2588,9 @@ export interface BusinessEntityType extends Enumeration {}
  * Event type: Business event.
  *
  **/
-export interface BusinessEvent extends Event {}
+export interface BusinessEvent extends Omit<Event, "@type"> {
+  "@type": "BusinessEvent";
+}
 
 /**
 *
@@ -2433,7 +2603,9 @@ export interface BusinessEvent extends Event {}
 * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass
 *
 **/
-export interface BusinessFunction extends Enumeration {}
+export interface BusinessFunction extends Omit<Enumeration, "@type"> {
+  "@type": "BusinessFunction";
+}
 
 /**
  *
@@ -2447,7 +2619,8 @@ export interface BusinessFunction extends Enumeration {}
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group
  *
  **/
-export interface BusOrCoach extends Vehicle {
+export interface BusOrCoach extends Omit<Vehicle, "@type"> {
+  "@type": "BusOrCoach";
   acrissCode?: Text;
   roofLoad?: QuantitativeValue;
 }
@@ -2460,7 +2633,9 @@ export interface BusOrCoach extends Vehicle {
  * A reservation for bus travel. \n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use [[Offer]].
  *
  **/
-export interface BusReservation extends Reservation {}
+export interface BusReservation extends Omit<Reservation, "@type"> {
+  "@type": "BusReservation";
+}
 
 /**
  *
@@ -2470,7 +2645,9 @@ export interface BusReservation extends Reservation {}
  * A bus station.
  *
  **/
-export interface BusStation extends CivicStructure {}
+export interface BusStation extends Omit<CivicStructure, "@type"> {
+  "@type": "BusStation";
+}
 
 /**
  *
@@ -2480,7 +2657,9 @@ export interface BusStation extends CivicStructure {}
  * A bus stop.
  *
  **/
-export interface BusStop extends CivicStructure {}
+export interface BusStop extends Omit<CivicStructure, "@type"> {
+  "@type": "BusStop";
+}
 
 /**
  *
@@ -2490,7 +2669,8 @@ export interface BusStop extends CivicStructure {}
  * A trip on a commercial bus line.
  *
  **/
-export interface BusTrip extends Trip {
+export interface BusTrip extends Omit<Trip, "@type"> {
+  "@type": "BusTrip";
   arrivalBusStop?: BusStop | BusStation;
   busName?: Text;
   busNumber?: Text;
@@ -2505,7 +2685,8 @@ export interface BusTrip extends Trip {
  * The act of giving money to a seller in exchange for goods or services rendered. An agent buys an object, product, or service from a seller for a price. Reciprocal of SellAction.
  *
  **/
-export interface BuyAction extends TradeAction {
+export interface BuyAction extends Omit<TradeAction, "@type"> {
+  "@type": "BuyAction";
   seller?: Organization | Person;
   vendor?: Organization | Person;
   warrantyPromise?: WarrantyPromise;
@@ -2519,7 +2700,9 @@ export interface BuyAction extends TradeAction {
  * A service which provides access to media programming like TV or radio. Access may be via cable or satellite.
  *
  **/
-export interface CableOrSatelliteService extends Service {}
+export interface CableOrSatelliteService extends Omit<Service, "@type"> {
+  "@type": "CableOrSatelliteService";
+}
 
 /**
  *
@@ -2529,7 +2712,9 @@ export interface CableOrSatelliteService extends Service {}
  * A cafe or coffee shop.
  *
  **/
-export interface CafeOrCoffeeShop extends FoodEstablishment {}
+export interface CafeOrCoffeeShop extends Omit<FoodEstablishment, "@type"> {
+  "@type": "CafeOrCoffeeShop";
+}
 
 /**
 *
@@ -2545,7 +2730,11 @@ See also the dedicated [document on the use of schema.org for marking up hotels 
 * @see @link https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology
 *
 **/
-export interface Campground extends LodgingBusiness, CivicStructure {}
+export interface Campground
+  extends Omit<LodgingBusiness, "@type">,
+    Omit<CivicStructure, "@type"> {
+  "@type": "Campground";
+}
 
 /**
 *
@@ -2561,7 +2750,9 @@ See also the dedicated [document on the use of schema.org for marking up hotels 
 * @see @link https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology
 *
 **/
-export interface CampingPitch extends Accommodation {}
+export interface CampingPitch extends Omit<Accommodation, "@type"> {
+  "@type": "CampingPitch";
+}
 
 /**
  *
@@ -2571,7 +2762,9 @@ export interface CampingPitch extends Accommodation {}
  * A canal, like the Panama Canal.
  *
  **/
-export interface Canal extends BodyOfWater {}
+export interface Canal extends Omit<BodyOfWater, "@type"> {
+  "@type": "Canal";
+}
 
 /**
  *
@@ -2581,7 +2774,9 @@ export interface Canal extends BodyOfWater {}
  * The act of asserting that a future event/action is no longer going to happen.\n\nRelated actions:\n\n* [[ConfirmAction]]: The antonym of CancelAction.
  *
  **/
-export interface CancelAction extends PlanAction {}
+export interface CancelAction extends Omit<PlanAction, "@type"> {
+  "@type": "CancelAction";
+}
 
 /**
  *
@@ -2593,7 +2788,8 @@ export interface CancelAction extends PlanAction {}
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group
  *
  **/
-export interface Car extends Vehicle {
+export interface Car extends Omit<Vehicle, "@type"> {
+  "@type": "Car";
   acrissCode?: Text;
   roofLoad?: QuantitativeValue;
 }
@@ -2606,7 +2802,9 @@ export interface Car extends Vehicle {
  * A casino.
  *
  **/
-export interface Casino extends EntertainmentBusiness {}
+export interface Casino extends Omit<EntertainmentBusiness, "@type"> {
+  "@type": "Casino";
+}
 
 /**
  *
@@ -2620,7 +2818,8 @@ export interface Casino extends EntertainmentBusiness {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/894
  *
  **/
-export interface CategoryCode extends DefinedTerm {
+export interface CategoryCode extends Omit<DefinedTerm, "@type"> {
+  "@type": "CategoryCode";
   codeValue?: Text;
   inCodeSet?: URL | CategoryCodeSet;
 }
@@ -2637,7 +2836,8 @@ export interface CategoryCode extends DefinedTerm {
  * @see @link https://github.com/schemaorg/schemaorg/issues/894
  *
  **/
-export interface CategoryCodeSet extends DefinedTermSet {
+export interface CategoryCodeSet extends Omit<DefinedTermSet, "@type"> {
+  "@type": "CategoryCodeSet";
   hasCategoryCode?: CategoryCode;
 }
 
@@ -2649,7 +2849,9 @@ export interface CategoryCodeSet extends DefinedTermSet {
  * A Catholic church.
  *
  **/
-export interface CatholicChurch extends Church {}
+export interface CatholicChurch extends Omit<Church, "@type"> {
+  "@type": "CatholicChurch";
+}
 
 /**
 *
@@ -2666,7 +2868,8 @@ export interface CatholicChurch extends Church {}
 * @see @link https://github.com/schemaorg/schemaorg/issues/2521
 *
 **/
-export interface CDCPMDRecord extends StructuredValue {
+export interface CDCPMDRecord extends Omit<StructuredValue, "@type"> {
+  "@type": "CDCPMDRecord";
   cvdCollectionDate?: Text | DateTime;
   cvdFacilityCounty?: Text;
   cvdFacilityId?: Text;
@@ -2694,7 +2897,9 @@ export interface CDCPMDRecord extends StructuredValue {
  * A graveyard.
  *
  **/
-export interface Cemetery extends CivicStructure {}
+export interface Cemetery extends Omit<CivicStructure, "@type"> {
+  "@type": "Cemetery";
+}
 
 /**
  *
@@ -2706,7 +2911,8 @@ export interface Cemetery extends CivicStructure {}
  *
  * Partof: https://bib.schema.org
  **/
-export interface Chapter extends CreativeWork {
+export interface Chapter extends Omit<CreativeWork, "@type"> {
+  "@type": "Chapter";
   pageEnd?: Text | Integer;
   pageStart?: Text | Integer;
   pagination?: Text;
@@ -2720,7 +2926,9 @@ export interface Chapter extends CreativeWork {
  * An agent inspects, determines, investigates, inquires, or examines an object's accuracy, quality, condition, or state.
  *
  **/
-export interface CheckAction extends FindAction {}
+export interface CheckAction extends Omit<FindAction, "@type"> {
+  "@type": "CheckAction";
+}
 
 /**
  *
@@ -2730,7 +2938,9 @@ export interface CheckAction extends FindAction {}
  * The act of an agent communicating (service provider, social media, etc) their arrival by registering/confirming for a previously reserved service (e.g. flight check in) or at a place (e.g. hotel), possibly resulting in a result (boarding pass, etc).\n\nRelated actions:\n\n* [[CheckOutAction]]: The antonym of CheckInAction.\n* [[ArriveAction]]: Unlike ArriveAction, CheckInAction implies that the agent is informing/confirming the start of a previously reserved service.\n* [[ConfirmAction]]: Unlike ConfirmAction, CheckInAction implies that the agent is informing/confirming the *start* of a previously reserved service rather than its validity/existence.
  *
  **/
-export interface CheckInAction extends CommunicateAction {}
+export interface CheckInAction extends Omit<CommunicateAction, "@type"> {
+  "@type": "CheckInAction";
+}
 
 /**
  *
@@ -2740,7 +2950,9 @@ export interface CheckInAction extends CommunicateAction {}
  * The act of an agent communicating (service provider, social media, etc) their departure of a previously reserved service (e.g. flight check in) or place (e.g. hotel).\n\nRelated actions:\n\n* [[CheckInAction]]: The antonym of CheckOutAction.\n* [[DepartAction]]: Unlike DepartAction, CheckOutAction implies that the agent is informing/confirming the end of a previously reserved service.\n* [[CancelAction]]: Unlike CancelAction, CheckOutAction implies that the agent is informing/confirming the end of a previously reserved service.
  *
  **/
-export interface CheckOutAction extends CommunicateAction {}
+export interface CheckOutAction extends Omit<CommunicateAction, "@type"> {
+  "@type": "CheckOutAction";
+}
 
 /**
  *
@@ -2750,7 +2962,9 @@ export interface CheckOutAction extends CommunicateAction {}
  * Web page type: Checkout page.
  *
  **/
-export interface CheckoutPage extends WebPage {}
+export interface CheckoutPage extends Omit<WebPage, "@type"> {
+  "@type": "CheckoutPage";
+}
 
 /**
  *
@@ -2760,7 +2974,9 @@ export interface CheckoutPage extends WebPage {}
  * A Childcare center.
  *
  **/
-export interface ChildCare extends LocalBusiness {}
+export interface ChildCare extends Omit<LocalBusiness, "@type"> {
+  "@type": "ChildCare";
+}
 
 /**
  *
@@ -2770,7 +2986,9 @@ export interface ChildCare extends LocalBusiness {}
  * Event type: Children's event.
  *
  **/
-export interface ChildrensEvent extends Event {}
+export interface ChildrensEvent extends Omit<Event, "@type"> {
+  "@type": "ChildrensEvent";
+}
 
 /**
  *
@@ -2780,7 +2998,8 @@ export interface ChildrensEvent extends Event {}
  * The act of expressing a preference from a set of options or a large or unbounded set of choices/options.
  *
  **/
-export interface ChooseAction extends AssessAction {
+export interface ChooseAction extends Omit<AssessAction, "@type"> {
+  "@type": "ChooseAction";
   actionOption?: Text | Thing;
   option?: Thing | Text;
 }
@@ -2793,7 +3012,9 @@ export interface ChooseAction extends AssessAction {
  * A church.
  *
  **/
-export interface Church extends PlaceOfWorship {}
+export interface Church extends Omit<PlaceOfWorship, "@type"> {
+  "@type": "Church";
+}
 
 /**
  *
@@ -2803,7 +3024,9 @@ export interface Church extends PlaceOfWorship {}
  * A city or town.
  *
  **/
-export interface City extends AdministrativeArea {}
+export interface City extends Omit<AdministrativeArea, "@type"> {
+  "@type": "City";
+}
 
 /**
  *
@@ -2813,7 +3036,9 @@ export interface City extends AdministrativeArea {}
  * A city hall.
  *
  **/
-export interface CityHall extends GovernmentBuilding {}
+export interface CityHall extends Omit<GovernmentBuilding, "@type"> {
+  "@type": "CityHall";
+}
 
 /**
  *
@@ -2823,7 +3048,8 @@ export interface CityHall extends GovernmentBuilding {}
  * A public structure, such as a town hall or concert hall.
  *
  **/
-export interface CivicStructure extends Place {
+export interface CivicStructure extends Omit<Place, "@type"> {
+  "@type": "CivicStructure";
   openingHours?: Text;
 }
 
@@ -2844,7 +3070,8 @@ export interface CivicStructure extends Place {
 * @see @link https://github.com/schemaorg/schemaorg/issues/1828
 *
 **/
-export interface Claim extends CreativeWork {
+export interface Claim extends Omit<CreativeWork, "@type"> {
+  "@type": "Claim";
   appearance?: CreativeWork;
   firstAppearance?: CreativeWork;
 }
@@ -2859,7 +3086,8 @@ export interface Claim extends CreativeWork {
  * @see @link https://github.com/schemaorg/schemaorg/issues/1061
  *
  **/
-export interface ClaimReview extends Review {
+export interface ClaimReview extends Omit<Review, "@type"> {
+  "@type": "ClaimReview";
   claimReviewed?: Text;
 }
 
@@ -2873,7 +3101,9 @@ export interface ClaimReview extends Review {
  *
  * Partof: https://meta.schema.org
  **/
-export interface Class extends Intangible {}
+export interface Class extends Omit<Intangible, "@type"> {
+  "@type": "Class";
+}
 
 /**
  *
@@ -2883,7 +3113,8 @@ export interface Class extends Intangible {}
  * A short TV or radio program or a segment/part of a program.
  *
  **/
-export interface Clip extends CreativeWork {
+export interface Clip extends Omit<CreativeWork, "@type"> {
+  "@type": "Clip";
   actor?: Person;
   actors?: Array<Person>;
   clipNumber?: Integer | Text;
@@ -2905,7 +3136,9 @@ export interface Clip extends CreativeWork {
  * A clothing store.
  *
  **/
-export interface ClothingStore extends Store {}
+export interface ClothingStore extends Omit<Store, "@type"> {
+  "@type": "ClothingStore";
+}
 
 /**
  *
@@ -2915,7 +3148,9 @@ export interface ClothingStore extends Store {}
  * Computer programming source code. Example: Full (compile ready) solutions, code snippet samples, scripts, templates.
  *
  **/
-export interface Code extends CreativeWork {}
+export interface Code extends Omit<CreativeWork, "@type"> {
+  "@type": "Code";
+}
 
 /**
  *
@@ -2927,7 +3162,8 @@ export interface Code extends CreativeWork {}
  *
  * Partof: https://bib.schema.org
  **/
-export interface Collection extends CreativeWork {
+export interface Collection extends Omit<CreativeWork, "@type"> {
+  "@type": "Collection";
   collectionSize?: Integer;
 }
 
@@ -2939,7 +3175,9 @@ export interface Collection extends CreativeWork {
  * Web page type: Collection page.
  *
  **/
-export interface CollectionPage extends WebPage {}
+export interface CollectionPage extends Omit<WebPage, "@type"> {
+  "@type": "CollectionPage";
+}
 
 /**
  *
@@ -2949,7 +3187,10 @@ export interface CollectionPage extends WebPage {}
  * A college, university, or other third-level educational institution.
  *
  **/
-export interface CollegeOrUniversity extends EducationalOrganization {}
+export interface CollegeOrUniversity
+  extends Omit<EducationalOrganization, "@type"> {
+  "@type": "CollegeOrUniversity";
+}
 
 /**
  *
@@ -2959,7 +3200,9 @@ export interface CollegeOrUniversity extends EducationalOrganization {}
  * A comedy club.
  *
  **/
-export interface ComedyClub extends EntertainmentBusiness {}
+export interface ComedyClub extends Omit<EntertainmentBusiness, "@type"> {
+  "@type": "ComedyClub";
+}
 
 /**
  *
@@ -2969,7 +3212,9 @@ export interface ComedyClub extends EntertainmentBusiness {}
  * Event type: Comedy event.
  *
  **/
-export interface ComedyEvent extends Event {}
+export interface ComedyEvent extends Omit<Event, "@type"> {
+  "@type": "ComedyEvent";
+}
 
 /**
  *
@@ -2981,7 +3226,11 @@ export interface ComedyEvent extends Event {}
  *
  * Partof: https://bib.schema.org
  **/
-export interface ComicCoverArt extends ComicStory, CoverArt {}
+export interface ComicCoverArt
+  extends Omit<ComicStory, "@type">,
+    Omit<CoverArt, "@type"> {
+  "@type": "ComicCoverArt";
+}
 
 /**
 *
@@ -2998,7 +3247,8 @@ export interface ComicCoverArt extends ComicStory, CoverArt {}
 * 
 * Partof: https://bib.schema.org
 **/
-export interface ComicIssue extends PublicationIssue {
+export interface ComicIssue extends Omit<PublicationIssue, "@type"> {
+  "@type": "ComicIssue";
   artist?: Person;
   colorist?: Person;
   inker?: Person;
@@ -3019,7 +3269,9 @@ export interface ComicIssue extends PublicationIssue {
 * 
 * Partof: https://bib.schema.org
 **/
-export interface ComicSeries extends Periodical {}
+export interface ComicSeries extends Omit<Periodical, "@type"> {
+  "@type": "ComicSeries";
+}
 
 /**
 *
@@ -3033,7 +3285,8 @@ export interface ComicSeries extends Periodical {}
 * 
 * Partof: https://bib.schema.org
 **/
-export interface ComicStory extends CreativeWork {
+export interface ComicStory extends Omit<CreativeWork, "@type"> {
+  "@type": "ComicStory";
   artist?: Person;
   colorist?: Person;
   inker?: Person;
@@ -3049,7 +3302,8 @@ export interface ComicStory extends CreativeWork {
  * A comment on an item - for example, a comment on a blog post. The comment's content is expressed via the [[text]] property, and its topic via [[about]], properties shared with all CreativeWorks.
  *
  **/
-export interface Comment extends CreativeWork {
+export interface Comment extends Omit<CreativeWork, "@type"> {
+  "@type": "Comment";
   downvoteCount?: Integer;
   parentItem?: Comment;
   upvoteCount?: Integer;
@@ -3063,7 +3317,8 @@ export interface Comment extends CreativeWork {
  * The act of generating a comment about a subject.
  *
  **/
-export interface CommentAction extends CommunicateAction {
+export interface CommentAction extends Omit<CommunicateAction, "@type"> {
+  "@type": "CommentAction";
   resultComment?: Comment;
 }
 
@@ -3075,7 +3330,8 @@ export interface CommentAction extends CommunicateAction {
  * The act of conveying information to another person via a communication medium (instrument) such as speech, email, or telephone conversation.
  *
  **/
-export interface CommunicateAction extends InteractAction {
+export interface CommunicateAction extends Omit<InteractAction, "@type"> {
+  "@type": "CommunicateAction";
   about?: Thing;
   inLanguage?: Text | Language;
   language?: Language;
@@ -3096,7 +3352,9 @@ This is the equivalent of Atom's element as defined in Feed Paging and Archiving
 * @see @link https://github.com/schemaorg/schemaorg/issues/1397
 *
 **/
-export interface CompleteDataFeed<T> extends DataFeed<T> {}
+export interface CompleteDataFeed<T = Text> extends Omit<DataFeed<T>, "@type"> {
+  "@type": "CompleteDataFeed";
+}
 
 /**
  *
@@ -3108,7 +3366,9 @@ export interface CompleteDataFeed<T> extends DataFeed<T> {}
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass
  *
  **/
-export interface CompoundPriceSpecification extends PriceSpecification {
+export interface CompoundPriceSpecification
+  extends Omit<PriceSpecification, "@type"> {
+  "@type": "CompoundPriceSpecification";
   priceComponent?: UnitPriceSpecification;
   priceType?: PriceTypeEnumeration | Text;
 }
@@ -3121,7 +3381,9 @@ export interface CompoundPriceSpecification extends PriceSpecification {
  * This type covers computer programming languages such as Scheme and Lisp, as well as other language-like computer representations. Natural languages are best represented with the [[Language]] type.
  *
  **/
-export interface ComputerLanguage extends Intangible {}
+export interface ComputerLanguage extends Omit<Intangible, "@type"> {
+  "@type": "ComputerLanguage";
+}
 
 /**
  *
@@ -3131,7 +3393,9 @@ export interface ComputerLanguage extends Intangible {}
  * A computer store.
  *
  **/
-export interface ComputerStore extends Store {}
+export interface ComputerStore extends Omit<Store, "@type"> {
+  "@type": "ComputerStore";
+}
 
 /**
  *
@@ -3141,7 +3405,9 @@ export interface ComputerStore extends Store {}
  * The act of notifying someone that a future event/action is going to happen as expected.\n\nRelated actions:\n\n* [[CancelAction]]: The antonym of ConfirmAction.
  *
  **/
-export interface ConfirmAction extends InformAction {}
+export interface ConfirmAction extends Omit<InformAction, "@type"> {
+  "@type": "ConfirmAction";
+}
 
 /**
  *
@@ -3155,7 +3421,9 @@ export interface ConfirmAction extends InformAction {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/1559
  *
  **/
-export interface Consortium extends Organization {}
+export interface Consortium extends Omit<Organization, "@type"> {
+  "@type": "Consortium";
+}
 
 /**
  *
@@ -3165,7 +3433,8 @@ export interface Consortium extends Organization {}
  * The act of ingesting information/resources/food.
  *
  **/
-export interface ConsumeAction extends Action {
+export interface ConsumeAction extends Omit<Action, "@type"> {
+  "@type": "ConsumeAction";
   actionAccessibilityRequirement?: ActionAccessSpecification;
   expectsAcceptanceOf?: Offer;
 }
@@ -3178,7 +3447,9 @@ export interface ConsumeAction extends Action {
  * Web page type: Contact page.
  *
  **/
-export interface ContactPage extends WebPage {}
+export interface ContactPage extends Omit<WebPage, "@type"> {
+  "@type": "ContactPage";
+}
 
 /**
  *
@@ -3188,7 +3459,8 @@ export interface ContactPage extends WebPage {}
  * A contact point&#x2014;for example, a Customer Complaints department.
  *
  **/
-export interface ContactPoint extends StructuredValue {
+export interface ContactPoint extends Omit<StructuredValue, "@type"> {
+  "@type": "ContactPoint";
   areaServed?: Text | Place | AdministrativeArea | GeoShape;
   availableLanguage?: Language | Text;
   contactOption?: ContactPointOption;
@@ -3209,7 +3481,9 @@ export interface ContactPoint extends StructuredValue {
  * One of the continents (for example, Europe or Africa).
  *
  **/
-export interface Continent extends Landform {}
+export interface Continent extends Omit<Landform, "@type"> {
+  "@type": "Continent";
+}
 
 /**
  *
@@ -3219,7 +3493,9 @@ export interface Continent extends Landform {}
  * An agent controls a device or application.
  *
  **/
-export interface ControlAction extends Action {}
+export interface ControlAction extends Omit<Action, "@type"> {
+  "@type": "ControlAction";
+}
 
 /**
  *
@@ -3229,7 +3505,9 @@ export interface ControlAction extends Action {}
  * A convenience store.
  *
  **/
-export interface ConvenienceStore extends Store {}
+export interface ConvenienceStore extends Omit<Store, "@type"> {
+  "@type": "ConvenienceStore";
+}
 
 /**
  *
@@ -3239,7 +3517,9 @@ export interface ConvenienceStore extends Store {}
  * One or more messages between organizations or people on a particular topic. Individual messages can be linked to the conversation with isPartOf or hasPart properties.
  *
  **/
-export interface Conversation extends CreativeWork {}
+export interface Conversation extends Omit<CreativeWork, "@type"> {
+  "@type": "Conversation";
+}
 
 /**
  *
@@ -3249,7 +3529,8 @@ export interface Conversation extends CreativeWork {}
  * The act of producing/preparing food.
  *
  **/
-export interface CookAction extends CreateAction {
+export interface CookAction extends Omit<CreateAction, "@type"> {
+  "@type": "CookAction";
   foodEstablishment?: Place | FoodEstablishment;
   foodEvent?: FoodEvent;
   recipe?: Recipe;
@@ -3265,7 +3546,8 @@ export interface CookAction extends CreateAction {
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_rNews
  *
  **/
-export interface Corporation extends Organization {
+export interface Corporation extends Omit<Organization, "@type"> {
+  "@type": "Corporation";
   tickerSymbol?: Text;
 }
 
@@ -3281,7 +3563,9 @@ export interface Corporation extends Organization {
  * @see @link https://github.com/schemaorg/schemaorg/issues/1950
  *
  **/
-export interface CorrectionComment extends Comment {}
+export interface CorrectionComment extends Omit<Comment, "@type"> {
+  "@type": "CorrectionComment";
+}
 
 /**
  *
@@ -3291,7 +3575,9 @@ export interface CorrectionComment extends Comment {}
  * A country.
  *
  **/
-export interface Country extends AdministrativeArea {}
+export interface Country extends Omit<AdministrativeArea, "@type"> {
+  "@type": "Country";
+}
 
 /**
  *
@@ -3301,7 +3587,10 @@ export interface Country extends AdministrativeArea {}
  * A description of an educational course which may be offered as distinct instances at which take place at different times or take place at different locations, or be offered through different media or modes of study. An educational course is a sequence of one or more educational events and/or creative works which aims to build knowledge, competence or ability of learners.
  *
  **/
-export interface Course extends CreativeWork, LearningResource {
+export interface Course
+  extends Omit<CreativeWork, "@type">,
+    Omit<LearningResource, "@type"> {
+  "@type": "Course";
   courseCode?: Text;
   coursePrerequisites?: Text | AlignmentObject | Course;
   educationalCredentialAwarded?: URL | Text | EducationalOccupationalCredential;
@@ -3321,7 +3610,8 @@ export interface Course extends CreativeWork, LearningResource {
  * An instance of a [[Course]] which is distinct from other instances because it is offered at a different time or location or through different media or modes of study or to a specific section of students.
  *
  **/
-export interface CourseInstance extends Event {
+export interface CourseInstance extends Omit<Event, "@type"> {
+  "@type": "CourseInstance";
   courseMode?: Text | URL;
   courseWorkload?: Text;
   instructor?: Person;
@@ -3335,7 +3625,9 @@ export interface CourseInstance extends Event {
  * A courthouse.
  *
  **/
-export interface Courthouse extends GovernmentBuilding {}
+export interface Courthouse extends Omit<GovernmentBuilding, "@type"> {
+  "@type": "Courthouse";
+}
 
 /**
  *
@@ -3347,7 +3639,9 @@ export interface Courthouse extends GovernmentBuilding {}
  *
  * Partof: https://bib.schema.org
  **/
-export interface CoverArt extends VisualArtwork {}
+export interface CoverArt extends Omit<VisualArtwork, "@type"> {
+  "@type": "CoverArt";
+}
 
 /**
 *
@@ -3365,7 +3659,9 @@ export interface CoverArt extends VisualArtwork {}
 * @see @link https://github.com/schemaorg/schemaorg/issues/2490
 *
 **/
-export interface CovidTestingFacility extends MedicalClinic {}
+export interface CovidTestingFacility extends Omit<MedicalClinic, "@type"> {
+  "@type": "CovidTestingFacility";
+}
 
 /**
  *
@@ -3375,7 +3671,9 @@ export interface CovidTestingFacility extends MedicalClinic {}
  * The act of deliberately creating/producing/generating/building a result out of the agent.
  *
  **/
-export interface CreateAction extends Action {}
+export interface CreateAction extends Omit<Action, "@type"> {
+  "@type": "CreateAction";
+}
 
 /**
  *
@@ -3387,7 +3685,8 @@ export interface CreateAction extends Action {}
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_rNews
  *
  **/
-export interface CreativeWork extends Thing {
+export interface CreativeWork extends Omit<Thing, "@type"> {
+  "@type": "CreativeWork";
   about?: Thing;
   abstract?: Text;
   accessibilityAPI?: Text;
@@ -3506,7 +3805,8 @@ export interface CreativeWork extends Thing {
  * A media season e.g. tv, radio, video game etc.
  *
  **/
-export interface CreativeWorkSeason extends CreativeWork {
+export interface CreativeWorkSeason extends Omit<CreativeWork, "@type"> {
+  "@type": "CreativeWorkSeason";
   actor?: Person;
   director?: Person;
   endDate?: Date | DateTime;
@@ -3529,7 +3829,10 @@ export interface CreativeWorkSeason extends CreativeWork {
 	  
 *
 **/
-export interface CreativeWorkSeries extends Series, CreativeWork {
+export interface CreativeWorkSeries
+  extends Omit<Series, "@type">,
+    Omit<CreativeWork, "@type"> {
+  "@type": "CreativeWorkSeries";
   endDate?: Date | DateTime;
   issn?: Text;
   startDate?: DateTime | Date;
@@ -3547,7 +3850,11 @@ export interface CreativeWorkSeries extends Series, CreativeWork {
 * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass
 *
 **/
-export interface CreditCard extends PaymentCard, LoanOrCredit {}
+export interface CreditCard
+  extends Omit<PaymentCard, "@type">,
+    Omit<LoanOrCredit, "@type"> {
+  "@type": "CreditCard";
+}
 
 /**
  *
@@ -3557,7 +3864,9 @@ export interface CreditCard extends PaymentCard, LoanOrCredit {}
  * A crematorium.
  *
  **/
-export interface Crematorium extends CivicStructure {}
+export interface Crematorium extends Omit<CivicStructure, "@type"> {
+  "@type": "Crematorium";
+}
 
 /**
  *
@@ -3571,7 +3880,9 @@ export interface Crematorium extends CivicStructure {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/1589
  *
  **/
-export interface CriticReview extends Review {}
+export interface CriticReview extends Omit<Review, "@type"> {
+  "@type": "CriticReview";
+}
 
 /**
  *
@@ -3597,7 +3908,10 @@ export type CssSelectorType = Text;
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO
  *
  **/
-export interface CurrencyConversionService extends FinancialProduct {}
+export interface CurrencyConversionService
+  extends Omit<FinancialProduct, "@type"> {
+  "@type": "CurrencyConversionService";
+}
 
 /**
  *
@@ -3607,7 +3921,9 @@ export interface CurrencyConversionService extends FinancialProduct {}
  * Event type: A social dance.
  *
  **/
-export interface DanceEvent extends Event {}
+export interface DanceEvent extends Omit<Event, "@type"> {
+  "@type": "DanceEvent";
+}
 
 /**
  *
@@ -3617,7 +3933,9 @@ export interface DanceEvent extends Event {}
  * A dance group&#x2014;for example, the Alvin Ailey Dance Theater or Riverdance.
  *
  **/
-export interface DanceGroup extends PerformingGroup {}
+export interface DanceGroup extends Omit<PerformingGroup, "@type"> {
+  "@type": "DanceGroup";
+}
 
 /**
  *
@@ -3629,7 +3947,8 @@ export interface DanceGroup extends PerformingGroup {}
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_DatasetClass
  *
  **/
-export interface DataCatalog extends CreativeWork {
+export interface DataCatalog extends Omit<CreativeWork, "@type"> {
+  "@type": "DataCatalog";
   dataset?: Dataset;
   measurementTechnique?: Text | URL;
 }
@@ -3644,7 +3963,8 @@ export interface DataCatalog extends CreativeWork {
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_DatasetClass
  *
  **/
-export interface DataDownload extends MediaObject {
+export interface DataDownload extends Omit<MediaObject, "@type"> {
+  "@type": "DataDownload";
   measurementTechnique?: Text | URL;
 }
 
@@ -3658,7 +3978,8 @@ export interface DataDownload extends MediaObject {
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_DatasetClass
  *
  **/
-export interface Dataset extends CreativeWork {
+export interface Dataset extends Omit<CreativeWork, "@type"> {
+  "@type": "Dataset";
   catalog?: DataCatalog;
   datasetTimeInterval?: DateTime;
   distribution?: DataDownload;
@@ -3677,7 +3998,9 @@ export interface Dataset extends CreativeWork {
  * A DatedMoneySpecification represents monetary values with optional start and end dates. For example, this could represent an employee's salary over a specific period of time. __Note:__ This type has been superseded by [[MonetaryAmount]] use of that type is recommended
  *
  **/
-export interface DatedMoneySpecification extends StructuredValue {
+export interface DatedMoneySpecification
+  extends Omit<StructuredValue, "@type"> {
+  "@type": "DatedMoneySpecification";
   amount?: Number | MonetaryAmount;
   currency?: Text;
   endDate?: Date | DateTime;
@@ -3692,7 +4015,9 @@ export interface DatedMoneySpecification extends StructuredValue {
  * A day spa.
  *
  **/
-export interface DaySpa extends HealthAndBeautyBusiness {}
+export interface DaySpa extends Omit<HealthAndBeautyBusiness, "@type"> {
+  "@type": "DaySpa";
+}
 
 /**
  *
@@ -3704,7 +4029,8 @@ export interface DaySpa extends HealthAndBeautyBusiness {}
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface DDxElement extends MedicalIntangible {
+export interface DDxElement extends Omit<MedicalIntangible, "@type"> {
+  "@type": "DDxElement";
   diagnosis?: MedicalCondition;
   distinguishingSign?: MedicalSignOrSymptom;
 }
@@ -3717,7 +4043,9 @@ export interface DDxElement extends MedicalIntangible {
  * The act of stopping or deactivating a device or application (e.g. stopping a timer or turning off a flashlight).
  *
  **/
-export interface DeactivateAction extends ControlAction {}
+export interface DeactivateAction extends Omit<ControlAction, "@type"> {
+  "@type": "DeactivateAction";
+}
 
 /**
  *
@@ -3727,7 +4055,10 @@ export interface DeactivateAction extends ControlAction {}
  * A defence establishment, such as an army or navy base.
  *
  **/
-export interface DefenceEstablishment extends GovernmentBuilding {}
+export interface DefenceEstablishment
+  extends Omit<GovernmentBuilding, "@type"> {
+  "@type": "DefenceEstablishment";
+}
 
 /**
 *
@@ -3754,7 +4085,8 @@ Region = state, canton, prefecture, autonomous community...
 * @see @link https://github.com/schemaorg/schemaorg/issues/2506
 *
 **/
-export interface DefinedRegion extends StructuredValue {
+export interface DefinedRegion extends Omit<StructuredValue, "@type"> {
+  "@type": "DefinedRegion";
   addressCountry?: Text | Country;
   addressRegion?: Text;
   postalCode?: Text;
@@ -3774,7 +4106,8 @@ export interface DefinedRegion extends StructuredValue {
  * @see @link https://github.com/schemaorg/schemaorg/issues/894
  *
  **/
-export interface DefinedTerm extends Intangible {
+export interface DefinedTerm extends Omit<Intangible, "@type"> {
+  "@type": "DefinedTerm";
   inDefinedTermSet?: DefinedTermSet | URL;
   termCode?: Text;
 }
@@ -3791,7 +4124,8 @@ export interface DefinedTerm extends Intangible {
  * @see @link https://github.com/schemaorg/schemaorg/issues/894
  *
  **/
-export interface DefinedTermSet extends CreativeWork {
+export interface DefinedTermSet extends Omit<CreativeWork, "@type"> {
+  "@type": "DefinedTermSet";
   hasDefinedTerm?: DefinedTerm;
 }
 
@@ -3803,7 +4137,9 @@ export interface DefinedTermSet extends CreativeWork {
  * The act of editing a recipient by removing one of its objects.
  *
  **/
-export interface DeleteAction extends UpdateAction {}
+export interface DeleteAction extends Omit<UpdateAction, "@type"> {
+  "@type": "DeleteAction";
+}
 
 /**
  *
@@ -3815,7 +4151,9 @@ export interface DeleteAction extends UpdateAction {}
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass
  *
  **/
-export interface DeliveryChargeSpecification extends PriceSpecification {
+export interface DeliveryChargeSpecification
+  extends Omit<PriceSpecification, "@type"> {
+  "@type": "DeliveryChargeSpecification";
   appliesToDeliveryMethod?: DeliveryMethod;
   areaServed?: Text | Place | AdministrativeArea | GeoShape;
   eligibleRegion?: Text | GeoShape | Place;
@@ -3830,7 +4168,8 @@ export interface DeliveryChargeSpecification extends PriceSpecification {
  * An event involving the delivery of an item.
  *
  **/
-export interface DeliveryEvent extends Event {
+export interface DeliveryEvent extends Omit<Event, "@type"> {
+  "@type": "DeliveryEvent";
   accessCode?: Text;
   availableFrom?: DateTime;
   availableThrough?: DateTime;
@@ -3849,7 +4188,8 @@ export interface DeliveryEvent extends Event {
  * @see @link https://github.com/schemaorg/schemaorg/issues/2506
  *
  **/
-export interface DeliveryTimeSettings extends StructuredValue {
+export interface DeliveryTimeSettings extends Omit<StructuredValue, "@type"> {
+  "@type": "DeliveryTimeSettings";
   deliveryTime?: ShippingDeliveryTime;
   isUnlabelledFallback?: Boolean;
   shippingDestination?: DefinedRegion;
@@ -3866,7 +4206,8 @@ export interface DeliveryTimeSettings extends StructuredValue {
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass
  *
  **/
-export interface Demand extends Intangible {
+export interface Demand extends Omit<Intangible, "@type"> {
+  "@type": "Demand";
   acceptedPaymentMethod?: LoanOrCredit | PaymentMethod;
   advanceBookingRequirement?: QuantitativeValue;
   areaServed?: Text | Place | AdministrativeArea | GeoShape;
@@ -3918,9 +4259,11 @@ export interface Demand extends Intangible {
  *
  **/
 export interface Dentist
-  extends MedicalBusiness,
-    LocalBusiness,
-    MedicalOrganization {}
+  extends Omit<MedicalBusiness, "@type">,
+    Omit<LocalBusiness, "@type">,
+    Omit<MedicalOrganization, "@type"> {
+  "@type": "Dentist";
+}
 
 /**
  *
@@ -3930,7 +4273,9 @@ export interface Dentist
  * The act of  departing from a place. An agent departs from an fromLocation for a destination, optionally with participants.
  *
  **/
-export interface DepartAction extends MoveAction {}
+export interface DepartAction extends Omit<MoveAction, "@type"> {
+  "@type": "DepartAction";
+}
 
 /**
  *
@@ -3940,7 +4285,9 @@ export interface DepartAction extends MoveAction {}
  * A department store.
  *
  **/
-export interface DepartmentStore extends Store {}
+export interface DepartmentStore extends Omit<Store, "@type"> {
+  "@type": "DepartmentStore";
+}
 
 /**
  *
@@ -3952,7 +4299,11 @@ export interface DepartmentStore extends Store {}
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO
  *
  **/
-export interface DepositAccount extends BankAccount, InvestmentOrDeposit {}
+export interface DepositAccount
+  extends Omit<BankAccount, "@type">,
+    Omit<InvestmentOrDeposit, "@type"> {
+  "@type": "DepositAccount";
+}
 
 /**
  *
@@ -3964,7 +4315,8 @@ export interface DepositAccount extends BankAccount, InvestmentOrDeposit {}
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface DiagnosticLab extends MedicalOrganization {
+export interface DiagnosticLab extends Omit<MedicalOrganization, "@type"> {
+  "@type": "DiagnosticLab";
   availableTest?: MedicalTest;
 }
 
@@ -3978,7 +4330,9 @@ export interface DiagnosticLab extends MedicalOrganization {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface DiagnosticProcedure extends MedicalProcedure {}
+export interface DiagnosticProcedure extends Omit<MedicalProcedure, "@type"> {
+  "@type": "DiagnosticProcedure";
+}
 
 /**
  *
@@ -3990,7 +4344,10 @@ export interface DiagnosticProcedure extends MedicalProcedure {}
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface Diet extends LifestyleModification, CreativeWork {
+export interface Diet
+  extends Omit<LifestyleModification, "@type">,
+    Omit<CreativeWork, "@type"> {
+  "@type": "Diet";
   dietFeatures?: Text;
   endorsers?: Organization | Person;
   expertConsiderations?: Text;
@@ -4008,7 +4365,8 @@ export interface Diet extends LifestyleModification, CreativeWork {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface DietarySupplement extends Substance {
+export interface DietarySupplement extends Omit<Substance, "@type"> {
+  "@type": "DietarySupplement";
   activeIngredient?: Text;
   isProprietary?: Boolean;
   legalStatus?: MedicalEnumeration | Text | DrugLegalStatus;
@@ -4030,7 +4388,8 @@ export interface DietarySupplement extends Substance {
  * An electronic file or document.
  *
  **/
-export interface DigitalDocument extends CreativeWork {
+export interface DigitalDocument extends Omit<CreativeWork, "@type"> {
+  "@type": "DigitalDocument";
   hasDigitalDocumentPermission?: DigitalDocumentPermission;
 }
 
@@ -4042,7 +4401,8 @@ export interface DigitalDocument extends CreativeWork {
  * A permission for a particular person or group to access a particular file.
  *
  **/
-export interface DigitalDocumentPermission extends Intangible {
+export interface DigitalDocumentPermission extends Omit<Intangible, "@type"> {
+  "@type": "DigitalDocumentPermission";
   grantee?: Organization | Person | Audience | ContactPoint;
   permissionType?: DigitalDocumentPermissionType;
 }
@@ -4055,7 +4415,9 @@ export interface DigitalDocumentPermission extends Intangible {
  * The act of expressing a difference of opinion with the object. An agent disagrees to/about an object (a proposition, topic or theme) with participants.
  *
  **/
-export interface DisagreeAction extends ReactAction {}
+export interface DisagreeAction extends Omit<ReactAction, "@type"> {
+  "@type": "DisagreeAction";
+}
 
 /**
  *
@@ -4065,7 +4427,9 @@ export interface DisagreeAction extends ReactAction {}
  * The act of discovering/finding an object.
  *
  **/
-export interface DiscoverAction extends FindAction {}
+export interface DiscoverAction extends Omit<FindAction, "@type"> {
+  "@type": "DiscoverAction";
+}
 
 /**
  *
@@ -4075,7 +4439,10 @@ export interface DiscoverAction extends FindAction {}
  * A posting to a discussion forum.
  *
  **/
-export interface DiscussionForumPosting extends SocialMediaPosting {}
+export interface DiscussionForumPosting
+  extends Omit<SocialMediaPosting, "@type"> {
+  "@type": "DiscussionForumPosting";
+}
 
 /**
  *
@@ -4085,7 +4452,9 @@ export interface DiscussionForumPosting extends SocialMediaPosting {}
  * The act of expressing a negative sentiment about the object. An agent dislikes an object (a proposition, topic or theme) with participants.
  *
  **/
-export interface DislikeAction extends ReactAction {}
+export interface DislikeAction extends Omit<ReactAction, "@type"> {
+  "@type": "DislikeAction";
+}
 
 /**
  *
@@ -4095,7 +4464,9 @@ export interface DislikeAction extends ReactAction {}
  * Properties that take Distances as values are of the form '&lt;Number&gt; &lt;Length unit of measure&gt;'. E.g., '7 ft'.
  *
  **/
-export interface Distance extends Quantity {}
+export interface Distance extends Omit<Quantity, "@type"> {
+  "@type": "Distance";
+}
 
 /**
  *
@@ -4107,7 +4478,9 @@ export interface Distance extends Quantity {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/743
  *
  **/
-export interface Distillery extends FoodEstablishment {}
+export interface Distillery extends Omit<FoodEstablishment, "@type"> {
+  "@type": "Distillery";
+}
 
 /**
  *
@@ -4117,7 +4490,8 @@ export interface Distillery extends FoodEstablishment {}
  * The act of providing goods, services, or money without compensation, often for philanthropic reasons.
  *
  **/
-export interface DonateAction extends TradeAction {
+export interface DonateAction extends Omit<TradeAction, "@type"> {
+  "@type": "DonateAction";
   recipient?: Organization | ContactPoint | Person | Audience;
 }
 
@@ -4131,7 +4505,8 @@ export interface DonateAction extends TradeAction {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface DoseSchedule extends MedicalIntangible {
+export interface DoseSchedule extends Omit<MedicalIntangible, "@type"> {
+  "@type": "DoseSchedule";
   doseUnit?: Text;
   doseValue?: Number | QualitativeValue;
   frequency?: Text;
@@ -4146,7 +4521,9 @@ export interface DoseSchedule extends MedicalIntangible {
  * The act of downloading an object.
  *
  **/
-export interface DownloadAction extends TransferAction {}
+export interface DownloadAction extends Omit<TransferAction, "@type"> {
+  "@type": "DownloadAction";
+}
 
 /**
  *
@@ -4156,7 +4533,9 @@ export interface DownloadAction extends TransferAction {}
  * The act of producing a visual/graphical representation of an object, typically with a pen/pencil and paper as instruments.
  *
  **/
-export interface DrawAction extends CreateAction {}
+export interface DrawAction extends Omit<CreateAction, "@type"> {
+  "@type": "DrawAction";
+}
 
 /**
  *
@@ -4170,7 +4549,9 @@ export interface DrawAction extends CreateAction {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/1448
  *
  **/
-export interface Drawing extends CreativeWork {}
+export interface Drawing extends Omit<CreativeWork, "@type"> {
+  "@type": "Drawing";
+}
 
 /**
  *
@@ -4180,7 +4561,9 @@ export interface Drawing extends CreativeWork {}
  * The act of swallowing liquids.
  *
  **/
-export interface DrinkAction extends ConsumeAction {}
+export interface DrinkAction extends Omit<ConsumeAction, "@type"> {
+  "@type": "DrinkAction";
+}
 
 /**
  *
@@ -4192,7 +4575,8 @@ export interface DrinkAction extends ConsumeAction {}
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface Drug extends Substance {
+export interface Drug extends Omit<Substance, "@type"> {
+  "@type": "Drug";
   activeIngredient?: Text;
   administrationRoute?: Text;
   alcoholWarning?: Text;
@@ -4236,7 +4620,8 @@ export interface Drug extends Substance {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface DrugClass extends MedicalEntity {
+export interface DrugClass extends Omit<MedicalEntity, "@type"> {
+  "@type": "DrugClass";
   drug?: Drug;
 }
 
@@ -4250,7 +4635,8 @@ export interface DrugClass extends MedicalEntity {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface DrugCost extends MedicalEntity {
+export interface DrugCost extends Omit<MedicalEntity, "@type"> {
+  "@type": "DrugCost";
   applicableLocation?: AdministrativeArea;
   costCategory?: DrugCostCategory;
   costCurrency?: Text;
@@ -4269,7 +4655,8 @@ export interface DrugCost extends MedicalEntity {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface DrugLegalStatus extends MedicalIntangible {
+export interface DrugLegalStatus extends Omit<MedicalIntangible, "@type"> {
+  "@type": "DrugLegalStatus";
   applicableLocation?: AdministrativeArea;
 }
 
@@ -4283,7 +4670,8 @@ export interface DrugLegalStatus extends MedicalIntangible {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface DrugStrength extends MedicalIntangible {
+export interface DrugStrength extends Omit<MedicalIntangible, "@type"> {
+  "@type": "DrugStrength";
   activeIngredient?: Text;
   availableIn?: AdministrativeArea;
   maximumIntake?: MaximumDoseSchedule;
@@ -4299,7 +4687,9 @@ export interface DrugStrength extends MedicalIntangible {
  * A dry-cleaning business.
  *
  **/
-export interface DryCleaningOrLaundry extends LocalBusiness {}
+export interface DryCleaningOrLaundry extends Omit<LocalBusiness, "@type"> {
+  "@type": "DryCleaningOrLaundry";
+}
 
 /**
  *
@@ -4309,7 +4699,9 @@ export interface DryCleaningOrLaundry extends LocalBusiness {}
  * Quantity: Duration (use [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601)).
  *
  **/
-export interface Duration extends Quantity {}
+export interface Duration extends Omit<Quantity, "@type"> {
+  "@type": "Duration";
+}
 
 /**
  *
@@ -4319,7 +4711,9 @@ export interface Duration extends Quantity {}
  * The act of swallowing solid objects.
  *
  **/
-export interface EatAction extends ConsumeAction {}
+export interface EatAction extends Omit<ConsumeAction, "@type"> {
+  "@type": "EatAction";
+}
 
 /**
  *
@@ -4331,7 +4725,8 @@ export interface EatAction extends ConsumeAction {}
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_LRMIClass
  *
  **/
-export interface EducationalAudience extends Audience {
+export interface EducationalAudience extends Omit<Audience, "@type"> {
+  "@type": "EducationalAudience";
   educationalRole?: Text;
 }
 
@@ -4347,7 +4742,9 @@ export interface EducationalAudience extends Audience {
  * @see @link https://github.com/schemaorg/schemaorg/issues/1779
  *
  **/
-export interface EducationalOccupationalCredential extends CreativeWork {
+export interface EducationalOccupationalCredential
+  extends Omit<CreativeWork, "@type"> {
+  "@type": "EducationalOccupationalCredential";
   competencyRequired?: Text | URL | DefinedTerm;
   credentialCategory?: DefinedTerm | URL | Text;
   educationalLevel?: URL | DefinedTerm | Text;
@@ -4368,7 +4765,9 @@ export interface EducationalOccupationalCredential extends CreativeWork {
  * @see @link https://github.com/schemaorg/schemaorg/issues/2289
  *
  **/
-export interface EducationalOccupationalProgram extends Intangible {
+export interface EducationalOccupationalProgram
+  extends Omit<Intangible, "@type"> {
+  "@type": "EducationalOccupationalProgram";
   applicationDeadline?: Date;
   applicationStartDate?: Date;
   dayOfWeek?: DayOfWeek;
@@ -4410,7 +4809,10 @@ export interface EducationalOccupationalProgram extends Intangible {
  * An educational organization.
  *
  **/
-export interface EducationalOrganization extends Organization, CivicStructure {
+export interface EducationalOrganization
+  extends Omit<Organization, "@type">,
+    Omit<CivicStructure, "@type"> {
+  "@type": "EducationalOrganization";
   alumni?: Person;
 }
 
@@ -4422,7 +4824,8 @@ export interface EducationalOrganization extends Organization, CivicStructure {
  * Event type: Education event.
  *
  **/
-export interface EducationEvent extends Event {
+export interface EducationEvent extends Omit<Event, "@type"> {
+  "@type": "EducationEvent";
   assesses?: DefinedTerm | Text;
   educationalLevel?: URL | DefinedTerm | Text;
   teaches?: Text | DefinedTerm;
@@ -4436,7 +4839,10 @@ export interface EducationEvent extends Event {
  * An electrician.
  *
  **/
-export interface Electrician extends HomeAndConstructionBusiness {}
+export interface Electrician
+  extends Omit<HomeAndConstructionBusiness, "@type"> {
+  "@type": "Electrician";
+}
 
 /**
  *
@@ -4446,7 +4852,9 @@ export interface Electrician extends HomeAndConstructionBusiness {}
  * An electronics store.
  *
  **/
-export interface ElectronicsStore extends Store {}
+export interface ElectronicsStore extends Omit<Store, "@type"> {
+  "@type": "ElectronicsStore";
+}
 
 /**
  *
@@ -4456,7 +4864,10 @@ export interface ElectronicsStore extends Store {}
  * An elementary school.
  *
  **/
-export interface ElementarySchool extends EducationalOrganization {}
+export interface ElementarySchool
+  extends Omit<EducationalOrganization, "@type"> {
+  "@type": "ElementarySchool";
+}
 
 /**
  *
@@ -4466,7 +4877,9 @@ export interface ElementarySchool extends EducationalOrganization {}
  * An email message.
  *
  **/
-export interface EmailMessage extends Message {}
+export interface EmailMessage extends Omit<Message, "@type"> {
+  "@type": "EmailMessage";
+}
 
 /**
  *
@@ -4476,7 +4889,9 @@ export interface EmailMessage extends Message {}
  * An embassy.
  *
  **/
-export interface Embassy extends GovernmentBuilding {}
+export interface Embassy extends Omit<GovernmentBuilding, "@type"> {
+  "@type": "Embassy";
+}
 
 /**
  *
@@ -4486,7 +4901,9 @@ export interface Embassy extends GovernmentBuilding {}
  * An emergency service, such as a fire station or ER.
  *
  **/
-export interface EmergencyService extends LocalBusiness {}
+export interface EmergencyService extends Omit<LocalBusiness, "@type"> {
+  "@type": "EmergencyService";
+}
 
 /**
  *
@@ -4496,7 +4913,8 @@ export interface EmergencyService extends LocalBusiness {}
  * A subclass of OrganizationRole used to describe employee relationships.
  *
  **/
-export interface EmployeeRole extends OrganizationRole {
+export interface EmployeeRole extends Omit<OrganizationRole, "@type"> {
+  "@type": "EmployeeRole";
   baseSalary?: MonetaryAmount | PriceSpecification | Number;
   salaryCurrency?: Text;
 }
@@ -4511,7 +4929,10 @@ export interface EmployeeRole extends OrganizationRole {
  * @see @link https://github.com/schemaorg/schemaorg/issues/1689
  *
  **/
-export interface EmployerAggregateRating extends AggregateRating {}
+export interface EmployerAggregateRating
+  extends Omit<AggregateRating, "@type"> {
+  "@type": "EmployerAggregateRating";
+}
 
 /**
  *
@@ -4525,7 +4946,9 @@ export interface EmployerAggregateRating extends AggregateRating {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/1589
  *
  **/
-export interface EmployerReview extends Review {}
+export interface EmployerReview extends Omit<Review, "@type"> {
+  "@type": "EmployerReview";
+}
 
 /**
  *
@@ -4535,7 +4958,9 @@ export interface EmployerReview extends Review {}
  * An employment agency.
  *
  **/
-export interface EmploymentAgency extends LocalBusiness {}
+export interface EmploymentAgency extends Omit<LocalBusiness, "@type"> {
+  "@type": "EmploymentAgency";
+}
 
 /**
  *
@@ -4545,7 +4970,8 @@ export interface EmploymentAgency extends LocalBusiness {}
  * An agent approves/certifies/likes/supports/sanction an object.
  *
  **/
-export interface EndorseAction extends ReactAction {
+export interface EndorseAction extends Omit<ReactAction, "@type"> {
+  "@type": "EndorseAction";
   endorsee?: Organization | Person;
 }
 
@@ -4565,7 +4991,9 @@ endorsement rating is particularly useful in the absence of numeric scales as it
 * @see @link https://github.com/schemaorg/schemaorg/issues/1293
 *
 **/
-export interface EndorsementRating extends Rating {}
+export interface EndorsementRating extends Omit<Rating, "@type"> {
+  "@type": "EndorsementRating";
+}
 
 /**
  *
@@ -4575,7 +5003,9 @@ export interface EndorsementRating extends Rating {}
  * Properties that take Energy as values are of the form '&lt;Number&gt; &lt;Energy unit of measure&gt;'.
  *
  **/
-export interface Energy extends Quantity {}
+export interface Energy extends Omit<Quantity, "@type"> {
+  "@type": "Energy";
+}
 
 /**
  *
@@ -4589,7 +5019,8 @@ export interface Energy extends Quantity {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/2670
  *
  **/
-export interface EnergyConsumptionDetails extends Intangible {
+export interface EnergyConsumptionDetails extends Omit<Intangible, "@type"> {
+  "@type": "EnergyConsumptionDetails";
   energyEfficiencyScaleMax?: EUEnergyEfficiencyEnumeration;
   energyEfficiencyScaleMin?: EUEnergyEfficiencyEnumeration;
   hasEnergyEfficiencyCategory?: EnergyEfficiencyEnumeration;
@@ -4607,7 +5038,10 @@ export interface EnergyConsumptionDetails extends Intangible {
  * @see @link https://github.com/schemaorg/schemaorg/issues/2670
  *
  **/
-export interface EnergyEfficiencyEnumeration extends Enumeration {}
+export interface EnergyEfficiencyEnumeration
+  extends Omit<Enumeration, "@type"> {
+  "@type": "EnergyEfficiencyEnumeration";
+}
 
 /**
  *
@@ -4619,7 +5053,8 @@ export interface EnergyEfficiencyEnumeration extends Enumeration {}
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group
  *
  **/
-export interface EngineSpecification extends StructuredValue {
+export interface EngineSpecification extends Omit<StructuredValue, "@type"> {
+  "@type": "EngineSpecification";
   engineDisplacement?: QuantitativeValue;
   enginePower?: QuantitativeValue;
   engineType?: URL | QualitativeValue | Text;
@@ -4635,7 +5070,9 @@ export interface EngineSpecification extends StructuredValue {
  * A business providing entertainment.
  *
  **/
-export interface EntertainmentBusiness extends LocalBusiness {}
+export interface EntertainmentBusiness extends Omit<LocalBusiness, "@type"> {
+  "@type": "EntertainmentBusiness";
+}
 
 /**
  *
@@ -4647,7 +5084,8 @@ export interface EntertainmentBusiness extends LocalBusiness {}
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_ActionCollabClass
  *
  **/
-export interface EntryPoint extends Intangible {
+export interface EntryPoint extends Omit<Intangible, "@type"> {
+  "@type": "EntryPoint";
   actionApplication?: SoftwareApplication;
   actionPlatform?: Text | URL;
   application?: SoftwareApplication;
@@ -4665,7 +5103,9 @@ export interface EntryPoint extends Intangible {
  * Lists or enumerations—for example, a list of cuisines or music genres, etc.
  *
  **/
-export interface Enumeration extends Intangible {}
+export interface Enumeration extends Omit<Intangible, "@type"> {
+  "@type": "Enumeration";
+}
 
 /**
  *
@@ -4675,7 +5115,8 @@ export interface Enumeration extends Intangible {}
  * A media episode (e.g. TV, radio, video game) which can be part of a series or season.
  *
  **/
-export interface Episode extends CreativeWork {
+export interface Episode extends Omit<CreativeWork, "@type"> {
+  "@type": "Episode";
   actor?: Person;
   actors?: Array<Person>;
   director?: Person;
@@ -4697,7 +5138,8 @@ export interface Episode extends CreativeWork {
  * An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the [[offers]] property. Repeated events may be structured as separate Event objects.
  *
  **/
-export interface Event extends Thing {
+export interface Event extends Omit<Thing, "@type"> {
+  "@type": "Event";
   about?: Thing;
   actor?: Person;
   aggregateRating?: AggregateRating;
@@ -4747,7 +5189,9 @@ export interface Event extends Thing {
  * A reservation for an event like a concert, sporting event, or lecture.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use [[Offer]].
  *
  **/
-export interface EventReservation extends Reservation {}
+export interface EventReservation extends Omit<Reservation, "@type"> {
+  "@type": "EventReservation";
+}
 
 /**
 *
@@ -4774,7 +5218,11 @@ it may also sometimes prove useful to describe a longer-term series as an Event.
 * @see @link https://github.com/schemaorg/schemaorg/issues/447
 *
 **/
-export interface EventSeries extends Series, Event {}
+export interface EventSeries
+  extends Omit<Series, "@type">,
+    Omit<Event, "@type"> {
+  "@type": "EventSeries";
+}
 
 /**
  *
@@ -4784,7 +5232,9 @@ export interface EventSeries extends Series, Event {}
  * An event venue.
  *
  **/
-export interface EventVenue extends CivicStructure {}
+export interface EventVenue extends Omit<CivicStructure, "@type"> {
+  "@type": "EventVenue";
+}
 
 /**
  *
@@ -4799,7 +5249,9 @@ export interface EventVenue extends CivicStructure {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/1253
  *
  **/
-export interface ExchangeRateSpecification extends StructuredValue {
+export interface ExchangeRateSpecification
+  extends Omit<StructuredValue, "@type"> {
+  "@type": "ExchangeRateSpecification";
   currency?: Text;
   currentExchangeRate?: UnitPriceSpecification;
   exchangeRateSpread?: MonetaryAmount | Number;
@@ -4813,7 +5265,8 @@ export interface ExchangeRateSpecification extends StructuredValue {
  * The act of participating in exertive activity for the purposes of improving health and fitness.
  *
  **/
-export interface ExerciseAction extends PlayAction {
+export interface ExerciseAction extends Omit<PlayAction, "@type"> {
+  "@type": "ExerciseAction";
   course?: Place;
   diet?: Diet;
   distance?: Distance;
@@ -4837,7 +5290,9 @@ export interface ExerciseAction extends PlayAction {
  * A gym.
  *
  **/
-export interface ExerciseGym extends SportsActivityLocation {}
+export interface ExerciseGym extends Omit<SportsActivityLocation, "@type"> {
+  "@type": "ExerciseGym";
+}
 
 /**
  *
@@ -4849,7 +5304,10 @@ export interface ExerciseGym extends SportsActivityLocation {}
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface ExercisePlan extends PhysicalActivity, CreativeWork {
+export interface ExercisePlan
+  extends Omit<PhysicalActivity, "@type">,
+    Omit<CreativeWork, "@type"> {
+  "@type": "ExercisePlan";
   activityDuration?: QuantitativeValue | Duration;
   activityFrequency?: Text | QuantitativeValue;
   additionalVariable?: Text;
@@ -4868,7 +5326,9 @@ export interface ExercisePlan extends PhysicalActivity, CreativeWork {
  * Event type: Exhibition event, e.g. at a museum, library, archive, tradeshow, ...
  *
  **/
-export interface ExhibitionEvent extends Event {}
+export interface ExhibitionEvent extends Omit<Event, "@type"> {
+  "@type": "ExhibitionEvent";
+}
 
 /**
  *
@@ -4880,7 +5340,9 @@ export interface ExhibitionEvent extends Event {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/1723
  *
  **/
-export interface FAQPage extends WebPage {}
+export interface FAQPage extends Omit<WebPage, "@type"> {
+  "@type": "FAQPage";
+}
 
 /**
  *
@@ -4890,7 +5352,9 @@ export interface FAQPage extends WebPage {}
  * A fast-food restaurant.
  *
  **/
-export interface FastFoodRestaurant extends FoodEstablishment {}
+export interface FastFoodRestaurant extends Omit<FoodEstablishment, "@type"> {
+  "@type": "FastFoodRestaurant";
+}
 
 /**
  *
@@ -4900,7 +5364,9 @@ export interface FastFoodRestaurant extends FoodEstablishment {}
  * Event type: Festival.
  *
  **/
-export interface Festival extends Event {}
+export interface Festival extends Omit<Event, "@type"> {
+  "@type": "Festival";
+}
 
 /**
  *
@@ -4910,7 +5376,9 @@ export interface Festival extends Event {}
  * The act of capturing sound and moving images on film, video, or digitally.
  *
  **/
-export interface FilmAction extends CreateAction {}
+export interface FilmAction extends Omit<CreateAction, "@type"> {
+  "@type": "FilmAction";
+}
 
 /**
  *
@@ -4922,7 +5390,8 @@ export interface FilmAction extends CreateAction {}
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO
  *
  **/
-export interface FinancialProduct extends Service {
+export interface FinancialProduct extends Omit<Service, "@type"> {
+  "@type": "FinancialProduct";
   annualPercentageRate?: QuantitativeValue | Number;
   feesAndCommissionsSpecification?: URL | Text;
   interestRate?: Number | QuantitativeValue;
@@ -4936,7 +5405,8 @@ export interface FinancialProduct extends Service {
  * Financial services business.
  *
  **/
-export interface FinancialService extends LocalBusiness {
+export interface FinancialService extends Omit<LocalBusiness, "@type"> {
+  "@type": "FinancialService";
   feesAndCommissionsSpecification?: URL | Text;
 }
 
@@ -4948,7 +5418,9 @@ export interface FinancialService extends LocalBusiness {
  * The act of finding an object.\n\nRelated actions:\n\n* [[SearchAction]]: FindAction is generally lead by a SearchAction, but not necessarily.
  *
  **/
-export interface FindAction extends Action {}
+export interface FindAction extends Omit<Action, "@type"> {
+  "@type": "FindAction";
+}
 
 /**
  *
@@ -4958,7 +5430,11 @@ export interface FindAction extends Action {}
  * A fire station. With firemen.
  *
  **/
-export interface FireStation extends CivicStructure, EmergencyService {}
+export interface FireStation
+  extends Omit<CivicStructure, "@type">,
+    Omit<EmergencyService, "@type"> {
+  "@type": "FireStation";
+}
 
 /**
  *
@@ -4968,7 +5444,8 @@ export interface FireStation extends CivicStructure, EmergencyService {}
  * An airline flight.
  *
  **/
-export interface Flight extends Trip {
+export interface Flight extends Omit<Trip, "@type"> {
+  "@type": "Flight";
   aircraft?: Vehicle | Text;
   arrivalAirport?: Airport;
   arrivalGate?: Text;
@@ -4994,7 +5471,8 @@ export interface Flight extends Trip {
  * A reservation for air travel.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use [[Offer]].
  *
  **/
-export interface FlightReservation extends Reservation {
+export interface FlightReservation extends Omit<Reservation, "@type"> {
+  "@type": "FlightReservation";
   boardingGroup?: Text;
   passengerPriorityStatus?: QualitativeValue | Text;
   passengerSequenceNumber?: Text;
@@ -5023,7 +5501,8 @@ export type Float = Number;
  * @see @link https://github.com/schemaorg/schemaorg/issues/2373
  *
  **/
-export interface FloorPlan extends Intangible {
+export interface FloorPlan extends Omit<Intangible, "@type"> {
+  "@type": "FloorPlan";
   amenityFeature?: LocationFeatureSpecification;
   floorSize?: QuantitativeValue;
   isPlanForApartment?: Accommodation;
@@ -5046,7 +5525,9 @@ export interface FloorPlan extends Intangible {
  * A florist.
  *
  **/
-export interface Florist extends Store {}
+export interface Florist extends Omit<Store, "@type"> {
+  "@type": "Florist";
+}
 
 /**
  *
@@ -5058,7 +5539,9 @@ export interface Florist extends Store {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/1004
  *
  **/
-export interface FMRadioChannel extends RadioChannel {}
+export interface FMRadioChannel extends Omit<RadioChannel, "@type"> {
+  "@type": "FMRadioChannel";
+}
 
 /**
  *
@@ -5068,7 +5551,8 @@ export interface FMRadioChannel extends RadioChannel {}
  * The act of forming a personal connection with someone/something (object) unidirectionally/asymmetrically to get updates polled from.\n\nRelated actions:\n\n* [[BefriendAction]]: Unlike BefriendAction, FollowAction implies that the connection is *not* necessarily reciprocal.\n* [[SubscribeAction]]: Unlike SubscribeAction, FollowAction implies that the follower acts as an active agent constantly/actively polling for updates.\n* [[RegisterAction]]: Unlike RegisterAction, FollowAction implies that the agent is interested in continuing receiving updates from the object.\n* [[JoinAction]]: Unlike JoinAction, FollowAction implies that the agent is interested in getting updates from the object.\n* [[TrackAction]]: Unlike TrackAction, FollowAction refers to the polling of updates of all aspects of animate objects rather than the location of inanimate objects (e.g. you track a package, but you don't follow it).
  *
  **/
-export interface FollowAction extends InteractAction {
+export interface FollowAction extends Omit<InteractAction, "@type"> {
+  "@type": "FollowAction";
   followee?: Organization | Person;
 }
 
@@ -5080,7 +5564,8 @@ export interface FollowAction extends InteractAction {
  * A food-related business.
  *
  **/
-export interface FoodEstablishment extends LocalBusiness {
+export interface FoodEstablishment extends Omit<LocalBusiness, "@type"> {
+  "@type": "FoodEstablishment";
   acceptsReservations?: URL | Boolean | Text;
   hasMenu?: URL | Menu | Text;
   menu?: Text | URL | Menu;
@@ -5096,7 +5581,9 @@ export interface FoodEstablishment extends LocalBusiness {
  * A reservation to dine at a food-related business.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.
  *
  **/
-export interface FoodEstablishmentReservation extends Reservation {
+export interface FoodEstablishmentReservation
+  extends Omit<Reservation, "@type"> {
+  "@type": "FoodEstablishmentReservation";
   endTime?: DateTime | Time;
   partySize?: QuantitativeValue | Integer;
   startTime?: DateTime | Time;
@@ -5110,7 +5597,9 @@ export interface FoodEstablishmentReservation extends Reservation {
  * Event type: Food event.
  *
  **/
-export interface FoodEvent extends Event {}
+export interface FoodEvent extends Omit<Event, "@type"> {
+  "@type": "FoodEvent";
+}
 
 /**
  *
@@ -5122,7 +5611,9 @@ export interface FoodEvent extends Event {}
  * @see @link https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology
  *
  **/
-export interface FoodService extends Service {}
+export interface FoodService extends Omit<Service, "@type"> {
+  "@type": "FoodService";
+}
 
 /**
 *
@@ -5142,7 +5633,9 @@ Examples of funding agencies include ERC, REA, NIH, Bill and Melinda Gates Found
 * @see @link https://github.com/schemaorg/schemaorg/issues/383
 *
 **/
-export interface FundingAgency extends Project {}
+export interface FundingAgency extends Omit<Project, "@type"> {
+  "@type": "FundingAgency";
+}
 
 /**
 *
@@ -5159,7 +5652,9 @@ export interface FundingAgency extends Project {}
 * @see @link https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FundInfoCollab
 *
 **/
-export interface FundingScheme extends Organization {}
+export interface FundingScheme extends Omit<Organization, "@type"> {
+  "@type": "FundingScheme";
+}
 
 /**
  *
@@ -5169,7 +5664,9 @@ export interface FundingScheme extends Organization {}
  * A furniture store.
  *
  **/
-export interface FurnitureStore extends Store {}
+export interface FurnitureStore extends Omit<Store, "@type"> {
+  "@type": "FurnitureStore";
+}
 
 /**
  *
@@ -5179,7 +5676,8 @@ export interface FurnitureStore extends Store {}
  * The Game type represents things which are games. These are typically rule-governed recreational activities, e.g. role-playing games in which players assume the role of characters in a fictional setting.
  *
  **/
-export interface Game extends CreativeWork {
+export interface Game extends Omit<CreativeWork, "@type"> {
+  "@type": "Game";
   characterAttribute?: Thing;
   gameItem?: Thing;
   gameLocation?: PostalAddress | Place | URL;
@@ -5195,7 +5693,8 @@ export interface Game extends CreativeWork {
  * Server that provides game interaction in a multiplayer game.
  *
  **/
-export interface GameServer extends Intangible {
+export interface GameServer extends Omit<Intangible, "@type"> {
+  "@type": "GameServer";
   game?: VideoGame;
   playersOnline?: Integer;
   serverStatus?: GameServerStatus;
@@ -5209,7 +5708,9 @@ export interface GameServer extends Intangible {
  * A garden store.
  *
  **/
-export interface GardenStore extends Store {}
+export interface GardenStore extends Omit<Store, "@type"> {
+  "@type": "GardenStore";
+}
 
 /**
  *
@@ -5219,7 +5720,9 @@ export interface GardenStore extends Store {}
  * A gas station.
  *
  **/
-export interface GasStation extends AutomotiveBusiness {}
+export interface GasStation extends Omit<AutomotiveBusiness, "@type"> {
+  "@type": "GasStation";
+}
 
 /**
  *
@@ -5229,7 +5732,9 @@ export interface GasStation extends AutomotiveBusiness {}
  * Residence type: Gated community.
  *
  **/
-export interface GatedResidenceCommunity extends Residence {}
+export interface GatedResidenceCommunity extends Omit<Residence, "@type"> {
+  "@type": "GatedResidenceCommunity";
+}
 
 /**
  *
@@ -5239,7 +5744,10 @@ export interface GatedResidenceCommunity extends Residence {}
  * A general contractor.
  *
  **/
-export interface GeneralContractor extends HomeAndConstructionBusiness {}
+export interface GeneralContractor
+  extends Omit<HomeAndConstructionBusiness, "@type"> {
+  "@type": "GeneralContractor";
+}
 
 /**
 *
@@ -5252,7 +5760,8 @@ export interface GeneralContractor extends HomeAndConstructionBusiness {}
        
 *
 **/
-export interface GeoCircle extends GeoShape {
+export interface GeoCircle extends Omit<GeoShape, "@type"> {
+  "@type": "GeoCircle";
   geoMidpoint?: GeoCoordinates;
   geoRadius?: Text | Distance | Number;
 }
@@ -5265,7 +5774,8 @@ export interface GeoCircle extends GeoShape {
  * The geographic coordinates of a place or event.
  *
  **/
-export interface GeoCoordinates extends StructuredValue {
+export interface GeoCoordinates extends Omit<StructuredValue, "@type"> {
+  "@type": "GeoCoordinates";
   address?: Text | PostalAddress;
   addressCountry?: Text | Country;
   elevation?: Number | Text;
@@ -5284,7 +5794,8 @@ export interface GeoCoordinates extends StructuredValue {
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_rNews
  *
  **/
-export interface GeoShape extends StructuredValue {
+export interface GeoShape extends Omit<StructuredValue, "@type"> {
+  "@type": "GeoShape";
   address?: Text | PostalAddress;
   addressCountry?: Text | Country;
   box?: Text;
@@ -5307,7 +5818,8 @@ export interface GeoShape extends StructuredValue {
  * @see @link https://github.com/schemaorg/schemaorg/issues/1375
  *
  **/
-export interface GeospatialGeometry extends Intangible {
+export interface GeospatialGeometry extends Omit<Intangible, "@type"> {
+  "@type": "GeospatialGeometry";
   geoContains?: GeospatialGeometry | Place;
   geoCoveredBy?: GeospatialGeometry | Place;
   geoCovers?: GeospatialGeometry | Place;
@@ -5328,7 +5840,8 @@ export interface GeospatialGeometry extends Intangible {
  * The act of transferring ownership of an object to a destination. Reciprocal of TakeAction.\n\nRelated actions:\n\n* [[TakeAction]]: Reciprocal of GiveAction.\n* [[SendAction]]: Unlike SendAction, GiveAction implies that ownership is being transferred (e.g. I may send my laptop to you, but that doesn't mean I'm giving it to you).
  *
  **/
-export interface GiveAction extends TransferAction {
+export interface GiveAction extends Omit<TransferAction, "@type"> {
+  "@type": "GiveAction";
   recipient?: Organization | ContactPoint | Person | Audience;
 }
 
@@ -5340,7 +5853,9 @@ export interface GiveAction extends TransferAction {
  * A golf course.
  *
  **/
-export interface GolfCourse extends SportsActivityLocation {}
+export interface GolfCourse extends Omit<SportsActivityLocation, "@type"> {
+  "@type": "GolfCourse";
+}
 
 /**
  *
@@ -5350,7 +5865,9 @@ export interface GolfCourse extends SportsActivityLocation {}
  * A government building.
  *
  **/
-export interface GovernmentBuilding extends CivicStructure {}
+export interface GovernmentBuilding extends Omit<CivicStructure, "@type"> {
+  "@type": "GovernmentBuilding";
+}
 
 /**
  *
@@ -5360,7 +5877,9 @@ export interface GovernmentBuilding extends CivicStructure {}
  * A government office&#x2014;for example, an IRS or DMV office.
  *
  **/
-export interface GovernmentOffice extends LocalBusiness {}
+export interface GovernmentOffice extends Omit<LocalBusiness, "@type"> {
+  "@type": "GovernmentOffice";
+}
 
 /**
  *
@@ -5370,7 +5889,9 @@ export interface GovernmentOffice extends LocalBusiness {}
  * A governmental organization or agency.
  *
  **/
-export interface GovernmentOrganization extends Organization {}
+export interface GovernmentOrganization extends Omit<Organization, "@type"> {
+  "@type": "GovernmentOrganization";
+}
 
 /**
  *
@@ -5380,7 +5901,9 @@ export interface GovernmentOrganization extends Organization {}
  * A permit issued by a government agency.
  *
  **/
-export interface GovernmentPermit extends Permit {}
+export interface GovernmentPermit extends Omit<Permit, "@type"> {
+  "@type": "GovernmentPermit";
+}
 
 /**
  *
@@ -5390,7 +5913,8 @@ export interface GovernmentPermit extends Permit {}
  * A service provided by a government organization, e.g. food stamps, veterans benefits, etc.
  *
  **/
-export interface GovernmentService extends Service {
+export interface GovernmentService extends Omit<Service, "@type"> {
+  "@type": "GovernmentService";
   jurisdiction?: AdministrativeArea | Text;
   serviceOperator?: Organization;
 }
@@ -5414,7 +5938,8 @@ The amount of a [[Grant]] is represented using [[amount]] as a [[MonetaryAmount]
 * @see @link https://github.com/schemaorg/schemaorg/issues/383
 *
 **/
-export interface Grant extends Intangible {
+export interface Grant extends Omit<Intangible, "@type"> {
+  "@type": "Grant";
   fundedItem?: Thing;
   sponsor?: Person | Organization;
 }
@@ -5427,7 +5952,9 @@ export interface Grant extends Intangible {
  * A grocery store.
  *
  **/
-export interface GroceryStore extends Store {}
+export interface GroceryStore extends Omit<Store, "@type"> {
+  "@type": "GroceryStore";
+}
 
 /**
  *
@@ -5441,7 +5968,8 @@ export interface GroceryStore extends Store {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/2405
  *
  **/
-export interface Guide extends CreativeWork {
+export interface Guide extends Omit<CreativeWork, "@type"> {
+  "@type": "Guide";
   reviewAspect?: Text;
 }
 
@@ -5457,7 +5985,9 @@ export interface Guide extends CreativeWork {
  * @see @link https://github.com/schemaorg/schemaorg/issues/2526
  *
  **/
-export interface Hackathon extends Event {}
+export interface Hackathon extends Omit<Event, "@type"> {
+  "@type": "Hackathon";
+}
 
 /**
  *
@@ -5467,7 +5997,9 @@ export interface Hackathon extends Event {}
  * A hair salon.
  *
  **/
-export interface HairSalon extends HealthAndBeautyBusiness {}
+export interface HairSalon extends Omit<HealthAndBeautyBusiness, "@type"> {
+  "@type": "HairSalon";
+}
 
 /**
  *
@@ -5477,7 +6009,9 @@ export interface HairSalon extends HealthAndBeautyBusiness {}
  * A hardware store.
  *
  **/
-export interface HardwareStore extends Store {}
+export interface HardwareStore extends Omit<Store, "@type"> {
+  "@type": "HardwareStore";
+}
 
 /**
  *
@@ -5487,7 +6021,9 @@ export interface HardwareStore extends Store {}
  * Health and beauty.
  *
  **/
-export interface HealthAndBeautyBusiness extends LocalBusiness {}
+export interface HealthAndBeautyBusiness extends Omit<LocalBusiness, "@type"> {
+  "@type": "HealthAndBeautyBusiness";
+}
 
 /**
  *
@@ -5498,8 +6034,10 @@ export interface HealthAndBeautyBusiness extends LocalBusiness {}
  *
  **/
 export interface HealthClub
-  extends HealthAndBeautyBusiness,
-    SportsActivityLocation {}
+  extends Omit<HealthAndBeautyBusiness, "@type">,
+    Omit<SportsActivityLocation, "@type"> {
+  "@type": "HealthClub";
+}
 
 /**
  *
@@ -5513,7 +6051,8 @@ export interface HealthClub
  * @see @link https://github.com/schemaorg/schemaorg/issues/1062
  *
  **/
-export interface HealthInsurancePlan extends Intangible {
+export interface HealthInsurancePlan extends Omit<Intangible, "@type"> {
+  "@type": "HealthInsurancePlan";
   benefitsSummaryUrl?: URL;
   contactPoint?: ContactPoint;
   healthPlanDrugOption?: Text;
@@ -5537,7 +6076,9 @@ export interface HealthInsurancePlan extends Intangible {
  * @see @link https://github.com/schemaorg/schemaorg/issues/1062
  *
  **/
-export interface HealthPlanCostSharingSpecification extends Intangible {
+export interface HealthPlanCostSharingSpecification
+  extends Omit<Intangible, "@type"> {
+  "@type": "HealthPlanCostSharingSpecification";
   healthPlanCoinsuranceOption?: Text;
   healthPlanCoinsuranceRate?: Number;
   healthPlanCopay?: PriceSpecification;
@@ -5557,7 +6098,8 @@ export interface HealthPlanCostSharingSpecification extends Intangible {
  * @see @link https://github.com/schemaorg/schemaorg/issues/1062
  *
  **/
-export interface HealthPlanFormulary extends Intangible {
+export interface HealthPlanFormulary extends Omit<Intangible, "@type"> {
+  "@type": "HealthPlanFormulary";
   healthPlanCostSharing?: Boolean;
   healthPlanDrugTier?: Text;
   offersPrescriptionByMail?: Boolean;
@@ -5575,7 +6117,8 @@ export interface HealthPlanFormulary extends Intangible {
  * @see @link https://github.com/schemaorg/schemaorg/issues/1062
  *
  **/
-export interface HealthPlanNetwork extends Intangible {
+export interface HealthPlanNetwork extends Omit<Intangible, "@type"> {
+  "@type": "HealthPlanNetwork";
   healthPlanCostSharing?: Boolean;
   healthPlanNetworkId?: Text;
   healthPlanNetworkTier?: Text;
@@ -5594,7 +6137,8 @@ export interface HealthPlanNetwork extends Intangible {
 * @see @link https://github.com/schemaorg/schemaorg/issues/2374
 *
 **/
-export interface HealthTopicContent extends WebContent {
+export interface HealthTopicContent extends Omit<WebContent, "@type"> {
+  "@type": "HealthTopicContent";
   hasHealthAspect?: HealthAspectEnumeration;
 }
 
@@ -5606,7 +6150,9 @@ export interface HealthTopicContent extends WebContent {
  * A high school.
  *
  **/
-export interface HighSchool extends EducationalOrganization {}
+export interface HighSchool extends Omit<EducationalOrganization, "@type"> {
+  "@type": "HighSchool";
+}
 
 /**
  *
@@ -5616,7 +6162,9 @@ export interface HighSchool extends EducationalOrganization {}
  * A Hindu temple.
  *
  **/
-export interface HinduTemple extends PlaceOfWorship {}
+export interface HinduTemple extends Omit<PlaceOfWorship, "@type"> {
+  "@type": "HinduTemple";
+}
 
 /**
  *
@@ -5626,7 +6174,9 @@ export interface HinduTemple extends PlaceOfWorship {}
  * A store that sells materials useful or necessary for various hobbies.
  *
  **/
-export interface HobbyShop extends Store {}
+export interface HobbyShop extends Omit<Store, "@type"> {
+  "@type": "HobbyShop";
+}
 
 /**
  *
@@ -5636,7 +6186,10 @@ export interface HobbyShop extends Store {}
  * A construction business.\n\nA HomeAndConstructionBusiness is a [[LocalBusiness]] that provides services around homes and buildings.\n\nAs a [[LocalBusiness]] it can be described as a [[provider]] of one or more [[Service]]\(s).
  *
  **/
-export interface HomeAndConstructionBusiness extends LocalBusiness {}
+export interface HomeAndConstructionBusiness
+  extends Omit<LocalBusiness, "@type"> {
+  "@type": "HomeAndConstructionBusiness";
+}
 
 /**
  *
@@ -5646,7 +6199,9 @@ export interface HomeAndConstructionBusiness extends LocalBusiness {}
  * A home goods store.
  *
  **/
-export interface HomeGoodsStore extends Store {}
+export interface HomeGoodsStore extends Omit<Store, "@type"> {
+  "@type": "HomeGoodsStore";
+}
 
 /**
  *
@@ -5657,9 +6212,10 @@ export interface HomeGoodsStore extends Store {}
  *
  **/
 export interface Hospital
-  extends CivicStructure,
-    MedicalOrganization,
-    EmergencyService {
+  extends Omit<CivicStructure, "@type">,
+    Omit<MedicalOrganization, "@type">,
+    Omit<EmergencyService, "@type"> {
+  "@type": "Hospital";
   availableService?: MedicalTest | MedicalTherapy | MedicalProcedure;
   healthcareReportingData?: CDCPMDRecord | Dataset;
   medicalSpecialty?: MedicalSpecialty;
@@ -5676,7 +6232,9 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
 
 *
 **/
-export interface Hostel extends LodgingBusiness {}
+export interface Hostel extends Omit<LodgingBusiness, "@type"> {
+  "@type": "Hostel";
+}
 
 /**
 *
@@ -5691,7 +6249,9 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
 * @see @link https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology
 *
 **/
-export interface Hotel extends LodgingBusiness {}
+export interface Hotel extends Omit<LodgingBusiness, "@type"> {
+  "@type": "Hotel";
+}
 
 /**
 *
@@ -5706,7 +6266,8 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
 * @see @link https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology
 *
 **/
-export interface HotelRoom extends Room {
+export interface HotelRoom extends Omit<Room, "@type"> {
+  "@type": "HotelRoom";
   bed?: BedDetails | Text | BedType;
   occupancy?: QuantitativeValue;
 }
@@ -5721,7 +6282,8 @@ export interface HotelRoom extends Room {
  * @see @link https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology
  *
  **/
-export interface House extends Accommodation {
+export interface House extends Omit<Accommodation, "@type"> {
+  "@type": "House";
   numberOfRooms?: Number | QuantitativeValue;
 }
 
@@ -5733,7 +6295,10 @@ export interface House extends Accommodation {
  * A house painting service.
  *
  **/
-export interface HousePainter extends HomeAndConstructionBusiness {}
+export interface HousePainter
+  extends Omit<HomeAndConstructionBusiness, "@type"> {
+  "@type": "HousePainter";
+}
 
 /**
  *
@@ -5743,7 +6308,8 @@ export interface HousePainter extends HomeAndConstructionBusiness {}
  * Instructions that explain how to achieve a result by performing a sequence of steps.
  *
  **/
-export interface HowTo extends CreativeWork {
+export interface HowTo extends Omit<CreativeWork, "@type"> {
+  "@type": "HowTo";
   estimatedCost?: Text | MonetaryAmount;
   performTime?: Duration;
   prepTime?: Duration;
@@ -5763,7 +6329,8 @@ export interface HowTo extends CreativeWork {
  * A direction indicating a single action to do in the instructions for how to achieve a result.
  *
  **/
-export interface HowToDirection extends ListItem<CreativeWork> {
+export interface HowToDirection extends Omit<ListItem<CreativeWork>, "@type"> {
+  "@type": "HowToDirection";
   afterMedia?: MediaObject | URL;
   beforeMedia?: MediaObject | URL;
   duringMedia?: URL | MediaObject;
@@ -5782,7 +6349,8 @@ export interface HowToDirection extends ListItem<CreativeWork> {
  * An item used as either a tool or supply when performing the instructions for how to to achieve a result.
  *
  **/
-export interface HowToItem<T> extends ListItem<T> {
+export interface HowToItem<T = Text> extends Omit<ListItem<T>, "@type"> {
+  "@type": "HowToItem";
   requiredQuantity?: Text | QuantitativeValue | Number;
 }
 
@@ -5794,7 +6362,11 @@ export interface HowToItem<T> extends ListItem<T> {
  * A sub-grouping of steps in the instructions for how to achieve a result (e.g. steps for making a pie crust within a pie recipe).
  *
  **/
-export type HowToSection = (ListItem<CreativeWork> | ItemList<CreativeWork>) & {
+export type HowToSection = (
+  | Omit<ListItem<CreativeWork>, "@type">
+  | Omit<ItemList<CreativeWork>, "@type">
+) & {
+  "@type": "HowToSection";
   steps?: CreativeWork | Text | ItemList<CreativeWork> | ItemList<Text>;
 };
 
@@ -5806,7 +6378,12 @@ export type HowToSection = (ListItem<CreativeWork> | ItemList<CreativeWork>) & {
  * A step in the instructions for how to achieve a result. It is an ordered list with HowToDirection and/or HowToTip items.
  *
  **/
-export type HowToStep = (ListItem<CreativeWork> | ItemList<CreativeWork>) & {};
+export type HowToStep = (
+  | Omit<ListItem<CreativeWork>, "@type">
+  | Omit<ItemList<CreativeWork>, "@type">
+) & {
+  "@type": "HowToStep";
+};
 
 /**
  *
@@ -5816,7 +6393,8 @@ export type HowToStep = (ListItem<CreativeWork> | ItemList<CreativeWork>) & {};
  * A supply consumed when performing the instructions for how to achieve a result.
  *
  **/
-export interface HowToSupply extends HowToItem {
+export interface HowToSupply extends Omit<HowToItem, "@type"> {
+  "@type": "HowToSupply";
   estimatedCost?: Text | MonetaryAmount;
 }
 
@@ -5828,7 +6406,9 @@ export interface HowToSupply extends HowToItem {
  * An explanation in the instructions for how to achieve a result. It provides supplementary information about a technique, supply, author's preference, etc. It can explain what could be done, or what should not be done, but doesn't specify what should be done (see HowToDirection).
  *
  **/
-export interface HowToTip extends ListItem<CreativeWork> {}
+export interface HowToTip extends Omit<ListItem<CreativeWork>, "@type"> {
+  "@type": "HowToTip";
+}
 
 /**
  *
@@ -5838,7 +6418,9 @@ export interface HowToTip extends ListItem<CreativeWork> {}
  * A tool used (but not consumed) when performing instructions for how to achieve a result.
  *
  **/
-export interface HowToTool extends HowToItem {}
+export interface HowToTool extends Omit<HowToItem, "@type"> {
+  "@type": "HowToTool";
+}
 
 /**
  *
@@ -5848,7 +6430,10 @@ export interface HowToTool extends HowToItem {}
  * A business that provide Heating, Ventilation and Air Conditioning services.
  *
  **/
-export interface HVACBusiness extends HomeAndConstructionBusiness {}
+export interface HVACBusiness
+  extends Omit<HomeAndConstructionBusiness, "@type"> {
+  "@type": "HVACBusiness";
+}
 
 /**
  *
@@ -5862,7 +6447,8 @@ export interface HVACBusiness extends HomeAndConstructionBusiness {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/2766
  *
  **/
-export interface HyperToc extends CreativeWork {
+export interface HyperToc extends Omit<CreativeWork, "@type"> {
+  "@type": "HyperToc";
   associatedMedia?: MediaObject;
   tocEntry?: HyperTocEntry;
 }
@@ -5879,7 +6465,8 @@ export interface HyperToc extends CreativeWork {
  * @see @link https://github.com/schemaorg/schemaorg/issues/2766
  *
  **/
-export interface HyperTocEntry extends CreativeWork {
+export interface HyperTocEntry extends Omit<CreativeWork, "@type"> {
+  "@type": "HyperTocEntry";
   associatedMedia?: MediaObject;
   tocContinuation?: HyperTocEntry;
   utterances?: Text;
@@ -5893,7 +6480,9 @@ export interface HyperTocEntry extends CreativeWork {
  * An ice cream shop.
  *
  **/
-export interface IceCreamShop extends FoodEstablishment {}
+export interface IceCreamShop extends Omit<FoodEstablishment, "@type"> {
+  "@type": "IceCreamShop";
+}
 
 /**
  *
@@ -5903,7 +6492,9 @@ export interface IceCreamShop extends FoodEstablishment {}
  * The act of intentionally disregarding the object. An agent ignores an object.
  *
  **/
-export interface IgnoreAction extends AssessAction {}
+export interface IgnoreAction extends Omit<AssessAction, "@type"> {
+  "@type": "IgnoreAction";
+}
 
 /**
  *
@@ -5913,7 +6504,9 @@ export interface IgnoreAction extends AssessAction {}
  * Web page type: Image gallery page.
  *
  **/
-export interface ImageGallery extends MediaGallery {}
+export interface ImageGallery extends Omit<MediaGallery, "@type"> {
+  "@type": "ImageGallery";
+}
 
 /**
  *
@@ -5923,7 +6516,8 @@ export interface ImageGallery extends MediaGallery {}
  * An image file.
  *
  **/
-export interface ImageObject extends MediaObject {
+export interface ImageObject extends Omit<MediaObject, "@type"> {
+  "@type": "ImageObject";
   caption?: Text | MediaObject;
   exifData?: Text | PropertyValue;
   representativeOfPage?: Boolean;
@@ -5940,7 +6534,8 @@ export interface ImageObject extends MediaObject {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface ImagingTest extends MedicalTest {
+export interface ImagingTest extends Omit<MedicalTest, "@type"> {
+  "@type": "ImagingTest";
   imagingTechnique?: MedicalImagingTechnique;
 }
 
@@ -5954,7 +6549,8 @@ export interface ImagingTest extends MedicalTest {
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass
  *
  **/
-export interface IndividualProduct extends Product {
+export interface IndividualProduct extends Omit<Product, "@type"> {
+  "@type": "IndividualProduct";
   serialNumber?: Text;
 }
 
@@ -5968,7 +6564,8 @@ export interface IndividualProduct extends Product {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface InfectiousDisease extends MedicalCondition {
+export interface InfectiousDisease extends Omit<MedicalCondition, "@type"> {
+  "@type": "InfectiousDisease";
   infectiousAgent?: Text;
   infectiousAgentClass?: InfectiousAgentClass;
   transmissionMethod?: Text;
@@ -5982,7 +6579,8 @@ export interface InfectiousDisease extends MedicalCondition {
  * The act of notifying someone of information pertinent to them, with no expectation of a response.
  *
  **/
-export interface InformAction extends CommunicateAction {
+export interface InformAction extends Omit<CommunicateAction, "@type"> {
+  "@type": "InformAction";
   event?: Event;
 }
 
@@ -5994,7 +6592,8 @@ export interface InformAction extends CommunicateAction {
  * The act of adding at a specific location in an ordered collection.
  *
  **/
-export interface InsertAction extends AddAction {
+export interface InsertAction extends Omit<AddAction, "@type"> {
+  "@type": "InsertAction";
   toLocation?: Place;
 }
 
@@ -6006,7 +6605,9 @@ export interface InsertAction extends AddAction {
  * The act of installing an application.
  *
  **/
-export interface InstallAction extends ConsumeAction {}
+export interface InstallAction extends Omit<ConsumeAction, "@type"> {
+  "@type": "InstallAction";
+}
 
 /**
  *
@@ -6016,7 +6617,9 @@ export interface InstallAction extends ConsumeAction {}
  * An Insurance agency.
  *
  **/
-export interface InsuranceAgency extends FinancialService {}
+export interface InsuranceAgency extends Omit<FinancialService, "@type"> {
+  "@type": "InsuranceAgency";
+}
 
 /**
  *
@@ -6026,7 +6629,9 @@ export interface InsuranceAgency extends FinancialService {}
  * A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.
  *
  **/
-export interface Intangible extends Thing {}
+export interface Intangible extends Omit<Thing, "@type"> {
+  "@type": "Intangible";
+}
 
 /**
  *
@@ -6046,7 +6651,9 @@ export type Integer = Number;
  * The act of interacting with another person or organization.
  *
  **/
-export interface InteractAction extends Action {}
+export interface InteractAction extends Omit<Action, "@type"> {
+  "@type": "InteractAction";
+}
 
 /**
  *
@@ -6056,7 +6663,8 @@ export interface InteractAction extends Action {}
  * A summary of how users have interacted with this CreativeWork. In most cases, authors will use a subtype to specify the specific type of interaction.
  *
  **/
-export interface InteractionCounter extends StructuredValue {
+export interface InteractionCounter extends Omit<StructuredValue, "@type"> {
+  "@type": "InteractionCounter";
   interactionService?: SoftwareApplication | WebSite;
   interactionType?: Action;
   userInteractionCount?: Integer;
@@ -6070,7 +6678,9 @@ export interface InteractionCounter extends StructuredValue {
  * An internet cafe.
  *
  **/
-export interface InternetCafe extends LocalBusiness {}
+export interface InternetCafe extends Omit<LocalBusiness, "@type"> {
+  "@type": "InternetCafe";
+}
 
 /**
  *
@@ -6085,7 +6695,9 @@ export interface InternetCafe extends LocalBusiness {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/1253
  *
  **/
-export interface InvestmentFund extends InvestmentOrDeposit {}
+export interface InvestmentFund extends Omit<InvestmentOrDeposit, "@type"> {
+  "@type": "InvestmentFund";
+}
 
 /**
  *
@@ -6097,7 +6709,8 @@ export interface InvestmentFund extends InvestmentOrDeposit {}
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO
  *
  **/
-export interface InvestmentOrDeposit extends FinancialProduct {
+export interface InvestmentOrDeposit extends Omit<FinancialProduct, "@type"> {
+  "@type": "InvestmentOrDeposit";
   amount?: Number | MonetaryAmount;
 }
 
@@ -6109,7 +6722,8 @@ export interface InvestmentOrDeposit extends FinancialProduct {
  * The act of asking someone to attend an event. Reciprocal of RsvpAction.
  *
  **/
-export interface InviteAction extends CommunicateAction {
+export interface InviteAction extends Omit<CommunicateAction, "@type"> {
+  "@type": "InviteAction";
   event?: Event;
 }
 
@@ -6121,7 +6735,8 @@ export interface InviteAction extends CommunicateAction {
  * A statement of the money due for goods or services; a bill.
  *
  **/
-export interface Invoice extends Intangible {
+export interface Invoice extends Omit<Intangible, "@type"> {
+  "@type": "Invoice";
   accountId?: Text;
   billingPeriod?: Duration;
   broker?: Person | Organization;
@@ -6148,7 +6763,9 @@ export interface Invoice extends Intangible {
  * A page devoted to a single item, such as a particular product or hotel.
  *
  **/
-export interface ItemPage extends WebPage {}
+export interface ItemPage extends Omit<WebPage, "@type"> {
+  "@type": "ItemPage";
+}
 
 /**
  *
@@ -6158,7 +6775,9 @@ export interface ItemPage extends WebPage {}
  * A jewelry store.
  *
  **/
-export interface JewelryStore extends Store {}
+export interface JewelryStore extends Omit<Store, "@type"> {
+  "@type": "JewelryStore";
+}
 
 /**
  *
@@ -6168,7 +6787,8 @@ export interface JewelryStore extends Store {}
  * A listing that describes a job opening in a certain organization.
  *
  **/
-export interface JobPosting extends Intangible {
+export interface JobPosting extends Omit<Intangible, "@type"> {
+  "@type": "JobPosting";
   applicantLocationRequirements?: AdministrativeArea;
   applicationContact?: ContactPoint;
   baseSalary?: MonetaryAmount | PriceSpecification | Number;
@@ -6215,7 +6835,8 @@ export interface JobPosting extends Intangible {
  * An agent joins an event/group with participants/friends at a location.\n\nRelated actions:\n\n* [[RegisterAction]]: Unlike RegisterAction, JoinAction refers to joining a group/team of people.\n* [[SubscribeAction]]: Unlike SubscribeAction, JoinAction does not imply that you'll be receiving updates.\n* [[FollowAction]]: Unlike FollowAction, JoinAction does not imply that you'll be polling for updates.
  *
  **/
-export interface JoinAction extends InteractAction {
+export interface JoinAction extends Omit<InteractAction, "@type"> {
+  "@type": "JoinAction";
   event?: Event;
 }
 
@@ -6229,7 +6850,8 @@ export interface JoinAction extends InteractAction {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface Joint extends AnatomicalStructure {
+export interface Joint extends Omit<AnatomicalStructure, "@type"> {
+  "@type": "Joint";
   biomechnicalClass?: Text;
   functionalClass?: MedicalEntity | Text;
   structuralClass?: Text;
@@ -6243,7 +6865,9 @@ export interface Joint extends AnatomicalStructure {
  * A lake (for example, Lake Pontrachain).
  *
  **/
-export interface LakeBodyOfWater extends BodyOfWater {}
+export interface LakeBodyOfWater extends Omit<BodyOfWater, "@type"> {
+  "@type": "LakeBodyOfWater";
+}
 
 /**
  *
@@ -6253,7 +6877,9 @@ export interface LakeBodyOfWater extends BodyOfWater {}
  * A landform or physical feature.  Landform elements include mountains, plains, lakes, rivers, seascape and oceanic waterbody interface features such as bays, peninsulas, seas and so forth, including sub-aqueous terrain features such as submersed mountain ranges, volcanoes, and the great ocean basins.
  *
  **/
-export interface Landform extends Place {}
+export interface Landform extends Omit<Place, "@type"> {
+  "@type": "Landform";
+}
 
 /**
  *
@@ -6263,7 +6889,9 @@ export interface Landform extends Place {}
  * An historical landmark or building.
  *
  **/
-export interface LandmarksOrHistoricalBuildings extends Place {}
+export interface LandmarksOrHistoricalBuildings extends Omit<Place, "@type"> {
+  "@type": "LandmarksOrHistoricalBuildings";
+}
 
 /**
  *
@@ -6273,7 +6901,9 @@ export interface LandmarksOrHistoricalBuildings extends Place {}
  * Natural languages such as Spanish, Tamil, Hindi, English, etc. Formal language code tags expressed in [BCP 47](https://en.wikipedia.org/wiki/IETF_language_tag) can be used via the [[alternateName]] property. The Language type previously also covered programming languages such as Scheme and Lisp, which are now best represented using [[ComputerLanguage]].
  *
  **/
-export interface Language extends Intangible {}
+export interface Language extends Omit<Intangible, "@type"> {
+  "@type": "Language";
+}
 
 /**
 *
@@ -6291,7 +6921,8 @@ export interface Language extends Intangible {}
 * @see @link https://github.com/schemaorg/schemaorg/issues/1401
 *
 **/
-export interface LearningResource extends CreativeWork {
+export interface LearningResource extends Omit<CreativeWork, "@type"> {
+  "@type": "LearningResource";
   assesses?: DefinedTerm | Text;
   competencyRequired?: Text | URL | DefinedTerm;
   educationalAlignment?: AlignmentObject;
@@ -6309,7 +6940,8 @@ export interface LearningResource extends CreativeWork {
  * An agent leaves an event / group with participants/friends at a location.\n\nRelated actions:\n\n* [[JoinAction]]: The antonym of LeaveAction.\n* [[UnRegisterAction]]: Unlike UnRegisterAction, LeaveAction implies leaving a group/team of people rather than a service.
  *
  **/
-export interface LeaveAction extends InteractAction {
+export interface LeaveAction extends Omit<InteractAction, "@type"> {
+  "@type": "LeaveAction";
   event?: Event;
 }
 
@@ -6321,7 +6953,9 @@ export interface LeaveAction extends InteractAction {
  * A LegalService is a business that provides legally-oriented services, advice and representation, e.g. law firms.\n\nAs a [[LocalBusiness]] it can be described as a [[provider]] of one or more [[Service]]\(s).
  *
  **/
-export interface LegalService extends LocalBusiness {}
+export interface LegalService extends Omit<LocalBusiness, "@type"> {
+  "@type": "LegalService";
+}
 
 /**
  *
@@ -6336,7 +6970,8 @@ export interface LegalService extends LocalBusiness {}
  * @see @link http://publications.europa.eu/mdr/eli/index.html
  *
  **/
-export interface Legislation extends CreativeWork {
+export interface Legislation extends Omit<CreativeWork, "@type"> {
+  "@type": "Legislation";
   jurisdiction?: AdministrativeArea | Text;
   legislationApplies?: Legislation;
   legislationChanges?: Legislation;
@@ -6365,7 +7000,10 @@ export interface Legislation extends CreativeWork {
  * @see @link http://publications.europa.eu/mdr/eli/index.html
  *
  **/
-export interface LegislationObject extends Legislation, MediaObject {
+export interface LegislationObject
+  extends Omit<Legislation, "@type">,
+    Omit<MediaObject, "@type"> {
+  "@type": "LegislationObject";
   legislationLegalValue?: LegalValueLevel;
 }
 
@@ -6377,7 +7015,9 @@ export interface LegislationObject extends Legislation, MediaObject {
  * A legislative building&#x2014;for example, the state capitol.
  *
  **/
-export interface LegislativeBuilding extends GovernmentBuilding {}
+export interface LegislativeBuilding extends Omit<GovernmentBuilding, "@type"> {
+  "@type": "LegislativeBuilding";
+}
 
 /**
  *
@@ -6387,7 +7027,8 @@ export interface LegislativeBuilding extends GovernmentBuilding {}
  * The act of providing an object under an agreement that it will be returned at a later date. Reciprocal of BorrowAction.\n\nRelated actions:\n\n* [[BorrowAction]]: Reciprocal of LendAction.
  *
  **/
-export interface LendAction extends TransferAction {
+export interface LendAction extends Omit<TransferAction, "@type"> {
+  "@type": "LendAction";
   borrower?: Person;
 }
 
@@ -6399,7 +7040,9 @@ export interface LendAction extends TransferAction {
  * A library.
  *
  **/
-export interface Library extends LocalBusiness {}
+export interface Library extends Omit<LocalBusiness, "@type"> {
+  "@type": "Library";
+}
 
 /**
  *
@@ -6413,7 +7056,9 @@ export interface Library extends LocalBusiness {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/1495
  *
  **/
-export interface LibrarySystem extends Organization {}
+export interface LibrarySystem extends Omit<Organization, "@type"> {
+  "@type": "LibrarySystem";
+}
 
 /**
  *
@@ -6425,7 +7070,9 @@ export interface LibrarySystem extends Organization {}
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface LifestyleModification extends MedicalEntity {}
+export interface LifestyleModification extends Omit<MedicalEntity, "@type"> {
+  "@type": "LifestyleModification";
+}
 
 /**
  *
@@ -6437,7 +7084,9 @@ export interface LifestyleModification extends MedicalEntity {}
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface Ligament extends AnatomicalStructure {}
+export interface Ligament extends Omit<AnatomicalStructure, "@type"> {
+  "@type": "Ligament";
+}
 
 /**
  *
@@ -6447,7 +7096,9 @@ export interface Ligament extends AnatomicalStructure {}
  * The act of expressing a positive sentiment about the object. An agent likes an object (a proposition, topic or theme) with participants.
  *
  **/
-export interface LikeAction extends ReactAction {}
+export interface LikeAction extends Omit<ReactAction, "@type"> {
+  "@type": "LikeAction";
+}
 
 /**
  *
@@ -6461,7 +7112,8 @@ export interface LikeAction extends ReactAction {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/1045
  *
  **/
-export interface LinkRole extends Role {
+export interface LinkRole extends Omit<Role, "@type"> {
+  "@type": "LinkRole";
   inLanguage?: Text | Language;
   linkRelationship?: Text;
 }
@@ -6474,7 +7126,9 @@ export interface LinkRole extends Role {
  * A shop that sells alcoholic drinks such as wine, beer, whisky and other spirits.
  *
  **/
-export interface LiquorStore extends Store {}
+export interface LiquorStore extends Omit<Store, "@type"> {
+  "@type": "LiquorStore";
+}
 
 /**
  *
@@ -6484,7 +7138,9 @@ export interface LiquorStore extends Store {}
  * The act of consuming audio content.
  *
  **/
-export interface ListenAction extends ConsumeAction {}
+export interface ListenAction extends Omit<ConsumeAction, "@type"> {
+  "@type": "ListenAction";
+}
 
 /**
  *
@@ -6494,7 +7150,9 @@ export interface ListenAction extends ConsumeAction {}
  * Event type: Literary event.
  *
  **/
-export interface LiteraryEvent extends Event {}
+export interface LiteraryEvent extends Omit<Event, "@type"> {
+  "@type": "LiteraryEvent";
+}
 
 /**
  *
@@ -6504,7 +7162,8 @@ export interface LiteraryEvent extends Event {}
  * A blog post intended to provide a rolling textual coverage of an ongoing event through continuous updates.
  *
  **/
-export interface LiveBlogPosting extends BlogPosting {
+export interface LiveBlogPosting extends Omit<BlogPosting, "@type"> {
+  "@type": "LiveBlogPosting";
   coverageEndTime?: DateTime;
   coverageStartTime?: DateTime;
   liveBlogUpdate?: BlogPosting;
@@ -6520,7 +7179,8 @@ export interface LiveBlogPosting extends BlogPosting {
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO
  *
  **/
-export interface LoanOrCredit extends FinancialProduct {
+export interface LoanOrCredit extends Omit<FinancialProduct, "@type"> {
+  "@type": "LoanOrCredit";
   amount?: Number | MonetaryAmount;
   currency?: Text;
   gracePeriod?: Duration;
@@ -6540,7 +7200,10 @@ export interface LoanOrCredit extends FinancialProduct {
  * A particular physical business or branch of an organization. Examples of LocalBusiness include a restaurant, a particular branch of a restaurant chain, a branch of a bank, a medical practice, a club, a bowling alley, etc.
  *
  **/
-export interface LocalBusiness extends Organization, Place {
+export interface LocalBusiness
+  extends Omit<Organization, "@type">,
+    Omit<Place, "@type"> {
+  "@type": "LocalBusiness";
   branchOf?: Organization;
   currenciesAccepted?: Text;
   openingHours?: Text;
@@ -6558,7 +7221,9 @@ export interface LocalBusiness extends Organization, Place {
  * @see @link https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology
  *
  **/
-export interface LocationFeatureSpecification extends PropertyValue {
+export interface LocationFeatureSpecification
+  extends Omit<PropertyValue, "@type"> {
+  "@type": "LocationFeatureSpecification";
   hoursAvailable?: OpeningHoursSpecification;
   validFrom?: DateTime | Date;
   validThrough?: DateTime | Date;
@@ -6572,7 +7237,9 @@ export interface LocationFeatureSpecification extends PropertyValue {
  * A locksmith.
  *
  **/
-export interface Locksmith extends HomeAndConstructionBusiness {}
+export interface Locksmith extends Omit<HomeAndConstructionBusiness, "@type"> {
+  "@type": "Locksmith";
+}
 
 /**
  *
@@ -6582,7 +7249,8 @@ export interface Locksmith extends HomeAndConstructionBusiness {}
  * A lodging business, such as a motel, hotel, or inn.
  *
  **/
-export interface LodgingBusiness extends LocalBusiness {
+export interface LodgingBusiness extends Omit<LocalBusiness, "@type"> {
+  "@type": "LodgingBusiness";
   amenityFeature?: LocationFeatureSpecification;
   audience?: Audience;
   availableLanguage?: Language | Text;
@@ -6601,7 +7269,8 @@ export interface LodgingBusiness extends LocalBusiness {
  * A reservation for lodging at a hotel, motel, inn, etc.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.
  *
  **/
-export interface LodgingReservation extends Reservation {
+export interface LodgingReservation extends Omit<Reservation, "@type"> {
+  "@type": "LodgingReservation";
   checkinTime?: DateTime | Time;
   checkoutTime?: DateTime | Time;
   lodgingUnitDescription?: Text;
@@ -6618,7 +7287,8 @@ export interface LodgingReservation extends Reservation {
  * The act of being defeated in a competitive activity.
  *
  **/
-export interface LoseAction extends AchieveAction {
+export interface LoseAction extends Omit<AchieveAction, "@type"> {
+  "@type": "LoseAction";
   winner?: Person;
 }
 
@@ -6632,7 +7302,8 @@ export interface LoseAction extends AchieveAction {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface LymphaticVessel extends Vessel {
+export interface LymphaticVessel extends Omit<Vessel, "@type"> {
+  "@type": "LymphaticVessel";
   originatesFrom?: Vessel;
   regionDrained?: AnatomicalStructure | AnatomicalSystem;
   runsTo?: Vessel;
@@ -6650,7 +7321,9 @@ export interface LymphaticVessel extends Vessel {
  * @see @link https://github.com/schemaorg/schemaorg/issues/1448
  *
  **/
-export interface Manuscript extends CreativeWork {}
+export interface Manuscript extends Omit<CreativeWork, "@type"> {
+  "@type": "Manuscript";
+}
 
 /**
  *
@@ -6660,7 +7333,8 @@ export interface Manuscript extends CreativeWork {}
  * A map.
  *
  **/
-export interface Map extends CreativeWork {
+export interface Map extends Omit<CreativeWork, "@type"> {
+  "@type": "Map";
   mapType?: MapCategoryType;
 }
 
@@ -6672,7 +7346,9 @@ export interface Map extends CreativeWork {
  * The act of marrying a person.
  *
  **/
-export interface MarryAction extends InteractAction {}
+export interface MarryAction extends Omit<InteractAction, "@type"> {
+  "@type": "MarryAction";
+}
 
 /**
  *
@@ -6682,7 +7358,9 @@ export interface MarryAction extends InteractAction {}
  * Properties that take Mass as values are of the form '&lt;Number&gt; &lt;Mass unit of measure&gt;'. E.g., '7 kg'.
  *
  **/
-export interface Mass extends Quantity {}
+export interface Mass extends Omit<Quantity, "@type"> {
+  "@type": "Mass";
+}
 
 /**
  *
@@ -6696,7 +7374,8 @@ export interface Mass extends Quantity {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/2740
  *
  **/
-export interface MathSolver extends CreativeWork {
+export interface MathSolver extends Omit<CreativeWork, "@type"> {
+  "@type": "MathSolver";
   mathExpression?: Text | SolveMathAction;
 }
 
@@ -6710,7 +7389,9 @@ export interface MathSolver extends CreativeWork {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface MaximumDoseSchedule extends DoseSchedule {}
+export interface MaximumDoseSchedule extends Omit<DoseSchedule, "@type"> {
+  "@type": "MaximumDoseSchedule";
+}
 
 /**
  *
@@ -6724,7 +7405,9 @@ export interface MaximumDoseSchedule extends DoseSchedule {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/2811
  *
  **/
-export interface MeasurementTypeEnumeration extends Enumeration {}
+export interface MeasurementTypeEnumeration extends Omit<Enumeration, "@type"> {
+  "@type": "MeasurementTypeEnumeration";
+}
 
 /**
  *
@@ -6734,7 +7417,9 @@ export interface MeasurementTypeEnumeration extends Enumeration {}
  * Web page type: Media gallery page. A mixed-media page that can contains media such as images, videos, and other multimedia.
  *
  **/
-export interface MediaGallery extends CollectionPage {}
+export interface MediaGallery extends Omit<CollectionPage, "@type"> {
+  "@type": "MediaGallery";
+}
 
 /**
  *
@@ -6744,7 +7429,8 @@ export interface MediaGallery extends CollectionPage {}
  * A media object, such as an image, video, or audio object embedded in a web page or a downloadable dataset i.e. DataDownload. Note that a creative work may have many media objects associated with it on the same web page. For example, a page about a single song (MusicRecording) may have a music video (VideoObject), and a high and low bandwidth audio stream (2 AudioObject's).
  *
  **/
-export interface MediaObject extends CreativeWork {
+export interface MediaObject extends Omit<CreativeWork, "@type"> {
+  "@type": "MediaObject";
   associatedArticle?: NewsArticle;
   bitrate?: Text;
   contentSize?: Text;
@@ -6780,7 +7466,8 @@ export interface MediaObject extends CreativeWork {
 * @see @link https://github.com/schemaorg/schemaorg/issues/2450
 *
 **/
-export interface MediaReview extends Review {
+export interface MediaReview extends Omit<Review, "@type"> {
+  "@type": "MediaReview";
   mediaAuthenticityCategory?: MediaManipulationRatingEnumeration;
 }
 
@@ -6794,7 +7481,8 @@ export interface MediaReview extends Review {
  * @see @link https://github.com/schemaorg/schemaorg/issues/1741
  *
  **/
-export interface MediaSubscription extends Intangible {
+export interface MediaSubscription extends Omit<Intangible, "@type"> {
+  "@type": "MediaSubscription";
   authenticator?: Organization;
   expectsAcceptanceOf?: Offer;
 }
@@ -6809,7 +7497,11 @@ export interface MediaSubscription extends Intangible {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface MedicalAudience extends Audience, PeopleAudience {}
+export interface MedicalAudience
+  extends Omit<Audience, "@type">,
+    Omit<PeopleAudience, "@type"> {
+  "@type": "MedicalAudience";
+}
 
 /**
  *
@@ -6821,7 +7513,9 @@ export interface MedicalAudience extends Audience, PeopleAudience {}
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface MedicalBusiness extends LocalBusiness {}
+export interface MedicalBusiness extends Omit<LocalBusiness, "@type"> {
+  "@type": "MedicalBusiness";
+}
 
 /**
  *
@@ -6833,7 +7527,8 @@ export interface MedicalBusiness extends LocalBusiness {}
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface MedicalCause extends MedicalEntity {
+export interface MedicalCause extends Omit<MedicalEntity, "@type"> {
+  "@type": "MedicalCause";
   causeOf?: MedicalEntity;
 }
 
@@ -6847,7 +7542,10 @@ export interface MedicalCause extends MedicalEntity {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface MedicalClinic extends MedicalOrganization, MedicalBusiness {
+export interface MedicalClinic
+  extends Omit<MedicalOrganization, "@type">,
+    Omit<MedicalBusiness, "@type"> {
+  "@type": "MedicalClinic";
   availableService?: MedicalTest | MedicalTherapy | MedicalProcedure;
   medicalSpecialty?: MedicalSpecialty;
 }
@@ -6862,7 +7560,10 @@ export interface MedicalClinic extends MedicalOrganization, MedicalBusiness {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface MedicalCode extends CategoryCode, MedicalIntangible {
+export interface MedicalCode
+  extends Omit<CategoryCode, "@type">,
+    Omit<MedicalIntangible, "@type"> {
+  "@type": "MedicalCode";
   codeValue?: Text;
   codingSystem?: Text;
 }
@@ -6877,7 +7578,8 @@ export interface MedicalCode extends CategoryCode, MedicalIntangible {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface MedicalCondition extends MedicalEntity {
+export interface MedicalCondition extends Omit<MedicalEntity, "@type"> {
+  "@type": "MedicalCondition";
   associatedAnatomy?:
     | AnatomicalStructure
     | AnatomicalSystem
@@ -6909,7 +7611,9 @@ export interface MedicalCondition extends MedicalEntity {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface MedicalConditionStage extends MedicalIntangible {
+export interface MedicalConditionStage
+  extends Omit<MedicalIntangible, "@type"> {
+  "@type": "MedicalConditionStage";
   stageAsNumber?: Number;
   subStageSuffix?: Text;
 }
@@ -6924,7 +7628,9 @@ export interface MedicalConditionStage extends MedicalIntangible {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface MedicalContraindication extends MedicalEntity {}
+export interface MedicalContraindication extends Omit<MedicalEntity, "@type"> {
+  "@type": "MedicalContraindication";
+}
 
 /**
  *
@@ -6936,7 +7642,8 @@ export interface MedicalContraindication extends MedicalEntity {}
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface MedicalDevice extends MedicalEntity {
+export interface MedicalDevice extends Omit<MedicalEntity, "@type"> {
+  "@type": "MedicalDevice";
   adverseOutcome?: MedicalEntity;
   contraindication?: Text | MedicalContraindication;
   postOp?: Text;
@@ -6955,7 +7662,8 @@ export interface MedicalDevice extends MedicalEntity {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface MedicalEntity extends Thing {
+export interface MedicalEntity extends Omit<Thing, "@type"> {
+  "@type": "MedicalEntity";
   code?: MedicalCode;
   guideline?: MedicalGuideline;
   legalStatus?: MedicalEnumeration | Text | DrugLegalStatus;
@@ -6975,7 +7683,9 @@ export interface MedicalEntity extends Thing {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface MedicalEnumeration extends Enumeration {}
+export interface MedicalEnumeration extends Omit<Enumeration, "@type"> {
+  "@type": "MedicalEnumeration";
+}
 
 /**
  *
@@ -6987,7 +7697,8 @@ export interface MedicalEnumeration extends Enumeration {}
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface MedicalGuideline extends MedicalEntity {
+export interface MedicalGuideline extends Omit<MedicalEntity, "@type"> {
+  "@type": "MedicalGuideline";
   evidenceLevel?: MedicalEvidenceLevel;
   evidenceOrigin?: Text;
   guidelineDate?: Date;
@@ -7004,7 +7715,10 @@ export interface MedicalGuideline extends MedicalEntity {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface MedicalGuidelineContraindication extends MedicalGuideline {}
+export interface MedicalGuidelineContraindication
+  extends Omit<MedicalGuideline, "@type"> {
+  "@type": "MedicalGuidelineContraindication";
+}
 
 /**
  *
@@ -7016,7 +7730,9 @@ export interface MedicalGuidelineContraindication extends MedicalGuideline {}
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface MedicalGuidelineRecommendation extends MedicalGuideline {
+export interface MedicalGuidelineRecommendation
+  extends Omit<MedicalGuideline, "@type"> {
+  "@type": "MedicalGuidelineRecommendation";
   recommendationStrength?: Text;
 }
 
@@ -7030,7 +7746,9 @@ export interface MedicalGuidelineRecommendation extends MedicalGuideline {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface MedicalIndication extends MedicalEntity {}
+export interface MedicalIndication extends Omit<MedicalEntity, "@type"> {
+  "@type": "MedicalIndication";
+}
 
 /**
  *
@@ -7042,7 +7760,9 @@ export interface MedicalIndication extends MedicalEntity {}
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface MedicalIntangible extends MedicalEntity {}
+export interface MedicalIntangible extends Omit<MedicalEntity, "@type"> {
+  "@type": "MedicalIntangible";
+}
 
 /**
  *
@@ -7054,7 +7774,8 @@ export interface MedicalIntangible extends MedicalEntity {}
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface MedicalObservationalStudy extends MedicalStudy {
+export interface MedicalObservationalStudy extends Omit<MedicalStudy, "@type"> {
+  "@type": "MedicalObservationalStudy";
   studyDesign?: MedicalObservationalStudyDesign;
 }
 
@@ -7066,7 +7787,8 @@ export interface MedicalObservationalStudy extends MedicalStudy {
  * A medical organization (physical or not), such as hospital, institution or clinic.
  *
  **/
-export interface MedicalOrganization extends Organization {
+export interface MedicalOrganization extends Omit<Organization, "@type"> {
+  "@type": "MedicalOrganization";
   healthPlanNetworkId?: Text;
   isAcceptingNewPatients?: Boolean;
   medicalSpecialty?: MedicalSpecialty;
@@ -7082,7 +7804,8 @@ export interface MedicalOrganization extends Organization {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface MedicalProcedure extends MedicalEntity {
+export interface MedicalProcedure extends Omit<MedicalEntity, "@type"> {
+  "@type": "MedicalProcedure";
   bodyLocation?: Text;
   followup?: Text;
   howPerformed?: Text;
@@ -7101,7 +7824,10 @@ export interface MedicalProcedure extends MedicalEntity {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface MedicalRiskCalculator extends MedicalRiskEstimator {}
+export interface MedicalRiskCalculator
+  extends Omit<MedicalRiskEstimator, "@type"> {
+  "@type": "MedicalRiskCalculator";
+}
 
 /**
  *
@@ -7113,7 +7839,8 @@ export interface MedicalRiskCalculator extends MedicalRiskEstimator {}
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface MedicalRiskEstimator extends MedicalEntity {
+export interface MedicalRiskEstimator extends Omit<MedicalEntity, "@type"> {
+  "@type": "MedicalRiskEstimator";
   estimatesRiskOf?: MedicalEntity;
   includedRiskFactor?: MedicalRiskFactor;
 }
@@ -7128,7 +7855,8 @@ export interface MedicalRiskEstimator extends MedicalEntity {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface MedicalRiskFactor extends MedicalEntity {
+export interface MedicalRiskFactor extends Omit<MedicalEntity, "@type"> {
+  "@type": "MedicalRiskFactor";
   increasesRiskOf?: MedicalEntity;
 }
 
@@ -7142,7 +7870,8 @@ export interface MedicalRiskFactor extends MedicalEntity {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface MedicalRiskScore extends MedicalRiskEstimator {
+export interface MedicalRiskScore extends Omit<MedicalRiskEstimator, "@type"> {
+  "@type": "MedicalRiskScore";
   algorithm?: Text;
 }
 
@@ -7156,7 +7885,9 @@ export interface MedicalRiskScore extends MedicalRiskEstimator {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface MedicalScholarlyArticle extends ScholarlyArticle {
+export interface MedicalScholarlyArticle
+  extends Omit<ScholarlyArticle, "@type"> {
+  "@type": "MedicalScholarlyArticle";
   publicationType?: Text;
 }
 
@@ -7170,7 +7901,8 @@ export interface MedicalScholarlyArticle extends ScholarlyArticle {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface MedicalSign extends MedicalSignOrSymptom {
+export interface MedicalSign extends Omit<MedicalSignOrSymptom, "@type"> {
+  "@type": "MedicalSign";
   identifyingExam?: PhysicalExam;
   identifyingTest?: MedicalTest;
 }
@@ -7185,7 +7917,8 @@ export interface MedicalSign extends MedicalSignOrSymptom {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface MedicalSignOrSymptom extends MedicalCondition {
+export interface MedicalSignOrSymptom extends Omit<MedicalCondition, "@type"> {
+  "@type": "MedicalSignOrSymptom";
   possibleTreatment?: MedicalTherapy;
 }
 
@@ -7199,7 +7932,8 @@ export interface MedicalSignOrSymptom extends MedicalCondition {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface MedicalStudy extends MedicalEntity {
+export interface MedicalStudy extends Omit<MedicalEntity, "@type"> {
+  "@type": "MedicalStudy";
   healthCondition?: MedicalCondition;
   sponsor?: Person | Organization;
   status?: EventStatusType | Text | MedicalStudyStatus;
@@ -7217,7 +7951,9 @@ export interface MedicalStudy extends MedicalEntity {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface MedicalSymptom extends MedicalSignOrSymptom {}
+export interface MedicalSymptom extends Omit<MedicalSignOrSymptom, "@type"> {
+  "@type": "MedicalSymptom";
+}
 
 /**
  *
@@ -7229,7 +7965,8 @@ export interface MedicalSymptom extends MedicalSignOrSymptom {}
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface MedicalTest extends MedicalEntity {
+export interface MedicalTest extends Omit<MedicalEntity, "@type"> {
+  "@type": "MedicalTest";
   affectedBy?: Drug;
   normalRange?: MedicalEnumeration | Text;
   signDetected?: MedicalSign;
@@ -7247,7 +7984,8 @@ export interface MedicalTest extends MedicalEntity {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface MedicalTestPanel extends MedicalTest {
+export interface MedicalTestPanel extends Omit<MedicalTest, "@type"> {
+  "@type": "MedicalTestPanel";
   subTest?: MedicalTest;
 }
 
@@ -7261,7 +7999,8 @@ export interface MedicalTestPanel extends MedicalTest {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface MedicalTherapy extends TherapeuticProcedure {
+export interface MedicalTherapy extends Omit<TherapeuticProcedure, "@type"> {
+  "@type": "MedicalTherapy";
   contraindication?: Text | MedicalContraindication;
   duplicateTherapy?: MedicalTherapy;
   seriousAdverseOutcome?: MedicalEntity;
@@ -7277,7 +8016,8 @@ export interface MedicalTherapy extends TherapeuticProcedure {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface MedicalTrial extends MedicalStudy {
+export interface MedicalTrial extends Omit<MedicalStudy, "@type"> {
+  "@type": "MedicalTrial";
   trialDesign?: MedicalTrialDesign;
 }
 
@@ -7291,7 +8031,8 @@ export interface MedicalTrial extends MedicalStudy {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface MedicalWebPage extends WebPage {
+export interface MedicalWebPage extends Omit<WebPage, "@type"> {
+  "@type": "MedicalWebPage";
   aspect?: Text;
   medicalAudience?: MedicalAudienceType | MedicalAudience;
 }
@@ -7309,7 +8050,9 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
 * @see @link https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology
 *
 **/
-export interface MeetingRoom extends Room {}
+export interface MeetingRoom extends Omit<Room, "@type"> {
+  "@type": "MeetingRoom";
+}
 
 /**
  *
@@ -7319,7 +8062,9 @@ export interface MeetingRoom extends Room {}
  * A men's clothing store.
  *
  **/
-export interface MensClothingStore extends Store {}
+export interface MensClothingStore extends Omit<Store, "@type"> {
+  "@type": "MensClothingStore";
+}
 
 /**
  *
@@ -7329,7 +8074,8 @@ export interface MensClothingStore extends Store {}
  * A structured representation of food or drink items available from a FoodEstablishment.
  *
  **/
-export interface Menu extends CreativeWork {
+export interface Menu extends Omit<CreativeWork, "@type"> {
+  "@type": "Menu";
   hasMenuItem?: MenuItem;
   hasMenuSection?: MenuSection;
 }
@@ -7342,7 +8088,8 @@ export interface Menu extends CreativeWork {
  * A food or drink item listed in a menu or menu section.
  *
  **/
-export interface MenuItem extends Intangible {
+export interface MenuItem extends Omit<Intangible, "@type"> {
+  "@type": "MenuItem";
   menuAddOn?: MenuItem | MenuSection;
   nutrition?: NutritionInformation;
   offers?: Offer | Demand;
@@ -7357,7 +8104,8 @@ export interface MenuItem extends Intangible {
  * A sub-grouping of food or drink items in a menu. E.g. courses (such as 'Dinner', 'Breakfast', etc.), specific type of dishes (such as 'Meat', 'Vegan', 'Drinks', etc.), or some other classification made by the menu provider.
  *
  **/
-export interface MenuSection extends CreativeWork {
+export interface MenuSection extends Omit<CreativeWork, "@type"> {
+  "@type": "MenuSection";
   hasMenuItem?: MenuItem;
   hasMenuSection?: MenuSection;
 }
@@ -7374,7 +8122,8 @@ export interface MenuSection extends CreativeWork {
  * @see @link https://github.com/schemaorg/schemaorg/issues/2288
  *
  **/
-export interface MerchantReturnPolicy extends Intangible {
+export interface MerchantReturnPolicy extends Omit<Intangible, "@type"> {
+  "@type": "MerchantReturnPolicy";
   inStoreReturnsOffered?: Boolean;
   merchantReturnDays?: Integer;
   merchantReturnLink?: URL;
@@ -7391,7 +8140,8 @@ export interface MerchantReturnPolicy extends Intangible {
  * A single message from a sender to one or more organizations or people.
  *
  **/
-export interface Message extends CreativeWork {
+export interface Message extends Omit<CreativeWork, "@type"> {
+  "@type": "Message";
   bccRecipient?: Person | Organization | ContactPoint;
   ccRecipient?: ContactPoint | Person | Organization;
   dateRead?: DateTime | Date;
@@ -7411,7 +8161,9 @@ export interface Message extends CreativeWork {
  * A middle school (typically for children aged around 11-14, although this varies somewhat).
  *
  **/
-export interface MiddleSchool extends EducationalOrganization {}
+export interface MiddleSchool extends Omit<EducationalOrganization, "@type"> {
+  "@type": "MiddleSchool";
+}
 
 /**
  *
@@ -7421,7 +8173,8 @@ export interface MiddleSchool extends EducationalOrganization {}
  * A software application designed specifically to work well on a mobile device such as a telephone.
  *
  **/
-export interface MobileApplication extends SoftwareApplication {
+export interface MobileApplication extends Omit<SoftwareApplication, "@type"> {
+  "@type": "MobileApplication";
   carrierRequirements?: Text;
 }
 
@@ -7433,7 +8186,9 @@ export interface MobileApplication extends SoftwareApplication {
  * A store that sells mobile phones and related accessories.
  *
  **/
-export interface MobilePhoneStore extends Store {}
+export interface MobilePhoneStore extends Omit<Store, "@type"> {
+  "@type": "MobilePhoneStore";
+}
 
 /**
  *
@@ -7445,7 +8200,8 @@ export interface MobilePhoneStore extends Store {}
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO
  *
  **/
-export interface MonetaryAmount extends StructuredValue {
+export interface MonetaryAmount extends Omit<StructuredValue, "@type"> {
+  "@type": "MonetaryAmount";
   currency?: Text;
   maxValue?: Number;
   minValue?: Number;
@@ -7465,7 +8221,8 @@ export interface MonetaryAmount extends StructuredValue {
  *
  **/
 export interface MonetaryAmountDistribution
-  extends QuantitativeValueDistribution {
+  extends Omit<QuantitativeValueDistribution, "@type"> {
+  "@type": "MonetaryAmountDistribution";
   currency?: Text;
 }
 
@@ -7482,7 +8239,8 @@ export interface MonetaryAmountDistribution
  * @see @link https://github.com/schemaorg/schemaorg/issues/383
  *
  **/
-export interface MonetaryGrant extends Grant {
+export interface MonetaryGrant extends Omit<Grant, "@type"> {
+  "@type": "MonetaryGrant";
   amount?: Number | MonetaryAmount;
   funder?: Organization | Person;
 }
@@ -7500,7 +8258,8 @@ export interface MonetaryGrant extends Grant {
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO
  *
  **/
-export interface MoneyTransfer extends TransferAction {
+export interface MoneyTransfer extends Omit<TransferAction, "@type"> {
+  "@type": "MoneyTransfer";
   amount?: Number | MonetaryAmount;
   beneficiaryBank?: Text | BankOrCreditUnion;
 }
@@ -7518,7 +8277,8 @@ export interface MoneyTransfer extends TransferAction {
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO
  *
  **/
-export interface MortgageLoan extends LoanOrCredit {
+export interface MortgageLoan extends Omit<LoanOrCredit, "@type"> {
+  "@type": "MortgageLoan";
   domiciledMortgage?: Boolean;
   loanMortgageMandateAmount?: MonetaryAmount;
 }
@@ -7531,7 +8291,9 @@ export interface MortgageLoan extends LoanOrCredit {
  * A mosque.
  *
  **/
-export interface Mosque extends PlaceOfWorship {}
+export interface Mosque extends Omit<PlaceOfWorship, "@type"> {
+  "@type": "Mosque";
+}
 
 /**
 *
@@ -7544,7 +8306,9 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
 
 *
 **/
-export interface Motel extends LodgingBusiness {}
+export interface Motel extends Omit<LodgingBusiness, "@type"> {
+  "@type": "Motel";
+}
 
 /**
  *
@@ -7558,7 +8322,9 @@ export interface Motel extends LodgingBusiness {}
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group
  *
  **/
-export interface Motorcycle extends Vehicle {}
+export interface Motorcycle extends Omit<Vehicle, "@type"> {
+  "@type": "Motorcycle";
+}
 
 /**
  *
@@ -7568,7 +8334,9 @@ export interface Motorcycle extends Vehicle {}
  * A motorcycle dealer.
  *
  **/
-export interface MotorcycleDealer extends AutomotiveBusiness {}
+export interface MotorcycleDealer extends Omit<AutomotiveBusiness, "@type"> {
+  "@type": "MotorcycleDealer";
+}
 
 /**
  *
@@ -7578,7 +8346,9 @@ export interface MotorcycleDealer extends AutomotiveBusiness {}
  * A motorcycle repair shop.
  *
  **/
-export interface MotorcycleRepair extends AutomotiveBusiness {}
+export interface MotorcycleRepair extends Omit<AutomotiveBusiness, "@type"> {
+  "@type": "MotorcycleRepair";
+}
 
 /**
  *
@@ -7592,7 +8362,9 @@ export interface MotorcycleRepair extends AutomotiveBusiness {}
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group
  *
  **/
-export interface MotorizedBicycle extends Vehicle {}
+export interface MotorizedBicycle extends Omit<Vehicle, "@type"> {
+  "@type": "MotorizedBicycle";
+}
 
 /**
  *
@@ -7602,7 +8374,9 @@ export interface MotorizedBicycle extends Vehicle {}
  * A mountain, like Mount Whitney or Mount Everest.
  *
  **/
-export interface Mountain extends Landform {}
+export interface Mountain extends Omit<Landform, "@type"> {
+  "@type": "Mountain";
+}
 
 /**
  *
@@ -7612,7 +8386,8 @@ export interface Mountain extends Landform {}
  * The act of an agent relocating to a place.\n\nRelated actions:\n\n* [[TransferAction]]: Unlike TransferAction, the subject of the move is a living Person or Organization rather than an inanimate object.
  *
  **/
-export interface MoveAction extends Action {
+export interface MoveAction extends Omit<Action, "@type"> {
+  "@type": "MoveAction";
   fromLocation?: Place;
   toLocation?: Place;
 }
@@ -7625,7 +8400,8 @@ export interface MoveAction extends Action {
  * A movie.
  *
  **/
-export interface Movie extends CreativeWork {
+export interface Movie extends Omit<CreativeWork, "@type"> {
+  "@type": "Movie";
   actor?: Person;
   actors?: Array<Person>;
   countryOfOrigin?: Country;
@@ -7647,7 +8423,9 @@ export interface Movie extends CreativeWork {
  * A short segment/part of a movie.
  *
  **/
-export interface MovieClip extends Clip {}
+export interface MovieClip extends Omit<Clip, "@type"> {
+  "@type": "MovieClip";
+}
 
 /**
  *
@@ -7657,7 +8435,9 @@ export interface MovieClip extends Clip {}
  * A movie rental store.
  *
  **/
-export interface MovieRentalStore extends Store {}
+export interface MovieRentalStore extends Omit<Store, "@type"> {
+  "@type": "MovieRentalStore";
+}
 
 /**
  *
@@ -7667,7 +8447,8 @@ export interface MovieRentalStore extends Store {}
  * A series of movies. Included movies can be indicated with the hasPart property.
  *
  **/
-export interface MovieSeries extends CreativeWorkSeries {
+export interface MovieSeries extends Omit<CreativeWorkSeries, "@type"> {
+  "@type": "MovieSeries";
   actor?: Person;
   actors?: Array<Person>;
   director?: Person;
@@ -7685,7 +8466,10 @@ export interface MovieSeries extends CreativeWorkSeries {
  * A movie theater.
  *
  **/
-export interface MovieTheater extends CivicStructure, EntertainmentBusiness {
+export interface MovieTheater
+  extends Omit<CivicStructure, "@type">,
+    Omit<EntertainmentBusiness, "@type"> {
+  "@type": "MovieTheater";
   screenCount?: Number;
 }
 
@@ -7697,7 +8481,10 @@ export interface MovieTheater extends CivicStructure, EntertainmentBusiness {
  * A moving company.
  *
  **/
-export interface MovingCompany extends HomeAndConstructionBusiness {}
+export interface MovingCompany
+  extends Omit<HomeAndConstructionBusiness, "@type"> {
+  "@type": "MovingCompany";
+}
 
 /**
  *
@@ -7709,7 +8496,8 @@ export interface MovingCompany extends HomeAndConstructionBusiness {}
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface Muscle extends AnatomicalStructure {
+export interface Muscle extends Omit<AnatomicalStructure, "@type"> {
+  "@type": "Muscle";
   antagonist?: Muscle;
   bloodSupply?: Vessel;
   insertion?: AnatomicalStructure;
@@ -7725,7 +8513,9 @@ export interface Muscle extends AnatomicalStructure {
  * A museum.
  *
  **/
-export interface Museum extends CivicStructure {}
+export interface Museum extends Omit<CivicStructure, "@type"> {
+  "@type": "Museum";
+}
 
 /**
  *
@@ -7735,7 +8525,8 @@ export interface Museum extends CivicStructure {}
  * A collection of music tracks.
  *
  **/
-export interface MusicAlbum extends MusicPlaylist {
+export interface MusicAlbum extends Omit<MusicPlaylist, "@type"> {
+  "@type": "MusicAlbum";
   albumProductionType?: MusicAlbumProductionType;
   albumRelease?: MusicRelease;
   albumReleaseType?: MusicAlbumReleaseType;
@@ -7752,7 +8543,8 @@ export interface MusicAlbum extends MusicPlaylist {
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ
  *
  **/
-export interface MusicComposition extends CreativeWork {
+export interface MusicComposition extends Omit<CreativeWork, "@type"> {
+  "@type": "MusicComposition";
   composer?: Organization | Person;
   firstPerformance?: Event;
   includedComposition?: MusicComposition;
@@ -7773,7 +8565,9 @@ export interface MusicComposition extends CreativeWork {
  * Event type: Music event.
  *
  **/
-export interface MusicEvent extends Event {}
+export interface MusicEvent extends Omit<Event, "@type"> {
+  "@type": "MusicEvent";
+}
 
 /**
  *
@@ -7783,7 +8577,8 @@ export interface MusicEvent extends Event {}
  * A musical group, such as a band, an orchestra, or a choir. Can also be a solo musician.
  *
  **/
-export interface MusicGroup extends PerformingGroup {
+export interface MusicGroup extends Omit<PerformingGroup, "@type"> {
+  "@type": "MusicGroup";
   album?: MusicAlbum;
   albums?: Array<MusicAlbum>;
   genre?: URL | Text;
@@ -7800,7 +8595,8 @@ export interface MusicGroup extends PerformingGroup {
  * A collection of music tracks in playlist form.
  *
  **/
-export interface MusicPlaylist extends CreativeWork {
+export interface MusicPlaylist extends Omit<CreativeWork, "@type"> {
+  "@type": "MusicPlaylist";
   numTracks?: Integer;
   track?: MusicRecording | ItemList<MusicRecording>;
   tracks?: Array<MusicRecording>;
@@ -7814,7 +8610,8 @@ export interface MusicPlaylist extends CreativeWork {
  * A music recording (track), usually a single song.
  *
  **/
-export interface MusicRecording extends CreativeWork {
+export interface MusicRecording extends Omit<CreativeWork, "@type"> {
+  "@type": "MusicRecording";
   byArtist?: MusicGroup | Person;
   duration?: Duration;
   inAlbum?: MusicAlbum;
@@ -7833,7 +8630,8 @@ export interface MusicRecording extends CreativeWork {
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ
  *
  **/
-export interface MusicRelease extends MusicPlaylist {
+export interface MusicRelease extends Omit<MusicPlaylist, "@type"> {
+  "@type": "MusicRelease";
   catalogNumber?: Text;
   creditedTo?: Person | Organization;
   duration?: Duration;
@@ -7850,7 +8648,9 @@ export interface MusicRelease extends MusicPlaylist {
  * A music store.
  *
  **/
-export interface MusicStore extends Store {}
+export interface MusicStore extends Omit<Store, "@type"> {
+  "@type": "MusicStore";
+}
 
 /**
  *
@@ -7860,7 +8660,9 @@ export interface MusicStore extends Store {}
  * A music venue.
  *
  **/
-export interface MusicVenue extends CivicStructure {}
+export interface MusicVenue extends Omit<CivicStructure, "@type"> {
+  "@type": "MusicVenue";
+}
 
 /**
  *
@@ -7870,7 +8672,9 @@ export interface MusicVenue extends CivicStructure {}
  * A music video file.
  *
  **/
-export interface MusicVideoObject extends MediaObject {}
+export interface MusicVideoObject extends Omit<MediaObject, "@type"> {
+  "@type": "MusicVideoObject";
+}
 
 /**
  *
@@ -7880,7 +8684,9 @@ export interface MusicVideoObject extends MediaObject {}
  * A nail salon.
  *
  **/
-export interface NailSalon extends HealthAndBeautyBusiness {}
+export interface NailSalon extends Omit<HealthAndBeautyBusiness, "@type"> {
+  "@type": "NailSalon";
+}
 
 /**
  *
@@ -7892,7 +8698,8 @@ export interface NailSalon extends HealthAndBeautyBusiness {}
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface Nerve extends AnatomicalStructure {
+export interface Nerve extends Omit<AnatomicalStructure, "@type"> {
+  "@type": "Nerve";
   branch?: AnatomicalStructure;
   nerveMotor?: Muscle;
   sensoryUnit?: SuperficialAnatomy | AnatomicalStructure;
@@ -7913,7 +8720,8 @@ A more detailed overview of [schema.org News markup](/docs/news.html) is also av
 * @see @link https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP-draws
 *
 **/
-export interface NewsArticle extends Article {
+export interface NewsArticle extends Omit<Article, "@type"> {
+  "@type": "NewsArticle";
   dateline?: Text;
   printColumn?: Text;
   printEdition?: Text;
@@ -7934,7 +8742,8 @@ export interface NewsArticle extends Article {
  * @see @link https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP
  *
  **/
-export interface NewsMediaOrganization extends Organization {
+export interface NewsMediaOrganization extends Omit<Organization, "@type"> {
+  "@type": "NewsMediaOrganization";
   actionableFeedbackPolicy?: CreativeWork | URL;
   correctionsPolicy?: URL | CreativeWork;
   diversityPolicy?: CreativeWork | URL;
@@ -7960,7 +8769,9 @@ export interface NewsMediaOrganization extends Organization {
  * @see @link http://www.productontology.org/id/Newspaper
  *
  **/
-export interface Newspaper extends Periodical {}
+export interface Newspaper extends Omit<Periodical, "@type"> {
+  "@type": "Newspaper";
+}
 
 /**
  *
@@ -7970,7 +8781,9 @@ export interface Newspaper extends Periodical {}
  * Organization: Non-governmental Organization.
  *
  **/
-export interface NGO extends Organization {}
+export interface NGO extends Omit<Organization, "@type"> {
+  "@type": "NGO";
+}
 
 /**
  *
@@ -7980,7 +8793,9 @@ export interface NGO extends Organization {}
  * A nightclub or discotheque.
  *
  **/
-export interface NightClub extends EntertainmentBusiness {}
+export interface NightClub extends Omit<EntertainmentBusiness, "@type"> {
+  "@type": "NightClub";
+}
 
 /**
  *
@@ -7994,7 +8809,9 @@ export interface NightClub extends EntertainmentBusiness {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/2543
  *
  **/
-export interface NonprofitType extends Enumeration {}
+export interface NonprofitType extends Omit<Enumeration, "@type"> {
+  "@type": "NonprofitType";
+}
 
 /**
  *
@@ -8004,7 +8821,9 @@ export interface NonprofitType extends Enumeration {}
  * A notary.
  *
  **/
-export interface Notary extends LegalService {}
+export interface Notary extends Omit<LegalService, "@type"> {
+  "@type": "Notary";
+}
 
 /**
  *
@@ -8014,7 +8833,9 @@ export interface Notary extends LegalService {}
  * A file containing a note, primarily for the author.
  *
  **/
-export interface NoteDigitalDocument extends DigitalDocument {}
+export interface NoteDigitalDocument extends Omit<DigitalDocument, "@type"> {
+  "@type": "NoteDigitalDocument";
+}
 
 /**
  *
@@ -8024,7 +8845,8 @@ export interface NoteDigitalDocument extends DigitalDocument {}
  * Nutritional information about the recipe.
  *
  **/
-export interface NutritionInformation extends StructuredValue {
+export interface NutritionInformation extends Omit<StructuredValue, "@type"> {
+  "@type": "NutritionInformation";
   calories?: Energy;
   carbohydrateContent?: Mass;
   cholesterolContent?: Mass;
@@ -8053,7 +8875,8 @@ See also [[StatisticalPopulation]], and the [data and datasets](/docs/data-and-d
 * @see @link https://github.com/schemaorg/schemaorg/issues/2291
 *
 **/
-export interface Observation extends Intangible {
+export interface Observation extends Omit<Intangible, "@type"> {
+  "@type": "Observation";
   marginOfError?: QuantitativeValue;
   measuredProperty?: Property;
   measuredValue?: DataType;
@@ -8071,7 +8894,8 @@ export interface Observation extends Intangible {
  * @see @link https://github.com/schemaorg/schemaorg/issues/1698
  *
  **/
-export interface Occupation extends Intangible {
+export interface Occupation extends Omit<Intangible, "@type"> {
+  "@type": "Occupation";
   educationRequirements?: Text | EducationalOccupationalCredential;
   estimatedSalary?: MonetaryAmount | Number | MonetaryAmountDistribution;
   experienceRequirements?: Text | OccupationalExperienceRequirements;
@@ -8094,7 +8918,9 @@ export interface Occupation extends Intangible {
  * @see @link https://github.com/schemaorg/schemaorg/issues/2681
  *
  **/
-export interface OccupationalExperienceRequirements extends Intangible {
+export interface OccupationalExperienceRequirements
+  extends Omit<Intangible, "@type"> {
+  "@type": "OccupationalExperienceRequirements";
   monthsOfExperience?: Number;
 }
 
@@ -8108,7 +8934,9 @@ export interface OccupationalExperienceRequirements extends Intangible {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface OccupationalTherapy extends MedicalTherapy {}
+export interface OccupationalTherapy extends Omit<MedicalTherapy, "@type"> {
+  "@type": "OccupationalTherapy";
+}
 
 /**
  *
@@ -8118,7 +8946,9 @@ export interface OccupationalTherapy extends MedicalTherapy {}
  * An ocean (for example, the Pacific).
  *
  **/
-export interface OceanBodyOfWater extends BodyOfWater {}
+export interface OceanBodyOfWater extends Omit<BodyOfWater, "@type"> {
+  "@type": "OceanBodyOfWater";
+}
 
 /**
  *
@@ -8130,7 +8960,8 @@ export interface OceanBodyOfWater extends BodyOfWater {}
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms
  *
  **/
-export interface Offer extends Intangible {
+export interface Offer extends Omit<Intangible, "@type"> {
+  "@type": "Offer";
   acceptedPaymentMethod?: LoanOrCredit | PaymentMethod;
   addOn?: Offer;
   advanceBookingRequirement?: QuantitativeValue;
@@ -8193,7 +9024,9 @@ export interface Offer extends Intangible {
  * An OfferCatalog is an ItemList that contains related Offers and/or further OfferCatalogs that are offeredBy the same provider.
  *
  **/
-export interface OfferCatalog<T> extends ItemList<T> {}
+export interface OfferCatalog<T = Text> extends Omit<ItemList<T>, "@type"> {
+  "@type": "OfferCatalog";
+}
 
 /**
 *
@@ -8210,7 +9043,9 @@ export interface OfferCatalog<T> extends ItemList<T> {}
 * @see @link https://github.com/schemaorg/schemaorg/issues/2348
 *
 **/
-export interface OfferForLease extends Offer {}
+export interface OfferForLease extends Omit<Offer, "@type"> {
+  "@type": "OfferForLease";
+}
 
 /**
 *
@@ -8227,7 +9062,9 @@ export interface OfferForLease extends Offer {}
 * @see @link https://github.com/schemaorg/schemaorg/issues/2348
 *
 **/
-export interface OfferForPurchase extends Offer {}
+export interface OfferForPurchase extends Omit<Offer, "@type"> {
+  "@type": "OfferForPurchase";
+}
 
 /**
 *
@@ -8252,7 +9089,8 @@ or Fast and expensive: $15 in 1-2 days.
 * @see @link https://github.com/schemaorg/schemaorg/issues/2506
 *
 **/
-export interface OfferShippingDetails extends StructuredValue {
+export interface OfferShippingDetails extends Omit<StructuredValue, "@type"> {
+  "@type": "OfferShippingDetails";
   deliveryTime?: ShippingDeliveryTime;
   doesNotShip?: Boolean;
   shippingDestination?: DefinedRegion;
@@ -8270,7 +9108,9 @@ export interface OfferShippingDetails extends StructuredValue {
  * An office equipment store.
  *
  **/
-export interface OfficeEquipmentStore extends Store {}
+export interface OfficeEquipmentStore extends Omit<Store, "@type"> {
+  "@type": "OfficeEquipmentStore";
+}
 
 /**
  *
@@ -8280,7 +9120,9 @@ export interface OfficeEquipmentStore extends Store {}
  * A publication event e.g. catch-up TV or radio podcast, during which a program is available on-demand.
  *
  **/
-export interface OnDemandEvent extends PublicationEvent {}
+export interface OnDemandEvent extends Omit<PublicationEvent, "@type"> {
+  "@type": "OnDemandEvent";
+}
 
 /**
 *
@@ -8294,7 +9136,9 @@ The place is __open__ if the [[opens]] property is specified, and __closed__ oth
 * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass
 *
 **/
-export interface OpeningHoursSpecification extends StructuredValue {
+export interface OpeningHoursSpecification
+  extends Omit<StructuredValue, "@type"> {
+  "@type": "OpeningHoursSpecification";
   closes?: Time;
   dayOfWeek?: DayOfWeek;
   opens?: Time;
@@ -8315,7 +9159,9 @@ export interface OpeningHoursSpecification extends StructuredValue {
  * @see @link https://github.com/schemaorg/schemaorg/issues/1525
  *
  **/
-export interface OpinionNewsArticle extends NewsArticle {}
+export interface OpinionNewsArticle extends Omit<NewsArticle, "@type"> {
+  "@type": "OpinionNewsArticle";
+}
 
 /**
  *
@@ -8327,7 +9173,9 @@ export interface OpinionNewsArticle extends NewsArticle {}
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface Optician extends MedicalBusiness {}
+export interface Optician extends Omit<MedicalBusiness, "@type"> {
+  "@type": "Optician";
+}
 
 /**
  *
@@ -8337,7 +9185,8 @@ export interface Optician extends MedicalBusiness {}
  * An order is a confirmation of a transaction (a receipt), which can contain multiple line items, each represented by an Offer that has been accepted by the customer.
  *
  **/
-export interface Order extends Intangible {
+export interface Order extends Omit<Intangible, "@type"> {
+  "@type": "Order";
   acceptedOffer?: Offer;
   billingAddress?: PostalAddress;
   broker?: Person | Organization;
@@ -8370,7 +9219,8 @@ export interface Order extends Intangible {
  * An agent orders an object/product/service to be delivered/sent.
  *
  **/
-export interface OrderAction extends TradeAction {
+export interface OrderAction extends Omit<TradeAction, "@type"> {
+  "@type": "OrderAction";
   deliveryMethod?: DeliveryMethod;
 }
 
@@ -8382,7 +9232,8 @@ export interface OrderAction extends TradeAction {
  * An order item is a line of an order. It includes the quantity and shipping details of a bought offer.
  *
  **/
-export interface OrderItem extends Intangible {
+export interface OrderItem extends Omit<Intangible, "@type"> {
+  "@type": "OrderItem";
   orderDelivery?: ParcelDelivery;
   orderedItem?: Product | OrderItem | Service;
   orderItemNumber?: Text;
@@ -8398,7 +9249,8 @@ export interface OrderItem extends Intangible {
  * An organization such as a school, NGO, corporation, club, etc.
  *
  **/
-export interface Organization extends Thing {
+export interface Organization extends Omit<Thing, "@type"> {
+  "@type": "Organization";
   actionableFeedbackPolicy?: CreativeWork | URL;
   address?: Text | PostalAddress;
   aggregateRating?: AggregateRating;
@@ -8472,7 +9324,8 @@ export interface Organization extends Thing {
  * A subclass of Role used to describe roles within organizations.
  *
  **/
-export interface OrganizationRole extends Role {
+export interface OrganizationRole extends Omit<Role, "@type"> {
+  "@type": "OrganizationRole";
   numberedPosition?: Number;
 }
 
@@ -8484,7 +9337,9 @@ export interface OrganizationRole extends Role {
  * The act of manipulating/administering/supervising/controlling one or more objects.
  *
  **/
-export interface OrganizeAction extends Action {}
+export interface OrganizeAction extends Omit<Action, "@type"> {
+  "@type": "OrganizeAction";
+}
 
 /**
  *
@@ -8494,7 +9349,9 @@ export interface OrganizeAction extends Action {}
  * An outlet store.
  *
  **/
-export interface OutletStore extends Store {}
+export interface OutletStore extends Omit<Store, "@type"> {
+  "@type": "OutletStore";
+}
 
 /**
  *
@@ -8506,7 +9363,8 @@ export interface OutletStore extends Store {}
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass
  *
  **/
-export interface OwnershipInfo extends StructuredValue {
+export interface OwnershipInfo extends Omit<StructuredValue, "@type"> {
+  "@type": "OwnershipInfo";
   acquiredFrom?: Organization | Person;
   ownedFrom?: DateTime;
   ownedThrough?: DateTime;
@@ -8521,7 +9379,9 @@ export interface OwnershipInfo extends StructuredValue {
  * The act of producing a painting, typically with paint and canvas as instruments.
  *
  **/
-export interface PaintAction extends CreateAction {}
+export interface PaintAction extends Omit<CreateAction, "@type"> {
+  "@type": "PaintAction";
+}
 
 /**
  *
@@ -8531,7 +9391,9 @@ export interface PaintAction extends CreateAction {}
  * A painting.
  *
  **/
-export interface Painting extends CreativeWork {}
+export interface Painting extends Omit<CreativeWork, "@type"> {
+  "@type": "Painting";
+}
 
 /**
  *
@@ -8543,7 +9405,11 @@ export interface Painting extends CreativeWork {}
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface PalliativeProcedure extends MedicalTherapy, MedicalProcedure {}
+export interface PalliativeProcedure
+  extends Omit<MedicalTherapy, "@type">,
+    Omit<MedicalProcedure, "@type"> {
+  "@type": "PalliativeProcedure";
+}
 
 /**
  *
@@ -8553,7 +9419,8 @@ export interface PalliativeProcedure extends MedicalTherapy, MedicalProcedure {}
  * The delivery of a parcel either via the postal service or a commercial service.
  *
  **/
-export interface ParcelDelivery extends Intangible {
+export interface ParcelDelivery extends Omit<Intangible, "@type"> {
+  "@type": "ParcelDelivery";
   carrier?: Organization;
   deliveryAddress?: PostalAddress;
   deliveryStatus?: DeliveryEvent;
@@ -8576,7 +9443,8 @@ export interface ParcelDelivery extends Intangible {
  * A set of characteristics describing parents, who can be interested in viewing some content.
  *
  **/
-export interface ParentAudience extends PeopleAudience {
+export interface ParentAudience extends Omit<PeopleAudience, "@type"> {
+  "@type": "ParentAudience";
   childMaxAge?: Number;
   childMinAge?: Number;
 }
@@ -8589,7 +9457,9 @@ export interface ParentAudience extends PeopleAudience {
  * A park.
  *
  **/
-export interface Park extends CivicStructure {}
+export interface Park extends Omit<CivicStructure, "@type"> {
+  "@type": "Park";
+}
 
 /**
  *
@@ -8599,7 +9469,9 @@ export interface Park extends CivicStructure {}
  * A parking lot or other parking facility.
  *
  **/
-export interface ParkingFacility extends CivicStructure {}
+export interface ParkingFacility extends Omit<CivicStructure, "@type"> {
+  "@type": "ParkingFacility";
+}
 
 /**
  *
@@ -8611,7 +9483,8 @@ export interface ParkingFacility extends CivicStructure {}
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface PathologyTest extends MedicalTest {
+export interface PathologyTest extends Omit<MedicalTest, "@type"> {
+  "@type": "PathologyTest";
   tissueSample?: Text;
 }
 
@@ -8625,7 +9498,10 @@ export interface PathologyTest extends MedicalTest {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface Patient extends MedicalAudience, Person {
+export interface Patient
+  extends Omit<MedicalAudience, "@type">,
+    Omit<Person, "@type"> {
+  "@type": "Patient";
   diagnosis?: MedicalCondition;
   drug?: Drug;
   healthCondition?: MedicalCondition;
@@ -8639,7 +9515,9 @@ export interface Patient extends MedicalAudience, Person {
  * A shop that will buy, or lend money against the security of, personal possessions.
  *
  **/
-export interface PawnShop extends Store {}
+export interface PawnShop extends Omit<Store, "@type"> {
+  "@type": "PawnShop";
+}
 
 /**
  *
@@ -8649,7 +9527,8 @@ export interface PawnShop extends Store {}
  * An agent pays a price to a participant.
  *
  **/
-export interface PayAction extends TradeAction {
+export interface PayAction extends Omit<TradeAction, "@type"> {
+  "@type": "PayAction";
   recipient?: Organization | ContactPoint | Person | Audience;
 }
 
@@ -8663,7 +9542,10 @@ export interface PayAction extends TradeAction {
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO
  *
  **/
-export interface PaymentCard extends PaymentMethod, FinancialProduct {
+export interface PaymentCard
+  extends Omit<PaymentMethod, "@type">,
+    Omit<FinancialProduct, "@type"> {
+  "@type": "PaymentCard";
   cashBack?: Number | Boolean;
   contactlessPayment?: Boolean;
   floorLimit?: MonetaryAmount;
@@ -8680,7 +9562,9 @@ export interface PaymentCard extends PaymentMethod, FinancialProduct {
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass
  *
  **/
-export interface PaymentChargeSpecification extends PriceSpecification {
+export interface PaymentChargeSpecification
+  extends Omit<PriceSpecification, "@type"> {
+  "@type": "PaymentChargeSpecification";
   appliesToDeliveryMethod?: DeliveryMethod;
   appliesToPaymentMethod?: PaymentMethod;
 }
@@ -8696,7 +9580,9 @@ export interface PaymentChargeSpecification extends PriceSpecification {
 * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass
 *
 **/
-export interface PaymentMethod extends Enumeration {}
+export interface PaymentMethod extends Omit<Enumeration, "@type"> {
+  "@type": "PaymentMethod";
+}
 
 /**
  *
@@ -8708,7 +9594,9 @@ export interface PaymentMethod extends Enumeration {}
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO
  *
  **/
-export interface PaymentService extends FinancialProduct {}
+export interface PaymentService extends Omit<FinancialProduct, "@type"> {
+  "@type": "PaymentService";
+}
 
 /**
  *
@@ -8718,7 +9606,8 @@ export interface PaymentService extends FinancialProduct {}
  * A set of characteristics belonging to people, e.g. who compose an item's target audience.
  *
  **/
-export interface PeopleAudience extends Audience {
+export interface PeopleAudience extends Omit<Audience, "@type"> {
+  "@type": "PeopleAudience";
   healthCondition?: MedicalCondition;
   requiredGender?: Text;
   requiredMaxAge?: Integer;
@@ -8738,7 +9627,8 @@ export interface PeopleAudience extends Audience {
  * The act of participating in performance arts.
  *
  **/
-export interface PerformAction extends PlayAction {
+export interface PerformAction extends Omit<PlayAction, "@type"> {
+  "@type": "PerformAction";
   entertainmentBusiness?: EntertainmentBusiness;
 }
 
@@ -8750,7 +9640,8 @@ export interface PerformAction extends PlayAction {
  * A PerformanceRole is a Role that some entity places with regard to a theatrical performance, e.g. in a Movie, TVSeries etc.
  *
  **/
-export interface PerformanceRole extends Role {
+export interface PerformanceRole extends Omit<Role, "@type"> {
+  "@type": "PerformanceRole";
   characterName?: Text;
 }
 
@@ -8762,7 +9653,9 @@ export interface PerformanceRole extends Role {
  * A theater or other performing art center.
  *
  **/
-export interface PerformingArtsTheater extends CivicStructure {}
+export interface PerformingArtsTheater extends Omit<CivicStructure, "@type"> {
+  "@type": "PerformingArtsTheater";
+}
 
 /**
  *
@@ -8772,7 +9665,9 @@ export interface PerformingArtsTheater extends CivicStructure {}
  * A performance group, such as a band, an orchestra, or a circus.
  *
  **/
-export interface PerformingGroup extends Organization {}
+export interface PerformingGroup extends Omit<Organization, "@type"> {
+  "@type": "PerformingGroup";
+}
 
 /**
  *
@@ -8784,7 +9679,9 @@ export interface PerformingGroup extends Organization {}
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex
  *
  **/
-export interface Periodical extends CreativeWorkSeries {}
+export interface Periodical extends Omit<CreativeWorkSeries, "@type"> {
+  "@type": "Periodical";
+}
 
 /**
  *
@@ -8794,7 +9691,8 @@ export interface Periodical extends CreativeWorkSeries {}
  * A permit issued by an organization, e.g. a parking pass.
  *
  **/
-export interface Permit extends Intangible {
+export interface Permit extends Omit<Intangible, "@type"> {
+  "@type": "Permit";
   issuedBy?: Organization;
   issuedThrough?: Service;
   permitAudience?: Audience;
@@ -8814,7 +9712,8 @@ export interface Permit extends Intangible {
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_rNews
  *
  **/
-export interface Person extends Thing {
+export interface Person extends Omit<Thing, "@type"> {
+  "@type": "Person";
   additionalName?: Text;
   address?: Text | PostalAddress;
   affiliation?: Organization;
@@ -8887,7 +9786,9 @@ export interface Person extends Thing {
  * A pet store.
  *
  **/
-export interface PetStore extends Store {}
+export interface PetStore extends Omit<Store, "@type"> {
+  "@type": "PetStore";
+}
 
 /**
  *
@@ -8897,7 +9798,11 @@ export interface PetStore extends Store {}
  * A pharmacy or drugstore.
  *
  **/
-export interface Pharmacy extends MedicalOrganization, MedicalBusiness {}
+export interface Pharmacy
+  extends Omit<MedicalOrganization, "@type">,
+    Omit<MedicalBusiness, "@type"> {
+  "@type": "Pharmacy";
+}
 
 /**
  *
@@ -8907,7 +9812,9 @@ export interface Pharmacy extends MedicalOrganization, MedicalBusiness {}
  * A photograph.
  *
  **/
-export interface Photograph extends CreativeWork {}
+export interface Photograph extends Omit<CreativeWork, "@type"> {
+  "@type": "Photograph";
+}
 
 /**
  *
@@ -8917,7 +9824,9 @@ export interface Photograph extends CreativeWork {}
  * The act of capturing still images of objects using a camera.
  *
  **/
-export interface PhotographAction extends CreateAction {}
+export interface PhotographAction extends Omit<CreateAction, "@type"> {
+  "@type": "PhotographAction";
+}
 
 /**
  *
@@ -8929,7 +9838,8 @@ export interface PhotographAction extends CreateAction {}
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface PhysicalActivity extends LifestyleModification {
+export interface PhysicalActivity extends Omit<LifestyleModification, "@type"> {
+  "@type": "PhysicalActivity";
   associatedAnatomy?:
     | AnatomicalStructure
     | AnatomicalSystem
@@ -8949,7 +9859,9 @@ export interface PhysicalActivity extends LifestyleModification {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface PhysicalTherapy extends MedicalTherapy {}
+export interface PhysicalTherapy extends Omit<MedicalTherapy, "@type"> {
+  "@type": "PhysicalTherapy";
+}
 
 /**
  *
@@ -8959,7 +9871,10 @@ export interface PhysicalTherapy extends MedicalTherapy {}
  * A doctor's office.
  *
  **/
-export interface Physician extends MedicalBusiness, MedicalOrganization {
+export interface Physician
+  extends Omit<MedicalBusiness, "@type">,
+    Omit<MedicalOrganization, "@type"> {
+  "@type": "Physician";
   availableService?: MedicalTest | MedicalTherapy | MedicalProcedure;
   hospitalAffiliation?: Hospital;
   medicalSpecialty?: MedicalSpecialty;
@@ -8973,7 +9888,8 @@ export interface Physician extends MedicalBusiness, MedicalOrganization {
  * Entities that have a somewhat fixed, physical extension.
  *
  **/
-export interface Place extends Thing {
+export interface Place extends Omit<Thing, "@type"> {
+  "@type": "Place";
   additionalProperty?: PropertyValue;
   address?: Text | PostalAddress;
   aggregateRating?: AggregateRating;
@@ -9028,7 +9944,9 @@ export interface Place extends Thing {
  * Place of worship, such as a church, synagogue, or mosque.
  *
  **/
-export interface PlaceOfWorship extends CivicStructure {}
+export interface PlaceOfWorship extends Omit<CivicStructure, "@type"> {
+  "@type": "PlaceOfWorship";
+}
 
 /**
  *
@@ -9038,7 +9956,8 @@ export interface PlaceOfWorship extends CivicStructure {}
  * The act of planning the execution of an event/task/action/reservation/plan to a future date.
  *
  **/
-export interface PlanAction extends OrganizeAction {
+export interface PlanAction extends Omit<OrganizeAction, "@type"> {
+  "@type": "PlanAction";
   scheduledTime?: DateTime;
 }
 
@@ -9054,7 +9973,9 @@ export interface PlanAction extends OrganizeAction {
  * @see @link https://github.com/schemaorg/schemaorg/issues/1816
  *
  **/
-export interface Play extends CreativeWork {}
+export interface Play extends Omit<CreativeWork, "@type"> {
+  "@type": "Play";
+}
 
 /**
  *
@@ -9064,7 +9985,8 @@ export interface Play extends CreativeWork {}
  * The act of playing/exercising/training/performing for enjoyment, leisure, recreation, Competition or exercise.\n\nRelated actions:\n\n* [[ListenAction]]: Unlike ListenAction (which is under ConsumeAction), PlayAction refers to performing for an audience or at an event, rather than consuming music.\n* [[WatchAction]]: Unlike WatchAction (which is under ConsumeAction), PlayAction refers to showing/displaying for an audience or at an event, rather than consuming visual content.
  *
  **/
-export interface PlayAction extends Action {
+export interface PlayAction extends Omit<Action, "@type"> {
+  "@type": "PlayAction";
   audience?: Audience;
   event?: Event;
 }
@@ -9077,7 +9999,9 @@ export interface PlayAction extends Action {
  * A playground.
  *
  **/
-export interface Playground extends CivicStructure {}
+export interface Playground extends Omit<CivicStructure, "@type"> {
+  "@type": "Playground";
+}
 
 /**
  *
@@ -9087,7 +10011,9 @@ export interface Playground extends CivicStructure {}
  * A plumbing service.
  *
  **/
-export interface Plumber extends HomeAndConstructionBusiness {}
+export interface Plumber extends Omit<HomeAndConstructionBusiness, "@type"> {
+  "@type": "Plumber";
+}
 
 /**
  *
@@ -9101,7 +10027,9 @@ export interface Plumber extends HomeAndConstructionBusiness {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/373
  *
  **/
-export interface PodcastEpisode extends Episode {}
+export interface PodcastEpisode extends Omit<Episode, "@type"> {
+  "@type": "PodcastEpisode";
+}
 
 /**
  *
@@ -9115,7 +10043,9 @@ export interface PodcastEpisode extends Episode {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/373
  *
  **/
-export interface PodcastSeason extends CreativeWorkSeason {}
+export interface PodcastSeason extends Omit<CreativeWorkSeason, "@type"> {
+  "@type": "PodcastSeason";
+}
 
 /**
  *
@@ -9129,7 +10059,8 @@ export interface PodcastSeason extends CreativeWorkSeason {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/373
  *
  **/
-export interface PodcastSeries extends CreativeWorkSeries {
+export interface PodcastSeries extends Omit<CreativeWorkSeries, "@type"> {
+  "@type": "PodcastSeries";
   webFeed?: URL | DataFeed<URL>;
 }
 
@@ -9141,7 +10072,11 @@ export interface PodcastSeries extends CreativeWorkSeries {
  * A police station.
  *
  **/
-export interface PoliceStation extends EmergencyService, CivicStructure {}
+export interface PoliceStation
+  extends Omit<EmergencyService, "@type">,
+    Omit<CivicStructure, "@type"> {
+  "@type": "PoliceStation";
+}
 
 /**
  *
@@ -9151,7 +10086,9 @@ export interface PoliceStation extends EmergencyService, CivicStructure {}
  * A pond.
  *
  **/
-export interface Pond extends BodyOfWater {}
+export interface Pond extends Omit<BodyOfWater, "@type"> {
+  "@type": "Pond";
+}
 
 /**
  *
@@ -9161,7 +10098,8 @@ export interface Pond extends BodyOfWater {}
  * The mailing address.
  *
  **/
-export interface PostalAddress extends ContactPoint {
+export interface PostalAddress extends Omit<ContactPoint, "@type"> {
+  "@type": "PostalAddress";
   addressCountry?: Text | Country;
   addressLocality?: Text;
   addressRegion?: Text;
@@ -9182,7 +10120,9 @@ export interface PostalAddress extends ContactPoint {
  * @see @link https://github.com/schemaorg/schemaorg/issues/2506
  *
  **/
-export interface PostalCodeRangeSpecification extends StructuredValue {
+export interface PostalCodeRangeSpecification
+  extends Omit<StructuredValue, "@type"> {
+  "@type": "PostalCodeRangeSpecification";
   postalCodeBegin?: Text;
   postalCodeEnd?: Text;
 }
@@ -9199,7 +10139,9 @@ export interface PostalCodeRangeSpecification extends StructuredValue {
  * @see @link https://github.com/schemaorg/schemaorg/issues/1448
  *
  **/
-export interface Poster extends CreativeWork {}
+export interface Poster extends Omit<CreativeWork, "@type"> {
+  "@type": "Poster";
+}
 
 /**
  *
@@ -9209,7 +10151,9 @@ export interface Poster extends CreativeWork {}
  * A post office.
  *
  **/
-export interface PostOffice extends GovernmentOffice {}
+export interface PostOffice extends Omit<GovernmentOffice, "@type"> {
+  "@type": "PostOffice";
+}
 
 /**
  *
@@ -9221,7 +10165,9 @@ export interface PostOffice extends GovernmentOffice {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/1125
  *
  **/
-export interface PreOrderAction extends TradeAction {}
+export interface PreOrderAction extends Omit<TradeAction, "@type"> {
+  "@type": "PreOrderAction";
+}
 
 /**
  *
@@ -9231,7 +10177,9 @@ export interface PreOrderAction extends TradeAction {}
  * The act of inserting at the beginning if an ordered collection.
  *
  **/
-export interface PrependAction extends InsertAction {}
+export interface PrependAction extends Omit<InsertAction, "@type"> {
+  "@type": "PrependAction";
+}
 
 /**
  *
@@ -9241,7 +10189,9 @@ export interface PrependAction extends InsertAction {}
  * A preschool.
  *
  **/
-export interface Preschool extends EducationalOrganization {}
+export interface Preschool extends Omit<EducationalOrganization, "@type"> {
+  "@type": "Preschool";
+}
 
 /**
  *
@@ -9251,7 +10201,10 @@ export interface Preschool extends EducationalOrganization {}
  * A file containing slides or used for a presentation.
  *
  **/
-export interface PresentationDigitalDocument extends DigitalDocument {}
+export interface PresentationDigitalDocument
+  extends Omit<DigitalDocument, "@type"> {
+  "@type": "PresentationDigitalDocument";
+}
 
 /**
  *
@@ -9263,7 +10216,9 @@ export interface PresentationDigitalDocument extends DigitalDocument {}
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface PreventionIndication extends MedicalIndication {}
+export interface PreventionIndication extends Omit<MedicalIndication, "@type"> {
+  "@type": "PreventionIndication";
+}
 
 /**
  *
@@ -9275,7 +10230,8 @@ export interface PreventionIndication extends MedicalIndication {}
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass
  *
  **/
-export interface PriceSpecification extends StructuredValue {
+export interface PriceSpecification extends Omit<StructuredValue, "@type"> {
+  "@type": "PriceSpecification";
   eligibleQuantity?: QuantitativeValue;
   eligibleTransactionVolume?: PriceSpecification;
   maxPrice?: Number;
@@ -9297,7 +10253,8 @@ export interface PriceSpecification extends StructuredValue {
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms
  *
  **/
-export interface Product extends Thing {
+export interface Product extends Omit<Thing, "@type"> {
+  "@type": "Product";
   additionalProperty?: PropertyValue;
   aggregateRating?: AggregateRating;
   audience?: Audience;
@@ -9356,7 +10313,10 @@ export interface Product extends Thing {
  * @see @link https://github.com/schemaorg/schemaorg/issues/2597
  *
  **/
-export interface ProductCollection extends Collection, Product {
+export interface ProductCollection
+  extends Omit<Collection, "@type">,
+    Omit<Product, "@type"> {
+  "@type": "ProductCollection";
   includesObject?: TypeAndQuantityNode;
 }
 
@@ -9374,7 +10334,8 @@ While a ProductGroup itself is not directly offered for sale, the various varyin
 * @see @link https://github.com/schemaorg/schemaorg/issues/2597
 *
 **/
-export interface ProductGroup extends Product {
+export interface ProductGroup extends Omit<Product, "@type"> {
+  "@type": "ProductGroup";
   hasVariant?: Product;
   productGroupID?: Text;
   variesBy?: Text | DefinedTerm;
@@ -9390,7 +10351,8 @@ export interface ProductGroup extends Product {
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass
  *
  **/
-export interface ProductModel extends Product {
+export interface ProductModel extends Omit<Product, "@type"> {
+  "@type": "ProductModel";
   isVariantOf?: ProductGroup | ProductModel;
   predecessorOf?: ProductModel;
   successorOf?: ProductModel;
@@ -9406,7 +10368,9 @@ export interface ProductModel extends Product {
         [[HousePainter]], [[Locksmith]], [[Plumber]], [[RoofingContractor]]. [[LegalService]] was introduced as a more inclusive supertype of [[Attorney]].
 *
 **/
-export interface ProfessionalService extends LocalBusiness {}
+export interface ProfessionalService extends Omit<LocalBusiness, "@type"> {
+  "@type": "ProfessionalService";
+}
 
 /**
  *
@@ -9416,7 +10380,9 @@ export interface ProfessionalService extends LocalBusiness {}
  * Web page type: Profile page.
  *
  **/
-export interface ProfilePage extends WebPage {}
+export interface ProfilePage extends Omit<WebPage, "@type"> {
+  "@type": "ProfilePage";
+}
 
 /**
  *
@@ -9426,7 +10392,8 @@ export interface ProfilePage extends WebPage {}
  * Used to describe membership in a loyalty programs (e.g. "StarAliance"), traveler clubs (e.g. "AAA"), purchase clubs ("Safeway Club"), etc.
  *
  **/
-export interface ProgramMembership extends Intangible {
+export interface ProgramMembership extends Omit<Intangible, "@type"> {
+  "@type": "ProgramMembership";
   hostingOrganization?: Organization;
   member?: Organization | Person;
   members?: Array<Person> | Array<Organization>;
@@ -9450,7 +10417,9 @@ Use properties from [[Organization]], [[subOrganization]]/[[parentOrganization]]
 * @see @link https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FundInfoCollab
 *
 **/
-export interface Project extends Organization {}
+export interface Project extends Omit<Organization, "@type"> {
+  "@type": "Project";
+}
 
 /**
  *
@@ -9476,7 +10445,8 @@ export type PronounceableText = Text;
  *
  * Partof: https://meta.schema.org
  **/
-export interface Property extends Intangible {
+export interface Property extends Omit<Intangible, "@type"> {
+  "@type": "Property";
   domainIncludes?: Class;
   inverseOf?: Property;
   rangeIncludes?: Class;
@@ -9493,7 +10463,8 @@ export interface Property extends Intangible {
 * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass
 *
 **/
-export interface PropertyValue extends StructuredValue {
+export interface PropertyValue extends Omit<StructuredValue, "@type"> {
+  "@type": "PropertyValue";
   maxValue?: Number;
   measurementTechnique?: Text | URL;
   minValue?: Number;
@@ -9522,7 +10493,8 @@ export interface PropertyValue extends StructuredValue {
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_ActionCollabClass
  *
  **/
-export interface PropertyValueSpecification extends Intangible {
+export interface PropertyValueSpecification extends Omit<Intangible, "@type"> {
+  "@type": "PropertyValueSpecification";
   defaultValue?: Thing | Text;
   maxValue?: Number;
   minValue?: Number;
@@ -9546,7 +10518,10 @@ export interface PropertyValueSpecification extends Intangible {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface PsychologicalTreatment extends TherapeuticProcedure {}
+export interface PsychologicalTreatment
+  extends Omit<TherapeuticProcedure, "@type"> {
+  "@type": "PsychologicalTreatment";
+}
 
 /**
  *
@@ -9556,7 +10531,8 @@ export interface PsychologicalTreatment extends TherapeuticProcedure {}
  * A PublicationEvent corresponds indifferently to the event of publication for a CreativeWork of any type e.g. a broadcast event, an on-demand event, a book/journal publication via a variety of delivery media.
  *
  **/
-export interface PublicationEvent extends Event {
+export interface PublicationEvent extends Omit<Event, "@type"> {
+  "@type": "PublicationEvent";
   free?: Boolean;
   publishedBy?: Person | Organization;
   publishedOn?: BroadcastService;
@@ -9572,7 +10548,8 @@ export interface PublicationEvent extends Event {
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex
  *
  **/
-export interface PublicationIssue extends CreativeWork {
+export interface PublicationIssue extends Omit<CreativeWork, "@type"> {
+  "@type": "PublicationIssue";
   issueNumber?: Integer | Text;
   pageEnd?: Text | Integer;
   pageStart?: Text | Integer;
@@ -9589,7 +10566,8 @@ export interface PublicationIssue extends CreativeWork {
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex
  *
  **/
-export interface PublicationVolume extends CreativeWork {
+export interface PublicationVolume extends Omit<CreativeWork, "@type"> {
+  "@type": "PublicationVolume";
   pageEnd?: Text | Integer;
   pageStart?: Text | Integer;
   pagination?: Text;
@@ -9604,7 +10582,10 @@ export interface PublicationVolume extends CreativeWork {
  * A public swimming pool.
  *
  **/
-export interface PublicSwimmingPool extends SportsActivityLocation {}
+export interface PublicSwimmingPool
+  extends Omit<SportsActivityLocation, "@type"> {
+  "@type": "PublicSwimmingPool";
+}
 
 /**
  *
@@ -9618,7 +10599,9 @@ export interface PublicSwimmingPool extends SportsActivityLocation {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/1624
  *
  **/
-export interface PublicToilet extends CivicStructure {}
+export interface PublicToilet extends Omit<CivicStructure, "@type"> {
+  "@type": "PublicToilet";
+}
 
 /**
  *
@@ -9628,7 +10611,9 @@ export interface PublicToilet extends CivicStructure {}
  * A QAPage is a WebPage focussed on a specific Question and its Answer(s), e.g. in a question answering site or documenting Frequently Asked Questions (FAQs).
  *
  **/
-export interface QAPage extends WebPage {}
+export interface QAPage extends Omit<WebPage, "@type"> {
+  "@type": "QAPage";
+}
 
 /**
  *
@@ -9640,7 +10625,8 @@ export interface QAPage extends WebPage {}
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass
  *
  **/
-export interface QualitativeValue extends Enumeration {
+export interface QualitativeValue extends Omit<Enumeration, "@type"> {
+  "@type": "QualitativeValue";
   additionalProperty?: PropertyValue;
   equal?: QualitativeValue;
   greater?: QualitativeValue;
@@ -9669,7 +10655,8 @@ export interface QualitativeValue extends Enumeration {
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass
  *
  **/
-export interface QuantitativeValue extends StructuredValue {
+export interface QuantitativeValue extends Omit<StructuredValue, "@type"> {
+  "@type": "QuantitativeValue";
   additionalProperty?: PropertyValue;
   maxValue?: Number;
   minValue?: Number;
@@ -9697,7 +10684,9 @@ export interface QuantitativeValue extends StructuredValue {
  * @see @link https://github.com/schemaorg/schemaorg/issues/1698
  *
  **/
-export interface QuantitativeValueDistribution extends StructuredValue {
+export interface QuantitativeValueDistribution
+  extends Omit<StructuredValue, "@type"> {
+  "@type": "QuantitativeValueDistribution";
   duration?: Duration;
   median?: Number;
   percentile10?: Number;
@@ -9714,7 +10703,9 @@ export interface QuantitativeValueDistribution extends StructuredValue {
  * Quantities such as distance, time, mass, weight, etc. Particular instances of say Mass are entities like '3 Kg' or '4 milligrams'.
  *
  **/
-export interface Quantity extends Intangible {}
+export interface Quantity extends Omit<Intangible, "@type"> {
+  "@type": "Quantity";
+}
 
 /**
  *
@@ -9726,7 +10717,8 @@ export interface Quantity extends Intangible {}
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_QAStackExchange
  *
  **/
-export interface Question extends Comment {
+export interface Question extends Omit<Comment, "@type"> {
+  "@type": "Question";
   acceptedAnswer?: Answer | ItemList<Answer>;
   answerCount?: Integer;
   eduQuestionType?: Text;
@@ -9745,7 +10737,9 @@ export interface Question extends Comment {
  * @see @link https://github.com/schemaorg/schemaorg/issues/2611
  *
  **/
-export interface Quiz extends LearningResource {}
+export interface Quiz extends Omit<LearningResource, "@type"> {
+  "@type": "Quiz";
+}
 
 /**
  *
@@ -9759,7 +10753,8 @@ export interface Quiz extends LearningResource {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/271
  *
  **/
-export interface Quotation extends CreativeWork {
+export interface Quotation extends Omit<CreativeWork, "@type"> {
+  "@type": "Quotation";
   spokenByCharacter?: Organization | Person;
 }
 
@@ -9771,7 +10766,9 @@ export interface Quotation extends CreativeWork {
  * An agent quotes/estimates/appraises an object/product/service with a price at a location/store.
  *
  **/
-export interface QuoteAction extends TradeAction {}
+export interface QuoteAction extends Omit<TradeAction, "@type"> {
+  "@type": "QuoteAction";
+}
 
 /**
  *
@@ -9783,7 +10780,9 @@ export interface QuoteAction extends TradeAction {}
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface RadiationTherapy extends MedicalTherapy {}
+export interface RadiationTherapy extends Omit<MedicalTherapy, "@type"> {
+  "@type": "RadiationTherapy";
+}
 
 /**
  *
@@ -9797,7 +10796,9 @@ export interface RadiationTherapy extends MedicalTherapy {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/2109
  *
  **/
-export interface RadioBroadcastService extends BroadcastService {}
+export interface RadioBroadcastService extends Omit<BroadcastService, "@type"> {
+  "@type": "RadioBroadcastService";
+}
 
 /**
  *
@@ -9807,7 +10808,9 @@ export interface RadioBroadcastService extends BroadcastService {}
  * A unique instance of a radio BroadcastService on a CableOrSatelliteService lineup.
  *
  **/
-export interface RadioChannel extends BroadcastChannel {}
+export interface RadioChannel extends Omit<BroadcastChannel, "@type"> {
+  "@type": "RadioChannel";
+}
 
 /**
  *
@@ -9817,7 +10820,9 @@ export interface RadioChannel extends BroadcastChannel {}
  * A short radio program or a segment/part of a radio program.
  *
  **/
-export interface RadioClip extends Clip {}
+export interface RadioClip extends Omit<Clip, "@type"> {
+  "@type": "RadioClip";
+}
 
 /**
  *
@@ -9827,7 +10832,9 @@ export interface RadioClip extends Clip {}
  * A radio episode which can be part of a series or season.
  *
  **/
-export interface RadioEpisode extends Episode {}
+export interface RadioEpisode extends Omit<Episode, "@type"> {
+  "@type": "RadioEpisode";
+}
 
 /**
  *
@@ -9837,7 +10844,9 @@ export interface RadioEpisode extends Episode {}
  * Season dedicated to radio broadcast and associated online delivery.
  *
  **/
-export interface RadioSeason extends CreativeWorkSeason {}
+export interface RadioSeason extends Omit<CreativeWorkSeason, "@type"> {
+  "@type": "RadioSeason";
+}
 
 /**
  *
@@ -9847,7 +10856,8 @@ export interface RadioSeason extends CreativeWorkSeason {}
  * CreativeWorkSeries dedicated to radio broadcast and associated online delivery.
  *
  **/
-export interface RadioSeries extends CreativeWorkSeries {
+export interface RadioSeries extends Omit<CreativeWorkSeries, "@type"> {
+  "@type": "RadioSeries";
   actor?: Person;
   actors?: Array<Person>;
   containsSeason?: CreativeWorkSeason;
@@ -9872,7 +10882,9 @@ export interface RadioSeries extends CreativeWorkSeries {
  * A radio station.
  *
  **/
-export interface RadioStation extends LocalBusiness {}
+export interface RadioStation extends Omit<LocalBusiness, "@type"> {
+  "@type": "RadioStation";
+}
 
 /**
  *
@@ -9882,7 +10894,8 @@ export interface RadioStation extends LocalBusiness {}
  * A rating is an evaluation on a numeric scale, such as 1 to 5 stars.
  *
  **/
-export interface Rating extends Intangible {
+export interface Rating extends Omit<Intangible, "@type"> {
+  "@type": "Rating";
   author?: Person | Organization;
   bestRating?: Text | Number;
   ratingExplanation?: Text;
@@ -9899,7 +10912,9 @@ export interface Rating extends Intangible {
  * The act of responding instinctively and emotionally to an object, expressing a sentiment.
  *
  **/
-export interface ReactAction extends AssessAction {}
+export interface ReactAction extends Omit<AssessAction, "@type"> {
+  "@type": "ReactAction";
+}
 
 /**
  *
@@ -9909,7 +10924,9 @@ export interface ReactAction extends AssessAction {}
  * The act of consuming written content.
  *
  **/
-export interface ReadAction extends ConsumeAction {}
+export interface ReadAction extends Omit<ConsumeAction, "@type"> {
+  "@type": "ReadAction";
+}
 
 /**
  *
@@ -9919,7 +10936,9 @@ export interface ReadAction extends ConsumeAction {}
  * A real-estate agent.
  *
  **/
-export interface RealEstateAgent extends LocalBusiness {}
+export interface RealEstateAgent extends Omit<LocalBusiness, "@type"> {
+  "@type": "RealEstateAgent";
+}
 
 /**
 *
@@ -9935,7 +10954,8 @@ export interface RealEstateAgent extends LocalBusiness {}
 * @see @link https://github.com/schemaorg/schemaorg/issues/2348
 *
 **/
-export interface RealEstateListing extends WebPage {
+export interface RealEstateListing extends Omit<WebPage, "@type"> {
+  "@type": "RealEstateListing";
   datePosted?: Date | DateTime;
   leaseLength?: Duration | QuantitativeValue;
 }
@@ -9948,7 +10968,8 @@ export interface RealEstateListing extends WebPage {
  * The act of physically/electronically taking delivery of an object that has been transferred from an origin to a destination. Reciprocal of SendAction.\n\nRelated actions:\n\n* [[SendAction]]: The reciprocal of ReceiveAction.\n* [[TakeAction]]: Unlike TakeAction, ReceiveAction does not imply that the ownership has been transfered (e.g. I can receive a package, but it does not mean the package is now mine).
  *
  **/
-export interface ReceiveAction extends TransferAction {
+export interface ReceiveAction extends Omit<TransferAction, "@type"> {
+  "@type": "ReceiveAction";
   deliveryMethod?: DeliveryMethod;
   sender?: Person | Audience | Organization;
 }
@@ -9961,7 +10982,8 @@ export interface ReceiveAction extends TransferAction {
  * A recipe. For dietary restrictions covered by the recipe, a few common restrictions are enumerated via [[suitableForDiet]]. The [[keywords]] property can also be used to add more detail.
  *
  **/
-export interface Recipe extends HowTo {
+export interface Recipe extends Omit<HowTo, "@type"> {
+  "@type": "Recipe";
   cookingMethod?: Text;
   cookTime?: Duration;
   ingredients?: Text;
@@ -9990,7 +11012,8 @@ export interface Recipe extends HowTo {
  * @see @link https://github.com/schemaorg/schemaorg/issues/2405
  *
  **/
-export interface Recommendation extends Review {
+export interface Recommendation extends Omit<Review, "@type"> {
+  "@type": "Recommendation";
   category?: PhysicalActivityCategory | Text | URL | Thing;
 }
 
@@ -10004,7 +11027,9 @@ export interface Recommendation extends Review {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface RecommendedDoseSchedule extends DoseSchedule {}
+export interface RecommendedDoseSchedule extends Omit<DoseSchedule, "@type"> {
+  "@type": "RecommendedDoseSchedule";
+}
 
 /**
  *
@@ -10014,7 +11039,9 @@ export interface RecommendedDoseSchedule extends DoseSchedule {}
  * A recycling center.
  *
  **/
-export interface RecyclingCenter extends LocalBusiness {}
+export interface RecyclingCenter extends Omit<LocalBusiness, "@type"> {
+  "@type": "RecyclingCenter";
+}
 
 /**
  *
@@ -10024,7 +11051,9 @@ export interface RecyclingCenter extends LocalBusiness {}
  * The act of registering to be a user of a service, product or web page.\n\nRelated actions:\n\n* [[JoinAction]]: Unlike JoinAction, RegisterAction implies you are registering to be a user of a service, *not* a group/team of people.\n* [FollowAction]]: Unlike FollowAction, RegisterAction doesn't imply that the agent is expecting to poll for updates from the object.\n* [[SubscribeAction]]: Unlike SubscribeAction, RegisterAction doesn't imply that the agent is expecting updates from the object.
  *
  **/
-export interface RegisterAction extends InteractAction {}
+export interface RegisterAction extends Omit<InteractAction, "@type"> {
+  "@type": "RegisterAction";
+}
 
 /**
  *
@@ -10034,7 +11063,9 @@ export interface RegisterAction extends InteractAction {}
  * The act of rejecting to/adopting an object.\n\nRelated actions:\n\n* [[AcceptAction]]: The antonym of RejectAction.
  *
  **/
-export interface RejectAction extends AllocateAction {}
+export interface RejectAction extends Omit<AllocateAction, "@type"> {
+  "@type": "RejectAction";
+}
 
 /**
  *
@@ -10044,7 +11075,8 @@ export interface RejectAction extends AllocateAction {}
  * The act of giving money in return for temporary use, but not ownership, of an object such as a vehicle or property. For example, an agent rents a property from a landlord in exchange for a periodic payment.
  *
  **/
-export interface RentAction extends TradeAction {
+export interface RentAction extends Omit<TradeAction, "@type"> {
+  "@type": "RentAction";
   landlord?: Person | Organization;
   realEstateAgent?: RealEstateAgent;
 }
@@ -10057,7 +11089,8 @@ export interface RentAction extends TradeAction {
  * A reservation for a rental car.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.
  *
  **/
-export interface RentalCarReservation extends Reservation {
+export interface RentalCarReservation extends Omit<Reservation, "@type"> {
+  "@type": "RentalCarReservation";
   dropoffLocation?: Place;
   dropoffTime?: DateTime;
   pickupLocation?: Place;
@@ -10077,7 +11110,8 @@ export interface RentalCarReservation extends Reservation {
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO
  *
  **/
-export interface RepaymentSpecification extends StructuredValue {
+export interface RepaymentSpecification extends Omit<StructuredValue, "@type"> {
+  "@type": "RepaymentSpecification";
   downPayment?: Number | MonetaryAmount;
   earlyPrepaymentPenalty?: MonetaryAmount;
   loanPaymentAmount?: MonetaryAmount;
@@ -10093,7 +11127,8 @@ export interface RepaymentSpecification extends StructuredValue {
  * The act of editing a recipient by replacing an old object with a new object.
  *
  **/
-export interface ReplaceAction extends UpdateAction {
+export interface ReplaceAction extends Omit<UpdateAction, "@type"> {
+  "@type": "ReplaceAction";
   replacee?: Thing;
   replacer?: Thing;
 }
@@ -10106,7 +11141,8 @@ export interface ReplaceAction extends UpdateAction {
  * The act of responding to a question/message asked/sent by the object. Related to [[AskAction]]\n\nRelated actions:\n\n* [[AskAction]]: Appears generally as an origin of a ReplyAction.
  *
  **/
-export interface ReplyAction extends CommunicateAction {
+export interface ReplyAction extends Omit<CommunicateAction, "@type"> {
+  "@type": "ReplyAction";
   resultComment?: Comment;
 }
 
@@ -10118,7 +11154,8 @@ export interface ReplyAction extends CommunicateAction {
  * A Report generated by governmental or non-governmental organization.
  *
  **/
-export interface Report extends Article {
+export interface Report extends Omit<Article, "@type"> {
+  "@type": "Report";
   reportNumber?: Text;
 }
 
@@ -10143,7 +11180,9 @@ A [[ReportageNewsArticle]] which goes deeper into analysis can also be marked wi
 * @see @link https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP
 *
 **/
-export interface ReportageNewsArticle extends NewsArticle {}
+export interface ReportageNewsArticle extends Omit<NewsArticle, "@type"> {
+  "@type": "ReportageNewsArticle";
+}
 
 /**
  *
@@ -10155,7 +11194,9 @@ export interface ReportageNewsArticle extends NewsArticle {}
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface ReportedDoseSchedule extends DoseSchedule {}
+export interface ReportedDoseSchedule extends Omit<DoseSchedule, "@type"> {
+  "@type": "ReportedDoseSchedule";
+}
 
 /**
  *
@@ -10165,7 +11206,9 @@ export interface ReportedDoseSchedule extends DoseSchedule {}
  * Researchers.
  *
  **/
-export interface Researcher extends Audience {}
+export interface Researcher extends Omit<Audience, "@type"> {
+  "@type": "Researcher";
+}
 
 /**
  *
@@ -10180,7 +11223,9 @@ export interface Researcher extends Audience {}
  * @see @link https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FundInfoCollab
  *
  **/
-export interface ResearchProject extends Project {}
+export interface ResearchProject extends Omit<Project, "@type"> {
+  "@type": "ResearchProject";
+}
 
 /**
  *
@@ -10190,7 +11235,8 @@ export interface ResearchProject extends Project {}
  * Describes a reservation for travel, dining or an event. Some reservations require tickets. \n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, restaurant reservations, flights, or rental cars, use [[Offer]].
  *
  **/
-export interface Reservation extends Intangible {
+export interface Reservation extends Omit<Intangible, "@type"> {
+  "@type": "Reservation";
   bookingAgent?: Person | Organization;
   bookingTime?: DateTime;
   broker?: Person | Organization;
@@ -10214,7 +11260,8 @@ export interface Reservation extends Intangible {
  * A group of multiple reservations with common values for all sub-reservations.
  *
  **/
-export interface ReservationPackage extends Reservation {
+export interface ReservationPackage extends Omit<Reservation, "@type"> {
+  "@type": "ReservationPackage";
   subReservation?: Reservation;
 }
 
@@ -10226,7 +11273,9 @@ export interface ReservationPackage extends Reservation {
  * Reserving a concrete object.\n\nRelated actions:\n\n* [[ScheduleAction]]: Unlike ScheduleAction, ReserveAction reserves concrete objects (e.g. a table, a hotel) towards a time slot / spatial allocation.
  *
  **/
-export interface ReserveAction extends PlanAction {}
+export interface ReserveAction extends Omit<PlanAction, "@type"> {
+  "@type": "ReserveAction";
+}
 
 /**
  *
@@ -10236,7 +11285,9 @@ export interface ReserveAction extends PlanAction {}
  * A reservoir of water, typically an artificially created lake, like the Lake Kariba reservoir.
  *
  **/
-export interface Reservoir extends BodyOfWater {}
+export interface Reservoir extends Omit<BodyOfWater, "@type"> {
+  "@type": "Reservoir";
+}
 
 /**
  *
@@ -10246,7 +11297,8 @@ export interface Reservoir extends BodyOfWater {}
  * The place where a person lives.
  *
  **/
-export interface Residence extends Place {
+export interface Residence extends Omit<Place, "@type"> {
+  "@type": "Residence";
   accommodationFloorPlan?: FloorPlan;
 }
 
@@ -10263,7 +11315,9 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
 * @see @link https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology
 *
 **/
-export interface Resort extends LodgingBusiness {}
+export interface Resort extends Omit<LodgingBusiness, "@type"> {
+  "@type": "Resort";
+}
 
 /**
  *
@@ -10273,7 +11327,9 @@ export interface Resort extends LodgingBusiness {}
  * A restaurant.
  *
  **/
-export interface Restaurant extends FoodEstablishment {}
+export interface Restaurant extends Omit<FoodEstablishment, "@type"> {
+  "@type": "Restaurant";
+}
 
 /**
  *
@@ -10283,7 +11339,9 @@ export interface Restaurant extends FoodEstablishment {}
  * The act of resuming a device or application which was formerly paused (e.g. resume music playback or resume a timer).
  *
  **/
-export interface ResumeAction extends ControlAction {}
+export interface ResumeAction extends Omit<ControlAction, "@type"> {
+  "@type": "ResumeAction";
+}
 
 /**
  *
@@ -10293,7 +11351,8 @@ export interface ResumeAction extends ControlAction {}
  * The act of returning to the origin that which was previously received (concrete objects) or taken (ownership).
  *
  **/
-export interface ReturnAction extends TransferAction {
+export interface ReturnAction extends Omit<TransferAction, "@type"> {
+  "@type": "ReturnAction";
   recipient?: Organization | ContactPoint | Person | Audience;
 }
 
@@ -10305,7 +11364,8 @@ export interface ReturnAction extends TransferAction {
  * A review of an item - for example, of a restaurant, movie, or store.
  *
  **/
-export interface Review extends CreativeWork {
+export interface Review extends Omit<CreativeWork, "@type"> {
+  "@type": "Review";
   itemReviewed?: Thing;
   reviewAspect?: Text;
   reviewBody?: Text;
@@ -10320,7 +11380,8 @@ export interface Review extends CreativeWork {
  * The act of producing a balanced opinion about the object for an audience. An agent reviews an object with participants resulting in a review.
  *
  **/
-export interface ReviewAction extends AssessAction {
+export interface ReviewAction extends Omit<AssessAction, "@type"> {
+  "@type": "ReviewAction";
   resultReview?: Review;
 }
 
@@ -10337,7 +11398,11 @@ export interface ReviewAction extends AssessAction {
  * @see @link https://github.com/schemaorg/schemaorg/issues/1525
  *
  **/
-export interface ReviewNewsArticle extends NewsArticle, CriticReview {}
+export interface ReviewNewsArticle
+  extends Omit<NewsArticle, "@type">,
+    Omit<CriticReview, "@type"> {
+  "@type": "ReviewNewsArticle";
+}
 
 /**
  *
@@ -10347,7 +11412,9 @@ export interface ReviewNewsArticle extends NewsArticle, CriticReview {}
  * A river (for example, the broad majestic Shannon).
  *
  **/
-export interface RiverBodyOfWater extends BodyOfWater {}
+export interface RiverBodyOfWater extends Omit<BodyOfWater, "@type"> {
+  "@type": "RiverBodyOfWater";
+}
 
 /**
  *
@@ -10357,7 +11424,8 @@ export interface RiverBodyOfWater extends BodyOfWater {}
  * Represents additional information about a relationship or property. For example a Role can be used to say that a 'member' role linking some SportsTeam to a player occurred during a particular time period. Or that a Person's 'actor' role in a Movie was for some particular characterName. Such properties can be attached to a Role entity, which is then associated with the main entities using ordinary properties like 'member' or 'actor'.\n\nSee also [blog post](http://blog.schema.org/2014/06/introducing-role.html).
  *
  **/
-export interface Role extends Intangible {
+export interface Role extends Omit<Intangible, "@type"> {
+  "@type": "Role";
   endDate?: Date | DateTime;
   namedPosition?: URL | Text;
   roleName?: URL | Text;
@@ -10372,7 +11440,10 @@ export interface Role extends Intangible {
  * A roofing contractor.
  *
  **/
-export interface RoofingContractor extends HomeAndConstructionBusiness {}
+export interface RoofingContractor
+  extends Omit<HomeAndConstructionBusiness, "@type"> {
+  "@type": "RoofingContractor";
+}
 
 /**
 *
@@ -10387,7 +11458,9 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
 * @see @link https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology
 *
 **/
-export interface Room extends Accommodation {}
+export interface Room extends Omit<Accommodation, "@type"> {
+  "@type": "Room";
+}
 
 /**
  *
@@ -10397,7 +11470,8 @@ export interface Room extends Accommodation {}
  * The act of notifying an event organizer as to whether you expect to attend the event.
  *
  **/
-export interface RsvpAction extends InformAction {
+export interface RsvpAction extends Omit<InformAction, "@type"> {
+  "@type": "RsvpAction";
   additionalNumberOfGuests?: Number;
   comment?: Comment;
   rsvpResponse?: RsvpResponseType;
@@ -10411,7 +11485,9 @@ export interface RsvpAction extends InformAction {
  * A place offering space for "Recreational Vehicles", Caravans, mobile homes and the like.
  *
  **/
-export interface RVPark extends CivicStructure {}
+export interface RVPark extends Omit<CivicStructure, "@type"> {
+  "@type": "RVPark";
+}
 
 /**
  *
@@ -10421,7 +11497,9 @@ export interface RVPark extends CivicStructure {}
  * Event type: Sales event.
  *
  **/
-export interface SaleEvent extends Event {}
+export interface SaleEvent extends Omit<Event, "@type"> {
+  "@type": "SaleEvent";
+}
 
 /**
  *
@@ -10436,7 +11514,9 @@ export interface SaleEvent extends Event {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/1525
  *
  **/
-export interface SatiricalArticle extends Article {}
+export interface SatiricalArticle extends Omit<Article, "@type"> {
+  "@type": "SatiricalArticle";
+}
 
 /**
 *
@@ -10452,7 +11532,8 @@ export interface SatiricalArticle extends Article {}
 * @see @link https://github.com/schemaorg/schemaorg/issues/1457
 *
 **/
-export interface Schedule extends Intangible {
+export interface Schedule extends Omit<Intangible, "@type"> {
+  "@type": "Schedule";
   byDay?: DayOfWeek | Text;
   byMonth?: Integer;
   byMonthDay?: Integer;
@@ -10476,7 +11557,9 @@ export interface Schedule extends Intangible {
  * Scheduling future actions, events, or tasks.\n\nRelated actions:\n\n* [[ReserveAction]]: Unlike ReserveAction, ScheduleAction allocates future actions (e.g. an event, a task, etc) towards a time slot / spatial allocation.
  *
  **/
-export interface ScheduleAction extends PlanAction {}
+export interface ScheduleAction extends Omit<PlanAction, "@type"> {
+  "@type": "ScheduleAction";
+}
 
 /**
  *
@@ -10486,7 +11569,9 @@ export interface ScheduleAction extends PlanAction {}
  * A scholarly article.
  *
  **/
-export interface ScholarlyArticle extends Article {}
+export interface ScholarlyArticle extends Omit<Article, "@type"> {
+  "@type": "ScholarlyArticle";
+}
 
 /**
  *
@@ -10496,7 +11581,9 @@ export interface ScholarlyArticle extends Article {}
  * A school.
  *
  **/
-export interface School extends EducationalOrganization {}
+export interface School extends Omit<EducationalOrganization, "@type"> {
+  "@type": "School";
+}
 
 /**
  *
@@ -10510,7 +11597,9 @@ export interface School extends EducationalOrganization {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/2500
  *
  **/
-export interface SchoolDistrict extends AdministrativeArea {}
+export interface SchoolDistrict extends Omit<AdministrativeArea, "@type"> {
+  "@type": "SchoolDistrict";
+}
 
 /**
  *
@@ -10520,7 +11609,8 @@ export interface SchoolDistrict extends AdministrativeArea {}
  * A screening of a movie or other video.
  *
  **/
-export interface ScreeningEvent extends Event {
+export interface ScreeningEvent extends Omit<Event, "@type"> {
+  "@type": "ScreeningEvent";
   subtitleLanguage?: Text | Language;
   videoFormat?: Text;
   workPresented?: Movie;
@@ -10534,7 +11624,9 @@ export interface ScreeningEvent extends Event {
  * A piece of sculpture.
  *
  **/
-export interface Sculpture extends CreativeWork {}
+export interface Sculpture extends Omit<CreativeWork, "@type"> {
+  "@type": "Sculpture";
+}
 
 /**
  *
@@ -10544,7 +11636,9 @@ export interface Sculpture extends CreativeWork {}
  * A sea (for example, the Caspian sea).
  *
  **/
-export interface SeaBodyOfWater extends BodyOfWater {}
+export interface SeaBodyOfWater extends Omit<BodyOfWater, "@type"> {
+  "@type": "SeaBodyOfWater";
+}
 
 /**
  *
@@ -10554,7 +11648,8 @@ export interface SeaBodyOfWater extends BodyOfWater {}
  * The act of searching for an object.\n\nRelated actions:\n\n* [[FindAction]]: SearchAction generally leads to a FindAction, but not necessarily.
  *
  **/
-export interface SearchAction extends Action {
+export interface SearchAction extends Omit<Action, "@type"> {
+  "@type": "SearchAction";
   query?: Text;
 }
 
@@ -10566,7 +11661,9 @@ export interface SearchAction extends Action {
  * Web page type: Search results page.
  *
  **/
-export interface SearchResultsPage extends WebPage {}
+export interface SearchResultsPage extends Omit<WebPage, "@type"> {
+  "@type": "SearchResultsPage";
+}
 
 /**
  *
@@ -10576,7 +11673,9 @@ export interface SearchResultsPage extends WebPage {}
  * A media season e.g. tv, radio, video game etc.
  *
  **/
-export interface Season extends CreativeWork {}
+export interface Season extends Omit<CreativeWork, "@type"> {
+  "@type": "Season";
+}
 
 /**
  *
@@ -10586,7 +11685,8 @@ export interface Season extends CreativeWork {}
  * Used to describe a seat, such as a reserved seat in an event reservation.
  *
  **/
-export interface Seat extends Intangible {
+export interface Seat extends Omit<Intangible, "@type"> {
+  "@type": "Seat";
   seatingType?: QualitativeValue | Text;
   seatNumber?: Text;
   seatRow?: Text;
@@ -10605,7 +11705,9 @@ export interface Seat extends Intangible {
  * @see @link https://github.com/schemaorg/schemaorg/issues/2722
  *
  **/
-export interface SeekToAction extends Action {}
+export interface SeekToAction extends Omit<Action, "@type"> {
+  "@type": "SeekToAction";
+}
 
 /**
  *
@@ -10615,7 +11717,9 @@ export interface SeekToAction extends Action {}
  * A self-storage facility.
  *
  **/
-export interface SelfStorage extends LocalBusiness {}
+export interface SelfStorage extends Omit<LocalBusiness, "@type"> {
+  "@type": "SelfStorage";
+}
 
 /**
  *
@@ -10625,7 +11729,8 @@ export interface SelfStorage extends LocalBusiness {}
  * The act of taking money from a buyer in exchange for goods or services rendered. An agent sells an object, product, or service to a buyer for a price. Reciprocal of BuyAction.
  *
  **/
-export interface SellAction extends TradeAction {
+export interface SellAction extends Omit<TradeAction, "@type"> {
+  "@type": "SellAction";
   buyer?: Person;
   warrantyPromise?: WarrantyPromise;
 }
@@ -10638,7 +11743,8 @@ export interface SellAction extends TradeAction {
  * The act of physically/electronically dispatching an object for transfer from an origin to a destination.Related actions:\n\n* [[ReceiveAction]]: The reciprocal of SendAction.\n* [[GiveAction]]: Unlike GiveAction, SendAction does not imply the transfer of ownership (e.g. I can send you my laptop, but I'm not necessarily giving it to you).
  *
  **/
-export interface SendAction extends TransferAction {
+export interface SendAction extends Omit<TransferAction, "@type"> {
+  "@type": "SendAction";
   deliveryMethod?: DeliveryMethod;
   recipient?: Organization | ContactPoint | Person | Audience;
 }
@@ -10651,7 +11757,9 @@ export interface SendAction extends TransferAction {
  * A Series in schema.org is a group of related items, typically but not necessarily of the same kind. See also [[CreativeWorkSeries]], [[EventSeries]].
  *
  **/
-export interface Series extends Intangible {}
+export interface Series extends Omit<Intangible, "@type"> {
+  "@type": "Series";
+}
 
 /**
  *
@@ -10661,7 +11769,8 @@ export interface Series extends Intangible {}
  * A service provided by an organization, e.g. delivery service, print services, etc.
  *
  **/
-export interface Service extends Intangible {
+export interface Service extends Omit<Intangible, "@type"> {
+  "@type": "Service";
   aggregateRating?: AggregateRating;
   areaServed?: Text | Place | AdministrativeArea | GeoShape;
   audience?: Audience;
@@ -10696,7 +11805,8 @@ export interface Service extends Intangible {
  * A means for accessing a service, e.g. a government office location, web site, or phone number.
  *
  **/
-export interface ServiceChannel extends Intangible {
+export interface ServiceChannel extends Omit<Intangible, "@type"> {
+  "@type": "ServiceChannel";
   availableLanguage?: Language | Text;
   processingTime?: Duration;
   providesService?: Service;
@@ -10715,7 +11825,9 @@ export interface ServiceChannel extends Intangible {
  * The act of distributing content to people for their amusement or edification.
  *
  **/
-export interface ShareAction extends CommunicateAction {}
+export interface ShareAction extends Omit<CommunicateAction, "@type"> {
+  "@type": "ShareAction";
+}
 
 /**
  *
@@ -10729,7 +11841,9 @@ export interface ShareAction extends CommunicateAction {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/1448
  *
  **/
-export interface SheetMusic extends CreativeWork {}
+export interface SheetMusic extends Omit<CreativeWork, "@type"> {
+  "@type": "SheetMusic";
+}
 
 /**
  *
@@ -10743,7 +11857,8 @@ export interface SheetMusic extends CreativeWork {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/2506
  *
  **/
-export interface ShippingDeliveryTime extends StructuredValue {
+export interface ShippingDeliveryTime extends Omit<StructuredValue, "@type"> {
+  "@type": "ShippingDeliveryTime";
   businessDays?: OpeningHoursSpecification;
   cutoffTime?: Time;
   handlingTime?: QuantitativeValue;
@@ -10762,7 +11877,8 @@ export interface ShippingDeliveryTime extends StructuredValue {
  * @see @link https://github.com/schemaorg/schemaorg/issues/2506
  *
  **/
-export interface ShippingRateSettings extends StructuredValue {
+export interface ShippingRateSettings extends Omit<StructuredValue, "@type"> {
+  "@type": "ShippingRateSettings";
   doesNotShip?: Boolean;
   freeShippingThreshold?: DeliveryChargeSpecification | MonetaryAmount;
   isUnlabelledFallback?: Boolean;
@@ -10779,7 +11895,9 @@ export interface ShippingRateSettings extends StructuredValue {
  * A shoe store.
  *
  **/
-export interface ShoeStore extends Store {}
+export interface ShoeStore extends Omit<Store, "@type"> {
+  "@type": "ShoeStore";
+}
 
 /**
  *
@@ -10789,7 +11907,9 @@ export interface ShoeStore extends Store {}
  * A shopping center or mall.
  *
  **/
-export interface ShoppingCenter extends LocalBusiness {}
+export interface ShoppingCenter extends Omit<LocalBusiness, "@type"> {
+  "@type": "ShoppingCenter";
+}
 
 /**
  *
@@ -10803,7 +11923,9 @@ export interface ShoppingCenter extends LocalBusiness {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/1976
  *
  **/
-export interface ShortStory extends CreativeWork {}
+export interface ShortStory extends Omit<CreativeWork, "@type"> {
+  "@type": "ShortStory";
+}
 
 /**
  *
@@ -10813,7 +11935,8 @@ export interface ShortStory extends CreativeWork {}
  * Residence type: Single-family home.
  *
  **/
-export interface SingleFamilyResidence extends House {
+export interface SingleFamilyResidence extends Omit<House, "@type"> {
+  "@type": "SingleFamilyResidence";
   numberOfRooms?: Number | QuantitativeValue;
   occupancy?: QuantitativeValue;
 }
@@ -10826,7 +11949,9 @@ export interface SingleFamilyResidence extends House {
  * A navigation element of the page.
  *
  **/
-export interface SiteNavigationElement extends WebPageElement {}
+export interface SiteNavigationElement extends Omit<WebPageElement, "@type"> {
+  "@type": "SiteNavigationElement";
+}
 
 /**
  *
@@ -10840,7 +11965,9 @@ export interface SiteNavigationElement extends WebPageElement {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/2811
  *
  **/
-export interface SizeGroupEnumeration extends Enumeration {}
+export interface SizeGroupEnumeration extends Omit<Enumeration, "@type"> {
+  "@type": "SizeGroupEnumeration";
+}
 
 /**
  *
@@ -10854,7 +11981,8 @@ export interface SizeGroupEnumeration extends Enumeration {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/2811
  *
  **/
-export interface SizeSpecification extends QualitativeValue {
+export interface SizeSpecification extends Omit<QualitativeValue, "@type"> {
+  "@type": "SizeSpecification";
   hasMeasurement?: QuantitativeValue;
   sizeGroup?: SizeGroupEnumeration | Text;
   sizeSystem?: SizeSystemEnumeration | Text;
@@ -10871,7 +11999,11 @@ export interface SizeSpecification extends QualitativeValue {
  * A ski resort.
  *
  **/
-export interface SkiResort extends Resort, SportsActivityLocation {}
+export interface SkiResort
+  extends Omit<Resort, "@type">,
+    Omit<SportsActivityLocation, "@type"> {
+  "@type": "SkiResort";
+}
 
 /**
  *
@@ -10881,7 +12013,9 @@ export interface SkiResort extends Resort, SportsActivityLocation {}
  * Event type: Social event.
  *
  **/
-export interface SocialEvent extends Event {}
+export interface SocialEvent extends Omit<Event, "@type"> {
+  "@type": "SocialEvent";
+}
 
 /**
  *
@@ -10891,7 +12025,8 @@ export interface SocialEvent extends Event {}
  * A post to a social media platform, including blog posts, tweets, Facebook posts, etc.
  *
  **/
-export interface SocialMediaPosting extends Article {
+export interface SocialMediaPosting extends Omit<Article, "@type"> {
+  "@type": "SocialMediaPosting";
   sharedContent?: CreativeWork;
 }
 
@@ -10903,7 +12038,8 @@ export interface SocialMediaPosting extends Article {
  * A software application.
  *
  **/
-export interface SoftwareApplication extends CreativeWork {
+export interface SoftwareApplication extends Omit<CreativeWork, "@type"> {
+  "@type": "SoftwareApplication";
   applicationCategory?: Text | URL;
   applicationSubCategory?: Text | URL;
   applicationSuite?: Text;
@@ -10938,7 +12074,8 @@ export interface SoftwareApplication extends CreativeWork {
  * Computer programming source code. Example: Full (compile ready) solutions, code snippet samples, scripts, templates.
  *
  **/
-export interface SoftwareSourceCode extends CreativeWork {
+export interface SoftwareSourceCode extends Omit<CreativeWork, "@type"> {
+  "@type": "SoftwareSourceCode";
   codeRepository?: URL;
   codeSampleType?: Text;
   programmingLanguage?: Text | ComputerLanguage;
@@ -10960,7 +12097,8 @@ export interface SoftwareSourceCode extends CreativeWork {
  * @see @link https://github.com/schemaorg/schemaorg/issues/2740
  *
  **/
-export interface SolveMathAction extends Action {
+export interface SolveMathAction extends Omit<Action, "@type"> {
+  "@type": "SolveMathAction";
   eduQuestionType?: Text;
 }
 
@@ -10974,7 +12112,8 @@ export interface SolveMathAction extends Action {
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass
  *
  **/
-export interface SomeProducts extends Product {
+export interface SomeProducts extends Omit<Product, "@type"> {
+  "@type": "SomeProducts";
   inventoryLevel?: QuantitativeValue;
 }
 
@@ -10988,7 +12127,8 @@ export interface SomeProducts extends Product {
  * @see @link https://github.com/schemaorg/schemaorg/issues/1389
  *
  **/
-export interface SpeakableSpecification extends Intangible {
+export interface SpeakableSpecification extends Omit<Intangible, "@type"> {
+  "@type": "SpeakableSpecification";
   cssSelector?: CssSelectorType;
   xpath?: XPathType;
 }
@@ -11040,7 +12180,8 @@ media type information e.g. "application/rss+xml" or "application/atom+xml".
 * @see @link https://github.com/schemaorg/schemaorg/issues/2490
 *
 **/
-export interface SpecialAnnouncement extends CreativeWork {
+export interface SpecialAnnouncement extends Omit<CreativeWork, "@type"> {
+  "@type": "SpecialAnnouncement";
   announcementLocation?: CivicStructure | LocalBusiness;
   category?: PhysicalActivityCategory | Text | URL | Thing;
   datePosted?: Date | DateTime;
@@ -11064,7 +12205,9 @@ export interface SpecialAnnouncement extends CreativeWork {
  * Any branch of a field in which people typically develop specific expertise, usually after significant study, time, and effort.
  *
  **/
-export interface Specialty extends Enumeration {}
+export interface Specialty extends Omit<Enumeration, "@type"> {
+  "@type": "Specialty";
+}
 
 /**
  *
@@ -11074,7 +12217,9 @@ export interface Specialty extends Enumeration {}
  * A sporting goods store.
  *
  **/
-export interface SportingGoodsStore extends Store {}
+export interface SportingGoodsStore extends Omit<Store, "@type"> {
+  "@type": "SportingGoodsStore";
+}
 
 /**
  *
@@ -11084,7 +12229,9 @@ export interface SportingGoodsStore extends Store {}
  * A sports location, such as a playing field.
  *
  **/
-export interface SportsActivityLocation extends LocalBusiness {}
+export interface SportsActivityLocation extends Omit<LocalBusiness, "@type"> {
+  "@type": "SportsActivityLocation";
+}
 
 /**
  *
@@ -11094,7 +12241,9 @@ export interface SportsActivityLocation extends LocalBusiness {}
  * A sports club.
  *
  **/
-export interface SportsClub extends SportsActivityLocation {}
+export interface SportsClub extends Omit<SportsActivityLocation, "@type"> {
+  "@type": "SportsClub";
+}
 
 /**
  *
@@ -11104,7 +12253,8 @@ export interface SportsClub extends SportsActivityLocation {}
  * Event type: Sports event.
  *
  **/
-export interface SportsEvent extends Event {
+export interface SportsEvent extends Omit<Event, "@type"> {
+  "@type": "SportsEvent";
   awayTeam?: Person | SportsTeam;
   competitor?: Person | SportsTeam;
   homeTeam?: SportsTeam | Person;
@@ -11119,7 +12269,8 @@ export interface SportsEvent extends Event {
  * Represents the collection of all sports organizations, including sports teams, governing bodies, and sports associations.
  *
  **/
-export interface SportsOrganization extends Organization {
+export interface SportsOrganization extends Omit<Organization, "@type"> {
+  "@type": "SportsOrganization";
   sport?: Text | URL;
 }
 
@@ -11131,7 +12282,8 @@ export interface SportsOrganization extends Organization {
  * Organization: Sports team.
  *
  **/
-export interface SportsTeam extends SportsOrganization {
+export interface SportsTeam extends Omit<SportsOrganization, "@type"> {
+  "@type": "SportsTeam";
   athlete?: Person;
   coach?: Person;
   gender?: GenderType | Text;
@@ -11145,7 +12297,10 @@ export interface SportsTeam extends SportsOrganization {
  * A spreadsheet file.
  *
  **/
-export interface SpreadsheetDigitalDocument extends DigitalDocument {}
+export interface SpreadsheetDigitalDocument
+  extends Omit<DigitalDocument, "@type"> {
+  "@type": "SpreadsheetDigitalDocument";
+}
 
 /**
  *
@@ -11156,8 +12311,10 @@ export interface SpreadsheetDigitalDocument extends DigitalDocument {}
  *
  **/
 export interface StadiumOrArena
-  extends CivicStructure,
-    SportsActivityLocation {}
+  extends Omit<CivicStructure, "@type">,
+    Omit<SportsActivityLocation, "@type"> {
+  "@type": "StadiumOrArena";
+}
 
 /**
  *
@@ -11167,7 +12324,9 @@ export interface StadiumOrArena
  * A state or province of a country.
  *
  **/
-export interface State extends AdministrativeArea {}
+export interface State extends Omit<AdministrativeArea, "@type"> {
+  "@type": "State";
+}
 
 /**
 *
@@ -11184,7 +12343,8 @@ population, and does not imply that the population consists of people. For examp
 * @see @link https://github.com/schemaorg/schemaorg/issues/2291
 *
 **/
-export interface StatisticalPopulation extends Intangible {
+export interface StatisticalPopulation extends Omit<Intangible, "@type"> {
+  "@type": "StatisticalPopulation";
   constrainingProperty?: Integer;
   numConstraints?: Integer;
   populationType?: Class;
@@ -11200,7 +12360,9 @@ export interface StatisticalPopulation extends Intangible {
  * @see @link https://github.com/schemaorg/schemaorg/issues/2604
  *
  **/
-export interface StatusEnumeration extends Enumeration {}
+export interface StatusEnumeration extends Omit<Enumeration, "@type"> {
+  "@type": "StatusEnumeration";
+}
 
 /**
  *
@@ -11210,7 +12372,9 @@ export interface StatusEnumeration extends Enumeration {}
  * A retail good store.
  *
  **/
-export interface Store extends LocalBusiness {}
+export interface Store extends Omit<LocalBusiness, "@type"> {
+  "@type": "Store";
+}
 
 /**
  *
@@ -11220,7 +12384,9 @@ export interface Store extends LocalBusiness {}
  * Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.
  *
  **/
-export interface StructuredValue extends Intangible {}
+export interface StructuredValue extends Omit<Intangible, "@type"> {
+  "@type": "StructuredValue";
+}
 
 /**
  *
@@ -11230,7 +12396,9 @@ export interface StructuredValue extends Intangible {}
  * The act of forming a personal connection with someone/something (object) unidirectionally/asymmetrically to get updates pushed to.\n\nRelated actions:\n\n* [[FollowAction]]: Unlike FollowAction, SubscribeAction implies that the subscriber acts as a passive agent being constantly/actively pushed for updates.\n* [[RegisterAction]]: Unlike RegisterAction, SubscribeAction implies that the agent is interested in continuing receiving updates from the object.\n* [[JoinAction]]: Unlike JoinAction, SubscribeAction implies that the agent is interested in continuing receiving updates from the object.
  *
  **/
-export interface SubscribeAction extends InteractAction {}
+export interface SubscribeAction extends Omit<InteractAction, "@type"> {
+  "@type": "SubscribeAction";
+}
 
 /**
  *
@@ -11242,7 +12410,8 @@ export interface SubscribeAction extends InteractAction {}
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface Substance extends MedicalEntity {
+export interface Substance extends Omit<MedicalEntity, "@type"> {
+  "@type": "Substance";
   activeIngredient?: Text;
   maximumIntake?: MaximumDoseSchedule;
 }
@@ -11255,7 +12424,9 @@ export interface Substance extends MedicalEntity {
  * A subway station.
  *
  **/
-export interface SubwayStation extends CivicStructure {}
+export interface SubwayStation extends Omit<CivicStructure, "@type"> {
+  "@type": "SubwayStation";
+}
 
 /**
 *
@@ -11270,7 +12441,8 @@ See also the <a href="/docs/hotels.html">dedicated document on the use of schema
 * @see @link https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology
 *
 **/
-export interface Suite extends Accommodation {
+export interface Suite extends Omit<Accommodation, "@type"> {
+  "@type": "Suite";
   bed?: BedDetails | Text | BedType;
   numberOfRooms?: Number | QuantitativeValue;
   occupancy?: QuantitativeValue;
@@ -11286,7 +12458,8 @@ export interface Suite extends Accommodation {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface SuperficialAnatomy extends MedicalEntity {
+export interface SuperficialAnatomy extends Omit<MedicalEntity, "@type"> {
+  "@type": "SuperficialAnatomy";
   associatedPathophysiology?: Text;
   relatedAnatomy?: AnatomicalSystem | AnatomicalStructure;
   relatedCondition?: MedicalCondition;
@@ -11304,7 +12477,9 @@ export interface SuperficialAnatomy extends MedicalEntity {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface SurgicalProcedure extends MedicalProcedure {}
+export interface SurgicalProcedure extends Omit<MedicalProcedure, "@type"> {
+  "@type": "SurgicalProcedure";
+}
 
 /**
  *
@@ -11314,7 +12489,9 @@ export interface SurgicalProcedure extends MedicalProcedure {}
  * The act of momentarily pausing a device or application (e.g. pause music playback or pause a timer).
  *
  **/
-export interface SuspendAction extends ControlAction {}
+export interface SuspendAction extends Omit<ControlAction, "@type"> {
+  "@type": "SuspendAction";
+}
 
 /**
  *
@@ -11324,7 +12501,9 @@ export interface SuspendAction extends ControlAction {}
  * A synagogue.
  *
  **/
-export interface Synagogue extends PlaceOfWorship {}
+export interface Synagogue extends Omit<PlaceOfWorship, "@type"> {
+  "@type": "Synagogue";
+}
 
 /**
  *
@@ -11334,7 +12513,9 @@ export interface Synagogue extends PlaceOfWorship {}
  * A table on a Web page.
  *
  **/
-export interface Table extends WebPageElement {}
+export interface Table extends Omit<WebPageElement, "@type"> {
+  "@type": "Table";
+}
 
 /**
  *
@@ -11344,7 +12525,9 @@ export interface Table extends WebPageElement {}
  * The act of gaining ownership of an object from an origin. Reciprocal of GiveAction.\n\nRelated actions:\n\n* [[GiveAction]]: The reciprocal of TakeAction.\n* [[ReceiveAction]]: Unlike ReceiveAction, TakeAction implies that ownership has been transfered.
  *
  **/
-export interface TakeAction extends TransferAction {}
+export interface TakeAction extends Omit<TransferAction, "@type"> {
+  "@type": "TakeAction";
+}
 
 /**
  *
@@ -11354,7 +12537,9 @@ export interface TakeAction extends TransferAction {}
  * A tattoo parlor.
  *
  **/
-export interface TattooParlor extends HealthAndBeautyBusiness {}
+export interface TattooParlor extends Omit<HealthAndBeautyBusiness, "@type"> {
+  "@type": "TattooParlor";
+}
 
 /**
  *
@@ -11364,7 +12549,9 @@ export interface TattooParlor extends HealthAndBeautyBusiness {}
  * A taxi.
  *
  **/
-export interface Taxi extends Service {}
+export interface Taxi extends Omit<Service, "@type"> {
+  "@type": "Taxi";
+}
 
 /**
  *
@@ -11374,7 +12561,8 @@ export interface Taxi extends Service {}
  * A reservation for a taxi.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use [[Offer]].
  *
  **/
-export interface TaxiReservation extends Reservation {
+export interface TaxiReservation extends Omit<Reservation, "@type"> {
+  "@type": "TaxiReservation";
   partySize?: QuantitativeValue | Integer;
   pickupLocation?: Place;
   pickupTime?: DateTime;
@@ -11388,7 +12576,9 @@ export interface TaxiReservation extends Reservation {
  * A service for a vehicle for hire with a driver for local travel. Fares are usually calculated based on distance traveled.
  *
  **/
-export interface TaxiService extends Service {}
+export interface TaxiService extends Omit<Service, "@type"> {
+  "@type": "TaxiService";
+}
 
 /**
  *
@@ -11398,7 +12588,9 @@ export interface TaxiService extends Service {}
  * A taxi stand.
  *
  **/
-export interface TaxiStand extends CivicStructure {}
+export interface TaxiStand extends Omit<CivicStructure, "@type"> {
+  "@type": "TaxiStand";
+}
 
 /**
  *
@@ -11408,7 +12600,8 @@ export interface TaxiStand extends CivicStructure {}
  * A technical article - Example: How-to (task) topics, step-by-step, procedural troubleshooting, specifications, etc.
  *
  **/
-export interface TechArticle extends Article {
+export interface TechArticle extends Omit<Article, "@type"> {
+  "@type": "TechArticle";
   dependencies?: Text;
   proficiencyLevel?: Text;
 }
@@ -11421,7 +12614,9 @@ export interface TechArticle extends Article {
  * A unique instance of a television BroadcastService on a CableOrSatelliteService lineup.
  *
  **/
-export interface TelevisionChannel extends BroadcastChannel {}
+export interface TelevisionChannel extends Omit<BroadcastChannel, "@type"> {
+  "@type": "TelevisionChannel";
+}
 
 /**
  *
@@ -11431,7 +12626,9 @@ export interface TelevisionChannel extends BroadcastChannel {}
  * A television station.
  *
  **/
-export interface TelevisionStation extends LocalBusiness {}
+export interface TelevisionStation extends Omit<LocalBusiness, "@type"> {
+  "@type": "TelevisionStation";
+}
 
 /**
  *
@@ -11441,7 +12638,9 @@ export interface TelevisionStation extends LocalBusiness {}
  * A tennis complex.
  *
  **/
-export interface TennisComplex extends SportsActivityLocation {}
+export interface TennisComplex extends Omit<SportsActivityLocation, "@type"> {
+  "@type": "TennisComplex";
+}
 
 /**
  *
@@ -11451,7 +12650,9 @@ export interface TennisComplex extends SportsActivityLocation {}
  * A file composed primarily of text.
  *
  **/
-export interface TextDigitalDocument extends DigitalDocument {}
+export interface TextDigitalDocument extends Omit<DigitalDocument, "@type"> {
+  "@type": "TextDigitalDocument";
+}
 
 /**
  *
@@ -11461,7 +12662,9 @@ export interface TextDigitalDocument extends DigitalDocument {}
  * Event type: Theater performance.
  *
  **/
-export interface TheaterEvent extends Event {}
+export interface TheaterEvent extends Omit<Event, "@type"> {
+  "@type": "TheaterEvent";
+}
 
 /**
  *
@@ -11471,7 +12674,9 @@ export interface TheaterEvent extends Event {}
  * A theater group or company, for example, the Royal Shakespeare Company or Druid Theatre.
  *
  **/
-export interface TheaterGroup extends PerformingGroup {}
+export interface TheaterGroup extends Omit<PerformingGroup, "@type"> {
+  "@type": "TheaterGroup";
+}
 
 /**
  *
@@ -11483,7 +12688,8 @@ export interface TheaterGroup extends PerformingGroup {}
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface TherapeuticProcedure extends MedicalProcedure {
+export interface TherapeuticProcedure extends Omit<MedicalProcedure, "@type"> {
+  "@type": "TherapeuticProcedure";
   adverseOutcome?: MedicalEntity;
   doseSchedule?: DoseSchedule;
   drug?: Drug;
@@ -11501,7 +12707,8 @@ export interface TherapeuticProcedure extends MedicalProcedure {
  * @see @link http://www.productontology.org/id/Thesis
  *
  **/
-export interface Thesis extends CreativeWork {
+export interface Thesis extends Omit<CreativeWork, "@type"> {
+  "@type": "Thesis";
   inSupportOf?: Text;
 }
 
@@ -11514,6 +12721,7 @@ export interface Thesis extends CreativeWork {
  *
  **/
 export interface Thing {
+  "@type": "Thing";
   additionalType?: URL;
   alternateName?: Text;
   description?: Text;
@@ -11536,7 +12744,8 @@ export interface Thing {
  * Used to describe a ticket to an event, a flight, a bus ride, etc.
  *
  **/
-export interface Ticket extends Intangible {
+export interface Ticket extends Omit<Intangible, "@type"> {
+  "@type": "Ticket";
   dateIssued?: Date | DateTime;
   issuedBy?: Organization;
   priceCurrency?: Text;
@@ -11555,7 +12764,9 @@ export interface Ticket extends Intangible {
  * The act of reaching a draw in a competitive activity.
  *
  **/
-export interface TieAction extends AchieveAction {}
+export interface TieAction extends Omit<AchieveAction, "@type"> {
+  "@type": "TieAction";
+}
 
 /**
  *
@@ -11565,7 +12776,8 @@ export interface TieAction extends AchieveAction {}
  * The act of giving money voluntarily to a beneficiary in recognition of services rendered.
  *
  **/
-export interface TipAction extends TradeAction {
+export interface TipAction extends Omit<TradeAction, "@type"> {
+  "@type": "TipAction";
   recipient?: Organization | ContactPoint | Person | Audience;
 }
 
@@ -11577,7 +12789,9 @@ export interface TipAction extends TradeAction {
  * A tire shop.
  *
  **/
-export interface TireShop extends Store {}
+export interface TireShop extends Omit<Store, "@type"> {
+  "@type": "TireShop";
+}
 
 /**
  *
@@ -11590,7 +12804,8 @@ export interface TireShop extends Store {}
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#IIT-CNR.it
  *
  **/
-export interface TouristAttraction extends Place {
+export interface TouristAttraction extends Omit<Place, "@type"> {
+  "@type": "TouristAttraction";
   availableLanguage?: Language | Text;
   touristType?: Audience | Text;
 }
@@ -11610,7 +12825,8 @@ export interface TouristAttraction extends Place {
 * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#IIT-CNR.it
 *
 **/
-export interface TouristDestination extends Place {
+export interface TouristDestination extends Omit<Place, "@type"> {
+  "@type": "TouristDestination";
   includesAttraction?: TouristAttraction;
   touristType?: Audience | Text;
 }
@@ -11623,7 +12839,9 @@ export interface TouristDestination extends Place {
  * A tourist information center.
  *
  **/
-export interface TouristInformationCenter extends LocalBusiness {}
+export interface TouristInformationCenter extends Omit<LocalBusiness, "@type"> {
+  "@type": "TouristInformationCenter";
+}
 
 /**
 *
@@ -11640,7 +12858,8 @@ export interface TouristInformationCenter extends LocalBusiness {}
 * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#IIT-CNR.it
 *
 **/
-export interface TouristTrip extends Trip {
+export interface TouristTrip extends Omit<Trip, "@type"> {
+  "@type": "TouristTrip";
   touristType?: Audience | Text;
 }
 
@@ -11652,7 +12871,9 @@ export interface TouristTrip extends Trip {
  * A toy store.
  *
  **/
-export interface ToyStore extends Store {}
+export interface ToyStore extends Omit<Store, "@type"> {
+  "@type": "ToyStore";
+}
 
 /**
  *
@@ -11662,7 +12883,8 @@ export interface ToyStore extends Store {}
  * An agent tracks an object for updates.\n\nRelated actions:\n\n* [[FollowAction]]: Unlike FollowAction, TrackAction refers to the interest on the location of innanimates objects.\n* [[SubscribeAction]]: Unlike SubscribeAction, TrackAction refers to  the interest on the location of innanimate objects.
  *
  **/
-export interface TrackAction extends FindAction {
+export interface TrackAction extends Omit<FindAction, "@type"> {
+  "@type": "TrackAction";
   deliveryMethod?: DeliveryMethod;
 }
 
@@ -11674,7 +12896,8 @@ export interface TrackAction extends FindAction {
  * The act of participating in an exchange of goods and services for monetary compensation. An agent trades an object, product or service with a participant in exchange for a one time or periodic payment.
  *
  **/
-export interface TradeAction extends Action {
+export interface TradeAction extends Omit<Action, "@type"> {
+  "@type": "TradeAction";
   price?: Number | Text;
   priceCurrency?: Text;
   priceSpecification?: PriceSpecification;
@@ -11688,7 +12911,9 @@ export interface TradeAction extends Action {
  * A reservation for train travel.\n\nNote: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use [[Offer]].
  *
  **/
-export interface TrainReservation extends Reservation {}
+export interface TrainReservation extends Omit<Reservation, "@type"> {
+  "@type": "TrainReservation";
+}
 
 /**
  *
@@ -11698,7 +12923,9 @@ export interface TrainReservation extends Reservation {}
  * A train station.
  *
  **/
-export interface TrainStation extends CivicStructure {}
+export interface TrainStation extends Omit<CivicStructure, "@type"> {
+  "@type": "TrainStation";
+}
 
 /**
  *
@@ -11708,7 +12935,8 @@ export interface TrainStation extends CivicStructure {}
  * A trip on a commercial train line.
  *
  **/
-export interface TrainTrip extends Trip {
+export interface TrainTrip extends Omit<Trip, "@type"> {
+  "@type": "TrainTrip";
   arrivalPlatform?: Text;
   arrivalStation?: TrainStation;
   departurePlatform?: Text;
@@ -11725,7 +12953,8 @@ export interface TrainTrip extends Trip {
  * The act of transferring/moving (abstract or concrete) animate or inanimate objects from one place to another.
  *
  **/
-export interface TransferAction extends Action {
+export interface TransferAction extends Omit<Action, "@type"> {
+  "@type": "TransferAction";
   fromLocation?: Place;
   toLocation?: Place;
 }
@@ -11738,7 +12967,8 @@ export interface TransferAction extends Action {
  * The act of traveling from an fromLocation to a destination by a specified mode of transport, optionally with participants.
  *
  **/
-export interface TravelAction extends MoveAction {
+export interface TravelAction extends Omit<MoveAction, "@type"> {
+  "@type": "TravelAction";
   distance?: Distance;
 }
 
@@ -11750,7 +12980,9 @@ export interface TravelAction extends MoveAction {
  * A travel agency.
  *
  **/
-export interface TravelAgency extends LocalBusiness {}
+export interface TravelAgency extends Omit<LocalBusiness, "@type"> {
+  "@type": "TravelAgency";
+}
 
 /**
  *
@@ -11762,7 +12994,9 @@ export interface TravelAgency extends LocalBusiness {}
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface TreatmentIndication extends MedicalIndication {}
+export interface TreatmentIndication extends Omit<MedicalIndication, "@type"> {
+  "@type": "TreatmentIndication";
+}
 
 /**
  *
@@ -11774,7 +13008,8 @@ export interface TreatmentIndication extends MedicalIndication {}
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism
  *
  **/
-export interface Trip extends Intangible {
+export interface Trip extends Omit<Intangible, "@type"> {
+  "@type": "Trip";
   arrivalTime?: Time | DateTime;
   departureTime?: Time | DateTime;
   itinerary?: Place | ItemList<Place>;
@@ -11792,7 +13027,8 @@ export interface Trip extends Intangible {
  * A short TV program or a segment/part of a TV program.
  *
  **/
-export interface TVClip extends Clip {
+export interface TVClip extends Omit<Clip, "@type"> {
+  "@type": "TVClip";
   partOfTVSeries?: TVSeries;
 }
 
@@ -11804,7 +13040,8 @@ export interface TVClip extends Clip {
  * A TV episode which can be part of a series or season.
  *
  **/
-export interface TVEpisode extends Episode {
+export interface TVEpisode extends Omit<Episode, "@type"> {
+  "@type": "TVEpisode";
   countryOfOrigin?: Country;
   partOfTVSeries?: TVSeries;
   subtitleLanguage?: Text | Language;
@@ -11819,7 +13056,10 @@ export interface TVEpisode extends Episode {
  * Season dedicated to TV broadcast and associated online delivery.
  *
  **/
-export interface TVSeason extends CreativeWork, CreativeWorkSeason {
+export interface TVSeason
+  extends Omit<CreativeWork, "@type">,
+    Omit<CreativeWorkSeason, "@type"> {
+  "@type": "TVSeason";
   countryOfOrigin?: Country;
   partOfTVSeries?: TVSeries;
 }
@@ -11832,7 +13072,10 @@ export interface TVSeason extends CreativeWork, CreativeWorkSeason {
  * CreativeWorkSeries dedicated to TV broadcast and associated online delivery.
  *
  **/
-export interface TVSeries extends CreativeWork, CreativeWorkSeries {
+export interface TVSeries
+  extends Omit<CreativeWork, "@type">,
+    Omit<CreativeWorkSeries, "@type"> {
+  "@type": "TVSeries";
   actor?: Person;
   actors?: Array<Person>;
   containsSeason?: CreativeWorkSeason;
@@ -11860,7 +13103,8 @@ export interface TVSeries extends CreativeWork, CreativeWorkSeries {
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass
  *
  **/
-export interface TypeAndQuantityNode extends StructuredValue {
+export interface TypeAndQuantityNode extends Omit<StructuredValue, "@type"> {
+  "@type": "TypeAndQuantityNode";
   amountOfThisGood?: Number;
   businessFunction?: BusinessFunction;
   typeOfGood?: Service | Product;
@@ -11878,7 +13122,9 @@ export interface TypeAndQuantityNode extends StructuredValue {
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass
  *
  **/
-export interface UnitPriceSpecification extends PriceSpecification {
+export interface UnitPriceSpecification
+  extends Omit<PriceSpecification, "@type"> {
+  "@type": "UnitPriceSpecification";
   billingDuration?: Number | Duration | QuantitativeValue;
   billingIncrement?: Number;
   billingStart?: Number;
@@ -11897,7 +13143,9 @@ export interface UnitPriceSpecification extends PriceSpecification {
  * The act of un-registering from a service.\n\nRelated actions:\n\n* [[RegisterAction]]: antonym of UnRegisterAction.\n* [[LeaveAction]]: Unlike LeaveAction, UnRegisterAction implies that you are unregistering from a service you werer previously registered, rather than leaving a team/group of people.
  *
  **/
-export interface UnRegisterAction extends InteractAction {}
+export interface UnRegisterAction extends Omit<InteractAction, "@type"> {
+  "@type": "UnRegisterAction";
+}
 
 /**
  *
@@ -11907,7 +13155,8 @@ export interface UnRegisterAction extends InteractAction {}
  * The act of managing by changing/editing the state of the object.
  *
  **/
-export interface UpdateAction extends Action {
+export interface UpdateAction extends Omit<Action, "@type"> {
+  "@type": "UpdateAction";
   collection?: Thing;
   targetCollection?: Thing;
 }
@@ -11930,7 +13179,9 @@ export type URL = Text;
  * The act of applying an object to its intended purpose.
  *
  **/
-export interface UseAction extends ConsumeAction {}
+export interface UseAction extends Omit<ConsumeAction, "@type"> {
+  "@type": "UseAction";
+}
 
 /**
  *
@@ -11940,7 +13191,9 @@ export interface UseAction extends ConsumeAction {}
  * UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use [[Action]]-based vocabulary, alongside types such as [[Comment]].
  *
  **/
-export interface UserBlocks extends UserInteraction {}
+export interface UserBlocks extends Omit<UserInteraction, "@type"> {
+  "@type": "UserBlocks";
+}
 
 /**
  *
@@ -11950,7 +13203,9 @@ export interface UserBlocks extends UserInteraction {}
  * UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use [[Action]]-based vocabulary, alongside types such as [[Comment]].
  *
  **/
-export interface UserCheckins extends UserInteraction {}
+export interface UserCheckins extends Omit<UserInteraction, "@type"> {
+  "@type": "UserCheckins";
+}
 
 /**
  *
@@ -11962,7 +13217,8 @@ export interface UserCheckins extends UserInteraction {}
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_rNews
  *
  **/
-export interface UserComments extends UserInteraction {
+export interface UserComments extends Omit<UserInteraction, "@type"> {
+  "@type": "UserComments";
   commentText?: Text;
   commentTime?: DateTime | Date;
   creator?: Organization | Person;
@@ -11978,7 +13234,9 @@ export interface UserComments extends UserInteraction {
  * UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use [[Action]]-based vocabulary, alongside types such as [[Comment]].
  *
  **/
-export interface UserDownloads extends UserInteraction {}
+export interface UserDownloads extends Omit<UserInteraction, "@type"> {
+  "@type": "UserDownloads";
+}
 
 /**
  *
@@ -11988,7 +13246,9 @@ export interface UserDownloads extends UserInteraction {}
  * UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use [[Action]]-based vocabulary, alongside types such as [[Comment]].
  *
  **/
-export interface UserInteraction extends Event {}
+export interface UserInteraction extends Omit<Event, "@type"> {
+  "@type": "UserInteraction";
+}
 
 /**
  *
@@ -11998,7 +13258,9 @@ export interface UserInteraction extends Event {}
  * UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use [[Action]]-based vocabulary, alongside types such as [[Comment]].
  *
  **/
-export interface UserLikes extends UserInteraction {}
+export interface UserLikes extends Omit<UserInteraction, "@type"> {
+  "@type": "UserLikes";
+}
 
 /**
  *
@@ -12008,7 +13270,9 @@ export interface UserLikes extends UserInteraction {}
  * UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use [[Action]]-based vocabulary, alongside types such as [[Comment]].
  *
  **/
-export interface UserPageVisits extends UserInteraction {}
+export interface UserPageVisits extends Omit<UserInteraction, "@type"> {
+  "@type": "UserPageVisits";
+}
 
 /**
  *
@@ -12018,7 +13282,9 @@ export interface UserPageVisits extends UserInteraction {}
  * UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use [[Action]]-based vocabulary, alongside types such as [[Comment]].
  *
  **/
-export interface UserPlays extends UserInteraction {}
+export interface UserPlays extends Omit<UserInteraction, "@type"> {
+  "@type": "UserPlays";
+}
 
 /**
  *
@@ -12028,7 +13294,9 @@ export interface UserPlays extends UserInteraction {}
  * UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use [[Action]]-based vocabulary, alongside types such as [[Comment]].
  *
  **/
-export interface UserPlusOnes extends UserInteraction {}
+export interface UserPlusOnes extends Omit<UserInteraction, "@type"> {
+  "@type": "UserPlusOnes";
+}
 
 /**
  *
@@ -12042,7 +13310,9 @@ export interface UserPlusOnes extends UserInteraction {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/1589
  *
  **/
-export interface UserReview extends Review {}
+export interface UserReview extends Omit<Review, "@type"> {
+  "@type": "UserReview";
+}
 
 /**
  *
@@ -12052,7 +13322,9 @@ export interface UserReview extends Review {}
  * UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use [[Action]]-based vocabulary, alongside types such as [[Comment]].
  *
  **/
-export interface UserTweets extends UserInteraction {}
+export interface UserTweets extends Omit<UserInteraction, "@type"> {
+  "@type": "UserTweets";
+}
 
 /**
  *
@@ -12062,7 +13334,8 @@ export interface UserTweets extends UserInteraction {}
  * A vehicle is a device that is designed or used to transport people or cargo over land, water, air, or through space.
  *
  **/
-export interface Vehicle extends Product {
+export interface Vehicle extends Omit<Product, "@type"> {
+  "@type": "Vehicle";
   accelerationTime?: QuantitativeValue;
   bodyType?: URL | Text | QualitativeValue;
   callSign?: Text;
@@ -12114,7 +13387,8 @@ export interface Vehicle extends Product {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface Vein extends Vessel {
+export interface Vein extends Omit<Vessel, "@type"> {
+  "@type": "Vein";
   drainsTo?: Vessel;
   regionDrained?: AnatomicalStructure | AnatomicalSystem;
   tributary?: AnatomicalStructure;
@@ -12130,7 +13404,9 @@ export interface Vein extends Vessel {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface Vessel extends AnatomicalStructure {}
+export interface Vessel extends Omit<AnatomicalStructure, "@type"> {
+  "@type": "Vessel";
+}
 
 /**
  *
@@ -12142,7 +13418,9 @@ export interface Vessel extends AnatomicalStructure {}
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface VeterinaryCare extends MedicalOrganization {}
+export interface VeterinaryCare extends Omit<MedicalOrganization, "@type"> {
+  "@type": "VeterinaryCare";
+}
 
 /**
  *
@@ -12152,7 +13430,9 @@ export interface VeterinaryCare extends MedicalOrganization {}
  * Web page type: Video gallery page.
  *
  **/
-export interface VideoGallery extends MediaGallery {}
+export interface VideoGallery extends Omit<MediaGallery, "@type"> {
+  "@type": "VideoGallery";
+}
 
 /**
  *
@@ -12162,7 +13442,10 @@ export interface VideoGallery extends MediaGallery {}
  * A video game is an electronic game that involves human interaction with a user interface to generate visual feedback on a video device.
  *
  **/
-export interface VideoGame extends Game, SoftwareApplication {
+export interface VideoGame
+  extends Omit<Game, "@type">,
+    Omit<SoftwareApplication, "@type"> {
+  "@type": "VideoGame";
   actor?: Person;
   actors?: Array<Person>;
   cheatCode?: CreativeWork;
@@ -12184,7 +13467,9 @@ export interface VideoGame extends Game, SoftwareApplication {
  * A short segment/part of a video game.
  *
  **/
-export interface VideoGameClip extends Clip {}
+export interface VideoGameClip extends Omit<Clip, "@type"> {
+  "@type": "VideoGameClip";
+}
 
 /**
  *
@@ -12194,7 +13479,8 @@ export interface VideoGameClip extends Clip {}
  * A video game series.
  *
  **/
-export interface VideoGameSeries extends CreativeWorkSeries {
+export interface VideoGameSeries extends Omit<CreativeWorkSeries, "@type"> {
+  "@type": "VideoGameSeries";
   actor?: Person;
   actors?: Array<Person>;
   characterAttribute?: Thing;
@@ -12229,7 +13515,8 @@ export interface VideoGameSeries extends CreativeWorkSeries {
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_rNews
  *
  **/
-export interface VideoObject extends MediaObject {
+export interface VideoObject extends Omit<MediaObject, "@type"> {
+  "@type": "VideoObject";
   actor?: Person;
   actors?: Array<Person>;
   caption?: Text | MediaObject;
@@ -12250,7 +13537,9 @@ export interface VideoObject extends MediaObject {
  * The act of consuming static visual content.
  *
  **/
-export interface ViewAction extends ConsumeAction {}
+export interface ViewAction extends Omit<ConsumeAction, "@type"> {
+  "@type": "ViewAction";
+}
 
 /**
  *
@@ -12264,7 +13553,9 @@ export interface ViewAction extends ConsumeAction {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/1842
  *
  **/
-export interface VirtualLocation extends Intangible {}
+export interface VirtualLocation extends Omit<Intangible, "@type"> {
+  "@type": "VirtualLocation";
+}
 
 /**
  *
@@ -12274,7 +13565,9 @@ export interface VirtualLocation extends Intangible {}
  * Event type: Visual arts event.
  *
  **/
-export interface VisualArtsEvent extends Event {}
+export interface VisualArtsEvent extends Omit<Event, "@type"> {
+  "@type": "VisualArtsEvent";
+}
 
 /**
  *
@@ -12286,7 +13579,8 @@ export interface VisualArtsEvent extends Event {}
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_VisualArtworkClass
  *
  **/
-export interface VisualArtwork extends CreativeWork {
+export interface VisualArtwork extends Omit<CreativeWork, "@type"> {
+  "@type": "VisualArtwork";
   artEdition?: Text | Integer;
   artform?: Text | URL;
   artist?: Person;
@@ -12312,7 +13606,9 @@ export interface VisualArtwork extends CreativeWork {
  *
  * Partof: https://health-lifesci.schema.org
  **/
-export interface VitalSign extends MedicalSign {}
+export interface VitalSign extends Omit<MedicalSign, "@type"> {
+  "@type": "VitalSign";
+}
 
 /**
  *
@@ -12322,7 +13618,9 @@ export interface VitalSign extends MedicalSign {}
  * A volcano, like Fuji san.
  *
  **/
-export interface Volcano extends Landform {}
+export interface Volcano extends Omit<Landform, "@type"> {
+  "@type": "Volcano";
+}
 
 /**
  *
@@ -12332,7 +13630,8 @@ export interface Volcano extends Landform {}
  * The act of expressing a preference from a fixed/finite/structured set of choices/options.
  *
  **/
-export interface VoteAction extends ChooseAction {
+export interface VoteAction extends Omit<ChooseAction, "@type"> {
+  "@type": "VoteAction";
   candidate?: Person;
 }
 
@@ -12344,7 +13643,9 @@ export interface VoteAction extends ChooseAction {
  * The act of expressing a desire about the object. An agent wants an object.
  *
  **/
-export interface WantAction extends ReactAction {}
+export interface WantAction extends Omit<ReactAction, "@type"> {
+  "@type": "WantAction";
+}
 
 /**
  *
@@ -12356,7 +13657,8 @@ export interface WantAction extends ReactAction {}
  * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass
  *
  **/
-export interface WarrantyPromise extends StructuredValue {
+export interface WarrantyPromise extends Omit<StructuredValue, "@type"> {
+  "@type": "WarrantyPromise";
   durationOfWarranty?: QuantitativeValue;
   warrantyScope?: WarrantyScope;
 }
@@ -12372,7 +13674,9 @@ export interface WarrantyPromise extends StructuredValue {
 * @see @link http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass
 *
 **/
-export interface WarrantyScope extends Enumeration {}
+export interface WarrantyScope extends Omit<Enumeration, "@type"> {
+  "@type": "WarrantyScope";
+}
 
 /**
  *
@@ -12382,7 +13686,9 @@ export interface WarrantyScope extends Enumeration {}
  * The act of consuming dynamic/moving visual content.
  *
  **/
-export interface WatchAction extends ConsumeAction {}
+export interface WatchAction extends Omit<ConsumeAction, "@type"> {
+  "@type": "WatchAction";
+}
 
 /**
  *
@@ -12392,7 +13698,9 @@ export interface WatchAction extends ConsumeAction {}
  * A waterfall, like Niagara.
  *
  **/
-export interface Waterfall extends BodyOfWater {}
+export interface Waterfall extends Omit<BodyOfWater, "@type"> {
+  "@type": "Waterfall";
+}
 
 /**
  *
@@ -12402,7 +13710,9 @@ export interface Waterfall extends BodyOfWater {}
  * The act of dressing oneself in clothing.
  *
  **/
-export interface WearAction extends UseAction {}
+export interface WearAction extends Omit<UseAction, "@type"> {
+  "@type": "WearAction";
+}
 
 /**
  *
@@ -12416,7 +13726,8 @@ export interface WearAction extends UseAction {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/1423
  *
  **/
-export interface WebAPI extends Service {
+export interface WebAPI extends Omit<Service, "@type"> {
+  "@type": "WebAPI";
   documentation?: CreativeWork | URL;
 }
 
@@ -12428,7 +13739,8 @@ export interface WebAPI extends Service {
  * Web applications.
  *
  **/
-export interface WebApplication extends SoftwareApplication {
+export interface WebApplication extends Omit<SoftwareApplication, "@type"> {
+  "@type": "WebApplication";
   browserRequirements?: Text;
 }
 
@@ -12444,7 +13756,9 @@ export interface WebApplication extends SoftwareApplication {
  * @see @link https://github.com/schemaorg/schemaorg/issues/2358
  *
  **/
-export interface WebContent extends CreativeWork {}
+export interface WebContent extends Omit<CreativeWork, "@type"> {
+  "@type": "WebContent";
+}
 
 /**
  *
@@ -12454,7 +13768,8 @@ export interface WebContent extends CreativeWork {}
  * A web page. Every web page is implicitly assumed to be declared to be of type WebPage, so the various properties about that webpage, such as <code>breadcrumb</code> may be used. We recommend explicit declaration if these properties are specified, but if they are found outside of an itemscope, they will be assumed to be about the page.
  *
  **/
-export interface WebPage extends CreativeWork {
+export interface WebPage extends Omit<CreativeWork, "@type"> {
+  "@type": "WebPage";
   breadcrumb?: Text | BreadcrumbList;
   lastReviewed?: Date;
   mainContentOfPage?: WebPageElement;
@@ -12475,7 +13790,8 @@ export interface WebPage extends CreativeWork {
  * A web page element, like a table or an image.
  *
  **/
-export interface WebPageElement extends CreativeWork {
+export interface WebPageElement extends Omit<CreativeWork, "@type"> {
+  "@type": "WebPageElement";
   cssSelector?: CssSelectorType;
   xpath?: XPathType;
 }
@@ -12488,7 +13804,8 @@ export interface WebPageElement extends CreativeWork {
  * A WebSite is a set of related web pages and other items typically served from a single web domain and accessible via URLs.
  *
  **/
-export interface WebSite extends CreativeWork {
+export interface WebSite extends Omit<CreativeWork, "@type"> {
+  "@type": "WebSite";
   issn?: Text;
 }
 
@@ -12500,7 +13817,9 @@ export interface WebSite extends CreativeWork {
  * A wholesale store.
  *
  **/
-export interface WholesaleStore extends Store {}
+export interface WholesaleStore extends Omit<Store, "@type"> {
+  "@type": "WholesaleStore";
+}
 
 /**
  *
@@ -12510,7 +13829,8 @@ export interface WholesaleStore extends Store {}
  * The act of achieving victory in a competitive activity.
  *
  **/
-export interface WinAction extends AchieveAction {
+export interface WinAction extends Omit<AchieveAction, "@type"> {
+  "@type": "WinAction";
   loser?: Person;
 }
 
@@ -12522,7 +13842,9 @@ export interface WinAction extends AchieveAction {
  * A winery.
  *
  **/
-export interface Winery extends FoodEstablishment {}
+export interface Winery extends Omit<FoodEstablishment, "@type"> {
+  "@type": "Winery";
+}
 
 /**
  *
@@ -12536,7 +13858,9 @@ export interface Winery extends FoodEstablishment {}
  * @see @link https://github.com/schemaorg/schemaorg/issues/2289
  *
  **/
-export interface WorkBasedProgram extends EducationalOccupationalProgram {
+export interface WorkBasedProgram
+  extends Omit<EducationalOccupationalProgram, "@type"> {
+  "@type": "WorkBasedProgram";
   occupationalCategory?: CategoryCode | Text;
   trainingSalary?: MonetaryAmountDistribution;
 }
@@ -12551,7 +13875,9 @@ export interface WorkBasedProgram extends EducationalOccupationalProgram {
  * @see @link https://github.com/schemaorg/schemaorg/issues/243
  *
  **/
-export interface WorkersUnion extends Organization {}
+export interface WorkersUnion extends Omit<Organization, "@type"> {
+  "@type": "WorkersUnion";
+}
 
 /**
  *
@@ -12561,7 +13887,9 @@ export interface WorkersUnion extends Organization {}
  * An advertising section of the page.
  *
  **/
-export interface WPAdBlock extends WebPageElement {}
+export interface WPAdBlock extends Omit<WebPageElement, "@type"> {
+  "@type": "WPAdBlock";
+}
 
 /**
  *
@@ -12571,7 +13899,9 @@ export interface WPAdBlock extends WebPageElement {}
  * The footer section of the page.
  *
  **/
-export interface WPFooter extends WebPageElement {}
+export interface WPFooter extends Omit<WebPageElement, "@type"> {
+  "@type": "WPFooter";
+}
 
 /**
  *
@@ -12581,7 +13911,9 @@ export interface WPFooter extends WebPageElement {}
  * The header section of the page.
  *
  **/
-export interface WPHeader extends WebPageElement {}
+export interface WPHeader extends Omit<WebPageElement, "@type"> {
+  "@type": "WPHeader";
+}
 
 /**
  *
@@ -12591,7 +13923,9 @@ export interface WPHeader extends WebPageElement {}
  * A sidebar section of the page.
  *
  **/
-export interface WPSideBar extends WebPageElement {}
+export interface WPSideBar extends Omit<WebPageElement, "@type"> {
+  "@type": "WPSideBar";
+}
 
 /**
  *
@@ -12601,7 +13935,8 @@ export interface WPSideBar extends WebPageElement {}
  * The act of authoring written creative content.
  *
  **/
-export interface WriteAction extends CreateAction {
+export interface WriteAction extends Omit<CreateAction, "@type"> {
+  "@type": "WriteAction";
   inLanguage?: Text | Language;
   language?: Language;
 }
@@ -12628,4 +13963,6 @@ export type XPathType = Text;
  * A zoo.
  *
  **/
-export interface Zoo extends CivicStructure {}
+export interface Zoo extends Omit<CivicStructure, "@type"> {
+  "@type": "Zoo";
+}

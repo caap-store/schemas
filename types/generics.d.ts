@@ -1,5 +1,11 @@
-import { Text } from "./core";
-import { Thing, Integer, Intangible, ItemListOrderType } from "./index";
+import { Text, DateTime } from "./core";
+import {
+  Thing,
+  Integer,
+  Intangible,
+  ItemListOrderType,
+  Dataset,
+} from "./index";
 
 /**
  *
