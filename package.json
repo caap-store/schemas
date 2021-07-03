@@ -17,6 +17,9 @@
   "bin": {
     "parse": "./cli.js"
   },
+  "files": [
+    "types/*.d.ts"
+  ],
   "devDependencies": {
     "@tsconfig/node14": "^1.0.0",
     "@types/lodash": "^4.14.168",
