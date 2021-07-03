@@ -1,6 +1,6 @@
 {
   "name": "@caap-store/schemas",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Parsing schema.org into typescript",
   "repository": {
     "url": "https://github.com/caap-store/schemas"
